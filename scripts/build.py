@@ -114,9 +114,13 @@ def enrich(gn_link, src_href):
         return _ENRICH_CACHE[gn_link]
     real, img = src_href or gn_link, ""
     try:
-        out = gnewsdecoder(gn_link, interval=0.4)
-        if out.get("status") and out.get("decoded_url"):
-            real = out["decoded_url"]
+        if "news.google.com" in gn_link:
+            out = gnewsdecoder(gn_link, interval=0.4)
+            if out.get("status") and out.get("decoded_url"):
+                real = out["decoded_url"]
+                img = og_image(real)
+        else:
+            real = gn_link
             img = og_image(real)
     except Exception:
         pass
@@ -176,6 +180,29 @@ def fetch(query, limit, loc):
                     "pub": getattr(e, "published_parsed", None)})
     return out
 
+def team_match(title, t):
+    low = title.lower()
+    return t["nome"].lower() in low or t.get("search", "").lower() in low
+
+def fetch_direct(lang, sources):
+    out = []
+    for sfeed in sources.get("feeds", []):
+        if sfeed.get("lang") != lang:
+            continue
+        try:
+            f = feedparser.parse(sfeed["url"])
+        except Exception:
+            continue
+        for e in f.entries[:30]:
+            titolo = html.unescape(getattr(e, "title", "") or "").strip()
+            link = getattr(e, "link", "")
+            if not titolo or not link:
+                continue
+            out.append({"titolo": titolo, "fonte": sfeed["nome"], "gn_link": link,
+                        "src_href": link, "pub": getattr(e, "published_parsed", None),
+                        "tier": int(sfeed.get("tier", 1))})
+    return out
+
 def dedupe(items):
     seen = {}
     for it in items:
@@ -185,7 +212,8 @@ def dedupe(items):
             seen[key] = it
     return list(seen.values())
 
-def build_board(teams, kw, lang, loc):
+def build_board(teams, kw, lang, loc, direct_items=None):
+    direct_items = direct_items or []
     old_nomi = {}
     try:
         old = json.load(open(os.path.join(DATA, lang, "board.json"), encoding="utf-8"))
@@ -202,6 +230,12 @@ def build_board(teams, kw, lang, loc):
             r["affidabilita"] = reliability(r["fonte"], kw)
             r["quando"] = time_ago(r["pub"], lang)
             items.append(r)
+        for d in direct_items:
+            if team_match(d["titolo"], t):
+                items.append({"titolo": d["titolo"], "fonte": d["fonte"], "gn_link": d["gn_link"],
+                              "src_href": d["src_href"], "pub": d["pub"],
+                              "stato": classify(d["titolo"], kw), "affidabilita": d["tier"],
+                              "quando": time_ago(d["pub"], lang)})
         items = dedupe(items)
         items.sort(key=lambda x: (x["affidabilita"], x["pub"] or ()), reverse=True)
         colonne = {"rumor": [], "obj": [], "conf": [], "done": []}
@@ -267,8 +301,13 @@ def build_lang(lang, teams):
     stamp = now.strftime("%Y-%m-%dT%H:%M:%S")
     outdir = os.path.join(DATA, lang)
     os.makedirs(outdir, exist_ok=True)
-    print("[" + lang + "] board...")
-    board = {"aggiornato": stamp, "giorno": giorno, "squadre": build_board(teams, kw, lang, loc)}
+    try:
+        sources = load(os.path.join(DATA, "sources.json"))
+    except Exception:
+        sources = {"feeds": []}
+    direct_items = fetch_direct(lang, sources)
+    print("[" + lang + "] board... (" + str(len(direct_items)) + " voci da feed diretti)")
+    board = {"aggiornato": stamp, "giorno": giorno, "squadre": build_board(teams, kw, lang, loc, direct_items)}
     print("[" + lang + "] home...")
     home = {"aggiornato": stamp, "giorno": giorno}
     home.update(build_home(teams, kw, lang, loc))

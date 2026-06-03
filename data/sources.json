@@ -1,0 +1,10 @@
+{
+  "_nota": "Feed RSS diretti monitorati oltre a Google News. tier = affidabilita 1-3. lang = lingua del feed.",
+  "feeds": [
+    { "nome": "La Gazzetta dello Sport", "url": "https://www.gazzetta.it/rss/calciomercato.xml", "tier": 2, "lang": "it" },
+    { "nome": "The Guardian",            "url": "https://www.theguardian.com/football/transfer-window/rss", "tier": 3, "lang": "en" },
+    { "nome": "BBC Sport",               "url": "http://feeds.bbci.co.uk/sport/football/rss.xml", "tier": 3, "lang": "en" },
+    { "nome": "Football Italia",         "url": "https://football-italia.net/feed/", "tier": 2, "lang": "en" },
+    { "nome": "Marca",                   "url": "https://e00-marca.uecdn.es/rss/futbol/mercado-fichajes.xml", "tier": 3, "lang": "es" }
+  ]
+}

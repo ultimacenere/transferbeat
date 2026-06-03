@@ -58,6 +58,8 @@ python -m http.server            # poi apri http://localhost:8000
 - **Migliorare la classificazione:** modifica le parole chiave in `rules/keywords.json`. Non serve
   toccare il codice.
 - **Cambiare gli orari:** modifica il `cron` in `.github/workflows/update.yml` (ricorda: orari in UTC).
+- **Fonti dirette:** aggiungi RSS di testate/giornalisti in `data/sources.json` (`nome`, `url`, `tier` 1-3, `lang`). Vengono letti oltre a Google News e agganciati alle squadre citate nel titolo.
+- **Fonti di fiducia:** aggiungi nomi di testate/giornalisti in `rules/keywords.<lang>.json` sotto `affidabilita` → `"3"` per dargli 3 pallini.
 
 ## Multilingua (IT / EN / ES)
 

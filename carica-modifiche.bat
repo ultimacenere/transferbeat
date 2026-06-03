@@ -12,6 +12,8 @@ if not %errorlevel%==0 (
 echo Carico le modifiche su GitHub...
 git add .
 git commit -m "aggiornamento"
+echo Sincronizzo con eventuali aggiornamenti automatici del bot...
+git pull --rebase origin main
 git push
 
 echo.
