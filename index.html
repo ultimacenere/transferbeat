@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TransferBeat — Home</title>
+<link rel="alternate" hreflang="it" href="./index.html?lang=it">
+<link rel="alternate" hreflang="en" href="./index.html?lang=en">
+<link rel="alternate" hreflang="es" href="./index.html?lang=es">
+<link rel="alternate" hreflang="x-default" href="./index.html">
+<style>
+  :root{
+    --bg:#ffffff; --panel:#f7f8fa; --panel2:#eef1f5; --line:#e2e6ea;
+    --txt:#161b21; --muted:#67727e; --accent:#0a9d57; --accent2:#1f6fd6;
+    --rumor:#d98700; --conf:#7b46c9; --done:#0a9d57; --red:#e0392b;
+    --serif:'Georgia','Times New Roman',serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+  .ticker{background:var(--red);color:#fff;font-size:13px;font-weight:600;overflow:hidden;white-space:nowrap}
+  .ticker .wrap{display:flex;align-items:center;gap:14px;height:34px}
+  .ticker .lab{background:rgba(0,0,0,.2);padding:2px 9px;border-radius:5px;font-size:11px;letter-spacing:.5px;flex-shrink:0}
+  .ticker .scroll{display:inline-block;animation:tick 38s linear infinite}
+  .ticker .scroll span{margin-right:40px;opacity:.97}
+  @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  .mast{border-bottom:3px solid var(--accent);padding:18px 0 14px}
+  .mast .row{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .mast .name{font-family:var(--serif);font-size:46px;font-weight:700;letter-spacing:-1px;line-height:1}
+  .mast .name b{color:var(--accent)}
+  .langsw{display:flex;gap:4px;margin-top:8px}
+  .langsw a{font-size:11px;font-weight:700;padding:4px 8px;border:1px solid var(--line);border-radius:6px;color:var(--muted);cursor:pointer}
+  .langsw a.on{background:var(--txt);color:#fff;border-color:var(--txt)}
+  .mast .date{font-size:12.5px;color:var(--muted);text-align:right}
+  .mast .date b{color:var(--txt)}
+  nav{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:14px}
+  nav .wrap{display:flex;gap:2px;overflow-x:auto}
+  nav a{padding:11px 14px;font-size:13px;font-weight:600;color:var(--muted);white-space:nowrap;border-bottom:2px solid transparent;transition:.15s}
+  nav a:hover,nav a.on{color:var(--txt);border-bottom-color:var(--accent)}
+  nav a.live{color:var(--accent);display:flex;align-items:center;gap:6px}
+  .liveDot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pl 1.6s infinite}
+  @keyframes pl{0%,100%{opacity:1}50%{opacity:.3}}
+  .main{display:grid;grid-template-columns:1fr 320px;gap:26px;padding:24px 0}
+  @media(max-width:900px){.main{grid-template-columns:1fr}}
+  .lead{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:22px}
+  .lead .ph{aspect-ratio:16/8;border-radius:12px;background:linear-gradient(135deg,#eef1f5,#dfe5ec);position:relative;overflow:hidden;display:grid;place-items:center}
+  .ph .badge{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px;letter-spacing:.5px;z-index:2}
+  .ph .ico{font-size:64px;opacity:.28}
+  .ph img,.art .ph2 img{width:100%;height:100%;object-fit:cover;display:block}
+  .art .ph2link{display:block}
+  .art h3 a:hover{color:var(--accent)}
+  .lead h1{font-family:var(--serif);font-size:32px;line-height:1.14;margin:16px 0 8px;letter-spacing:-.5px}
+  .lead .by{font-size:12px;color:var(--muted);margin-top:12px}
+  .kicker{font-size:11.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}
+  .sub3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:680px){.sub3{grid-template-columns:1fr;gap:0}}
+  .art{padding-bottom:16px;border-bottom:1px solid var(--line);display:block}
+  @media(max-width:680px){.art{padding:14px 0}}
+  .art .ph2{aspect-ratio:16/10;border-radius:9px;overflow:hidden;background:linear-gradient(135deg,#eef1f5,#e3e8ee);margin-bottom:10px;display:grid;place-items:center;font-size:30px}
+  .credit{font-size:10.5px;color:var(--muted);margin-top:6px}
+  .credit a{color:var(--accent2);font-weight:600}
+  .art .ph2 span{opacity:.5}
+  .art h3{font-family:var(--serif);font-size:17px;line-height:1.22;margin:6px 0 5px}
+  .art .cat{font-size:10.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--accent2)}
+  aside{display:flex;flex-direction:column;gap:22px}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .box .hd{padding:12px 15px;border-bottom:1px solid var(--line);font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+  .box.live .hd{color:var(--accent)}
+  .mini{padding:6px 15px 12px}
+  .mini .r{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px}
+  .mini .r:last-child{border-bottom:none}
+  .st{font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:5px;text-transform:uppercase;letter-spacing:.4px;flex-shrink:0}
+  .s-done{background:rgba(10,157,87,.14);color:var(--done)}.s-conf{background:rgba(123,70,201,.14);color:var(--conf)}
+  .s-obj{background:rgba(31,111,214,.14);color:var(--accent2)}.s-rumor{background:rgba(217,135,0,.14);color:var(--rumor)}
+  .mini .tt{font-weight:600;line-height:1.2}
+  .cta{display:block;text-align:center;padding:11px;font-size:13px;font-weight:600;color:var(--accent);border-top:1px solid var(--line)}
+  .cta:hover{background:rgba(10,157,87,.07)}
+  .strip{border-top:3px solid var(--line);padding:22px 0}
+  .strip h2{font-family:var(--serif);font-size:22px;margin-bottom:4px}
+  .strip .sub{font-size:12.5px;color:var(--muted);margin-bottom:16px}
+  .strip h2 .flag{font-size:14px;color:var(--accent2);font-family:'Segoe UI',sans-serif;font-weight:700;letter-spacing:.5px;margin-left:6px;text-transform:uppercase}
+  .row4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  @media(max-width:900px){.row4{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.row4{grid-template-columns:1fr}}
+  footer{border-top:3px solid var(--accent);padding:26px 0;margin-top:20px;color:var(--muted);font-size:12.5px}
+  footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .demo{display:inline-block;background:rgba(217,135,0,.12);color:var(--rumor);border:1px solid rgba(217,135,0,.3);padding:1px 8px;border-radius:6px;font-size:11px;vertical-align:middle;margin-left:8px}
+  .err{background:#fff6f6;border:1px solid #f3c9c9;color:#a33;border-radius:12px;padding:16px 18px;margin:20px;font-size:14px}
+</style>
+</head>
+<body>
+<div class="ticker"><div class="wrap"><span class="lab" id="tkLab">ULTIM’ORA</span><div class="scroll" id="ticker"></div></div></div>
+<header>
+  <div class="wrap mast">
+    <div class="row">
+      <div>
+        <div class="name">Transfer<b>Beat</b><span class="demo">BETA</span></div>
+        <div class="langsw" id="langsw"></div>
+      </div>
+      <div class="date" id="masthead"></div>
+    </div>
+  </div>
+  <nav><div class="wrap">
+    <a href="index.html" class="on" id="navHome">Home</a>
+    <a href="board.html" class="live" id="navLive"><span class="liveDot"></span>Live</a>
+    <a href="#">Serie A</a><a href="#">Premier</a><a href="#">La Liga</a>
+    <a href="#" id="navChamp">Champions</a><a href="#" id="navNat">Nazionali</a><a href="#" id="navWorld">Mondo</a>
+  </div></nav>
+</header>
+<div id="error"></div>
+<div class="wrap main">
+  <section>
+    <div class="lead" id="lead"></div>
+    <div class="sub3" id="sub3"></div>
+  </section>
+  <aside>
+    <div class="box live">
+      <div class="hd"><span class="liveDot"></span><span id="hdLive">Mercato Live · oggi</span></div>
+      <div class="mini" id="miniBoard"></div>
+      <a href="board.html" class="cta" id="ctaBoard">Apri la board completa →</a>
+    </div>
+    <div class="box">
+      <div class="hd" id="hdTop">🔥 Le più rilevanti</div>
+      <div class="mini" id="topNews"></div>
+    </div>
+  </aside>
+</div>
+<div class="wrap">
+  <div class="strip">
+    <h2 id="worldH">Dal mondo <span class="flag" id="worldFlag">🌍 Worldwide</span></h2>
+    <div class="sub" id="worldSub"></div>
+    <div class="row4" id="world"></div>
+  </div>
+</div>
+<footer><div class="wrap row"><div id="footL"></div><div id="footR"></div></div></footer>
+
+<script>
+const STRINGS={
+ it:{home:'Home',live:'Live',breaking:'ULTIM’ORA',tagline:'Il giornale del calcio mondiale',edition:'Edizione delle',featured:'IN PRIMO PIANO',liveToday:'Mercato Live · oggi',openBoard:'Apri la board completa →',top:'🔥 Le più rilevanti',worldH:'Dal mondo',worldSub:'Le notizie di calcio da tutti i continenti, oltre il mercato',footL:'TransferBeat — Il giornale del calcio mondiale',footR:'Aggiornamenti automatici 3×/giorno · 08:00 · 12:00 · 20:00',source:'Fonte',updatedAt:'aggiornato alle',champ:'Champions',nat:'Nazionali',world:'Mondo',err:'<b>Dati non caricati.</b> Apri il sito tramite un server (o GitHub/Vercel), non con doppio clic. In locale: <code>python -m http.server</code>',mini:{done:'Fatta',conf:'Conf.',obj:'Obiett.',rumor:'Rumor'}},
+ en:{home:'Home',live:'Live',breaking:'BREAKING',tagline:'The home of world football',edition:'Edition of',featured:'FEATURED',liveToday:'Transfer Live · today',openBoard:'Open full board →',top:'🔥 Most relevant',worldH:'Around the world',worldSub:'Football news from every continent, beyond the transfer market',footL:'TransferBeat — The home of world football',footR:'Auto-updates 3×/day · 08:00 · 12:00 · 20:00',source:'Source',updatedAt:'updated at',champ:'Champions',nat:'National teams',world:'World',err:'<b>Data not loaded.</b> Open the site via a server (or GitHub/Vercel), not by double-clicking. Locally: <code>python -m http.server</code>',mini:{done:'Done',conf:'Agreed',obj:'Target',rumor:'Rumour'}},
+ es:{home:'Inicio',live:'En vivo',breaking:'ÚLTIMA HORA',tagline:'El diario del fútbol mundial',edition:'Edición de las',featured:'DESTACADO',liveToday:'Mercado en vivo · hoy',openBoard:'Abrir la board completa →',top:'🔥 Lo más relevante',worldH:'Desde el mundo',worldSub:'Noticias de fútbol de todos los continentes, más allá del mercado',footL:'TransferBeat — El diario del fútbol mundial',footR:'Actualización automática 3×/día · 08:00 · 12:00 · 20:00',source:'Fuente',updatedAt:'actualizado a las',champ:'Champions',nat:'Selecciones',world:'Mundo',err:'<b>Datos no cargados.</b> Abre el sitio con un servidor (o GitHub/Vercel), no con doble clic. En local: <code>python -m http.server</code>',mini:{done:'Cerrado',conf:'Acuerdo',obj:'Objetivo',rumor:'Rumor'}}
+};
+const PARAMS=new URLSearchParams(location.search);
+let lang=(PARAMS.get('lang')||localStorage.getItem('tb_lang')||'it').toLowerCase();
+if(!['it','en','es'].includes(lang))lang='it';
+localStorage.setItem('tb_lang',lang);
+document.documentElement.lang=lang;
+const T=STRINGS[lang];
+const stCls={done:'s-done',conf:'s-conf',obj:'s-obj',rumor:'s-rumor'};
+
+function applyStatic(){
+  document.getElementById('tkLab').textContent=T.breaking;
+  document.getElementById('navHome').textContent=T.home;
+  document.getElementById('navLive').innerHTML='<span class="liveDot"></span>'+T.live;
+  document.getElementById('navChamp').textContent=T.champ;
+  document.getElementById('navNat').textContent=T.nat;
+  document.getElementById('navWorld').textContent=T.world;
+  document.getElementById('hdLive').textContent=T.liveToday;
+  document.getElementById('ctaBoard').textContent=T.openBoard;
+  document.getElementById('hdTop').textContent=T.top;
+  document.getElementById('worldH').innerHTML=T.worldH+' <span class="flag">🌍 Worldwide</span>';
+  document.getElementById('worldSub').textContent=T.worldSub;
+  document.getElementById('footL').innerHTML='<b style="color:var(--txt)">TransferBeat</b> — '+T.tagline;
+  document.getElementById('footR').textContent=T.footR;
+  const ls=document.getElementById('langsw');
+  ls.innerHTML=['it','en','es'].map(l=>`<a data-l="${l}" class="${l===lang?'on':''}">${l.toUpperCase()}</a>`).join('');
+  ls.querySelectorAll('a').forEach(a=>a.onclick=()=>{localStorage.setItem('tb_lang',a.dataset.l);location.search='?lang='+a.dataset.l;});
+}
+applyStatic();
+Promise.all([
+  fetch('data/'+lang+'/home.json').then(r=>{if(!r.ok)throw 0;return r.json();}),
+  fetch('data/'+lang+'/board.json').then(r=>r.ok?r.json():null).catch(()=>null)
+]).then(([home,board])=>render(home,board))
+ .catch(()=>{document.getElementById('error').innerHTML='<div class="err">'+T.err+'</div>';});
+
+function render(home,board){
+  document.getElementById('masthead').innerHTML=
+    `${home.giorno||''}<br>${T.edition} <b>${(home.aggiornato||'').slice(11,16)}</b> · ${T.tagline}`;
+  document.getElementById('ticker').innerHTML=
+    [...(home.ticker||[]),...(home.ticker||[])].map(t=>`<span>🟢 ${t}</span>`).join('');
+
+  const a=home.apertura||{};
+  const heroImg=a.img?`<img src="${a.img}" alt="" onerror="this.style.display='none'">`:`<div class="ico">⚽</div>`;
+  document.getElementById('lead').innerHTML=
+    `<div class="ph">${heroImg}<span class="badge">${T.featured}</span></div>
+     <div class="kicker">${a.categoria||''}</div>
+     <h1>${a.titolo||''}</h1>
+     <div class="by">${T.updatedAt} ${(home.aggiornato||'').slice(11,16)} · ${T.source}: <a href="${a.link||'#'}" target="_blank" rel="noopener" style="color:var(--accent2);font-weight:600">${a.fonte||'—'}</a>${a.dominio?' ('+a.dominio+')':''}</div>`;
+
+  const ph2=(img,emoji)=>img?`<div class="ph2"><img src="${img}" loading="lazy" alt="" onerror="this.parentNode.innerHTML='<span>${emoji}</span>'"></div>`:`<div class="ph2"><span>${emoji}</span></div>`;
+  const card=(o,emoji)=>
+    `<div class="art">
+       <a class="ph2link" href="${o.link||'#'}" target="_blank" rel="noopener">${ph2(o.img,emoji)}</a>
+       <div class="cat">${o.categoria||''}</div>
+       <h3><a href="${o.link||'#'}" target="_blank" rel="noopener">${o.titolo||''}</a></h3>
+       <div class="credit">${T.source}: <a href="${o.link||'#'}" target="_blank" rel="noopener">${o.fonte||'—'}</a>${o.quando?' · '+o.quando:''}</div>
+     </div>`;
+  document.getElementById('sub3').innerHTML=(home.secondari||[]).filter(Boolean).map(s=>card(s,'📰')).join('');
+  document.getElementById('world').innerHTML=(home.mondo||[]).map(m=>card(m,'🌍')).join('');
+
+  let live=[];
+  if(board&&board.squadre){
+    Object.entries(board.squadre).forEach(([team,v])=>{
+      ['done','conf','obj'].forEach(st=>((v.nomi&&v.nomi[st])||[]).forEach(c=>live.push({...c,stato:st,team})));
+    });
+    if(live.length===0){
+      Object.entries(board.squadre).forEach(([team,v])=>{
+        ['done','conf'].forEach(st=>(v.colonne[st]||[]).forEach(c=>live.push({titolo:c.titolo,link:c.link,stato:st})));
+      });
+    }
+    live=live.slice(0,6);
+  }
+  document.getElementById('miniBoard').innerHTML= live.length? live.map(l=>{
+    const label=l.giocatore?`${l.giocatore} ${l.direzione==='out'?'→':'←'} ${l.club||''}`:(l.titolo||'');
+    return `<a class="r" href="${l.link||'#'}" target="_blank" rel="noopener">
+       <span class="st ${stCls[l.stato]}">${T.mini[l.stato]}</span>
+       <span class="tt">${label.length>56?label.slice(0,56)+'…':label}</span></a>`;}).join('')
+    : '<div style="color:var(--muted);font-size:12px;padding:6px 0">—</div>';
+
+  const top=[home.apertura,...(home.secondari||[])].filter(Boolean);
+  document.getElementById('topNews').innerHTML=top.map((t,i)=>
+    `<a class="r" href="${t.link||'#'}" target="_blank" rel="noopener">
+       <span class="st s-obj">${i+1}</span><span class="tt">${t.titolo.length>60?t.titolo.slice(0,60)+'…':t.titolo}</span></a>`).join('');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "_nota": "Classificazione a regole. Si controlla il titolo dallo stato piu forte (done) al piu debole (rumor). Il primo gruppo che trova una parola chiave vince. Default: rumor.",
+  "categorie_ordine": ["done", "conf", "obj", "rumor"],
+  "categorie": {
+    "done": [
+      "ufficiale", "ufficialita", "e fatta", "è fatta", "firma", "ha firmato", "firmato",
+      "comunicato", "here we go", "preso", "annuncio", "annunciato", "colpo chiuso",
+      "visite mediche superate", "nuovo giocatore", "benvenuto"
+    ],
+    "conf": [
+      "accordo", "intesa", "fumata bianca", "ha detto si", "ha detto sì", "raggiunto l'accordo",
+      "visite mediche", "affare in chiusura", "in chiusura", "chiusura vicina", "accordo totale",
+      "accordo raggiunto", "trovata l'intesa"
+    ],
+    "obj": [
+      "obiettivo", "priorita", "priorità", "pista", "in pressing", "pressing", "trattativa",
+      "contatti", "summit", "incontro", "offerta", "proposta", "avanza", "si tratta",
+      "vuole", "punta", "nel mirino", "lavora per"
+    ],
+    "rumor": [
+      "sondaggio", "idea", "suggestione", "interesse", "interessa", "sogno", "puo", "può",
+      "clausola", "spunta", "tentazione", "rumor", "indiscrezione", "possibile", "sirene",
+      "tentazione", "monitora", "segue", "piace"
+    ]
+  },
+  "_nota_affidabilita": "Affidabilita 1-3 in base alla testata (match sul nome della fonte, minuscolo, contains).",
+  "affidabilita": {
+    "3": [
+      "fabrizio romano", "di marzio", "gianluca di marzio", "sky sport", "sky", "the athletic",
+      "l'equipe", "l'équipe", "comunicato", "official", "ufficiale"
+    ],
+    "2": [
+      "gazzetta", "corriere dello sport", "tuttosport", "marca", "as", "mundo deportivo",
+      "sport", "calciomercato.com", "tuttomercatoweb", "tmw", "football italia", "bild", "kicker"
+    ]
+  },
+  "_default_affidabilita": 1
+}

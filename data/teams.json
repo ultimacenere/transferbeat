@@ -1,0 +1,25 @@
+{
+  "kw": { "it": "calciomercato", "en": "football transfer", "es": "fichajes" },
+  "squadre": [
+    { "nome": "Inter",       "search": "Inter Milan",        "lab": "INT", "col": "#0068c8", "league": "Serie A" },
+    { "nome": "Juventus",    "search": "Juventus",           "lab": "JUV", "col": "#b9bdc2", "league": "Serie A" },
+    { "nome": "Milan",       "search": "AC Milan",           "lab": "MIL", "col": "#e11b22", "league": "Serie A" },
+    { "nome": "Napoli",      "search": "Napoli",             "lab": "NAP", "col": "#12a0e8", "league": "Serie A" },
+    { "nome": "Roma",        "search": "AS Roma",            "lab": "ROM", "col": "#8e1f2f", "league": "Serie A" },
+    { "nome": "Real Madrid", "search": "Real Madrid",        "lab": "RMA", "col": "#d4a017", "league": "La Liga" },
+    { "nome": "Barcelona",   "search": "Barcelona",          "lab": "BAR", "col": "#a50044", "league": "La Liga" },
+    { "nome": "Man City",    "search": "Manchester City",    "lab": "MCI", "col": "#6cabdd", "league": "Premier" },
+    { "nome": "Liverpool",   "search": "Liverpool",          "lab": "LIV", "col": "#c8102e", "league": "Premier" }
+  ],
+  "leghe_home": [
+    { "search": "Serie A",        "label": { "it": "Serie A", "en": "Serie A", "es": "Serie A" } },
+    { "search": "Premier League", "label": { "it": "Premier", "en": "Premier League", "es": "Premier League" } },
+    { "search": "La Liga",        "label": { "it": "La Liga", "en": "La Liga", "es": "La Liga" } }
+  ],
+  "mondo_home": [
+    { "search": "Brazil football",          "label": { "it": "Brasile", "en": "Brazil", "es": "Brasil" } },
+    { "search": "Saudi Pro League",         "label": { "it": "Arabia Saudita", "en": "Saudi Arabia", "es": "Arabia Saudí" } },
+    { "search": "MLS Messi",                "label": { "it": "MLS", "en": "MLS", "es": "MLS" } },
+    { "search": "national team World Cup",   "label": { "it": "Nazionali", "en": "National teams", "es": "Selecciones" } }
+  ]
+}
