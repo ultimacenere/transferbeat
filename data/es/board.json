@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-06-03T13:49:23",
+  "aggiornato": "2026-06-03T23:43:19",
   "giorno": "Miercoles 3 junio",
   "squadre": {
     "Inter": {
@@ -13,42 +13,42 @@
             "fonte": "Mundo Deportivo",
             "link": "https://www.mundodeportivo.com",
             "affidabilita": 3,
-            "quando": "15 h"
-          },
-          {
-            "titolo": "El Inter cierra un fichaje y se cubre ante un posible adiós de Bastoni",
-            "fonte": "Mundo Deportivo",
-            "link": "https://www.mundodeportivo.com",
-            "affidabilita": 3,
-            "quando": "29 d"
-          },
-          {
-            "titolo": "¡Done deal! El Real Madrid fichará al lateral derecho, que se dirige al Mundial, tras activar el gigante español una cláusula de rescisión increíblemente baja de 20 millones de euros",
-            "fonte": "Goal.com",
-            "link": "https://www.goal.com",
-            "affidabilita": 2,
             "quando": "5 h"
+          },
+          {
+            "titolo": "Gianluca Mancini, en el punto de mira",
+            "fonte": "Fichajes.com",
+            "link": "https://www.fichajes.com",
+            "affidabilita": 2,
+            "quando": "2 h"
           },
           {
             "titolo": "¡Fichaje sorpresa y golpe maestro sin coste de traspaso! El Real Madrid está a punto de dar un doble golpe espectacular",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "6 h"
+            "quando": "16 h"
           },
           {
-            "titolo": "José Mourinho tiene una petición de 25 M€ para el Real Madrid",
+            "titolo": "El Real Madrid se interesa por Denzel Dumfries mientras el Inter negocia para fichar a su sustituto",
+            "fonte": "Goal.com",
+            "link": "https://www.goal.com",
+            "affidabilita": 2,
+            "quando": "1 d"
+          },
+          {
+            "titolo": "Guerra en Milán por un fichaje",
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "20 h"
+            "quando": "40 d"
           },
           {
-            "titolo": "Cristian Chivu pide 3 fichajes al Inter de Milán",
-            "fonte": "Fichajes.com",
-            "link": "https://www.fichajes.com",
-            "affidabilita": 2,
-            "quando": "15 d"
+            "titolo": "El Inter acelera para sustituir a Dumfries y fastidia un fichaje al FC Barcelona",
+            "fonte": "El Desmarque",
+            "link": "https://www.eldesmarque.com",
+            "affidabilita": 1,
+            "quando": "8 h"
           }
         ],
         "obj": [
@@ -58,18 +58,25 @@
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
             "quando": "4 d"
+          },
+          {
+            "titolo": "Mourinho ya ha dicho al Real Madrid qué defensa quiere fichar junto a Konaté y Dumfries",
+            "fonte": "La Razón",
+            "link": "https://www.larazon.es",
+            "affidabilita": 1,
+            "quando": "9 h"
           }
         ],
-        "conf": [],
-        "done": [
+        "conf": [
           {
-            "titolo": "El presidente del Inter confirma el interés del Barcelona en fichar a Alessandro Bastoni",
+            "titolo": "La selección holandesa se sometió a un reconocimiento médico de su nuevo club pocas horas antes del partido de despedida contra Argelia",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "29 d"
+            "quando": "5 h"
           }
-        ]
+        ],
+        "done": []
       },
       "feed": [
         {
@@ -80,24 +87,91 @@
           "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2025/04/30/6812806805141.jpeg",
           "dominio": "mundodeportivo.com",
           "affidabilita": 3,
-          "quando": "15 h"
+          "quando": "5 h"
         },
         {
-          "titolo": "El Inter cierra un fichaje y se cubre ante un posible adiós de Bastoni",
-          "fonte": "Mundo Deportivo",
+          "titolo": "Gianluca Mancini, en el punto de mira",
+          "fonte": "Fichajes.com",
           "stato": "rumor",
-          "link": "https://www.mundodeportivo.com/futbol/fc-barcelona/20260504/1004178976/inter-cierra-fichaje-cubre-posible-adios-bastoni.html",
-          "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/05/04/69f8f3d63e546.jpeg",
-          "dominio": "mundodeportivo.com",
-          "affidabilita": 3,
-          "quando": "29 d"
+          "link": "https://www.fichajes.com/a2470901205879969430-gianluca-mancini-en-el-punto-de-mira",
+          "img": "https://assets-es.imgfoot.com/media/cache/1200x675/manolo-portanova-et-gianluca-mancini-au-duel.jpg",
+          "dominio": "fichajes.com",
+          "affidabilita": 2,
+          "quando": "2 h"
+        },
+        {
+          "titolo": "La selección holandesa se sometió a un reconocimiento médico de su nuevo club pocas horas antes del partido de despedida contra Argelia",
+          "fonte": "Goal.com",
+          "stato": "conf",
+          "link": "https://www.goal.com/es/noticias/la-seleccion-holandesa-se-sometio-a-un-reconocimiento-medico-de-su-nuevo-club-pocas-horas-antes-del-partido-de-despedida-contra-argelia/bltb3cf440f1b32d7cb",
+          "img": "https://assets.goal.com/images/v3/blt8bae8e8cc355c302/crop/MM5DGNJTGY5DCOJYHE5G433XMU5DAORRHA3Q====/imago1078063265.jpg",
+          "dominio": "goal.com",
+          "affidabilita": 2,
+          "quando": "5 h"
+        },
+        {
+          "titolo": "¡Fichaje sorpresa y golpe maestro sin coste de traspaso! El Real Madrid está a punto de dar un doble golpe espectacular",
+          "fonte": "Goal.com",
+          "stato": "rumor",
+          "link": "https://www.goal.com/es/listados/fichaje-sorpresa-y-golpe-maestro-sin-coste-de-traspaso-el-real-madrid-esta-a-punto-de-dar-un-doble-golpe-espectacular/blt4f2187616c629a41",
+          "img": "https://assets.goal.com/images/v3/bltb16c4d0db1966097/1600.jpg",
+          "dominio": "goal.com",
+          "affidabilita": 2,
+          "quando": "16 h"
+        },
+        {
+          "titolo": "El Real Madrid se interesa por Denzel Dumfries mientras el Inter negocia para fichar a su sustituto",
+          "fonte": "Goal.com",
+          "stato": "rumor",
+          "link": "https://www.goal.com/es/listados/el-real-madrid-se-interesa-por-denzel-dumfries-mientras-el-inter-negocia-para-fichar-a-su-sustituto/blt1451fdb76c361cb7",
+          "img": "https://assets.goal.com/images/v3/bltf6a02e33ef650236/GettyImages-2222179329(1).jpg",
+          "dominio": "goal.com",
+          "affidabilita": 2,
+          "quando": "1 d"
+        },
+        {
+          "titolo": "El Inter de Milán, dispuesto a tirar la casa por la ventana por un objetivo del FC Barcelona",
+          "fonte": "Fichajes.com",
+          "stato": "obj",
+          "link": "https://www.fichajes.com/a902174755202892003-el-inter-de-milan-dispuesto-a-tirar-la-casa-por-la-ventana-por-un-objetivo-del-fc-barcelona",
+          "img": "https://assets-es.imgfoot.com/media/cache/1200x675/christian-chivu-2425.jpg",
+          "dominio": "fichajes.com",
+          "affidabilita": 2,
+          "quando": "4 d"
         }
       ],
       "nomi": {
         "rumor": [],
-        "obj": [],
+        "obj": [
+          {
+            "giocatore": "Gianluca Mancini",
+            "direzione": "in",
+            "club": "Roma"
+          },
+          {
+            "giocatore": "Ruben Dias",
+            "direzione": "in",
+            "club": "Manchester City"
+          },
+          {
+            "giocatore": "Curtis Jones",
+            "direzione": "in",
+            "club": "Liverpool"
+          },
+          {
+            "giocatore": "Nico Paz",
+            "direzione": "in",
+            "club": "Real Madrid"
+          }
+        ],
         "conf": [],
-        "done": []
+        "done": [
+          {
+            "giocatore": "Dumfries",
+            "direzione": "out",
+            "club": "Real Madrid"
+          }
+        ]
       }
     },
     "Juventus": {
@@ -107,32 +181,32 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "La Juventus pone el punto de mira en el Real Madrid",
+            "titolo": "Vlahovic se pone a tiro",
             "fonte": "Mundo Deportivo",
             "link": "https://www.mundodeportivo.com",
             "affidabilita": 3,
-            "quando": "4 d"
+            "quando": "4 h"
           },
           {
             "titolo": "Decisión final para Vlahovic",
             "fonte": "SPORT",
             "link": "https://www.sport.es",
             "affidabilita": 2,
-            "quando": "5 h"
+            "quando": "15 h"
           },
           {
             "titolo": "«La Juventus se fija en Brahim Díaz, pero tiene un plan B: un internacional holandés en su lista de deseos»",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "5 h"
+            "quando": "15 h"
           },
           {
             "titolo": "La Juventus de Turín busca central en España",
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "15 h"
+            "quando": "1 d"
           },
           {
             "titolo": "Randal Kolo Muani escoge equipo",
@@ -146,10 +220,24 @@
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "1 d"
+            "quando": "2 d"
           }
         ],
         "obj": [
+          {
+            "titolo": "Andrea Cambiaso, objetivo recurrente",
+            "fonte": "Fichajes.com",
+            "link": "https://www.fichajes.com",
+            "affidabilita": 2,
+            "quando": "5 h"
+          },
+          {
+            "titolo": "La Juventus va a por Koke",
+            "fonte": "Comuniate",
+            "link": "https://www.comuniate.com",
+            "affidabilita": 1,
+            "quando": "13 h"
+          },
           {
             "titolo": "Noticias sobre fichajes, 1 de junio: El Real Madrid persigue a Declan Rice, Alisson quiere unirse a la Juventus.",
             "fonte": "Vietnam.vn",
@@ -163,14 +251,24 @@
       },
       "feed": [
         {
-          "titolo": "La Juventus pone el punto de mira en el Real Madrid",
+          "titolo": "Vlahovic se pone a tiro",
           "fonte": "Mundo Deportivo",
           "stato": "rumor",
-          "link": "https://www.mundodeportivo.com/futbol/fichajes/20260529/1004189190/camavinga.html",
-          "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/04/06/69d3915f5f7ca.jpeg",
+          "link": "https://www.mundodeportivo.com/futbol/serie-a/20260603/1004191058/vlahovic-pone-tiro.html",
+          "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/files/fp/uploads/2025/10/22/68f939ac14019.r_d.1592-769-4870.jpeg",
           "dominio": "mundodeportivo.com",
           "affidabilita": 3,
-          "quando": "4 d"
+          "quando": "4 h"
+        },
+        {
+          "titolo": "Andrea Cambiaso, objetivo recurrente",
+          "fonte": "Fichajes.com",
+          "stato": "obj",
+          "link": "https://www.fichajes.com/a270894798995921041-andrea-cambiaso-objetivo-recurrente",
+          "img": "https://assets-es.imgfoot.com/media/cache/1200x675/andrea-cambiaso-3.jpg",
+          "dominio": "fichajes.com",
+          "affidabilita": 2,
+          "quando": "5 h"
         },
         {
           "titolo": "Decisión final para Vlahovic",
@@ -180,12 +278,69 @@
           "img": "https://estaticos-cdn.prensaiberica.es/clip/5f52bdf8-4091-4c8a-9ffa-ff216f2b52fc_16-9-discover-aspect-ratio_default_0.jpg",
           "dominio": "sport.es",
           "affidabilita": 2,
-          "quando": "5 h"
+          "quando": "15 h"
+        },
+        {
+          "titolo": "«La Juventus se fija en Brahim Díaz, pero tiene un plan B: un internacional holandés en su lista de deseos»",
+          "fonte": "Goal.com",
+          "stato": "rumor",
+          "link": "https://www.goal.com/es/noticias/la-juventus-se-fija-en-brahim-diaz-pero-tiene-un-plan-b-un-internacional-holandes-en-su-lista-de-deseos/bltd54f599e982c1df1",
+          "img": "https://assets.goal.com/images/v3/blt92a3c1323b6ba6e9/crop/MM5DGMRQGA5DCOBQGA5G433XMU5DGNZTHIYTIMY=/GettyImages-2194389511.jpg",
+          "dominio": "goal.com",
+          "affidabilita": 2,
+          "quando": "15 h"
+        },
+        {
+          "titolo": "La Juventus de Turín busca central en España",
+          "fonte": "Fichajes.com",
+          "stato": "rumor",
+          "link": "https://www.fichajes.com/a3891695904785939124-la-juventus-de-turin-busca-central-en-espana",
+          "img": "https://assets-es.imgfoot.com/media/cache/1200x675/design-sans-titre-2025-09-13t195246-095.jpg",
+          "dominio": "fichajes.com",
+          "affidabilita": 2,
+          "quando": "1 d"
+        },
+        {
+          "titolo": "Randal Kolo Muani escoge equipo",
+          "fonte": "Fichajes.com",
+          "stato": "rumor",
+          "link": "https://www.fichajes.com/a8638264097824403552-randal-kolo-muani-escoge-equipo",
+          "img": "https://assets-es.imgfoot.com/media/cache/1200x675/randal-kolo-muani-2526-697b4dd790f35.jpg",
+          "dominio": "fichajes.com",
+          "affidabilita": 2,
+          "quando": "1 d"
         }
       ],
       "nomi": {
-        "rumor": [],
-        "obj": [],
+        "rumor": [
+          {
+            "giocatore": "Alisson",
+            "direzione": "in",
+            "club": "Liverpool"
+          }
+        ],
+        "obj": [
+          {
+            "giocatore": "Vlahovic",
+            "direzione": "in",
+            "club": ""
+          },
+          {
+            "giocatore": "Andrea Cambiaso",
+            "direzione": "in",
+            "club": ""
+          },
+          {
+            "giocatore": "Brahim Díaz",
+            "direzione": "in",
+            "club": ""
+          },
+          {
+            "giocatore": "Koke",
+            "direzione": "in",
+            "club": "Atlético"
+          }
+        ],
         "conf": [],
         "done": []
       }
@@ -197,6 +352,13 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "Rafael Leao anuncia que deja el Milan",
+            "fonte": "Marca",
+            "link": "https://www.marca.com/futbol/2026/05/31/rafael-leao-anuncia-deja-milan.html",
+            "affidabilita": 3,
+            "quando": "3 d"
+          },
+          {
             "titolo": "Con o sin Santiago Giménez, AC Milan va por fichaje estrella de la Bundesliga",
             "fonte": "MARCA",
             "link": "https://www.marca.com",
@@ -204,11 +366,25 @@
             "quando": "42 d"
           },
           {
-            "titolo": "Batalla descomunal en Inglaterra por Rafael Leao",
+            "titolo": "Una inesperada opción para la vanguardia del AC Milan",
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "1 d"
+            "quando": "2 h"
+          },
+          {
+            "titolo": "Leon Goretzka contacta con el Arsenal y otros equipos de la Premier League tras descartar Juventus y AC Milan ficharlo como agente libre",
+            "fonte": "Goal.com",
+            "link": "https://www.goal.com",
+            "affidabilita": 2,
+            "quando": "15 h"
+          },
+          {
+            "titolo": "Mohamed Salah, Bernardo Silva, Robert Lewandowski y los 20 mejores agentes libres para el mercado de fichajes de verano de 2026, clasificados",
+            "fonte": "Goal.com",
+            "link": "https://www.goal.com",
+            "affidabilita": 2,
+            "quando": "2 d"
           },
           {
             "titolo": "Rafael Leao toma una decisión",
@@ -216,27 +392,6 @@
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
             "quando": "3 d"
-          },
-          {
-            "titolo": "¡El AC Milan podría perder a Adrien Rabiot, Allegri y Luka Modric!",
-            "fonte": "Fichajes.com",
-            "link": "https://www.fichajes.com",
-            "affidabilita": 2,
-            "quando": "29 d"
-          },
-          {
-            "titolo": "El Manchester United está dispuesto a ofrecer TRES jugadores al AC Milan para cerrar el fichaje de Rafael Leão",
-            "fonte": "Goal.com",
-            "link": "https://www.goal.com",
-            "affidabilita": 2,
-            "quando": "33 d"
-          },
-          {
-            "titolo": "Fichajes. Lo más destacado del mercado en la Serie A italiana: lío en el Milan - El Imparcial",
-            "fonte": "Diario liberal e independiente",
-            "link": "https://www.elimparcial.es",
-            "affidabilita": 1,
-            "quando": "16 h"
           }
         ],
         "obj": [
@@ -253,6 +408,16 @@
       },
       "feed": [
         {
+          "titolo": "Rafael Leao anuncia que deja el Milan",
+          "fonte": "Marca",
+          "stato": "rumor",
+          "link": "https://www.marca.com/futbol/2026/05/31/rafael-leao-anuncia-deja-milan.html",
+          "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/04/28/69f0923289fa7.jpeg",
+          "dominio": "marca.com",
+          "affidabilita": 3,
+          "quando": "3 d"
+        },
+        {
           "titolo": "Con o sin Santiago Giménez, AC Milan va por fichaje estrella de la Bundesliga",
           "fonte": "MARCA",
           "stato": "rumor",
@@ -263,20 +428,73 @@
           "quando": "42 d"
         },
         {
-          "titolo": "Batalla descomunal en Inglaterra por Rafael Leao",
+          "titolo": "Una inesperada opción para la vanguardia del AC Milan",
           "fonte": "Fichajes.com",
           "stato": "rumor",
-          "link": "https://www.fichajes.com/a7748612890850521314-batalla-descomunal-en-inglaterra-por-rafael-leao",
-          "img": "https://assets-es.imgfoot.com/media/cache/1200x675/rafael-leao-2526-69ba7f9bd7deb.jpg",
+          "link": "https://www.fichajes.com/a2594699066311923949-una-inesperada-opcion-para-la-vanguardia-del-ac-milan",
+          "img": "https://assets-es.imgfoot.com/media/cache/1200x675/nkunku-milan-but.jpg",
           "dominio": "fichajes.com",
           "affidabilita": 2,
-          "quando": "1 d"
+          "quando": "2 h"
+        },
+        {
+          "titolo": "Leon Goretzka contacta con el Arsenal y otros equipos de la Premier League tras descartar Juventus y AC Milan ficharlo como agente libre",
+          "fonte": "Goal.com",
+          "stato": "rumor",
+          "link": "https://www.goal.com/es/listados/leon-goretzka-contacta-con-el-arsenal-y-otros-equipos-de-la-premier-league-tras-descartar-juventus-y-ac-milan-ficharlo-como-agente-libre/blt3b7c35e896bd7a27",
+          "img": "https://assets.goal.com/images/v3/getty-2273069088/crop/MM5DENBTGI5DCMZWHA5G433XMU5DGNJRHI2Q====/GettyImages-2273069088.jpg",
+          "dominio": "goal.com",
+          "affidabilita": 2,
+          "quando": "15 h"
+        },
+        {
+          "titolo": "Mohamed Salah, Bernardo Silva, Robert Lewandowski y los 20 mejores agentes libres para el mercado de fichajes de verano de 2026, clasificados",
+          "fonte": "Goal.com",
+          "stato": "rumor",
+          "link": "https://www.goal.com/es/listados/mohamed-salah-bernardo-silva-robert-lewandowski-y-los-20-mejores-agentes-libres-para-el-mercado-de-fichajes-de-verano-de-2026-clasificados/blt2ab13d666bdefc02",
+          "img": "https://assets.goal.com/images/v3/bltddc746e9a2a5ca99/Best%20free%20agents%20(1).jpg",
+          "dominio": "goal.com",
+          "affidabilita": 2,
+          "quando": "2 d"
+        },
+        {
+          "titolo": "Rafael Leao toma una decisión",
+          "fonte": "Fichajes.com",
+          "stato": "rumor",
+          "link": "https://www.fichajes.com/a3120087817182313613-rafael-leao-toma-una-decision",
+          "img": "https://assets-es.imgfoot.com/media/cache/1200x675/rafael-leao-2526-6a15468e8cdb7.jpg",
+          "dominio": "fichajes.com",
+          "affidabilita": 2,
+          "quando": "3 d"
         }
       ],
       "nomi": {
-        "rumor": [],
-        "obj": [],
-        "conf": [],
+        "rumor": [
+          {
+            "giocatore": "Rafael Leao",
+            "direzione": "out",
+            "club": "Manchester United"
+          },
+          {
+            "giocatore": "Leon Goretzka",
+            "direzione": "in",
+            "club": "Juventus"
+          }
+        ],
+        "obj": [
+          {
+            "giocatore": "Santiago Giménez",
+            "direzione": "in",
+            "club": "Bundesliga"
+          }
+        ],
+        "conf": [
+          {
+            "giocatore": "Rafael Leao",
+            "direzione": "out",
+            "club": "Manchester United"
+          }
+        ],
         "done": []
       }
     },
@@ -291,7 +509,7 @@
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "3 h"
+            "quando": "13 h"
           },
           {
             "titolo": "El Nápoles se asegura la Champions... y un fichaje",
@@ -312,14 +530,14 @@
             "fonte": "Transfermarkt",
             "link": "https://www.transfermarkt.es",
             "affidabilita": 1,
-            "quando": "4 d"
+            "quando": "5 d"
           },
           {
             "titolo": "SSC Nápoles",
             "fonte": "Transfermarkt",
             "link": "https://www.transfermarkt.es",
             "affidabilita": 1,
-            "quando": "5 d"
+            "quando": "6 d"
           },
           {
             "titolo": "SSC Nápoles UEFA (Sub-19) - Fichajes 25/26",
@@ -335,7 +553,7 @@
             "fonte": "OneFootball",
             "link": "https://onefootball.com",
             "affidabilita": 1,
-            "quando": "3 h"
+            "quando": "13 h"
           },
           {
             "titolo": "Javi Guerra condiciona los fichajes Valencia por el interés del Napoli",
@@ -352,14 +570,21 @@
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "1 h"
+            "quando": "11 h"
+          },
+          {
+            "titolo": "Una vez más, confirmación: Concreto Napoli se enfoca en el PSV",
+            "fonte": "PSV Inside",
+            "link": "https://www.psvinside.nl",
+            "affidabilita": 1,
+            "quando": "7 h"
           },
           {
             "titolo": "Mercado de FICHAJES. Allegri, a un paso de firmar con el Napoli",
             "fonte": "OneFootball",
             "link": "https://onefootball.com",
             "affidabilita": 1,
-            "quando": "4 h"
+            "quando": "14 h"
           }
         ]
       },
@@ -372,7 +597,7 @@
           "img": "https://assets.goal.com/images/v3/bltb084d95d5a781ee5/crop/MM5DGNRZGY5DEMBXHE5G433XMU5DGNZYHIZDA===/hojlund.jpg",
           "dominio": "goal.com",
           "affidabilita": 2,
-          "quando": "1 h"
+          "quando": "11 h"
         },
         {
           "titolo": "Rasmus Hojlund deja 50 M€ en las arcas del Manchester United",
@@ -382,14 +607,66 @@
           "img": "https://assets-es.imgfoot.com/media/cache/1200x675/rasmus-hojlund-2526-beim-torjubel.jpg",
           "dominio": "fichajes.com",
           "affidabilita": 2,
-          "quando": "3 h"
+          "quando": "13 h"
+        },
+        {
+          "titolo": "El Nápoles se asegura la Champions... y un fichaje",
+          "fonte": "SPORT",
+          "stato": "rumor",
+          "link": "https://www.sport.es/es/noticias/futbol-internacional/napoles-asegura-champions-fichaje-130327344",
+          "img": "https://estaticos-cdn.prensaiberica.es/clip/d1f6973f-6380-4b04-b37b-9c339f2dfb77_16-9-discover-aspect-ratio_default_0_x1000y444.jpg",
+          "dominio": "sport.es",
+          "affidabilita": 2,
+          "quando": "17 d"
+        },
+        {
+          "titolo": "Una vez más, confirmación: Concreto Napoli se enfoca en el PSV",
+          "fonte": "PSV Inside",
+          "stato": "done",
+          "link": "https://www.psvinside.nl/es/noticias/una-vez-ms-confirmacin-concreto-napoli-se-enfoca-en-el-psv",
+          "img": "https://www.psvinside.nl/api/media/file/napoli3-685a7af6bb653.webp",
+          "dominio": "psvinside.nl",
+          "affidabilita": 1,
+          "quando": "7 h"
+        },
+        {
+          "titolo": "Mercado de FICHAJES. El Napoli adquiere completamente a Rasmus Højlund",
+          "fonte": "OneFootball",
+          "stato": "obj",
+          "link": "https://onefootball.com/es/noticias/mercado-de-fichajes-el-napoli-adquiere-completamente-a-rasmus-hojlund-42958960",
+          "img": "",
+          "dominio": "onefootball.com",
+          "affidabilita": 1,
+          "quando": "13 h"
+        },
+        {
+          "titolo": "Mercado de FICHAJES. Allegri, a un paso de firmar con el Napoli",
+          "fonte": "OneFootball",
+          "stato": "done",
+          "link": "https://onefootball.com/id/berita/mercado-de-fichajes-allegri-a-un-paso-de-firmar-con-el-napoli-42958960",
+          "img": "",
+          "dominio": "onefootball.com",
+          "affidabilita": 1,
+          "quando": "14 h"
         }
       ],
       "nomi": {
         "rumor": [],
         "obj": [],
-        "conf": [],
-        "done": []
+        "conf": [
+          {
+            "giocatore": "Allegri",
+            "direzione": "in",
+            "club": ""
+          }
+        ],
+        "done": [
+          {
+            "giocatore": "Rasmus Hojlund",
+            "direzione": "in",
+            "club": "Manchester United"
+          }
+        ]
       }
     },
     "Roma": {
@@ -417,7 +694,7 @@
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "1 d"
+            "quando": "2 d"
           },
           {
             "titolo": "Revolución total en la Roma",
@@ -427,18 +704,18 @@
             "quando": "43 d"
           },
           {
+            "titolo": "El PSV se lanza a pescar en la Roma",
+            "fonte": "Fichajes.com",
+            "link": "https://www.fichajes.com",
+            "affidabilita": 2,
+            "quando": "69 d"
+          },
+          {
             "titolo": "¿Cuánto vale Falcone?: el mensaje a la Roma, el mercado de fichajes y la posibilidad de una despedida",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
             "quando": "72 d"
-          },
-          {
-            "titolo": "Roma, hay un detalle en el fichaje de Zaragoza: si no lo compra, deberá pagar una indemnización al Bayern de Múnich",
-            "fonte": "Goal.com",
-            "link": "https://www.goal.com",
-            "affidabilita": 2,
-            "quando": "75 d"
           }
         ],
         "obj": [
@@ -481,13 +758,65 @@
           "dominio": "mundodeportivo.com",
           "affidabilita": 3,
           "quando": "140 d"
+        },
+        {
+          "titolo": "«Malen trabaja para fichar a una estrella para la AS Roma»",
+          "fonte": "Goal.com",
+          "stato": "rumor",
+          "link": "https://www.goal.com/es-mx/noticias/malen-trabaja-para-fichar-a-una-estrella-para-la-as-roma/bltf302aeb77ee9465f",
+          "img": "https://assets.goal.com/images/v3/getty-2261826886/crop/MM5DGMJWHA5DCNZYGI5G433XMU5DEMBYHIYTKMY=/GettyImages-2261826886.jpg",
+          "dominio": "goal.com",
+          "affidabilita": 2,
+          "quando": "2 d"
+        },
+        {
+          "titolo": "Revolución total en la Roma",
+          "fonte": "Fichajes.com",
+          "stato": "rumor",
+          "link": "https://www.fichajes.com/a7090882402050413915-revolucion-total-en-la-roma",
+          "img": "https://assets-es.imgfoot.com/media/cache/1200x675/epaliveeight678698.jpg",
+          "dominio": "fichajes.com",
+          "affidabilita": 2,
+          "quando": "43 d"
+        },
+        {
+          "titolo": "La AS Roma quiere dar forma a cuatro renovaciones",
+          "fonte": "Fichajes.com",
+          "stato": "obj",
+          "link": "https://www.fichajes.com/a5796018519810174939-la-as-roma-quiere-dar-forma-a-cuatro-renovaciones",
+          "img": "https://assets-es.imgfoot.com/media/cache/1200x675/frederic-massara-2526.jpg",
+          "dominio": "fichajes.com",
+          "affidabilita": 2,
+          "quando": "46 d"
+        },
+        {
+          "titolo": "El PSV se lanza a pescar en la Roma",
+          "fonte": "Fichajes.com",
+          "stato": "rumor",
+          "link": "https://www.fichajes.com/a4417429992379688421-el-psv-se-lanza-a-pescar-en-la-roma",
+          "img": "https://assets-es.imgfoot.com/media/cache/1200x675/fred-rutten-2425.jpg",
+          "dominio": "fichajes.com",
+          "affidabilita": 2,
+          "quando": "69 d"
         }
       ],
       "nomi": {
-        "rumor": [],
+        "rumor": [
+          {
+            "giocatore": "Raspadori",
+            "direzione": "in",
+            "club": ""
+          }
+        ],
         "obj": [],
         "conf": [],
-        "done": []
+        "done": [
+          {
+            "giocatore": "Buba Sangaré",
+            "direzione": "out",
+            "club": "Elche"
+          }
+        ]
       }
     },
     "Real Madrid": {
@@ -497,85 +826,162 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "Mercado de fichajes, en directo | altas, bajas y última hora del Real Madrid, Barcelona...",
-            "fonte": "MARCA",
-            "link": "https://www.marca.com",
-            "affidabilita": 3,
-            "quando": "1 h"
-          },
-          {
-            "titolo": "Florentino Pérez: “El jueves anunciaré el primer gran fichaje”",
+            "titolo": "Florentino: “Mourinho y Konaté son mis primeros fichajes”",
             "fonte": "Diario AS",
             "link": "https://as.com",
             "affidabilita": 3,
-            "quando": "7 h"
+            "quando": "2 h"
           },
           {
-            "titolo": "Filtran un nuevo nombre para el Real Madrid de Mourinho: Alexis Mac Allister",
-            "fonte": "OkDiario",
-            "link": "https://okdiario.com",
+            "titolo": "Florentino Pérez anuncia ¡el fichaje de Mourinho!",
+            "fonte": "Mundo Deportivo",
+            "link": "https://www.mundodeportivo.com",
+            "affidabilita": 3,
+            "quando": "3 h"
+          },
+          {
+            "titolo": "Konaté, el viejo sueño del Real Madrid y un 'caramelo' al que Arabia tienta: \"Es hora de un nuevo desafío\"",
+            "fonte": "Marca",
+            "link": "https://www.marca.com/futbol/premier-league/2026/06/01/konate-viejo-sueno-real-madrid-caramelo-arabia-tienta-hora-nuevo-desafio.html",
+            "affidabilita": 3,
+            "quando": "2 d"
+          },
+          {
+            "titolo": "El Real Madrid se lanza a por Raúl Lema, la perla del Deportivo",
+            "fonte": "Marca",
+            "link": "https://www.marca.com/futbol/real-madrid/2026/05/29/real-madrid-lanza-raul-lema-perla-deportivo.html",
+            "affidabilita": 3,
+            "quando": "5 d"
+          },
+          {
+            "titolo": "Mercado de fichajes, en directo: última hora de FC Barcelona, Real Madrid y todas las altas y bajas de las grandes ligas",
+            "fonte": "SPORT",
+            "link": "https://www.sport.es",
             "affidabilita": 2,
-            "quando": "8 h"
+            "quando": "6 h"
           },
           {
-            "titolo": "Así sería el once del Real Madrid con el fichaje de Ibrahima Konaté",
-            "fonte": "Sports Illustrated",
-            "link": "https://www.si.com",
+            "titolo": "Se complica la opción Josko Gvardiol",
+            "fonte": "Fichajes.com",
+            "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "22 h"
-          },
-          {
-            "titolo": "La respuesta de Dani Ceballos ante los primeros rumores del mercado",
-            "fonte": "ABC",
-            "link": "https://www.abc.es",
-            "affidabilita": 1,
-            "quando": "4 h"
-          },
-          {
-            "titolo": "El Real Madrid cierra los dos primeros fichajes para José Mourinho: adiós a Alaba y Carvajal",
-            "fonte": "Crónica Global",
-            "link": "https://cronicaglobal.elespanol.com",
-            "affidabilita": 1,
-            "quando": "4 h"
+            "quando": "10 h"
           }
         ],
         "obj": [],
         "conf": [],
         "done": [
           {
-            "titolo": "Florentino: \"No me creo nada de Riquelme, lógicamente no tiene cerrado el fichaje de Rodri\"",
-            "fonte": "SPORT",
-            "link": "https://www.sport.es",
-            "affidabilita": 2,
-            "quando": "4 h"
+            "titolo": "Riquelme anuncia que sus fichajes irán bajo firma de notario: \"Cumpliré mis promesas\"",
+            "fonte": "MARCA",
+            "link": "https://www.marca.com",
+            "affidabilita": 3,
+            "quando": "8 h"
           }
         ]
       },
       "feed": [
         {
-          "titolo": "Mercado de fichajes, en directo | altas, bajas y última hora del Real Madrid, Barcelona...",
-          "fonte": "MARCA",
-          "stato": "rumor",
-          "link": "https://www.marca.com/futbol/mercado-fichajes/2026/06/03/6a1fd3a71c831c17f44e43cb-directo.html",
-          "img": "https://objetos.estaticos-marca.com/assets/multimedia/imagenes/2026/06/03/17804715285869.jpg",
-          "dominio": "marca.com",
-          "affidabilita": 3,
-          "quando": "1 h"
-        },
-        {
-          "titolo": "Florentino Pérez: “El jueves anunciaré el primer gran fichaje”",
+          "titolo": "Florentino: “Mourinho y Konaté son mis primeros fichajes”",
           "fonte": "Diario AS",
           "stato": "rumor",
-          "link": "https://as.com/futbol/primera/florentino-perez-el-jueves-anunciare-el-primer-gran-fichaje-f202606-n/",
-          "img": "",
+          "link": "https://as.com/futbol/primera/florentino-mourinho-y-konate-son-mis-primeros-fichajes-f202606-n/",
+          "img": "https://img.asmedia.epimg.net/resizer/v2/YQU3BVPN5REKTFJXRIKSVNTMW4.jpg?auth=b46be4a85ded2df23502c4941671d66f6530118e0aff38402fcf81cf816fcf0c&width=1472&height=828&focal=617%2C235",
           "dominio": "as.com",
           "affidabilita": 3,
-          "quando": "7 h"
+          "quando": "2 h"
+        },
+        {
+          "titolo": "Florentino Pérez anuncia ¡el fichaje de Mourinho!",
+          "fonte": "Mundo Deportivo",
+          "stato": "rumor",
+          "link": "https://www.mundodeportivo.com/futbol/real-madrid/20260603/1004191076/florentino-perez-anuncia-fichaje-mourinho.html",
+          "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/06/03/6a208eb69e3d8.jpeg",
+          "dominio": "mundodeportivo.com",
+          "affidabilita": 3,
+          "quando": "3 h"
+        },
+        {
+          "titolo": "Riquelme anuncia que sus fichajes irán bajo firma de notario: \"Cumpliré mis promesas\"",
+          "fonte": "MARCA",
+          "stato": "done",
+          "link": "https://www.marca.com/futbol/real-madrid/2026/06/03/riquelme-anuncia-fichajes-iran-firma-notario-cumplire-mis-promesas.html",
+          "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/06/03/bLami1g83NaFgsRI0.jpeg",
+          "dominio": "marca.com",
+          "affidabilita": 3,
+          "quando": "8 h"
+        },
+        {
+          "titolo": "Konaté, el viejo sueño del Real Madrid y un 'caramelo' al que Arabia tienta: \"Es hora de un nuevo desafío\"",
+          "fonte": "Marca",
+          "stato": "rumor",
+          "link": "https://www.marca.com/futbol/premier-league/2026/06/01/konate-viejo-sueno-real-madrid-caramelo-arabia-tienta-hora-nuevo-desafio.html",
+          "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/06/01/6a1d2af3b4bf2.jpeg",
+          "dominio": "marca.com",
+          "affidabilita": 3,
+          "quando": "2 d"
+        },
+        {
+          "titolo": "El Real Madrid se lanza a por Raúl Lema, la perla del Deportivo",
+          "fonte": "Marca",
+          "stato": "rumor",
+          "link": "https://www.marca.com/futbol/real-madrid/2026/05/29/real-madrid-lanza-raul-lema-perla-deportivo.html",
+          "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/05/29/6a19df0daef76.jpeg",
+          "dominio": "marca.com",
+          "affidabilita": 3,
+          "quando": "5 d"
+        },
+        {
+          "titolo": "Mercado de fichajes, en directo: última hora de FC Barcelona, Real Madrid y todas las altas y bajas de las grandes ligas",
+          "fonte": "SPORT",
+          "stato": "rumor",
+          "link": "https://www.sport.es/es/noticias/mercado-fichajes/mercado-fichajes-directo-ultima-hora-130957605",
+          "img": "https://estaticos-cdn.prensaiberica.es/clip/2feee01b-44ff-4cff-871a-06bc7fca7054_16-9-discover-aspect-ratio_default_0_x677y253.jpg",
+          "dominio": "sport.es",
+          "affidabilita": 2,
+          "quando": "6 h"
         }
       ],
       "nomi": {
-        "rumor": [],
-        "obj": [],
+        "rumor": [
+          {
+            "giocatore": "Josko Gvardiol",
+            "direzione": "in",
+            "club": ""
+          },
+          {
+            "giocatore": "Gvardiol",
+            "direzione": "in",
+            "club": "Manchester City"
+          }
+        ],
+        "obj": [
+          {
+            "giocatore": "Konaté",
+            "direzione": "in",
+            "club": ""
+          },
+          {
+            "giocatore": "Raúl Lema",
+            "direzione": "in",
+            "club": "Deportivo"
+          },
+          {
+            "giocatore": "Alexis Mac Allister",
+            "direzione": "in",
+            "club": ""
+          },
+          {
+            "giocatore": "Haaland",
+            "direzione": "in",
+            "club": ""
+          },
+          {
+            "giocatore": "Rodri",
+            "direzione": "in",
+            "club": ""
+          }
+        ],
         "conf": [],
         "done": []
       }
@@ -591,70 +997,77 @@
             "fonte": "MARCA",
             "link": "https://www.marca.com",
             "affidabilita": 3,
-            "quando": "1 h"
-          },
-          {
-            "titolo": "Bromas a Gordon por su fichaje por el Barça",
-            "fonte": "Mundo Deportivo",
-            "link": "https://www.mundodeportivo.com",
-            "affidabilita": 3,
-            "quando": "4 h"
+            "quando": "2 h"
           },
           {
             "titolo": "Las razones de la apuesta del Barça por Julián Álvarez, al detalle",
             "fonte": "Mundo Deportivo",
             "link": "https://www.mundodeportivo.com",
             "affidabilita": 3,
-            "quando": "6 h"
+            "quando": "12 h"
           },
           {
-            "titolo": "Sergiño Dest, una inesperada fuente de ingresos para el FC Barcelona",
-            "fonte": "Fichajes.com",
-            "link": "https://www.fichajes.com",
+            "titolo": "Kaiki podría ser el tapado del Barcelona para su defensa: un lateral de 15 millones",
+            "fonte": "Marca",
+            "link": "https://www.marca.com/futbol/barcelona/2026/06/01/kaiki-podria-tapado-barcelona-defensa-lateral-15-millones.html",
+            "affidabilita": 3,
+            "quando": "2 d"
+          },
+          {
+            "titolo": "5 opciones de delanteros centros si el fichaje de Julián Álvarez no se da con el Barcelona",
+            "fonte": "Sports Illustrated",
+            "link": "https://www.si.com",
             "affidabilita": 2,
-            "quando": "3 h"
+            "quando": "2 h"
           },
           {
-            "titolo": "El día que Laporta prometió el fichaje de Bernardo Silva",
+            "titolo": "El United, abierto a ceder por Rashford ante la postura del Barça",
             "fonte": "SPORT",
             "link": "https://www.sport.es",
             "affidabilita": 2,
-            "quando": "5 h"
+            "quando": "11 h"
           },
           {
             "titolo": "Buenas noticias para el mercado de fichajes del Barcelona: el precio de Joao Cancelo se fija en 15 millones de euros",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "5 h"
+            "quando": "15 h"
           }
         ],
-        "obj": [
+        "obj": [],
+        "conf": [
           {
-            "titolo": "El Manchester United rechaza una oferta del FC Barcelona",
+            "titolo": "¡Bernardo Silva ha llegado a un acuerdo con un club!",
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "6 h"
+            "quando": "8 h"
           },
           {
-            "titolo": "Cambio de planes con Ronald Araujo, oferta por Christensen y lío inesperado en la zaga del Barcelona",
-            "fonte": "El Desmarque",
-            "link": "https://www.eldesmarque.com",
+            "titolo": "\"El Chiringuito\" desvela el pacto entre Julián Álvarez y el Atlético para su fichaje por el Barça",
+            "fonte": "La Razón",
+            "link": "https://www.larazon.es",
             "affidabilita": 1,
             "quando": "16 h"
           }
         ],
-        "conf": [
+        "done": [
           {
-            "titolo": "Acuerdo a la vista: Segundo fichaje del FC Barcelona tras Antony Gordon",
-            "fonte": "Superdeporte",
-            "link": "https://www.superdeporte.es",
+            "titolo": "¿Hay vida tras Alexia Putellas y Mapi León? Los tres primeros fichajes del Barça Femenino 2026-27 ya están cerrados",
+            "fonte": "Crónica Global",
+            "link": "https://cronicaglobal.elespanol.com",
             "affidabilita": 1,
-            "quando": "2 d"
+            "quando": "7 h"
+          },
+          {
+            "titolo": "El Barcelona hace oficial el fichaje de Anthony Gordon con ocho horas de retraso por problemas burocráticos",
+            "fonte": "EL PAÍS",
+            "link": "https://elpais.com",
+            "affidabilita": 1,
+            "quando": "5 d"
           }
-        ],
-        "done": []
+        ]
       },
       "feed": [
         {
@@ -665,24 +1078,117 @@
           "img": "https://objetos.estaticos-marca.com/assets/multimedia/imagenes/2026/06/03/17804715285869.jpg",
           "dominio": "marca.com",
           "affidabilita": 3,
-          "quando": "1 h"
+          "quando": "2 h"
         },
         {
-          "titolo": "Bromas a Gordon por su fichaje por el Barça",
+          "titolo": "Las razones de la apuesta del Barça por Julián Álvarez, al detalle",
           "fonte": "Mundo Deportivo",
           "stato": "rumor",
-          "link": "https://www.mundodeportivo.com/futbol/fc-barcelona/20260603/1004190809/bromas-gordon-fichaje-barca.html",
-          "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/files/fp/uploads/2026/06/03/6a1febef45796.r_d.1502-864-4000.jpeg",
+          "link": "https://www.mundodeportivo.com/futbol/fc-barcelona/20260603/1004190603/razones-barca-apostar-julian-alvarez-detalle.html",
+          "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/05/28/6a17ee2568e71.jpeg",
           "dominio": "mundodeportivo.com",
           "affidabilita": 3,
-          "quando": "4 h"
+          "quando": "12 h"
+        },
+        {
+          "titolo": "Kaiki podría ser el tapado del Barcelona para su defensa: un lateral de 15 millones",
+          "fonte": "Marca",
+          "stato": "rumor",
+          "link": "https://www.marca.com/futbol/barcelona/2026/06/01/kaiki-podria-tapado-barcelona-defensa-lateral-15-millones.html",
+          "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/06/01/6a1d2083565fa.jpeg",
+          "dominio": "marca.com",
+          "affidabilita": 3,
+          "quando": "2 d"
+        },
+        {
+          "titolo": "5 opciones de delanteros centros si el fichaje de Julián Álvarez no se da con el Barcelona",
+          "fonte": "Sports Illustrated",
+          "stato": "rumor",
+          "link": "https://www.si.com/es-us/futbol/5-opciones-de-delanteros-centros-si-el-fichaje-de-julian-alvarez-no-se-da-con-el-barcelona",
+          "img": "https://images2.minutemediacdn.com/image/upload/c_crop,x_0,y_66,w_4272,h_2403/c_fill,w_1440,ar_1440:810,f_auto,q_auto,g_auto/images/GettyImages/mmsport/sports_illustrated_ftbol/01kt7jf46jncnmf4njtd.jpg",
+          "dominio": "si.com",
+          "affidabilita": 2,
+          "quando": "2 h"
+        },
+        {
+          "titolo": "¡Bernardo Silva ha llegado a un acuerdo con un club!",
+          "fonte": "Fichajes.com",
+          "stato": "conf",
+          "link": "https://www.fichajes.com/a3115129307765517600-bernardo-silva-ha-llegado-a-un-acuerdo-con-un-club",
+          "img": "https://assets-es.imgfoot.com/media/cache/1200x675/bernardo-silva-2526-6965f9ff0fc88.jpg",
+          "dominio": "fichajes.com",
+          "affidabilita": 2,
+          "quando": "8 h"
+        },
+        {
+          "titolo": "El United, abierto a ceder por Rashford ante la postura del Barça",
+          "fonte": "SPORT",
+          "stato": "rumor",
+          "link": "https://www.sport.es/es/noticias/barca/united-abierto-ceder-rashford-postura-130971040",
+          "img": "https://estaticos-cdn.prensaiberica.es/clip/7884196f-2c8b-496a-b6a1-4fca9bd85ff8_16-9-discover-aspect-ratio_default_0_x1000y444.jpg",
+          "dominio": "sport.es",
+          "affidabilita": 2,
+          "quando": "11 h"
         }
       ],
       "nomi": {
         "rumor": [],
-        "obj": [],
-        "conf": [],
-        "done": []
+        "obj": [
+          {
+            "giocatore": "Julián Álvarez",
+            "direzione": "in",
+            "club": ""
+          },
+          {
+            "giocatore": "Kaiki",
+            "direzione": "in",
+            "club": ""
+          },
+          {
+            "giocatore": "Rashford",
+            "direzione": "in",
+            "club": "Manchester United"
+          },
+          {
+            "giocatore": "Joao Cancelo",
+            "direzione": "in",
+            "club": ""
+          },
+          {
+            "giocatore": "Victor Osimhen",
+            "direzione": "in",
+            "club": ""
+          },
+          {
+            "giocatore": "Dumfries",
+            "direzione": "out",
+            "club": "Inter"
+          },
+          {
+            "giocatore": "Kane",
+            "direzione": "in",
+            "club": ""
+          }
+        ],
+        "conf": [
+          {
+            "giocatore": "Bernardo Silva",
+            "direzione": "out",
+            "club": ""
+          },
+          {
+            "giocatore": "Julián Álvarez",
+            "direzione": "in",
+            "club": "Atlético"
+          }
+        ],
+        "done": [
+          {
+            "giocatore": "Anthony Gordon",
+            "direzione": "in",
+            "club": ""
+          }
+        ]
       }
     },
     "Man City": {
@@ -692,94 +1198,151 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "Mercado de fichajes: altas y bajas de LaLiga, Premier, Serie A, Bundesliga",
+            "fonte": "Diario AS",
+            "link": "https://as.com",
+            "affidabilita": 3,
+            "quando": "19 h"
+          },
+          {
             "titolo": "Mercado de fichajes de fútbol, en directo hoy | Altas, bajas y rumores en vivo y online",
             "fonte": "Mundo Deportivo",
             "link": "https://www.mundodeportivo.com",
             "affidabilita": 3,
-            "quando": "1 d"
+            "quando": "2 d"
           },
           {
-            "titolo": "Xavi Simons da una pista importante sobre su fichaje por el Tottenham a través de sus redes sociales",
-            "fonte": "Goal.com",
-            "link": "https://www.goal.com",
+            "titolo": "Mercado de fichajes de verano de 2026 en la Premier League: altas, bajas y rumores",
+            "fonte": "MARCA",
+            "link": "https://www.marca.com",
+            "affidabilita": 3,
+            "quando": "2 d"
+          },
+          {
+            "titolo": "Se complica la opción Josko Gvardiol",
+            "fonte": "Fichajes.com",
+            "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "3 h"
+            "quando": "10 h"
           },
           {
             "titolo": "Florentino Pérez: \"El jueves anunciaré el primer gran fichaje\"",
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "3 h"
-          },
-          {
-            "titolo": "Mercado de fichajes: Guardiola rechaza reunirse con Messi; Julián Álvarez, Victor Osimhen y más",
-            "fonte": "Sports Illustrated",
-            "link": "https://www.si.com",
-            "affidabilita": 2,
-            "quando": "6 h"
+            "quando": "13 h"
           },
           {
             "titolo": "El fichaje de Gvardiol por el Barça se enfría",
             "fonte": "SPORT",
             "link": "https://www.sport.es",
             "affidabilita": 2,
-            "quando": "9 h"
-          },
-          {
-            "titolo": "Duelo estelar para reclutar a Malo Gusto",
-            "fonte": "Fichajes.com",
-            "link": "https://www.fichajes.com",
-            "affidabilita": 2,
-            "quando": "1 d"
+            "quando": "19 h"
           }
         ],
         "obj": [
           {
-            "titolo": "Apuntan a Josko Gvardiol como el siguiente fichaje que quiere intentar cerrar un Florentino Pérez lanzado",
-            "fonte": "MARCA Usa",
-            "link": "https://us.marca.com",
-            "affidabilita": 3,
-            "quando": "1 h"
+            "titolo": "Andrea Cambiaso, objetivo recurrente",
+            "fonte": "Fichajes.com",
+            "link": "https://www.fichajes.com",
+            "affidabilita": 2,
+            "quando": "5 h"
           }
         ],
-        "conf": [],
-        "done": [
+        "conf": [
           {
-            "titolo": "En Inglaterra confirman el interés del Atlético de Madrid en el fichaje de Tijjani Reijnders",
-            "fonte": "Esto es Atleti",
-            "link": "https://www.estoesatleti.es",
-            "affidabilita": 1,
-            "quando": "3 d"
+            "titolo": "¡Bernardo Silva ha llegado a un acuerdo con un club!",
+            "fonte": "Fichajes.com",
+            "link": "https://www.fichajes.com",
+            "affidabilita": 2,
+            "quando": "8 h"
           }
-        ]
+        ],
+        "done": []
       },
       "feed": [
         {
-          "titolo": "Apuntan a Josko Gvardiol como el siguiente fichaje que quiere intentar cerrar un Florentino Pérez lanzado",
-          "fonte": "MARCA Usa",
-          "stato": "obj",
-          "link": "https://us.marca.com/soccer/la-liga/2026/06/03/6a201487ca4741437b8b45ac.html",
-          "img": "https://e01-phantom-marca-us.uecdn.es/bdf26fce9326e37ebfeb8326d0a765c9/resize/1200/f/jpg/assets/multimedia/imagenes/2026/06/03/17804884015120.jpg",
-          "dominio": "us.marca.com",
+          "titolo": "Mercado de fichajes: altas y bajas de LaLiga, Premier, Serie A, Bundesliga",
+          "fonte": "Diario AS",
+          "stato": "rumor",
+          "link": "https://as.com/futbol/primera/mercado-de-fichajes-altas-y-bajas-de-laliga-premier-serie-a-bundesliga-f202606-d-2/",
+          "img": "https://img.asmedia.epimg.net/resizer/v2/XSSIZ6KMBJKBXHBUPV6VJBEZAE.jpg?auth=c517b91619f3e0c59eedf67e32c357c9cab486408468b1d4d792a20f4eea8655&width=1472&height=828&focal=2342%2C1282",
+          "dominio": "as.com",
           "affidabilita": 3,
-          "quando": "1 h"
+          "quando": "19 h"
         },
         {
           "titolo": "Mercado de fichajes de fútbol, en directo hoy | Altas, bajas y rumores en vivo y online",
           "fonte": "Mundo Deportivo",
           "stato": "rumor",
           "link": "https://www.mundodeportivo.com/futbol/fichajes/20260601/1004189767/mercado-fichajes-futbol-directo-hoy-altas-bajas-rumores-vivo-online.html",
-          "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/05/29/6a19226acda83.jpeg",
+          "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/05/21/6a0ed4dd6312f.jpeg",
           "dominio": "mundodeportivo.com",
           "affidabilita": 3,
-          "quando": "1 d"
+          "quando": "2 d"
+        },
+        {
+          "titolo": "Mercado de fichajes de verano de 2026 en la Premier League: altas, bajas y rumores",
+          "fonte": "MARCA",
+          "stato": "rumor",
+          "link": "https://www.marca.com/futbol/premier-league/2026/06/01/mercado-fichajes-verano-2026-premier-league-altas-bajas-rumores.html",
+          "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/06/01/6a1d698e76092.jpeg",
+          "dominio": "marca.com",
+          "affidabilita": 3,
+          "quando": "2 d"
+        },
+        {
+          "titolo": "Andrea Cambiaso, objetivo recurrente",
+          "fonte": "Fichajes.com",
+          "stato": "obj",
+          "link": "https://www.fichajes.com/a270894798995921041-andrea-cambiaso-objetivo-recurrente",
+          "img": "https://assets-es.imgfoot.com/media/cache/1200x675/andrea-cambiaso-3.jpg",
+          "dominio": "fichajes.com",
+          "affidabilita": 2,
+          "quando": "5 h"
+        },
+        {
+          "titolo": "¡Bernardo Silva ha llegado a un acuerdo con un club!",
+          "fonte": "Fichajes.com",
+          "stato": "conf",
+          "link": "https://www.fichajes.com/a3115129307765517600-bernardo-silva-ha-llegado-a-un-acuerdo-con-un-club",
+          "img": "https://assets-es.imgfoot.com/media/cache/1200x675/bernardo-silva-2526-6965f9ff0fc88.jpg",
+          "dominio": "fichajes.com",
+          "affidabilita": 2,
+          "quando": "8 h"
+        },
+        {
+          "titolo": "Se complica la opción Josko Gvardiol",
+          "fonte": "Fichajes.com",
+          "stato": "rumor",
+          "link": "https://www.fichajes.com/a9136815916780046525-se-complica-la-opcion-josko-gvardiol",
+          "img": "https://assets-es.imgfoot.com/media/cache/1200x675/josko-gvardiol-2526-jubelt-fur-manchester-city.jpg",
+          "dominio": "fichajes.com",
+          "affidabilita": 2,
+          "quando": "10 h"
         }
       ],
       "nomi": {
         "rumor": [],
-        "obj": [],
-        "conf": [],
+        "obj": [
+          {
+            "giocatore": "Gvardiol",
+            "direzione": "in",
+            "club": "Dinamo Zagabria"
+          },
+          {
+            "giocatore": "Enzo Pérez",
+            "direzione": "in",
+            "club": "Barça"
+          }
+        ],
+        "conf": [
+          {
+            "giocatore": "Bernardo Silva",
+            "direzione": "out",
+            "club": "Atlético de Madrid"
+          }
+        ],
         "done": []
       }
     },
@@ -790,11 +1353,18 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "Así está lo de Iraola con el Liverpool",
+            "fonte": "Mundo Deportivo",
+            "link": "https://www.mundodeportivo.com",
+            "affidabilita": 3,
+            "quando": "7 h"
+          },
+          {
             "titolo": "Mercado de fichajes: altas y bajas de LaLiga, Premier, Serie A, Bundesliga",
             "fonte": "Diario AS",
             "link": "https://as.com",
             "affidabilita": 3,
-            "quando": "9 h"
+            "quando": "19 h"
           },
           {
             "titolo": "Mercado de fichajes de verano de 2026 en la Premier League: altas, bajas y rumores",
@@ -808,28 +1378,21 @@
             "fonte": "Mundo Deportivo",
             "link": "https://www.mundodeportivo.com",
             "affidabilita": 3,
-            "quando": "2 d"
+            "quando": "3 d"
           },
           {
-            "titolo": "Así sería el once del Real Madrid con el fichaje de Ibrahima Konaté",
-            "fonte": "Sports Illustrated",
-            "link": "https://www.si.com",
-            "affidabilita": 2,
-            "quando": "22 h"
+            "titolo": "El fracaso del 'plan renove' del Liverpool: valían 257 millones y se marcharon libres",
+            "fonte": "Marca",
+            "link": "https://www.marca.com/futbol/premier-league/2026/05/30/fracaso-plan-renove-liverpool-valian-257-millones-marcharon-libres.html",
+            "affidabilita": 3,
+            "quando": "4 d"
           },
           {
-            "titolo": "Mercado de fichajes: Salah cambia de opinión sobre su salida del Liverpool; Marcus Rashford, Désiré Doué y más",
-            "fonte": "Sports Illustrated",
-            "link": "https://www.si.com",
-            "affidabilita": 2,
-            "quando": "1 d"
-          },
-          {
-            "titolo": "Julian Álvarez, Elliot Anderson y 30 jugadores que marcarán el mercado de fichajes de verano de 2026",
-            "fonte": "Goal.com",
-            "link": "https://www.goal.com",
-            "affidabilita": 2,
-            "quando": "2 d"
+            "titolo": "Nuevo 'volantazo' de Konaté: se marchará gratis del Liverpool",
+            "fonte": "Marca",
+            "link": "https://www.marca.com/futbol/premier-league/2026/05/29/nuevo-volantazo-konate-marchara-gratis-liverpool.html",
+            "affidabilita": 3,
+            "quando": "5 d"
           }
         ],
         "obj": [
@@ -838,11 +1401,33 @@
             "fonte": "La Razón",
             "link": "https://www.larazon.es",
             "affidabilita": 1,
-            "quando": "1 d"
+            "quando": "2 d"
           }
         ],
-        "conf": [],
+        "conf": [
+          {
+            "titolo": "¡Andoni Iraola alcanza un acuerdo con el Liverpool!",
+            "fonte": "Fichajes.com",
+            "link": "https://www.fichajes.com",
+            "affidabilita": 2,
+            "quando": "1 d"
+          },
+          {
+            "titolo": "El Liverpool se queda sin el sucesor de Mohamed Salah, ya que el PSG ha llegado a un acuerdo verbal con la revelación de la Bundesliga",
+            "fonte": "Goal.com",
+            "link": "https://www.goal.com",
+            "affidabilita": 2,
+            "quando": "2 d"
+          }
+        ],
         "done": [
+          {
+            "titolo": "Oficial: el Liverpool anuncia la salida de Ibrahima Konaté",
+            "fonte": "Marca",
+            "link": "https://www.marca.com/futbol/premier-league/2026/05/31/oficial-liverpool-anuncia-salida-ibrahima-konate.html",
+            "affidabilita": 3,
+            "quando": "3 d"
+          },
           {
             "titolo": "El Liverpool confirma que Konaté saldrá gratis este verano y se pone a tiro del Real Madrid",
             "fonte": "OkDiario",
@@ -855,20 +1440,30 @@
             "fonte": "El Desmarque",
             "link": "https://www.eldesmarque.com",
             "affidabilita": 1,
-            "quando": "23 h"
+            "quando": "1 d"
           }
         ]
       },
       "feed": [
         {
+          "titolo": "Así está lo de Iraola con el Liverpool",
+          "fonte": "Mundo Deportivo",
+          "stato": "rumor",
+          "link": "https://www.mundodeportivo.com/futbol/fichajes/20260603/1004191005/asi-iraola-liverpool.html",
+          "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/06/03/6a20510c6e3fc.jpeg",
+          "dominio": "mundodeportivo.com",
+          "affidabilita": 3,
+          "quando": "7 h"
+        },
+        {
           "titolo": "Mercado de fichajes: altas y bajas de LaLiga, Premier, Serie A, Bundesliga",
           "fonte": "Diario AS",
           "stato": "rumor",
           "link": "https://as.com/futbol/primera/mercado-de-fichajes-altas-y-bajas-de-laliga-premier-serie-a-bundesliga-f202606-d-2/",
-          "img": "",
+          "img": "https://img.asmedia.epimg.net/resizer/v2/XSSIZ6KMBJKBXHBUPV6VJBEZAE.jpg?auth=c517b91619f3e0c59eedf67e32c357c9cab486408468b1d4d792a20f4eea8655&width=1472&height=828&focal=2342%2C1282",
           "dominio": "as.com",
           "affidabilita": 3,
-          "quando": "9 h"
+          "quando": "19 h"
         },
         {
           "titolo": "Mercado de fichajes de verano de 2026 en la Premier League: altas, bajas y rumores",
@@ -879,13 +1474,61 @@
           "dominio": "marca.com",
           "affidabilita": 3,
           "quando": "2 d"
+        },
+        {
+          "titolo": "Última hora entre Iraola y el Liverpool",
+          "fonte": "Mundo Deportivo",
+          "stato": "rumor",
+          "link": "https://www.mundodeportivo.com/futbol/fichajes/20260531/1004189858/ultima-hora-iraola-liverpool.html",
+          "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/files/fp/uploads/2026/04/14/69de54424126f.r_d.1256-761-0.jpeg",
+          "dominio": "mundodeportivo.com",
+          "affidabilita": 3,
+          "quando": "3 d"
+        },
+        {
+          "titolo": "Oficial: el Liverpool anuncia la salida de Ibrahima Konaté",
+          "fonte": "Marca",
+          "stato": "done",
+          "link": "https://www.marca.com/futbol/premier-league/2026/05/31/oficial-liverpool-anuncia-salida-ibrahima-konate.html",
+          "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/05/31/6a1c5ca6e8719.jpeg",
+          "dominio": "marca.com",
+          "affidabilita": 3,
+          "quando": "3 d"
+        },
+        {
+          "titolo": "El fracaso del 'plan renove' del Liverpool: valían 257 millones y se marcharon libres",
+          "fonte": "Marca",
+          "stato": "rumor",
+          "link": "https://www.marca.com/futbol/premier-league/2026/05/30/fracaso-plan-renove-liverpool-valian-257-millones-marcharon-libres.html",
+          "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/05/29/6a199503c3464.jpeg",
+          "dominio": "marca.com",
+          "affidabilita": 3,
+          "quando": "4 d"
         }
       ],
       "nomi": {
-        "rumor": [],
+        "rumor": [
+          {
+            "giocatore": "Mohamed Salah",
+            "direzione": "out",
+            "club": ""
+          }
+        ],
         "obj": [],
-        "conf": [],
-        "done": []
+        "conf": [
+          {
+            "giocatore": "Andoni Iraola",
+            "direzione": "in",
+            "club": ""
+          }
+        ],
+        "done": [
+          {
+            "giocatore": "Ibrahima Konaté",
+            "direzione": "out",
+            "club": "Real Madrid"
+          }
+        ]
       }
     }
   }
