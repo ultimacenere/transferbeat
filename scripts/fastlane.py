@@ -3,8 +3,8 @@
 """
 TransferBeat - fastlane.py  (corsia veloce ULTIM'ORA)
 Legge i canali Telegram pubblici degli esperti (via t.me/s, nessuna API/login),
-tiene solo i messaggi recenti e pertinenti al mercato, l'LLM filtra/riscrive e
-attribuisce la squadra, e aggiorna data/ultimora.json (pubblicato sul branch 'live').
+tiene solo i messaggi recenti e di mercato, l'LLM filtra/riscrive e attribuisce la
+SQUADRA PRINCIPALE, e aggiorna data/ultimora.json (pubblicato sul branch 'live').
 """
 import json, os, re, sys, html
 from datetime import datetime, timezone
@@ -63,6 +63,12 @@ def classify(title, kw):
                 return stato
     return "rumor"
 
+def match_team(s, team_names):
+    sl = (s or "").lower()
+    if not sl:
+        return ""
+    return next((n for (n, nl) in team_names if nl in sl or sl in nl), "")
+
 def llm_process(txt, lang):
     """Ritorna (transfer:bool, titolo:str, stato:str, squadra:str) oppure None senza chiave."""
     if not LLM_KEY:
@@ -73,7 +79,9 @@ def llm_process(txt, lang):
              "un rinnovo o una voce su un calciatore; false per gossip, partite, opinioni, eventi), "
              "titolo (titolo conciso e neutro, max 100 caratteri, in " + langname + ", senza emoji ne hashtag ne virgolette), "
              "stato (uno tra: done=ufficiale, conf=accordo, obj=trattativa/obiettivo, rumor=voce), "
-             "squadra (il club di Serie A, La Liga o Premier League coinvolto, nome per esteso; stringa vuota se nessuno).")
+             "squadra (il club di Serie A, La Liga o Premier League coinvolto, sia esso la PROVENIENZA o la "
+             "DESTINAZIONE del giocatore; preferisci sempre il club di una di queste tre leghe; nome per esteso; "
+             "stringa vuota solo se nessuna delle tre leghe e' coinvolta).")
     try:
         r = requests.post(LLM_URL, timeout=20,
             headers={"Authorization": "Bearer " + LLM_KEY, "Content-Type": "application/json"},
@@ -109,16 +117,17 @@ def main():
             if new_count >= MAX_NEW_PER_RUN:
                 break
             low = m["txt"].lower()
-            team = next((n for (n, nl) in team_names if nl in low), "")
             res = llm_process(m["txt"], lang)
+            team = ""
             if res is not None:
                 transfer, titolo, stato, squadra = res
                 if not transfer:
                     seen.add(m["link"]); continue
-                if not team and squadra:
-                    sl = squadra.lower()
-                    team = next((n for (n, nl) in team_names if nl in sl or sl in nl), "")
+                team = match_team(squadra, team_names)          # priorita' all'LLM (squadra principale)
+                if not team:
+                    team = next((n for (n, nl) in team_names if nl in low), "")
             else:
+                team = next((n for (n, nl) in team_names if nl in low), "")
                 kwords = ("mercato","transfer","fichaj","ufficiale","official","accordo","firma","here we go","obiettiv","trattativ","prestito","clausola","rinnov","colpo","cessione","addio","ingaggio","vola","pista")
                 if not (team or any(k in low for k in kwords)):
                     continue
