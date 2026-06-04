@@ -28,9 +28,9 @@ LANGS = {
     "es": "hl=es&gl=ES&ceid=ES:es",
 }
 GNEWS = "https://news.google.com/rss/search?q={q}&{loc}"
-MAX_PER_TEAM = 14
+MAX_PER_TEAM = 12
 MAX_PER_COL = 6
-FEED_ENRICH = int(os.environ.get("FEED_ENRICH", "6"))
+FEED_ENRICH = int(os.environ.get("FEED_ENRICH", "3"))
 UA = {"User-Agent": "Mozilla/5.0 (compatible; TransferBeatBot/1.0)"}
 LLM_KEY = os.environ.get("GROQ_API_KEY", "")
 LLM_URL = "https://api.groq.com/openai/v1/chat/completions"
@@ -165,6 +165,67 @@ def extract_movements(team, titles, fallback=None):
         out[st].append({"giocatore": g, "direzione": d, "club": (m.get("club") or "").strip()})
     return out
 
+def age_days(pp):
+    if not pp:
+        return 9999
+    try:
+        dt = datetime(*pp[:6], tzinfo=timezone.utc)
+        return (datetime.now(timezone.utc) - dt).days
+    except Exception:
+        return 9999
+
+STATE_RANK = {"rumor": 0, "obj": 1, "conf": 2, "done": 3}
+
+def _norm_name(s):
+    return re.sub(r"[^a-z0-9 ]", "", (s or "").lower()).strip()
+
+def _days_since(iso):
+    try:
+        from datetime import date
+        y, mo, d = map(int, iso[:10].split("-"))
+        return (date.today() - date(y, mo, d)).days
+    except Exception:
+        return 0
+
+def merge_nomi(old, new, today, max_age=60):
+    """Persistenza movimenti: i rumor restano finche' non vengono promossi (obj/conf/done)
+    o non sono piu' citati da oltre max_age giorni. Lo stato puo' solo salire."""
+    order = ["rumor", "obj", "conf", "done"]
+    m = {}
+    for st in order:
+        for it in (old or {}).get(st, []):
+            key = _norm_name(it.get("giocatore", ""))
+            if not key:
+                continue
+            m[key] = {"giocatore": it["giocatore"], "direzione": it.get("direzione", "in"),
+                      "club": it.get("club", ""), "stato": st,
+                      "_first": it.get("_first", today), "_seen": it.get("_seen", today)}
+    for st in order:
+        for it in (new or {}).get(st, []):
+            key = _norm_name(it.get("giocatore", ""))
+            if not key:
+                continue
+            if key in m:
+                cur = m[key]; cur["_seen"] = today
+                if STATE_RANK[st] > STATE_RANK[cur["stato"]]:
+                    cur["stato"] = st; cur["direzione"] = it.get("direzione", cur["direzione"])
+                    if it.get("club"):
+                        cur["club"] = it["club"]
+                elif it.get("club") and not cur["club"]:
+                    cur["club"] = it["club"]
+            else:
+                m[key] = {"giocatore": it["giocatore"], "direzione": it.get("direzione", "in"),
+                          "club": it.get("club", ""), "stato": st, "_first": today, "_seen": today}
+    out = {"rumor": [], "obj": [], "conf": [], "done": []}
+    for it in m.values():
+        if it["stato"] == "rumor" and _days_since(it["_seen"]) > max_age:
+            continue
+        out[it["stato"]].append({"giocatore": it["giocatore"], "direzione": it["direzione"],
+                                 "club": it["club"], "_first": it["_first"], "_seen": it["_seen"]})
+    for st in out:
+        out[st].sort(key=lambda x: x["_seen"], reverse=True)
+    return out
+
 def fetch(query, limit, loc):
     feed = feedparser.parse(GNEWS.format(q=urllib.parse.quote(query), loc=loc))
     out = []
@@ -212,7 +273,7 @@ def dedupe(items):
             seen[key] = it
     return list(seen.values())
 
-def build_board(teams, kw, lang, loc, direct_items=None):
+def build_board(teams, kw, lang, loc, direct_items=None, today=""):
     direct_items = direct_items or []
     old_nomi = {}
     try:
@@ -236,6 +297,9 @@ def build_board(teams, kw, lang, loc, direct_items=None):
                               "src_href": d["src_href"], "pub": d["pub"],
                               "stato": classify(d["titolo"], kw), "affidabilita": d["tier"],
                               "quando": time_ago(d["pub"], lang)})
+        fresh = [it for it in items if age_days(it.get("pub")) <= 30]
+        if fresh:
+            items = fresh
         items = dedupe(items)
         items.sort(key=lambda x: (x["affidabilita"], x["pub"] or ()), reverse=True)
         colonne = {"rumor": [], "obj": [], "conf": [], "done": []}
@@ -251,7 +315,8 @@ def build_board(teams, kw, lang, loc, direct_items=None):
             feed.append({"titolo": it["titolo"], "fonte": it["fonte"], "stato": it["stato"],
                          "link": e["url"], "img": e["img"], "dominio": e["dominio"],
                          "affidabilita": it["affidabilita"], "quando": it["quando"]})
-        nomi = extract_movements(t["nome"], [it["titolo"] for it in items], old_nomi.get(t["nome"]))
+        new_mov = extract_movements(t["nome"], [it["titolo"] for it in items])
+        nomi = merge_nomi(old_nomi.get(t["nome"]), new_mov, today)
         squadre[t["nome"]] = {"lab": t["lab"], "col": t["col"], "league": t["league"],
                               "colonne": colonne, "feed": feed, "nomi": nomi}
     return squadre
@@ -268,7 +333,9 @@ def build_home(teams, kw, lang, loc):
         it["affidabilita"] = reliability(it["fonte"], kw)
         it["quando"] = time_ago(it["pub"], lang)
     enriched = dedupe([dict(p) for p in pool])
-    enriched.sort(key=lambda x: (x["affidabilita"], x["pub"] or ()), reverse=True)
+    enriched.sort(key=lambda x: (x["pub"] or (), x["affidabilita"]), reverse=True)
+    fresh = [e for e in enriched if age_days(e.get("pub")) <= 14]
+    pick = fresh if len(fresh) >= 4 else enriched
     def slim(e):
         if not e:
             return None
@@ -276,8 +343,8 @@ def build_home(teams, kw, lang, loc):
         return {"categoria": e.get("categoria", ""), "titolo": e["titolo"], "fonte": e["fonte"],
                 "link": info["url"], "img": info["img"], "dominio": info["dominio"],
                 "quando": e.get("quando", "")}
-    apertura = slim(enriched[0]) if enriched else None
-    secondari = [slim(e) for e in enriched[1:4]]
+    apertura = slim(pick[0]) if pick else None
+    secondari = [slim(e) for e in pick[1:4]]
     mondo = []
     for m in teams.get("mondo_home", []):
         got = fetch(m["search"], 3, loc)
@@ -285,9 +352,9 @@ def build_home(teams, kw, lang, loc):
             g = got[0]; info = enrich(g["gn_link"], g["src_href"])
             mondo.append({"categoria": m["label"][lang], "titolo": g["titolo"], "fonte": g["fonte"],
                           "link": info["url"], "img": info["img"], "dominio": info["dominio"]})
-    ticker = [e["titolo"] for e in enriched if e["stato"] in ("done", "conf")][:6]
+    ticker = [e["titolo"] for e in pick if e["stato"] in ("done", "conf")][:6]
     if len(ticker) < 4:
-        ticker = [e["titolo"] for e in enriched][:6]
+        ticker = [e["titolo"] for e in pick][:6]
     return {"ticker": ticker, "apertura": apertura, "secondari": secondari, "mondo": mondo}
 
 def build_lang(lang, teams):
@@ -306,8 +373,9 @@ def build_lang(lang, teams):
     except Exception:
         sources = {"feeds": []}
     direct_items = fetch_direct(lang, sources)
+    today = now.strftime("%Y-%m-%d")
     print("[" + lang + "] board... (" + str(len(direct_items)) + " voci da feed diretti)")
-    board = {"aggiornato": stamp, "giorno": giorno, "squadre": build_board(teams, kw, lang, loc, direct_items)}
+    board = {"aggiornato": stamp, "giorno": giorno, "squadre": build_board(teams, kw, lang, loc, direct_items, today)}
     print("[" + lang + "] home...")
     home = {"aggiornato": stamp, "giorno": giorno}
     home.update(build_home(teams, kw, lang, loc))

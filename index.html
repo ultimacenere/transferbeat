@@ -22,6 +22,8 @@
   .ticker{background:var(--red);color:#fff;font-size:13px;font-weight:600;overflow:hidden;white-space:nowrap}
   .ticker .wrap{display:flex;align-items:center;gap:14px;height:34px}
   .ticker .lab{background:rgba(0,0,0,.2);padding:2px 9px;border-radius:5px;font-size:11px;letter-spacing:.5px;flex-shrink:0}
+  .ticker .scrollwrap{flex:1;overflow:hidden}
+  .ticker .lab{position:relative;z-index:2}
   .ticker .scroll{display:inline-block;animation:tick 38s linear infinite}
   .ticker .scroll span{margin-right:40px;opacity:.97}
   @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
@@ -90,7 +92,7 @@
 </style>
 </head>
 <body>
-<div class="ticker"><div class="wrap"><span class="lab" id="tkLab">ULTIM’ORA</span><div class="scroll" id="ticker"></div></div></div>
+<div class="ticker"><div class="wrap"><span class="lab" id="tkLab">ULTIM’ORA</span><div class="scrollwrap"><div class="scroll" id="ticker"></div></div></div></div>
 <header>
   <div class="wrap mast">
     <div class="row">
@@ -104,8 +106,8 @@
   <nav><div class="wrap">
     <a href="index.html" class="on" id="navHome">Home</a>
     <a href="board.html" class="live" id="navLive"><span class="liveDot"></span>Live</a>
-    <a href="#">Serie A</a><a href="#">Premier</a><a href="#">La Liga</a>
-    <a href="#" id="navChamp">Champions</a><a href="#" id="navNat">Nazionali</a><a href="#" id="navWorld">Mondo</a>
+    <a id="navSA">Serie A</a><a id="navPL">Premier</a><a id="navLL">La Liga</a>
+    <a href="#world" id="navWorld">Mondo</a>
   </div></nav>
 </header>
 <div id="error"></div>
@@ -127,7 +129,7 @@
   </aside>
 </div>
 <div class="wrap">
-  <div class="strip">
+  <div class="strip" id="world">
     <h2 id="worldH">Dal mondo <span class="flag" id="worldFlag">🌍 Worldwide</span></h2>
     <div class="sub" id="worldSub"></div>
     <div class="row4" id="world"></div>
@@ -153,8 +155,8 @@ function applyStatic(){
   document.getElementById('tkLab').textContent=T.breaking;
   document.getElementById('navHome').textContent=T.home;
   document.getElementById('navLive').innerHTML='<span class="liveDot"></span>'+T.live;
-  document.getElementById('navChamp').textContent=T.champ;
-  document.getElementById('navNat').textContent=T.nat;
+  const blink=(id,lega)=>{const a=document.getElementById(id);if(a)a.href='board.html?lang='+lang+'&lega='+encodeURIComponent(lega);};
+  blink('navSA','Serie A'); blink('navPL','Premier'); blink('navLL','La Liga');
   document.getElementById('navWorld').textContent=T.world;
   document.getElementById('hdLive').textContent=T.liveToday;
   document.getElementById('ctaBoard').textContent=T.openBoard;

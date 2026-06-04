@@ -28,9 +28,6 @@
   .nav{margin-left:auto;display:flex;gap:6px}
   .nav a{padding:7px 13px;font-size:13px;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:999px}
   .nav a.on,.nav a:hover{color:var(--txt);border-color:var(--accent)}
-  .leagues{display:flex;gap:4px;flex-wrap:wrap}
-  .leagues button{background:transparent;border:1px solid var(--line);color:var(--muted);padding:6px 12px;border-radius:999px;font-size:13px;cursor:pointer;transition:.15s}
-  .leagues button.on,.leagues button:hover{color:var(--txt);border-color:var(--accent);background:rgba(10,157,87,.08)}
   .upbar{display:flex;align-items:center;gap:14px;padding:8px 0;font-size:12.5px;color:var(--muted);border-bottom:1px solid var(--line);flex-wrap:wrap}
   .pulse{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(10,157,87,.6);animation:p 2s infinite}
   @keyframes p{0%{box-shadow:0 0 0 0 rgba(10,157,87,.5)}70%{box-shadow:0 0 0 8px rgba(10,157,87,0)}100%{box-shadow:0 0 0 0 rgba(10,157,87,0)}}
@@ -38,17 +35,26 @@
   .slot{padding:3px 10px;border:1px solid var(--line);border-radius:8px}
   .slot.done{color:var(--accent);border-color:rgba(10,157,87,.4)}
   .slot.next{color:var(--accent2);border-color:rgba(31,111,214,.4)}
-  .grid{display:grid;grid-template-columns:240px 1fr;gap:22px;padding:22px 0}
-  @media(max-width:880px){.grid{grid-template-columns:1fr}}
-  .teams{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:8px;height:fit-content;position:sticky;top:120px}
-  .teams h3{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);padding:8px 10px}
-  .team{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:9px;cursor:pointer;font-size:14px;transition:.12s}
-  .team:hover{background:var(--panel2)}
-  .team.on{background:var(--panel2);box-shadow:inset 3px 0 0 var(--accent)}
+
+  /* CONTROLS */
+  .controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:18px 0 6px}
+  .seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;flex-wrap:wrap}
+  .seg button{background:var(--bg);border:none;padding:8px 15px;font-size:13px;font-weight:600;cursor:pointer;color:var(--muted);transition:.12s}
+  .seg button.on{background:var(--accent);color:#fff}
+  .ctrl-lab{font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);font-weight:700}
+  .teamsel{font-size:14px;font-weight:600;color:var(--txt);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 12px;min-width:180px;cursor:pointer}
+  .spacer{flex:1}
+  @media(max-width:680px){
+    .controls{gap:8px}
+    .teamsel{flex:1;min-width:0;width:100%}
+    .spacer{display:none}
+    .viewseg{width:100%}
+    .viewseg .seg{width:100%} .viewseg .seg button{flex:1}
+  }
+
+  .thead{display:flex;align-items:center;gap:16px;background:linear-gradient(120deg,#f7f8fa,#eef1f5);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin:12px 0 18px}
   .crest{width:26px;height:26px;border-radius:6px;display:grid;place-items:center;font-weight:800;font-size:12px;color:#fff;flex-shrink:0}
-  .team .cnt{margin-left:auto;font-size:11px;color:var(--muted);background:var(--bg);border:1px solid var(--line);padding:1px 7px;border-radius:999px}
-  .thead{display:flex;align-items:center;gap:16px;background:linear-gradient(120deg,#f7f8fa,#eef1f5);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin-bottom:20px}
-  .thead .crest{width:52px;height:52px;font-size:20px;border-radius:12px}
+  .thead .crest{width:52px;height:52px;font-size:18px;border-radius:12px}
   .thead h1{font-size:24px;letter-spacing:-.5px}
   .thead .sub{color:var(--muted);font-size:13px;margin-top:2px}
   .board{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
@@ -67,10 +73,6 @@
   .src{border:1px solid var(--line);border-radius:999px;padding:1px 7px}
   .reli{display:inline-flex;gap:2px}.reli i{width:6px;height:6px;border-radius:50%;background:#cfd6dd}.reli i.on{background:var(--accent)}
   .empty{color:var(--muted);font-size:12px;padding:8px 4px}
-  .viewbar{display:flex;align-items:center;gap:12px;margin-bottom:16px;font-size:13px;color:var(--muted);flex-wrap:wrap}
-  .seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
-  .seg button{background:var(--bg);border:none;padding:7px 16px;font-size:13px;font-weight:600;cursor:pointer;color:var(--muted);transition:.12s}
-  .seg button.on{background:var(--accent);color:#fff}
   .notice{background:#fff9ec;border:1px solid #f0dca6;color:#8a6d1f;border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:13px}
   .mv{border:1px solid var(--line);border-left:3px solid var(--line);border-radius:10px;padding:9px 11px;background:var(--bg);box-shadow:0 1px 2px rgba(20,30,45,.04)}
   .mv.in{border-left-color:var(--done)} .mv.out{border-left-color:#d23b3b}
@@ -110,7 +112,6 @@
     </div>
     <div class="upbar">
       <span class="pulse"></span> <span id="lblUpd">Aggiornato alle</span> <b id="lastUp">—</b>
-      <div class="leagues" id="leagues" style="margin-left:8px"></div>
       <div class="slots">
         <span class="slot" id="s08">08:00</span><span class="slot" id="s12">12:00</span><span class="slot" id="s20">20:00</span>
       </div>
@@ -120,43 +121,42 @@
 
 <div class="wrap">
   <div id="error"></div>
-  <div class="grid">
-    <aside class="teams"><h3 id="lblTeams">Squadre</h3><div id="teamList"></div></aside>
-    <main>
-      <div class="thead" id="thead"></div>
-      <div class="viewbar">
-        <span id="lblView">Vista colonne:</span>
-        <div class="seg">
-          <button id="vNews" class="on">📰 Notizie</button>
-          <button id="vNames">🔁 Nomi</button>
-        </div>
-      </div>
-      <div id="notice"></div>
-      <div class="board" id="board"></div>
-      <div class="panelbox">
-        <h2 class="t" id="lblFeed">📰 Feed di giornata</h2>
-        <div class="day" id="feedDay"></div>
-        <div class="feed" id="feed"></div>
-      </div>
-    </main>
+  <div class="controls">
+    <span class="ctrl-lab" id="lblLeague">Campionato</span>
+    <div class="seg" id="leagues"></div>
+    <select class="teamsel" id="teamSelect"></select>
+    <div class="spacer"></div>
+    <div class="viewseg"><div class="seg">
+      <button id="vNews" class="on">📰 Notizie</button>
+      <button id="vNames">🔁 Nomi</button>
+    </div></div>
+  </div>
+
+  <div class="thead" id="thead"></div>
+  <div id="notice"></div>
+  <div class="board" id="board"></div>
+  <div class="panelbox">
+    <h2 class="t" id="lblFeed">📰 Feed di giornata</h2>
+    <div class="day" id="feedDay"></div>
+    <div class="feed" id="feed"></div>
   </div>
 </div>
 <footer id="foot"></footer>
 
 <script>
 const STRINGS={
- it:{home:'Home',live:'Live',updated:'Aggiornato alle',teams:'Squadre',view:'Vista colonne:',news:'📰 Notizie',names:'🔁 Nomi',feed:'📰 Feed di giornata',all:'Tutte',sub:'trattative monitorate in tempo reale',source:'Fonte',none:'Nessuna voce oggi',
-    notice:'Vista <b>Nomi</b> non ancora popolata per questa squadra. Si attiva con la chiave LLM (vedi README) al prossimo aggiornamento.',
+ it:{home:'Home',live:'Live',updated:'Aggiornato alle',league:'Campionato',news:'📰 Notizie',names:'🔁 Nomi',feed:'📰 Feed di giornata',sub:'trattative monitorate in tempo reale',source:'Fonte',none:'Nessuna voce oggi',
+    notice:'Vista <b>Nomi</b> non ancora popolata per questa squadra. Si attiva con la chiave LLM e il prossimo aggiornamento.',
     err:'<b>Dati non caricati.</b> Apri il sito tramite un server (o GitHub/Vercel), non con doppio clic. In locale: <code>python -m http.server</code>',
     feedday:'fonti pubbliche, affidabilità stimata',foot:'TransferBeat · dati da feed pubblici, classificati automaticamente · 3×/giorno',
     cats:{rumor:'Rumors',obj:'Obiettivi',conf:'Confermate',done:'Concluse'},tags:{rumor:'Rumor',obj:'Obiettivo',conf:'Confermata',done:'Conclusa'},dir:{out:'USCITA',in:'ENTRATA'}},
- en:{home:'Home',live:'Live',updated:'Updated at',teams:'Clubs',view:'Column view:',news:'📰 News',names:'🔁 Names',feed:'📰 Today’s feed',all:'All',sub:'deals tracked in real time',source:'Source',none:'Nothing today',
-    notice:'The <b>Names</b> view is not populated yet for this club. It activates with the LLM key (see README) on the next update.',
+ en:{home:'Home',live:'Live',updated:'Updated at',league:'League',news:'📰 News',names:'🔁 Names',feed:'📰 Today’s feed',sub:'deals tracked in real time',source:'Source',none:'Nothing today',
+    notice:'The <b>Names</b> view is not populated yet for this club. It activates with the LLM key on the next update.',
     err:'<b>Data not loaded.</b> Open the site via a server (or GitHub/Vercel), not by double-clicking. Locally: <code>python -m http.server</code>',
     feedday:'public sources, estimated reliability',foot:'TransferBeat · data from public feeds, auto-classified · 3×/day',
     cats:{rumor:'Rumours',obj:'Targets',conf:'Agreed',done:'Done'},tags:{rumor:'Rumour',obj:'Target',conf:'Agreed',done:'Done'},dir:{out:'OUT',in:'IN'}},
- es:{home:'Inicio',live:'En vivo',updated:'Actualizado a las',teams:'Equipos',view:'Vista columnas:',news:'📰 Noticias',names:'🔁 Nombres',feed:'📰 Noticias del día',all:'Todos',sub:'fichajes seguidos en tiempo real',source:'Fuente',none:'Nada hoy',
-    notice:'La vista <b>Nombres</b> aún no está disponible para este equipo. Se activa con la clave LLM (ver README) en la próxima actualización.',
+ es:{home:'Inicio',live:'En vivo',updated:'Actualizado a las',league:'Liga',news:'📰 Noticias',names:'🔁 Nombres',feed:'📰 Noticias del día',sub:'fichajes seguidos en tiempo real',source:'Fuente',none:'Nada hoy',
+    notice:'La vista <b>Nombres</b> aún no está disponible para este equipo. Se activa con la clave LLM en la próxima actualización.',
     err:'<b>Datos no cargados.</b> Abre el sitio con un servidor (o GitHub/Vercel), no con doble clic. En local: <code>python -m http.server</code>',
     feedday:'fuentes públicas, fiabilidad estimada',foot:'TransferBeat · datos de feeds públicos, clasificados automáticamente · 3×/día',
     cats:{rumor:'Rumores',obj:'Objetivos',conf:'Acordado',done:'Cerrado'},tags:{rumor:'Rumor',obj:'Objetivo',conf:'Acordado',done:'Cerrado'},dir:{out:'SALE',in:'LLEGA'}}
@@ -167,17 +167,19 @@ if(!['it','en','es'].includes(lang))lang='it';
 localStorage.setItem('tb_lang',lang);
 document.documentElement.lang=lang;
 const T=STRINGS[lang];
-const STATES={rumor:'rumor',obj:'obj',conf:'conf',done:'done'};
-const LEAGUES=['__all__','Serie A','La Liga','Premier'];
-let DATA={}, META={}, curLeague='__all__', curTeam=null, viewMode='news';
+const STATES=['rumor','obj','conf','done'];
+const LEAGUE_ORDER=['Serie A','La Liga','Premier'];
+let DATA={}, META={}, curLeague=null, curTeam=null, viewMode='news';
 
 function dots(n){return '<span class="reli">'+[1,2,3].map(i=>`<i class="${i<=n?'on':''}"></i>`).join('')+'</span>';}
+function leaguesPresent(){const set=new Set(Object.values(DATA).map(v=>v.league));return LEAGUE_ORDER.filter(l=>set.has(l));}
+function teamsOf(league){return Object.entries(DATA).filter(([k,v])=>v.league===league).map(([k])=>k).sort((a,b)=>a.localeCompare(b));}
+
 function applyStatic(){
   document.getElementById('navHome').textContent=T.home;
   document.getElementById('navLive').textContent=T.live;
   document.getElementById('lblUpd').textContent=T.updated;
-  document.getElementById('lblTeams').textContent=T.teams;
-  document.getElementById('lblView').textContent=T.view;
+  document.getElementById('lblLeague').textContent=T.league;
   document.getElementById('vNews').textContent=T.news;
   document.getElementById('vNames').textContent=T.names;
   document.getElementById('lblFeed').textContent=T.feed;
@@ -190,36 +192,38 @@ function init(){
   applyStatic();
   fetch('data/'+lang+'/board.json').then(r=>{if(!r.ok)throw 0;return r.json();})
     .then(d=>{
-      META=d; DATA=d.squadre; curTeam=Object.keys(DATA)[0];
+      META=d; DATA=d.squadre;
       document.getElementById('lastUp').textContent=(d.aggiornato||'').slice(11,16)||'—';
       markSlot((d.aggiornato||'').slice(11,13));
+      const present=leaguesPresent();
+      const wanted=PARAMS.get('lega');
+      curLeague=present.includes(wanted)?wanted:present[0];
       const lb=document.getElementById('leagues');
-      LEAGUES.forEach(l=>{const b=document.createElement('button');b.textContent=l==='__all__'?T.all:l;b.dataset.l=l;b.className=l===curLeague?'on':'';
-        b.onclick=()=>{curLeague=l;[...lb.children].forEach(c=>c.className=c.dataset.l===l?'on':'');renderTeams();};lb.appendChild(b);});
+      lb.innerHTML=present.map(l=>`<button data-l="${l}">${l}</button>`).join('');
+      lb.querySelectorAll('button').forEach(b=>b.onclick=()=>{curLeague=b.dataset.l;syncLeague();fillTeams();renderTeam();});
+      const sel=document.getElementById('teamSelect');
+      sel.onchange=()=>{curTeam=sel.value;renderTeam();};
       const setMode=(m)=>{viewMode=m;
         document.getElementById('vNews').className=m==='news'?'on':'';
         document.getElementById('vNames').className=m==='names'?'on':'';renderTeam();};
       document.getElementById('vNews').onclick=()=>setMode('news');
       document.getElementById('vNames').onclick=()=>setMode('names');
-      renderTeams(); renderTeam();
+      syncLeague(); fillTeams(); renderTeam();
     })
     .catch(()=>{document.getElementById('error').innerHTML='<div class="err">'+T.err+'</div>';});
+}
+function syncLeague(){document.querySelectorAll('#leagues button').forEach(b=>b.className=b.dataset.l===curLeague?'on':'');}
+function fillTeams(){
+  const sel=document.getElementById('teamSelect');
+  const teams=teamsOf(curLeague);
+  sel.innerHTML=teams.map(t=>{
+    const tot=Object.values(DATA[t].colonne).reduce((a,c)=>a+c.length,0);
+    return `<option value="${t}">${t} (${tot})</option>`;}).join('');
+  curTeam=teams[0]; sel.value=curTeam;
 }
 function markSlot(h){h=parseInt(h);const map=[['s08',8],['s12',12],['s20',20]];
   map.forEach(([id,hh])=>{const e=document.getElementById(id);if(!isNaN(h)&&h>=hh){e.className='slot done';e.textContent=hh.toString().padStart(2,'0')+':00 ✓';}});
   const next=map.find(([id,hh])=>h<hh);if(next)document.getElementById(next[0]).className='slot next';}
-function teamsFiltered(){return Object.entries(DATA).filter(([k,v])=>curLeague==='__all__'||v.league===curLeague);}
-function renderTeams(){
-  const list=document.getElementById('teamList');list.innerHTML='';
-  const f=teamsFiltered();
-  if(!f.some(([k])=>k===curTeam)&&f.length){curTeam=f[0][0];renderTeam();}
-  f.forEach(([name,v])=>{
-    const tot=Object.values(v.colonne).reduce((a,c)=>a+c.length,0);
-    const div=document.createElement('div');div.className='team'+(name===curTeam?' on':'');
-    div.innerHTML=`<span class="crest" style="background:${v.col}">${v.lab}</span>${name}<span class="cnt">${tot}</span>`;
-    div.onclick=()=>{curTeam=name;renderTeams();renderTeam();};list.appendChild(div);
-  });
-}
 function renderTeam(){
   const v=DATA[curTeam];if(!v)return;
   document.getElementById('thead').innerHTML=
@@ -228,7 +232,8 @@ function renderTeam(){
   const board=document.getElementById('board');board.innerHTML='';
   const totNomi=v.nomi?Object.values(v.nomi).reduce((a,x)=>a+x.length,0):0;
   document.getElementById('notice').innerHTML=(viewMode==='names'&&totNomi===0)?('<div class="notice">'+T.notice+'</div>'):'';
-  Object.keys(STATES).forEach(st=>{
+  const catmap={rumor:'rumor',obj:'obj',conf:'conf',done:'done'};
+  STATES.forEach(st=>{
     const col=document.createElement('div');col.className='col '+st;
     let inner='', count=0;
     if(viewMode==='names'){

@@ -1,25 +1,578 @@
 {
-  "kw": { "it": "calciomercato", "en": "football transfer", "es": "fichajes" },
+  "kw": {
+    "it": "calciomercato",
+    "en": "football transfer",
+    "es": "fichajes"
+  },
+  "campionati": [
+    {
+      "id": "it",
+      "label": {
+        "it": "Serie A",
+        "en": "Serie A",
+        "es": "Serie A"
+      },
+      "league": "Serie A"
+    },
+    {
+      "id": "es",
+      "label": {
+        "it": "La Liga",
+        "en": "La Liga",
+        "es": "La Liga"
+      },
+      "league": "La Liga"
+    },
+    {
+      "id": "en",
+      "label": {
+        "it": "Premier League",
+        "en": "Premier League",
+        "es": "Premier League"
+      },
+      "league": "Premier"
+    }
+  ],
   "squadre": [
-    { "nome": "Inter",       "search": "Inter Milan",        "lab": "INT", "col": "#0068c8", "league": "Serie A" },
-    { "nome": "Juventus",    "search": "Juventus",           "lab": "JUV", "col": "#b9bdc2", "league": "Serie A" },
-    { "nome": "Milan",       "search": "AC Milan",           "lab": "MIL", "col": "#e11b22", "league": "Serie A" },
-    { "nome": "Napoli",      "search": "Napoli",             "lab": "NAP", "col": "#12a0e8", "league": "Serie A" },
-    { "nome": "Roma",        "search": "AS Roma",            "lab": "ROM", "col": "#8e1f2f", "league": "Serie A" },
-    { "nome": "Real Madrid", "search": "Real Madrid",        "lab": "RMA", "col": "#d4a017", "league": "La Liga" },
-    { "nome": "Barcelona",   "search": "Barcelona",          "lab": "BAR", "col": "#a50044", "league": "La Liga" },
-    { "nome": "Man City",    "search": "Manchester City",    "lab": "MCI", "col": "#6cabdd", "league": "Premier" },
-    { "nome": "Liverpool",   "search": "Liverpool",          "lab": "LIV", "col": "#c8102e", "league": "Premier" }
+    {
+      "nome": "Inter",
+      "search": "Inter Milan",
+      "lab": "INT",
+      "col": "#0068c8",
+      "league": "Serie A",
+      "paese": "Italia"
+    },
+    {
+      "nome": "Juventus",
+      "search": "Juventus",
+      "lab": "JUV",
+      "col": "#2b2b2b",
+      "league": "Serie A",
+      "paese": "Italia"
+    },
+    {
+      "nome": "Milan",
+      "search": "AC Milan",
+      "lab": "MIL",
+      "col": "#e11b22",
+      "league": "Serie A",
+      "paese": "Italia"
+    },
+    {
+      "nome": "Napoli",
+      "search": "Napoli calcio",
+      "lab": "NAP",
+      "col": "#12a0e8",
+      "league": "Serie A",
+      "paese": "Italia"
+    },
+    {
+      "nome": "Roma",
+      "search": "AS Roma",
+      "lab": "ROM",
+      "col": "#8e1f2f",
+      "league": "Serie A",
+      "paese": "Italia"
+    },
+    {
+      "nome": "Lazio",
+      "search": "Lazio calcio",
+      "lab": "LAZ",
+      "col": "#5aa9e6",
+      "league": "Serie A",
+      "paese": "Italia"
+    },
+    {
+      "nome": "Atalanta",
+      "search": "Atalanta",
+      "lab": "ATA",
+      "col": "#1e2a55",
+      "league": "Serie A",
+      "paese": "Italia"
+    },
+    {
+      "nome": "Fiorentina",
+      "search": "Fiorentina",
+      "lab": "FIO",
+      "col": "#6a2c91",
+      "league": "Serie A",
+      "paese": "Italia"
+    },
+    {
+      "nome": "Bologna",
+      "search": "Bologna FC",
+      "lab": "BOL",
+      "col": "#a02833",
+      "league": "Serie A",
+      "paese": "Italia"
+    },
+    {
+      "nome": "Torino",
+      "search": "Torino FC",
+      "lab": "TOR",
+      "col": "#8b1a1a",
+      "league": "Serie A",
+      "paese": "Italia"
+    },
+    {
+      "nome": "Genoa",
+      "search": "Genoa CFC",
+      "lab": "GEN",
+      "col": "#c0202f",
+      "league": "Serie A",
+      "paese": "Italia"
+    },
+    {
+      "nome": "Udinese",
+      "search": "Udinese",
+      "lab": "UDI",
+      "col": "#3a3a3a",
+      "league": "Serie A",
+      "paese": "Italia"
+    },
+    {
+      "nome": "Cagliari",
+      "search": "Cagliari calcio",
+      "lab": "CAG",
+      "col": "#9b2335",
+      "league": "Serie A",
+      "paese": "Italia"
+    },
+    {
+      "nome": "Como",
+      "search": "Como 1907",
+      "lab": "COM",
+      "col": "#1f4e9b",
+      "league": "Serie A",
+      "paese": "Italia"
+    },
+    {
+      "nome": "Lecce",
+      "search": "US Lecce",
+      "lab": "LEC",
+      "col": "#c8102e",
+      "league": "Serie A",
+      "paese": "Italia"
+    },
+    {
+      "nome": "Verona",
+      "search": "Hellas Verona",
+      "lab": "VER",
+      "col": "#1c4fa0",
+      "league": "Serie A",
+      "paese": "Italia"
+    },
+    {
+      "nome": "Parma",
+      "search": "Parma calcio",
+      "lab": "PAR",
+      "col": "#1e63b3",
+      "league": "Serie A",
+      "paese": "Italia"
+    },
+    {
+      "nome": "Sassuolo",
+      "search": "Sassuolo",
+      "lab": "SAS",
+      "col": "#1a9e54",
+      "league": "Serie A",
+      "paese": "Italia"
+    },
+    {
+      "nome": "Cremonese",
+      "search": "Cremonese",
+      "lab": "CRE",
+      "col": "#a52a3a",
+      "league": "Serie A",
+      "paese": "Italia"
+    },
+    {
+      "nome": "Pisa",
+      "search": "Pisa SC",
+      "lab": "PIS",
+      "col": "#1a3c8c",
+      "league": "Serie A",
+      "paese": "Italia"
+    },
+    {
+      "nome": "Real Madrid",
+      "search": "Real Madrid",
+      "lab": "RMA",
+      "col": "#c9a227",
+      "league": "La Liga",
+      "paese": "Spagna"
+    },
+    {
+      "nome": "Barcelona",
+      "search": "FC Barcelona",
+      "lab": "BAR",
+      "col": "#a50044",
+      "league": "La Liga",
+      "paese": "Spagna"
+    },
+    {
+      "nome": "Atlético Madrid",
+      "search": "Atletico Madrid",
+      "lab": "ATM",
+      "col": "#cb3524",
+      "league": "La Liga",
+      "paese": "Spagna"
+    },
+    {
+      "nome": "Athletic Club",
+      "search": "Athletic Bilbao",
+      "lab": "ATH",
+      "col": "#b81d24",
+      "league": "La Liga",
+      "paese": "Spagna"
+    },
+    {
+      "nome": "Villarreal",
+      "search": "Villarreal CF",
+      "lab": "VIL",
+      "col": "#c98a00",
+      "league": "La Liga",
+      "paese": "Spagna"
+    },
+    {
+      "nome": "Real Betis",
+      "search": "Real Betis",
+      "lab": "BET",
+      "col": "#00954c",
+      "league": "La Liga",
+      "paese": "Spagna"
+    },
+    {
+      "nome": "Real Sociedad",
+      "search": "Real Sociedad",
+      "lab": "RSO",
+      "col": "#143c8b",
+      "league": "La Liga",
+      "paese": "Spagna"
+    },
+    {
+      "nome": "Sevilla",
+      "search": "Sevilla FC",
+      "lab": "SEV",
+      "col": "#c8102e",
+      "league": "La Liga",
+      "paese": "Spagna"
+    },
+    {
+      "nome": "Valencia",
+      "search": "Valencia CF",
+      "lab": "VAL",
+      "col": "#e87b00",
+      "league": "La Liga",
+      "paese": "Spagna"
+    },
+    {
+      "nome": "Celta Vigo",
+      "search": "Celta Vigo",
+      "lab": "CEL",
+      "col": "#4a90c2",
+      "league": "La Liga",
+      "paese": "Spagna"
+    },
+    {
+      "nome": "Rayo Vallecano",
+      "search": "Rayo Vallecano",
+      "lab": "RAY",
+      "col": "#d52b1e",
+      "league": "La Liga",
+      "paese": "Spagna"
+    },
+    {
+      "nome": "Osasuna",
+      "search": "CA Osasuna",
+      "lab": "OSA",
+      "col": "#9b1c31",
+      "league": "La Liga",
+      "paese": "Spagna"
+    },
+    {
+      "nome": "Getafe",
+      "search": "Getafe CF",
+      "lab": "GET",
+      "col": "#1a5cb0",
+      "league": "La Liga",
+      "paese": "Spagna"
+    },
+    {
+      "nome": "Espanyol",
+      "search": "RCD Espanyol",
+      "lab": "ESP",
+      "col": "#1f63b8",
+      "league": "La Liga",
+      "paese": "Spagna"
+    },
+    {
+      "nome": "Mallorca",
+      "search": "RCD Mallorca",
+      "lab": "MLL",
+      "col": "#b91c2e",
+      "league": "La Liga",
+      "paese": "Spagna"
+    },
+    {
+      "nome": "Alavés",
+      "search": "Deportivo Alaves",
+      "lab": "ALA",
+      "col": "#1c4fa0",
+      "league": "La Liga",
+      "paese": "Spagna"
+    },
+    {
+      "nome": "Girona",
+      "search": "Girona FC",
+      "lab": "GIR",
+      "col": "#d11f2d",
+      "league": "La Liga",
+      "paese": "Spagna"
+    },
+    {
+      "nome": "Levante",
+      "search": "Levante UD",
+      "lab": "LEV",
+      "col": "#2b3f8c",
+      "league": "La Liga",
+      "paese": "Spagna"
+    },
+    {
+      "nome": "Elche",
+      "search": "Elche CF",
+      "lab": "ELC",
+      "col": "#178a4a",
+      "league": "La Liga",
+      "paese": "Spagna"
+    },
+    {
+      "nome": "Real Oviedo",
+      "search": "Real Oviedo",
+      "lab": "OVI",
+      "col": "#1a4fa0",
+      "league": "La Liga",
+      "paese": "Spagna"
+    },
+    {
+      "nome": "Liverpool",
+      "search": "Liverpool FC",
+      "lab": "LIV",
+      "col": "#c8102e",
+      "league": "Premier",
+      "paese": "Inghilterra"
+    },
+    {
+      "nome": "Arsenal",
+      "search": "Arsenal FC",
+      "lab": "ARS",
+      "col": "#ef0107",
+      "league": "Premier",
+      "paese": "Inghilterra"
+    },
+    {
+      "nome": "Man City",
+      "search": "Manchester City",
+      "lab": "MCI",
+      "col": "#6cabdd",
+      "league": "Premier",
+      "paese": "Inghilterra"
+    },
+    {
+      "nome": "Chelsea",
+      "search": "Chelsea FC",
+      "lab": "CHE",
+      "col": "#034694",
+      "league": "Premier",
+      "paese": "Inghilterra"
+    },
+    {
+      "nome": "Man United",
+      "search": "Manchester United",
+      "lab": "MUN",
+      "col": "#da291c",
+      "league": "Premier",
+      "paese": "Inghilterra"
+    },
+    {
+      "nome": "Tottenham",
+      "search": "Tottenham Hotspur",
+      "lab": "TOT",
+      "col": "#132257",
+      "league": "Premier",
+      "paese": "Inghilterra"
+    },
+    {
+      "nome": "Newcastle",
+      "search": "Newcastle United",
+      "lab": "NEW",
+      "col": "#241f20",
+      "league": "Premier",
+      "paese": "Inghilterra"
+    },
+    {
+      "nome": "Aston Villa",
+      "search": "Aston Villa",
+      "lab": "AVL",
+      "col": "#670e36",
+      "league": "Premier",
+      "paese": "Inghilterra"
+    },
+    {
+      "nome": "Brighton",
+      "search": "Brighton Hove Albion",
+      "lab": "BHA",
+      "col": "#0057b8",
+      "league": "Premier",
+      "paese": "Inghilterra"
+    },
+    {
+      "nome": "West Ham",
+      "search": "West Ham United",
+      "lab": "WHU",
+      "col": "#7a263a",
+      "league": "Premier",
+      "paese": "Inghilterra"
+    },
+    {
+      "nome": "Crystal Palace",
+      "search": "Crystal Palace",
+      "lab": "CRY",
+      "col": "#1b458f",
+      "league": "Premier",
+      "paese": "Inghilterra"
+    },
+    {
+      "nome": "Bournemouth",
+      "search": "AFC Bournemouth",
+      "lab": "BOU",
+      "col": "#b50e12",
+      "league": "Premier",
+      "paese": "Inghilterra"
+    },
+    {
+      "nome": "Brentford",
+      "search": "Brentford FC",
+      "lab": "BRE",
+      "col": "#e30613",
+      "league": "Premier",
+      "paese": "Inghilterra"
+    },
+    {
+      "nome": "Fulham",
+      "search": "Fulham FC",
+      "lab": "FUL",
+      "col": "#2b2b2b",
+      "league": "Premier",
+      "paese": "Inghilterra"
+    },
+    {
+      "nome": "Wolves",
+      "search": "Wolverhampton Wanderers",
+      "lab": "WOL",
+      "col": "#c98a00",
+      "league": "Premier",
+      "paese": "Inghilterra"
+    },
+    {
+      "nome": "Everton",
+      "search": "Everton FC",
+      "lab": "EVE",
+      "col": "#003399",
+      "league": "Premier",
+      "paese": "Inghilterra"
+    },
+    {
+      "nome": "Nottingham Forest",
+      "search": "Nottingham Forest",
+      "lab": "NFO",
+      "col": "#dd0000",
+      "league": "Premier",
+      "paese": "Inghilterra"
+    },
+    {
+      "nome": "Leeds",
+      "search": "Leeds United",
+      "lab": "LEE",
+      "col": "#1d428a",
+      "league": "Premier",
+      "paese": "Inghilterra"
+    },
+    {
+      "nome": "Burnley",
+      "search": "Burnley FC",
+      "lab": "BUR",
+      "col": "#6c1d45",
+      "league": "Premier",
+      "paese": "Inghilterra"
+    },
+    {
+      "nome": "Sunderland",
+      "search": "Sunderland AFC",
+      "lab": "SUN",
+      "col": "#d31028",
+      "league": "Premier",
+      "paese": "Inghilterra"
+    }
   ],
   "leghe_home": [
-    { "search": "Serie A",        "label": { "it": "Serie A", "en": "Serie A", "es": "Serie A" } },
-    { "search": "Premier League", "label": { "it": "Premier", "en": "Premier League", "es": "Premier League" } },
-    { "search": "La Liga",        "label": { "it": "La Liga", "en": "La Liga", "es": "La Liga" } }
+    {
+      "search": "Serie A",
+      "label": {
+        "it": "Serie A",
+        "en": "Serie A",
+        "es": "Serie A"
+      }
+    },
+    {
+      "search": "Premier League",
+      "label": {
+        "it": "Premier",
+        "en": "Premier League",
+        "es": "Premier League"
+      }
+    },
+    {
+      "search": "La Liga",
+      "label": {
+        "it": "La Liga",
+        "en": "La Liga",
+        "es": "La Liga"
+      }
+    }
   ],
   "mondo_home": [
-    { "search": "Brazil football",          "label": { "it": "Brasile", "en": "Brazil", "es": "Brasil" } },
-    { "search": "Saudi Pro League",         "label": { "it": "Arabia Saudita", "en": "Saudi Arabia", "es": "Arabia Saudí" } },
-    { "search": "MLS Messi",                "label": { "it": "MLS", "en": "MLS", "es": "MLS" } },
-    { "search": "national team World Cup",   "label": { "it": "Nazionali", "en": "National teams", "es": "Selecciones" } }
+    {
+      "search": "Brazil football",
+      "label": {
+        "it": "Brasile",
+        "en": "Brazil",
+        "es": "Brasil"
+      }
+    },
+    {
+      "search": "Saudi Pro League",
+      "label": {
+        "it": "Arabia Saudita",
+        "en": "Saudi Arabia",
+        "es": "Arabia Saudí"
+      }
+    },
+    {
+      "search": "MLS Messi",
+      "label": {
+        "it": "MLS",
+        "en": "MLS",
+        "es": "MLS"
+      }
+    },
+    {
+      "search": "national team World Cup",
+      "label": {
+        "it": "Nazionali",
+        "en": "National teams",
+        "es": "Selecciones"
+      }
+    }
   ]
 }
