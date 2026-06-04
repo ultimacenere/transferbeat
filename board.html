@@ -271,4 +271,14 @@ function renderTeam(){
   (v.feed||[]).forEach(f=>{
     const it=document.createElement('div');it.className='item';
     const thumb=f.img?`<a class="thumb" href="${f.link||'#'}" target="_blank" rel="noopener"><img src="${f.img}" loading="lazy" alt="" onerror="this.closest('.thumb').style.display='none'"></a>`:'';
-    it.innerH
+    it.innerHTML=`<div class="time">${f.quando||''}</div>${thumb}
+      <div class="body"><span class="tag t-${dispStato(f.stato)}">${T.tags[dispStato(f.stato)]}</span>${dots(f.affidabilita)}
+      <a class="txt" href="${f.link||'#'}" target="_blank" rel="noopener">${f.titolo}</a>
+      <div class="src2">${T.source}: <a href="${f.link||'#'}" target="_blank" rel="noopener">${f.fonte}</a>${f.dominio?' · '+f.dominio:''}</div></div>`;
+    feed.appendChild(it);
+  });
+}
+init();
+</script>
+</body>
+</html>
