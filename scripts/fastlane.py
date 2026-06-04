@@ -36,11 +36,21 @@ def messages(ch):
         mx = re.search(r'tgme_widget_message_text[^"]*"[^>]*>(.*?)</div>', b, re.S)
         if not (ml and mx):
             continue
-        txt = re.sub(r"<br\s*/?>", " ", mx.group(1))
+        raw = mx.group(1)
+        txt = re.sub(r"<br\s*/?>", " ", raw)
         txt = re.sub(r"<[^>]+>", "", html.unescape(txt)).strip()
+        # link alla TESTATA: primo href esterno (non t.me) nel post, o primo URL visibile
+        src = ""
+        mh = re.search(r'href="(https?://[^"]+)"', raw)
+        if mh and "t.me" not in mh.group(1):
+            src = html.unescape(mh.group(1))
+        else:
+            mu = re.search(r'https?://[^\s"<]+', txt)
+            if mu and "t.me" not in mu.group(0):
+                src = mu.group(0)
         txt = re.sub(r"https?://\S+", "", txt).strip()
         if txt:
-            out.append({"link": ml.group(1), "ts": mt.group(1), "txt": txt})
+            out.append({"link": ml.group(1), "ts": mt.group(1), "txt": txt, "src": src})
     return out
 
 def age_h(ts):
@@ -133,7 +143,7 @@ def main():
             items.append({"ts": m["ts"], "fonte": ch["nome"], "tier": int(ch.get("tier", 1)),
                           "titolo": titolo, "stato": stato, "team": team,
                           "giocatore": giocatore, "direzione": direzione, "club": club, "smentita": smentita,
-                          "slug": slugify(giocatore), "link": m["link"], "lang": lang})
+                          "slug": slugify(giocatore), "link": (m.get("src") or m["link"]), "lang": lang})
     items.sort(key=lambda x: x["ts"], reverse=True)
     items = items[:MAX_ITEMS]
     out = {"aggiornato": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "items": items}

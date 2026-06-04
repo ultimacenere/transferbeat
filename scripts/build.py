@@ -346,7 +346,7 @@ def build_home(teams, kw, lang, loc):
                 "link": info["url"], "img": info["img"], "dominio": info["dominio"],
                 "quando": e.get("quando", "")}
     apertura = slim(pick[0]) if pick else None
-    secondari = [slim(e) for e in pick[1:4]]
+    secondari = [slim(e) for e in pick[1:7]]
     mondo = []
     for m in teams.get("mondo_home", []):
         got = fetch(m["search"], 3, loc)
