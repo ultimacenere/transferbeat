@@ -1,8 +1,11 @@
-# chiave LLM locale: non committarla mai
+# credenziali locali: non committarle MAI
 groq_key.txt
+github_token.txt
 .env
 
 # python
 __pycache__/
 *.pyc
+
+# dati ultim'ora (gestiti sul branch live)
 data/ultimora.json

@@ -1,13 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-TransferBeat - fastlane.py  (corsia veloce ULTIM'ORA)
-Legge i canali Telegram pubblici (t.me/s), l'LLM filtra/riscrive, attribuisce la
-SQUADRA, lo STATO e il MOVIMENTO (giocatore/direzione/club), e aggiorna data/ultimora.json.
-"""
+"""TransferBeat - fastlane.py (corsia veloce ULTIM'ORA da canali Telegram pubblici)."""
 import json, os, re, sys, html
 from datetime import datetime, timezone
-
 try:
     import requests
 except ImportError:
@@ -19,9 +14,7 @@ UA = {"User-Agent": "Mozilla/5.0 (compatible; TransferBeatBot/1.0)"}
 LLM_KEY = os.environ.get("GROQ_API_KEY", "")
 LLM_URL = "https://api.groq.com/openai/v1/chat/completions"
 LLM_MODEL = os.environ.get("LLM_MODEL", "llama-3.3-70b-versatile")
-MAX_AGE_H = 12
-MAX_ITEMS = 50
-MAX_NEW_PER_RUN = 25
+MAX_AGE_H = 12; MAX_ITEMS = 50; MAX_NEW_PER_RUN = 25
 
 def load(p, d=None):
     try:
@@ -69,7 +62,6 @@ def match_team(s, team_names):
     return next((n for (n, nl) in team_names if nl in sl or sl in nl), "")
 
 def llm_process(txt, lang):
-    """Ritorna dict {transfer,titolo,stato,squadra,giocatore,direzione,club} oppure None."""
     if not LLM_KEY:
         return None
     langname = {"it": "italiano", "en": "English", "es": "espanol"}.get(lang, "italiano")
@@ -78,11 +70,12 @@ def llm_process(txt, lang):
       "Campi:\n"
       "- transfer: true SOLO se riguarda un trasferimento/trattativa/rinnovo/voce su un calciatore; false per gossip, partite, opinioni, eventi.\n"
       "- titolo: titolo conciso e neutro, max 100 caratteri, in " + langname + ", senza emoji ne hashtag ne virgolette.\n"
-      "- stato: 'done' se ufficiale/annunciato/firmato; 'conf' se l'affare e' dato per FATTO o c'e' un accordo (es. 'X lascia il club', 'X al club Y' detto come certezza); 'obj' se e' in trattativa/obiettivo/contatti; 'rumor' solo se e' una semplice voce/idea/sondaggio/interesse.\n"
-      "- squadra: il club di Serie A, La Liga o Premier League coinvolto (provenienza o destinazione del giocatore); vuoto se nessuna delle tre leghe.\n"
+      "- stato: 'done' se ufficiale/annunciato/firmato; 'conf' se l'affare e' dato per FATTO o c'e' un accordo (es. 'X lascia il club', 'X al club Y' come certezza); 'obj' se in trattativa/obiettivo/contatti; 'rumor' solo se semplice voce/idea/sondaggio/interesse.\n"
+      "- squadra: il club di Serie A, La Liga o Premier League coinvolto (provenienza o destinazione); vuoto se nessuna delle tre leghe.\n"
       "- giocatore: nome del calciatore (vuoto se non chiaro).\n"
-      "- direzione: 'in' se il giocatore ARRIVA a 'squadra', 'out' se la LASCIA.\n"
-      "- club: l'altra squadra coinvolta (vuoto se non indicata).")
+      "- direzione: 'in' se ARRIVA a 'squadra', 'out' se la LASCIA.\n"
+      "- club: l'altra squadra coinvolta (vuoto se non indicata).\n"
+      "- smentita: true se la notizia SMENTISCE o annulla un trasferimento/trattativa gia' dato (es. 'salta tutto', 'non se ne fa nulla'); false altrimenti.")
     try:
         r = requests.post(LLM_URL, timeout=25,
             headers={"Authorization": "Bearer " + LLM_KEY, "Content-Type": "application/json"},
@@ -103,11 +96,9 @@ def main():
                    load(os.path.join(RULES, "keywords.json"), {"categorie_ordine": [], "categorie": {}}))
            for l in ("it", "en", "es")}
     team_names = [(t["nome"], t["nome"].lower()) for t in teams.get("squadre", [])]
-
     prev = load(os.path.join(DATA, "ultimora.json"), {"items": []})
     seen = {it["link"] for it in prev.get("items", [])}
     items = list(prev.get("items", []))
-
     new_count = 0
     for ch in experts.get("canali", []):
         lang = ch.get("lang", "it"); kw = kws.get(lang, kws["it"])
@@ -120,13 +111,13 @@ def main():
                 break
             low = m["txt"].lower()
             d = llm_process(m["txt"], lang)
-            giocatore = direzione = club = ""
+            giocatore = direzione = club = ""; smentita = False
             if d is not None:
                 if not d.get("transfer"):
                     seen.add(m["link"]); continue
                 titolo = (d.get("titolo") or "").strip()[:130]; stato = d["stato"]
                 team = match_team(d.get("squadra"), team_names) or next((n for (n, nl) in team_names if nl in low), "")
-                giocatore = (d.get("giocatore") or "").strip(); direzione = d["direzione"]; club = (d.get("club") or "").strip()
+                giocatore = (d.get("giocatore") or "").strip(); direzione = d["direzione"]; club = (d.get("club") or "").strip(); smentita = bool(d.get("smentita"))
             else:
                 team = next((n for (n, nl) in team_names if nl in low), "")
                 kwords = ("mercato","transfer","fichaj","ufficiale","official","accordo","firma","here we go","obiettiv","trattativ","prestito","clausola","rinnov","colpo","cessione","addio","ingaggio","vola","pista")
@@ -136,9 +127,8 @@ def main():
             seen.add(m["link"]); new_count += 1
             items.append({"ts": m["ts"], "fonte": ch["nome"], "tier": int(ch.get("tier", 1)),
                           "titolo": titolo, "stato": stato, "team": team,
-                          "giocatore": giocatore, "direzione": direzione, "club": club,
+                          "giocatore": giocatore, "direzione": direzione, "club": club, "smentita": smentita,
                           "link": m["link"], "lang": lang})
-
     items.sort(key=lambda x: x["ts"], reverse=True)
     items = items[:MAX_ITEMS]
     out = {"aggiornato": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "items": items}

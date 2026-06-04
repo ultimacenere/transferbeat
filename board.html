@@ -223,6 +223,9 @@ function renderTeam(){
     `<span class="crest" style="background:${v.col}">${v.lab}</span>
      <div><h1>${curTeam}</h1><div class="sub">${v.league} · ${T.sub}</div></div>`;
   const liveTeam=(ULTIMORA||[]).filter(i=>i.team===curTeam);
+  const norm=x=>(x||'').toLowerCase().replace(/[^a-zà-ù ]/g,'').trim();
+  const canon={}; ['done','conf','obj','rumor'].forEach(st=>((v.nomi&&v.nomi[st])||[]).forEach(m=>{if(m.giocatore)canon[norm(m.giocatore)]=st;}));
+  const liveCol=i=>{ if(i.giocatore&&!i.smentita){const c=canon[norm(i.giocatore)]; if(c!==undefined)return dispCol(c);} return dispCol(i.stato); };
   const board=document.getElementById('board');board.innerHTML='';
   const totNomi=v.nomi?Object.values(v.nomi).reduce((a,x)=>a+x.length,0):0;
   document.getElementById('notice').innerHTML=(viewMode==='names'&&totNomi===0)?('<div class="notice">'+T.notice+'</div>'):'';
@@ -230,7 +233,7 @@ function renderTeam(){
     const el=document.createElement('div');el.className='col '+col.cls;
     let inner='', count=0;
     if(viewMode==='names'){
-      const liveMovs=liveTeam.filter(i=>i.giocatore&&dispCol(i.stato)===idx);
+      const liveMovs=liveTeam.filter(i=>i.giocatore&&canon[norm(i.giocatore)]===undefined&&dispCol(i.stato)===idx);
       let movs=[]; col.states.forEach(st=>movs=movs.concat((v.nomi&&v.nomi[st])||[]));
       count=liveMovs.length+movs.length;
       const mvCard=(m,live)=>`<div class="mv ${m.direzione==='out'?'out':'in'}">
@@ -239,7 +242,7 @@ function renderTeam(){
           <div class="club">${m.direzione==='out'?'→':'←'} ${m.club||'—'}</div></div>`;
       inner=(liveMovs.map(m=>mvCard(m,true)).join('')+movs.map(m=>mvCard(m,false)).join(''))||'<div class="empty">—</div>';
     } else {
-      const liveHere=liveTeam.filter(i=>dispCol(i.stato)===idx);
+      const liveHere=liveTeam.filter(i=>liveCol(i)===idx);
       let items=[]; col.states.forEach(st=>items=items.concat(v.colonne[st]||[]));
       count=liveHere.length+items.length;
       const liveHtml=liveHere.map(i=>`<a class="card livecard" href="${i.link||'#'}" target="_blank" rel="noopener">
@@ -268,14 +271,4 @@ function renderTeam(){
   (v.feed||[]).forEach(f=>{
     const it=document.createElement('div');it.className='item';
     const thumb=f.img?`<a class="thumb" href="${f.link||'#'}" target="_blank" rel="noopener"><img src="${f.img}" loading="lazy" alt="" onerror="this.closest('.thumb').style.display='none'"></a>`:'';
-    it.innerHTML=`<div class="time">${f.quando||''}</div>${thumb}
-      <div class="body"><span class="tag t-${dispStato(f.stato)}">${T.tags[dispStato(f.stato)]}</span>${dots(f.affidabilita)}
-      <a class="txt" href="${f.link||'#'}" target="_blank" rel="noopener">${f.titolo}</a>
-      <div class="src2">${T.source}: <a href="${f.link||'#'}" target="_blank" rel="noopener">${f.fonte}</a>${f.dominio?' · '+f.dominio:''}</div></div>`;
-    feed.appendChild(it);
-  });
-}
-init();
-</script>
-</body>
-</html>
+    it.innerH
