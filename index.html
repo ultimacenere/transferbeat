@@ -133,6 +133,13 @@
   </aside>
 </div>
 <div class="wrap">
+  <div class="strip" id="articoliStrip" style="display:none">
+    <h2 id="artH">📝 Articoli TransferBeat</h2>
+    <div class="sub" id="artSub"></div>
+    <div class="row4" id="articoliRow"></div>
+  </div>
+</div>
+<div class="wrap">
   <div class="strip" id="world">
     <h2 id="worldH">Dal mondo <span class="flag" id="worldFlag">🌍 Worldwide</span></h2>
     <div class="sub" id="worldSub"></div>
@@ -154,6 +161,32 @@ localStorage.setItem('tb_lang',lang);
 document.documentElement.lang=lang;
 const T=STRINGS[lang];
 const stCls={done:'s-done',conf:'s-conf',obj:'s-obj',rumor:'s-rumor'};
+const stColor={rumor:'#d98700',obj:'#d98700',conf:'#7b46c9',done:'#0a9d57'};
+let ART={}, ARTLIST=[];
+const ART_I18N={it:{h:'📝 Articoli TransferBeat',s:'Le nostre analisi delle trattative, aggiornate di continuo'},
+                en:{h:'📝 TransferBeat Articles',s:'Our take on the deals, continuously updated'},
+                es:{h:'📝 Artículos TransferBeat',s:'Nuestro análisis de las operaciones, al día'}};
+function artUrl(slug){return 'articoli/'+lang+'/'+slug+'.html';}
+function loadArticles(){
+  fetch('data/articles/index.json?t='+Date.now()).then(r=>r.ok?r.json():null).then(d=>{
+    if(!d||!d.articoli)return;
+    ART={}; ARTLIST=d.articoli; d.articoli.forEach(a=>ART[a.slug]=a);
+    const row=document.getElementById('articoliRow'), strip=document.getElementById('articoliStrip');
+    if(ARTLIST.length&&row){
+      document.getElementById('artH').textContent=ART_I18N[lang].h;
+      document.getElementById('artSub').textContent=ART_I18N[lang].s;
+      row.innerHTML=ARTLIST.slice(0,8).map(a=>{
+        const col=a.smentita?'#e0392b':(stColor[a.stato]||'#67727e');
+        const titolo=(a.t&&a.t[lang])||a.giocatore||'';
+        return `<div class="art"><a class="ph2link" href="${artUrl(a.slug)}"><div class="ph2" style="background:${a.col||'#0a9d57'};display:grid;place-items:center"><span style="color:#fff;font-weight:800;font-size:22px">${a.lab||'TB'}</span></div></a>
+          <div class="cat">${a.team||''}</div>
+          <h3><a href="${artUrl(a.slug)}">${titolo}</a></h3>
+          <div class="credit"><span style="color:${col};font-weight:800">●</span> ${a.team||''}</div></div>`;}).join('');
+      strip.style.display='';
+    }
+  }).catch(()=>{});
+}
+loadArticles();
 
 function applyStatic(){
   document.getElementById('tkLab').textContent=T.breaking;
@@ -188,10 +221,11 @@ function loadUltimora(){
     if(!d||!d.items||!d.items.length)return;
     const items=d.items.slice(0,14);
     const lf=document.getElementById('liveFeed');
-    if(lf)lf.innerHTML=items.slice(0,8).map(i=>
-      `<a class="r" href="${i.link||'#'}" target="_blank" rel="noopener">
-         <span class="st ${stCls[i.stato]||'s-rumor'}">${agoISO(i.ts)}</span>
-         <span class="tt">${(i.titolo||'').length>62?i.titolo.slice(0,62)+'…':(i.titolo||'')}</span></a>`).join('');
+    if(lf)lf.innerHTML=items.slice(0,8).map(i=>{
+      const tt=(i.titolo||'').length>62?i.titolo.slice(0,62)+'…':(i.titolo||'');
+      const inner=`<span class="st ${stCls[i.stato]||'s-rumor'}">${agoISO(i.ts)}</span><span class="tt">${tt}</span>`;
+      return (i.slug&&ART[i.slug])?`<a class="r" href="${artUrl(i.slug)}">${inner}</a>`:`<div class="r" style="cursor:default">${inner}</div>`;
+    }).join('');
     const tk=document.getElementById('ticker');
     if(tk){const t=items.map(i=>`<span>🔴 ${i.fonte}: ${i.titolo}</span>`);tk.innerHTML=[...t,...t].join('');}
   }).catch(()=>{});

@@ -30,10 +30,15 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}   # opzionale: abilita la vista "Nomi"
         run: python scripts/build.py
 
-      - name: Commit dei JSON
+      - name: Genera articoli dai social
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: python scripts/articles.py || echo "articoli skip"
+
+      - name: Commit dei dati e degli articoli
         run: |
           git config user.name  "transferbeat-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add data
+          git add -A
           git commit -m "Aggiornamento dati $(date -u +'%Y-%m-%d %H:%M UTC')" || echo "Nessuna modifica"
           git push || echo "Niente da pushare"

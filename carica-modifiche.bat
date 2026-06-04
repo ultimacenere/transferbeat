@@ -9,6 +9,18 @@ if not %errorlevel%==0 (
   pause & exit /b
 )
 
+echo Controllo anti-troncamento dei file sorgente...
+if not defined TB_FORCE (
+  python scripts\guard.py
+  if errorlevel 1 (
+    echo.
+    echo Caricamento ANNULLATO. Nessuna modifica inviata.
+    pause & exit /b
+  )
+) else (
+  echo [TB_FORCE attivo] guard saltato.
+)
+
 echo Carico le modifiche su GitHub...
 git add .
 git commit -m "aggiornamento"

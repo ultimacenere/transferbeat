@@ -1,0 +1,200 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Render pagine statiche degli articoli + indici + sitemap.xml + robots.txt."""
+import json, os, html
+from datetime import datetime, timezone
+
+LANGS = ("it", "en", "es")
+STATE_LABEL = {
+    "it": {"rumor": "Rumor", "obj": "Obiettivo", "conf": "Trattativa confermata", "done": "Affare concluso"},
+    "en": {"rumor": "Rumour", "obj": "Target", "conf": "Deal agreed", "done": "Done deal"},
+    "es": {"rumor": "Rumor", "obj": "Objetivo", "conf": "Negociacion confirmada", "done": "Cerrado"},
+}
+STATE_COLOR = {"rumor": "#d98700", "obj": "#d98700", "conf": "#7b46c9", "done": "#0a9d57"}
+UI = {
+  "it": {"by": "Redazione TransferBeat", "sources": "Fonti", "updated": "Aggiornato il", "home": "Home",
+         "board": "Board live", "back": "← Tutti gli articoli", "status": "Stato", "list": "Articoli di mercato",
+         "disc": "TransferBeat aggrega notizie di mercato citando le fonti originali. Notizia in aggiornamento.",
+         "via": "via", "smentita": "SMENTITA"},
+  "en": {"by": "TransferBeat Newsroom", "sources": "Sources", "updated": "Updated on", "home": "Home",
+         "board": "Live board", "back": "← All articles", "status": "Status", "list": "Transfer articles",
+         "disc": "TransferBeat aggregates transfer news citing the original sources. Developing story.",
+         "via": "via", "smentita": "DENIED"},
+  "es": {"by": "Redaccion TransferBeat", "sources": "Fuentes", "updated": "Actualizado el", "home": "Inicio",
+         "board": "Board en vivo", "back": "← Todos los articulos", "status": "Estado", "list": "Articulos de mercado",
+         "disc": "TransferBeat agrega noticias de mercado citando las fuentes originales. Noticia en desarrollo.",
+         "via": "via", "smentita": "DESMENTIDO"},
+}
+MONTHS = {"it": ["gen","feb","mar","apr","mag","giu","lug","ago","set","ott","nov","dic"],
+          "en": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+          "es": ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"]}
+
+def esc(s):
+    return html.escape(str(s or ""), quote=True)
+
+def fdate(iso, lang):
+    try:
+        d = datetime.fromisoformat(iso.replace("Z", "+00:00"))
+        return str(d.day) + " " + MONTHS[lang][d.month - 1] + " " + str(d.year)
+    except Exception:
+        return ""
+
+CSS = """*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#fff;color:#161b21;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:760px;margin:0 auto;padding:0 18px}
+.top{border-bottom:1px solid #e2e6ea;padding:14px 0;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-family:Georgia,serif;font-size:26px;font-weight:700}.brand b{color:#0a9d57}
+.nav a{font-size:13px;color:#67727e;margin-left:14px}
+.langsw a{font-size:11px;font-weight:700;padding:3px 7px;border:1px solid #e2e6ea;border-radius:6px;color:#67727e;margin-left:4px}
+.langsw a.on{background:#161b21;color:#fff;border-color:#161b21}
+.crumbs{font-size:12px;color:#8a94a0;padding:14px 0 0}
+article{padding:10px 0 30px}
+.badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.4px;color:#fff;padding:3px 9px;border-radius:5px;text-transform:uppercase}
+.team{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:#67727e;margin-left:8px}
+.team .lab{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:5px;color:#fff;font-size:10px;font-weight:800}
+h1{font-family:Georgia,serif;font-size:32px;line-height:1.22;margin:14px 0 8px}
+.byline{font-size:13px;color:#8a94a0;border-bottom:1px solid #e2e6ea;padding-bottom:14px;margin-bottom:18px}
+.lead{font-size:18px;font-weight:600;margin-bottom:16px}
+article p{margin-bottom:14px;font-size:16px}
+.sources{background:#f7f8fa;border:1px solid #e2e6ea;border-radius:10px;padding:14px 16px;margin-top:22px}
+.sources h2{font-size:13px;text-transform:uppercase;letter-spacing:.5px;color:#67727e;margin-bottom:10px}
+.sources li{list-style:none;font-size:14px;padding:6px 0;border-top:1px solid #eef1f5;display:flex;gap:8px;flex-wrap:wrap}
+.sources li:first-child{border-top:0}
+.sources a{color:#1f6fd6;font-weight:600}
+.sources .w{color:#8a94a0;font-size:12px}
+.disc{font-size:12px;color:#8a94a0;margin-top:18px;font-style:italic}
+.foot{border-top:1px solid #e2e6ea;padding:18px 0;font-size:12px;color:#8a94a0;text-align:center}
+.lcard{display:block;border:1px solid #e2e6ea;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+.lcard:hover{border-color:#0a9d57}
+.lcard .h{font-family:Georgia,serif;font-size:19px;margin:6px 0 4px}
+.lcard .m{font-size:12px;color:#8a94a0}
+.list-h{font-family:Georgia,serif;font-size:28px;margin:18px 0 4px}"""
+
+def head(title, desc, canon, alts, lang):
+    h = ['<!DOCTYPE html><html lang="' + lang + '"><head><meta charset="UTF-8">',
+         '<meta name="viewport" content="width=device-width,initial-scale=1">',
+         '<title>' + esc(title) + ' | TransferBeat</title>',
+         '<meta name="description" content="' + esc(desc) + '">',
+         '<link rel="canonical" href="' + esc(canon) + '">']
+    for l, u in alts.items():
+        h.append('<link rel="alternate" hreflang="' + l + '" href="' + esc(u) + '">')
+    h.append('<meta property="og:type" content="article"><meta property="og:site_name" content="TransferBeat">')
+    h.append('<meta property="og:title" content="' + esc(title) + '">')
+    h.append('<meta property="og:description" content="' + esc(desc) + '">')
+    h.append('<meta property="og:url" content="' + esc(canon) + '">')
+    h.append('<meta name="twitter:card" content="summary">')
+    h.append('<style>' + CSS + '</style></head><body>')
+    return "".join(h)
+
+def topbar(lang, alts, site):
+    nav = ('<a href="' + site + '/?lang=' + lang + '">' + UI[lang]["home"] + '</a>'
+           '<a href="' + site + '/board.html?lang=' + lang + '">' + UI[lang]["board"] + '</a>')
+    langs = "".join('<a class="' + ("on" if l == lang else "") + '" href="' + esc(alts[l]) + '">' + l.upper() + '</a>' for l in LANGS)
+    return ('<div class="wrap"><div class="top"><a class="brand" href="' + site + '/?lang=' + lang + '">Transfer<b>Beat</b></a>'
+            '<div><span class="nav">' + nav + '</span> <span class="langsw">' + langs + '</span></div></div></div>')
+
+def render_article(art, lang, site):
+    c = art["content"].get(lang) or art["content"]["it"]
+    slug = art["slug"]
+    canon = site + "/articoli/" + lang + "/" + slug + ".html"
+    alts = {l: site + "/articoli/" + l + "/" + slug + ".html" for l in LANGS}
+    st = art["stato"]; smn = art.get("smentita")
+    badge_col = "#e0392b" if smn else STATE_COLOR.get(st, "#67727e")
+    badge_txt = UI[lang]["smentita"] if smn else STATE_LABEL[lang].get(st, st)
+    title = c["title"]; lead = c["lead"]
+    desc = lead or title
+    out = [head(title, desc, canon, alts, lang), topbar(lang, alts, site)]
+    out.append('<div class="wrap">')
+    out.append('<div class="crumbs"><a href="' + site + '/articoli/' + lang + '/">' + UI[lang]["list"] + '</a> / ' + esc(art.get("team","")) + '</div>')
+    out.append('<article>')
+    team = art.get("team", ""); lab = art.get("lab", ""); col = art.get("col", "#0a9d57")
+    out.append('<span class="badge" style="background:' + badge_col + '">' + esc(badge_txt) + '</span>')
+    if team:
+        out.append('<span class="team"><span class="lab" style="background:' + esc(col) + '">' + esc(lab) + '</span>' + esc(team) + '</span>')
+    out.append('<h1>' + esc(title) + '</h1>')
+    out.append('<div class="byline">' + UI[lang]["by"] + ' · ' + UI[lang]["updated"] + ' ' + fdate(art.get("updated",""), lang) + '</div>')
+    if lead:
+        out.append('<p class="lead">' + esc(lead) + '</p>')
+    for p in c["body"]:
+        out.append('<p>' + esc(p) + '</p>')
+    # fonti
+    out.append('<div class="sources"><h2>' + UI[lang]["sources"] + '</h2><ul>')
+    for u in art["updates"]:
+        out.append('<li><a href="' + esc(u["link"]) + '" target="_blank" rel="noopener nofollow">' + esc(u["fonte"]) + '</a>'
+                   '<span class="w">' + esc(STATE_LABEL[lang].get(u.get("stato","rumor"), "")) + ' · ' + fdate(u.get("ts",""), lang) + '</span></li>')
+    out.append('</ul></div>')
+    out.append('<p class="disc">' + UI[lang]["disc"] + '</p>')
+    out.append('</article></div>')
+    out.append('<div class="wrap"><div class="foot">© TransferBeat · ' + esc(team) + '</div></div>')
+    # JSON-LD
+    ld = {"@context": "https://schema.org", "@type": "NewsArticle", "headline": title,
+          "description": desc, "datePublished": art.get("created", ""), "dateModified": art.get("updated", ""),
+          "inLanguage": lang, "mainEntityOfPage": {"@type": "WebPage", "@id": canon},
+          "articleSection": "Calciomercato", "author": {"@type": "Organization", "name": "TransferBeat"},
+          "publisher": {"@type": "Organization", "name": "TransferBeat",
+                        "logo": {"@type": "ImageObject", "url": site + "/favicon.png"}},
+          "about": [{"@type": "Person", "name": art.get("giocatore", "")},
+                    {"@type": "SportsTeam", "name": team}] if team else [{"@type": "Person", "name": art.get("giocatore", "")}],
+          "citation": [{"@type": "CreativeWork", "name": u["fonte"], "url": u["link"]} for u in art["updates"]]}
+    out.append('<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + '</script>')
+    bc = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "TransferBeat", "item": site + "/"},
+            {"@type": "ListItem", "position": 2, "name": UI[lang]["list"], "item": site + "/articoli/" + lang + "/"},
+            {"@type": "ListItem", "position": 3, "name": title, "item": canon}]}
+    out.append('<script type="application/ld+json">' + json.dumps(bc, ensure_ascii=False) + '</script>')
+    out.append('</body></html>')
+    return "".join(out)
+
+def render_index(arts, lang, site):
+    canon = site + "/articoli/" + lang + "/"
+    alts = {l: site + "/articoli/" + l + "/" for l in LANGS}
+    out = [head(UI[lang]["list"], UI[lang]["list"] + " - TransferBeat", canon, alts, lang), topbar(lang, alts, site)]
+    out.append('<div class="wrap"><h1 class="list-h">' + UI[lang]["list"] + '</h1>')
+    for a in arts:
+        c = a["content"].get(lang) or a["content"]["it"]
+        st = a["stato"]; smn = a.get("smentita")
+        col = "#e0392b" if smn else STATE_COLOR.get(st, "#67727e")
+        lbl = UI[lang]["smentita"] if smn else STATE_LABEL[lang].get(st, st)
+        out.append('<a class="lcard" href="' + site + '/articoli/' + lang + '/' + a["slug"] + '.html">'
+                   '<span class="badge" style="background:' + col + ';font-size:10px">' + esc(lbl) + '</span>'
+                   '<div class="h">' + esc(c["title"]) + '</div>'
+                   '<div class="m">' + esc(a.get("team","")) + ' · ' + fdate(a.get("updated",""), lang) + '</div></a>')
+    if not arts:
+        out.append('<p style="color:#8a94a0">—</p>')
+    out.append('</div><div class="wrap"><div class="foot">© TransferBeat</div></div></body></html>')
+    return "".join(out)
+
+def render_all(arts, site, pages_dir, data_dir):
+    os.makedirs(pages_dir, exist_ok=True)
+    for lang in LANGS:
+        d = os.path.join(pages_dir, lang)
+        os.makedirs(d, exist_ok=True)
+        for a in arts:
+            open(os.path.join(d, a["slug"] + ".html"), "w", encoding="utf-8").write(render_article(a, lang, site))
+        open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(render_index(arts, lang, site))
+    # index.json per il front-end
+    idx = {"aggiornato": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "articoli": []}
+    for a in arts:
+        entry = {"slug": a["slug"], "giocatore": a.get("giocatore", ""), "team": a.get("team", ""),
+                 "league": a.get("league", ""), "lab": a.get("lab", ""), "col": a.get("col", ""),
+                 "stato": a["stato"], "smentita": a.get("smentita", False), "updated": a.get("updated", ""),
+                 "t": {l: (a["content"].get(l) or a["content"]["it"])["title"] for l in LANGS}}
+        idx["articoli"].append(entry)
+    os.makedirs(os.path.join(data_dir, "articles"), exist_ok=True)
+    json.dump(idx, open(os.path.join(data_dir, "articles", "index.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    # sitemap
+    urls = [site + "/", site + "/board.html"]
+    for lang in LANGS:
+        urls.append(site + "/articoli/" + lang + "/")
+        for a in arts:
+            urls.append(site + "/articoli/" + lang + "/" + a["slug"] + ".html")
+    sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    for u in urls:
+        sm.append("<url><loc>" + esc(u) + "</loc><lastmod>" + today + "</lastmod></url>")
+    sm.append("</urlset>")
+    open(os.path.join(os.path.dirname(pages_dir), "sitemap.xml"), "w", encoding="utf-8").write("\n".join(sm))
+    open(os.path.join(os.path.dirname(pages_dir), "robots.txt"), "w", encoding="utf-8").write(
+        "User-agent: *\nAllow: /\nSitemap: " + site + "/sitemap.xml\n")
+    return len(arts)

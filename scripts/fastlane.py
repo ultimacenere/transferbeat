@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """TransferBeat - fastlane.py (corsia veloce ULTIM'ORA da canali Telegram pubblici)."""
-import json, os, re, sys, html
+import json, os, re, sys, html, unicodedata
 from datetime import datetime, timezone
 try:
     import requests
@@ -60,6 +60,10 @@ def match_team(s, team_names):
     if not sl:
         return ""
     return next((n for (n, nl) in team_names if nl in sl or sl in nl), "")
+
+def slugify(name):
+    x = unicodedata.normalize("NFKD", name or "").encode("ascii", "ignore").decode("ascii")
+    return re.sub(r"[^a-zA-Z0-9]+", "-", x).strip("-").lower()
 
 def llm_process(txt, lang):
     if not LLM_KEY:
@@ -128,7 +132,7 @@ def main():
             items.append({"ts": m["ts"], "fonte": ch["nome"], "tier": int(ch.get("tier", 1)),
                           "titolo": titolo, "stato": stato, "team": team,
                           "giocatore": giocatore, "direzione": direzione, "club": club, "smentita": smentita,
-                          "link": m["link"], "lang": lang})
+                          "slug": slugify(giocatore), "link": m["link"], "lang": lang})
     items.sort(key=lambda x: x["ts"], reverse=True)
     items = items[:MAX_ITEMS]
     out = {"aggiornato": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "items": items}

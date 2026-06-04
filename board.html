@@ -160,7 +160,13 @@ if(!['it','en','es'].includes(lang))lang='it';
 localStorage.setItem('tb_lang',lang); document.documentElement.lang=lang;
 const T=STRINGS[lang];
 const LEAGUE_ORDER=['Serie A','La Liga','Premier'];
-let DATA={}, META={}, curLeague=null, curTeam=null, viewMode='news', ULTIMORA=[];
+let DATA={}, META={}, curLeague=null, curTeam=null, viewMode='news', ULTIMORA=[], ART={};
+function artUrl(slug){return 'articoli/'+lang+'/'+slug+'.html';}
+function loadArticles(){
+  fetch('data/articles/index.json?t='+Date.now()).then(r=>r.ok?r.json():null).then(d=>{
+    if(d&&d.articoli){ART={};d.articoli.forEach(a=>ART[a.slug]=a);if(curTeam)renderTeam();}
+  }).catch(()=>{});
+}
 
 function dots(n){return '<span class="reli">'+[1,2,3].map(i=>`<i class="${i<=n?'on':''}"></i>`).join('')+'</span>';}
 function agoISO(ts){try{const h=Math.floor((Date.now()-new Date(ts))/3600000);if(h<1)return 'ora';if(h<24)return h+'h';return Math.floor(h/24)+'g';}catch(e){return '';}}
@@ -199,7 +205,7 @@ function init(){
       document.getElementById('vNews').onclick=()=>setMode('news');
       document.getElementById('vNames').onclick=()=>setMode('names');
       syncLeague(); fillTeams(); renderTeam();
-      loadUltimora(); setInterval(loadUltimora,60000);
+      loadArticles(); loadUltimora(); setInterval(loadUltimora,60000);
     })
     .catch(()=>{document.getElementById('error').innerHTML='<div class="err">'+T.err+'</div>';});
 }
@@ -245,9 +251,10 @@ function renderTeam(){
       const liveHere=liveTeam.filter(i=>liveCol(i)===idx);
       let items=[]; col.states.forEach(st=>items=items.concat(v.colonne[st]||[]));
       count=liveHere.length+items.length;
-      const liveHtml=liveHere.map(i=>`<a class="card livecard" href="${i.link||'#'}" target="_blank" rel="noopener">
-          <div class="tit">${i.titolo}</div>
-          <div class="meta"><span class="livetag">🔴 LIVE</span><span class="src">${i.fonte}</span>${dots(i.tier)}<span>${agoISO(i.ts)}</span></div></a>`).join('');
+      const liveHtml=liveHere.map(i=>{const has=i.slug&&ART[i.slug];
+          const inner=`<div class="tit">${i.titolo}</div>
+          <div class="meta"><span class="livetag">🔴 LIVE</span><span class="src">${i.fonte}</span>${dots(i.tier)}<span>${agoISO(i.ts)}</span></div>`;
+          return has?`<a class="card livecard" href="${artUrl(i.slug)}">${inner}</a>`:`<div class="card livecard" style="cursor:default">${inner}</div>`;}).join('');
       const newsHtml=items.map(c=>`<a class="card" href="${c.link||'#'}" target="_blank" rel="noopener">
           <div class="tit">${c.titolo}</div>
           <div class="meta"><span class="src">${c.fonte}</span>${dots(c.affidabilita)}<span>${c.quando||''}</span></div></a>`).join('');
@@ -262,9 +269,10 @@ function renderTeam(){
   const dispStato=s=>s==='obj'?'rumor':s;
   liveTeam.forEach(i=>{
     const it=document.createElement('div');it.className='item';
+    const hasA=i.slug&&ART[i.slug];
     it.innerHTML=`<div class="time">${agoISO(i.ts)}</div>
       <div class="body"><span class="livetag">🔴 LIVE</span> <span class="tag t-${dispStato(i.stato)}">${T.tags[dispStato(i.stato)]}</span>
-      <a class="txt" href="${i.link||'#'}" target="_blank" rel="noopener">${i.titolo}</a>
+      ${hasA?`<a class="txt" href="${artUrl(i.slug)}">${i.titolo}</a>`:`<span class="txt">${i.titolo}</span>`}
       <div class="src2">${T.source}: ${i.fonte}</div></div>`;
     feed.appendChild(it);
   });
