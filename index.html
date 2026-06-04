@@ -224,7 +224,7 @@ function loadUltimora(){
     if(lf)lf.innerHTML=items.slice(0,8).map(i=>{
       const tt=(i.titolo||'').length>62?i.titolo.slice(0,62)+'…':(i.titolo||'');
       const inner=`<span class="st ${stCls[i.stato]||'s-rumor'}">${agoISO(i.ts)}</span><span class="tt">${tt}</span>`;
-      return (i.slug&&ART[i.slug])?`<a class="r" href="${artUrl(i.slug)}">${inner}</a>`:`<div class="r" style="cursor:default">${inner}</div>`;
+      return (i.slug&&ART[i.slug])?`<a class="r" href="${artUrl(i.slug)}">${inner}</a>`:`<a class="r" href="${i.link||'#'}" target="_blank" rel="noopener">${inner}</a>`;
     }).join('');
     const tk=document.getElementById('ticker');
     if(tk){const t=items.map(i=>`<span>🔴 ${i.fonte}: ${i.titolo}</span>`);tk.innerHTML=[...t,...t].join('');}

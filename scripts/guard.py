@@ -6,6 +6,7 @@ I file dati (data/*.json) sono esclusi perche' variano legittimamente di dimensi
 import subprocess, sys, fnmatch
 
 GUARDED = ["*.html", "scripts/*.py"]
+EXCLUDE_DIRS = ("articoli/",)
 
 def sh(*a):
     return subprocess.run(a, capture_output=True, text=True).stdout
@@ -26,6 +27,8 @@ def cur_lines(path):
 changed = [l for l in sh("git", "diff", "--name-only", "HEAD").splitlines() if l.strip()]
 sospetti = []
 for path in changed:
+    if path.startswith(EXCLUDE_DIRS) or ("/" in path and not path.startswith("scripts/")):
+        continue
     if not any(fnmatch.fnmatch(path, g) for g in GUARDED):
         continue
     old = head_lines(path); new = cur_lines(path)

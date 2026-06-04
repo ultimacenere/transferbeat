@@ -16,6 +16,7 @@ from datetime import datetime, timezone
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
     import requests
+    import brain
     from fastlane import messages, age_h, llm_process
 except Exception as e:
     print("Dipendenze mancanti:", e); sys.exit(1)
@@ -27,7 +28,7 @@ PAGES = os.path.join(ROOT, "articoli")        # pagine HTML pubbliche
 SITE = "https://transferbeat.com"
 LLM_KEY = os.environ.get("GROQ_API_KEY", "")
 LLM_URL = "https://api.groq.com/openai/v1/chat/completions"
-LLM_MODEL = os.environ.get("LLM_MODEL", "llama-3.3-70b-versatile")
+ARTICLE_MODELS = [os.environ.get("LLM_MODEL", "llama-3.3-70b-versatile"), "llama-3.1-8b-instant"]  # qualita, con fallback
 LANGS = ("it", "en", "es")
 MAX_AGE_H = 18          # quanto indietro guardare nei canali
 MAX_UPDATES = 8         # quante note tenere per articolo
@@ -70,23 +71,29 @@ def esc(s):
     return html.escape(str(s or ""), quote=True)
 
 def _llm_chat(sys_p, user_p, temp=0.0, retries=2):
-    """Chiamata Groq robusta: ritorna dict JSON o None. Gestisce 429/errori con backoff."""
+    """Chiamata Groq robusta con FALLBACK DI MODELLO: prova il 70b, se la quota giornaliera (TPD)
+    e' esaurita passa all'8b. Gestisce anche il limite al minuto con piccola attesa."""
     import time
-    for a in range(retries):
-        try:
-            r = requests.post(LLM_URL, timeout=45,
-                headers={"Authorization": "Bearer " + LLM_KEY, "Content-Type": "application/json"},
-                json={"model": LLM_MODEL, "temperature": temp, "response_format": {"type": "json_object"},
-                      "messages": [{"role": "system", "content": sys_p}, {"role": "user", "content": user_p}]})
-            if r.status_code == 429:
-                wait = min(float(r.headers.get("retry-after", 0)) or (2 * (a + 1)), 8)
-                print("    rate-limit, attendo", round(wait, 1), "s"); time.sleep(wait); continue
-            j = r.json()
-            if "choices" not in j:
-                print("    LLM risposta anomala:", str(j)[:140]); time.sleep(2); continue
-            return json.loads(j["choices"][0]["message"]["content"])
-        except Exception as e:
-            print("    LLM errore:", str(e)[:120]); time.sleep(2)
+    for model in ARTICLE_MODELS:
+        for a in range(retries):
+            try:
+                r = requests.post(LLM_URL, timeout=45,
+                    headers={"Authorization": "Bearer " + LLM_KEY, "Content-Type": "application/json"},
+                    json={"model": model, "temperature": temp, "response_format": {"type": "json_object"},
+                          "messages": [{"role": "system", "content": sys_p}, {"role": "user", "content": user_p}]})
+                if r.status_code == 429:
+                    body = r.text.lower()
+                    if "per day" in body or "tpd" in body:
+                        print("    " + model + ": quota giornaliera esaurita, passo al modello di riserva")
+                        break  # cambia modello
+                    wait = min(float(r.headers.get("retry-after", 0)) or (2 * (a + 1)), 65)
+                    print("    rate-limit al minuto, attendo", round(wait, 1), "s"); time.sleep(wait); continue
+                j = r.json()
+                if "choices" not in j:
+                    print("    risposta anomala:", str(j)[:120]); time.sleep(2); continue
+                return json.loads(j["choices"][0]["message"]["content"])
+            except Exception as e:
+                print("    LLM errore:", str(e)[:120]); time.sleep(2)
     return None
 
 # ---------- LLM: scrittura articolo (IT+EN+ES in un'unica chiamata) ----------
@@ -108,19 +115,17 @@ def write_article(player, team, club, direzione, stato, smentita, updates):
     if not LLM_KEY:
         return _stub(player, team, club, direzione, stato)
     note = "\n".join("- [" + u["fonte"] + "] " + (u.get("testo") or "")[:240] for u in updates[:MAX_UPDATES])
-    statotxt = {"rumor": "semplice voce/indiscrezione", "obj": "obiettivo/trattativa in corso",
-                "conf": "affare dato per fatto/accordo raggiunto", "done": "ufficiale/annunciato"}.get(stato, "voce")
+    statotxt = {"rumor": "una semplice voce/indiscrezione", "obj": "una trattativa in corso",
+                "conf": "un affare ormai dato per fatto", "done": "un trasferimento ufficiale"}.get(stato, "una voce")
     if smentita:
-        statotxt = "trattativa SMENTITA/saltata"
-    sys_p = ("Sei un giornalista sportivo esperto di calciomercato. "
-             "Scrivi SOLO fatti contenuti nelle note fornite, attribuendoli ESPLICITAMENTE alle fonti citate "
-             "(es. 'Secondo Gianluca Di Marzio...'). NON inventare cifre, date, dichiarazioni o dettagli non presenti. "
-             "Niente emoji, niente virgolette ad inizio titolo. Rispondi SOLO con JSON valido.")
+        statotxt = "una trattativa che e' stata smentita/saltata"
+    movimento = (player + " e' in USCITA da " + (team or "?") + (" verso " + club if club else "")) if direzione == "out" else (player + " e' in ARRIVO a " + (team or "?") + (" dal " + club if club else ""))
+    sys_p = brain.article_system()
     user_p = ("Contesto trattativa:\n"
               "- Giocatore: " + player + "\n"
               "- Club coinvolti: " + (team or "?") + (" e " + club if club else "") + "\n"
-              "- Movimento: " + ("in arrivo" if direzione == "in" else "in uscita") + "\n"
-              "- Stato attuale: " + statotxt + "\n\n"
+              "- Movimento (RISPETTALO): " + movimento + "\n"
+              "- Situazione: si tratta di " + statotxt + "\n\n"
               "Note dalle fonti (piu recenti in alto):\n" + note + "\n\n"
               "Scrivi un articolo BREVE e fattuale (2-3 paragrafi brevi) nelle TRE lingue: italiano, inglese, spagnolo. "
               "Ogni affermazione attribuita a una fonte; se ufficiale scrivi 'ufficiale'; se smentita spiega che l'affare e' saltato; "
@@ -133,31 +138,29 @@ def write_article(player, team, club, direzione, stato, smentita, updates):
 
 # ---------- raccolta dai canali ----------
 def collect(experts, teams):
-    team_names = [(t["nome"], t["nome"].lower()) for t in teams.get("squadre", [])]
+    """Legge i movimenti GIA' classificati dal fast lane (ultimora.json): nessuna chiamata LLM qui.
+    L'LLM servira' solo a scrivere gli articoli. Sorgente: file locale o branch live."""
     tinfo = {t["nome"]: t for t in teams.get("squadre", [])}
+    data = load(os.path.join(DATA, "ultimora.json"))
+    if not data:
+        try:
+            r = requests.get("https://raw.githubusercontent.com/ultimacenere/transferbeat/live/data/ultimora.json", timeout=15)
+            data = r.json()
+        except Exception:
+            data = {"items": []}
     found = []
-    for ch in experts.get("canali", []):
-        lang = ch.get("lang", "it")
-        for m in messages(ch["username"]):
-            if age_h(m["ts"]) > MAX_AGE_H or len(m["txt"]) < 25:
-                continue
-            d = llm_process(m["txt"], lang)
-            if not d or not d.get("transfer"):
-                continue
-            player = (d.get("giocatore") or "").strip()
-            if not player or len(player) < 3:
-                continue
-            squadra = d.get("squadra") or ""
-            team = next((n for (n, nl) in team_names if nl in squadra.lower() or squadra.lower() in nl), "")
-            if not team:
-                team = next((n for (n, nl) in team_names if nl in m["txt"].lower()), "")
-            if not team:
-                continue  # serve un club di una delle 3 leghe
-            found.append({"player": player, "team": team, "club": (d.get("club") or "").strip(),
-                          "direzione": d.get("direzione", "in"), "stato": d.get("stato", "rumor"),
-                          "smentita": bool(d.get("smentita")), "fonte": ch["nome"], "tier": int(ch.get("tier", 1)),
-                          "link": m["link"], "ts": m["ts"], "testo": m["txt"], "lab": tinfo.get(team, {}).get("lab", ""),
-                          "col": tinfo.get(team, {}).get("col", "#0a9d57"), "league": tinfo.get(team, {}).get("league", "")})
+    for i in data.get("items", []):
+        player = (i.get("giocatore") or "").strip()
+        team = (i.get("team") or "").strip()
+        if not player or len(player) < 3 or team not in tinfo:
+            continue
+        found.append({"player": player, "team": team, "club": (i.get("club") or "").strip(),
+                      "direzione": i.get("direzione") or "in", "stato": i.get("stato") or "rumor",
+                      "smentita": bool(i.get("smentita")), "fonte": i.get("fonte") or "",
+                      "tier": int(i.get("tier") or 1), "link": i.get("link") or "",
+                      "ts": i.get("ts") or now_iso(), "testo": (i.get("titolo") or "")[:300],
+                      "lab": tinfo[team].get("lab", ""), "col": tinfo[team].get("col", "#0a9d57"),
+                      "league": tinfo[team].get("league", "")})
     return found
 
 def upsert(items):
@@ -193,6 +196,7 @@ def upsert(items):
     for slug, (art, path) in touched.items():
         sig = hashlib.md5((art["stato"] + str(art["smentita"]) + "|".join(u["link"] for u in art["updates"])).encode()).hexdigest()
         if art.get("_sig") != sig or not art.get("content"):
+            import time as _t; _t.sleep(0.5)
             cont = write_article(art["giocatore"], art.get("team", ""), art.get("club", ""),
                                  art.get("direzione", "in"), art["stato"], art["smentita"], art["updates"])
             if cont:

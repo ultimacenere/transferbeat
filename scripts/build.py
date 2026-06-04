@@ -21,6 +21,8 @@ except ImportError:
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
 RULES = os.path.join(ROOT, "rules")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import brain
 
 LANGS = {
     "it": "hl=it&gl=IT&ceid=IT:it",
@@ -34,7 +36,7 @@ FEED_ENRICH = int(os.environ.get("FEED_ENRICH", "3"))
 UA = {"User-Agent": "Mozilla/5.0 (compatible; TransferBeatBot/1.0)"}
 LLM_KEY = os.environ.get("GROQ_API_KEY", "")
 LLM_URL = "https://api.groq.com/openai/v1/chat/completions"
-LLM_MODEL = os.environ.get("LLM_MODEL", "llama-3.3-70b-versatile")
+LLM_MODEL = os.environ.get("LLM_MODEL", "llama-3.1-8b-instant")  # lavoro pesante: modello piccolo, secchio 500k/giorno
 GIORNI = {
   "it": ["Lunedi","Martedi","Mercoledi","Giovedi","Venerdi","Sabato","Domenica"],
   "en": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
@@ -135,7 +137,7 @@ def extract_movements(team, titles, fallback=None):
     titles = [t for t in titles if t][:16]
     if not titles:
         return {"rumor": [], "obj": [], "conf": [], "done": []}
-    sys_p = "Sei un analista esperto di calciomercato. Rispondi SOLO con JSON valido, nessun altro testo."
+    sys_p = brain.movements_system()
     user_p = ("Squadra di riferimento: " + team + ".\n"
         "Dalle notizie qui sotto (in qualsiasi lingua) estrai i movimenti che riguardano " + team + ".\n"
         "Per ogni movimento: giocatore (nome), direzione ('in' se ARRIVA a " + team +

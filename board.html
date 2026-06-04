@@ -254,7 +254,7 @@ function renderTeam(){
       const liveHtml=liveHere.map(i=>{const has=i.slug&&ART[i.slug];
           const inner=`<div class="tit">${i.titolo}</div>
           <div class="meta"><span class="livetag">🔴 LIVE</span><span class="src">${i.fonte}</span>${dots(i.tier)}<span>${agoISO(i.ts)}</span></div>`;
-          return has?`<a class="card livecard" href="${artUrl(i.slug)}">${inner}</a>`:`<div class="card livecard" style="cursor:default">${inner}</div>`;}).join('');
+          return has?`<a class="card livecard" href="${artUrl(i.slug)}">${inner}</a>`:`<a class="card livecard" href="${i.link||'#'}" target="_blank" rel="noopener">${inner}</a>`;}).join('');
       const newsHtml=items.map(c=>`<a class="card" href="${c.link||'#'}" target="_blank" rel="noopener">
           <div class="tit">${c.titolo}</div>
           <div class="meta"><span class="src">${c.fonte}</span>${dots(c.affidabilita)}<span>${c.quando||''}</span></div></a>`).join('');
@@ -272,7 +272,7 @@ function renderTeam(){
     const hasA=i.slug&&ART[i.slug];
     it.innerHTML=`<div class="time">${agoISO(i.ts)}</div>
       <div class="body"><span class="livetag">🔴 LIVE</span> <span class="tag t-${dispStato(i.stato)}">${T.tags[dispStato(i.stato)]}</span>
-      ${hasA?`<a class="txt" href="${artUrl(i.slug)}">${i.titolo}</a>`:`<span class="txt">${i.titolo}</span>`}
+      ${hasA?`<a class="txt" href="${artUrl(i.slug)}">${i.titolo}</a>`:`<a class="txt" href="${i.link||'#'}" target="_blank" rel="noopener">${i.titolo}</a>`}
       <div class="src2">${T.source}: ${i.fonte}</div></div>`;
     feed.appendChild(it);
   });

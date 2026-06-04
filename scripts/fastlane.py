@@ -10,10 +10,12 @@ except ImportError:
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data"); RULES = os.path.join(ROOT, "rules")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import brain
 UA = {"User-Agent": "Mozilla/5.0 (compatible; TransferBeatBot/1.0)"}
 LLM_KEY = os.environ.get("GROQ_API_KEY", "")
 LLM_URL = "https://api.groq.com/openai/v1/chat/completions"
-LLM_MODEL = os.environ.get("LLM_MODEL", "llama-3.3-70b-versatile")
+LLM_MODEL = os.environ.get("LLM_MODEL", "llama-3.1-8b-instant")  # lavoro pesante: modello piccolo, secchio 500k/giorno
 MAX_AGE_H = 12; MAX_ITEMS = 50; MAX_NEW_PER_RUN = 25
 
 def load(p, d=None):
@@ -84,8 +86,7 @@ def llm_process(txt, lang):
         r = requests.post(LLM_URL, timeout=25,
             headers={"Authorization": "Bearer " + LLM_KEY, "Content-Type": "application/json"},
             json={"model": LLM_MODEL, "temperature": 0, "response_format": {"type": "json_object"},
-                  "messages": [{"role": "system", "content": sys_p},
-                               {"role": "user", "content": txt[:500]}]})
+                  "messages": brain.classify_messages(txt, langname)})
         d = json.loads(r.json()["choices"][0]["message"]["content"])
         d["stato"] = d.get("stato") if d.get("stato") in ("done", "conf", "obj", "rumor") else "rumor"
         d["direzione"] = "out" if d.get("direzione") == "out" else "in"
