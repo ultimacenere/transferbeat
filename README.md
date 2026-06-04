@@ -84,24 +84,4 @@ chiave, la vista Notizie funziona comunque e la vista Nomi resta vuota (con avvi
 Per attivarla:
 
 1. Crea una chiave gratuita su **console.groq.com** (Login → API Keys → Create).
-2. **In locale:** crea un file `groq_key.txt` nella cartella del progetto e incollaci dentro
-   solo la chiave. `aggiorna-dati.bat` la legge in automatico. (Il file è già in `.gitignore`,
-   non finisce su GitHub.)
-3. **Su GitHub (per il cron):** repo → *Settings → Secrets and variables → Actions → New
-   repository secret*, nome `GROQ_API_KEY`, valore la chiave. Il workflow la usa già.
-
-Modello predefinito: `llama-3.3-70b-versatile` (cambiabile con la variabile `LLM_MODEL`).
-Una chiamata per squadra a ogni aggiornamento: ampiamente dentro i limiti del piano gratuito.
-
-## Limiti attuali (versione costo zero) e prossimi passi
-
-- La tabella si aggiorna 3×/giorno, **non in tempo reale**: ottima per la fotografia, non ancora per
-  battere tutti sull'ultim'ora.
-- La classificazione a parole chiave sbaglia qualche notizia: si affina aggiornando il dizionario.
-- Google News dà titoli e fonti, non cifre/valori strutturati.
-
-Upgrade futuri a basso costo: classificazione con LLM free-tier, API struttura per rose e valori,
-trigger event-driven per le ufficialità. Vedi `TransferBeat-setup-costo-zero.md`.
-
----
-*Mostra sempre titolo + fonte + link, mai il testo integrale degli articoli (copyright).*
+2. **In locale:** crea un file `groq_key.txt` nella cartella

@@ -117,6 +117,10 @@
     <div class="sub3" id="sub3"></div>
   </section>
   <aside>
+    <div class="box">
+      <div class="hd" style="color:var(--red)"><span class="liveDot" style="background:var(--red)"></span><span id="hdUltimora">🔴 ULTIM'ORA LIVE</span></div>
+      <div class="mini" id="liveFeed"><div style="color:var(--muted);font-size:12px;padding:6px 0">—</div></div>
+    </div>
     <div class="box live">
       <div class="hd"><span class="liveDot"></span><span id="hdLive">Mercato Live · oggi</span></div>
       <div class="mini" id="miniBoard"></div>
@@ -175,6 +179,24 @@ Promise.all([
   fetch('data/'+lang+'/board.json').then(r=>r.ok?r.json():null).catch(()=>null)
 ]).then(([home,board])=>render(home,board))
  .catch(()=>{document.getElementById('error').innerHTML='<div class="err">'+T.err+'</div>';});
+
+// ===== ULTIM'ORA LIVE (dagli esperti, branch 'live', auto-refresh) =====
+const LIVE_URL="https://raw.githubusercontent.com/ultimacenere/transferbeat/live/data/ultimora.json";
+function agoISO(ts){try{const h=Math.floor((Date.now()-new Date(ts))/3600000);if(h<1)return 'ora';if(h<24)return h+'h';return Math.floor(h/24)+'g';}catch(e){return '';}}
+function loadUltimora(){
+  fetch(LIVE_URL+'?t='+Date.now()).then(r=>r.ok?r.json():null).then(d=>{
+    if(!d||!d.items||!d.items.length)return;
+    const items=d.items.slice(0,14);
+    const lf=document.getElementById('liveFeed');
+    if(lf)lf.innerHTML=items.slice(0,8).map(i=>
+      `<a class="r" href="${i.link||'#'}" target="_blank" rel="noopener">
+         <span class="st ${stCls[i.stato]||'s-rumor'}">${agoISO(i.ts)}</span>
+         <span class="tt">${(i.titolo||'').length>62?i.titolo.slice(0,62)+'…':(i.titolo||'')}</span></a>`).join('');
+    const tk=document.getElementById('ticker');
+    if(tk){const t=items.map(i=>`<span>🔴 ${i.fonte}: ${i.titolo}</span>`);tk.innerHTML=[...t,...t].join('');}
+  }).catch(()=>{});
+}
+loadUltimora(); setInterval(loadUltimora,60000);
 
 function render(home,board){
   document.getElementById('masthead').innerHTML=

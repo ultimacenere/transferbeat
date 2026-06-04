@@ -1,0 +1,47 @@
+name: Ultim'ora TransferBeat
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"      # ogni 5 minuti
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ultimora
+  cancel-in-progress: true
+
+jobs:
+  fast:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installa dipendenze
+        run: pip install requests
+
+      - name: Recupera ultim'ora precedente (branch live)
+        run: |
+          git fetch origin live || true
+          git show origin/live:data/ultimora.json > data/ultimora.json 2>/dev/null || echo '{"items":[]}' > data/ultimora.json
+
+      - name: Genera ultim'ora
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: python scripts/fastlane.py
+
+      - name: Pubblica sul branch live
+        run: |
+          git config user.name  "transferbeat-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git checkout -B live
+          git add -f data/ultimora.json
+          git commit -m "ultim'ora $(date -u +'%Y-%m-%d %H:%M UTC')" || { echo "nessuna modifica"; exit 0; }
+          git push -f origin live
