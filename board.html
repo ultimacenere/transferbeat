@@ -230,12 +230,14 @@ function renderTeam(){
     const el=document.createElement('div');el.className='col '+col.cls;
     let inner='', count=0;
     if(viewMode==='names'){
+      const liveMovs=liveTeam.filter(i=>i.giocatore&&dispCol(i.stato)===idx);
       let movs=[]; col.states.forEach(st=>movs=movs.concat((v.nomi&&v.nomi[st])||[]));
-      count=movs.length;
-      inner=movs.length? movs.map(m=>`<div class="mv ${m.direzione==='out'?'out':'in'}">
-          <span class="dir">${m.direzione==='out'?T.dir.out:T.dir.in}</span>
+      count=liveMovs.length+movs.length;
+      const mvCard=(m,live)=>`<div class="mv ${m.direzione==='out'?'out':'in'}">
+          <span class="dir">${m.direzione==='out'?T.dir.out:T.dir.in}</span>${live?' <span class="livetag">🔴 LIVE</span>':''}
           <div class="pl">${m.giocatore}</div>
-          <div class="club">${m.direzione==='out'?'→':'←'} ${m.club||'—'}</div></div>`).join('') : '<div class="empty">—</div>';
+          <div class="club">${m.direzione==='out'?'→':'←'} ${m.club||'—'}</div></div>`;
+      inner=(liveMovs.map(m=>mvCard(m,true)).join('')+movs.map(m=>mvCard(m,false)).join(''))||'<div class="empty">—</div>';
     } else {
       const liveHere=liveTeam.filter(i=>dispCol(i.stato)===idx);
       let items=[]; col.states.forEach(st=>items=items.concat(v.colonne[st]||[]));
