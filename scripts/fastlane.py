@@ -3,9 +3,8 @@
 """
 TransferBeat - fastlane.py  (corsia veloce ULTIM'ORA)
 Legge i canali Telegram pubblici degli esperti (via t.me/s, nessuna API/login),
-tiene solo i messaggi recenti e pertinenti al mercato, li classifica e (se c'e' la
-chiave) li riscrive in un titolo neutro con un LLM, e aggiorna data/ultimora.json.
-Pensato per girare ogni 5 minuti su GitHub Actions e pubblicare sul branch 'live'.
+tiene solo i messaggi recenti e pertinenti al mercato, l'LLM filtra/riscrive e
+attribuisce la squadra, e aggiorna data/ultimora.json (pubblicato sul branch 'live').
 """
 import json, os, re, sys, html
 from datetime import datetime, timezone
@@ -23,7 +22,7 @@ LLM_URL = "https://api.groq.com/openai/v1/chat/completions"
 LLM_MODEL = os.environ.get("LLM_MODEL", "llama-3.1-8b-instant")
 MAX_AGE_H = 12
 MAX_ITEMS = 50
-MAX_NEW_PER_RUN = 20
+MAX_NEW_PER_RUN = 25
 
 def load(p, d=None):
     try:
@@ -52,8 +51,7 @@ def messages(ch):
 
 def age_h(ts):
     try:
-        dt = datetime.fromisoformat(ts)
-        return (datetime.now(timezone.utc) - dt).total_seconds() / 3600
+        return (datetime.now(timezone.utc) - datetime.fromisoformat(ts)).total_seconds() / 3600
     except Exception:
         return 999
 
@@ -66,15 +64,16 @@ def classify(title, kw):
     return "rumor"
 
 def llm_process(txt, lang):
-    """Ritorna (transfer:bool, titolo:str, stato:str). Se manca la chiave: None (usa fallback)."""
+    """Ritorna (transfer:bool, titolo:str, stato:str, squadra:str) oppure None senza chiave."""
     if not LLM_KEY:
         return None
-    langname = {"it": "italiano", "en": "English", "es": "español"}.get(lang, "italiano")
+    langname = {"it": "italiano", "en": "English", "es": "espanol"}.get(lang, "italiano")
     sys_p = ("Sei un analista di calciomercato. Rispondi SOLO con JSON. Campi: "
              "transfer (true SOLO se la notizia riguarda un trasferimento, una trattativa, "
              "un rinnovo o una voce su un calciatore; false per gossip, partite, opinioni, eventi), "
              "titolo (titolo conciso e neutro, max 100 caratteri, in " + langname + ", senza emoji ne hashtag ne virgolette), "
-             "stato (uno tra: done=ufficiale, conf=accordo, obj=trattativa/obiettivo, rumor=voce).")
+             "stato (uno tra: done=ufficiale, conf=accordo, obj=trattativa/obiettivo, rumor=voce), "
+             "squadra (il club di Serie A, La Liga o Premier League coinvolto, nome per esteso; stringa vuota se nessuno).")
     try:
         r = requests.post(LLM_URL, timeout=20,
             headers={"Authorization": "Bearer " + LLM_KEY, "Content-Type": "application/json"},
@@ -83,7 +82,7 @@ def llm_process(txt, lang):
                                {"role": "user", "content": txt[:500]}]})
         d = json.loads(r.json()["choices"][0]["message"]["content"])
         st = d.get("stato") if d.get("stato") in ("done", "conf", "obj", "rumor") else "rumor"
-        return (bool(d.get("transfer")), (d.get("titolo") or "").strip()[:130], st)
+        return (bool(d.get("transfer")), (d.get("titolo") or "").strip()[:130], st, (d.get("squadra") or "").strip())
     except Exception:
         return None
 
@@ -105,9 +104,7 @@ def main():
         for m in messages(ch["username"]):
             if m["link"] in seen:
                 continue
-            if age_h(m["ts"]) > MAX_AGE_H:
-                continue
-            if len(m["txt"]) < 25:
+            if age_h(m["ts"]) > MAX_AGE_H or len(m["txt"]) < 25:
                 continue
             if new_count >= MAX_NEW_PER_RUN:
                 break
@@ -115,9 +112,12 @@ def main():
             team = next((n for (n, nl) in team_names if nl in low), "")
             res = llm_process(m["txt"], lang)
             if res is not None:
-                transfer, titolo, stato = res
+                transfer, titolo, stato, squadra = res
                 if not transfer:
                     seen.add(m["link"]); continue
+                if not team and squadra:
+                    sl = squadra.lower()
+                    team = next((n for (n, nl) in team_names if nl in sl or sl in nl), "")
             else:
                 kwords = ("mercato","transfer","fichaj","ufficiale","official","accordo","firma","here we go","obiettiv","trattativ","prestito","clausola","rinnov","colpo","cessione","addio","ingaggio","vola","pista")
                 if not (team or any(k in low for k in kwords)):

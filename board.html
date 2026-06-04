@@ -12,7 +12,7 @@
   :root{
     --bg:#ffffff; --panel:#f7f8fa; --panel2:#eef1f5; --line:#e2e6ea;
     --txt:#161b21; --muted:#67727e; --accent:#0a9d57; --accent2:#1f6fd6;
-    --rumor:#d98700; --obj:#1f6fd6; --conf:#7b46c9; --done:#0a9d57; --radius:14px;
+    --rumor:#d98700; --conf:#7b46c9; --done:#0a9d57; --red:#e0392b; --radius:14px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--txt);line-height:1.45}
@@ -35,8 +35,6 @@
   .slot{padding:3px 10px;border:1px solid var(--line);border-radius:8px}
   .slot.done{color:var(--accent);border-color:rgba(10,157,87,.4)}
   .slot.next{color:var(--accent2);border-color:rgba(31,111,214,.4)}
-
-  /* CONTROLS */
   .controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:18px 0 6px}
   .seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;flex-wrap:wrap}
   .seg button{background:var(--bg);border:none;padding:8px 15px;font-size:13px;font-weight:600;cursor:pointer;color:var(--muted);transition:.12s}
@@ -44,33 +42,27 @@
   .ctrl-lab{font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);font-weight:700}
   .teamsel{font-size:14px;font-weight:600;color:var(--txt);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 12px;min-width:180px;cursor:pointer}
   .spacer{flex:1}
-  @media(max-width:680px){
-    .controls{gap:8px}
-    .teamsel{flex:1;min-width:0;width:100%}
-    .spacer{display:none}
-    .viewseg{width:100%}
-    .viewseg .seg{width:100%} .viewseg .seg button{flex:1}
-  }
-
+  @media(max-width:680px){.controls{gap:8px}.teamsel{flex:1;min-width:0;width:100%}.spacer{display:none}.viewseg{width:100%}.viewseg .seg{width:100%}.viewseg .seg button{flex:1}}
   .thead{display:flex;align-items:center;gap:16px;background:linear-gradient(120deg,#f7f8fa,#eef1f5);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin:12px 0 18px}
   .crest{width:26px;height:26px;border-radius:6px;display:grid;place-items:center;font-weight:800;font-size:12px;color:#fff;flex-shrink:0}
   .thead .crest{width:52px;height:52px;font-size:18px;border-radius:12px}
   .thead h1{font-size:24px;letter-spacing:-.5px}
   .thead .sub{color:var(--muted);font-size:13px;margin-top:2px}
-  .board{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
-  @media(max-width:1100px){.board{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:560px){.board{grid-template-columns:1fr}}
+  .board{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
+  @media(max-width:880px){.board{grid-template-columns:1fr}}
   .col{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
   .col h2{font-size:12px;text-transform:uppercase;letter-spacing:.8px;padding:12px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--line)}
   .col h2 .dot{width:9px;height:9px;border-radius:50%}
   .col h2 .n{margin-left:auto;font-size:11px;color:var(--muted);font-weight:400}
-  .rumor .dot{background:var(--rumor)} .obj .dot{background:var(--obj)} .conf .dot{background:var(--conf)} .done .dot{background:var(--done)}
+  .c-rumor .dot{background:var(--rumor)} .c-conf .dot{background:var(--conf)} .c-done .dot{background:var(--done)}
   .cards{padding:10px;display:flex;flex-direction:column;gap:9px;min-height:60px}
   .card{display:block;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:11px 12px;transition:.12s;box-shadow:0 1px 2px rgba(20,30,45,.04)}
   .card:hover{border-color:#c7ced6;transform:translateY(-1px);box-shadow:0 4px 12px rgba(20,30,45,.08)}
+  .card.livecard{border-color:rgba(224,57,43,.35);background:#fff7f6}
   .card .tit{font-weight:600;font-size:13px;line-height:1.25}
   .card .meta{font-size:11px;color:var(--muted);margin-top:7px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
   .src{border:1px solid var(--line);border-radius:999px;padding:1px 7px}
+  .livetag{background:var(--red);color:#fff;border-radius:5px;padding:1px 6px;font-size:9.5px;font-weight:800;letter-spacing:.4px}
   .reli{display:inline-flex;gap:2px}.reli i{width:6px;height:6px;border-radius:50%;background:#cfd6dd}.reli i.on{background:var(--accent)}
   .empty{color:var(--muted);font-size:12px;padding:8px 4px}
   .notice{background:#fff9ec;border:1px solid #f0dca6;color:#8a6d1f;border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:13px}
@@ -89,8 +81,7 @@
   .time{font-size:12px;color:var(--muted);width:60px;flex-shrink:0;padding-top:1px}
   .item .body{flex:1}
   .item .tag{font-size:10px;text-transform:uppercase;letter-spacing:.6px;font-weight:700;padding:1px 7px;border-radius:5px;margin-right:8px}
-  .t-rumor{background:rgba(217,135,0,.14);color:var(--rumor)}.t-conf{background:rgba(123,70,201,.14);color:var(--conf)}
-  .t-done{background:rgba(10,157,87,.14);color:var(--done)}.t-obj{background:rgba(31,111,214,.14);color:var(--obj)}
+  .t-rumor{background:rgba(217,135,0,.14);color:var(--rumor)}.t-conf{background:rgba(123,70,201,.14);color:var(--conf)}.t-done{background:rgba(10,157,87,.14);color:var(--done)}
   .item .txt{font-size:14px;margin-top:5px;display:block}
   .item .src2{font-size:11.5px;color:var(--muted);margin-top:4px}
   .item .src2 a{color:var(--accent2);font-weight:600}
@@ -112,9 +103,7 @@
     </div>
     <div class="upbar">
       <span class="pulse"></span> <span id="lblUpd">Aggiornato alle</span> <b id="lastUp">—</b>
-      <div class="slots">
-        <span class="slot" id="s08">08:00</span><span class="slot" id="s12">12:00</span><span class="slot" id="s20">20:00</span>
-      </div>
+      <div class="slots"><span class="slot" id="s08">08:00</span><span class="slot" id="s12">12:00</span><span class="slot" id="s20">20:00</span></div>
     </div>
   </div>
 </header>
@@ -131,7 +120,6 @@
       <button id="vNames">🔁 Nomi</button>
     </div></div>
   </div>
-
   <div class="thead" id="thead"></div>
   <div id="notice"></div>
   <div class="board" id="board"></div>
@@ -145,33 +133,37 @@
 
 <script>
 const STRINGS={
- it:{home:'Home',live:'Live',updated:'Aggiornato alle',league:'Campionato',news:'📰 Notizie',names:'🔁 Nomi',feed:'📰 Feed di giornata',sub:'trattative monitorate in tempo reale',source:'Fonte',none:'Nessuna voce oggi',
-    notice:'Vista <b>Nomi</b> non ancora popolata per questa squadra. Si attiva con la chiave LLM e il prossimo aggiornamento.',
+ it:{home:'Home',live:'Live',updated:'Aggiornato alle',league:'Campionato',news:'📰 Notizie',names:'🔁 Nomi',feed:'📰 Feed di giornata',sub:'trattative monitorate in tempo reale',source:'Fonte',none:'Nessuna voce',
+    notice:'Vista <b>Nomi</b> non ancora popolata per questa squadra.',
     err:'<b>Dati non caricati.</b> Apri il sito tramite un server (o GitHub/Vercel), non con doppio clic. In locale: <code>python -m http.server</code>',
-    feedday:'fonti pubbliche, affidabilità stimata',foot:'TransferBeat · dati da feed pubblici, classificati automaticamente · 3×/giorno',
-    cats:{rumor:'Rumors',obj:'Obiettivi',conf:'Confermate',done:'Concluse'},tags:{rumor:'Rumor',obj:'Obiettivo',conf:'Confermata',done:'Conclusa'},dir:{out:'USCITA',in:'ENTRATA'}},
- en:{home:'Home',live:'Live',updated:'Updated at',league:'League',news:'📰 News',names:'🔁 Names',feed:'📰 Today’s feed',sub:'deals tracked in real time',source:'Source',none:'Nothing today',
-    notice:'The <b>Names</b> view is not populated yet for this club. It activates with the LLM key on the next update.',
-    err:'<b>Data not loaded.</b> Open the site via a server (or GitHub/Vercel), not by double-clicking. Locally: <code>python -m http.server</code>',
-    feedday:'public sources, estimated reliability',foot:'TransferBeat · data from public feeds, auto-classified · 3×/day',
-    cats:{rumor:'Rumours',obj:'Targets',conf:'Agreed',done:'Done'},tags:{rumor:'Rumour',obj:'Target',conf:'Agreed',done:'Done'},dir:{out:'OUT',in:'IN'}},
- es:{home:'Inicio',live:'En vivo',updated:'Actualizado a las',league:'Liga',news:'📰 Noticias',names:'🔁 Nombres',feed:'📰 Noticias del día',sub:'fichajes seguidos en tiempo real',source:'Fuente',none:'Nada hoy',
-    notice:'La vista <b>Nombres</b> aún no está disponible para este equipo. Se activa con la clave LLM en la próxima actualización.',
-    err:'<b>Datos no cargados.</b> Abre el sitio con un servidor (o GitHub/Vercel), no con doble clic. En local: <code>python -m http.server</code>',
-    feedday:'fuentes públicas, fiabilidad estimada',foot:'TransferBeat · datos de feeds públicos, clasificados automáticamente · 3×/día',
-    cats:{rumor:'Rumores',obj:'Objetivos',conf:'Acordado',done:'Cerrado'},tags:{rumor:'Rumor',obj:'Objetivo',conf:'Acordado',done:'Cerrado'},dir:{out:'SALE',in:'LLEGA'}}
+    feedday:'fonti pubbliche, affidabilità stimata',foot:'TransferBeat · dati da feed pubblici + esperti, classificati automaticamente',
+    cols:['Rumors','Trattative confermate','Trattative concluse'],tags:{rumor:'Rumor',conf:'Confermata',done:'Conclusa'},dir:{out:'USCITA',in:'ENTRATA'}},
+ en:{home:'Home',live:'Live',updated:'Updated at',league:'League',news:'📰 News',names:'🔁 Names',feed:'📰 Today’s feed',sub:'deals tracked in real time',source:'Source',none:'Nothing',
+    notice:'The <b>Names</b> view is not populated yet for this club.',
+    err:'<b>Data not loaded.</b> Open the site via a server (or GitHub/Vercel), not by double-clicking.',
+    feedday:'public sources, estimated reliability',foot:'TransferBeat · data from public feeds + experts, auto-classified',
+    cols:['Rumours','Confirmed talks','Done deals'],tags:{rumor:'Rumour',conf:'Confirmed',done:'Done'},dir:{out:'OUT',in:'IN'}},
+ es:{home:'Inicio',live:'En vivo',updated:'Actualizado a las',league:'Liga',news:'📰 Noticias',names:'🔁 Nombres',feed:'📰 Noticias del día',sub:'fichajes seguidos en tiempo real',source:'Fuente',none:'Nada',
+    notice:'La vista <b>Nombres</b> aún no está disponible para este equipo.',
+    err:'<b>Datos no cargados.</b> Abre el sitio con un servidor (o GitHub/Vercel), no con doble clic.',
+    feedday:'fuentes públicas, fiabilidad estimada',foot:'TransferBeat · datos de feeds públicos + expertos, clasificados automáticamente',
+    cols:['Rumores','Negociaciones confirmadas','Cerrados'],tags:{rumor:'Rumor',conf:'Acordado',done:'Cerrado'},dir:{out:'SALE',in:'LLEGA'}}
 };
+// 3 colonne; gli "obj" vengono accorpati ai Rumors
+const COLS=[{cls:'c-rumor',states:['rumor','obj']},{cls:'c-conf',states:['conf']},{cls:'c-done',states:['done']}];
+function dispCol(stato){return stato==='conf'?1:(stato==='done'?2:0);}  // rumor/obj->0
+const LIVE_URL="https://raw.githubusercontent.com/ultimacenere/transferbeat/live/data/ultimora.json";
+
 const PARAMS=new URLSearchParams(location.search);
 let lang=(PARAMS.get('lang')||localStorage.getItem('tb_lang')||'it').toLowerCase();
 if(!['it','en','es'].includes(lang))lang='it';
-localStorage.setItem('tb_lang',lang);
-document.documentElement.lang=lang;
+localStorage.setItem('tb_lang',lang); document.documentElement.lang=lang;
 const T=STRINGS[lang];
-const STATES=['rumor','obj','conf','done'];
 const LEAGUE_ORDER=['Serie A','La Liga','Premier'];
-let DATA={}, META={}, curLeague=null, curTeam=null, viewMode='news';
+let DATA={}, META={}, curLeague=null, curTeam=null, viewMode='news', ULTIMORA=[];
 
 function dots(n){return '<span class="reli">'+[1,2,3].map(i=>`<i class="${i<=n?'on':''}"></i>`).join('')+'</span>';}
+function agoISO(ts){try{const h=Math.floor((Date.now()-new Date(ts))/3600000);if(h<1)return 'ora';if(h<24)return h+'h';return Math.floor(h/24)+'g';}catch(e){return '';}}
 function leaguesPresent(){const set=new Set(Object.values(DATA).map(v=>v.league));return LEAGUE_ORDER.filter(l=>set.has(l));}
 function teamsOf(league){return Object.entries(DATA).filter(([k,v])=>v.league===league).map(([k])=>k).sort((a,b)=>a.localeCompare(b));}
 
@@ -195,30 +187,31 @@ function init(){
       META=d; DATA=d.squadre;
       document.getElementById('lastUp').textContent=(d.aggiornato||'').slice(11,16)||'—';
       markSlot((d.aggiornato||'').slice(11,13));
-      const present=leaguesPresent();
-      const wanted=PARAMS.get('lega');
+      const present=leaguesPresent(); const wanted=PARAMS.get('lega');
       curLeague=present.includes(wanted)?wanted:present[0];
       const lb=document.getElementById('leagues');
       lb.innerHTML=present.map(l=>`<button data-l="${l}">${l}</button>`).join('');
       lb.querySelectorAll('button').forEach(b=>b.onclick=()=>{curLeague=b.dataset.l;syncLeague();fillTeams();renderTeam();});
-      const sel=document.getElementById('teamSelect');
-      sel.onchange=()=>{curTeam=sel.value;renderTeam();};
+      const sel=document.getElementById('teamSelect'); sel.onchange=()=>{curTeam=sel.value;renderTeam();};
       const setMode=(m)=>{viewMode=m;
         document.getElementById('vNews').className=m==='news'?'on':'';
         document.getElementById('vNames').className=m==='names'?'on':'';renderTeam();};
       document.getElementById('vNews').onclick=()=>setMode('news');
       document.getElementById('vNames').onclick=()=>setMode('names');
       syncLeague(); fillTeams(); renderTeam();
+      loadUltimora(); setInterval(loadUltimora,60000);
     })
     .catch(()=>{document.getElementById('error').innerHTML='<div class="err">'+T.err+'</div>';});
 }
+function loadUltimora(){
+  fetch(LIVE_URL+'?t='+Date.now()).then(r=>r.ok?r.json():null).then(d=>{
+    if(d&&d.items){ULTIMORA=d.items;if(curTeam)renderTeam();}
+  }).catch(()=>{});
+}
 function syncLeague(){document.querySelectorAll('#leagues button').forEach(b=>b.className=b.dataset.l===curLeague?'on':'');}
 function fillTeams(){
-  const sel=document.getElementById('teamSelect');
-  const teams=teamsOf(curLeague);
-  sel.innerHTML=teams.map(t=>{
-    const tot=Object.values(DATA[t].colonne).reduce((a,c)=>a+c.length,0);
-    return `<option value="${t}">${t} (${tot})</option>`;}).join('');
+  const sel=document.getElementById('teamSelect'); const teams=teamsOf(curLeague);
+  sel.innerHTML=teams.map(t=>{const tot=Object.values(DATA[t].colonne).reduce((a,c)=>a+c.length,0);return `<option value="${t}">${t} (${tot})</option>`;}).join('');
   curTeam=teams[0]; sel.value=curTeam;
 }
 function markSlot(h){h=parseInt(h);const map=[['s08',8],['s12',12],['s20',20]];
@@ -229,35 +222,52 @@ function renderTeam(){
   document.getElementById('thead').innerHTML=
     `<span class="crest" style="background:${v.col}">${v.lab}</span>
      <div><h1>${curTeam}</h1><div class="sub">${v.league} · ${T.sub}</div></div>`;
+  const liveTeam=(ULTIMORA||[]).filter(i=>i.team===curTeam);
   const board=document.getElementById('board');board.innerHTML='';
   const totNomi=v.nomi?Object.values(v.nomi).reduce((a,x)=>a+x.length,0):0;
   document.getElementById('notice').innerHTML=(viewMode==='names'&&totNomi===0)?('<div class="notice">'+T.notice+'</div>'):'';
-  const catmap={rumor:'rumor',obj:'obj',conf:'conf',done:'done'};
-  STATES.forEach(st=>{
-    const col=document.createElement('div');col.className='col '+st;
+  COLS.forEach((col,idx)=>{
+    const el=document.createElement('div');el.className='col '+col.cls;
     let inner='', count=0;
     if(viewMode==='names'){
-      const movs=(v.nomi&&v.nomi[st])||[];count=movs.length;
+      let movs=[]; col.states.forEach(st=>movs=movs.concat((v.nomi&&v.nomi[st])||[]));
+      count=movs.length;
       inner=movs.length? movs.map(m=>`<div class="mv ${m.direzione==='out'?'out':'in'}">
           <span class="dir">${m.direzione==='out'?T.dir.out:T.dir.in}</span>
           <div class="pl">${m.giocatore}</div>
           <div class="club">${m.direzione==='out'?'→':'←'} ${m.club||'—'}</div></div>`).join('') : '<div class="empty">—</div>';
     } else {
-      const items=v.colonne[st]||[];count=items.length;
-      inner=items.length? items.map(c=>`<a class="card" href="${c.link||'#'}" target="_blank" rel="noopener">
+      const liveHere=liveTeam.filter(i=>dispCol(i.stato)===idx);
+      let items=[]; col.states.forEach(st=>items=items.concat(v.colonne[st]||[]));
+      count=liveHere.length+items.length;
+      const liveHtml=liveHere.map(i=>`<a class="card livecard" href="${i.link||'#'}" target="_blank" rel="noopener">
+          <div class="tit">${i.titolo}</div>
+          <div class="meta"><span class="livetag">🔴 LIVE</span><span class="src">${i.fonte}</span>${dots(i.tier)}<span>${agoISO(i.ts)}</span></div></a>`).join('');
+      const newsHtml=items.map(c=>`<a class="card" href="${c.link||'#'}" target="_blank" rel="noopener">
           <div class="tit">${c.titolo}</div>
-          <div class="meta"><span class="src">${c.fonte}</span>${dots(c.affidabilita)}<span>${c.quando||''}</span></div></a>`).join('') : '<div class="empty">'+T.none+'</div>';
+          <div class="meta"><span class="src">${c.fonte}</span>${dots(c.affidabilita)}<span>${c.quando||''}</span></div></a>`).join('');
+      inner=(liveHtml+newsHtml)||('<div class="empty">'+T.none+'</div>');
     }
-    col.innerHTML=`<h2><span class="dot"></span>${T.cats[st]}<span class="n">${count}</span></h2><div class="cards">${inner}</div>`;
-    board.appendChild(col);
+    el.innerHTML=`<h2><span class="dot"></span>${T.cols[idx]}<span class="n">${count}</span></h2><div class="cards">${inner}</div>`;
+    board.appendChild(el);
   });
+  // feed: prima le voci live della squadra, poi il feed del giorno
   document.getElementById('feedDay').textContent=(META.giorno||'')+' · '+T.feedday;
   const feed=document.getElementById('feed');feed.innerHTML='';
+  const dispStato=s=>s==='obj'?'rumor':s;
+  liveTeam.forEach(i=>{
+    const it=document.createElement('div');it.className='item';
+    it.innerHTML=`<div class="time">${agoISO(i.ts)}</div>
+      <div class="body"><span class="livetag">🔴 LIVE</span> <span class="tag t-${dispStato(i.stato)}">${T.tags[dispStato(i.stato)]}</span>
+      <a class="txt" href="${i.link||'#'}" target="_blank" rel="noopener">${i.titolo}</a>
+      <div class="src2">${T.source}: ${i.fonte}</div></div>`;
+    feed.appendChild(it);
+  });
   (v.feed||[]).forEach(f=>{
     const it=document.createElement('div');it.className='item';
     const thumb=f.img?`<a class="thumb" href="${f.link||'#'}" target="_blank" rel="noopener"><img src="${f.img}" loading="lazy" alt="" onerror="this.closest('.thumb').style.display='none'"></a>`:'';
     it.innerHTML=`<div class="time">${f.quando||''}</div>${thumb}
-      <div class="body"><span class="tag t-${f.stato}">${T.tags[f.stato]}</span>${dots(f.affidabilita)}
+      <div class="body"><span class="tag t-${dispStato(f.stato)}">${T.tags[dispStato(f.stato)]}</span>${dots(f.affidabilita)}
       <a class="txt" href="${f.link||'#'}" target="_blank" rel="noopener">${f.titolo}</a>
       <div class="src2">${T.source}: <a href="${f.link||'#'}" target="_blank" rel="noopener">${f.fonte}</a>${f.dominio?' · '+f.dominio:''}</div></div>`;
     feed.appendChild(it);
