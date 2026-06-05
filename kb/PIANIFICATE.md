@@ -1,8 +1,14 @@
 # Pianificate Cowork (da ricreare su ogni macchina)
+Tre pianificate alimentano il palinsesto editoriale (3 articoli/giorno = 9 pagine IT/EN/ES).
+Formati e copertine: lunch (ambra, img/cover-lunch.svg) · storia/focus (blu, img/cover-storia.svg) · recap serale (verde, img/cover-recap.svg).
+I prompt completi e aggiornati sono nei file SKILL.md in C:\Users\<utente>\Documents\Claude\Scheduled\<taskId>\ — per ricrearle su un'altra macchina, copiare il prompt dal SKILL.md corrispondente (o chiedere a Claude di rigenerarle da questa KB).
 
-## recap-serale-transferbeat — ogni giorno alle 20:00 (cron: 0 20 * * *)
-Prompt completo da usare (chiedi a Claude di creare la pianificata con questo prompt):
+## 1) recap-mattina-transferbeat — "LUNCH BREAK" — ogni giorno 12:00 (cron: 0 12 * * *)
+Punto di metà giornata. Slug lunch-break-AAAA-MM-GG, tipo "lunch", lab LUNCH, col #d98700.
+Fonti: nomi di oggi da origin/main:data/it/board.json + ultim'ora live (ultime ~14h). Claude scrive (no Groq), IT+EN+ES, regole anti-invenzione, fonti citate. Render con render_articles, commit plumbing su origin/main, push se possibile altrimenti avviso pubblica-ora.bat.
 
-Sei il caporedattore di TransferBeat (transferbeat.com), sito di calciomercato su Serie A, La Liga e Premier League. Il repository del sito e' la cartella selezionata "Calciomercato", repo GitHub ultimacenere/transferbeat. ATTENZIONE: per scrivere file usa SEMPRE bash (heredoc/python nel mount), MAI Write/Edit dell'host (il mount tronca i file).
-OBIETTIVO: scrivere TU (Claude, non Groq) il RECAP DI GIORNATA del calciomercato e prepararne la pubblicazione.
-PASSI: 1) git fetch origin; leggi da origin/main:data/it/board.json i movimenti "nomi" con _seen di oggi; scarica https://raw.githubusercontent.com/ultimacenere/transferbeat/live/data/ultimora.json per gli item del giorno (titolo, fonte, stato). 2) Scrivi il recap in ITALIANO (titolo <=75 caratteri, lead 2 frasi, 5-6 paragrafi giornalistici): SOLO fatti presenti nei dati; cita le fonti delle ultim'ora; rispetta le direzioni; scarta voci assurde; niente cifre inventate; niente "club non noto". Poi versioni EN e ES fedeli. 3) Crea data/articles/recap-AAAA-MM-GG.json: {"slug":"recap-AAAA-MM-GG","tipo":"recap","giocatore":"","team":"","league":"","lab":"RECAP","col":"#0a9d57","stato":"done","smentita":false,"created":"<ISO UTC>","updated":"<ISO UTC>","updates":[],"content":{"it":{...},"en":{...},"es":{...}}}. 4) Rigenera: da scripts/, python: import articles, render_articles; render_articles.render_all(articles.all_articles(),"https://transferbeat.com",articles.PAGES,articles.DATA); verifica articoli/it/recap-AAAA-MM-GG.html e index.json. 5) Commit plumbing SOPRA origin/main aggiornato (GIT_INDEX_FILE temporaneo, read-tree origin/main, update-index dei soli data/articles/*, articoli/**, sitemap.xml, write-tree, commit-tree -p origin/main, update-ref refs/heads/main; poi rm .git/index; git read-tree HEAD; git checkout-index -a -f). NON toccare data/{it,en,es}/*.json. 6) Prova git push origin main: se fallisce per credenziali, lascia il commit pronto e avvisa l'utente di lanciare pubblica-ora.bat. Se i dati del giorno sono pochi, recap piu' breve e onesto. Output: breve riepilogo con titolo e stato pubblicazione.
+## 2) focus-mercato-transferbeat — "FOCUS MERCATO" — ogni giorno 16:00 (cron: 0 16 * * *)
+Articolo-storia sulla trattativa più rilevante del giorno (curatela: stato avanzato > club di peso > numero fonti > clamore). Slug storia-<cognome>, tipo "storia", team/league/lab/col del club da data/teams.json. Se l'articolo esiste già per quel giocatore: AGGIORNARLO (sviluppi + updated), non duplicare. IT+EN+ES.
+
+## 3) recap-serale-transferbeat — "RECAP DI GIORNATA" — ogni giorno 20:00 (cron: 0 20 * * *)
+Recap completo della giornata. Slug recap-AAAA-MM-GG, tipo "recap", lab RECAP, col #0a9d57. Stesse regole.

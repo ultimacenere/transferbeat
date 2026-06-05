@@ -26,6 +26,11 @@ UI = {
          "via": "via", "smentita": "DESMENTIDO"},
 }
 RECAP_LABEL = {"it": "RECAP DI GIORNATA", "en": "DAILY RECAP", "es": "RESUMEN DEL DIA"}
+STORIA_LABEL = {"it": "FOCUS MERCATO", "en": "TRANSFER FOCUS", "es": "FOCO DE MERCADO"}
+LUNCH_LABEL = {"it": "LUNCH BREAK", "en": "LUNCH BREAK", "es": "LUNCH BREAK"}
+TIPI = {"recap": {"label": RECAP_LABEL, "col": "#0a9d57", "cover": "cover-recap.svg"},
+        "lunch": {"label": LUNCH_LABEL, "col": "#d98700", "cover": "cover-lunch.svg"},
+        "storia": {"label": STORIA_LABEL, "col": "#1f6fd6", "cover": "cover-storia.svg"}}
 MONTHS = {"it": ["gen","feb","mar","apr","mag","giu","lug","ago","set","ott","nov","dic"],
           "en": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
           "es": ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"]}
@@ -109,10 +114,10 @@ def render_article(art, lang, site):
     badge_col = "#e0392b" if smn else STATE_COLOR.get(st, "#67727e")
     badge_txt = UI[lang]["smentita"] if smn else STATE_LABEL[lang].get(st, st)
     og_img = ""
-    if tipo == "recap":
-        badge_col = "#0a9d57"
-        badge_txt = RECAP_LABEL.get(lang, "RECAP") + " · " + fdate(art.get("created", ""), lang)
-        og_img = site + "/img/cover-recap.svg"
+    if tipo in TIPI:
+        badge_col = TIPI[tipo]["col"]
+        badge_txt = TIPI[tipo]["label"].get(lang, tipo.upper()) + " · " + fdate(art.get("updated", "") or art.get("created", ""), lang)
+        og_img = site + "/img/" + TIPI[tipo]["cover"]
     title = c["title"]; lead = c["lead"]
     desc = lead or title
     out = [head(title, desc, canon, alts, lang, og_img), topbar(lang, alts, site)]
@@ -123,8 +128,8 @@ def render_article(art, lang, site):
     out.append('<span class="badge" style="background:' + badge_col + '">' + esc(badge_txt) + '</span>')
     if team:
         out.append('<span class="team"><span class="lab" style="background:' + esc(col) + '">' + esc(lab) + '</span>' + esc(team) + '</span>')
-    if tipo == "recap":
-        out.append('<img src="../../img/cover-recap.svg" alt="" style="width:100%;border-radius:12px;margin:14px 0 2px;display:block">')
+    if tipo in TIPI:
+        out.append('<img src="../../img/' + TIPI[tipo]["cover"] + '" alt="" style="width:100%;border-radius:12px;margin:14px 0 2px;display:block">')
     out.append('<h1>' + esc(title) + '</h1>')
     out.append('<div class="byline">' + UI[lang]["by"] + ' · ' + UI[lang]["updated"] + ' ' + fdate(art.get("updated",""), lang) + '</div>')
     if lead:
@@ -184,8 +189,9 @@ def render_index(arts, lang, site):
         st = a["stato"]; smn = a.get("smentita")
         col = "#e0392b" if smn else STATE_COLOR.get(st, "#67727e")
         lbl = UI[lang]["smentita"] if smn else STATE_LABEL[lang].get(st, st)
-        if a.get("tipo") == "recap":
-            col = "#0a9d57"; lbl = RECAP_LABEL.get(lang, "RECAP")
+        if a.get("tipo") in TIPI:
+            t = TIPI[a["tipo"]]
+            col = t["col"]; lbl = t["label"].get(lang, a["tipo"].upper())
         out.append('<a class="lcard" href="' + site + '/articoli/' + lang + '/' + a["slug"] + '.html">'
                    '<span class="badge" style="background:' + col + ';font-size:10px">' + esc(lbl) + '</span>'
                    '<div class="h">' + esc(c["title"]) + '</div>'
