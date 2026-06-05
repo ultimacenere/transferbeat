@@ -1,3 +1,5 @@
+> **Nuovo computer / ripartenza?** Leggi **[kb/RIPARTENZA.md](kb/RIPARTENZA.md)** — setup in 20 minuti, regole operative e runbook guasti.
+
 # TransferBeat
 
 Sito verticale sul calciomercato: una **home stile giornale** e una **board** che smista le
