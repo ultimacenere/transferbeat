@@ -74,6 +74,8 @@ article p{margin-bottom:14px;font-size:16px}
 
 def head(title, desc, canon, alts, lang, og_img=""):
     h = ['<!DOCTYPE html><html lang="' + lang + '"><head><meta charset="UTF-8">',
+         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-RLST76W6H2"></script>',
+         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RLST76W6H2');</script>",
          '<meta name="viewport" content="width=device-width,initial-scale=1">',
          '<title>' + esc(title) + ' | TransferBeat</title>',
          '<meta name="description" content="' + esc(desc) + '">',
