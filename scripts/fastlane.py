@@ -112,7 +112,11 @@ def main():
            for l in ("it", "en", "es")}
     team_names = [(t["nome"], t["nome"].lower()) for t in teams.get("squadre", [])]
     prev = load(os.path.join(DATA, "ultimora.json"), {"items": []})
-    seen = {it["link"] for it in prev.get("items", [])}
+    def _nt(t):
+        return re.sub(r"[^a-z0-9]+", " ", (t or "").lower()).strip()[:90]
+    # dedup robusto: id stabile del messaggio Telegram ('tg') + titolo normalizzato
+    seen = {(it.get("tg") or it.get("link")) for it in prev.get("items", [])}
+    seen_titles = {_nt(it.get("titolo")) for it in prev.get("items", [])}
     items = list(prev.get("items", []))
     new_count = 0
     for ch in experts.get("canali", []):
@@ -139,13 +143,23 @@ def main():
                 if not (team or any(k in low for k in kwords)):
                     continue
                 titolo = re.sub(r"[#*_`]", "", m["txt"]).strip()[:120]; stato = classify(m["txt"], kw)
-            seen.add(m["link"]); new_count += 1
+            tkey = _nt(titolo)
+            if tkey in seen_titles:
+                seen.add(m["link"]); continue
+            seen.add(m["link"]); seen_titles.add(tkey); new_count += 1
             items.append({"ts": m["ts"], "fonte": ch["nome"], "tier": int(ch.get("tier", 1)),
                           "titolo": titolo, "stato": stato, "team": team,
                           "giocatore": giocatore, "direzione": direzione, "club": club, "smentita": smentita,
-                          "slug": slugify(giocatore), "link": (m.get("src") or m["link"]), "lang": lang})
+                          "slug": slugify(giocatore), "tg": m["link"], "link": (m.get("src") or m["link"]), "lang": lang})
     items.sort(key=lambda x: x["ts"], reverse=True)
-    items = items[:MAX_ITEMS]
+    # pulizia finale: rimuove duplicati per titolo (tiene il piu recente)
+    uniq = []; _seent = set()
+    for it in items:
+        k = _nt(it.get("titolo"))
+        if k in _seent:
+            continue
+        _seent.add(k); uniq.append(it)
+    items = uniq[:MAX_ITEMS]
     out = {"aggiornato": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "items": items}
     json.dump(out, open(os.path.join(DATA, "ultimora.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     print("ultim'ora: " + str(new_count) + " nuove, " + str(len(items)) + " totali")
