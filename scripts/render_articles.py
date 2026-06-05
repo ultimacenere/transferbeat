@@ -25,6 +25,7 @@ UI = {
          "disc": "TransferBeat agrega noticias de mercado citando las fuentes originales. Noticia en desarrollo.",
          "via": "via", "smentita": "DESMENTIDO"},
 }
+RECAP_LABEL = {"it": "RECAP DI GIORNATA", "en": "DAILY RECAP", "es": "RESUMEN DEL DIA"}
 MONTHS = {"it": ["gen","feb","mar","apr","mag","giu","lug","ago","set","ott","nov","dic"],
           "en": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
           "es": ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"]}
@@ -71,7 +72,7 @@ article p{margin-bottom:14px;font-size:16px}
 .lcard .m{font-size:12px;color:#8a94a0}
 .list-h{font-family:Georgia,serif;font-size:28px;margin:18px 0 4px}"""
 
-def head(title, desc, canon, alts, lang):
+def head(title, desc, canon, alts, lang, og_img=""):
     h = ['<!DOCTYPE html><html lang="' + lang + '"><head><meta charset="UTF-8">',
          '<meta name="viewport" content="width=device-width,initial-scale=1">',
          '<title>' + esc(title) + ' | TransferBeat</title>',
@@ -83,7 +84,9 @@ def head(title, desc, canon, alts, lang):
     h.append('<meta property="og:title" content="' + esc(title) + '">')
     h.append('<meta property="og:description" content="' + esc(desc) + '">')
     h.append('<meta property="og:url" content="' + esc(canon) + '">')
-    h.append('<meta name="twitter:card" content="summary">')
+    if og_img:
+        h.append('<meta property="og:image" content="' + esc(og_img) + '">')
+    h.append('<meta name="twitter:card" content="' + ("summary_large_image" if og_img else "summary") + '">')
     h.append('<style>' + CSS + '</style></head><body>')
     return "".join(h)
 
@@ -100,11 +103,16 @@ def render_article(art, lang, site):
     canon = site + "/articoli/" + lang + "/" + slug + ".html"
     alts = {l: site + "/articoli/" + l + "/" + slug + ".html" for l in LANGS}
     st = art["stato"]; smn = art.get("smentita")
+    tipo = art.get("tipo", "")
     badge_col = "#e0392b" if smn else STATE_COLOR.get(st, "#67727e")
     badge_txt = UI[lang]["smentita"] if smn else STATE_LABEL[lang].get(st, st)
+    og_img = ""
+    if tipo == "recap":
+        badge_col = "#0a9d57"; badge_txt = RECAP_LABEL.get(lang, "RECAP")
+        og_img = site + "/img/cover-recap.svg"
     title = c["title"]; lead = c["lead"]
     desc = lead or title
-    out = [head(title, desc, canon, alts, lang), topbar(lang, alts, site)]
+    out = [head(title, desc, canon, alts, lang, og_img), topbar(lang, alts, site)]
     out.append('<div class="wrap">')
     out.append('<div class="crumbs"><a href="' + site + '/articoli/' + lang + '/">' + UI[lang]["list"] + '</a> / ' + esc(art.get("team","")) + '</div>')
     out.append('<article>')
@@ -112,13 +120,30 @@ def render_article(art, lang, site):
     out.append('<span class="badge" style="background:' + badge_col + '">' + esc(badge_txt) + '</span>')
     if team:
         out.append('<span class="team"><span class="lab" style="background:' + esc(col) + '">' + esc(lab) + '</span>' + esc(team) + '</span>')
+    if tipo == "recap":
+        out.append('<img src="../../img/cover-recap.svg" alt="" style="width:100%;border-radius:12px;margin:14px 0 2px;display:block">')
     out.append('<h1>' + esc(title) + '</h1>')
     out.append('<div class="byline">' + UI[lang]["by"] + ' · ' + UI[lang]["updated"] + ' ' + fdate(art.get("updated",""), lang) + '</div>')
     if lead:
         out.append('<p class="lead">' + esc(lead) + '</p>')
     for p in c["body"]:
         out.append('<p>' + esc(p) + '</p>')
-    # fonti
+    # fonti (solo se presenti)
+    if not art.get("updates"):
+        out.append('<p class="disc">' + UI[lang]["disc"] + '</p>')
+        out.append('</article></div>')
+        out.append('<div class="wrap"><div class="foot">© TransferBeat</div></div>')
+        ld = {"@context": "https://schema.org", "@type": "NewsArticle", "headline": title,
+              "description": desc, "datePublished": art.get("created", ""), "dateModified": art.get("updated", ""),
+              "inLanguage": lang, "mainEntityOfPage": {"@type": "WebPage", "@id": canon},
+              "articleSection": "Calciomercato",
+              "author": {"@type": "Organization", "name": "TransferBeat"},
+              "publisher": {"@type": "Organization", "name": "TransferBeat"}}
+        if og_img:
+            ld["image"] = [og_img]
+        out.append('<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + '</script>')
+        out.append('</body></html>')
+        return "".join(out)
     out.append('<div class="sources"><h2>' + UI[lang]["sources"] + '</h2><ul>')
     for u in art["updates"]:
         out.append('<li><a href="' + esc(u["link"]) + '" target="_blank" rel="noopener nofollow">' + esc(u["fonte"]) + '</a>'
@@ -156,6 +181,8 @@ def render_index(arts, lang, site):
         st = a["stato"]; smn = a.get("smentita")
         col = "#e0392b" if smn else STATE_COLOR.get(st, "#67727e")
         lbl = UI[lang]["smentita"] if smn else STATE_LABEL[lang].get(st, st)
+        if a.get("tipo") == "recap":
+            col = "#0a9d57"; lbl = RECAP_LABEL.get(lang, "RECAP")
         out.append('<a class="lcard" href="' + site + '/articoli/' + lang + '/' + a["slug"] + '.html">'
                    '<span class="badge" style="background:' + col + ';font-size:10px">' + esc(lbl) + '</span>'
                    '<div class="h">' + esc(c["title"]) + '</div>'
@@ -176,7 +203,7 @@ def render_all(arts, site, pages_dir, data_dir):
     # index.json per il front-end
     idx = {"aggiornato": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "articoli": []}
     for a in arts:
-        entry = {"slug": a["slug"], "giocatore": a.get("giocatore", ""), "team": a.get("team", ""),
+        entry = {"slug": a["slug"], "tipo": a.get("tipo", ""), "giocatore": a.get("giocatore", ""), "team": a.get("team", ""),
                  "league": a.get("league", ""), "lab": a.get("lab", ""), "col": a.get("col", ""),
                  "stato": a["stato"], "smentita": a.get("smentita", False), "updated": a.get("updated", ""),
                  "t": {l: (a["content"].get(l) or a["content"]["it"])["title"] for l in LANGS}}
