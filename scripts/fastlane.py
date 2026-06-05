@@ -136,7 +136,10 @@ def main():
                     seen.add(m["link"]); continue
                 titolo = (d.get("titolo") or "").strip()[:130]; stato = d["stato"]
                 team = match_team(d.get("squadra"), team_names) or next((n for (n, nl) in team_names if nl in low), "")
-                giocatore = (d.get("giocatore") or "").strip(); direzione = d["direzione"]; club = (d.get("club") or "").strip(); smentita = bool(d.get("smentita"))
+                giocatore = (d.get("giocatore") or "").strip()
+                if brain.is_coach(giocatore):
+                    giocatore = ""
+                direzione = d["direzione"]; club = (d.get("club") or "").strip(); smentita = bool(d.get("smentita"))
             else:
                 team = next((n for (n, nl) in team_names if nl in low), "")
                 kwords = ("mercato","transfer","fichaj","ufficiale","official","accordo","firma","here we go","obiettiv","trattativ","prestito","clausola","rinnov","colpo","cessione","addio","ingaggio","vola","pista")

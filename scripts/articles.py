@@ -152,7 +152,7 @@ def collect(experts, teams):
     for i in data.get("items", []):
         player = (i.get("giocatore") or "").strip()
         team = (i.get("team") or "").strip()
-        if not player or len(player) < 3 or team not in tinfo:
+        if not player or len(player) < 3 or team not in tinfo or brain.is_coach(player):
             continue
         found.append({"player": player, "team": team, "club": (i.get("club") or "").strip(),
                       "direzione": i.get("direzione") or "in", "stato": i.get("stato") or "rumor",

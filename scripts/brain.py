@@ -101,3 +101,57 @@ def movements_system():
         "Dalle notizie estrai i movimenti di singoli giocatori per la squadra indicata. "
         "Ignora notizie che non sono il movimento di un calciatore. Non inventare. Rispondi SOLO con JSON valido."
     )
+
+# --- Estrazione movimenti v2: GLOBALE, con club espliciti da->a ---
+MOVES_RULES = (
+    "Estrai dai titoli i MOVIMENTI di mercato di SINGOLI CALCIATORI.\n"
+    "- SOLO calciatori: ignora allenatori, dirigenti, procuratori, arbitri.\n"
+    "- SOLO club ESPLICITAMENTE scritti nel titolo: NON dedurre club dalla tua memoria. "
+    "Se la provenienza o la destinazione non e' scritta, lascia il campo vuoto.\n"
+    "- Ignora: rinnovi di contratto, convocazioni, infortuni, opinioni, interviste, "
+    "titoli-raccolta generici senza movimenti espliciti.\n"
+    "- Un titolo puo' contenere PIU' movimenti: estraili tutti.\n"
+    '- Formato: {"movimenti":[{"giocatore":"","da":"","a":"","stato":"rumor|obj|conf|done"}]}'
+)
+MOVES_EXAMPLE_IN = ("Notizie:\n"
+ "- Dumfries via dall'Inter: accordo col Real Madrid, pronta la clausola\n"
+ "- Calciomercato: le news di oggi e le trattative LIVE\n"
+ "- Inter, Provedel e' sempre piu' vicino\n"
+ "- Slot-Milan, contatti avviati con l'allenatore olandese\n"
+ "- Hojlund firma per il Napoli: lascia il Manchester United, e' ufficiale\n"
+ "- Altro che Premier: la volonta' di Stankovic e' chiara\n"
+ "- Solet rinnova con l'Udinese... per ora: l'Inter osserva")
+MOVES_EXAMPLE_OUT = ('{"movimenti":['
+ '{"giocatore":"Denzel Dumfries","da":"Inter","a":"Real Madrid","stato":"conf"},'
+ '{"giocatore":"Ivan Provedel","da":"","a":"Inter","stato":"obj"},'
+ '{"giocatore":"Rasmus Hojlund","da":"Manchester United","a":"Napoli","stato":"done"},'
+ '{"giocatore":"Oumar Solet","da":"Udinese","a":"Inter","stato":"rumor"}'
+ ']}')
+
+def movements_messages(titles):
+    """Messaggi per l'estrazione globale: system compatto + 1 esempio guida + titoli."""
+    sys_p = ("Sei l'analista di calciomercato di TransferBeat (Serie A, La Liga, Premier League). "
+             "STATI: rumor=voce/interesse; obj=trattativa/contatti/offerta; conf=affare dato per fatto/accordo; "
+             "done=ufficiale/firmato/visite mediche.\n" + glossary_block() + "\n" + MOVES_RULES +
+             "\nRispondi SOLO con JSON valido.")
+    return [{"role": "system", "content": sys_p},
+            {"role": "user", "content": MOVES_EXAMPLE_IN},
+            {"role": "assistant", "content": MOVES_EXAMPLE_OUT},
+            {"role": "user", "content": "Notizie:\n- " + "\n- ".join(titles)}]
+
+# --- Allenatori/tecnici noti: MAI giocatori (rete deterministica anti-errore) ---
+COACHES = {"slot","gasperini","sarri","allegri","conte","mourinho","ancelotti","simeone",
+           "guardiola","arteta","klopp","ten hag","emery","iraola","de zerbi","italiano",
+           "palladino","baroni","tudor","vanoli","chivu","inzaghi","pioli","spalletti",
+           "thiago motta","fonseca","xavi","flick","luis enrique","xabi alonso","zidane",
+           "de rossi","gilardino","nesta","gattuso","jaissle","postecoglou","maresca"}
+
+def is_coach(name):
+    import re as _re
+    n = _re.sub(r"[^a-z ]", "", (name or "").lower()).strip()
+    if not n:
+        return False
+    if n in COACHES:
+        return True
+    last = n.split()[-1] if n.split() else ""
+    return last in COACHES

@@ -130,42 +130,81 @@ def enrich(gn_link, src_href):
     _ENRICH_CACHE[gn_link] = res
     return res
 
-def extract_movements(team, titles, fallback=None):
-    base = fallback if fallback else {"rumor": [], "obj": [], "conf": [], "done": []}
-    if not LLM_KEY:
-        return base
-    titles = [t for t in titles if t][:16]
-    if not titles:
-        return {"rumor": [], "obj": [], "conf": [], "done": []}
-    sys_p = brain.movements_system()
-    user_p = ("Squadra di riferimento: " + team + ".\n"
-        "Dalle notizie qui sotto (in qualsiasi lingua) estrai i movimenti che riguardano " + team + ".\n"
-        "Per ogni movimento: giocatore (nome), direzione ('in' se ARRIVA a " + team +
-        ", 'out' se LASCIA " + team + "), club (l'altra squadra), "
-        "stato ('done'=ufficiale, 'conf'=accordo, 'obj'=obiettivo/trattativa, 'rumor'=voce).\n"
-        "Ignora le notizie che non sono il movimento di un singolo giocatore. Non inventare.\n"
-        'Formato: {"movimenti":[{"giocatore":"","direzione":"in","club":"","stato":"obj"}]}\n\n'
-        "Notizie:\n- " + "\n- ".join(titles))
-    try:
-        r = requests.post(LLM_URL, timeout=40,
-            headers={"Authorization": "Bearer " + LLM_KEY, "Content-Type": "application/json"},
-            json={"model": LLM_MODEL, "temperature": 0,
-                  "response_format": {"type": "json_object"},
-                  "messages": [{"role": "system", "content": sys_p},
-                               {"role": "user", "content": user_p}]})
-        movs = json.loads(r.json()["choices"][0]["message"]["content"]).get("movimenti", [])
-    except Exception as e:
-        print("    LLM errore (" + team + "): " + str(e)[:90])
-        return base
-    out = {"rumor": [], "obj": [], "conf": [], "done": []}
-    for m in movs:
-        g = (m.get("giocatore") or "").strip()
-        if not g:
+def extract_movements_global(titles):
+    """Estrazione GLOBALE dei movimenti: da TUTTI i titoli, con provenienza/destinazione
+    ESPLICITE (da -> a). Nessuna attribuzione per-squadra qui: la fa assign_movements."""
+    if not LLM_KEY or not titles:
+        return []
+    import time as _t
+    out = []
+    B = 20
+    for i in range(0, len(titles), B):
+        batch = [t for t in titles[i:i + B] if t]
+        if not batch:
             continue
-        st = m.get("stato") if m.get("stato") in out else "rumor"
-        d = "out" if (m.get("direzione") == "out") else "in"
-        out[st].append({"giocatore": g, "direzione": d, "club": (m.get("club") or "").strip()})
+        for attempt in (1, 2, 3):
+            try:
+                r = requests.post(LLM_URL, timeout=40,
+                    headers={"Authorization": "Bearer " + LLM_KEY, "Content-Type": "application/json"},
+                    json={"model": LLM_MODEL, "temperature": 0, "response_format": {"type": "json_object"},
+                          "messages": brain.movements_messages(batch)})
+                if r.status_code == 429:
+                    w = min(float(r.headers.get("retry-after", 0)) or (4 * attempt), 30)
+                    _t.sleep(w); continue
+                j = r.json()
+                if "choices" not in j:
+                    _t.sleep(2); continue
+                movs = json.loads(j["choices"][0]["message"]["content"]).get("movimenti", [])
+                for m in movs:
+                    g = (m.get("giocatore") or "").strip()
+                    st = m.get("stato") if m.get("stato") in ("rumor", "obj", "conf", "done") else "rumor"
+                    if g and len(g) > 2 and not brain.is_coach(g):
+                        out.append({"giocatore": g, "da": (m.get("da") or "").strip(),
+                                    "a": (m.get("a") or "").strip(), "stato": st})
+                break
+            except Exception as e:
+                print("    LLM movimenti errore:", str(e)[:80]); _t.sleep(2)
     return out
+
+# falsi match da evitare (es. "Inter Miami" non e' l'Inter)
+_NO_MATCH = {"inter": ("miami",)}
+
+def _club_rows(teams):
+    rows = []
+    for t in teams.get("squadre", []):
+        names = {t["nome"].lower()}
+        if t.get("search"):
+            names.add(t["search"].lower())
+        rows.append((t["nome"], names))
+    return rows
+
+def match_club(s, rows):
+    sl = (s or "").strip().lower()
+    if not sl:
+        return ""
+    sl = brain.ALIAS.get(sl, sl).lower()
+    for nome, names in rows:
+        if any(b in sl for b in _NO_MATCH.get(nome.lower(), ())):
+            continue
+        for n in names:
+            if n and (sl == n or sl in n or n in sl):
+                return nome
+    return ""
+
+def assign_movements(movs, teams):
+    """Ogni movimento va SOLO ai club esplicitamente coinvolti: a=entrata, da=uscita."""
+    rows = _club_rows(teams)
+    per = {}
+    def add(team, st, entry):
+        per.setdefault(team, {"rumor": [], "obj": [], "conf": [], "done": []})[st].append(entry)
+    for m in movs:
+        t_da = match_club(m["da"], rows)
+        t_a = match_club(m["a"], rows)
+        if t_a:
+            add(t_a, m["stato"], {"giocatore": m["giocatore"], "direzione": "in", "club": m["da"] or ""})
+        if t_da and t_da != t_a:
+            add(t_da, m["stato"], {"giocatore": m["giocatore"], "direzione": "out", "club": m["a"] or ""})
+    return per
 
 def age_days(pp):
     if not pp:
@@ -284,7 +323,8 @@ def build_board(teams, kw, lang, loc, direct_items=None, today=""):
     except Exception:
         pass
     base_kw = teams["kw"][lang]
-    squadre = {}
+    prepared = {}
+    pool = []; _pseen = set()
     for t in teams["squadre"]:
         q = base_kw + " " + t["search"]
         items = []
@@ -317,10 +357,21 @@ def build_board(teams, kw, lang, loc, direct_items=None, today=""):
             feed.append({"titolo": it["titolo"], "fonte": it["fonte"], "stato": it["stato"],
                          "link": e["url"], "img": e["img"], "dominio": e["dominio"],
                          "affidabilita": it["affidabilita"], "quando": it["quando"]})
-        new_mov = extract_movements(t["nome"], [it["titolo"] for it in items])
-        nomi = merge_nomi(old_nomi.get(t["nome"]), new_mov, today)
-        squadre[t["nome"]] = {"lab": t["lab"], "col": t["col"], "league": t["league"],
-                              "colonne": colonne, "feed": feed, "nomi": nomi}
+        prepared[t["nome"]] = (t, colonne, feed)
+        for it in items:
+            kx = _norm_name(it["titolo"])[:80]
+            if kx and kx not in _pseen:
+                _pseen.add(kx); pool.append(it["titolo"])
+    print("    movimenti: estrazione globale da " + str(len(pool)) + " titoli unici")
+    movs = extract_movements_global(pool)
+    permov = assign_movements(movs, teams)
+    print("    movimenti estratti: " + str(len(movs)) + " -> assegnati a " + str(len(permov)) + " squadre")
+    squadre = {}
+    for nome, (t, colonne, feed) in prepared.items():
+        new_mov = permov.get(nome, {"rumor": [], "obj": [], "conf": [], "done": []})
+        nomi = merge_nomi(old_nomi.get(nome), new_mov, today)
+        squadre[nome] = {"lab": t["lab"], "col": t["col"], "league": t["league"],
+                         "colonne": colonne, "feed": feed, "nomi": nomi}
     return squadre
 
 def build_home(teams, kw, lang, loc):
