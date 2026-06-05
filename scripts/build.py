@@ -130,6 +130,17 @@ def enrich(gn_link, src_href):
     _ENRICH_CACHE[gn_link] = res
     return res
 
+# segnali di movimento di mercato (IT/EN/ES): i titoli senza segnali non vanno all'LLM
+_MOVE_SIGNALS = ("mercato","trasferi","firma","accordo","ufficial","prestito","riscatt","clausola",
+                 "cession","addio","colpo","obiettiv","trattativ","ingaggi","offert","interess",
+                 "sondaggio","vicino","lascia","arriva","saluta","piace","rinnov","scambio","erede",
+                 "transfer","sign","deal","bid","loan","fee","target","swoop","exit","join",
+                 "fichaje","traspaso","acuerdo","cesion","cesi\u00f3n","oferta","llega","deja","venta")
+
+def _has_move_signal(t):
+    low = (t or "").lower()
+    return any(k in low for k in _MOVE_SIGNALS)
+
 def extract_movements_global(titles):
     """Estrazione GLOBALE dei movimenti: da TUTTI i titoli, con provenienza/destinazione
     ESPLICITE (da -> a). Nessuna attribuzione per-squadra qui: la fa assign_movements."""
@@ -137,7 +148,7 @@ def extract_movements_global(titles):
         return []
     import time as _t
     out = []
-    B = 20
+    B = 24
     for i in range(0, len(titles), B):
         batch = [t for t in titles[i:i + B] if t]
         if not batch:
@@ -359,6 +370,8 @@ def build_board(teams, kw, lang, loc, direct_items=None, today=""):
                          "affidabilita": it["affidabilita"], "quando": it["quando"]})
         prepared[t["nome"]] = (t, colonne, feed)
         for it in items:
+            if not _has_move_signal(it["titolo"]):
+                continue
             kx = _norm_name(it["titolo"])[:80]
             if kx and kx not in _pseen:
                 _pseen.add(kx); pool.append(it["titolo"])
