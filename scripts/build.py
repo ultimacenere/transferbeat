@@ -194,11 +194,16 @@ def match_club(s, rows):
     if not sl:
         return ""
     sl = brain.ALIAS.get(sl, sl).lower()
+    # passata 1: match ESATTO (cosi' "Milan" -> Milan e non Inter via "Inter Milan")
+    for nome, names in rows:
+        if sl in names:
+            return nome
+    # passata 2: contenimento, solo se nessun club matcha esattamente
     for nome, names in rows:
         if any(b in sl for b in _NO_MATCH.get(nome.lower(), ())):
             continue
         for n in names:
-            if n and (sl == n or sl in n or n in sl):
+            if n and (sl in n or n in sl):
                 return nome
     return ""
 
@@ -268,6 +273,29 @@ def merge_nomi(old, new, today, max_age=60):
             else:
                 m[key] = {"giocatore": it["giocatore"], "direzione": it.get("direzione", "in"),
                           "club": it.get("club", ""), "stato": st, "_first": today, "_seen": today}
+    # fusione varianti dello stesso giocatore: "Hojlund" + "Rasmus Hojlund" -> una voce.
+    # Prudente: fonde solo se un nome e' il solo cognome o e' contenuto nell'altro
+    # (cosi' "Sebastiano Esposito" e "Francesco Esposito" restano distinti).
+    bylast = {}
+    for k in list(m.keys()):
+        toks = k.split()
+        last = toks[-1] if toks else k
+        bylast.setdefault(last, []).append(k)
+    for last, ks in bylast.items():
+        if len(ks) < 2:
+            continue
+        ks.sort(key=len, reverse=True)
+        base = ks[0]
+        for k in ks[1:]:
+            if k != base and (k == last or k in base):
+                a = m[base]; b = m.pop(k)
+                if STATE_RANK[b["stato"]] > STATE_RANK[a["stato"]]:
+                    a["stato"] = b["stato"]; a["direzione"] = b["direzione"]
+                if b.get("club") and not a.get("club"):
+                    a["club"] = b["club"]
+                fa = a.get("_first") or "9999"; fb = b.get("_first") or "9999"
+                a["_first"] = min(fa, fb)
+                a["_seen"] = max(a.get("_seen") or "", b.get("_seen") or "")
     out = {"rumor": [], "obj": [], "conf": [], "done": []}
     for it in m.values():
         if it["stato"] == "rumor" and _days_since(it["_seen"]) > max_age:
