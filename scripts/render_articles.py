@@ -108,7 +108,8 @@ def render_article(art, lang, site):
     badge_txt = UI[lang]["smentita"] if smn else STATE_LABEL[lang].get(st, st)
     og_img = ""
     if tipo == "recap":
-        badge_col = "#0a9d57"; badge_txt = RECAP_LABEL.get(lang, "RECAP")
+        badge_col = "#0a9d57"
+        badge_txt = RECAP_LABEL.get(lang, "RECAP") + " · " + fdate(art.get("created", ""), lang)
         og_img = site + "/img/cover-recap.svg"
     title = c["title"]; lead = c["lead"]
     desc = lead or title

@@ -99,7 +99,7 @@
     <div class="top">
       <div class="logo">⚽ Transfer<b>Beat</b><span class="demo">BETA</span></div>
       <div class="langsw" id="langsw"></div>
-      <div class="nav"><a href="index.html" id="navHome">Home</a><a href="board.html" class="on" id="navLive">Live</a></div>
+      <div class="nav"><a href="index.html" id="navHome">Home</a><a href="articoli/it/" id="navArticoli">Articoli</a><a href="board.html" class="on" id="navLive">Live</a></div>
     </div>
     <div class="upbar">
       <span class="pulse"></span> <span id="lblUpd">Aggiornato alle</span> <b id="lastUp">—</b>
@@ -176,6 +176,8 @@ function teamsOf(league){return Object.entries(DATA).filter(([k,v])=>v.league===
 function applyStatic(){
   document.getElementById('navHome').textContent=T.home;
   document.getElementById('navLive').textContent=T.live;
+  const na=document.getElementById('navArticoli');
+  if(na){na.textContent={it:'Articoli',en:'Articles',es:'Art\u00edculos'}[lang];na.href='articoli/'+lang+'/';}
   document.getElementById('lblUpd').textContent=T.updated;
   document.getElementById('lblLeague').textContent=T.league;
   document.getElementById('vNews').textContent=T.news;

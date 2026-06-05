@@ -106,6 +106,7 @@
   <nav><div class="wrap">
     <a href="index.html" class="on" id="navHome">Home</a>
     <a href="board.html" class="live" id="navLive"><span class="liveDot"></span>Live</a>
+    <a href="articoli/it/" id="navArticoli">Articoli</a>
     <a id="navSA">Serie A</a><a id="navPL">Premier</a><a id="navLL">La Liga</a>
     <a href="#world" id="navWorld">Mondo</a>
   </div></nav>
@@ -162,6 +163,9 @@ document.documentElement.lang=lang;
 const T=STRINGS[lang];
 const stCls={done:'s-done',conf:'s-conf',obj:'s-obj',rumor:'s-rumor'};
 const stColor={rumor:'#d98700',obj:'#d98700',conf:'#7b46c9',done:'#0a9d57'};
+const RECAP_I18N={it:'RECAP DI GIORNATA',en:'DAILY RECAP',es:'RESUMEN DEL D\u00cdA'};
+const NAVART_I18N={it:'Articoli',en:'Articles',es:'Art\u00edculos'};
+(function(){const na=document.getElementById('navArticoli');if(na){na.textContent=NAVART_I18N[lang];na.href='articoli/'+lang+'/';}})();
 let ART={}, ARTLIST=[];
 const ART_I18N={it:{h:'📝 Articoli TransferBeat',s:'Le nostre analisi delle trattative, aggiornate di continuo'},
                 en:{h:'📝 TransferBeat Articles',s:'Our take on the deals, continuously updated'},
@@ -184,6 +188,7 @@ function loadArticles(){
           <div class="credit"><span style="color:${col};font-weight:800">●</span> ${a.team||''}</div></div>`;}).join('');
       strip.style.display='';
     }
+    renderHero();
   }).catch(()=>{});
 }
 loadArticles();
@@ -232,19 +237,41 @@ function loadUltimora(){
 }
 loadUltimora(); setInterval(loadUltimora,60000);
 
+function slideNews(a){
+  const heroImg=a.img?`<img src="${a.img}" alt="" onerror="this.style.display='none'">`:`<div class="ico">⚽</div>`;
+  return `<a class="ph" href="${a.link||'#'}" target="_blank" rel="noopener" style="display:grid">${heroImg}<span class="badge">${T.featured}</span></a>
+     <div class="kicker">${a.categoria||''}</div>
+     <h1><a href="${a.link||'#'}" target="_blank" rel="noopener">${a.titolo||''}</a></h1>
+     <div class="by">${T.updatedAt} ${window._apTime||''} · ${T.source}: <a href="${a.link||'#'}" target="_blank" rel="noopener" style="color:var(--accent2);font-weight:600">${a.fonte||'—'}</a>${a.dominio?' ('+a.dominio+')':''}</div>`;
+}
+function slideRecap(r){
+  const url=artUrl(r.slug);
+  const loc=lang==='it'?'it-IT':(lang==='es'?'es-ES':'en-GB');
+  let dt='';try{dt=new Date(r.updated).toLocaleDateString(loc,{day:'numeric',month:'long'});}catch(e){}
+  return `<a class="ph" href="${url}" style="display:grid"><img src="img/cover-recap.svg" alt=""><span class="badge" style="background:var(--accent)">${RECAP_I18N[lang]}</span></a>
+     <div class="kicker">${RECAP_I18N[lang]}${dt?' · '+dt:''}</div>
+     <h1><a href="${url}">${(r.t&&r.t[lang])||''}</a></h1>
+     <div class="by">Redazione TransferBeat</div>`;
+}
+function renderHero(){
+  const el=document.getElementById('lead'); if(!el)return;
+  const slides=[];
+  const rec=(ARTLIST||[]).find(x=>x.tipo==='recap'&&(Date.now()-new Date(x.updated))<48*3600*1000);
+  if(rec)slides.push(slideRecap(rec));
+  if(window._ap)slides.push(slideNews(window._ap));
+  if(!slides.length)return;
+  let i=0; el.innerHTML=slides[0];
+  if(window._heroT)clearInterval(window._heroT);
+  if(slides.length>1)window._heroT=setInterval(()=>{i=(i+1)%slides.length;el.innerHTML=slides[i];},8000);
+}
 function render(home,board){
   document.getElementById('masthead').innerHTML=
     `${home.giorno||''}<br>${T.edition} <b>${(home.aggiornato||'').slice(11,16)}</b> · ${T.tagline}`;
   document.getElementById('ticker').innerHTML=
     [...(home.ticker||[]),...(home.ticker||[])].map(t=>`<span>🟢 ${t}</span>`).join('');
 
-  const a=home.apertura||{};
-  const heroImg=a.img?`<img src="${a.img}" alt="" onerror="this.style.display='none'">`:`<div class="ico">⚽</div>`;
-  document.getElementById('lead').innerHTML=
-    `<div class="ph">${heroImg}<span class="badge">${T.featured}</span></div>
-     <div class="kicker">${a.categoria||''}</div>
-     <h1>${a.titolo||''}</h1>
-     <div class="by">${T.updatedAt} ${(home.aggiornato||'').slice(11,16)} · ${T.source}: <a href="${a.link||'#'}" target="_blank" rel="noopener" style="color:var(--accent2);font-weight:600">${a.fonte||'—'}</a>${a.dominio?' ('+a.dominio+')':''}</div>`;
+  window._ap=home.apertura||null; window._apTime=(home.aggiornato||'').slice(11,16);
+  renderHero();
 
   const ph2=(img,emoji)=>img?`<div class="ph2"><img src="${img}" loading="lazy" alt="" onerror="this.parentNode.innerHTML='<span>${emoji}</span>'"></div>`:`<div class="ph2"><span>${emoji}</span></div>`;
   const card=(o,emoji)=>
