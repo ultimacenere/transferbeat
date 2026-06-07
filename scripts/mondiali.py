@@ -49,19 +49,20 @@ NAZ = {
  "Uzbekistan":("UZ","Uzbekistan","Uzbekistán"),
 }
 
-def flag(iso2):
-    if iso2 == "_ENG": return "\U0001F3F4\U000E0067\U000E0062\U000E0065\U000E006E\U000E0067\U000E007F"
-    if iso2 == "_SCT": return "\U0001F3F4\U000E0067\U000E0062\U000E0073\U000E0063\U000E0074\U000E007F"
-    if not iso2 or len(iso2) != 2: return "\U0001F3F3"  # bandiera bianca
-    return "".join(chr(0x1F1E6 + ord(c) - ord("A")) for c in iso2.upper())
+def flag_iso(iso2):
+    """Codice per flagcdn.com (immagini bandiera, si vedono ovunque, anche su Windows)."""
+    if iso2 == "_ENG": return "gb-eng"
+    if iso2 == "_SCT": return "gb-sct"
+    if not iso2 or len(iso2) != 2: return ""
+    return iso2.lower()
 
 def team(name):
     """Risolve un nome squadra (o un placeholder knockout) in {en,it,es,flag,ph}."""
     if name in NAZ:
         iso, it, es = NAZ[name]
-        return {"en": name, "it": it, "es": es, "flag": flag(iso), "ph": False}
+        return {"en": name, "it": it, "es": es, "iso": flag_iso(iso), "ph": False}
     # placeholder tipo 2A, 1C, W101, 3C/3D/3E... -> mostralo com'e'
-    return {"en": name, "it": name, "es": name, "flag": "", "ph": True}
+    return {"en": name, "it": name, "es": name, "iso": "", "ph": True}
 
 def to_utc(date, time):
     """ '2026-06-11' + '13:00 UTC-6' -> ISO UTC. """

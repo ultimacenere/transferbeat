@@ -53,7 +53,7 @@ th{font-size:10px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted
 td.team,th.team{text-align:left;padding-left:12px}
 tbody tr{border-top:1px solid var(--line)}
 tbody tr:nth-child(-n+2) td.pos{color:var(--accent);font-weight:800}
-.fl{font-size:16px;margin-right:6px}
+.fl{width:22px;height:16px;object-fit:cover;border-radius:2px;margin-right:7px;vertical-align:-3px;box-shadow:0 0 0 1px var(--line)}
 .pt{font-weight:800}
 .fixtures{padding:8px 12px 12px;font-size:12.5px}
 .fx{display:flex;align-items:center;gap:8px;padding:6px 0;border-top:1px solid #eef1f5}
@@ -129,7 +129,7 @@ function applyStatic(){
   seg.innerHTML=`<button data-m="gironi">${T.gironi}</button><button data-m="finali">${T.finali}</button>`;
   seg.querySelectorAll('button').forEach(b=>b.onclick=()=>{mode=b.dataset.m;render();});
 }
-function tn(t){return `<span class="fl">${t.flag||''}</span>${t[lang]||t.en}`;}
+function tn(t){const f=t.iso?`<img class="fl" src="https://flagcdn.com/h20/${t.iso}.png" alt="" loading="lazy" onerror="this.style.display='none'">`:'';return `${f}${t[lang]||t.en}`;}
 function scoreStr(m){if(!m.played)return '<span class="vs">'+fdate(m.utc)+'</span>';
   let s=m.score.ft[0]+'-'+m.score.ft[1];
   if(m.score.p)s+=' ('+m.score.p[0]+'-'+m.score.p[1]+' '+(lang==='it'?'dcr':lang==='es'?'pen':'pens')+')';
