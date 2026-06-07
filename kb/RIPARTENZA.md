@@ -42,8 +42,9 @@ Il computer serve solo per: modifiche al codice, articoli scritti da Claude, pus
   (`rm .git/index; git read-tree HEAD; git checkout-index -a -f`).
 - **Mai committare** `data/ultimora.json` (gitignorato) né sovrascrivere `data/<lang>/*.json` con
   copie vecchie. Il `guard.py` blocca i troncamenti dei sorgenti.
-- **Push**: lo fa l'utente con `pubblica-ora.bat` (push diretto) o `carica-modifiche.bat`
-  (add+commit+pull+push, con guard). Claude non ha credenziali git.
+- **Push AUTOMATICO**: il token (Contents:write) consente di pubblicare senza credenziali Windows.
+  Comando: `bash scripts/pubblica.sh` (usa github_token.txt, non stampa il token). Lo usano le pianificate
+  per pubblicarsi da sole; l'utente puo' sempre usare `pubblica-ora.bat`/`carica-modifiche.bat`.
 - Se un push è "rejected (fetch first)": un cron è passato prima → ricostruire il commit sopra il
   nuovo origin/main (stesso pattern plumbing) e ripushare.
 
@@ -55,7 +56,7 @@ Il computer serve solo per: modifiche al codice, articoli scritti da Claude, pus
 - **Register.it**: DNS del dominio (A record apex → 216.198.79.1, www CNAME Vercel).
 - **Groq console** (console.groq.com): chiave API, limiti per modello.
 - **Token GitHub**: fine-grained, SCADE il 2026-09-02 → rigenerare (Actions Read+write; aggiungere
-  "Contents Read+write" se si vuole il push automatico via API) e aggiornarlo nei 2 job cron-job.org
+  "Contents Read+write" (gia' attivo: serve per il push automatico) e aggiornarlo nei 2 job cron-job.org
   e in github_token.txt.
 
 ## 5. Runbook guasti rapidi
