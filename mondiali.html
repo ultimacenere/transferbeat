@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RLST76W6H2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RLST76W6H2');</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mondiale 2026 — TransferBeat</title>
+<meta name="description" content="FIFA World Cup 2026: gironi, classifiche, calendario, risultati e marcatori. La sezione Mondiale di TransferBeat.">
+<link rel="alternate" hreflang="it" href="./mondiali.html?lang=it">
+<link rel="alternate" hreflang="en" href="./mondiali.html?lang=en">
+<link rel="alternate" hreflang="es" href="./mondiali.html?lang=es">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#fff;--panel:#f7f8fa;--line:#e2e6ea;--txt:#161b21;--muted:#67727e;--accent:#0a9d57;--blue:#1f6fd6;--red:#e0392b;--gold:#c9a227}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+/* barra news mondiale */
+.nbar{background:var(--blue);color:#fff;overflow:hidden;white-space:nowrap}
+.nbar .wrap{display:flex;align-items:center;gap:12px;height:38px}
+.nbar .lab{background:rgba(0,0,0,.22);padding:3px 10px;border-radius:6px;font-size:11px;font-weight:800;letter-spacing:.5px;flex-shrink:0;display:flex;align-items:center;gap:6px}
+.nbar .dot{width:7px;height:7px;border-radius:50%;background:#fff;animation:pl 1.5s infinite}
+@keyframes pl{0%,100%{opacity:1}50%{opacity:.3}}
+.nbar .scrollwrap{flex:1;overflow:hidden}
+.nbar .scroll{display:inline-block;animation:tick 80s linear infinite;font-size:13px;font-weight:600}
+.nbar .scroll a{margin-right:42px}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+/* header */
+header{border-bottom:1px solid var(--line)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;flex-wrap:wrap}
+.brand{font-family:Georgia,serif;font-size:26px;font-weight:700}.brand b{color:var(--accent)}
+.brand .wc{font-size:13px;font-weight:800;color:var(--blue);letter-spacing:.5px;margin-left:8px;vertical-align:middle}
+nav.tabs{display:flex;gap:4px;flex-wrap:wrap}
+nav.tabs a{font-size:13px;color:var(--muted);padding:8px 10px;border-bottom:2px solid transparent}
+nav.tabs a.home{color:var(--accent)}
+.langsw a{font-size:11px;font-weight:700;padding:3px 7px;border:1px solid var(--line);border-radius:6px;color:var(--muted);margin-left:4px;cursor:pointer}
+.langsw a.on{background:var(--txt);color:#fff;border-color:var(--txt)}
+.hero{background:linear-gradient(120deg,#123f7e,#1f6fd6);color:#fff;padding:22px 0}
+.hero h1{font-family:Georgia,serif;font-size:30px}
+.hero p{opacity:.9;font-size:13.5px;margin-top:4px}
+.seg{display:flex;gap:6px;margin:18px 0;flex-wrap:wrap}
+.seg button{border:1px solid var(--line);background:#fff;color:var(--muted);font-weight:700;font-size:13px;padding:8px 14px;border-radius:8px;cursor:pointer}
+.seg button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+/* gironi */
+.groups{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media(max-width:780px){.groups{grid-template-columns:1fr}}
+.gcard{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.gcard h2{background:var(--panel);font-size:14px;padding:10px 14px;border-bottom:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:7px 6px;text-align:center}
+th{font-size:10px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);font-weight:700;background:#fcfcfd}
+td.team,th.team{text-align:left;padding-left:12px}
+tbody tr{border-top:1px solid var(--line)}
+tbody tr:nth-child(-n+2) td.pos{color:var(--accent);font-weight:800}
+.fl{font-size:16px;margin-right:6px}
+.pt{font-weight:800}
+.fixtures{padding:8px 12px 12px;font-size:12.5px}
+.fx{display:flex;align-items:center;gap:8px;padding:6px 0;border-top:1px solid #eef1f5}
+.fx:first-child{border-top:0}
+.fx .d{color:var(--muted);font-size:11px;width:64px;flex-shrink:0}
+.fx .t{flex:1}
+.fx .r{font-weight:800;background:var(--panel);padding:1px 8px;border-radius:5px}
+.fx .vs{color:var(--muted);font-size:11px}
+.goals{font-size:11px;color:var(--muted);padding:2px 0 6px 72px}
+/* knockout */
+.rounds{display:flex;flex-direction:column;gap:18px}
+.rnd h2{font-family:Georgia,serif;font-size:20px;margin-bottom:8px}
+.komatch{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-bottom:8px;font-size:14px;flex-wrap:wrap}
+.komatch .d{color:var(--muted);font-size:11px;width:80px}
+.komatch .side{flex:1;min-width:120px}
+.komatch .r{font-weight:800;background:var(--panel);padding:1px 8px;border-radius:5px}
+.foot{border-top:3px solid var(--blue);margin-top:26px;padding:18px 0;color:var(--muted);font-size:12px;text-align:center}
+.err{background:#fff6f6;border:1px solid #f3c9c9;color:#a33;border-radius:12px;padding:16px;margin:20px 0}
+</style>
+</head>
+<body>
+<div class="nbar"><div class="wrap"><span class="lab"><span class="dot"></span><span id="nlab">ULTIM'ORA MONDIALE</span></span><div class="scrollwrap"><div class="scroll" id="nscroll"></div></div></div></div>
+<header><div class="wrap top">
+  <div><a class="brand" href="index.html?lang=it">Transfer<b>Beat</b><span class="wc" id="wctag">MONDIALE 2026</span></a></div>
+  <nav class="tabs" id="nav"></nav>
+  <div class="langsw" id="langsw"></div>
+</div></header>
+<div class="hero"><div class="wrap"><h1 id="heroH">Mondiale 2026</h1><p id="heroP">Stati Uniti · Canada · Messico — gironi, classifiche, calendario e risultati</p></div></div>
+<div class="wrap">
+  <div class="seg" id="seg"></div>
+  <div id="error"></div>
+  <div id="view"></div>
+</div>
+<div class="foot"><div class="wrap" id="foot"></div></div>
+<script>
+const STR={
+ it:{nlab:"ULTIM'ORA MONDIALE",tag:"MONDIALE 2026",heroH:"Mondiale 2026",heroP:"Stati Uniti · Canada · Messico — gironi, classifiche, calendario e risultati",
+     home:"Home",live:"Live",art:"Articoli",mond:"Mondiale",gironi:"Gironi",finali:"Fasi finali",
+     th:["#","Squadra","PG","V","N","P","GF","GS","DR","Pt"],vs:"vs",foot:"TransferBeat — Mondiale 2026 · dati openfootball (pubblico dominio)",
+     rounds:{"Round of 32":"Ottavi (32)","Round of 16":"Ottavi","Quarter-final":"Quarti","Semi-final":"Semifinali","Match for third place":"Finale 3°/4° posto","Final":"Finale"}},
+ en:{nlab:"WORLD CUP LIVE",tag:"WORLD CUP 2026",heroH:"World Cup 2026",heroP:"United States · Canada · Mexico — groups, standings, schedule and results",
+     home:"Home",live:"Live",art:"Articles",mond:"World Cup",gironi:"Groups",finali:"Knockout",
+     th:["#","Team","P","W","D","L","GF","GA","GD","Pts"],vs:"vs",foot:"TransferBeat — World Cup 2026 · data openfootball (public domain)",
+     rounds:{"Round of 32":"Round of 32","Round of 16":"Round of 16","Quarter-final":"Quarter-finals","Semi-final":"Semi-finals","Match for third place":"Third place","Final":"Final"}},
+ es:{nlab:"MUNDIAL EN VIVO",tag:"MUNDIAL 2026",heroH:"Mundial 2026",heroP:"Estados Unidos · Canadá · México — grupos, clasificaciones, calendario y resultados",
+     home:"Inicio",live:"En vivo",art:"Artículos",mond:"Mundial",gironi:"Grupos",finali:"Eliminatorias",
+     th:["#","Equipo","PJ","G","E","P","GF","GC","DG","Pts"],vs:"vs",foot:"TransferBeat — Mundial 2026 · datos openfootball (dominio público)",
+     rounds:{"Round of 32":"Dieciseisavos","Round of 16":"Octavos","Quarter-final":"Cuartos","Semi-final":"Semifinales","Match for third place":"Tercer puesto","Final":"Final"}}
+};
+const P=new URLSearchParams(location.search);
+let lang=(P.get('lang')||localStorage.getItem('tb_lang')||'it').toLowerCase();
+if(!['it','en','es'].includes(lang))lang='it';
+localStorage.setItem('tb_lang',lang);document.documentElement.lang=lang;
+const T=STR[lang];
+let DATA=null,mode='gironi';
+function fdate(utc){try{const d=new Date(utc);const loc=lang==='it'?'it-IT':(lang==='es'?'es-ES':'en-GB');
+  return d.toLocaleDateString(loc,{day:'2-digit',month:'short'})+' '+d.toLocaleTimeString(loc,{hour:'2-digit',minute:'2-digit'});}catch(e){return''}}
+function applyStatic(){
+  document.getElementById('nlab').textContent=T.nlab;
+  document.getElementById('wctag').textContent=T.tag;
+  document.getElementById('heroH').textContent=T.heroH;
+  document.getElementById('heroP').textContent=T.heroP;
+  document.getElementById('foot').textContent=T.foot;
+  document.getElementById('nav').innerHTML=
+    `<a class="home" href="index.html?lang=${lang}">${T.home}</a>
+     <a href="board.html?lang=${lang}">${T.live}</a>
+     <a href="articoli/${lang}/">${T.art}</a>
+     <a href="mondiali.html?lang=${lang}" style="color:var(--blue);font-weight:700">${T.mond}</a>`;
+  const ls=document.getElementById('langsw');
+  ls.innerHTML=['it','en','es'].map(l=>`<a class="${l===lang?'on':''}" data-l="${l}">${l.toUpperCase()}</a>`).join('');
+  ls.querySelectorAll('a').forEach(a=>a.onclick=()=>{localStorage.setItem('tb_lang',a.dataset.l);location.search='?lang='+a.dataset.l;});
+  const seg=document.getElementById('seg');
+  seg.innerHTML=`<button data-m="gironi">${T.gironi}</button><button data-m="finali">${T.finali}</button>`;
+  seg.querySelectorAll('button').forEach(b=>b.onclick=()=>{mode=b.dataset.m;render();});
+}
+function tn(t){return `<span class="fl">${t.flag||''}</span>${t[lang]||t.en}`;}
+function scoreStr(m){if(!m.played)return '<span class="vs">'+fdate(m.utc)+'</span>';
+  let s=m.score.ft[0]+'-'+m.score.ft[1];
+  if(m.score.p)s+=' ('+m.score.p[0]+'-'+m.score.p[1]+' '+(lang==='it'?'dcr':lang==='es'?'pen':'pens')+')';
+  return '<span class="r">'+s+'</span>';}
+function goalsLine(m){
+  if(!m.goals1&&!m.goals2)return '';
+  const g=x=>(x||[]).map(y=>`${y.name} ${y.minute||''}'${y.pen?' (R)':''}${y.og?' (aut)':''}`).join(', ');
+  const l=g(m.goals1),r=g(m.goals2);
+  if(!l&&!r)return '';
+  return `<div class="goals">⚽ ${[l,r].filter(Boolean).join(' · ')}</div>`;
+}
+function render(){
+  document.getElementById('seg').querySelectorAll('button').forEach(b=>b.className=b.dataset.m===mode?'on':'');
+  const v=document.getElementById('view');
+  if(mode==='gironi'){
+    v.innerHTML='<div class="groups">'+DATA.groups.map(g=>{
+      const rows=g.classifica.map((r,i)=>`<tr>
+        <td class="pos">${i+1}</td><td class="team">${tn(r.team)}</td>
+        <td>${r.pg}</td><td>${r.v}</td><td>${r.n}</td><td>${r.p}</td>
+        <td>${r.gf}</td><td>${r.gs}</td><td>${r.dr>0?'+':''}${r.dr}</td><td class="pt">${r.pt}</td></tr>`).join('');
+      const fx=g.partite.map(m=>`<div class="fx"><span class="d">${fdate(m.utc).split(' ')[0]+' '+(fdate(m.utc).split(' ')[1]||'')}</span>
+        <span class="t">${tn(m.team1)} <span class="vs">${T.vs}</span> ${tn(m.team2)}</span>${m.played?scoreStr(m):''}</div>${goalsLine(m)}`).join('');
+      return `<div class="gcard"><h2>${T.gironi.slice(0,1)==='G'?'':''}${lang==='it'?'Girone':lang==='es'?'Grupo':'Group'} ${g.name}</h2>
+        <table><thead><tr>${T.th.map((h,i)=>`<th class="${i===1?'team':''}">${h}</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table>
+        <div class="fixtures">${fx}</div></div>`;
+    }).join('')+'</div>';
+  } else {
+    v.innerHTML='<div class="rounds">'+DATA.knockout.map(k=>{
+      const ms=k.partite.map(m=>`<div class="komatch"><span class="d">${fdate(m.utc)}</span>
+        <span class="side">${tn(m.team1)}</span>${m.played?scoreStr(m):'<span class="vs">'+T.vs+'</span>'}<span class="side" style="text-align:right">${tn(m.team2)}</span></div>`).join('');
+      return `<div class="rnd"><h2>${(T.rounds[k.round])||k.round}</h2>${ms}</div>`;
+    }).join('')+'</div>';
+  }
+}
+function renderNews(){
+  const sc=document.getElementById('nscroll');
+  const items=(DATA.news&&DATA.news[lang])||[];
+  if(!items.length){sc.innerHTML='';return;}
+  const html=items.map(n=>`<a href="${n.link||'#'}" target="_blank" rel="noopener">🔵 ${n.fonte}: ${n.titolo}</a>`).join('');
+  sc.innerHTML=html+html;
+}
+function init(){
+  applyStatic();
+  fetch('data/mondiali.json').then(r=>{if(!r.ok)throw 0;return r.json();}).then(d=>{
+    DATA=d;renderNews();render();
+  }).catch(()=>{document.getElementById('error').innerHTML='<div class="err">Dati non caricati. Apri il sito via server (GitHub/Vercel).</div>';});
+}
+init();
+</script>
+</body>
+</html>
