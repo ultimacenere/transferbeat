@@ -28,6 +28,9 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}   # opzionale: abilita la vista "Nomi"
         run: python scripts/build.py
 
+      - name: Genera sezione Mondiale
+        run: python scripts/mondiali.py || echo "mondiali skip"
+
 
       - name: Commit dei dati e degli articoli
         run: |
