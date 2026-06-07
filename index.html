@@ -172,6 +172,11 @@ const T=STRINGS[lang];
 const stCls={done:'s-done',conf:'s-conf',obj:'s-obj',rumor:'s-rumor'};
 const stColor={rumor:'#d98700',obj:'#d98700',conf:'#7b46c9',done:'#0a9d57'};
 const RECAP_I18N={it:'RECAP DI GIORNATA',en:'DAILY RECAP',es:'RESUMEN DEL D\u00cdA'};
+const ART_FMT={
+  recap:{cover:'img/cover-recap.svg',col:'#0a9d57',label:{it:'RECAP DI GIORNATA',en:'DAILY RECAP',es:'RESUMEN DEL D\u00cdA'}},
+  lunch:{cover:'img/cover-lunch.svg',col:'#d98700',label:{it:'LUNCH BREAK',en:'LUNCH BREAK',es:'LUNCH BREAK'}},
+  storia:{cover:'img/cover-storia.svg',col:'#1f6fd6',label:{it:'FOCUS MERCATO',en:'TRANSFER FOCUS',es:'FOCO DE MERCADO'}}
+};
 const NAVART_I18N={it:'Articoli',en:'Articles',es:'Art\u00edculos'};
 (function(){const na=document.getElementById('navArticoli');if(na){na.textContent=NAVART_I18N[lang];na.href='articoli/'+lang+'/';}})();
 let ART={}, ARTLIST=[];
@@ -252,20 +257,22 @@ function slideNews(a){
      <h1><a href="${a.link||'#'}" target="_blank" rel="noopener">${a.titolo||''}</a></h1>
      <div class="by">${T.updatedAt} ${window._apTime||''} · ${T.source}: <a href="${a.link||'#'}" target="_blank" rel="noopener" style="color:var(--accent2);font-weight:600">${a.fonte||'—'}</a>${a.dominio?' ('+a.dominio+')':''}</div>`;
 }
-function slideRecap(r){
+function slideArticle(r){
   const url=artUrl(r.slug);
+  const fmt=ART_FMT[r.tipo]||ART_FMT.recap;
+  const lbl=(fmt.label[lang]||fmt.label.it);
   const loc=lang==='it'?'it-IT':(lang==='es'?'es-ES':'en-GB');
   let dt='';try{dt=new Date(r.updated).toLocaleDateString(loc,{day:'numeric',month:'long'});}catch(e){}
-  return `<a class="ph" href="${url}" style="display:grid"><img src="img/cover-recap.svg" alt=""><span class="badge" style="background:var(--accent)">${RECAP_I18N[lang]}</span></a>
-     <div class="kicker">${RECAP_I18N[lang]}${dt?' · '+dt:''}</div>
+  return `<a class="ph" href="${url}" style="display:grid"><img src="${fmt.cover}" alt=""><span class="badge" style="background:${fmt.col}">${lbl}</span></a>
+     <div class="kicker">${lbl}${dt?' · '+dt:''}</div>
      <h1><a href="${url}">${(r.t&&r.t[lang])||''}</a></h1>
      <div class="by">Redazione TransferBeat</div>`;
 }
 function renderHero(){
   const el=document.getElementById('lead'); if(!el)return;
   const slides=[];
-  const rec=(ARTLIST||[]).find(x=>x.tipo==='recap'&&(Date.now()-new Date(x.updated))<48*3600*1000);
-  if(rec)slides.push(slideRecap(rec));
+  const rec=(ARTLIST||[]).find(x=>ART_FMT[x.tipo]&&(Date.now()-new Date(x.updated))<48*3600*1000);
+  if(rec)slides.push(slideArticle(rec));
   if(window._ap)slides.push(slideNews(window._ap));
   if(!slides.length)return;
   let i=0; el.innerHTML=slides[0];
