@@ -53,8 +53,15 @@
   @keyframes pl{0%,100%{opacity:1}50%{opacity:.3}}
   .main{display:grid;grid-template-columns:1fr 320px;gap:26px;padding:24px 0}
   @media(max-width:900px){.main{grid-template-columns:1fr}}
-  .lead{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:22px}
+  .lead{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:22px;position:relative}
   .lead .ph{aspect-ratio:16/8;border-radius:12px;background:linear-gradient(135deg,#eef1f5,#dfe5ec);position:relative;overflow:hidden;display:grid;place-items:center}
+  .hnav{position:absolute;top:0;left:0;right:0;aspect-ratio:16/8;pointer-events:none;z-index:3}
+  .harrow{position:absolute;top:50%;transform:translateY(-50%);pointer-events:auto;width:38px;height:38px;border:none;border-radius:50%;background:rgba(0,0,0,.42);color:#fff;font-size:24px;line-height:1;cursor:pointer;display:grid;place-items:center;transition:background .15s}
+  .harrow:hover{background:rgba(0,0,0,.72)}
+  .hprev{left:10px}.hnext{right:10px}
+  .hdots{position:absolute;bottom:10px;left:0;right:0;display:flex;gap:7px;justify-content:center;pointer-events:none}
+  .hdot{pointer-events:auto;width:9px;height:9px;padding:0;border:none;border-radius:50%;background:rgba(255,255,255,.55);cursor:pointer;transition:background .15s}
+  .hdot.on{background:#fff}.hdot:hover{background:rgba(255,255,255,.9)}
   .ph .badge{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px;letter-spacing:.5px;z-index:2}
   .ph .ico{font-size:64px;opacity:.28}
   .ph img,.art .ph2 img{width:100%;height:100%;object-fit:cover;display:block}
@@ -270,16 +277,34 @@ function slideArticle(r){
      <h1><a href="${url}">${(r.t&&r.t[lang])||''}</a></h1>
      <div class="by">Redazione TransferBeat</div>`;
 }
+const HERO_MAX=3;  // slide nel main slider (porta a 4 quando vuoi)
 function renderHero(){
   const el=document.getElementById('lead'); if(!el)return;
   const slides=[];
-  const rec=(ARTLIST||[]).find(x=>ART_FMT[x.tipo]&&(Date.now()-new Date(x.updated))<48*3600*1000);
-  if(rec)slides.push(slideArticle(rec));
-  if(window._ap)slides.push(slideNews(window._ap));
+  const arts=(ARTLIST||[]).filter(x=>ART_FMT[x.tipo]&&(Date.now()-new Date(x.updated))<48*3600*1000)
+                          .sort((a,b)=>new Date(b.updated)-new Date(a.updated));
+  for(const r of arts){ if(slides.length>=HERO_MAX)break; slides.push(slideArticle(r)); }
+  if(window._ap && slides.length<HERO_MAX)slides.push(slideNews(window._ap));
   if(!slides.length)return;
-  let i=0; el.innerHTML=slides[0];
-  if(window._heroT)clearInterval(window._heroT);
-  if(slides.length>1)window._heroT=setInterval(()=>{i=(i+1)%slides.length;el.innerHTML=slides[i];},8000);
+  let i=0;
+  function show(){
+    el.innerHTML=slides[i];
+    if(slides.length<2)return;
+    const nav=document.createElement('div'); nav.className='hnav';
+    nav.innerHTML=`<button class="harrow hprev" aria-label="precedente">\u2039</button>`
+      +`<button class="harrow hnext" aria-label="successiva">\u203a</button>`
+      +`<div class="hdots">`+slides.map((_,k)=>`<button class="hdot${k===i?' on':''}" data-k="${k}" aria-label="slide ${k+1}"></button>`).join('')+`</div>`;
+    el.appendChild(nav);
+    nav.querySelector('.hprev').onclick=()=>go(i-1,true);
+    nav.querySelector('.hnext').onclick=()=>go(i+1,true);
+    nav.querySelectorAll('.hdot').forEach(d=>d.onclick=()=>go(+d.dataset.k,true));
+  }
+  function go(j,manual){ i=(j+slides.length)%slides.length; show(); if(manual)restart(); }
+  function restart(){ if(window._heroT)clearInterval(window._heroT);
+    if(slides.length>1)window._heroT=setInterval(()=>go(i+1,false),8000); }
+  el.onmouseenter=()=>{ if(window._heroT)clearInterval(window._heroT); };
+  el.onmouseleave=restart;
+  show(); restart();
 }
 function render(home,board){
   document.getElementById('masthead').innerHTML=
