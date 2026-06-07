@@ -17,6 +17,9 @@ Il computer serve solo per: modifiche al codice, articoli scritti da Claude, pus
 - **Articoli**: li scrive **Claude** (non Groq). Formato recap: `data/articles/recap-AAAA-MM-GG.json`
   → `scripts/render_articles.py` genera `articoli/<lang>/*.html` + index.json + sitemap.
   Copertina formato: `img/cover-recap.svg`.
+- **Sezione Mondiale**: `scripts/mondiali.py` (fonte gratis openfootball/worldcup.json) -> `data/mondiali.json`
+  (gironi, classifiche calcolate, calendario, risultati, marcatori, news dedicate). Pagina `mondiali.html`. Bandiere via flagcdn.
+  Auto-refresh nello step "Genera sezione Mondiale" di update.yml. Pronta per cartellini/rose se si attiva BALLDONTLIE GOAT.
 - **Cervello**: `scripts/brain.py` = carta editoriale, glossario alias, esempi, blacklist allenatori.
 - **Modelli Groq** (chiave in groq_key.txt): 8b=classificazione (500k token/g), scout=movimenti
   (30k token/min), 70b=scrittura riserva (100k token/g, reset 00:00 UTC). Limiti per-modello separati.
@@ -55,8 +58,8 @@ Il computer serve solo per: modifiche al codice, articoli scritti da Claude, pus
   (08/12/20 italiane). Chiamano l'API GitHub con il token (header Authorization: Bearer <github_token>).
 - **Register.it**: DNS del dominio (A record apex → 216.198.79.1, www CNAME Vercel).
 - **Groq console** (console.groq.com): chiave API, limiti per modello.
-- **Token GitHub**: fine-grained, SCADE il 2026-09-02 → rigenerare (Actions Read+write; aggiungere
-  "Contents Read+write" (gia' attivo: serve per il push automatico) e aggiornarlo nei 2 job cron-job.org
+- **Token GitHub**: fine-grained, SCADE il 2026-09-02 → rigenerare con permessi: Actions, Contents, Workflows (tutti Read+write).
+  Servono per: lanciare i cron, push automatico (scripts/pubblica.sh), modificare i file workflow. Aggiornarlo nei 2 job cron-job.org
   e in github_token.txt.
 
 ## 5. Runbook guasti rapidi
