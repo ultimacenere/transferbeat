@@ -91,7 +91,9 @@ def article_system():
         "2-3 paragrafi brevi e in italiano scorrevole. Rispetta SEMPRE la direzione del movimento (chi lascia quale club e verso quale va). "
         "Se lo stato e' 'done' scrivi 'ufficiale'; se e' una smentita, spiega che l'affare e' saltato. "
         "Chiudi con UNA frase naturale sullo stato della trattativa: NON copiare etichette tecniche come 'rumor/obj/conf/done' ne definizioni interne. "
-        "NON inventare nulla che non sia nelle note. Rispondi SOLO con JSON valido."
+        "Usa ESCLUSIVAMENTE i nomi di giocatori e club presenti nelle note: NON aggiungere altri "
+        "giocatori, trasferimenti o dettagli, e NON citare ex giocatori o trasferimenti del passato. "
+        "Se un'informazione non e' nelle note, non scriverla. NON inventare nulla. Rispondi SOLO con JSON valido."
     )
 
 # --- Estrazione movimenti (vista Nomi in build.py) ---
@@ -110,6 +112,8 @@ MOVES_RULES = (
     "Se la provenienza o la destinazione non e' scritta, lascia il campo vuoto.\n"
     "- Ignora: rinnovi di contratto, convocazioni, infortuni, opinioni, interviste, "
     "titoli-raccolta generici senza movimenti espliciti.\n"
+    "- Ignora movimenti STORICI o passati, amarcord, anniversari e riferimenti a EX giocatori "
+    "(es. 'l'ex Inter X', 'ai tempi di'): estrai SOLO trasferimenti del mercato ATTUALE in corso.\n"
     "- Un titolo puo' contenere PIU' movimenti: estraili tutti.\n"
     '- Formato: {"movimenti":[{"giocatore":"","da":"","a":"","stato":"rumor|obj|conf|done"}]}'
 )

@@ -244,6 +244,15 @@ def _days_since(iso):
     except Exception:
         return 0
 
+STALE_DAYS = 3  # un movimento non piu' citato da >= STALE_DAYS giorni scade (tutti gli stati)
+
+def _same_first(a, b):
+    ta = a.split(); tb = b.split()
+    fa = ta[0] if ta else ""; fb = tb[0] if tb else ""
+    if len(fa) < 3 or len(fb) < 3:
+        return False
+    return fa.startswith(fb) or fb.startswith(fa)
+
 def merge_nomi(old, new, today, max_age=60):
     """Persistenza movimenti: i rumor restano finche' non vengono promossi (obj/conf/done)
     o non sono piu' citati da oltre max_age giorni. Lo stato puo' solo salire."""
@@ -287,7 +296,7 @@ def merge_nomi(old, new, today, max_age=60):
         ks.sort(key=len, reverse=True)
         base = ks[0]
         for k in ks[1:]:
-            if k != base and (k == last or k in base):
+            if k != base and (k == last or k in base or base in k or _same_first(base, k)):
                 a = m[base]; b = m.pop(k)
                 if STATE_RANK[b["stato"]] > STATE_RANK[a["stato"]]:
                     a["stato"] = b["stato"]; a["direzione"] = b["direzione"]
@@ -298,8 +307,12 @@ def merge_nomi(old, new, today, max_age=60):
                 a["_seen"] = max(a.get("_seen") or "", b.get("_seen") or "")
     out = {"rumor": [], "obj": [], "conf": [], "done": []}
     for it in m.values():
-        if it["stato"] == "rumor" and _days_since(it["_seen"]) > max_age:
+        stale = _days_since(it["_seen"])
+        if stale >= STALE_DAYS:                       # scade su TUTTI gli stati, non solo rumor
             continue
+        if (it["stato"] == "rumor" and not it.get("club")
+                and it["_seen"] == it["_first"] and _days_since(it["_first"]) >= 1):
+            continue                                  # rumor mono-fonte senza club: solo nel giorno stesso
         out[it["stato"]].append({"giocatore": it["giocatore"], "direzione": it["direzione"],
                                  "club": it["club"], "_first": it["_first"], "_seen": it["_seen"]})
     for st in out:
