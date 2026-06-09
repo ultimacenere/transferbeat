@@ -80,6 +80,8 @@
   .mv.in .dir{background:rgba(10,157,87,.14);color:var(--done)} .mv.out .dir{background:rgba(210,59,59,.12);color:#d23b3b}
   .mv .pl{font-weight:700;font-size:14px;margin-top:6px}
   .mv .club{font-size:12px;color:var(--muted);margin-top:1px}
+  .mv .club .own{font-weight:700;color:var(--txt)}
+  .mv .club .ar{margin:0 3px;opacity:.7}
   .panelbox{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px}
   .panelbox h2.t{font-size:15px;margin-bottom:4px;display:flex;align-items:center;gap:9px}
   .panelbox .day{color:var(--muted);font-size:12.5px;margin-bottom:14px}
@@ -254,10 +256,15 @@ function renderTeam(){
       const liveMovs=liveTeam.filter(i=>i.giocatore&&canon[norm(i.giocatore)]===undefined&&dispCol(i.stato)===idx);
       let movs=[]; col.states.forEach(st=>movs=movs.concat((v.nomi&&v.nomi[st])||[]));
       count=liveMovs.length+movs.length;
-      const mvCard=(m,live)=>`<div class="mv ${m.direzione==='out'?'out':'in'}">
-          <span class="dir">${m.direzione==='out'?T.dir.out:T.dir.in}</span>${live?' <span class="livetag">🔴 LIVE</span>':''}
+      const mvCard=(m,live)=>{
+        const out=m.direzione==='out';
+        const own=out?curTeam:(m.club||'—');   // squadra di appartenenza
+        const dest=out?(m.club||'—'):curTeam;   // destinazione
+        return `<div class="mv ${out?'out':'in'}">
+          <span class="dir">${out?T.dir.out:T.dir.in}</span>${live?' <span class="livetag">🔴 LIVE</span>':''}
           <div class="pl">${m.giocatore}</div>
-          <div class="club">${m.direzione==='out'?'→':'←'} ${m.club||'—'}</div></div>`;
+          <div class="club"><span class="own">${own}</span><span class="ar">→</span>${dest}</div></div>`;
+      };
       inner=(liveMovs.map(m=>mvCard(m,true)).join('')+movs.map(m=>mvCard(m,false)).join(''))||'<div class="empty">—</div>';
     } else {
       const liveHere=liveTeam.filter(i=>liveCol(i)===idx);
