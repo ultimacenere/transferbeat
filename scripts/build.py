@@ -233,8 +233,13 @@ def age_days(pp):
 
 STATE_RANK = {"rumor": 0, "obj": 1, "conf": 2, "done": 3}
 
+import unicodedata as _ud
+_ACC = str.maketrans({"ø":"o","Ø":"o","ł":"l","Ł":"l","đ":"d","ð":"d","þ":"th","æ":"ae","œ":"oe","ß":"ss"})
+def _deaccent(s):
+    s = (s or "").translate(_ACC)
+    return _ud.normalize("NFKD", s).encode("ascii", "ignore").decode("ascii")
 def _norm_name(s):
-    return re.sub(r"[^a-z0-9 ]", "", (s or "").lower()).strip()
+    return re.sub(r"[^a-z0-9 ]", "", _deaccent(s).lower()).strip()
 
 def _days_since(iso):
     try:
@@ -244,6 +249,7 @@ def _days_since(iso):
     except Exception:
         return 0
 
+HIST_BLACKLIST = {"banega", "murillo"}  # ex/storici noti: mai mostrare nei Nomi
 STALE_DAYS = 3  # un movimento non piu' citato da >= STALE_DAYS giorni scade (tutti gli stati)
 
 def _same_first(a, b):
@@ -296,8 +302,13 @@ def merge_nomi(old, new, today, max_age=60):
         ks.sort(key=len, reverse=True)
         base = ks[0]
         for k in ks[1:]:
-            if k != base and (k == last or k in base or base in k or _same_first(base, k)):
-                a = m[base]; b = m.pop(k)
+            if k not in m or base not in m or k == base:
+                continue
+            a = m[base]; b = m[k]
+            # stesso cognome + stessa destinazione/direzione => stesso movimento (nome di battesimo rumoroso)
+            same_move = bool(a.get("club")) and a.get("club") == b.get("club") and a.get("direzione") == b.get("direzione")
+            if k == last or k in base or base in k or _same_first(base, k) or same_move:
+                b = m.pop(k)
                 if STATE_RANK[b["stato"]] > STATE_RANK[a["stato"]]:
                     a["stato"] = b["stato"]; a["direzione"] = b["direzione"]
                 if b.get("club") and not a.get("club"):
@@ -307,6 +318,10 @@ def merge_nomi(old, new, today, max_age=60):
                 a["_seen"] = max(a.get("_seen") or "", b.get("_seen") or "")
     out = {"rumor": [], "obj": [], "conf": [], "done": []}
     for it in m.values():
+        nm = it.get("giocatore", "")
+        toks = _deaccent(nm).lower().split()
+        if toks and toks[-1] in HIST_BLACKLIST:
+            continue
         stale = _days_since(it["_seen"])
         if stale >= STALE_DAYS:                       # scade su TUTTI gli stati, non solo rumor
             continue

@@ -115,6 +115,8 @@ MOVES_RULES = (
     "- Ignora movimenti STORICI o passati, amarcord, anniversari e riferimenti a EX giocatori "
     "(es. 'l'ex Inter X', 'ai tempi di'): estrai SOLO trasferimenti del mercato ATTUALE in corso.\n"
     "- Un titolo puo' contenere PIU' movimenti: estraili tutti.\n"
+    "- Usa il nome COSI' come scritto: se c'e' solo il cognome riporta solo il cognome, "
+    "NON aggiungere ne inventare il nome di battesimo.\n"
     '- Formato: {"movimenti":[{"giocatore":"","da":"","a":"","stato":"rumor|obj|conf|done"}]}'
 )
 MOVES_EXAMPLE_IN = ("Notizie:\n"
