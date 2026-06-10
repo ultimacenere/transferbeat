@@ -10,6 +10,11 @@ Variabili: GROQ_API_KEY (opzionale, vista Nomi), ONLY_LANG (per generare una sol
 """
 import json, os, re, sys, html, urllib.parse
 from datetime import datetime, timezone
+try:
+    from zoneinfo import ZoneInfo
+    ROME = ZoneInfo('Europe/Rome')
+except Exception:
+    ROME = None
 
 try:
     import feedparser, requests
@@ -519,7 +524,7 @@ def build_lang(lang, teams):
         kw = load(os.path.join(RULES, "keywords." + lang + ".json"))
     except Exception:
         kw = load(os.path.join(RULES, "keywords.json"))
-    now = datetime.now()
+    now = datetime.now(ROME) if ROME else datetime.now()   # orario ITALIANO (non UTC del runner)
     giorno = GIORNI[lang][now.weekday()] + " " + str(now.day) + " " + MESI[lang][now.month-1]
     stamp = now.strftime("%Y-%m-%dT%H:%M:%S")
     outdir = os.path.join(DATA, lang)

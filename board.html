@@ -124,7 +124,7 @@
     </div>
     <div class="upbar">
       <span class="pulse"></span> <span id="lblUpd">Aggiornato alle</span> <b id="lastUp">—</b>
-      <div class="slots"><span class="slot" id="s08">08:00</span><span class="slot" id="s12">12:00</span><span class="slot" id="s20">20:00</span></div>
+      <div class="slots"><span class="slot" id="s08">09:00</span><span class="slot" id="s12">12:00</span><span class="slot" id="s20">20:00</span></div>
     </div>
   </div>
 </header>
@@ -236,7 +236,7 @@ function fillTeams(){
   sel.innerHTML=`<option value="">${T.allTeams}</option>`+teams.map(t=>`<option value="${t}">${t}</option>`).join('');
   curTeam=''; sel.value='';
 }
-function markSlot(h){h=parseInt(h);const map=[['s08',8],['s12',12],['s20',20]];
+function markSlot(h){h=parseInt(h);const map=[['s08',9],['s12',12],['s20',20]];
   map.forEach(([id,hh])=>{const e=document.getElementById(id);if(!isNaN(h)&&h>=hh){e.className='slot done';e.textContent=hh.toString().padStart(2,'0')+':00 ✓';}});
   const next=map.find(([id,hh])=>h<hh);if(next)document.getElementById(next[0]).className='slot next';}
 
