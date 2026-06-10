@@ -59,6 +59,14 @@
   .board{margin-bottom:24px}
   .glob-h{display:flex;align-items:center;gap:10px;margin:14px 0 2px}
   .glob-h h1{font-size:20px;letter-spacing:-.4px}
+  .howto{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:8px 0 2px;font-size:13px;overflow:hidden}
+  .howto summary{cursor:pointer;padding:12px 16px;font-weight:600;color:var(--txt);list-style:none;display:flex;align-items:center;gap:8px}
+  .howto summary::-webkit-details-marker{display:none}
+  .howto summary::before{content:'\2139';color:var(--accent2);font-weight:800}
+  .howto[open] summary{border-bottom:1px solid var(--line)}
+  .howto .hb{padding:12px 16px;color:var(--muted);line-height:1.6}
+  .howto .hb b{color:var(--txt)} .howto .hb p{margin-bottom:9px} .howto .hb p:last-child{margin-bottom:0}
+  .howto .stg{display:inline-block;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:1px 7px;font-size:11.5px;margin:0 1px}
   .sech{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--txt);margin:22px 0 10px}
   .sech .n{color:var(--muted);font-weight:400;font-size:12px}
   .deals{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:12px}
@@ -129,6 +137,7 @@
     <select class="teamsel" id="teamSelect"></select>
     <div class="spacer"></div>
   </div>
+  <details class="howto" id="howto"></details>
   <div class="thead" id="thead"></div>
   <div id="notice"></div>
   <div class="board" id="board"></div>
@@ -147,19 +156,19 @@ const STRINGS={
     feedday:'fonti pubbliche, affidabilità stimata',foot:'TransferBeat · dati da feed pubblici + esperti, classificati automaticamente',
     tags:{rumor:'Rumor',conf:'Confermata',done:'Conclusa'},
     stages:['Voce','Trattativa','Accordo','Ufficiale'],heat:{hot:'caldo',warm:'tiepido',cold:'freddo',official:'ufficiale'},
-    sections:{top:'Affari principali',in:'In entrata',out:'In uscita',done:'Conclusi'},allTeams:'🌍 Tutte le squadre',globalTitle:'Tutti gli affari'},
+    sections:{top:'Affari principali',in:'In entrata',out:'In uscita',done:'Conclusi'},allTeams:'🌍 Tutte le squadre',globalTitle:'Tutti gli affari',howtoTitle:'Come leggiamo il mercato',howtoBody:'<div class="hb"><p><b>L’affare-metro</b> mostra quanto una trattativa è vicina alla chiusura, in quattro stadi: <span class="stg">Voce</span> → <span class="stg">Trattativa</span> → <span class="stg">Accordo</span> → <span class="stg">Ufficiale</span>.</p><p><b>Il calore (%) non è un numero a caso.</b> Lo calcoliamo da quattro segnali reali: lo stadio dell’affare, <b>quante</b> fonti lo riportano, <b>quanto sono affidabili</b>, e <b>quanto è fresca</b> la notizia.</p><p><b>I pallini = l’affidabilità della fonte (tier).</b> Tre pallini = fonte di primissimo piano (esperti di mercato riconosciuti), meno pallini = fonte meno consolidata. Una conferma da fonti di alto livello pesa più di una voce isolata.</p></div>'},
  en:{home:'Home',live:'Live',updated:'Updated at',league:'League',feed:'📰 Today’s feed',sub:'deals tracked in real time',source:'Source',none:'Nothing',
     err:'<b>Data not loaded.</b> Open the site via a server (or GitHub/Vercel), not by double-clicking.',
     feedday:'public sources, estimated reliability',foot:'TransferBeat · data from public feeds + experts, auto-classified',
     tags:{rumor:'Rumour',conf:'Confirmed',done:'Done'},
     stages:['Rumour','Talks','Agreed','Official'],heat:{hot:'hot',warm:'warm',cold:'cold',official:'official'},
-    sections:{top:'Top deals',in:'Incoming',out:'Outgoing',done:'Done'},allTeams:'🌍 All clubs',globalTitle:'All deals'},
+    sections:{top:'Top deals',in:'Incoming',out:'Outgoing',done:'Done'},allTeams:'🌍 All clubs',globalTitle:'All deals',howtoTitle:'How we read the market',howtoBody:'<div class="hb"><p><b>The deal-meter</b> shows how close a deal is, in four stages: <span class="stg">Rumour</span> → <span class="stg">Talks</span> → <span class="stg">Agreed</span> → <span class="stg">Official</span>.</p><p><b>The heat (%) is not a random number.</b> We compute it from four real signals: the stage of the deal, <b>how many</b> sources report it, <b>how reliable</b> they are, and <b>how fresh</b> the news is.</p><p><b>The dots = source reliability (tier).</b> Three dots = a top-tier source (recognised market insiders), fewer dots = a less established one. A confirmation from high-tier sources weighs more than a single isolated rumour.</p></div>'},
  es:{home:'Inicio',live:'En vivo',updated:'Actualizado a las',league:'Liga',feed:'📰 Noticias del día',sub:'fichajes seguidos en tiempo real',source:'Fuente',none:'Nada',
     err:'<b>Datos no cargados.</b> Abre el sitio con un servidor (o GitHub/Vercel), no con doble clic.',
     feedday:'fuentes públicas, fiabilidad estimada',foot:'TransferBeat · datos de feeds públicos + expertos, clasificados automáticamente',
     tags:{rumor:'Rumor',conf:'Acordado',done:'Cerrado'},
     stages:['Rumor','Negociación','Acuerdo','Oficial'],heat:{hot:'caliente',warm:'templado',cold:'frío',official:'oficial'},
-    sections:{top:'Operaciones destacadas',in:'Llegadas',out:'Salidas',done:'Cerrados'},allTeams:'🌍 Todos los equipos',globalTitle:'Todas las operaciones'}
+    sections:{top:'Operaciones destacadas',in:'Llegadas',out:'Salidas',done:'Cerrados'},allTeams:'🌍 Todos los equipos',globalTitle:'Todas las operaciones',howtoTitle:'Cómo leemos el mercado',howtoBody:'<div class="hb"><p><b>El medidor de fichajes</b> muestra cuánto se acerca una operación, en cuatro fases: <span class="stg">Rumor</span> → <span class="stg">Negociación</span> → <span class="stg">Acuerdo</span> → <span class="stg">Oficial</span>.</p><p><b>El calor (%) no es un número al azar.</b> Lo calculamos con cuatro señales reales: la fase de la operación, <b>cuántas</b> fuentes la dan, <b>cuán fiables</b> son, y <b>cuán reciente</b> es la noticia.</p><p><b>Los puntos = la fiabilidad de la fuente (tier).</b> Tres puntos = fuente de primer nivel (expertos reconocidos), menos puntos = fuente menos consolidada. Una confirmación de fuentes de alto nivel pesa más que un rumor aislado.</p></div>'}
 };
 const LIVE_URL="https://raw.githubusercontent.com/ultimacenere/transferbeat/live/data/ultimora.json";
 
@@ -191,6 +200,7 @@ function applyStatic(){
   document.getElementById('lblUpd').textContent=T.updated;
   document.getElementById('lblLeague').textContent=T.league;
   document.getElementById('lblFeed').textContent=T.feed;
+  const hw=document.getElementById('howto'); if(hw)hw.innerHTML='<summary>'+T.howtoTitle+'</summary>'+T.howtoBody;
   document.getElementById('foot').textContent=T.foot;
   const ls=document.getElementById('langsw');
   ls.innerHTML=['it','en','es'].map(l=>`<a data-l="${l}" class="${l===lang?'on':''}">${l.toUpperCase()}</a>`).join('');
