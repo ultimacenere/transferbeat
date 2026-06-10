@@ -267,7 +267,11 @@ function globalDeals(){
   Object.keys(DATA).forEach(team=>{ if(DATA[team].league!==curLeague)return;
     teamMovements(team).forEach(d=>{ const key=norm(d.player)+'|'+norm(d.from)+'>'+norm(d.to);
       const cur=map[key]; if(!cur||d.stage>cur.stage||(d.stage===cur.stage&&d.heat>cur.heat))map[key]=d; }); });
-  return Object.values(map).sort((a,b)=>b.heat-a.heat||b.stage-a.stage).slice(0,12);
+  return Object.values(map).sort((a,b)=>{
+    const ad=a.st==='done'?1:0, bd=b.st==='done'?1:0;
+    if(ad!==bd)return ad-bd;
+    return b.heat-a.heat||b.stage-a.stage;
+  }).slice(0,12);
 }
 function heatChip(d){ if(d.st==='done')return `<span class="chip cdone">✓ ${T.heat.official}</span>`;
   return `<span class="chip c-${d.band}">🔥 ${T.heat[d.band]} ${d.heat}%</span>`; }
