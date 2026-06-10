@@ -50,38 +50,41 @@
   .ctrl-lab{font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);font-weight:700}
   .teamsel{font-size:14px;font-weight:600;color:var(--txt);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 12px;min-width:180px;cursor:pointer}
   .spacer{flex:1}
-  @media(max-width:680px){.controls{gap:8px}.teamsel{flex:1;min-width:0;width:100%}.spacer{display:none}.viewseg{width:100%}.viewseg .seg{width:100%}.viewseg .seg button{flex:1}}
+  @media(max-width:680px){.controls{gap:8px}.teamsel{flex:1;min-width:0;width:100%}.spacer{display:none}}
   .thead{display:flex;align-items:center;gap:16px;background:linear-gradient(120deg,#f7f8fa,#eef1f5);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin:12px 0 18px}
   .crest{width:26px;height:26px;border-radius:6px;display:grid;place-items:center;font-weight:800;font-size:12px;color:#fff;flex-shrink:0}
   .thead .crest{width:52px;height:52px;font-size:18px;border-radius:12px}
   .thead h1{font-size:24px;letter-spacing:-.5px}
   .thead .sub{color:var(--muted);font-size:13px;margin-top:2px}
-  .board{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
-  @media(max-width:880px){.board{grid-template-columns:1fr}}
+  .board{margin-bottom:24px}
+  .glob-h{display:flex;align-items:center;gap:10px;margin:14px 0 2px}
+  .glob-h h1{font-size:20px;letter-spacing:-.4px}
+  .sech{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--txt);margin:22px 0 10px}
+  .sech .n{color:var(--muted);font-weight:400;font-size:12px}
+  .deals{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:12px}
+  .deal{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:14px 15px;box-shadow:0 1px 2px rgba(20,30,45,.04)}
+  .deal-h{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .pl2{font-weight:700;font-size:15px} .route{font-size:13px;color:var(--muted);margin-top:2px} .route b{color:var(--txt)}
+  .metro{margin-top:13px}
+  .segbar{height:8px;border-radius:6px;background:var(--panel2);overflow:hidden} .segbar.s6{height:6px}
+  .segfill{height:100%;background:var(--accent);border-radius:6px;transition:width .5s ease}
+  .stages{display:flex;justify-content:space-between;margin-top:6px;font-size:10.5px;color:var(--muted)}
+  .stages .cur{color:var(--accent);font-weight:700}
+  .dsrc{margin-top:10px;font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px}
+  .chip{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:8px;white-space:nowrap}
+  .c-hot{background:rgba(224,57,43,.12);color:#d23b3b} .c-warm{background:rgba(217,135,0,.14);color:var(--rumor)} .c-cold{background:var(--panel2);color:var(--muted)}
+  .cdone{background:rgba(10,157,87,.14);color:var(--done)}
+  .seclist{display:flex;flex-direction:column;gap:8px}
+  .mrow{display:flex;align-items:center;gap:12px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+  .mrow-i{flex:1;min-width:0} .pl3{font-weight:600;font-size:14px} .route2{font-size:11.5px;color:var(--muted);margin-top:1px} .route2 b{color:var(--txt)}
+  .mbar{width:104px;flex-shrink:0}
+  @media(max-width:560px){.mbar{display:none}}
   .col{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
-  .col h2{font-size:12px;text-transform:uppercase;letter-spacing:.8px;padding:12px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--line)}
-  .col h2 .dot{width:9px;height:9px;border-radius:50%}
-  .col h2 .n{margin-left:auto;font-size:11px;color:var(--muted);font-weight:400}
-  .c-rumor .dot{background:var(--rumor)} .c-conf .dot{background:var(--conf)} .c-done .dot{background:var(--done)}
   .cards{padding:10px;display:flex;flex-direction:column;gap:9px;min-height:60px}
-  .card{display:block;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:11px 12px;transition:.12s;box-shadow:0 1px 2px rgba(20,30,45,.04)}
-  .card:hover{border-color:#c7ced6;transform:translateY(-1px);box-shadow:0 4px 12px rgba(20,30,45,.08)}
-  .card.livecard{border-color:rgba(224,57,43,.35);background:#fff7f6}
-  .card .tit{font-weight:600;font-size:13px;line-height:1.25}
-  .card .meta{font-size:11px;color:var(--muted);margin-top:7px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
-  .src{border:1px solid var(--line);border-radius:999px;padding:1px 7px}
-  .livetag{background:var(--red);color:#fff;border-radius:5px;padding:1px 6px;font-size:9.5px;font-weight:800;letter-spacing:.4px}
-  .reli{display:inline-flex;gap:2px}.reli i{width:6px;height:6px;border-radius:50%;background:#cfd6dd}.reli i.on{background:var(--accent)}
   .empty{color:var(--muted);font-size:12px;padding:8px 4px}
   .notice{background:#fff9ec;border:1px solid #f0dca6;color:#8a6d1f;border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:13px}
-  .mv{border:1px solid var(--line);border-left:3px solid var(--line);border-radius:10px;padding:9px 11px;background:var(--bg);box-shadow:0 1px 2px rgba(20,30,45,.04)}
-  .mv.in{border-left-color:var(--done)} .mv.out{border-left-color:#d23b3b}
-  .mv .dir{font-size:9.5px;font-weight:800;letter-spacing:.5px;padding:1px 7px;border-radius:5px}
-  .mv.in .dir{background:rgba(10,157,87,.14);color:var(--done)} .mv.out .dir{background:rgba(210,59,59,.12);color:#d23b3b}
-  .mv .pl{font-weight:700;font-size:14px;margin-top:6px}
-  .mv .club{font-size:12px;color:var(--muted);margin-top:1px}
-  .mv .club .own{font-weight:700;color:var(--txt)}
-  .mv .club .ar{margin:0 3px;opacity:.7}
+  .livetag{background:var(--red);color:#fff;border-radius:5px;padding:1px 6px;font-size:9.5px;font-weight:800;letter-spacing:.4px}
+  .reli{display:inline-flex;gap:2px}.reli i{width:6px;height:6px;border-radius:50%;background:#cfd6dd}.reli i.on{background:var(--accent)}
   .panelbox{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px}
   .panelbox h2.t{font-size:15px;margin-bottom:4px;display:flex;align-items:center;gap:9px}
   .panelbox .day{color:var(--muted);font-size:12.5px;margin-bottom:14px}
@@ -125,10 +128,6 @@
     <div class="seg" id="leagues"></div>
     <select class="teamsel" id="teamSelect"></select>
     <div class="spacer"></div>
-    <div class="viewseg"><div class="seg">
-      <button id="vNews" class="on">📰 Notizie</button>
-      <button id="vNames">🔁 Nomi</button>
-    </div></div>
   </div>
   <div class="thead" id="thead"></div>
   <div id="notice"></div>
@@ -143,25 +142,25 @@
 
 <script>
 const STRINGS={
- it:{home:'Home',live:'Live',updated:'Aggiornato alle',league:'Campionato',news:'📰 Notizie',names:'🔁 Nomi',feed:'📰 Feed di giornata',sub:'trattative monitorate in tempo reale',source:'Fonte',none:'Nessuna voce',
-    notice:'Vista <b>Nomi</b> non ancora popolata per questa squadra.',
+ it:{home:'Home',live:'Live',updated:'Aggiornato alle',league:'Campionato',feed:'📰 Feed di giornata',sub:'trattative monitorate in tempo reale',source:'Fonte',none:'Nessuna voce',
     err:'<b>Dati non caricati.</b> Apri il sito tramite un server (o GitHub/Vercel), non con doppio clic. In locale: <code>python -m http.server</code>',
     feedday:'fonti pubbliche, affidabilità stimata',foot:'TransferBeat · dati da feed pubblici + esperti, classificati automaticamente',
-    cols:['Rumors','Trattative confermate','Trattative concluse'],tags:{rumor:'Rumor',conf:'Confermata',done:'Conclusa'},dir:{out:'USCITA',in:'ENTRATA'}},
- en:{home:'Home',live:'Live',updated:'Updated at',league:'League',news:'📰 News',names:'🔁 Names',feed:'📰 Today’s feed',sub:'deals tracked in real time',source:'Source',none:'Nothing',
-    notice:'The <b>Names</b> view is not populated yet for this club.',
+    tags:{rumor:'Rumor',conf:'Confermata',done:'Conclusa'},
+    stages:['Voce','Trattativa','Accordo','Ufficiale'],heat:{hot:'caldo',warm:'tiepido',cold:'freddo',official:'ufficiale'},
+    sections:{top:'Affari principali',in:'In entrata',out:'In uscita',done:'Conclusi'},allTeams:'🌍 Tutte le squadre',globalTitle:'Tutti gli affari'},
+ en:{home:'Home',live:'Live',updated:'Updated at',league:'League',feed:'📰 Today’s feed',sub:'deals tracked in real time',source:'Source',none:'Nothing',
     err:'<b>Data not loaded.</b> Open the site via a server (or GitHub/Vercel), not by double-clicking.',
     feedday:'public sources, estimated reliability',foot:'TransferBeat · data from public feeds + experts, auto-classified',
-    cols:['Rumours','Confirmed talks','Done deals'],tags:{rumor:'Rumour',conf:'Confirmed',done:'Done'},dir:{out:'OUT',in:'IN'}},
- es:{home:'Inicio',live:'En vivo',updated:'Actualizado a las',league:'Liga',news:'📰 Noticias',names:'🔁 Nombres',feed:'📰 Noticias del día',sub:'fichajes seguidos en tiempo real',source:'Fuente',none:'Nada',
-    notice:'La vista <b>Nombres</b> aún no está disponible para este equipo.',
+    tags:{rumor:'Rumour',conf:'Confirmed',done:'Done'},
+    stages:['Rumour','Talks','Agreed','Official'],heat:{hot:'hot',warm:'warm',cold:'cold',official:'official'},
+    sections:{top:'Top deals',in:'Incoming',out:'Outgoing',done:'Done'},allTeams:'🌍 All clubs',globalTitle:'All deals'},
+ es:{home:'Inicio',live:'En vivo',updated:'Actualizado a las',league:'Liga',feed:'📰 Noticias del día',sub:'fichajes seguidos en tiempo real',source:'Fuente',none:'Nada',
     err:'<b>Datos no cargados.</b> Abre el sitio con un servidor (o GitHub/Vercel), no con doble clic.',
     feedday:'fuentes públicas, fiabilidad estimada',foot:'TransferBeat · datos de feeds públicos + expertos, clasificados automáticamente',
-    cols:['Rumores','Negociaciones confirmadas','Cerrados'],tags:{rumor:'Rumor',conf:'Acordado',done:'Cerrado'},dir:{out:'SALE',in:'LLEGA'}}
+    tags:{rumor:'Rumor',conf:'Acordado',done:'Cerrado'},
+    stages:['Rumor','Negociación','Acuerdo','Oficial'],heat:{hot:'caliente',warm:'templado',cold:'frío',official:'oficial'},
+    sections:{top:'Operaciones destacadas',in:'Llegadas',out:'Salidas',done:'Cerrados'},allTeams:'🌍 Todos los equipos',globalTitle:'Todas las operaciones'}
 };
-// 3 colonne; gli "obj" vengono accorpati ai Rumors
-const COLS=[{cls:'c-rumor',states:['rumor','obj']},{cls:'c-conf',states:['conf']},{cls:'c-done',states:['done']}];
-function dispCol(stato){return stato==='conf'?1:(stato==='done'?2:0);}  // rumor/obj->0
 const LIVE_URL="https://raw.githubusercontent.com/ultimacenere/transferbeat/live/data/ultimora.json";
 
 const PARAMS=new URLSearchParams(location.search);
@@ -170,14 +169,13 @@ if(!['it','en','es'].includes(lang))lang='it';
 localStorage.setItem('tb_lang',lang); document.documentElement.lang=lang;
 const T=STRINGS[lang];
 const LEAGUE_ORDER=['Serie A','La Liga','Premier'];
-let DATA={}, META={}, curLeague=null, curTeam=null, viewMode='news', ULTIMORA=[], ART={};
+let DATA={}, META={}, curLeague=null, curTeam='', ULTIMORA=[], ART={};
 function artUrl(slug){return 'articoli/'+lang+'/'+slug+'.html';}
 function loadArticles(){
   fetch('data/articles/index.json?t='+Date.now()).then(r=>r.ok?r.json():null).then(d=>{
-    if(d&&d.articoli){ART={};d.articoli.forEach(a=>ART[a.slug]=a);if(curTeam)renderTeam();}
+    if(d&&d.articoli){ART={};d.articoli.forEach(a=>ART[a.slug]=a);renderTeam();}
   }).catch(()=>{});
 }
-
 function dots(n){return '<span class="reli">'+[1,2,3].map(i=>`<i class="${i<=n?'on':''}"></i>`).join('')+'</span>';}
 function agoISO(ts){try{const h=Math.floor((Date.now()-new Date(ts))/3600000);if(h<1)return 'ora';if(h<24)return h+'h';return Math.floor(h/24)+'g';}catch(e){return '';}}
 function leaguesPresent(){const set=new Set(Object.values(DATA).map(v=>v.league));return LEAGUE_ORDER.filter(l=>set.has(l));}
@@ -187,13 +185,11 @@ function applyStatic(){
   document.getElementById('navHome').textContent=T.home;
   document.getElementById('navLive').textContent=T.live;
   const na=document.getElementById('navArticoli');
-  if(na){na.textContent={it:'Articoli',en:'Articles',es:'Art\u00edculos'}[lang];na.href='articoli/'+lang+'/';}
+  if(na){na.textContent={it:'Articoli',en:'Articles',es:'Artículos'}[lang];na.href='articoli/'+lang+'/';}
   const nm=document.getElementById('navMondiale');
   if(nm){nm.textContent={it:'Mondiale',en:'World Cup',es:'Mundial'}[lang];nm.href='mondiali.html?lang='+lang;}
   document.getElementById('lblUpd').textContent=T.updated;
   document.getElementById('lblLeague').textContent=T.league;
-  document.getElementById('vNews').textContent=T.news;
-  document.getElementById('vNames').textContent=T.names;
   document.getElementById('lblFeed').textContent=T.feed;
   document.getElementById('foot').textContent=T.foot;
   const ls=document.getElementById('langsw');
@@ -213,11 +209,6 @@ function init(){
       lb.innerHTML=present.map(l=>`<button data-l="${l}">${l}</button>`).join('');
       lb.querySelectorAll('button').forEach(b=>b.onclick=()=>{curLeague=b.dataset.l;syncLeague();fillTeams();renderTeam();});
       const sel=document.getElementById('teamSelect'); sel.onchange=()=>{curTeam=sel.value;renderTeam();};
-      const setMode=(m)=>{viewMode=m;
-        document.getElementById('vNews').className=m==='news'?'on':'';
-        document.getElementById('vNames').className=m==='names'?'on':'';renderTeam();};
-      document.getElementById('vNews').onclick=()=>setMode('news');
-      document.getElementById('vNames').onclick=()=>setMode('names');
       syncLeague(); fillTeams(); renderTeam();
       loadArticles(); loadUltimora(); setInterval(loadUltimora,60000);
     })
@@ -225,85 +216,127 @@ function init(){
 }
 function loadUltimora(){
   fetch(LIVE_URL+'?t='+Date.now()).then(r=>r.ok?r.json():null).then(d=>{
-    if(d&&d.items){ULTIMORA=d.items;if(curTeam)renderTeam();}
+    if(d&&d.items){ULTIMORA=d.items;renderTeam();}
   }).catch(()=>{});
 }
 function syncLeague(){document.querySelectorAll('#leagues button').forEach(b=>b.className=b.dataset.l===curLeague?'on':'');}
 function fillTeams(){
   const sel=document.getElementById('teamSelect'); const teams=teamsOf(curLeague);
-  sel.innerHTML=teams.map(t=>{const tot=Object.values(DATA[t].colonne).reduce((a,c)=>a+c.length,0);return `<option value="${t}">${t} (${tot})</option>`;}).join('');
-  curTeam=teams[0]; sel.value=curTeam;
+  sel.innerHTML=`<option value="">${T.allTeams}</option>`+teams.map(t=>`<option value="${t}">${t}</option>`).join('');
+  curTeam=''; sel.value='';
 }
 function markSlot(h){h=parseInt(h);const map=[['s08',8],['s12',12],['s20',20]];
   map.forEach(([id,hh])=>{const e=document.getElementById(id);if(!isNaN(h)&&h>=hh){e.className='slot done';e.textContent=hh.toString().padStart(2,'0')+':00 ✓';}});
   const next=map.find(([id,hh])=>h<hh);if(next)document.getElementById(next[0]).className='slot next';}
-function renderTeam(){
-  const v=DATA[curTeam];if(!v)return;
-  document.getElementById('thead').innerHTML=
-    `<span class="crest" style="background:${v.col}">${v.lab}</span>
-     <div><h1>${curTeam}</h1><div class="sub">${v.league} · ${T.sub}</div></div>`;
-  const liveTeam=(ULTIMORA||[]).filter(i=>i.team===curTeam);
-  const norm=x=>(x||'').toLowerCase().replace(/[^a-zà-ù ]/g,'').trim();
-  const canon={}; ['done','conf','obj','rumor'].forEach(st=>((v.nomi&&v.nomi[st])||[]).forEach(m=>{if(m.giocatore)canon[norm(m.giocatore)]=st;}));
-  const liveCol=i=>{ if(i.giocatore&&!i.smentita){const c=canon[norm(i.giocatore)]; if(c!==undefined)return dispCol(c);} return dispCol(i.stato); };
-  const board=document.getElementById('board');board.innerHTML='';
-  const totNomi=v.nomi?Object.values(v.nomi).reduce((a,x)=>a+x.length,0):0;
-  document.getElementById('notice').innerHTML=(viewMode==='names'&&totNomi===0)?('<div class="notice">'+T.notice+'</div>'):'';
-  COLS.forEach((col,idx)=>{
-    const el=document.createElement('div');el.className='col '+col.cls;
-    let inner='', count=0;
-    if(viewMode==='names'){
-      const liveMovs=liveTeam.filter(i=>i.giocatore&&canon[norm(i.giocatore)]===undefined&&dispCol(i.stato)===idx);
-      let movs=[]; col.states.forEach(st=>movs=movs.concat((v.nomi&&v.nomi[st])||[]));
-      count=liveMovs.length+movs.length;
-      const mvCard=(m,live)=>{
-        const out=m.direzione==='out';
-        const own=out?curTeam:(m.club||'—');   // squadra di appartenenza
-        const dest=out?(m.club||'—'):curTeam;   // destinazione
-        return `<div class="mv ${out?'out':'in'}">
-          <span class="dir">${out?T.dir.out:T.dir.in}</span>${live?' <span class="livetag">🔴 LIVE</span>':''}
-          <div class="pl">${m.giocatore}</div>
-          <div class="club"><span class="own">${own}</span><span class="ar">→</span>${dest}</div></div>`;
-      };
-      inner=(liveMovs.map(m=>mvCard(m,true)).join('')+movs.map(m=>mvCard(m,false)).join(''))||'<div class="empty">—</div>';
-    } else {
-      const liveHere=liveTeam.filter(i=>liveCol(i)===idx);
-      let items=[]; col.states.forEach(st=>items=items.concat(v.colonne[st]||[]));
-      count=liveHere.length+items.length;
-      const liveHtml=liveHere.map(i=>{const has=i.slug&&ART[i.slug];
-          const inner=`<div class="tit">${i.titolo}</div>
-          <div class="meta"><span class="livetag">🔴 LIVE</span><span class="src">${i.fonte}</span>${dots(i.tier)}<span>${agoISO(i.ts)}</span></div>`;
-          return has?`<a class="card livecard" href="${artUrl(i.slug)}">${inner}</a>`:`<a class="card livecard" href="${i.link||'#'}" target="_blank" rel="noopener">${inner}</a>`;}).join('');
-      const newsHtml=items.map(c=>`<a class="card" href="${c.link||'#'}" target="_blank" rel="noopener">
-          <div class="tit">${c.titolo}</div>
-          <div class="meta"><span class="src">${c.fonte}</span>${dots(c.affidabilita)}<span>${c.quando||''}</span></div></a>`).join('');
-      inner=(liveHtml+newsHtml)||('<div class="empty">'+T.none+'</div>');
-    }
-    el.innerHTML=`<h2><span class="dot"></span>${T.cols[idx]}<span class="n">${count}</span></h2><div class="cards">${inner}</div>`;
-    board.appendChild(el);
-  });
-  // feed: prima le voci live della squadra, poi il feed del giorno
+
+const norm=x=>(x||'').toLowerCase().replace(/[^a-zà-ù ]/g,'').trim();
+const STAGE_OF={rumor:0,obj:1,conf:2,done:3};
+const STAGE_W=[25,50,75,100];
+function daysSince(iso){try{if(!iso)return 0;const t=new Date(iso+'T00:00:00');return Math.floor((Date.now()-t)/86400000);}catch(e){return 0;}}
+function heatOf(st,m,live){
+  if(st==='done')return 100;
+  let h=({rumor:25,obj:50,conf:72})[st]||25;
+  if(m&&m._seen&&m._first&&m._seen>m._first)h+=8;
+  const d=(m&&m._seen)?daysSince(m._seen):0;
+  if(d<=0)h+=6; else if(d>=2)h-=8;
+  if(live&&live.tier>=3)h+=4;
+  return Math.max(5,Math.min(99,Math.round(h)));
+}
+function heatBand(h,st){return st==='done'?'done':(h>=70?'hot':(h>=45?'warm':'cold'));}
+function buildMov(team,m,st,live){
+  const isOut=m.direzione==='out';
+  const from=isOut?team:(m.club||'?');
+  const to=isOut?(m.club||'?'):team;
+  const stg=(STAGE_OF[st]!==undefined)?STAGE_OF[st]:0;
+  const h=heatOf(st,m,live);
+  return {player:m.giocatore,from,to,dir:isOut?'out':'in',st,stage:stg,heat:h,band:heatBand(h,st),live:live||null,_seen:m._seen||''};
+}
+function teamMovements(team){
+  const v=DATA[team]; const res=[]; const seen={};
+  const liveByName={}; (ULTIMORA||[]).filter(i=>i.team===team&&i.giocatore&&!i.smentita).forEach(i=>{liveByName[norm(i.giocatore)]=i;});
+  ['done','conf','obj','rumor'].forEach(st=>((v.nomi&&v.nomi[st])||[]).forEach(m=>{
+    if(!m.giocatore)return; const k=norm(m.giocatore); if(seen[k])return; seen[k]=1;
+    res.push(buildMov(team,m,st,liveByName[k]||null));
+  }));
+  Object.keys(liveByName).forEach(k=>{ if(seen[k])return; seen[k]=1; const i=liveByName[k];
+    res.push(buildMov(team,{giocatore:i.giocatore,direzione:i.direzione,club:i.club},i.stato||'rumor',i)); });
+  return res;
+}
+function globalDeals(){
+  const map={};
+  Object.keys(DATA).forEach(team=>{ if(DATA[team].league!==curLeague)return;
+    teamMovements(team).forEach(d=>{ const key=norm(d.player)+'|'+norm(d.from)+'>'+norm(d.to);
+      const cur=map[key]; if(!cur||d.stage>cur.stage||(d.stage===cur.stage&&d.heat>cur.heat))map[key]=d; }); });
+  return Object.values(map).sort((a,b)=>b.heat-a.heat||b.stage-a.stage).slice(0,12);
+}
+function heatChip(d){ if(d.st==='done')return `<span class="chip cdone">✓ ${T.heat.official}</span>`;
+  return `<span class="chip c-${d.band}">🔥 ${T.heat[d.band]} ${d.heat}%</span>`; }
+function dealCard(d){
+  const w=STAGE_W[d.stage];
+  const stg=T.stages.map((s,i)=>`<span class="${i===d.stage?'cur':''}">${s}</span>`).join('');
+  const src=d.live?`<div class="dsrc">${dots(d.live.tier)} ${d.live.fonte||''}${d.live.ts?' · '+agoISO(d.live.ts):''}</div>`:'';
+  return `<div class="deal"><div class="deal-h"><div><div class="pl2">${d.player}</div><div class="route"><b>${d.from}</b> → ${d.to}</div></div>${heatChip(d)}</div>`
+    +`<div class="metro"><div class="segbar"><div class="segfill" style="width:${w}%"></div></div><div class="stages">${stg}</div></div>${src}</div>`;
+}
+function miniRow(d){
+  const w=STAGE_W[d.stage];
+  return `<div class="mrow"><div class="mrow-i"><div class="pl3">${d.player}${d.live?' <span class="livetag">🔴</span>':''}</div><div class="route2"><b>${d.from}</b> → ${d.to}</div></div>`
+    +`<div class="mbar"><div class="segbar s6"><div class="segfill" style="width:${w}%"></div></div></div><span class="chip c-${d.band}">${d.heat}%</span></div>`;
+}
+function doneRow(d){
+  return `<div class="mrow"><div class="mrow-i"><div class="pl3">${d.player}</div><div class="route2"><b>${d.from}</b> → ${d.to}</div></div><span class="chip cdone">✓ ${T.heat.official}</span></div>`;
+}
+function section(label,arr,fn){
+  return `<div class="sech">${label}<span class="n">${arr.length}</span></div><div class="seclist">${arr.map(fn).join('')||('<div class="empty">'+T.none+'</div>')}</div>`;
+}
+function renderGlobal(board){
+  const deals=globalDeals();
+  let h=`<div class="glob-h"><span class="pulse"></span><h1>${T.globalTitle} · ${curLeague}</h1></div>`;
+  h+=`<div class="sech">🔥 ${T.sections.top}<span class="n">${deals.length}</span></div>`;
+  h+=`<div class="deals">${deals.map(dealCard).join('')||('<div class="empty">'+T.none+'</div>')}</div>`;
+  board.innerHTML=h;
+}
+function renderTeamView(board){
+  const v=DATA[curTeam];
+  document.getElementById('thead').innerHTML=`<span class="crest" style="background:${v.col}">${v.lab}</span><div><h1>${curTeam}</h1><div class="sub">${v.league} · ${T.sub}</div></div>`;
+  const movs=teamMovements(curTeam);
+  const principali=movs.filter(d=>d.st!=='done').slice().sort((a,b)=>b.heat-a.heat).slice(0,3);
+  const entrata=movs.filter(d=>d.dir==='in'&&d.st!=='done').sort((a,b)=>b.heat-a.heat);
+  const uscita=movs.filter(d=>d.dir==='out'&&d.st!=='done').sort((a,b)=>b.heat-a.heat);
+  const conclusi=movs.filter(d=>d.st==='done').sort((a,b)=>(b._seen||'').localeCompare(a._seen||''));
+  let h='';
+  if(principali.length)h+=`<div class="sech">🔥 ${T.sections.top}</div><div class="deals">${principali.map(dealCard).join('')}</div>`;
+  h+=section(T.sections.in,entrata,miniRow);
+  h+=section(T.sections.out,uscita,miniRow);
+  h+=section(T.sections.done,conclusi,doneRow);
+  board.innerHTML=h;
+}
+function renderFeed(v){
   document.getElementById('feedDay').textContent=(META.giorno||'')+' · '+T.feedday;
   const feed=document.getElementById('feed');feed.innerHTML='';
   const dispStato=s=>s==='obj'?'rumor':s;
-  liveTeam.forEach(i=>{
+  (ULTIMORA||[]).filter(i=>i.team===curTeam).forEach(i=>{
     const it=document.createElement('div');it.className='item';
     const hasA=i.slug&&ART[i.slug];
-    it.innerHTML=`<div class="time">${agoISO(i.ts)}</div>
-      <div class="body"><span class="livetag">🔴 LIVE</span> <span class="tag t-${dispStato(i.stato)}">${T.tags[dispStato(i.stato)]}</span>
-      ${hasA?`<a class="txt" href="${artUrl(i.slug)}">${i.titolo}</a>`:`<a class="txt" href="${i.link||'#'}" target="_blank" rel="noopener">${i.titolo}</a>`}
-      <div class="src2">${T.source}: ${i.fonte}</div></div>`;
+    it.innerHTML=`<div class="time">${agoISO(i.ts)}</div><div class="body"><span class="livetag">🔴 LIVE</span> <span class="tag t-${dispStato(i.stato)}">${T.tags[dispStato(i.stato)]}</span> ${hasA?`<a class="txt" href="${artUrl(i.slug)}">${i.titolo}</a>`:`<a class="txt" href="${i.link||'#'}" target="_blank" rel="noopener">${i.titolo}</a>`}<div class="src2">${T.source}: ${i.fonte}</div></div>`;
     feed.appendChild(it);
   });
   (v.feed||[]).forEach(f=>{
     const it=document.createElement('div');it.className='item';
     const thumb=f.img?`<a class="thumb" href="${f.link||'#'}" target="_blank" rel="noopener"><img src="${f.img}" loading="lazy" alt="" onerror="this.closest('.thumb').style.display='none'"></a>`:'';
-    it.innerHTML=`<div class="time">${f.quando||''}</div>${thumb}
-      <div class="body"><span class="tag t-${dispStato(f.stato)}">${T.tags[dispStato(f.stato)]}</span>${dots(f.affidabilita)}
-      <a class="txt" href="${f.link||'#'}" target="_blank" rel="noopener">${f.titolo}</a>
-      <div class="src2">${T.source}: <a href="${f.link||'#'}" target="_blank" rel="noopener">${f.fonte}</a>${f.dominio?' · '+f.dominio:''}</div></div>`;
+    it.innerHTML=`<div class="time">${f.quando||''}</div>${thumb}<div class="body"><span class="tag t-${dispStato(f.stato)}">${T.tags[dispStato(f.stato)]}</span>${dots(f.affidabilita)} <a class="txt" href="${f.link||'#'}" target="_blank" rel="noopener">${f.titolo}</a><div class="src2">${T.source}: <a href="${f.link||'#'}" target="_blank" rel="noopener">${f.fonte}</a>${f.dominio?' · '+f.dominio:''}</div></div>`;
     feed.appendChild(it);
   });
+}
+function renderTeam(){
+  if(!DATA||!Object.keys(DATA).length)return;
+  const board=document.getElementById('board');
+  const thead=document.getElementById('thead');
+  const panel=document.querySelector('.panelbox');
+  document.getElementById('notice').innerHTML='';
+  if(!curTeam){ thead.style.display='none'; if(panel)panel.style.display='none'; renderGlobal(board); return; }
+  thead.style.display=''; if(panel)panel.style.display='';
+  renderTeamView(board); renderFeed(DATA[curTeam]);
 }
 init();
 </script>
