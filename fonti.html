@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RLST76W6H2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RLST76W6H2');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TransferBeat — Le nostre fonti</title>
+<meta name="description" content="Come TransferBeat sceglie e classifica le fonti di calciomercato: il sistema dei tier di affidabilità, spiegato in modo trasparente.">
+<link rel="alternate" hreflang="it" href="./fonti.html?lang=it">
+<link rel="alternate" hreflang="en" href="./fonti.html?lang=en">
+<link rel="alternate" hreflang="es" href="./fonti.html?lang=es">
+<link rel="alternate" hreflang="x-default" href="./fonti.html">
+<style>
+  :root{--bg:#fff;--panel:#f7f8fa;--panel2:#eef1f5;--line:#e2e6ea;--txt:#161b21;--muted:#67727e;--accent:#0a9d57;--accent2:#1f6fd6;--rumor:#d98700;--conf:#7b46c9;--red:#e0392b}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:920px;margin:0 auto;padding:0 18px}
+  header{border-bottom:1px solid var(--line)}
+  .top{display:flex;align-items:center;gap:14px;height:62px}
+  .logo{font-weight:800;font-size:20px;letter-spacing:-.5px}.logo b{color:var(--accent)}
+  .langsw{display:flex;gap:4px;margin-left:6px}
+  .langsw a{font-size:11px;font-weight:700;padding:4px 8px;border:1px solid var(--line);border-radius:6px;color:var(--muted);cursor:pointer}
+  .langsw a.on{background:var(--txt);color:#fff;border-color:var(--txt)}
+  .nav{margin-left:auto;display:flex;gap:6px}
+  .nav a{padding:7px 13px;font-size:13px;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:999px}
+  .nav a.on,.nav a:hover{color:var(--txt);border-color:var(--accent)}
+  h1{font-size:30px;letter-spacing:-.6px;margin:26px 0 8px}
+  .lead{color:var(--muted);font-size:15px;max-width:680px;margin-bottom:26px}
+  h2{font-size:18px;margin:28px 0 12px;display:flex;align-items:center;gap:9px}
+  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:8px}
+  .tcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .tcard .h{display:flex;align-items:center;gap:8px;font-weight:700;font-size:14px;margin-bottom:5px}
+  .tcard p{font-size:13px;color:var(--muted)}
+  .reli{display:inline-flex;gap:3px}.reli i{width:8px;height:8px;border-radius:50%;background:#cfd6dd}.reli i.on{background:var(--accent)}
+  .srcgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px}
+  .src{display:flex;align-items:center;gap:12px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:11px 14px}
+  .src .nm{flex:1;min-width:0}.src .nm b{font-weight:600;font-size:14px}.src .nm .ty{font-size:11.5px;color:var(--muted)}
+  .flag{font-size:10px;font-weight:800;letter-spacing:.5px;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:1px 6px}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-top:8px;font-size:14px;color:var(--muted);line-height:1.65}
+  .box b{color:var(--txt)}
+  footer{color:var(--muted);font-size:12px;text-align:center;padding:30px 0;border-top:1px solid var(--line);margin-top:30px}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="top">
+  <div class="logo">⚽ Transfer<b>Beat</b></div>
+  <div class="langsw" id="langsw"></div>
+  <div class="nav">
+    <a href="index.html" id="navHome">Home</a>
+    <a href="board.html" id="navLive">Live</a>
+    <a href="fonti.html" class="on" id="navFonti">Fonti</a>
+  </div>
+</div></div></header>
+
+<div class="wrap">
+  <h1 id="h1">Le nostre fonti</h1>
+  <p class="lead" id="lead"></p>
+
+  <h2 id="hTier">Il sistema dei tier</h2>
+  <div class="tiers" id="tiers"></div>
+
+  <h2 id="hLive">⚡ Fonti live</h2>
+  <div class="srcgrid" id="liveSrc"></div>
+
+  <h2 id="hRss">📰 Testate (RSS)</h2>
+  <div class="srcgrid" id="rssSrc"></div>
+
+  <h2 id="hNet">🌐 Rete larga</h2>
+  <div class="box" id="netBox"></div>
+
+  <h2 id="hUpd">🔄 Come le aggiorniamo</h2>
+  <div class="box" id="updBox"></div>
+</div>
+<footer id="foot"></footer>
+
+<script>
+const STR={
+ it:{home:'Home',live:'Live',fonti:'Fonti',h1:'Le nostre fonti',
+   lead:'Le notizie che vedi su TransferBeat non hanno tutte lo stesso peso. Ogni fonte ha un livello di affidabilità — un tier — e questo tier entra nel calcolo del “calore” di ogni trattativa. Qui ti spieghiamo, in chiaro, chi seguiamo e come li classifichiamo.',
+   hTier:'Il sistema dei tier',
+   t3:'Massima affidabilità',t3d:'Esperti di mercato riconosciuti, le firme che spesso danno la notizia per prime.',
+   t2:'Affidabile',t2d:'Testate e portali consolidati, con una redazione e una reputazione.',
+   t1:'Da verificare',t1d:'Voci, fonti minori o aggregatori: utili ma da prendere con cautela.',
+   hLive:'⚡ Fonti live',hRss:'📰 Testate (RSS)',hNet:'🌐 Rete larga',
+   net:'Oltre alle fonti selezionate qui sopra, monitoriamo <b>Google News</b> per ogni squadra nelle tre lingue: una rete larga che intercetta moltissime testate. Queste voci entrano con un peso prudenziale finché non sono corroborate da una fonte di tier superiore.',
+   hUpd:'🔄 Come le aggiorniamo',
+   upd:'I <b>tier</b> li assegniamo a mano, fonte per fonte, e li rivediamo nel tempo: una fonte che sbaglia spesso scende, una che azzecca sale. Le <b>fonti live</b> vengono lette in continuo (ogni pochi minuti), le <b>testate RSS</b> a ogni aggiornamento del sito. Le <b>rose</b> dei club si rinfrescano ogni settimana da una banca dati ufficiale. È un sistema vivo: se pensi manchi una fonte importante, la aggiungiamo.',
+   live:'live',rss:'RSS'},
+ en:{home:'Home',live:'Live',fonti:'Sources',h1:'Our sources',
+   lead:'Not all the news on TransferBeat carries the same weight. Every source has a reliability level — a tier — and that tier feeds into the “heat” of each deal. Here we explain, in the open, who we follow and how we rank them.',
+   hTier:'The tier system',
+   t3:'Top reliability',t3d:'Recognised market insiders — the bylines that often break the story first.',
+   t2:'Reliable',t2d:'Established outlets and portals, with a newsroom and a reputation.',
+   t1:'To verify',t1d:'Rumours, minor sources or aggregators: useful but to be taken with care.',
+   hLive:'⚡ Live sources',hRss:'📰 Outlets (RSS)',hNet:'🌐 Wide net',
+   net:'Beyond the curated sources above, we monitor <b>Google News</b> for every club in the three languages: a wide net catching many outlets. These items enter with a cautious weight until corroborated by a higher-tier source.',
+   hUpd:'🔄 How we keep them updated',
+   upd:'We assign <b>tiers</b> by hand, source by source, and revise them over time: a source that often gets it wrong drops, one that nails it rises. <b>Live sources</b> are read continuously (every few minutes), <b>RSS outlets</b> at every site update. Club <b>squads</b> refresh weekly from an official database. It’s a living system: if you think an important source is missing, we add it.',
+   live:'live',rss:'RSS'},
+ es:{home:'Inicio',live:'En vivo',fonti:'Fuentes',h1:'Nuestras fuentes',
+   lead:'No todas las noticias de TransferBeat pesan igual. Cada fuente tiene un nivel de fiabilidad — un tier — y ese tier entra en el cálculo del “calor” de cada operación. Aquí te explicamos, con claridad, a quién seguimos y cómo los clasificamos.',
+   hTier:'El sistema de tiers',
+   t3:'Máxima fiabilidad',t3d:'Expertos de mercado reconocidos, las firmas que a menudo dan la noticia primero.',
+   t2:'Fiable',t2d:'Medios y portales consolidados, con redacción y reputación.',
+   t1:'Por verificar',t1d:'Rumores, fuentes menores o agregadores: útiles pero con cautela.',
+   hLive:'⚡ Fuentes en vivo',hRss:'📰 Medios (RSS)',hNet:'🌐 Red amplia',
+   net:'Además de las fuentes seleccionadas arriba, monitorizamos <b>Google News</b> para cada equipo en los tres idiomas: una red amplia que capta muchísimos medios. Estas voces entran con un peso prudente hasta que una fuente de tier superior las corrobora.',
+   hUpd:'🔄 Cómo las actualizamos',
+   upd:'Los <b>tiers</b> los asignamos a mano, fuente por fuente, y los revisamos con el tiempo: una fuente que falla a menudo baja, una que acierta sube. Las <b>fuentes en vivo</b> se leen en continuo (cada pocos minutos), los <b>medios RSS</b> en cada actualización. Las <b>plantillas</b> de los clubes se refrescan cada semana desde una base de datos oficial. Es un sistema vivo: si crees que falta una fuente importante, la añadimos.',
+   live:'en vivo',rss:'RSS'}
+};
+const P=new URLSearchParams(location.search);
+let lang=(P.get('lang')||localStorage.getItem('tb_lang')||'it').toLowerCase();
+if(!['it','en','es'].includes(lang))lang='it';
+localStorage.setItem('tb_lang',lang);document.documentElement.lang=lang;
+const T=STR[lang];
+function dots(n){return '<span class="reli">'+[1,2,3].map(i=>`<i class="${i<=n?'on':''}"></i>`).join('')+'</span>';}
+function fill(){
+  document.getElementById('navHome').textContent=T.home;
+  document.getElementById('navLive').textContent=T.live;
+  document.getElementById('navFonti').textContent=T.fonti;
+  document.getElementById('h1').textContent=T.h1;
+  document.getElementById('lead').textContent=T.lead;
+  document.getElementById('hTier').textContent=T.hTier;
+  document.getElementById('hLive').textContent=T.hLive;
+  document.getElementById('hRss').textContent=T.hRss;
+  document.getElementById('hNet').textContent=T.hNet;
+  document.getElementById('hUpd').textContent=T.hUpd;
+  document.getElementById('netBox').innerHTML=T.net;
+  document.getElementById('updBox').innerHTML=T.upd;
+  document.getElementById('foot').textContent='TransferBeat · '+T.h1;
+  document.getElementById('tiers').innerHTML=
+    [[3,T.t3,T.t3d],[2,T.t2,T.t2d],[1,T.t1,T.t1d]].map(([n,t,d])=>
+      `<div class="tcard"><div class="h">${dots(n)} ${t}</div><p>${d}</p></div>`).join('');
+  const ls=document.getElementById('langsw');
+  ls.innerHTML=['it','en','es'].map(l=>`<a data-l="${l}" class="${l===lang?'on':''}">${l.toUpperCase()}</a>`).join('');
+  ls.querySelectorAll('a').forEach(a=>a.onclick=()=>{localStorage.setItem('tb_lang',a.dataset.l);location.search='?lang='+a.dataset.l;});
+}
+function srcCard(s,type){
+  return `<div class="src">${dots(s.tier||1)}<div class="nm"><b>${s.nome}</b><div class="ty">${type}</div></div><span class="flag">${(s.lang||'').toUpperCase()}</span></div>`;
+}
+function load(){
+  fill();
+  fetch('data/experts.json?t='+Date.now()).then(r=>r.ok?r.json():{canali:[]}).then(d=>{
+    const arr=(d.canali||[]).slice().sort((a,b)=>(b.tier||0)-(a.tier||0));
+    document.getElementById('liveSrc').innerHTML=arr.map(s=>srcCard(s,'Telegram · '+T.live)).join('')||'—';
+  }).catch(()=>{});
+  fetch('data/sources.json?t='+Date.now()).then(r=>r.ok?r.json():{feeds:[]}).then(d=>{
+    const arr=(d.feeds||[]).slice().sort((a,b)=>(b.tier||0)-(a.tier||0));
+    document.getElementById('rssSrc').innerHTML=arr.map(s=>srcCard(s,T.rss)).join('')||'—';
+  }).catch(()=>{});
+}
+load();
+</script>
+</body>
+</html>
