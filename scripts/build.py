@@ -214,8 +214,13 @@ def assign_movements(movs, teams):
     def add(team, st, entry):
         per.setdefault(team, {"rumor": [], "obj": [], "conf": [], "done": []})[st].append(entry)
     for m in movs:
+        rc = roster_club(m["giocatore"])
+        if rc:
+            m["da"] = rc                         # ancora la provenienza al club REALE (anti ex-club)
         t_da = match_club(m["da"], rows)
         t_a = match_club(m["a"], rows)
+        if rc and t_a and t_a == t_da:
+            continue                              # "va" al suo stesso club: rinnovo, non un movimento
         if t_a:
             add(t_a, m["stato"], {"giocatore": m["giocatore"], "direzione": "in", "club": m["da"] or ""})
         if t_da and t_da != t_a:
@@ -240,6 +245,35 @@ def _deaccent(s):
     return _ud.normalize("NFKD", s).encode("ascii", "ignore").decode("ascii")
 def _norm_name(s):
     return re.sub(r"[^a-z0-9 ]", "", _deaccent(s).lower()).strip()
+
+def _rkey(s):
+    return _deaccent(s).lower().strip()
+def _load_rosters():
+    full = {}; sur = {}
+    try:
+        d = json.load(open(os.path.join(DATA, "rosters.json"), encoding="utf-8"))
+        for club, pl in d.get("rose", {}).items():
+            for pn in pl:
+                n = _rkey(pn)
+                if not n:
+                    continue
+                full[n] = club
+                sur.setdefault(n.split()[-1], set()).add(club)
+    except Exception:
+        pass
+    return full, sur
+ROSTER_FULL, ROSTER_SUR = _load_rosters()
+def roster_club(name):
+    """Club ATTUALE del giocatore dall'anagrafica rose, o None."""
+    n = _rkey(name)
+    if not n:
+        return None
+    if n in ROSTER_FULL:
+        return ROSTER_FULL[n]
+    toks = n.split(); sn = toks[-1] if toks else ""
+    if sn and sn in ROSTER_SUR and len(ROSTER_SUR[sn]) == 1:
+        return next(iter(ROSTER_SUR[sn]))
+    return None
 
 def _days_since(iso):
     try:

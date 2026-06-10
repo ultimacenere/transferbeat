@@ -23,6 +23,11 @@ jobs:
       - name: Installa dipendenze
         run: pip install -r requirements.txt
 
+      - name: Aggiorna rose (se chiave presente, refresh settimanale)
+        env:
+          FOOTBALL_DATA_KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
+        run: python scripts/rosters.py || echo "rosters skip"
+
       - name: Genera i dati
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}   # opzionale: abilita la vista "Nomi"
