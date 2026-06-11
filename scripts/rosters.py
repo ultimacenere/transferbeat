@@ -10,7 +10,7 @@ except ImportError:
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
-CODES = ["SA", "PD", "PL"]
+CODES = ["SA", "PD", "PL", "FL1", "BL1", "DED", "PPL", "ELC", "CL"]
 ALIAS = {"Atleti": "Atlético Madrid", "Barça": "Barcelona", "Athletic": "Athletic Club",
          "Celta": "Celta Vigo", "Sevilla FC": "Sevilla", "Brighton Hove": "Brighton",
          "Leeds United": "Leeds", "Nottingham": "Nottingham Forest", "Wolverhampton": "Wolves"}

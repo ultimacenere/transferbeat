@@ -290,12 +290,12 @@ function dealCard(d){
   const w=STAGE_W[d.stage];
   const stg=T.stages.map((s,i)=>`<span class="${i===d.stage?'cur':''}">${s}</span>`).join('');
   const src=d.live?`<div class="dsrc">${dots(d.live.tier)} ${d.live.fonte||''}${d.live.ts?' · '+agoISO(d.live.ts):''}</div>`:'';
-  return `<div class="deal"><div class="deal-h"><div><div class="pl2">${d.player}</div><div class="route"><b>${d.from}</b> → ${d.to}</div></div>${heatChip(d)}</div>`
+  return `<div class="deal"><div class="deal-h"><div><div class="pl2">${d.player}</div><div class="route"><b>${d.from}</b> → <b>${d.to}</b></div></div>${heatChip(d)}</div>`
     +`<div class="metro"><div class="segbar"><div class="segfill" style="width:${w}%"></div></div><div class="stages">${stg}</div></div>${src}</div>`;
 }
 function miniRow(d){
   const w=STAGE_W[d.stage];
-  return `<div class="mrow"><div class="mrow-i"><div class="pl3">${d.player}${d.live?' <span class="livetag">🔴</span>':''}</div><div class="route2"><b>${d.from}</b> → ${d.to}</div></div>`
+  return `<div class="mrow"><div class="mrow-i"><div class="pl3">${d.player}${d.live?' <span class="livetag">🔴</span>':''}</div><div class="route2"><b>${d.from}</b> → <b>${d.to}</b></div></div>`
     +`<div class="mbar"><div class="segbar s6"><div class="segfill" style="width:${w}%"></div></div></div><span class="chip c-${d.band}">${d.heat}%</span></div>`;
 }
 function doneRow(d){
