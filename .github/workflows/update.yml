@@ -3,7 +3,9 @@ name: Aggiorna dati TransferBeat
 # Orari in UTC. L'Italia e' UTC+2 (estate) / UTC+1 (inverno).
 # Estate: 06:00, 10:00, 18:00 UTC = 08:00, 12:00, 20:00 ora italiana.
 on:
-  workflow_dispatch: {}        # lanciato da cron-job.org (08/12/20 italiane) o a mano
+  schedule:
+    - cron: "0 6-22/2 * * *"    # ogni 2 ore, ~08:00-24:00 italiane (refresh frequente di board e Dal Mondo)
+  workflow_dispatch: {}        # anche da cron-job.org o a mano
 
 permissions:
   contents: write              # serve per fare commit dei JSON aggiornati

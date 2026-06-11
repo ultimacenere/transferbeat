@@ -508,11 +508,16 @@ def build_home(teams, kw, lang, loc):
     secondari = [slim(e) for e in pick[1:7]]
     mondo = []
     for m in teams.get("mondo_home", []):
-        got = fetch(m["search"], 3, loc)
-        if got:
-            g = got[0]; info = enrich(g["gn_link"], g["src_href"])
+        got = fetch(m["search"], 8, loc)
+        for g in got:
+            g["quando"] = time_ago(g.get("pub"), lang)
+        cand = [g for g in got if age_days(g.get("pub")) <= 10]
+        cand.sort(key=lambda x: x.get("pub") or (), reverse=True)
+        if cand:
+            g = cand[0]; info = enrich(g["gn_link"], g["src_href"])
             mondo.append({"categoria": m["label"][lang], "titolo": g["titolo"], "fonte": g["fonte"],
-                          "link": info["url"], "img": info["img"], "dominio": info["dominio"]})
+                          "link": info["url"], "img": info["img"], "dominio": info["dominio"],
+                          "quando": g.get("quando", "")})
     ticker = [e["titolo"] for e in pick if e["stato"] in ("done", "conf")][:6]
     if len(ticker) < 4:
         ticker = [e["titolo"] for e in pick][:6]

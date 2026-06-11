@@ -251,6 +251,8 @@ function heatOf(st,m,live){
   const d=(m&&m._seen)?daysSince(m._seen):0;
   if(d<=0)h+=6; else if(d>=2)h-=8;
   if(live&&live.tier>=3)h+=4;
+  const hrs=(typeof META!=='undefined'&&META.aggiornato)?Math.max(0,(Date.now()-new Date(META.aggiornato))/3600000):0;
+  h-=Math.min(Math.max(hrs-2,0)*2,14);  // decadimento in tempo reale: dopo 2h -2/h, max -14
   return Math.max(5,Math.min(99,Math.round(h)));
 }
 function heatBand(h,st){return st==='done'?'done':(h>=70?'hot':(h>=45?'warm':'cold'));}
