@@ -49,6 +49,28 @@ def fdate(iso, lang):
     except Exception:
         return ""
 
+HL_LABEL = {"it": "Gli highlights", "en": "Highlights", "es": "Lo m\u00e1s destacado"}
+HL_NOTE = {"it": 'In Italia i match integrali sono su <a href="https://www.raiplay.it/" target="_blank" rel="noopener nofollow">RaiPlay</a>.',
+           "en": 'In Italy, full matches are on <a href="https://www.raiplay.it/" target="_blank" rel="noopener nofollow">RaiPlay</a>.',
+           "es": 'En Italia, los partidos completos est\u00e1n en <a href="https://www.raiplay.it/" target="_blank" rel="noopener nofollow">RaiPlay</a>.'}
+def highlights_html(art, lang):
+    hls = art.get("highlights") or []
+    if not hls:
+        return ""
+    out = ['<div class="hls"><h2>' + HL_LABEL.get(lang, HL_LABEL["it"]) + '</h2>']
+    for h in hls:
+        yt = h.get("yt"); src = h.get("src", ""); match = h.get("match", "")
+        out.append('<div class="hl">')
+        if match:
+            out.append('<div class="hlt">' + esc(match) + (' <span class="src">via ' + esc(src) + '</span>' if src else "") + '</div>')
+        if yt:
+            out.append('<div class="ytwrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/' + esc(yt) + '" title="' + esc(match) + '" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>')
+        elif h.get("link"):
+            out.append('<a class="hlnote" href="' + esc(h["link"]) + '" target="_blank" rel="noopener nofollow">\u25b6 ' + esc(match) + '</a>')
+        out.append('</div>')
+    out.append('<p class="hlnote">' + HL_NOTE.get(lang, HL_NOTE["it"]) + '</p></div>')
+    return "".join(out)
+
 CSS = """*{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:#fff;color:#161b21;line-height:1.6}
 a{color:inherit;text-decoration:none}
@@ -79,7 +101,12 @@ article p{margin-bottom:14px;font-size:16px}
 .lcard:hover{border-color:#0a9d57}
 .lcard .h{font-family:Georgia,serif;font-size:19px;margin:6px 0 4px}
 .lcard .m{font-size:12px;color:#8a94a0}
-.list-h{font-family:Georgia,serif;font-size:28px;margin:18px 0 4px}"""
+.list-h{font-family:Georgia,serif;font-size:28px;margin:18px 0 4px}
+.hls{margin:26px 0}.hls h2{font-family:Georgia,serif;font-size:22px;margin-bottom:14px}
+.hl{margin-bottom:18px}.hlt{font-size:14px;font-weight:600;margin-bottom:8px}.hlt .src{color:#8a94a0;font-weight:400}
+.ytwrap{position:relative;padding-top:56.25%;border-radius:10px;overflow:hidden;background:#000}
+.ytwrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+.hlnote{font-size:12.5px;color:#8a94a0;margin-top:10px}.hlnote a{color:#1f6fd6;font-weight:600}"""
 
 def head(title, desc, canon, alts, lang, og_img=""):
     h = ['<!DOCTYPE html><html lang="' + lang + '"><head><meta charset="UTF-8">',
@@ -140,6 +167,7 @@ def render_article(art, lang, site):
         out.append('<p class="lead">' + esc(lead) + '</p>')
     for p in c["body"]:
         out.append('<p>' + esc(p) + '</p>')
+    out.append(highlights_html(art, lang))
     # fonti (solo se presenti)
     if not art.get("updates"):
         out.append('<p class="disc">' + UI[lang]["disc"] + '</p>')
