@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-06-12T07:15:01Z",
+  "aggiornato": "2026-06-12T10:16:05Z",
   "nome": "World Cup 2026",
   "groups": [
     {
@@ -25,7 +25,34 @@
             "iso": "za",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              2,
+              0
+            ],
+            "ht": [
+              1,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Julián Quiñones",
+              "minute": "9",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Raúl Jiménez",
+              "minute": "67",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": []
         },
         {
           "round": "Matchday 1",
@@ -47,7 +74,41 @@
             "iso": "cz",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              2,
+              1
+            ],
+            "ht": [
+              0,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Hwang In-Beom",
+              "minute": "67",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Oh Hyeon-Gyu",
+              "minute": "80",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": [
+            {
+              "name": "Ladislav Krejcí",
+              "minute": "59",
+              "pen": false,
+              "og": false
+            }
+          ]
         },
         {
           "round": "Matchday 8",
@@ -141,54 +202,20 @@
       "classifica": [
         {
           "team": {
-            "en": "Czech Republic",
-            "it": "Rep. Ceca",
-            "es": "Rep. Checa",
-            "iso": "cz",
-            "ph": false
-          },
-          "pg": 0,
-          "v": 0,
-          "n": 0,
-          "p": 0,
-          "gf": 0,
-          "gs": 0,
-          "pt": 0,
-          "dr": 0
-        },
-        {
-          "team": {
             "en": "Mexico",
             "it": "Messico",
             "es": "México",
             "iso": "mx",
             "ph": false
           },
-          "pg": 0,
-          "v": 0,
+          "pg": 1,
+          "v": 1,
           "n": 0,
           "p": 0,
-          "gf": 0,
+          "gf": 2,
           "gs": 0,
-          "pt": 0,
-          "dr": 0
-        },
-        {
-          "team": {
-            "en": "South Africa",
-            "it": "Sudafrica",
-            "es": "Sudáfrica",
-            "iso": "za",
-            "ph": false
-          },
-          "pg": 0,
-          "v": 0,
-          "n": 0,
-          "p": 0,
-          "gf": 0,
-          "gs": 0,
-          "pt": 0,
-          "dr": 0
+          "pt": 3,
+          "dr": 2
         },
         {
           "team": {
@@ -198,14 +225,48 @@
             "iso": "kr",
             "ph": false
           },
-          "pg": 0,
-          "v": 0,
+          "pg": 1,
+          "v": 1,
           "n": 0,
           "p": 0,
-          "gf": 0,
-          "gs": 0,
+          "gf": 2,
+          "gs": 1,
+          "pt": 3,
+          "dr": 1
+        },
+        {
+          "team": {
+            "en": "Czech Republic",
+            "it": "Rep. Ceca",
+            "es": "Rep. Checa",
+            "iso": "cz",
+            "ph": false
+          },
+          "pg": 1,
+          "v": 0,
+          "n": 0,
+          "p": 1,
+          "gf": 1,
+          "gs": 2,
           "pt": 0,
-          "dr": 0
+          "dr": -1
+        },
+        {
+          "team": {
+            "en": "South Africa",
+            "it": "Sudafrica",
+            "es": "Sudáfrica",
+            "iso": "za",
+            "ph": false
+          },
+          "pg": 1,
+          "v": 0,
+          "n": 0,
+          "p": 1,
+          "gf": 0,
+          "gs": 2,
+          "pt": 0,
+          "dr": -2
         }
       ]
     },
@@ -3231,31 +3292,47 @@
         "link": "https://www.gazzetta.it/Calcio/Mondiali/11-06-2026/live-mondiali-il-primo-giorno-cosa-succede-tra-usa-canada-e-messico.shtml",
         "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/06/11/6a2b00224b7b4.jpeg",
         "dominio": "gazzetta.it",
-        "quando": "9 ore fa"
+        "quando": "12 ore fa"
       },
       {
-        "titolo": "Corea del sud - Repubblica Ceca (2-1) Mondiali 2026",
-        "fonte": "la Repubblica",
-        "link": "https://www.repubblica.it/sport/dirette/calcio/mondiali-2026/diretta-corea-del-sud-repubblica-ceca-g2608242/",
-        "img": "https://www.repstatic.it/cless/main/nazionale/2013-v1/img/common/favicon/favicon-1500.png",
-        "dominio": "repubblica.it",
-        "quando": "5 ore fa"
+        "titolo": "Mondiali 2026, il Messico batte il Sudafrica. Corea del Sud-R.Ceca 2-1. LIVE",
+        "fonte": "Sky TG24",
+        "link": "https://tg24.sky.it/sport/2026/06/12/mondiali-calcio-2026-news-oggi-diretta",
+        "img": "https://tg24.sky.it/assets/images/cac38bbf7e3fc2998dec3f134769b0d13c4ab42c/skytg24/it/sport/2026/06/12/mondiali-calcio-2026-news-oggi-diretta/808A2235C9881720FB347029F428DA81.JPG?im=Resize,width=1218",
+        "dominio": "tg24.sky.it",
+        "quando": "poco fa"
       },
       {
-        "titolo": "Mondiali 2026, le news in diretta: oggi tocca al Canada contro la Bosnia",
-        "fonte": "Sky Sport",
-        "link": "https://sport.sky.it/calcio/mondiali/2026/06/12/mondiali-2026-news-oggi-12-giugno-diretta",
-        "img": "https://sport.sky.it/assets/images/66f90ec2388c84fcdf62b8dda4a363505a6ba082/skysport/it/calcio/mondiali/2026/06/12/mondiali-2026-news-oggi-12-giugno-diretta/getty_canada_stadio.jpg?im=Resize,width=1218",
-        "dominio": "sport.sky.it",
+        "titolo": "Le wags sono pronte per la Coppa del Mondo: le compagne più belle dei calciatori impegnati al Mondiale",
+        "fonte": "Tuttosport",
+        "link": "https://www.tuttosport.com/foto/calcio/mondiali-2026/2026/06/12-149131896/le_wags_sono_pronte_per_la_coppa_del_mondo_le_compagne_pi_belle_dei_calciatori_impegnati_al_mondiale",
+        "img": "https://cdn.tuttosport.com/images/2026/06/11/145826973-de542cfd-717e-4f54-8f05-203dfbdcc1c3.jpg",
+        "dominio": "tuttosport.com",
+        "quando": "4 ore fa"
+      },
+      {
+        "titolo": "Mondiali di Calcio 2026 - Highlights Estesi - Gironi",
+        "fonte": "RaiPlay",
+        "link": "https://www.raiplay.it/programmi/mondialidicalcio2026/highlights-estesi/gironi",
+        "img": "https://www.raiplay.it/resizegd/1200x675/dl/img/2026/04/23/1776933040524_2048x1152_logo.jpg",
+        "dominio": "raiplay.it",
         "quando": "1 ore fa"
       },
       {
-        "titolo": "Tutto nella ripresa: Krejci illude la Repubblica Ceca, poi la Sud Corea la ribalta in 13'",
-        "fonte": "La Gazzetta dello Sport",
-        "link": "https://www.gazzetta.it/Calcio/Mondiali/12-06-2026/sud-corea-repubblica-ceca-live-risultato-e-marcatori-mondiali-prima-fase.shtml",
-        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/06/12/6a2b8c33ea2e6.jpeg",
-        "dominio": "gazzetta.it",
-        "quando": "3 ore fa"
+        "titolo": "Mondiali 2026, la parata delle Nazioni e l'inno cantato da Andrea Bocelli",
+        "fonte": "RaiNews",
+        "link": "https://www.rainews.it/video/2026/06/mondiali-fifa-2026-parata-delle-nazioni-e-inno-cantato-da-andrea-bocelli-cerimonia-apertura-video-89bdd5be-9eee-4901-ae4e-651754202382.html",
+        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/11/1781204197299_.png",
+        "dominio": "rainews.it",
+        "quando": "15 ore fa"
+      },
+      {
+        "titolo": "Mondiali, la Rai taglia la cerimonia d'apertura per il Tg1: interrotta Shakira proprio nel momento clou. Polemiche sul web",
+        "fonte": "Il Fatto Quotidiano",
+        "link": "https://www.ilfattoquotidiano.it/2026/06/11/mondiali-2026-rai-cerimonia-apertura-interrotta-tg1-audio/8416423/",
+        "img": "https://st.ilfattoquotidiano.it/wp-content/uploads/2026/06/11/cerimonia-apertura-1200x630.jpg",
+        "dominio": "ilfattoquotidiano.it",
+        "quando": "15 ore fa"
       },
       {
         "titolo": "Mondiali 2026, Infantino svela la verità sul ripescaggio dell’Italia",
@@ -3263,23 +3340,7 @@
         "link": "https://www.lanuovasardegna.it/regione/2026/06/11/news/mondiali-2026-infantino-svela-la-verita-sul-ripescaggio-dell-italia-1.100881677",
         "img": "https://api-sites-prd.saegroup.abinsula.com/api/social/image/contentid/policy:1.100881676:1781174049/24497477_large.jpg",
         "dominio": "lanuovasardegna.it",
-        "quando": "20 ore fa"
-      },
-      {
-        "titolo": "Quale partita sulla RAI oggi, Mondiali calcio 2026: orario venerdì 12 giugno, canale in chiaro, streaming",
-        "fonte": "OA Sport",
-        "link": "https://www.oasport.it/2026/06/quale-partita-sulla-rai-oggi-mondiali-calcio-2026-orario-12-giugno-canale-in-chiaro-streaming/",
-        "img": "",
-        "dominio": "oasport.it",
-        "quando": "3 ore fa"
-      },
-      {
-        "titolo": "Mondiali 2026, cosa ne pensano davvero gli americani",
-        "fonte": "Adnkronos",
-        "link": "https://www.adnkronos.com/sport/mondiali-2026-cosa-pensano-gli-americani_5pZzt8w5xPxPPPBfaSMTdm",
-        "img": "https://www.adnkronos.com/resources/02a6-20d83f9497d1-31cd5f5ca6d3-1000/cerimonia_apertura_afp.jpeg",
-        "dominio": "adnkronos.com",
-        "quando": "1 ore fa"
+        "quando": "23 ore fa"
       },
       {
         "titolo": "Mondiali Fifa 2026: come funziona Trionda, il pallone con il chip",
@@ -3287,49 +3348,17 @@
         "link": "https://www.focus.it/scienza/scienze/mondiali-2026-dentro-trionda-il-pallone-hi-tech-con-un-microchip-che-va-ricaricato-prima-della-partita",
         "img": "https://www.focus.it/images/2026/06/10/pallone-adidas-trionda-orig.png",
         "dominio": "focus.it",
-        "quando": "17 ore fa"
+        "quando": "20 ore fa"
       }
     ],
     "en": [
       {
-        "titolo": "World Cup 2026 today: Updates and news as Mexico City prepared for tournament opener - as it happened on June 11",
-        "fonte": "ESPN",
-        "link": "https://www.espn.co.uk/football/story/_/id/49026257/world-cup-2026-today-blog-11-06-2026-live-updates-news-fixtures-schedule-results-england-costa-rica",
-        "img": "https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0611%2Fr1671336_594x396_3%2D2.jpg",
-        "dominio": "espn.co.uk",
-        "quando": "4h ago"
-      },
-      {
-        "titolo": "'There's a World Cup happening?' Are Americans excited about the tournament?",
+        "titolo": "World Cup 2026: Highlights & reaction, three red cards in opening game",
         "fonte": "BBC",
-        "link": "https://www.bbc.com/sport/football/articles/cg74rzx582ko",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/a9d9/live/fb473080-65c7-11f1-a495-71dd2487e71b.jpg",
-        "dominio": "bbc.com",
-        "quando": "3h ago"
-      },
-      {
-        "titolo": "South Korea 2-1 Czech Republic LIVE: FIFA World Cup 2026 Group A: South Korea come from behind to win",
-        "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/live/ckg0vvrg70vt",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/ddce/live/fc28a220-660f-11f1-9a85-dd2676f12992.jpg",
+        "link": "https://www.bbc.co.uk/sport/football/live/c7vy32qj1zdt",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/3807/live/fb0bc2d0-6643-11f1-b1db-af71d47507d6.jpg",
         "dominio": "bbc.co.uk",
-        "quando": "just now"
-      },
-      {
-        "titolo": "South Korea 2-1 Czech Republic highlights - World Cup 2026 - 12 June 2026",
-        "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/videos/cwyd48eg793o",
-        "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/d02e/live/08a6d8c0-6613-11f1-8e1d-bbbb1017d210.jpg",
-        "dominio": "bbc.co.uk",
-        "quando": "2h ago"
-      },
-      {
-        "titolo": "Vast empty seats at World Cup’s second match despite ‘500 million’ ticket requests",
-        "fonte": "The Telegraph",
-        "link": "https://www.telegraph.co.uk/football/2026/06/12/empty-seats-world-cup-despite-500-million-ticket-requests/",
-        "img": "https://www.telegraph.co.uk/content/dam/football/2026/06/12/TELEMMGLPICT000489982891_17812442188060_trans_NvBQzQNjv4BqpVlberWd9EgFPZtcLiMQf_4Xpit_DMGvdp2n7FDd82k.jpeg?impolicy=OG-Standard",
-        "dominio": "telegraph.co.uk",
-        "quando": "just now"
+        "quando": "6h ago"
       },
       {
         "titolo": "Mexico 2-0 South Africa: World Cup 2026 opening match – as it happened",
@@ -3337,23 +3366,55 @@
         "link": "https://www.theguardian.com/football/live/2026/jun/11/mexico-v-south-africa-world-cup-2026-opening-match-live",
         "img": "https://i.guim.co.uk/img/media/3669f5e16505f5b2f4346d20f136a433d24ecf98/353_0_4087_3270/master/4087.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=7c1647e1b14deaaba750c69873b1a2cd",
         "dominio": "theguardian.com",
-        "quando": "14h ago"
+        "quando": "12h ago"
       },
       {
-        "titolo": "Mexico 2-0 South Africa Highlights - World Cup 2026 - 16 June 2026",
-        "fonte": "BBC",
-        "link": "https://www.bbc.com/sport/football/videos/cx2dyr3e1zro",
-        "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/2ab4/live/43c0e230-65e0-11f1-b1db-af71d47507d6.jpg",
-        "dominio": "bbc.com",
-        "quando": "9h ago"
-      },
-      {
-        "titolo": "Mexico 2-0 South Africa: Three red cards shown as co-hosts win 2026 World Cup opener - as it happened",
+        "titolo": "World Cup 2026 today: Updates and news as Mexico City prepared for tournament opener - as it happened on June 11",
         "fonte": "ESPN",
-        "link": "https://www.espn.co.uk/football/story/_/id/49031240/mexico-south-africa-live-world-cup-2026-latest-updates-commentary-score-result-opening-ceremony",
-        "img": "https://a.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0611%2Fr1671516_1296x729_16%2D9.jpg",
+        "link": "https://www.espn.co.uk/football/story/_/id/49026257/world-cup-2026-today-blog-11-06-2026-live-updates-news-fixtures-schedule-results-england-costa-rica",
+        "img": "",
         "dominio": "espn.co.uk",
-        "quando": "9h ago"
+        "quando": "7h ago"
+      },
+      {
+        "titolo": "Empty seats at World Cup’s second match embarrass Fifa",
+        "fonte": "The Telegraph",
+        "link": "https://www.telegraph.co.uk/football/2026/06/12/empty-seats-world-cup-despite-500-million-ticket-requests/",
+        "img": "https://www.telegraph.co.uk/content/dam/football/2026/06/12/TELEMMGLPICT000489982891_17812442188060_trans_NvBQzQNjv4BqpVlberWd9EgFPZtcLiMQf_4Xpit_DMGvdp2n7FDd82k.jpeg?impolicy=OG-Standard",
+        "dominio": "telegraph.co.uk",
+        "quando": "3h ago"
+      },
+      {
+        "titolo": "World Cup 2026 live: Empty seats and ‘mandatory’ water breaks take shine off opening games",
+        "fonte": "The Independent",
+        "link": "https://www.independent.co.uk/sport/football/world-cup-2026-live-updates-trump-fifa-b2994399.html",
+        "img": "https://static.independent.co.uk/2026/06/12/06/2026-06-12T030813Z_1007259832_UP1EM6C08PO63_RTRMADP_3_SOCCER-WORLDCUP-KOR-CZE.JPG?trim=0,194,0,192&width=1200&height=800&crop=1200:800",
+        "dominio": "independent.co.uk",
+        "quando": "just now"
+      },
+      {
+        "titolo": "England spank opponents 6-0 in final World Cup warm-up behind closed doors as shock call-up bags HAT-TRICK",
+        "fonte": "The Sun",
+        "link": "https://www.thesun.co.uk/sport/39380764/england-world-cup-friendly-ivan-toney/",
+        "img": "",
+        "dominio": "thesun.co.uk",
+        "quando": "15h ago"
+      },
+      {
+        "titolo": "World Cup 2026: Jude Bellingham highlights importance of feeling loved playing for England",
+        "fonte": "BBC",
+        "link": "https://www.bbc.com/sport/football/articles/cvg5mkemp1go",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/ddaa/live/43daed80-661a-11f1-ac3e-c1a2e88f59e9.jpg",
+        "dominio": "bbc.com",
+        "quando": "4h ago"
+      },
+      {
+        "titolo": "World Cup 2026: South Korea 2-1 Czech Republic - In-Beom Hwang inspires comeback win after Ladislav Krejci goal",
+        "fonte": "Sky Sports",
+        "link": "https://www.skysports.com/football/korea-rep-vs-czech-rep/report/549766",
+        "img": "https://e0.365dm.com/26/06/1600x900/skysports-hwang-in-beom-south-korea_7271302.jpg?20260612045731",
+        "dominio": "skysports.com",
+        "quando": "4h ago"
       }
     ],
     "es": [
@@ -3363,7 +3424,7 @@
         "link": "https://as.com/tikitakas/ocio/ceremonia-de-inauguracion-del-mundial-2026-en-directo-espectaculo-de-apertura-en-el-estadio-azteca-en-vivo-f202606-d/",
         "img": "",
         "dominio": "as.com",
-        "quando": "9 h"
+        "quando": "12 h"
       },
       {
         "titolo": "Corea del Sur - República Checa en directo | Resumen, resultado y goles del segundo partido del Mundial 2026",
@@ -3371,7 +3432,7 @@
         "link": "https://www.marca.com/futbol/mundial/corea-del-sur-republica-checa/2026/06/12/01_0117_20260612_1041_367-directo.html",
         "img": "https://objetos.estaticos-marca.com/assets/multimedia/imagenes/2026/06/12/17812213858908.jpg",
         "dominio": "marca.com",
-        "quando": "2 h"
+        "quando": "5 h"
       },
       {
         "titolo": "¿Cómo quedó Corea del Sur - Chequia? Goles y resumen del partido en Guadalajara en Mundial 2026",
@@ -3379,7 +3440,7 @@
         "link": "https://mexico.as.com/futbol/mundial/corea-del-sur-vs-chequia-en-vivo-hoy-resultado-y-goles-del-partido-en-guadalajara-del-mundial-2026-hoy-en-directo-f202606-d/",
         "img": "",
         "dominio": "mexico.as.com",
-        "quando": "3 h"
+        "quando": "6 h"
       },
       {
         "titolo": "Los goles de la remontada histórica del Corea del Sur 2-1 República Checa en el Mundial de Fútbol 2026",
@@ -3387,39 +3448,39 @@
         "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/12/6a2ba2f3e85ece1c3c8b4573-video.html",
         "img": "https://e01-phantom-elmundo.uecdn.es/0b3cfe90ac82cc65d45e8a2bfb3b39fe/provider/dm/crop/150x0/1770x1080/resize/1200/f/webp/v/bXsfk1gAwKDTD5gOG/x1080",
         "dominio": "elmundo.es",
-        "quando": "1 h"
-      },
-      {
-        "titolo": "México corona la fiesta del Azteca al derrotar a una inocua Sudáfrica en el estreno del Mundial 2026",
-        "fonte": "RTVE.es",
-        "link": "https://www.rtve.es/deportes/20260611/mexico-sudafrica-directo-video-inauguracion-mundial-2026-hoy-resumen-resultado/17109574.shtml",
-        "img": "https://img.rtve.es/imagenes/mexico-sudafrica-directo-video-inauguracion-mundial-2026-hoy-resumen-resultado/01781210940726.jpg",
-        "dominio": "rtve.es",
-        "quando": "15 h"
-      },
-      {
-        "titolo": "Goles de Quiñones y Raúl Jiménez en el México 2-0 Sudáfrica del Mundial de Fútbol 2026",
-        "fonte": "El Mundo",
-        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/12/6a2b9ee2e4d4d887488b45b4-video.html",
-        "img": "https://e01-phantom-elmundo.uecdn.es/d70887faaf5bb9b3a766b4194d65dee9/provider/dm/crop/150x0/1770x1080/resize/1200/f/webp/v/bXrio1gAvx8hnW918/x1080",
-        "dominio": "elmundo.es",
-        "quando": "1 h"
-      },
-      {
-        "titolo": "México - Sudáfrica | Resumen, resultado y goles del partido inaugural del Mundial 2026",
-        "fonte": "MARCA",
-        "link": "https://www.marca.com/futbol/mundial/mexico-sudafrica/2026/06/11/01_0117_20260611_659_522-directo.html",
-        "img": "https://objetos.estaticos-marca.com/assets/multimedia/imagenes/2026/06/11/17812103434441.jpg",
-        "dominio": "marca.com",
-        "quando": "8 h"
-      },
-      {
-        "titolo": "El matemático alemán que acertó los tres últimos ganadores del Mundial predice el campeón de 2026",
-        "fonte": "heraldo.es",
-        "link": "https://www.heraldo.es/noticias/deportes/futbol/2026/06/12/matematico-aleman-predice-campeon-mundial-2026-2028340.html",
-        "img": "https://imagenes.heraldo.es/files/image_1920_1080/uploads/imagenes/2026/06/11/6a2ad7085f64b7-85406893.jpeg",
-        "dominio": "heraldo.es",
         "quando": "4 h"
+      },
+      {
+        "titolo": "Mundial 2026, en directo: noticias y última hora de la Copa del Mundo, hoy en vivo",
+        "fonte": "SPORT",
+        "link": "https://www.sport.es/es/noticias/mundial-futbol/mundial-2026-directo-ultima-hora-131316402",
+        "img": "https://estaticos-cdn.prensaiberica.es/clip/5e7d8996-8801-48c3-81e1-4612c247d86f_16-9-discover-aspect-ratio_default_0_x474y155.jpg",
+        "dominio": "sport.es",
+        "quando": "ahora"
+      },
+      {
+        "titolo": "Calendario de partidos gratis en televisión del Mundial 2026: fechas y horarios de los encuentros que ofrece RTVE",
+        "fonte": "ABC",
+        "link": "https://www.abc.es/deportes/futbol/mundial/calendario-partidos-gratis-television-mundial-espana-fechas-rtve-20260611050000-nt.html",
+        "img": "https://s1.abcstatics.com/abc/www/multimedia/deportes/2026/06/11/lamine-yamal-espana-U20762730167e0-U30212205517cLC-1200x630@diario_abc.jpg",
+        "dominio": "abc.es",
+        "quando": "3 h"
+      },
+      {
+        "titolo": "Las dos velocidades del fútbol USA marcan el estreno del anfitrión en el Mundial 2026",
+        "fonte": "La Vanguardia",
+        "link": "https://www.lavanguardia.com/deportes/futbol/20260612/11562433/seleccion-estados-unidos-pochettino-mls-messi-mundial-2026.html",
+        "img": "https://www.lavanguardia.com/files/og_thumbnail/uploads/2026/06/11/6a2ade5026d13.jpeg",
+        "dominio": "lavanguardia.com",
+        "quando": "7 h"
+      },
+      {
+        "titolo": "Canadá debuta como anfitriona ante Bosnia en el Mundial de fútbol 2026: horario y dónde ver gratis",
+        "fonte": "heraldo.es",
+        "link": "https://www.heraldo.es/noticias/deportes/2026/06/12/canada-debuta-anfitriona-bosnia-horario-donde-ver-2028498.html",
+        "img": "https://imagenes.heraldo.es/files/image_1920_1080/uploads/imagenes/2026/06/12/6a2bd312ba0557-56204858.jpeg",
+        "dominio": "heraldo.es",
+        "quando": "ahora"
       }
     ]
   }
