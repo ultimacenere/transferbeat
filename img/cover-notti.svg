@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0" stop-color="#0a1738"/><stop offset="1" stop-color="#16285a"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6d985"/><stop offset="0.55" stop-color="#dcab43"/><stop offset="1" stop-color="#a87a22"/>
+    </linearGradient>
+    <radialGradient id="globe" cx="0.38" cy="0.32" r="0.85">
+      <stop offset="0" stop-color="#ffeeb0"/><stop offset="1" stop-color="#c69a33"/>
+    </radialGradient>
+    <clipPath id="rt"><rect x="772" y="0" width="428" height="630"/></clipPath>
+  </defs>
+  <rect width="1200" height="630" fill="url(#sky)"/>
+  <g fill="#ffffff" opacity="0.55">
+    <circle cx="120" cy="70" r="2"/><circle cx="320" cy="46" r="1.4"/><circle cx="520" cy="92" r="1.8"/>
+    <circle cx="90" cy="470" r="1.4"/><circle cx="250" cy="180" r="1.2"/><circle cx="430" cy="40" r="1.4"/>
+    <circle cx="180" cy="300" r="1.2"/><circle cx="600" cy="205" r="1.4"/>
+  </g>
+  <g clip-path="url(#rt)" opacity="0.85">
+    <g transform="rotate(20 986 315)">
+      <rect x="690" y="-260" width="46" height="1120" fill="#1f9d57"/>
+      <rect x="760" y="-260" width="46" height="1120" fill="#e0392b"/>
+      <rect x="830" y="-260" width="46" height="1120" fill="#f0c75e"/>
+      <rect x="900" y="-260" width="46" height="1120" fill="#1f6fd6"/>
+      <rect x="970" y="-260" width="46" height="1120" fill="#e07a3a"/>
+      <rect x="1040" y="-260" width="46" height="1120" fill="#8e44c9"/>
+      <rect x="1110" y="-260" width="46" height="1120" fill="#16a3b8"/>
+      <rect x="1180" y="-260" width="46" height="1120" fill="#1f9d57"/>
+    </g>
+  </g>
+  <rect x="772" y="0" width="428" height="630" fill="#0a1738" opacity="0.34"/>
+  <g transform="translate(986,150)">
+    <rect x="-60" y="372" width="120" height="26" rx="6" fill="url(#gold)"/>
+    <rect x="-46" y="348" width="92" height="30" rx="5" fill="url(#gold)"/>
+    <path d="M-32,348 C -74,250 -42,150 0,118 C 42,150 74,250 32,348 Z" fill="url(#gold)"/>
+    <circle cx="0" cy="86" r="62" fill="url(#globe)" stroke="#a87a22" stroke-width="3"/>
+    <g fill="none" stroke="#a87a22" stroke-width="2.4" opacity="0.85">
+      <ellipse cx="0" cy="86" rx="27" ry="62"/>
+      <line x1="-62" y1="86" x2="62" y2="86"/>
+      <path d="M-54,58 Q0,74 54,58"/><path d="M-54,114 Q0,98 54,114"/>
+    </g>
+  </g>
+  <text x="70" y="98" font-family="Georgia, serif" font-size="44" font-weight="700" fill="#ffffff">Transfer<tspan fill="#9db4ff">Beat</tspan></text>
+  <text x="66" y="290" font-family="Georgia, serif" font-size="118" font-weight="800" fill="#ffffff" letter-spacing="-3">NOTTI</text>
+  <text x="66" y="398" font-family="Georgia, serif" font-size="92" font-weight="800" fill="#f0c75e" letter-spacing="-2">MONDIALI</text>
+  <rect x="72" y="426" width="300" height="8" fill="#f0c75e"/>
+  <text x="70" y="488" font-family="'Segoe UI', sans-serif" font-size="29" fill="#cdd8f5">La notte di Coppa, raccontata all'alba</text>
+  <text x="70" y="578" font-family="'Segoe UI', sans-serif" font-size="20" fill="#9db4ff">transferbeat.com · Mondiale 2026</text>
+</svg>

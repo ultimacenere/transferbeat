@@ -29,10 +29,12 @@ RECAP_LABEL = {"it": "RECAP DI GIORNATA", "en": "DAILY RECAP", "es": "RESUMEN DE
 STORIA_LABEL = {"it": "FOCUS MERCATO", "en": "TRANSFER FOCUS", "es": "FOCO DE MERCADO"}
 LUNCH_LABEL = {"it": "LUNCH BREAK", "en": "LUNCH BREAK", "es": "LUNCH BREAK"}
 SCOOP_LABEL = {"it": "SCOOP", "en": "SCOOP", "es": "SCOOP"}
+NOTTI_LABEL = {"it": "NOTTI MONDIALI", "en": "WORLD CUP NIGHTS", "es": "NOCHES MUNDIALES"}
 TIPI = {"recap": {"label": RECAP_LABEL, "col": "#0a9d57", "cover": "cover-recap.svg"},
         "lunch": {"label": LUNCH_LABEL, "col": "#d98700", "cover": "cover-lunch.svg"},
         "storia": {"label": STORIA_LABEL, "col": "#1f6fd6", "cover": "cover-storia.svg"},
-        "scoop": {"label": SCOOP_LABEL, "col": "#e0392b", "cover": "cover-scoop.svg"}}
+        "scoop": {"label": SCOOP_LABEL, "col": "#e0392b", "cover": "cover-scoop.svg"},
+        "notti": {"label": NOTTI_LABEL, "col": "#21366e", "cover": "cover-notti.svg"}}
 MONTHS = {"it": ["gen","feb","mar","apr","mag","giu","lug","ago","set","ott","nov","dic"],
           "en": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
           "es": ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"]}
