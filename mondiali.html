@@ -39,6 +39,14 @@ nav.tabs a.home{color:var(--accent)}
 .hero{background:linear-gradient(120deg,#123f7e,#1f6fd6);color:#fff;padding:22px 0}
 .hero h1{font-family:Georgia,serif;font-size:30px}
 .hero p{opacity:.9;font-size:13.5px;margin-top:4px}
+.nottihead{font-size:12px;font-weight:800;letter-spacing:.6px;color:#21366e;text-transform:uppercase;margin:16px 0 9px;display:flex;align-items:center;gap:7px}
+.nottirow{display:flex;gap:12px;overflow-x:auto;padding-bottom:6px}
+.notticard{flex:0 0 270px;background:linear-gradient(125deg,#16285a,#22397a);color:#fff;border-radius:12px;padding:14px 16px;position:relative;overflow:hidden}
+.notticard::after{content:'';position:absolute;right:-30px;top:-30px;width:90px;height:90px;border-radius:50%;background:rgba(240,199,94,.18)}
+.notticard .tag{font-size:10px;font-weight:800;letter-spacing:.5px;color:#f0c75e}
+.notticard .ti{font-family:Georgia,serif;font-size:16px;line-height:1.25;margin-top:6px;position:relative;z-index:1}
+.notticard .dt{font-size:11.5px;color:#9db4ff;margin-top:9px}
+@media(max-width:560px){.notticard{flex:0 0 78%}}
 .seg{display:flex;gap:6px;margin:18px 0;flex-wrap:wrap}
 .seg button{border:1px solid var(--line);background:#fff;color:var(--muted);font-weight:700;font-size:13px;padding:8px 14px;border-radius:8px;cursor:pointer}
 .seg button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
@@ -83,6 +91,7 @@ tbody tr:nth-child(-n+2) td.pos{color:var(--accent);font-weight:800}
 </div></header>
 <div class="hero"><div class="wrap"><h1 id="heroH">Mondiale 2026</h1><p id="heroP">Stati Uniti · Canada · Messico — gironi, classifiche, calendario e risultati</p></div></div>
 <div class="wrap">
+  <div id="notti"></div>
   <div class="seg" id="seg"></div>
   <div id="error"></div>
   <div id="view"></div>
@@ -91,15 +100,15 @@ tbody tr:nth-child(-n+2) td.pos{color:var(--accent);font-weight:800}
 <script>
 const STR={
  it:{nlab:"ULTIM'ORA MONDIALE",tag:"MONDIALE 2026",heroH:"Mondiale 2026",heroP:"Stati Uniti · Canada · Messico — gironi, classifiche, calendario e risultati",
-     home:"Home",live:"Live",art:"Articoli",mond:"Mondiale",gironi:"Gironi",finali:"Fasi finali",
+     home:"Home",live:"Live",art:"Articoli",mond:"Mondiale",gironi:"Gironi",finali:"Fasi finali",nottilab:"Notti Mondiali",
      th:["#","Squadra","PG","V","N","P","GF","GS","DR","Pt"],vs:"vs",foot:"TransferBeat — Mondiale 2026 · dati openfootball (pubblico dominio)",
      rounds:{"Round of 32":"Ottavi (32)","Round of 16":"Ottavi","Quarter-final":"Quarti","Semi-final":"Semifinali","Match for third place":"Finale 3°/4° posto","Final":"Finale"}},
  en:{nlab:"WORLD CUP LIVE",tag:"WORLD CUP 2026",heroH:"World Cup 2026",heroP:"United States · Canada · Mexico — groups, standings, schedule and results",
-     home:"Home",live:"Live",art:"Articles",mond:"World Cup",gironi:"Groups",finali:"Knockout",
+     home:"Home",live:"Live",art:"Articles",mond:"World Cup",gironi:"Groups",finali:"Knockout",nottilab:"World Cup Nights",
      th:["#","Team","P","W","D","L","GF","GA","GD","Pts"],vs:"vs",foot:"TransferBeat — World Cup 2026 · data openfootball (public domain)",
      rounds:{"Round of 32":"Round of 32","Round of 16":"Round of 16","Quarter-final":"Quarter-finals","Semi-final":"Semi-finals","Match for third place":"Third place","Final":"Final"}},
  es:{nlab:"MUNDIAL EN VIVO",tag:"MUNDIAL 2026",heroH:"Mundial 2026",heroP:"Estados Unidos · Canadá · México — grupos, clasificaciones, calendario y resultados",
-     home:"Inicio",live:"En vivo",art:"Artículos",mond:"Mundial",gironi:"Grupos",finali:"Eliminatorias",
+     home:"Inicio",live:"En vivo",art:"Artículos",mond:"Mundial",gironi:"Grupos",finali:"Eliminatorias",nottilab:"Noches Mundiales",
      th:["#","Equipo","PJ","G","E","P","GF","GC","DG","Pts"],vs:"vs",foot:"TransferBeat — Mundial 2026 · datos openfootball (dominio público)",
      rounds:{"Round of 32":"Dieciseisavos","Round of 16":"Octavos","Quarter-final":"Cuartos","Semi-final":"Semifinales","Match for third place":"Tercer puesto","Final":"Final"}}
 };
@@ -108,7 +117,7 @@ let lang=(P.get('lang')||localStorage.getItem('tb_lang')||'it').toLowerCase();
 if(!['it','en','es'].includes(lang))lang='it';
 localStorage.setItem('tb_lang',lang);document.documentElement.lang=lang;
 const T=STR[lang];
-let DATA=null,mode='gironi';
+let DATA=null,mode='gironi',NOTTI=[];
 function fdate(utc){try{const d=new Date(utc);const loc=lang==='it'?'it-IT':(lang==='es'?'es-ES':'en-GB');
   return d.toLocaleDateString(loc,{day:'2-digit',month:'short'})+' '+d.toLocaleTimeString(loc,{hour:'2-digit',minute:'2-digit'});}catch(e){return''}}
 function applyStatic(){
@@ -171,8 +180,19 @@ function renderNews(){
   const html=items.map(n=>`<a href="${n.link||'#'}" target="_blank" rel="noopener">🔵 ${n.fonte}: ${n.titolo}</a>`).join('');
   sc.innerHTML=html+html;
 }
+function renderNotti(){
+  const el=document.getElementById('notti'); if(!el)return;
+  const arr=(NOTTI||[]).slice(0,3);
+  if(!arr.length){el.innerHTML='';return;}
+  const loc=lang==='it'?'it-IT':(lang==='es'?'es-ES':'en-GB');
+  el.innerHTML='<div class="nottihead">\uD83C\uDFC6 '+T.nottilab+'</div><div class="nottirow">'+
+    arr.map(a=>{let dt='';try{dt=new Date(a.updated).toLocaleDateString(loc,{day:'numeric',month:'long'});}catch(e){}
+      const ti=(a.t&&(a.t[lang]||a.t.it))||'';
+      return '<a class="notticard" href="articoli/'+lang+'/'+a.slug+'.html"><span class="tag">'+T.nottilab.toUpperCase()+'</span><div class="ti">'+ti+'</div><div class="dt">'+dt+'</div></a>';}).join('')+'</div>';
+}
 function init(){
   applyStatic();
+  fetch('data/articles/index.json?t='+Date.now()).then(r=>r.ok?r.json():null).then(d=>{if(d&&d.articoli){NOTTI=d.articoli.filter(a=>a.tipo==='notti').sort((a,b)=>(b.updated||'').localeCompare(a.updated||''));renderNotti();}}).catch(()=>{});
   fetch('data/mondiali.json').then(r=>{if(!r.ok)throw 0;return r.json();}).then(d=>{
     DATA=d;renderNews();render();
   }).catch(()=>{document.getElementById('error').innerHTML='<div class="err">Dati non caricati. Apri il sito via server (GitHub/Vercel).</div>';});
