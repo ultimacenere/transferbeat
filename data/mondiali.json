@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-06-12T19:50:39Z",
+  "aggiornato": "2026-06-13T07:18:43Z",
   "nome": "World Cup 2026",
   "groups": [
     {
@@ -293,7 +293,35 @@
             "iso": "ba",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              1,
+              1
+            ],
+            "ht": [
+              0,
+              1
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Cyle Larin",
+              "minute": "78",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": [
+            {
+              "name": "Jovo Lukić",
+              "minute": "21",
+              "pen": false,
+              "og": false
+            }
+          ]
         },
         {
           "round": "Matchday 3",
@@ -415,13 +443,13 @@
             "iso": "ba",
             "ph": false
           },
-          "pg": 0,
+          "pg": 1,
           "v": 0,
-          "n": 0,
+          "n": 1,
           "p": 0,
-          "gf": 0,
-          "gs": 0,
-          "pt": 0,
+          "gf": 1,
+          "gs": 1,
+          "pt": 1,
           "dr": 0
         },
         {
@@ -432,13 +460,13 @@
             "iso": "ca",
             "ph": false
           },
-          "pg": 0,
+          "pg": 1,
           "v": 0,
-          "n": 0,
+          "n": 1,
           "p": 0,
-          "gf": 0,
-          "gs": 0,
-          "pt": 0,
+          "gf": 1,
+          "gs": 1,
+          "pt": 1,
           "dr": 0
         },
         {
@@ -707,7 +735,53 @@
             "iso": "py",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              4,
+              1
+            ],
+            "ht": [
+              3,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Damian Bobadilla",
+              "minute": "7",
+              "pen": false,
+              "og": true
+            },
+            {
+              "name": "Folarin Balogun",
+              "minute": "31",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Folarin Balogun",
+              "minute": "45+5",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Giovanni Reyna",
+              "minute": "90+8",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": [
+            {
+              "name": "Mauricio",
+              "minute": "73",
+              "pen": false,
+              "og": false
+            }
+          ]
         },
         {
           "round": "Matchday 3",
@@ -823,27 +897,27 @@
       "classifica": [
         {
           "team": {
+            "en": "USA",
+            "it": "Stati Uniti",
+            "es": "Estados Unidos",
+            "iso": "us",
+            "ph": false
+          },
+          "pg": 1,
+          "v": 1,
+          "n": 0,
+          "p": 0,
+          "gf": 4,
+          "gs": 1,
+          "pt": 3,
+          "dr": 3
+        },
+        {
+          "team": {
             "en": "Australia",
             "it": "Australia",
             "es": "Australia",
             "iso": "au",
-            "ph": false
-          },
-          "pg": 0,
-          "v": 0,
-          "n": 0,
-          "p": 0,
-          "gf": 0,
-          "gs": 0,
-          "pt": 0,
-          "dr": 0
-        },
-        {
-          "team": {
-            "en": "Paraguay",
-            "it": "Paraguay",
-            "es": "Paraguay",
-            "iso": "py",
             "ph": false
           },
           "pg": 0,
@@ -874,20 +948,20 @@
         },
         {
           "team": {
-            "en": "USA",
-            "it": "Stati Uniti",
-            "es": "Estados Unidos",
-            "iso": "us",
+            "en": "Paraguay",
+            "it": "Paraguay",
+            "es": "Paraguay",
+            "iso": "py",
             "ph": false
           },
-          "pg": 0,
+          "pg": 1,
           "v": 0,
           "n": 0,
-          "p": 0,
-          "gf": 0,
-          "gs": 0,
+          "p": 1,
+          "gf": 1,
+          "gs": 4,
           "pt": 0,
-          "dr": 0
+          "dr": -3
         }
       ]
     },
@@ -3287,77 +3361,125 @@
   "news": {
     "it": [
       {
-        "titolo": "Mondiali di Calcio 2026 2026 - Messico - Sudafrica 2-0: Highlights - Video",
-        "fonte": "RaiPlay",
-        "link": "https://www.raiplay.it/video/2026/06/Messico---Sudafrica-2-0-Highlights--Mondiali-di-Calcio-FIFA-2026-d476e88b-0dea-4b83-b224-d80e5fe0a669.html",
-        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/11/1781213599328_2048x1152.png",
-        "dominio": "raiplay.it",
+        "titolo": "Mondiali 2026, Canada-Bosnia: le formazioni ufficiali",
+        "fonte": "Fantacalcio",
+        "link": "https://www.fantacalcio.it/news/calcio-estero/mondiali/12_06_2026/mondiali-2026-canada-bosnia-le-formazioni-ufficiali-494113",
+        "img": "",
+        "dominio": "fantacalcio.it",
+        "quando": "13 ore fa"
+      },
+      {
+        "titolo": "Il Canada ha pareggiato con la Bosnia Erzegovina",
+        "fonte": "Il Post",
+        "link": "https://www.ilpost.it/live/mondiali-di-calcio-2026/",
+        "img": "",
+        "dominio": "ilpost.it",
         "quando": "1 g fa"
       },
       {
-        "titolo": "DIRETTA Mondiali 2026, Canada-Bosnia Erzegovina 0-1: Lukic in gol di testa dopo un corner - Canada-Bosnia Ezegovina, la cronaca testuale",
+        "titolo": "Mondiali, Stati Uniti-Paraguay 4-1. Poker dei padroni di casa - Stati Uniti-Praguay 4-1. Poker dei padroni di casa",
         "fonte": "RaiNews",
         "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-2-canada-bosnia-erzegovina-stati-uniti-usa-paraguay-diretta-streaming-cronaca-testuale-highlights-gol-video-live-c77d321e-365d-4442-844f-e8aab9281cf8.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/12/1781292932744_small.jpg",
+        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/12/1781297120402_.png",
         "dominio": "rainews.it",
-        "quando": "poco fa"
+        "quando": "4 ore fa"
       },
       {
-        "titolo": "Canada-Bosnia diretta Mondiali: segui la partita di oggi LIVE",
+        "titolo": "Il Canada nega il visto al ghanese Partey per le accuse di stupro",
+        "fonte": "La Gazzetta dello Sport",
+        "link": "https://www.gazzetta.it/Calcio/Mondiali/12-06-2026/live-mondiali-2026-cosa-succede-tra-usa-canada-e-messico.shtml",
+        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/06/12/6a2c3fcf8e4a6.r_d.771-485-0.jpeg",
+        "dominio": "gazzetta.it",
+        "quando": "9 ore fa"
+      },
+      {
+        "titolo": "Gianni Infantile",
         "fonte": "Corriere dello Sport",
-        "link": "https://www.corrieredellosport.it/news/calcio/mondiali-2026/2026/06/12-149152661/canada-bosnia_diretta_mondiali_segui_la_partita_di_oggi_live",
-        "img": "https://cdn.corrieredellosport.it/images/2026/06/12/194033399-f0649f1d-a485-4582-a4e1-2d20faf52151.jpg",
+        "link": "https://www.corrieredellosport.it/news/calcio/mondiali-2026/2026/06/13-149160509/gianni_infantile",
+        "img": "https://cdn.corrieredellosport.it/images/2026/06/13/062452898-8ff6e74c-a2c8-4219-9bae-2668e5b856cb.jpg",
         "dominio": "corrieredellosport.it",
         "quando": "poco fa"
       },
       {
-        "titolo": "Mondiali 2026, Canada-Bosnia: le formazioni ufficiali",
-        "fonte": "Fantacalcio",
-        "link": "https://www.fantacalcio.it/news/calcio-estero/mondiali/12_06_2026/mondiali-2026-canada-bosnia-le-formazioni-ufficiali-494113",
-        "img": "https://content.fantacalcio.it/web/img/large/bosnia-36c8a92a-8ff9-4582-8849-72b1530d8d15.jpg",
-        "dominio": "fantacalcio.it",
-        "quando": "1 ore fa"
-      },
-      {
-        "titolo": "Corea del sud - Repubblica Ceca (2-1) Mondiali 2026",
-        "fonte": "la Repubblica",
-        "link": "https://www.repubblica.it/sport/dirette/calcio/mondiali-2026/diretta-corea-del-sud-repubblica-ceca-g2608242/",
-        "img": "",
-        "dominio": "repubblica.it",
-        "quando": "17 ore fa"
-      },
-      {
-        "titolo": "Mondiali di Calcio 2026 2026 - Corea del Sud - Repubblica Ceca 2-1: Highlights - Video",
-        "fonte": "RaiPlay",
-        "link": "https://www.raiplay.it/video/2026/06/Corea-del-Sud---Repubblica-Ceca-2-1-Highlights--Mondiali-di-Calcio-FIFA-2026-1bac457f-88fd-437e-bddf-f72de8e996ca.html",
-        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/12/1781240112562_MONDIALI.jpg",
-        "dominio": "raiplay.it",
-        "quando": "19 ore fa"
-      },
-      {
-        "titolo": "Mondiali, Corea del Sud - Repubblica Ceca 2-1: la sintesi della partita",
-        "fonte": "RaiNews",
-        "link": "https://www.rainews.it/video/2026/06/mondiali-corea-del-sud--repubblica-ceca-2-1-la-sintesi-della-partita-5a7df334-da59-4316-ba1f-06742a1a25e2.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/12/1781236527011_rainewsfbdaabacfc.jpg",
-        "dominio": "rainews.it",
+        "titolo": "Infantino scherza sull’Italia: “Forse si qualificherebbe al Mondiale con 128 squadre…”",
+        "fonte": "La Gazzetta dello Sport",
+        "link": "https://video.gazzetta.it/calcio/mondiali/infantino-scherza-sull-italia-forse-si-qualificherebbe-al-mondiale-con-228-squadre/847b50b0-2f38-44b1-8a3f-dc693ccfcxlk",
+        "img": "https://dimages2.gazzettaobjects.it/files/image_880_494/uploads/2026/06/12/6a2c0c15c98d9.jpeg",
+        "dominio": "video.gazzetta.it",
         "quando": "14 ore fa"
       },
       {
-        "titolo": "Mondiali 2026 su Prime Video, Dazn stringe un accordo: i dettagli e come attivare l'offerta",
-        "fonte": "Il Messaggero",
-        "link": "https://www.ilmessaggero.it/sport/calcio/mondiali_2026_dazn_prime_video_accordo_dettagli_come_attivare_l_offerta-9588767.html",
-        "img": "https://statics.cedscdn.it/photos/MED_HIGH/2026/06/12/9588767_12191217_onecms_1rqn1rql7vuqz05049d.jpg",
-        "dominio": "ilmessaggero.it",
-        "quando": "poco fa"
+        "titolo": "Mondiali 2026, le partite di oggi in diretta: esordio straripante per gli Stati Uniti, 4-1 al Paraguay. Infantino punge l'Italia ed è polemica. «Non si qualifica neanche con 208 squadre». La replica di Abodi",
+        "fonte": "Corriere della Sera",
+        "link": "https://www.corriere.it/sport/calcio/mondiali/diretta-live/26_giugno_12/mondiali-2026-partite-oggi-risultato-diretta-usa-canada.shtml",
+        "img": "https://dimages2.corriereobjects.it/files/og_thumbnail/uploads/2026/06/13/6a2cb04d1c8ba.jpeg",
+        "dominio": "corriere.it",
+        "quando": "3 ore fa"
+      },
+      {
+        "titolo": "Come seguire i Mondiali 2026 in tv e streaming",
+        "fonte": "Corriere della Sera",
+        "link": "https://www.corriere.it/sport/calcio/mondiali/26_giugno_11/dove-vedere-mondiali-2026-tv-streaming-01d52716-ed76-4a69-8df3-c5bf38416xlk.shtml",
+        "img": "https://dimages2.corriereobjects.it/files/og_thumbnail/uploads/2026/06/09/6a284adc3cdab.jpeg",
+        "dominio": "corriere.it",
+        "quando": "1 g fa"
       }
     ],
     "en": [
       {
-        "titolo": "World Cup 2026: Canada and USA enter fray; empty seats; Mexico’s winning start; McTominay fitness boost – as it happened",
+        "titolo": "World Cup 2026: USA v Paraguay - highlights & reaction",
+        "fonte": "BBC",
+        "link": "https://www.bbc.co.uk/sport/football/live/ce8my95y5g4t",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/e40a/live/bc38f050-66e8-11f1-8e1d-bbbb1017d210.jpg",
+        "dominio": "bbc.co.uk",
+        "quando": "3h ago"
+      },
+      {
+        "titolo": "USA 4-1 Paraguay: World Cup 2026 – as it happened",
         "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/12/world-cup-2026-news-updates-live-usa-canada-paraguay-bosnia-herzegovina",
-        "img": "https://i.guim.co.uk/img/media/3093c85e1d2ce39f14f64e0a83ce4bdc26c02d36/306_0_4659_3727/master/4659.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=e1ae901f793797ea4eebd2cc6609a818",
+        "link": "https://www.theguardian.com/football/live/2026/jun/12/usa-v-paraguay-world-cup-2026-live",
+        "img": "https://i.guim.co.uk/img/media/e3bdd00c50961a9202c38934fbb047d55848331d/366_0_6282_5026/master/6282.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=698784d9c447756898f17ba2020fdc84",
         "dominio": "theguardian.com",
+        "quando": "9h ago"
+      },
+      {
+        "titolo": "USA start World Cup in style - but can they finally join the elite?",
+        "fonte": "BBC",
+        "link": "https://www.bbc.com/sport/football/articles/c621z2k51rdo",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/1011/live/994e0f20-66cb-11f1-a266-03e5ce1bfa47.jpg",
+        "dominio": "bbc.com",
+        "quando": "2h ago"
+      },
+      {
+        "titolo": "Canada 1-1 Bosnia and Herzegovina: World Cup 2026 – as it happened",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/live/2026/jun/12/canada-v-bosnia-and-herzegovina-world-cup-2026-live",
+        "img": "https://i.guim.co.uk/img/media/1d9f6fa1c3a573c706db980dc485a2aedc812441/0_0_1919_1535/master/1919.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=7e3c17a4552e88cd788af9465bc4f1c5",
+        "dominio": "theguardian.com",
+        "quando": "14h ago"
+      },
+      {
+        "titolo": "Canada World Cup opener splits Bosnian fans among two ‘home nations’",
+        "fonte": "Al Jazeera",
+        "link": "https://www.aljazeera.com/sports/2026/6/13/canada-world-cup-opener-splits-bosnian-fans-among-two-home-nations",
+        "img": "https://www.aljazeera.com/wp-content/uploads/2026/06/AFP__20260612__2281268615__v1__HighRes__CanadaVBosniaAndHerzegovinaGroupBFifaWorldCu-1781320760.jpg?resize=1920%2C1440",
+        "dominio": "aljazeera.com",
+        "quando": "2h ago"
+      },
+      {
+        "titolo": "Hollywood legend, 63, looks unrecognisable in bucket hat at World Cup clash as BBC commentators don't even notice",
+        "fonte": "The Sun",
+        "link": "https://www.thesun.co.uk/sport/39394325/mike-myers-hollywood-legend-world-cup-canada-bosnia-bbc/",
+        "img": "",
+        "dominio": "thesun.co.uk",
+        "quando": "11h ago"
+      },
+      {
+        "titolo": "Today at the World Cup: Guide to the action for the armchair fan",
+        "fonte": "The Telegraph",
+        "link": "https://www.telegraph.co.uk/football/2026/06/13/today-at-the-world-cup-guide-fixtures-brazil-scotland-haiti/",
+        "img": "https://www.telegraph.co.uk/content/dam/football/2026/06/12/TELEMMGLPICT000489786362_17813062617740_trans_NvBQzQNjv4BqpVlberWd9EgFPZtcLiMQf0Rf_Wk3V23H2268P_XkPxc.jpeg?impolicy=OG-Standard",
+        "dominio": "telegraph.co.uk",
         "quando": "2h ago"
       },
       {
@@ -3366,121 +3488,73 @@
         "link": "https://www.bbc.co.uk/sport/football/live/c7vy32qj1zdt",
         "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/1730/live/ec546870-6669-11f1-8546-8f19e4fe30f4.jpg",
         "dominio": "bbc.co.uk",
-        "quando": "13h ago"
-      },
-      {
-        "titolo": "Canada - Bosnia and Herzegovina",
-        "fonte": "TNT Sports",
-        "link": "https://www.tntsports.co.uk/football/world-cup/2026/live-canada-bosnia-and-herzegovina_mtc1579427/live-commentary.shtml",
-        "img": "https://i.eurosport.com/2026/06/12/image-509b2aff-68fd-48c0-a117-02e46f503426.jpeg",
-        "dominio": "tntsports.co.uk",
-        "quando": "1h ago"
-      },
-      {
-        "titolo": "World Cup 2026: Thomas Partey refused entry to Canada ahead of Ghana's opener with Panama in Toronto",
-        "fonte": "Sky Sports",
-        "link": "https://www.skysports.com/football/news/17243/13553454/world-cup-2026-thomas-partey-refused-entry-to-canada-ahead-of-ghana-match-with-panama",
-        "img": "https://e0.365dm.com/26/06/1600x900/skysports-thomas-partey-ghana_7271859.jpg?20260612182458",
-        "dominio": "skysports.com",
-        "quando": "1h ago"
-      },
-      {
-        "titolo": "World Cup 2026: England team is built around Harry Kane - he's the only genuine world-class player in squad, says Gary Neville",
-        "fonte": "Sky Sports",
-        "link": "https://www.skysports.com/football/news/29326/13553281/world-cup-2026-england-team-is-built-around-harry-kane-hes-the-only-genuine-world-class-player-in-squad-says-gary-neville",
-        "img": "https://e0.365dm.com/26/06/1600x900/skysports-harry-kane-england_7271443.jpg?20260612103631",
-        "dominio": "skysports.com",
-        "quando": "9h ago"
-      },
-      {
-        "titolo": "World Cup 2026: When do England play and how can you follow it?",
-        "fonte": "BBC",
-        "link": "https://www.bbc.com/sport/football/articles/c79y1jp5zeno",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/d2a5/live/57648670-6662-11f1-8546-8f19e4fe30f4.jpg",
-        "dominio": "bbc.com",
-        "quando": "6h ago"
-      },
-      {
-        "titolo": "England World Cup 2026 team guide",
-        "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/2026/jun/11/england-world-cup-2026-team-guide",
-        "img": "https://i.guim.co.uk/img/media/f0c5be8ff6b79046040eb2155182715fdf147cc9/428_0_3348_2678/master/3348.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=f9c36ffee1e8a199d839c17e0ce51613",
-        "dominio": "theguardian.com",
-        "quando": "9h ago"
-      },
-      {
-        "titolo": "South Korea 2-1 Czechia: World Cup 2026 – as it happened",
-        "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/12/fifa-world-cup-2026-live-south-korea-v-czechia-updates-kor-vs-cze-group-a-match-score-latest",
-        "img": "https://i.guim.co.uk/img/media/56002adb4fb43a7f4f35f6aee82da58b7914ca4f/422_0_2628_2103/master/2628.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=538f01a660ed470ecd76f36846f60182",
-        "dominio": "theguardian.com",
-        "quando": "15h ago"
+        "quando": "1d ago"
       }
     ],
     "es": [
+      {
+        "titolo": "Canadá - Bosnia: resultado, resumen y goles | Mundial 2026 de fútbol: fase de grupos",
+        "fonte": "Mundo Deportivo",
+        "link": "https://www.mundodeportivo.com/futbol/mundial/20260612/1004193045/canada-bosnia-directo-fase-grupos-mundial-2026-futbol.html",
+        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/06/12/6a2c6fad53c80.jpeg",
+        "dominio": "mundodeportivo.com",
+        "quando": "9 h"
+      },
       {
         "titolo": "Así fue la ceremonia de inauguración del Mundial de Fútbol 2026 en México",
         "fonte": "El Mundo",
         "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/12/6a2bacd9e85ece26528b456d-video.html",
         "img": "https://e01-phantom-elmundo.uecdn.es/a08ee15b42f045b7e993c3588d3f77a6/provider/dm/crop/150x0/1770x1080/resize/1200/f/webp/v/bXurA1gAwoyOfM4d0/x1080",
         "dominio": "elmundo.es",
+        "quando": "1 d"
+      },
+      {
+        "titolo": "Ceremonia inaugural del Mundial de fútbol 2026 en Canadá | Las actuaciones de Michael Bublé o Alanis Morissette, en directo",
+        "fonte": "La Vanguardia",
+        "link": "https://www.lavanguardia.com/deportes/futbol/20260612/11563055/mundial-2026-futbol-ceremonia-inaugural-canada-ultima-hora-hoy-en-directo.html",
+        "img": "https://www.lavanguardia.com/files/og_thumbnail/uploads/2026/06/12/6a2c51c1e9a88.jpeg",
+        "dominio": "lavanguardia.com",
         "quando": "12 h"
       },
       {
-        "titolo": "Qué partidos se juegan hoy, viernes, en el Mundial 2026: horarios y dónde ver gratis en televisión y online",
-        "fonte": "ABC",
-        "link": "https://www.abc.es/deportes/futbol/mundial/partidos-hoy-viernes-mundial-horarios-donde-ver-gratis-20260612215512-nt.html",
-        "img": "https://s1.abcstatics.com/abc/www/multimedia/deportes/2026/06/11/partidosmudnial-kP9C-U30159275351NwD-1200x630@diario_abc.jpg",
-        "dominio": "abc.es",
-        "quando": "2 h"
+        "titolo": "Resumen de la jornada 1 del Mundial 2026 | México y Corea del Sur logran las primeras victorias del Mundial",
+        "fonte": "EL PAÍS",
+        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-11/inauguracion-de-la-copa-mundial-de-futbol-resumen-y-ultimas-noticias.html",
+        "img": "",
+        "dominio": "elpais.com",
+        "quando": "1 d"
       },
       {
-        "titolo": "Canadá - Bosnia hoy, en directo: fase de grupos del Mundial 2026 | Última hora del Grupo B",
+        "titolo": "Mundial 2026, en directo: noticias de la Copa del Mundo y última hora de las selecciones, hoy en vivo",
         "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/canada-bosnia-en-directo-fase-de-grupos-mundial-2026-hoy-en-vivo-f202606-d/",
+        "link": "https://as.com/futbol/mundial/mundial-2026-en-directo-noticias-de-la-copa-del-mundo-y-ultima-hora-de-las-selecciones-hoy-en-vivo-f202606-d-4/",
         "img": "",
         "dominio": "as.com",
         "quando": "ahora"
       },
       {
-        "titolo": "Canadá - Bosnia, en directo hoy en vídeo el partido del grupo B del Mundial 2026",
-        "fonte": "RTVE.es",
-        "link": "https://www.rtve.es/deportes/20260612/mundial-2026-canada-bosnia-directo-video-resumen-resultado/17106488.shtml",
-        "img": "https://img.rtve.es/imagenes/mundial-2026-canada-bosnia-directo-video-resumen-resultado/01781081891154.jpg",
-        "dominio": "rtve.es",
+        "titolo": "Mundial 2026, últimas noticias en directo | Luis de la Fuente tiene a sus 26 por primera vez",
+        "fonte": "EL PAÍS",
+        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-12/resumen-y-ultimas-noticias-de-la-copa-mundial-de-futbol.html",
+        "img": "https://imagenes.elpais.com/resizer/v2/6FWH23QLOFH6NING6T4TPIDGIQ.jpg?auth=8c791fe5d5e33e6554ea8ad00a5239dde9216bdee32396657b5dc98467c9de1c&width=1200",
+        "dominio": "elpais.com",
+        "quando": "2 h"
+      },
+      {
+        "titolo": "Horario y donde ver gratis en TV el Brasil- Marruecos del Mundial 2026",
+        "fonte": "La Razón",
+        "link": "https://www.larazon.es/deportes/futbol/mundial/horario-donde-ver-gratis-brasil-marruecos-mundial-2026-b50m_202606136a2cf1ee0d35a17610b1fbfd.html",
+        "img": "https://fotografias-2.larazon.es/clipping/cmsimages01/2026/05/30/737B1DE7-3805-44F4-9929-46195DB2FE43/98.jpg?crop=2866,1613,x0,y149&width=1900&height=1069&optimize=low&format=webply",
+        "dominio": "larazon.es",
         "quando": "1 h"
       },
       {
-        "titolo": "Canadá - Bosnia Herzegovina, hoy en directo | Segunda inauguración del Mundial, en vivo",
-        "fonte": "MARCA",
-        "link": "https://www.marca.com/futbol/mundial/canada-bosnia-herzegovina/2026/06/12/01_0117_20260612_597_537-directo.html",
-        "img": "https://objetos.estaticos-marca.com/assets/multimedia/imagenes/2026/06/12/17812840630699.jpg",
-        "dominio": "marca.com",
-        "quando": "ahora"
-      },
-      {
-        "titolo": "Mundial 2026, en directo hoy: Canadá deniega el visado a Thomas Partey y se perderá el debut de Ghana",
-        "fonte": "RTVE.es",
-        "link": "https://www.rtve.es/deportes/20260612/mundial-2026-directo-hoy-partidos-resultados-clasificacion-goles-resumen-12-junio/17109340.shtml",
-        "img": "https://img.rtve.es/imagenes/mundial-2026-directo-hoy-partidos-resultados-clasificacion-goles-resumen-12-junio/01781191385317.jpg",
-        "dominio": "rtve.es",
-        "quando": "10 h"
-      },
-      {
-        "titolo": "Última hora del Mundial de Fútbol 2026: Canadá deniega la entrada a Thomas Partey, acusado de delitos sexuales",
-        "fonte": "Onda Cero",
-        "link": "https://www.ondacero.es/deportes/futbol/mundial-futbol/ultima-hora-mundial-futbol-2026-corea-mexico-encabezan-grupo_202606126a2b8cb20f0ef63eb6665830.html",
-        "img": "https://image.ondacero.es/clipping/cmsimages01/2026/06/12/8AC42600-709D-484C-925F-41EBC5F373C7/canada-deniega-entrada-thomas-partey-acusado-delitos-sexuales-reino-unido-deja-fuera-debut-ghana_69.jpg?crop=1920,1080,x0,y0&width=1280&height=720&optimize=low&format=webply",
-        "dominio": "ondacero.es",
-        "quando": "ahora"
-      },
-      {
-        "titolo": "Mundial 2026, en directo | Última hora de España y partidos de fase de grupos hoy, 12 de junio",
-        "fonte": "MARCA",
-        "link": "https://www.marca.com/futbol/mundial/2026/06/12/6a2be417cf1a9beb617a6124-directo.html",
-        "img": "https://objetos.estaticos-marca.com/assets/multimedia/imagenes/2026/06/12/17812629923569.jpg",
-        "dominio": "marca.com",
-        "quando": "2 h"
+        "titolo": "Brasil en el Mundial 2026, en directo: última hora de la canarinha hoy, 12 junio | Ancelotti, Vini, Neymar...",
+        "fonte": "Diario AS",
+        "link": "https://as.com/futbol/mundial/brasil-en-el-mundial-2026-en-directo-ultima-hora-de-la-canarinha-hoy-12-junio-ancelotti-vini-neymar-f202606-d/",
+        "img": "",
+        "dominio": "as.com",
+        "quando": "4 h"
       }
     ]
   }
