@@ -146,6 +146,65 @@ def _has_move_signal(t):
     low = (t or "").lower()
     return any(k in low for k in _MOVE_SIGNALS)
 
+# --- Filtri qualita' Nomi: gate evidenza + sanity nome + esclusioni ---
+_OFFICIAL_KW = ("ufficial", "ha firmato", "firmato", "firma con", "firma per", "comunicato",
+                "visite mediche", "here we go", "annunci", "e' un nuovo", "hecho oficial",
+                "oficial", "official", "signs", "signed", "completes", "unveiled")
+_AGREE_KW = ("accordo", "intesa", "fumata bianca", "ha detto si", "manca solo la firma",
+             "tutto fatto", "e' fatta", "affare fatto", "trovata l'intesa", "raggiunto l'accordo",
+             "agreement", "agreed", "done deal", "acuerdo", "pacto")
+_WOMEN_KW = ("femminil", "women", "women's", " wsl", "nwsl", "liga f", "femenin", "feminin")
+_NAME_STOP = {"non", "il", "lo", "del", "della", "specificato", "giocatore", "news",
+              "calciomercato", "live", "oggi", "altro", "che", "ore", "trattative"}
+# parole di trattativa concreta (obj) vs interesse vago (rumor)
+_OBJ_KW = ("offert", "contatt", "incontro", "affondo", "pressing", "rilancio", "summit",
+           "blitz", "fissato l'incontro", "bid", "offer", "meeting", "negotiat")
+_SOFT_KW = ("possibil", "blando", "sondagg", "idea", "piace", "interess", "sogno", "pista",
+            "tenta", "valuta", "ci pensa", "pensa a", "seguit", "obiettivo di mercato", "nel mirino")
+NOISE_RAW = ("beth mead", "niamh charles", "khadija shaw", "bukayo saka mead",
+             "andreas schurrle", "andre schurrle")
+
+def _is_womens(t):
+    low = (t or "").lower()
+    return any(k in low for k in _WOMEN_KW)
+
+def _looks_like_name(g):
+    g = (g or "").strip()
+    if not g or any(c.isdigit() for c in g):
+        return False
+    toks = g.split()
+    if not (1 <= len(toks) <= 4):
+        return False
+    low = [w.strip(".,'`").lower() for w in toks]
+    if any(w in _NAME_STOP for w in low):
+        return False
+    if not any(w[:1].isupper() for w in toks):
+        return False
+    return True
+
+def _surname_key(g):
+    toks = _deaccent(g or "").lower().split()
+    return toks[-1] if toks else ""
+
+def _gate_state(g, st, batch_low):
+    """done richiede prova di ufficialita' nei titoli che citano il giocatore; conf richiede accordo."""
+    if st not in ("done", "conf"):
+        return st
+    sur = _surname_key(g)
+    rel = " || ".join(t for t in batch_low if sur and sur in t)
+    has_off = any(k in rel for k in _OFFICIAL_KW)
+    has_agr = any(k in rel for k in _AGREE_KW)
+    def _lvl():
+        if rel and any(k in rel for k in _OBJ_KW) and not any(k in rel for k in _SOFT_KW):
+            return "obj"
+        return "rumor"
+    if st == "done" and not has_off:
+        return "conf" if has_agr else _lvl()
+    if st == "conf" and not (has_agr or has_off):
+        return _lvl()
+    return st
+
+
 def extract_movements_global(titles):
     """Estrazione GLOBALE dei movimenti: da TUTTI i titoli, con provenienza/destinazione
     ESPLICITE (da -> a). Nessuna attribuzione per-squadra qui: la fa assign_movements."""
@@ -171,12 +230,18 @@ def extract_movements_global(titles):
                 if "choices" not in j:
                     _t.sleep(2); continue
                 movs = json.loads(j["choices"][0]["message"]["content"]).get("movimenti", [])
+                batch_low = [b.lower() for b in batch]
+                noise = {_norm_name(x) for x in NOISE_RAW}
                 for m in movs:
                     g = (m.get("giocatore") or "").strip()
                     st = m.get("stato") if m.get("stato") in ("rumor", "obj", "conf", "done") else "rumor"
-                    if g and len(g) > 2 and not brain.is_coach(g):
-                        out.append({"giocatore": g, "da": (m.get("da") or "").strip(),
-                                    "a": (m.get("a") or "").strip(), "stato": st})
+                    if not (g and len(g) > 2 and _looks_like_name(g) and not brain.is_coach(g)):
+                        continue
+                    if _norm_name(g) in noise:
+                        continue
+                    st = _gate_state(g, st, batch_low)
+                    out.append({"giocatore": g, "da": (m.get("da") or "").strip(),
+                                "a": (m.get("a") or "").strip(), "stato": st})
                 break
             except Exception as e:
                 print("    LLM movimenti errore:", str(e)[:80]); _t.sleep(2)
@@ -217,6 +282,9 @@ def assign_movements(movs, teams):
     rows = _club_rows(teams)
     per = {}
     def add(team, st, entry):
+        cl = match_club(entry.get("club", ""), rows)
+        if cl and cl == team:
+            return  # club di provenienza/destinazione = stessa squadra: non e' un movimento
         per.setdefault(team, {"rumor": [], "obj": [], "conf": [], "done": []})[st].append(entry)
     for m in movs:
         rc = roster_club(m["giocatore"])
@@ -290,6 +358,7 @@ def _days_since(iso):
 
 HIST_BLACKLIST = {"banega", "murillo"}  # ex/storici noti: mai mostrare nei Nomi
 STALE_DAYS = 3  # un movimento non piu' citato da >= STALE_DAYS giorni scade (tutti gli stati)
+STRONG_TTL = 1  # done/conf vanno riconfermati con prove entro STRONG_TTL giorni, altrimenti -> obj
 
 def _same_first(a, b):
     ta = a.split(); tb = b.split()
@@ -310,7 +379,8 @@ def merge_nomi(old, new, today, max_age=60):
                 continue
             m[key] = {"giocatore": it["giocatore"], "direzione": it.get("direzione", "in"),
                       "club": it.get("club", ""), "stato": st,
-                      "_first": it.get("_first", today), "_seen": it.get("_seen", today)}
+                      "_first": it.get("_first", today), "_seen": it.get("_seen", today),
+                      "_strong": it.get("_strong", "")}
     for st in order:
         for it in (new or {}).get(st, []):
             key = _norm_name(it.get("giocatore", ""))
@@ -318,6 +388,8 @@ def merge_nomi(old, new, today, max_age=60):
                 continue
             if key in m:
                 cur = m[key]; cur["_seen"] = today
+                if st in ("conf", "done"):
+                    cur["_strong"] = today
                 if STATE_RANK[st] > STATE_RANK[cur["stato"]]:
                     cur["stato"] = st; cur["direzione"] = it.get("direzione", cur["direzione"])
                     if it.get("club"):
@@ -326,7 +398,8 @@ def merge_nomi(old, new, today, max_age=60):
                     cur["club"] = it["club"]
             else:
                 m[key] = {"giocatore": it["giocatore"], "direzione": it.get("direzione", "in"),
-                          "club": it.get("club", ""), "stato": st, "_first": today, "_seen": today}
+                          "club": it.get("club", ""), "stato": st, "_first": today, "_seen": today,
+                          "_strong": today if st in ("conf", "done") else ""}
     # fusione varianti dello stesso giocatore: "Hojlund" + "Rasmus Hojlund" -> una voce.
     # Prudente: fonde solo se un nome e' il solo cognome o e' contenuto nell'altro
     # (cosi' "Sebastiano Esposito" e "Francesco Esposito" restano distinti).
@@ -355,6 +428,7 @@ def merge_nomi(old, new, today, max_age=60):
                 fa = a.get("_first") or "9999"; fb = b.get("_first") or "9999"
                 a["_first"] = min(fa, fb)
                 a["_seen"] = max(a.get("_seen") or "", b.get("_seen") or "")
+                a["_strong"] = max(a.get("_strong") or "", b.get("_strong") or "")
     out = {"rumor": [], "obj": [], "conf": [], "done": []}
     for it in m.values():
         nm = it.get("giocatore", "")
@@ -367,8 +441,14 @@ def merge_nomi(old, new, today, max_age=60):
         if (it["stato"] == "rumor" and not it.get("club")
                 and it["_seen"] == it["_first"] and _days_since(it["_first"]) >= 1):
             continue                                  # rumor mono-fonte senza club: solo nel giorno stesso
-        out[it["stato"]].append({"giocatore": it["giocatore"], "direzione": it["direzione"],
-                                 "club": it["club"], "_first": it["_first"], "_seen": it["_seen"]})
+        st_cur = it["stato"]
+        if st_cur in ("conf", "done"):
+            strong = it.get("_strong")
+            if (not strong) or _days_since(strong) >= STRONG_TTL:
+                st_cur = "obj"                         # done/conf non riconfermati da prove: declassa a obiettivo
+        out[st_cur].append({"giocatore": it["giocatore"], "direzione": it["direzione"],
+                            "club": it["club"], "_first": it["_first"], "_seen": it["_seen"],
+                            "_strong": it.get("_strong", "")})
     for st in out:
         out[st].sort(key=lambda x: x["_seen"], reverse=True)
     return out
@@ -465,7 +545,7 @@ def build_board(teams, kw, lang, loc, direct_items=None, today=""):
                          "affidabilita": it["affidabilita"], "quando": it["quando"]})
         prepared[t["nome"]] = (t, colonne, feed)
         for it in items:
-            if not _has_move_signal(it["titolo"]):
+            if not _has_move_signal(it["titolo"]) or _is_womens(it["titolo"]):
                 continue
             kx = _norm_name(it["titolo"])[:80]
             if kx and kx not in _pseen:

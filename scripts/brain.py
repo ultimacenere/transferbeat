@@ -11,12 +11,12 @@ Tenuto COMPATTO di proposito per non sforare i limiti di token.
 CHARTER = (
     "Sei l'analista di TransferBeat, sito di calciomercato di Serie A, La Liga e Premier League. "
     "Lavori SOLO su questi tre campionati: se nessun club delle tre leghe e' coinvolto, 'squadra' resta vuota.\n"
-    "STATI (dal piu' debole al piu' forte):\n"
-    "- rumor: voce, idea, interesse, sondaggio, 'piace', 'seguito'.\n"
-    "- obj: obiettivo dichiarato, trattativa avviata, contatti, offerta presentata.\n"
-    "- conf: affare dato per FATTO o accordo raggiunto. Anche 'X lascia il club' detto come certezza, 'intesa totale', 'manca solo la firma'.\n"
-    "- done: UFFICIALE: annuncio, firma, visite mediche fatte, 'here we go', comunicato del club.\n"
-    "REGOLA DI COERENZA: lo stato puo' solo SALIRE (rumor<obj<conf<done). Non declassare.\n"
+    "STATI (dal piu' debole al piu' forte). In caso di DUBBIO scegli SEMPRE lo stato piu' BASSO:\n"
+    "- rumor (DEFAULT): voce, idea, interesse anche concreto, sondaggio, 'piace', 'seguito', 'possibile trattativa', 'sogno', 'tentativo', 'pista', 'ci pensa', 'spinge per'.\n"
+    "- obj: trattativa REALMENTE avviata con contatti diretti o OFFERTA gia' presentata: 'incontro con l'agente', 'pressing', 'sempre piu' vicino', 'affondo'.\n"
+    "- conf: accordo RAGGIUNTO esplicito: 'accordo trovato', 'intesa totale', 'fumata bianca', 'ha detto si', 'manca solo la firma'. Un interesse o una trattativa NON bastano per 'conf'.\n"
+    "- done: SOLO ufficialita' esplicita: 'ufficiale', comunicato del club, 'ha firmato', visite mediche FATTE, 'here we go', annuncio. Senza queste parole NON e' done.\n"
+    "REGOLA: classifica per cio' che la notizia dice ORA; NON gonfiare lo stato. Un interesse o una possibile trattativa resta 'rumor'.\n"
     "SMENTITA: metti smentita=true solo se la notizia ANNULLA/NEGA un affare gia' dato ('salta tutto', 'naufragata', 'nessun accordo', 'resta').\n"
     "ANTI-INVENZIONE: usa SOLO cio' che e' scritto nel testo. Non inventare cifre, date, dichiarazioni o club non citati.\n"
     "Distingui sempre PROVENIENZA e DESTINAZIONE: direzione 'out' se lascia la 'squadra', 'in' se la raggiunge."
@@ -117,28 +117,37 @@ MOVES_RULES = (
     "- Un titolo puo' contenere PIU' movimenti: estraili tutti.\n"
     "- Usa il nome COSI' come scritto: se c'e' solo il cognome riporta solo il cognome, "
     "NON aggiungere ne inventare il nome di battesimo.\n"
+    "- STATO CONSERVATIVO: in dubbio usa 'rumor'. Marca 'done' SOLO con ufficialita' esplicita "
+    "(ufficiale/ha firmato/visite mediche/comunicato/here we go); 'conf' SOLO con accordo esplicito "
+    "(accordo/intesa/fumata bianca/manca solo la firma). Un interesse o una 'possibile trattativa' e' SEMPRE 'rumor'.\n"
+    "- SOLO calcio MASCHILE dei club: ignora calcio femminile, giovanili/Primavera e nazionali.\n"
     '- Formato: {"movimenti":[{"giocatore":"","da":"","a":"","stato":"rumor|obj|conf|done"}]}'
 )
 MOVES_EXAMPLE_IN = ("Notizie:\n"
- "- Dumfries via dall'Inter: accordo col Real Madrid, pronta la clausola\n"
+ "- Dumfries via dall'Inter: accordo raggiunto col Real Madrid, manca solo la firma\n"
  "- Calciomercato: le news di oggi e le trattative LIVE\n"
- "- Inter, Provedel e' sempre piu' vicino\n"
+ "- Inter, offerta presentata al Lazio per Provedel: e' sempre piu' vicino\n"
  "- Slot-Milan, contatti avviati con l'allenatore olandese\n"
  "- Hojlund firma per il Napoli: lascia il Manchester United, e' ufficiale\n"
- "- Altro che Premier: la volonta' di Stankovic e' chiara\n"
+ "- Bastoni, possibile trattativa col Barcellona: i blaugrana ci pensano\n"
+ "- Pio Esposito, blando interesse del Manchester United\n"
+ "- Beth Mead saluta l'Arsenal femminile: va al Manchester City Women\n"
  "- Solet rinnova con l'Udinese... per ora: l'Inter osserva")
 MOVES_EXAMPLE_OUT = ('{"movimenti":['
  '{"giocatore":"Denzel Dumfries","da":"Inter","a":"Real Madrid","stato":"conf"},'
- '{"giocatore":"Ivan Provedel","da":"","a":"Inter","stato":"obj"},'
+ '{"giocatore":"Ivan Provedel","da":"Lazio","a":"Inter","stato":"obj"},'
  '{"giocatore":"Rasmus Hojlund","da":"Manchester United","a":"Napoli","stato":"done"},'
+ '{"giocatore":"Alessandro Bastoni","da":"Inter","a":"Barcellona","stato":"rumor"},'
+ '{"giocatore":"Pio Esposito","da":"","a":"Manchester United","stato":"rumor"},'
  '{"giocatore":"Oumar Solet","da":"Udinese","a":"Inter","stato":"rumor"}'
  ']}')
 
 def movements_messages(titles):
     """Messaggi per l'estrazione globale: system compatto + 1 esempio guida + titoli."""
     sys_p = ("Sei l'analista di calciomercato di TransferBeat (Serie A, La Liga, Premier League). "
-             "STATI: rumor=voce/interesse; obj=trattativa/contatti/offerta; conf=affare dato per fatto/accordo; "
-             "done=ufficiale/firmato/visite mediche.\n" + glossary_block() + "\n" + MOVES_RULES +
+             "STATI: rumor=voce/interesse/possibile trattativa (DEFAULT); obj=trattativa avviata/contatti/offerta presentata; "
+             "conf=accordo esplicito raggiunto; done=UFFICIALE (ufficiale/ha firmato/visite mediche/here we go). "
+             "In DUBBIO usa 'rumor'; NON marcare done/conf senza parole esplicite.\n" + glossary_block() + "\n" + MOVES_RULES +
              "\nRispondi SOLO con JSON valido.")
     return [{"role": "system", "content": sys_p},
             {"role": "user", "content": MOVES_EXAMPLE_IN},
