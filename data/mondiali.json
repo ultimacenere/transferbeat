@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-06-14T18:17:59Z",
+  "aggiornato": "2026-06-14T22:38:09Z",
   "nome": "World Cup 2026",
   "groups": [
     {
@@ -1092,7 +1092,71 @@
             "iso": "cw",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              7,
+              1
+            ],
+            "ht": [
+              3,
+              1
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Felix Nmecha",
+              "minute": "6",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Nico Schlotterbeck",
+              "minute": "38",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Kai Havertz",
+              "minute": "45+5",
+              "pen": true,
+              "og": false
+            },
+            {
+              "name": "Kai Havertz",
+              "minute": "88",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Jamal Musiala",
+              "minute": "47",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Nathaniel Brown",
+              "minute": "68",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Deniz Undav",
+              "minute": "78",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": [
+            {
+              "name": "Livano Comenencia",
+              "minute": "21",
+              "pen": false,
+              "og": false
+            }
+          ]
         },
         {
           "round": "Matchday 4",
@@ -1208,20 +1272,20 @@
       "classifica": [
         {
           "team": {
-            "en": "Curaçao",
-            "it": "Curaçao",
-            "es": "Curazao",
-            "iso": "cw",
+            "en": "Germany",
+            "it": "Germania",
+            "es": "Alemania",
+            "iso": "de",
             "ph": false
           },
-          "pg": 0,
-          "v": 0,
+          "pg": 1,
+          "v": 1,
           "n": 0,
           "p": 0,
-          "gf": 0,
-          "gs": 0,
-          "pt": 0,
-          "dr": 0
+          "gf": 7,
+          "gs": 1,
+          "pt": 3,
+          "dr": 6
         },
         {
           "team": {
@@ -1229,23 +1293,6 @@
             "it": "Ecuador",
             "es": "Ecuador",
             "iso": "ec",
-            "ph": false
-          },
-          "pg": 0,
-          "v": 0,
-          "n": 0,
-          "p": 0,
-          "gf": 0,
-          "gs": 0,
-          "pt": 0,
-          "dr": 0
-        },
-        {
-          "team": {
-            "en": "Germany",
-            "it": "Germania",
-            "es": "Alemania",
-            "iso": "de",
             "ph": false
           },
           "pg": 0,
@@ -1273,6 +1320,23 @@
           "gs": 0,
           "pt": 0,
           "dr": 0
+        },
+        {
+          "team": {
+            "en": "Curaçao",
+            "it": "Curaçao",
+            "es": "Curazao",
+            "iso": "cw",
+            "ph": false
+          },
+          "pg": 1,
+          "v": 0,
+          "n": 0,
+          "p": 1,
+          "gf": 1,
+          "gs": 7,
+          "pt": 0,
+          "dr": -6
         }
       ]
     },
@@ -1299,7 +1363,47 @@
             "iso": "jp",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              2,
+              2
+            ],
+            "ht": [
+              0,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Virgil van Dijk",
+              "minute": "51",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Crysencio Summerville",
+              "minute": "64",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": [
+            {
+              "name": "Keito Nakamura",
+              "minute": "57",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Daichi Kamada",
+              "minute": "88",
+              "pen": false,
+              "og": false
+            }
+          ]
         },
         {
           "round": "Matchday 4",
@@ -1421,13 +1525,13 @@
             "iso": "jp",
             "ph": false
           },
-          "pg": 0,
+          "pg": 1,
           "v": 0,
-          "n": 0,
+          "n": 1,
           "p": 0,
-          "gf": 0,
-          "gs": 0,
-          "pt": 0,
+          "gf": 2,
+          "gs": 2,
+          "pt": 1,
           "dr": 0
         },
         {
@@ -1438,13 +1542,13 @@
             "iso": "nl",
             "ph": false
           },
-          "pg": 0,
+          "pg": 1,
           "v": 0,
-          "n": 0,
+          "n": 1,
           "p": 0,
-          "gf": 0,
-          "gs": 0,
-          "pt": 0,
+          "gf": 2,
+          "gs": 2,
+          "pt": 1,
           "dr": 0
         },
         {
@@ -3468,9 +3572,17 @@
         "titolo": "Germania-Curacao diretta Mondiali 2026: segui la partita del gruppo E. Coppa del mondo oggi LIVE",
         "fonte": "Corriere dello Sport",
         "link": "https://www.corrieredellosport.it/news/calcio/mondiali-2026/2026/06/14-149194385/germania-curacao_diretta_mondiali_2026_segui_la_partita_del_gruppo_e_coppa_del_mondo_oggi_live",
-        "img": "https://cdn.corrieredellosport.it/images/2026/06/14/181401875-64f8285e-5b10-4021-8586-d32fab629a3a.jpg",
+        "img": "https://cdn.corrieredellosport.it/images/2026/06/14/190602528-828f28ac-6208-4a4d-b4c7-77554fb50224.jpg",
         "dominio": "corrieredellosport.it",
-        "quando": "2 ore fa"
+        "quando": "1 ore fa"
+      },
+      {
+        "titolo": "Mondiali 2026, calendario e partite di oggi: in campo otto squadre",
+        "fonte": "Sky Sport",
+        "link": "https://sport.sky.it/calcio/mondiali/2026/06/14/mondiali-2026-partite-oggi-14-giugno",
+        "img": "https://sport.sky.it/assets/images/555906cc2979157087d8234f747d42d8491a0e54/skysport/it/calcio/mondiali/2026/05/27/amichevoli-internazionali-pre-mondiali-2026-su-sky/mondiale_pall_cop.jpg?im=Resize,width=1218",
+        "dominio": "sport.sky.it",
+        "quando": "3 ore fa"
       },
       {
         "titolo": "Mondiali di Calcio 2026 2026 - Brasile - Marocco 1-1: Highlights - Video",
@@ -3481,184 +3593,176 @@
         "quando": "1 g fa"
       },
       {
-        "titolo": "Mondiali di calcio 2026, in corso Germania-Curacao. Alle 22 Olanda-Giappone. LIVE",
-        "fonte": "Sky TG24",
-        "link": "https://tg24.sky.it/sport/2026/06/14/mondiali-calcio-2026-news-oggi-diretta",
-        "img": "https://tg24.sky.it/assets/images/2163332cb5ff2ab7e81515b0085dc3fbc5391df3/skytg24/it/sport/2026/06/14/mondiali-calcio-2026-news-oggi-diretta/mondiali-ansa.jpg?im=Resize,width=1218",
-        "dominio": "tg24.sky.it",
+        "titolo": "Mondiali 2026, Brasile-Marocco 1-1: lampo di Vinicius evita il ko della Selecao",
+        "fonte": "RaiNews",
+        "link": "https://www.rainews.it/articoli/2026/06/mondiali-2026-brasile-marocco-1-1-vinicius-salva-la-selecao-al-debutto-risultato-brasile-marocco-e1f21eda-1051-46b0-9af0-051ac6f93227.html",
+        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/14/1781395339556_.jpg",
+        "dominio": "rainews.it",
+        "quando": "18 ore fa"
+      },
+      {
+        "titolo": "Mondiali 2026, Olanda-Giappone show: finisce 2 a 2 - Prima lo studio, poi i gol: Olanda-Giappone è da spettacolo",
+        "fonte": "RaiNews",
+        "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-4-germania-curacao-paesi-bassi-giappone-costa-avorio-ecuador-svezia-tunisia-diretta-streaming-cronaca-highlights-video-live-risultati-16b63778-78f8-4ee8-9190-21dcf92d19f3.html",
+        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/14/1781472636319_.jpg",
+        "dominio": "rainews.it",
         "quando": "poco fa"
       },
       {
-        "titolo": "Mondiali 2026, Australia-Turchia 2-0: Irankunda sblocca al 27', Metcalfe firma il raddoppio",
-        "fonte": "RaiNews",
-        "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-3-quatar-svizzera-brasile-marocco-haiti-scozia-australia-turchia-diretta-streaming-cronaca-testuale-highlights-gol-video-live-795e3b2b-0737-49b4-9515-1d9b1653d360.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/14/1781411830971_.jpg",
-        "dominio": "rainews.it",
-        "quando": "10 ore fa"
+        "titolo": "Bella partita, quattro gol e un punto a testa: il Giappone rimonta due volte l'Olanda",
+        "fonte": "La Gazzetta dello Sport",
+        "link": "https://www.gazzetta.it/Calcio/Mondiali/14-06-2026/olanda-giappone-live-risultato-e-marcatori-mondiali-girone-f-prima-giornata.shtml",
+        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/06/14/6a2f1f849b5a8.r_d.1270-642-0.jpeg",
+        "dominio": "gazzetta.it",
+        "quando": "poco fa"
       },
       {
-        "titolo": "Mondiali 2026, news e programma di oggi in diretta: Malen in campo con l'Olanda alle 22",
+        "titolo": "Mondiali 2026, le partite in diretta | L'Olanda si butta via, il Giappone pareggia nel finale: 2-2. La Germania batte il Curacao 7-1",
+        "fonte": "Corriere della Sera",
+        "link": "https://www.corriere.it/sport/calcio/mondiali/diretta-live/26_giugno_14/mondiali-2026-partite-oggi-risultato-diretta-germania-olanda.shtml",
+        "img": "https://dimages2.corriereobjects.it/files/og_thumbnail/uploads/2026/06/14/6a2f21e13174d.jpeg",
+        "dominio": "corriere.it",
+        "quando": "poco fa"
+      },
+      {
+        "titolo": "Mondiali 2026, news in diretta: la nazionale iraniana è arrivata a Los Angeles",
         "fonte": "Sky Sport",
         "link": "https://sport.sky.it/calcio/mondiali/2026/06/14/mondiali-2026-news-oggi-14-giugno-diretta",
-        "img": "https://sport.sky.it/assets/images/7b667a08102e6d5d404dd1abb6dec236f3184f7e/skysport/it/calcio/mondiali/2026/06/14/mondiali-2026-news-oggi-14-giugno-diretta/malen_2.jpg?im=Resize,width=1218",
+        "img": "https://sport.sky.it/assets/images/0c8a7a0d1eb6dedb49608a53c007eb3ca79a4a93/skysport/it/calcio/mondiali/2026/06/14/mondiali-2026-news-oggi-14-giugno-diretta/getty_pullman_iran.jpg?im=Resize,width=1218",
         "dominio": "sport.sky.it",
-        "quando": "1 ore fa"
-      },
-      {
-        "titolo": "Mondiali 2026, 'soccer' o 'football'? Trump divide e l'Italia lo chiama 'calcio da oltre un secolo: ecco perché",
-        "fonte": "Adnkronos",
-        "link": "https://www.adnkronos.com/sport/calcio-mondiali-2026-trump-infantino-soccer-football_3qjk5Qk3vxnathcdlMutyQ",
-        "img": "https://www.adnkronos.com/resources/02a6-20dd9b406de1-548a22eecf06-1000/trump.jpeg",
-        "dominio": "adnkronos.com",
-        "quando": "8 ore fa"
-      },
-      {
-        "titolo": "Cooling break, Klopp distrugge la Fifa: \"Il calcio diventato interruzione tra una pubblicità e l'altra\"",
-        "fonte": "Tuttosport",
-        "link": "https://www.tuttosport.com/news/calcio/mondiali-2026/2026/06/14-149193868/cooling_break_klopp_distrugge_la_fifa_il_calcio_diventato_interruzione_tra_una_pubblicit_e_l_altra",
-        "img": "https://cdn.tuttosport.com/images/2026/06/14/154758178-52b858c8-c2a1-48c6-9d22-9559a1c61412.jpg",
-        "dominio": "tuttosport.com",
-        "quando": "2 ore fa"
-      },
-      {
-        "titolo": "Mondiali 2026: esordio straripante per gli Stati Uniti, 4-1 al Paraguay. Infantino punge l'Italia ed è polemica",
-        "fonte": "Corriere della Sera",
-        "link": "https://www.corriere.it/sport/calcio/mondiali/diretta-live/26_giugno_12/mondiali-2026-partite-oggi-risultato-diretta-usa-canada.shtml",
-        "img": "https://dimages2.corriereobjects.it/files/og_thumbnail/uploads/2026/06/13/6a2cb04d1c8ba.jpeg",
-        "dominio": "corriere.it",
-        "quando": "1 g fa"
+        "quando": "poco fa"
       }
     ],
     "en": [
       {
-        "titolo": "Germany v Curaçao: World Cup 2026 – live",
+        "titolo": "Netherlands 2-2 Japan: World Cup 2026 – live",
         "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/14/germany-v-curacao-world-cup-2026-live",
-        "img": "https://i.guim.co.uk/img/media/848c1746a9bcea989085adb1f805a83e642e4e18/167_83_1531_1224/master/1531.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=78b0c444c4986bbf078b073b64ebf5f5",
+        "link": "https://www.theguardian.com/football/live/2026/jun/14/netherlands-v-japan-world-cup-2026-live",
+        "img": "https://i.guim.co.uk/img/media/11c106490ec8aebb4dfe4dcbb9273a5b949777ec/449_0_1872_1497/master/1872.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=8688fa985a6f8bbad8da4bb94977d37f",
         "dominio": "theguardian.com",
-        "quando": "1h ago"
+        "quando": "2h ago"
       },
       {
-        "titolo": "Germany vs Curacao LIVE: FIFA World Cup 2026 Group E score, commentary, updates & stats",
-        "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/live/c621jz79r3jt",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/d3f7/live/77450880-6819-11f1-8e1d-bbbb1017d210.jpg",
-        "dominio": "bbc.co.uk",
-        "quando": "just now"
-      },
-      {
-        "titolo": "Germany vs. Curaçao LIVE: World Cup 2026 updates as Nagelsmann's side take control",
-        "fonte": "ESPN",
-        "link": "https://www.espn.co.uk/football/story/_/id/49060342/germany-curacao-live-world-cup-2026-latest-updates-commentary-score-result",
-        "img": "https://a1.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0614%2Fr1673053_1296x729_16%2D9.jpg",
-        "dominio": "espn.co.uk",
-        "quando": "just now"
-      },
-      {
-        "titolo": "Netherlands vs Japan live updates: World Cup 2026 game latest news and buildup",
-        "fonte": "The New York Times",
-        "link": "https://www.nytimes.com/athletic/live-blogs/netherlands-vs-japan-live-updates-world-cup-2026-score-result/FruSpta6REdO/",
-        "img": "https://cdn-media.theathletic.com/cdn-cgi/image/width=1200,height=630,fit=cover/FruSpta6REdO_r5wcItfAQKut_1440x960.jpg",
-        "dominio": "nytimes.com",
-        "quando": "1h ago"
-      },
-      {
-        "titolo": "Fifa World Cup 2026: Can Germany & Netherlands join Scotland as European winners",
-        "fonte": "BBC",
-        "link": "https://www.bbc.com/sport/football/live/cr47lgg64kvt",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/9499/live/06f914e0-67d8-11f1-8546-8f19e4fe30f4.png",
-        "dominio": "bbc.com",
-        "quando": "12h ago"
-      },
-      {
-        "titolo": "Haiti 0-1 Scotland Highlights - World Cup 2026 - 14 June 2026",
-        "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/videos/cvgq4j59rw1o",
-        "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/6641/live/b3f832b0-679d-11f1-b1db-af71d47507d6.jpg",
-        "dominio": "bbc.co.uk",
-        "quando": "14h ago"
+        "titolo": "World Cup 2026: England camp hit by tornado warning as Scotland reacts to first victory in 36 years – as it happened",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/live/2026/jun/14/world-cup-2026-news-scotland-react-to-first-world-cup-victory-in-36-years-as-australia-beat-turkey",
+        "img": "https://i.guim.co.uk/img/media/275a5f2cbb803261791be7e390b00eede0fd8cf4/0_645_3855_3082/master/3855.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=38ba98756108737b17981ad4f0c156d0",
+        "dominio": "theguardian.com",
+        "quando": "15h ago"
       },
       {
         "titolo": "World Cup 2026 today: Live updates and news -- as it happened on June 14",
         "fonte": "ESPN",
         "link": "https://www.espn.co.uk/football/story/_/id/49058587/world-cup-2026-today-blog-14-06-2026-live-updates-news-fixtures-schedule-results-scotland-win-brazil-morocco-draw",
-        "img": "https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0614%2Fr1672931_594x396_3%2D2.jpg",
+        "img": "",
         "dominio": "espn.co.uk",
-        "quando": "2h ago"
+        "quando": "3h ago"
       },
       {
-        "titolo": "Brazil 1-1 Morocco: Vinicius Jr rescues draw as Brazil come from behind",
+        "titolo": "'Big goal from a big player!' - Van Dijk scores Netherlands opener",
         "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/live/c20ym4y24ggt",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/561b/live/f19a6540-6778-11f1-8d26-cd9924e3b0b3.jpg",
+        "link": "https://www.bbc.co.uk/sport/football/videos/c5yz9pzz5gdo",
+        "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/5c55/live/a7564e90-6836-11f1-8546-8f19e4fe30f4.jpg",
         "dominio": "bbc.co.uk",
-        "quando": "15h ago"
+        "quando": "just now"
+      },
+      {
+        "titolo": "Germany vs Curacao LIVE: FIFA World Cup 2026 Group E score, commentary, updates & stats",
+        "fonte": "BBC",
+        "link": "https://www.bbc.co.uk/sport/football/live/c621jz79r3jt",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/d4d2/live/e24c00f0-6820-11f1-8546-8f19e4fe30f4.jpg",
+        "dominio": "bbc.co.uk",
+        "quando": "3h ago"
+      },
+      {
+        "titolo": "World Cup 2026: Livano Comenencia scores Curacao's first-ever goal",
+        "fonte": "BBC",
+        "link": "https://www.bbc.com/sport/football/videos/cp36w3preyvo",
+        "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/061e/live/366532c0-6820-11f1-8546-8f19e4fe30f4.jpg",
+        "dominio": "bbc.com",
+        "quando": "just now"
+      },
+      {
+        "titolo": "Germany 7-1 Curaçao: World Cup 2026 – as it happened",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/live/2026/jun/14/germany-v-curacao-world-cup-2026-live",
+        "img": "https://i.guim.co.uk/img/media/6cc62922631ebef38f26ba169dbcb4f160125d6a/998_196_1617_1294/master/1617.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=72561b33d422f15af968de9a4d35fdf2",
+        "dominio": "theguardian.com",
+        "quando": "7h ago"
+      },
+      {
+        "titolo": "Côte d’Ivoire v Ecuador: World Cup 2026 – live",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/live/2026/jun/14/cote-d-ivoire-v-ecuador-world-cup-2026-live",
+        "img": "https://i.guim.co.uk/img/media/6711dcaa8d136b553c2c5192891edc1235bd8fbd/496_591_2747_2197/master/2747.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=cf227883fe7e4ea6bd8cb22b49d663c4",
+        "dominio": "theguardian.com",
+        "quando": "just now"
       }
     ],
     "es": [
       {
-        "titolo": "Mundial de fútbol 2026, en directo: última hora de todos los partidos, horarios y resultados de hoy domingo 14 de junio",
-        "fonte": "La Razón",
-        "link": "https://www.larazon.es/deportes/futbol/mundial-futbol-2026-directo-ultima-hora-todos-partidos-horarios-resultados-hoy-sabado-13-junio_202606136a2e35130d35a17610b72620.html",
-        "img": "https://fotografias-2.larazon.es/clipping/cmsimages02/2026/06/09/F6770600-1291-4418-9B4F-02D174A1C2EB/quien-ganara-mundial-2026_98.jpg?crop=1280,720,x0,y0&width=1900&height=1069&optimize=low&format=webply",
-        "dominio": "larazon.es",
-        "quando": "1 h"
-      },
-      {
-        "titolo": "Pausas publicitarias de hidratación, cuatro cuartos y espectáculos musicales: la 'americanización' total del fútbol",
-        "fonte": "El Mundo",
-        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/14/6a2d7994e4d4d8a1078b459c.html",
-        "img": "https://e01-phantom-elmundo.uecdn.es/8a8ca4a27303bcc6918250be1887fa4a/resize/1200/f/webp/assets/multimedia/imagenes/2026/06/13/17813652068100.jpg",
-        "dominio": "elmundo.es",
-        "quando": "19 h"
-      },
-      {
-        "titolo": "Alemania - Curazao hoy, en directo: fase de grupos del Mundial 2026 | Última hora del Grupo E",
+        "titolo": "Países Bajos 2 - Japón 2: resumen, goles y resultado del partido de fase de grupos del Mundial 2026",
         "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/alemania-curazao-en-directo-previa-y-ultima-hora-del-grupo-e-mundial-2026-en-vivo-f202606-d/",
+        "link": "https://as.com/futbol/mundial/paises-bajos-japon-hoy-en-directo-fase-de-grupos-del-mundial-2026-ultima-hora-del-grupo-f-f202606-d/",
         "img": "",
         "dominio": "as.com",
         "quando": "ahora"
       },
       {
-        "titolo": "Mundial 2026, en directo | Última hora de España y partidos de fase de grupos hoy, 14 de junio",
-        "fonte": "MARCA",
-        "link": "https://www.marca.com/futbol/mundial/2026/06/14/6a2e5460cf1a9beb6197d6a2-directo.html",
-        "img": "https://objetos.estaticos-marca.com/assets/multimedia/imagenes/2026/06/14/17814213135986.jpg",
-        "dominio": "marca.com",
-        "quando": "ahora"
+        "titolo": "Mundial 2026, en directo: noticias y última hora de la Copa del Mundo, hoy en vivo",
+        "fonte": "SPORT",
+        "link": "https://www.sport.es/es/noticias/mundial-futbol/mundial-2026-directo-noticias-ultima-131380402",
+        "img": "https://estaticos-cdn.prensaiberica.es/clip/268795f6-4f80-4dad-8736-256745869e05_16-9-discover-aspect-ratio_default_0_x723y321.jpg",
+        "dominio": "sport.es",
+        "quando": "1 h"
       },
       {
-        "titolo": "Marruecos hace historia en el Mundial 2026: junta en el campo por primera vez a once jugadores nacidos fuera",
-        "fonte": "La Razón",
-        "link": "https://www.larazon.es/deportes/marruecos-hace-historia-mundial-2026-junta-campo-primera-vez-once-jugadores-nacidos-fuera-pais-b50m_202606146a2e60130f0ef63eb672b74b.html",
-        "img": "https://fotografias-2.larazon.es/clipping/cmsimages02/2026/06/14/8A6993D2-EE41-4994-BB6A-C8321429F8F8/98.jpg?crop=6000,3376,x0,y312&width=1900&height=1069&optimize=low&format=webply",
-        "dominio": "larazon.es",
-        "quando": "10 h"
-      },
-      {
-        "titolo": "Vinícius salva un empate ante Marruecos para una gris Brasil en el estreno mundialista de Ancelotti",
-        "fonte": "RTVE.es",
-        "link": "https://www.rtve.es/deportes/20260613/mundial-2026-brasil-marruecos-directo-video-resumen-resultado/17109895.shtml",
-        "img": "https://img.rtve.es/imagenes/mundial-2026-brasil-marruecos-directo-video-resumen-resultado/01781395858384.jpg",
-        "dominio": "rtve.es",
-        "quando": "21 h"
-      },
-      {
-        "titolo": "Mundial 2026, ultimas noticias en directo | Brasil empata con Marruecos y Escocia y Australia suman sus primeros tres puntos",
-        "fonte": "EL PAÍS",
-        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-14/resumen-y-ultimas-noticias-de-la-copa-mundial-de-futbol.html",
+        "titolo": "Ecuador vs. Costa de Marfil por el Grupo E del Mundial 2026, en vivo: resultado, goles y más",
+        "fonte": "CNN en Español",
+        "link": "https://cnnespanol.cnn.com/2026/06/14/deportes/live-news/resultado-ecuador-costa-marfil-mundial-2026-orix",
         "img": "",
-        "dominio": "elpais.com",
-        "quando": "5 h"
+        "dominio": "cnnespanol.cnn.com",
+        "quando": "1 h"
       },
       {
-        "titolo": "«Solo en inglés»: la polémica con el uso del español en las ruedas de prensa del Mundial",
-        "fonte": "El Debate",
-        "link": "https://www.eldebate.com/deportes/mundial-futbol-2026/20260614/fifa-prohibe-preguntar-espanol-mundial-aunque-futbolistas-hablen-perfectamente_428469.html",
-        "img": "https://www.eldebate.com/files/article_social/files/fp/uploads/2026/06/14/6a2e7695d18ce.r_d.2735-1471-2000.jpeg",
-        "dominio": "eldebate.com",
-        "quando": "8 h"
+        "titolo": "Costa de Marfil - Ecuador, en directo: fase de grupos del Mundial 2026 hoy, en vivo",
+        "fonte": "Diario AS",
+        "link": "https://as.com/futbol/mundial/costa-de-marfil-ecuador-en-directo-fase-de-grupos-del-mundial-2026-hoy-en-vivo-f202606-d/",
+        "img": "",
+        "dominio": "as.com",
+        "quando": "1 h"
+      },
+      {
+        "titolo": "Costa de Marfil - Ecuador en directo",
+        "fonte": "El Mundo",
+        "link": "https://www.elmundo.es/deportes/futbol/mundial/costa-de-marfil-ecuador/2026/06/15/01_0117_20260614_1221_830-directo.html",
+        "img": "https://e00-elmundo.uecdn.es/assets/v26/img/destacadas/elmundo__logo-generica.jpg",
+        "dominio": "elmundo.es",
+        "quando": "1 h"
+      },
+      {
+        "titolo": "Mourinho manda huEGOS",
+        "fonte": "El Mundo",
+        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/14/6a2eb256fc6c830e638b45b8.html",
+        "img": "https://e01-phantom-elmundo.uecdn.es/1def13b6a71019d9c43e99093347d38d/crop/418x224/2875x1863/resize/1200/f/webp/assets/multimedia/imagenes/2026/06/14/17814457348248.jpg",
+        "dominio": "elmundo.es",
+        "quando": "1 h"
+      },
+      {
+        "titolo": "Alemania surfea la 'ola azul' de una digna Curazao y luce músculo en su debut en el Mundial",
+        "fonte": "RTVE.es",
+        "link": "https://www.rtve.es/deportes/20260614/mundial-2026-alemania-curazao-directo-resumen-resultado/17110178.shtml",
+        "img": "https://img.rtve.es/imagenes/mundial-2026-alemania-curazao-directo-resumen-resultado/01781462043146.jpg",
+        "dominio": "rtve.es",
+        "quando": "6 h"
+      },
+      {
+        "titolo": "Alemania - Curazao, en directo | Mundial 2026: fase de grupos, en vivo",
+        "fonte": "Mundo Deportivo",
+        "link": "https://www.mundodeportivo.com/futbol/mundial/20260614/1004194719/alemania-curazao-directo-mundial-2026-fase-grupos.html",
+        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/files/fp/uploads/2026/06/14/6a2ee6f2ae93f.r_d.1380-584-8329.jpeg",
+        "dominio": "mundodeportivo.com",
+        "quando": "3 h"
       }
     ]
   }
