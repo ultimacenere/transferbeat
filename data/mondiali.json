@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-06-15T10:19:02Z",
+  "aggiornato": "2026-06-15T18:15:45Z",
   "nome": "World Cup 2026",
   "groups": [
     {
@@ -1890,7 +1890,19 @@
             "iso": "cv",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              0,
+              0
+            ],
+            "ht": [
+              0,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true
         },
         {
           "round": "Matchday 5",
@@ -2012,30 +2024,13 @@
             "iso": "cv",
             "ph": false
           },
-          "pg": 0,
+          "pg": 1,
           "v": 0,
-          "n": 0,
+          "n": 1,
           "p": 0,
           "gf": 0,
           "gs": 0,
-          "pt": 0,
-          "dr": 0
-        },
-        {
-          "team": {
-            "en": "Saudi Arabia",
-            "it": "Arabia Saudita",
-            "es": "Arabia Saudí",
-            "iso": "sa",
-            "ph": false
-          },
-          "pg": 0,
-          "v": 0,
-          "n": 0,
-          "p": 0,
-          "gf": 0,
-          "gs": 0,
-          "pt": 0,
+          "pt": 1,
           "dr": 0
         },
         {
@@ -2044,6 +2039,23 @@
             "it": "Spagna",
             "es": "España",
             "iso": "es",
+            "ph": false
+          },
+          "pg": 1,
+          "v": 0,
+          "n": 1,
+          "p": 0,
+          "gf": 0,
+          "gs": 0,
+          "pt": 1,
+          "dr": 0
+        },
+        {
+          "team": {
+            "en": "Saudi Arabia",
+            "it": "Arabia Saudita",
+            "es": "Arabia Saudí",
+            "iso": "sa",
             "ph": false
           },
           "pg": 0,
@@ -3642,19 +3654,11 @@
   "news": {
     "it": [
       {
-        "titolo": "Calendario Mondiali calcio 2026 oggi in tv (15 giugno): orari partite, canali, streaming",
+        "titolo": "Mondiali 2026, Brasile fermato dal Marocco. Scozia di misura, crolla la Turchia di Montella",
         "fonte": "OA Sport",
-        "link": "https://www.oasport.it/2026/06/calendario-mondiali-calcio-2026-in-tv-orari-partite-di-oggi-15-giugno-canali-streaming/",
-        "img": "https://www.oasport.it/wp-content/uploads/2026/06/23765344_small-e1781470975489.jpg",
+        "link": "https://www.oasport.it/2026/06/mondiali-2026-brasile-fermato-dal-marocco-scozia-di-misura-crolla-la-turchia-di-montella/",
+        "img": "https://www.oasport.it/wp-content/uploads/2026/06/Brasile-IPA-Sport.jpg",
         "dominio": "oasport.it",
-        "quando": "2 ore fa"
-      },
-      {
-        "titolo": "Calcio bailado, ritmi alti e fantasia: sembrava il Brasile, era il Marocco",
-        "fonte": "Il Fatto Quotidiano",
-        "link": "https://www.ilfattoquotidiano.it/2026/06/14/mondiali-2026-brasile-marocco-ancelotti-analisi-commento/8418670/",
-        "img": "https://st.ilfattoquotidiano.it/wp-content/uploads/2026/06/14/marocco-brasile-1200x630.jpg",
-        "dominio": "ilfattoquotidiano.it",
         "quando": "1 g fa"
       },
       {
@@ -3666,176 +3670,184 @@
         "quando": "2 g fa"
       },
       {
-        "titolo": "Mondiali 2026, Brasile-Marocco 1-1: lampo di Vinicius evita il ko della Selecao",
+        "titolo": "Mondiali 2026, Australia-Turchia 2-0: Irankunda sblocca al 27', Metcalfe firma il raddoppio",
         "fonte": "RaiNews",
-        "link": "https://www.rainews.it/articoli/2026/06/mondiali-2026-brasile-marocco-1-1-vinicius-salva-la-selecao-al-debutto-risultato-brasile-marocco-e1f21eda-1051-46b0-9af0-051ac6f93227.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/14/1781395339556_.jpg",
+        "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-3-quatar-svizzera-brasile-marocco-haiti-scozia-australia-turchia-diretta-streaming-cronaca-testuale-highlights-gol-video-live-795e3b2b-0737-49b4-9515-1d9b1653d360.html",
+        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/14/1781411830971_.jpg",
         "dominio": "rainews.it",
         "quando": "1 g fa"
       },
       {
-        "titolo": "Nazionali non all'altezza ed Europa penalizzata: Mondiale, la formula Infantino non convince",
-        "fonte": "La Gazzetta dello Sport",
-        "link": "https://www.gazzetta.it/Calcio/Mondiali/15-06-2026/mondiali-il-formato-extralarge-deciso-dalla-fifa-di-infantino-non-funziona.shtml",
-        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/06/15/6a2f32091a2c3.jpeg",
-        "dominio": "gazzetta.it",
-        "quando": "4 ore fa"
+        "titolo": "Mondiali 2026, le partite del 14 giugno: gli orari e dove vederle in tv. La Germania sfida la favola Curacao",
+        "fonte": "Quotidiano Nazionale",
+        "link": "https://www.quotidiano.net/mondiali/2026-partite-di-oggi-domenica-14-orari-tv-56bbb596",
+        "img": "https://www.quotidiano.net/image-service/view/acePublic/alias/contentid/OTQ5NDEwZWMtOGQ1YS00/0/foi-soc-spo-wcs-team-curacao-airport-arrival-fifa-world-cup-20.jpg?f=16:9&w=1200&h=675",
+        "dominio": "quotidiano.net",
+        "quando": "1 g fa"
       },
       {
-        "titolo": "Mondiali 2026 in TV oggi, dove vedere Spagna-Capo Verde e Belgio-Egitto su Rai e DAZN: programma e orari partite",
-        "fonte": "Fanpage",
-        "link": "https://www.fanpage.it/sport/calcio/mondiali-2026-oggi-in-tv-su-rai-e-dazn-dove-vedere-spagna-capo-verde-e-belgio-egitto-gli-orari-delle-partite/",
-        "img": "",
-        "dominio": "fanpage.it",
-        "quando": "5 ore fa"
+        "titolo": "Mondiali 2026. Svezia-Tunisia 5-1. Costa d'Avorio-Ecuador 1-0. Olanda-Giappone: 2-2",
+        "fonte": "RaiNews",
+        "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-4-germania-curacao-paesi-bassi-giappone-costa-avorio-ecuador-svezia-tunisia-diretta-streaming-cronaca-highlights-video-live-risultati-16b63778-78f8-4ee8-9190-21dcf92d19f3.html",
+        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/14/1781472636319_.jpg",
+        "dominio": "rainews.it",
+        "quando": "14 ore fa"
       },
       {
-        "titolo": "Mondiali 2026, alle 18 la Spagna debutta contro l'esordiente Capo Verde - Mondiali 2026, la classifica dei gironi",
+        "titolo": "Mondiali di calcio 2026, Germania-Curacao 7-1. Olanda-Giappone 2-2",
+        "fonte": "Sky TG24",
+        "link": "https://tg24.sky.it/sport/2026/06/14/mondiali-calcio-2026-news-oggi-diretta",
+        "img": "https://tg24.sky.it/assets/images/4088685812b557eadc0d9f0349914d19ec1b82ed/skytg24/it/sport/2026/06/14/mondiali-calcio-2026-news-oggi-diretta/92D97D6FFAF05F093A6A9A6E217A4A1A.JPG?im=Resize,width=1218",
+        "dominio": "tg24.sky.it",
+        "quando": "11 ore fa"
+      },
+      {
+        "titolo": "Mondiali 2026, in campo Spagna-Capo Verde 0-0 dopo i primi 45' - Spagna-Capo Verde, cronaca testuale",
         "fonte": "RaiNews",
         "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-5-diretta-streaming-cronaca-highlights-video-live-risultati-spagna-capoverde-belgio-egitto-arabia-saudita-uruguay-iran-nuova-zelanda-0531961f-9bc2-4d66-895c-6f10b9a486a7.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/15/1781509878904_rainewsbddebfcfdd.jpg",
+        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/15/1781541464169_.jpg",
         "dominio": "rainews.it",
-        "quando": "poco fa"
+        "quando": "1 ore fa"
       },
       {
-        "titolo": "Mondiali 2026 LIVE, è l'ora dell'Iran. Taremi: 'Troppa tensione intorno a noi'",
-        "fonte": "Sky Sport",
-        "link": "https://sport.sky.it/calcio/mondiali/2026/06/15/mondiali-2026-news-oggi-15-giugno-diretta",
-        "img": "https://sport.sky.it/assets/images/ced35e7dac131e4bec9faed8b8ec333b9c20a10a/skysport/it/calcio/mondiali/2026/06/15/mondiali-2026-news-oggi-15-giugno-diretta/taremi_ghalenoei_getty.jpg?im=Resize,width=1218",
-        "dominio": "sport.sky.it",
-        "quando": "2 ore fa"
+        "titolo": "LIVE Alle 18 Spagna-Capo Verde: Oyarzabal guida i campioni d'Europa, Livramento unica punta",
+        "fonte": "La Gazzetta dello Sport",
+        "link": "https://www.gazzetta.it/Calcio/Mondiali/15-06-2026/spagna-capo-verde-live-risultato-e-marcatori-mondiali-girone-h.shtml",
+        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/06/15/6a303c39aeb73.jpeg",
+        "dominio": "gazzetta.it",
+        "quando": "3 ore fa"
       }
     ],
     "en": [
       {
-        "titolo": "World Cup 2026: Fifa urged to remove official over hand gesture; teams hit back at Ceferin; Iran arrive in US – live",
+        "titolo": "Spain v Cape Verde: World Cup 2026 – live",
         "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/15/world-cup-2026-news-iran-arrive-in-us-amid-protests-spain-belgium-egypt-enter-tournament-live",
-        "img": "https://i.guim.co.uk/img/media/0b83d1ae434663eff7b67d175d101a6c914931c7/108_0_3008_2407/master/3008.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=cef48b6b4452e0f64b82dc08a580c134",
+        "link": "https://www.theguardian.com/football/live/2026/jun/15/spain-v-cape-verde-world-cup-2026-live",
+        "img": "https://i.guim.co.uk/img/media/0c2a4e1d25259f678527a3332abd286e7b503d8d/0_0_3068_2455/master/3068.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=dcf9ce5442ef624319ef8ff202d7dca7",
         "dominio": "theguardian.com",
+        "quando": "2h ago"
+      },
+      {
+        "titolo": "World Cup 2026: Scotland news conference & Build-up to today's games",
+        "fonte": "BBC",
+        "link": "https://www.bbc.co.uk/sport/football/live/c2ky52d5e1kt",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/e42e/live/eb7a33e0-68c0-11f1-a143-b5a0b6622147.jpg",
+        "dominio": "bbc.co.uk",
         "quando": "3h ago"
       },
       {
-        "titolo": "Fifa World Cup 2026: Can Germany & Netherlands join Scotland as European winners",
-        "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/live/cr47lgg64kvt",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/9499/live/06f914e0-67d8-11f1-8546-8f19e4fe30f4.png",
-        "dominio": "bbc.co.uk",
-        "quando": "23h ago"
+        "titolo": "Spain vs. Cape Verde LIVE: World Cup 2026 updates as Yamal brought on in bid to break deadlock",
+        "fonte": "ESPN",
+        "link": "https://www.espn.co.uk/football/story/_/id/49071783/spain-cape-verde-live-world-cup-2026-latest-updates-commentary-score-result",
+        "img": "https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0615%2Fr1673644_1296x729_16%2D9.jpg",
+        "dominio": "espn.co.uk",
+        "quando": "just now"
       },
       {
-        "titolo": "World Cup 2026: Premier League stars score as Germany and Sweden dominate",
+        "titolo": "World Cup 2026: Empty seat at World Cup for imprisoned French sports journalist",
         "fonte": "BBC",
-        "link": "https://www.bbc.com/sport/football/live/c2ky52d5e1kt",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/bfd4/live/aa9c7940-6880-11f1-b1db-af71d47507d6.png",
+        "link": "https://www.bbc.com/sport/football/articles/c0ly17770lpo",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/5342/live/ed957f80-68d0-11f1-a53d-a3fd187200ab.jpg",
         "dominio": "bbc.com",
         "quando": "1h ago"
       },
       {
-        "titolo": "World Cup’s ludicrous ‘quarters’ are disfiguring football",
-        "fonte": "The Telegraph",
-        "link": "https://www.telegraph.co.uk/football/2026/06/15/world-cup-football-ludicrous-quarters-drinks-breaks-fifa/",
-        "img": "https://www.telegraph.co.uk/content/dam/football/2026/06/15/TELEMMGLPICT000490762708_17815083171510_trans_NvBQzQNjv4BqGLLAPY3LddE1Qiv-bsIMYNf11FLKtqwYaxK652uKeQE.jpeg?impolicy=OG-Comment",
-        "dominio": "telegraph.co.uk",
+        "titolo": "Tunisia sack Sabri Lamouchi one game into World Cup after ⁠5-1 defeat by Sweden",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/2026/jun/15/tunisia-sack-sabri-lamouchi-one-game-into-world-cup-2026-5-1-defeat-sweden",
+        "img": "https://i.guim.co.uk/img/media/c3e33b104057887b97327ce477d5962170796a47/1109_957_1480_1184/master/1480.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=82fc38a9c818d1bda46db7a37024b72b",
+        "dominio": "theguardian.com",
+        "quando": "1h ago"
+      },
+      {
+        "titolo": "Tunisia manager Sabri Lamouchi ‘to be sacked’ one game into World Cup 2026",
+        "fonte": "The Times",
+        "link": "https://www.thetimes.com/sport/football/world-cup/article/sabri-lamouchi-tunisia-manager-sacked-sweden-fifa-world-cup-2026-rztd7pj3d",
+        "img": "https://www.thetimes.com/imageserver/image/f14fed52-056d-483a-9ea6-99ded5462858.jpg?strip=all&format=webp&crop=2343px%2C1318px%2C125px%2C357px&resize=1200",
+        "dominio": "thetimes.com",
         "quando": "3h ago"
       },
       {
-        "titolo": "Netherlands 2-2 Japan: World Cup 2026 – as it happened",
-        "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/14/netherlands-v-japan-world-cup-2026-live",
-        "img": "https://i.guim.co.uk/img/media/8ee3b0d516ac0295dd37e964d04c0d2b5be0bc11/249_91_1936_1549/master/1936.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=5f29f85dec8ab1a90cdd7744f06cee2d",
-        "dominio": "theguardian.com",
-        "quando": "16h ago"
+        "titolo": "World Cup boss, 54, SACKED after just one game of tournament as fans call it 'the worst possible idea'",
+        "fonte": "The Sun",
+        "link": "https://www.thesun.co.uk/sport/39418518/sabri-lamouchi-sacked-by-tunisia-after-one-game/",
+        "img": "",
+        "dominio": "thesun.co.uk",
+        "quando": "6h ago"
       },
       {
-        "titolo": "Netherlands vs Japan LIVE: FIFA World Cup 2026 Group F score, commentary, updates & stats",
-        "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/live/c30ypmd6g35t",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/0182/live/e8452200-683b-11f1-8546-8f19e4fe30f4.jpg",
-        "dominio": "bbc.co.uk",
-        "quando": "11h ago"
-      },
-      {
-        "titolo": "Netherlands vs Japan LIVE! World Cup 2026 Group F fixture, score, live updates and team news",
-        "fonte": "Sky Sports",
-        "link": "https://www.skysports.com/football/live-blog/11095/13552192/netherlands-vs-japan-live-world-cup-2026-group-f-fixture-score-live-updates-and-team-news",
-        "img": "https://e0.365dm.com/26/06/1600x900/skysports-kamada-daichi-kamada_7273617.jpg?20260614230028",
-        "dominio": "skysports.com",
-        "quando": "4h ago"
-      },
-      {
-        "titolo": "World Cup 2026: guide to all 1,248 players",
-        "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide",
-        "img": "https://i.guim.co.uk/img/media/a569c2e0ea21b9408faeb01cdea36464550b20ff/0_0_2500_2000/master/2500.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=4b2fa25f7a9f2543f06c1bea53d883d7",
-        "dominio": "theguardian.com",
-        "quando": "10d ago"
+        "titolo": "Belgium v Egypt live: World Cup 2026",
+        "fonte": "Al Jazeera",
+        "link": "https://www.aljazeera.com/sports/liveblog/2026/6/15/belgium-v-egypt-live-world-cup-2026",
+        "img": "https://www.aljazeera.com/wp-content/uploads/2026/06/2026-06-15T172801Z_476408641_UP1EM6F1CIO6Q_RTRMADP_3_SOCCER-WORLDCUP-BEL-EGY-1781546075.jpg?resize=1920%2C1440",
+        "dominio": "aljazeera.com",
+        "quando": "just now"
       }
     ],
     "es": [
       {
-        "titolo": "Mundial 2026, en directo: noticias de la Copa del Mundo y última hora de las selecciones, hoy en vivo",
+        "titolo": "España - Cabo Verde hoy, en directo: última hora del debut en el Mundial 2026 | Grupo H, en vivo",
         "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/mundial-2026-en-directo-noticias-de-la-copa-del-mundo-y-ultima-hora-de-las-selecciones-hoy-en-vivo-f202606-d-4/",
-        "img": "",
+        "link": "https://as.com/futbol/mundial/espana-cabo-verde-en-directo-previa-y-ultima-hora-del-grupo-h-mundial-2026-en-vivo-f202606-d/",
+        "img": "https://img.asmedia.epimg.net/resizer/v2/RRILYVQQCZM3XOYLAEJYFAPMPY.jpg?auth=2df465cd9dbdb2e4e158293cd39ce04c11bc74be7a51dbde129f02cb0f587091&width=1472&height=828&smart=true",
         "dominio": "as.com",
-        "quando": "1 d"
+        "quando": "1 h"
       },
       {
-        "titolo": "Países Bajos 2 - 2 Japón | Resumen Mundial 2026",
-        "fonte": "El Mundo",
-        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/15/6a2f8f62e85ecea22a8b4585-video.html",
-        "img": "https://e01-phantom-elmundo.uecdn.es/1792a016f287ee33da86eebe4156942c/provider/dm/crop/150x0/1770x1080/resize/1200/f/webp/v/bddxk1gBwaDshVuxF/x1080",
-        "dominio": "elmundo.es",
-        "quando": "4 h"
-      },
-      {
-        "titolo": "Países Bajos 2 - 2 Japón, en directo: resultado, resumen y goles | Mundial 2026",
-        "fonte": "Mundo Deportivo",
-        "link": "https://www.mundodeportivo.com/futbol/mundial/20260614/1004194923/paises-bajos-japon-directo-mundial-2026-futbol.html",
-        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/06/14/6a2f1bae61041.jpeg",
-        "dominio": "mundodeportivo.com",
-        "quando": "14 h"
-      },
-      {
-        "titolo": "Los aficionados japoneses cumplen en el Mundial 2026 con su tradición viral: recoger la basura del estadio",
-        "fonte": "El HuffPost",
-        "link": "https://www.huffingtonpost.es/deporte/los-aficionados-japoneses-cumplen-mundial-2026-tradicion-viral-recoger-basura-estadio-f202606.html",
-        "img": "https://img2.huffingtonpost.es/files/og_thumbnail/uploads/2026/06/15/hinchas-de-la-seleccion-japonesa-de-futbol-en-una-imagen-de-archivo-durante-el-mundial-de-2022.jpeg",
-        "dominio": "huffingtonpost.es",
-        "quando": "ahora"
-      },
-      {
-        "titolo": "Suecia 5-1 Túnez | Resumen Mundial 2026",
+        "titolo": "Túnez despide al técnico Sabri Lamouchi después de perder 5-1 contra Suecia",
         "fonte": "MARCA",
-        "link": "https://www.marca.com/futbol/mundial/2026/06/15/suecia-5-1-tunez-resumen-mundial-2026-video.html",
+        "link": "https://www.marca.com/futbol/mundial/2026/06/15/tunez-despide-tecnico-sabri-lamouchi-despues-perder-1-5-suecia.html",
         "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/06/15/bdfTU1gBvRfLdWNbS.jpeg",
         "dominio": "marca.com",
         "quando": "4 h"
       },
       {
-        "titolo": "Suecia aplasta a Túnez y lidera el grupo F",
-        "fonte": "El Mundo",
-        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/15/6a2f919621efa0c7638b456e.html",
-        "img": "https://s1.dmcdn.net/v/bdf5M1gBvRcYM9aaT/x1080",
-        "dominio": "elmundo.es",
-        "quando": "4 h"
-      },
-      {
-        "titolo": "Así le contamos la victoria de Suecia ante Túnez en la fase de grupos del Mundial 2026",
+        "titolo": "Bélgica - Egipto en directo, el partido del Grupo G del Mundial en vivo",
         "fonte": "EL PAÍS",
-        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-15/suecia-tunez-en-directo-el-partido-del-grupo-f-del-mundial-de-futbol-2026-en-vivo.html",
-        "img": "",
+        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-15/belgica-egipto-en-directo-el-partido-del-grupo-g-del-mundial-en-vivo.html",
+        "img": "https://imagenes.elpais.com/resizer/v2/BSXUPF5VV5NNRIW2W2CBVGBXLA.jpg?auth=2b5fa6e827f289dd3bccd861e4017f73c79f5c436892a8d4f53b1ff7fe41783c&width=1200",
         "dominio": "elpais.com",
+        "quando": "ahora"
+      },
+      {
+        "titolo": "Bélgica - Egipto hoy, en directo: fase de grupos del Mundial 2026 | Última hora del Grupo G",
+        "fonte": "Diario AS",
+        "link": "https://as.com/futbol/mundial/belgica-egipto-hoy-en-directo-fase-de-grupos-del-mundial-2026-ultima-hora-del-grupo-g-f202606-d/",
+        "img": "https://img.asmedia.epimg.net/resizer/v2/ZPALS7TFOROSZIAHGQW4JPU4GE.jpg?auth=961e240ab9917733c4f02b492217f8a34f4a19db40085c00a08054eba361da62&width=1472&height=828&focal=3302%2C1907",
+        "dominio": "as.com",
+        "quando": "ahora"
+      },
+      {
+        "titolo": "Bélgica - Egipto en directo",
+        "fonte": "El Mundo",
+        "link": "https://www.elmundo.es/deportes/futbol/mundial/belgica-egipto/2026/06/15/01_0117_20260615_360_1225-directo.html",
+        "img": "https://e00-elmundo.uecdn.es/assets/v26/img/destacadas/elmundo__logo-generica.jpg",
+        "dominio": "elmundo.es",
+        "quando": "ahora"
+      },
+      {
+        "titolo": "Quién es Vero Boquete, comentarista del Mundial 2026 en TVE: su edad, su pareja y de dónde es",
+        "fonte": "OkDiario",
+        "link": "https://okdiario.com/happyfm/quien-vero-boquete-comentarista-del-mundial-2026-tve-edad-pareja-donde-18784848",
+        "img": "https://okdiario.com/img/2026/06/15/vero-boquete.jpg",
+        "dominio": "okdiario.com",
+        "quando": "1 h"
+      },
+      {
+        "titolo": "Horario, canal y dónde ver por TV el Argentina – Argelia de Mundial 2026 de fútbol",
+        "fonte": "Mundo Deportivo",
+        "link": "https://www.mundodeportivo.com/horarios/futbol/20260615/1004195098/horario-canal-ver-tv-argentina-argelia-mundial-2026-futbol.html",
+        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/06/10/6a291d586f2be.jpeg",
+        "dominio": "mundodeportivo.com",
         "quando": "4 h"
       },
       {
-        "titolo": "La FIFA da marcha atrás y permitirá el español en todas las ruedas de prensa",
-        "fonte": "El Mundo",
-        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/15/6a2fbed6e85ece8f548b457b.html",
-        "img": "https://e01-phantom-elmundo.uecdn.es/e89e5bd2dea044f4f7572ca83d97bcb5/resize/1200/f/webp/assets/multimedia/imagenes/2026/06/15/17815140362633.jpg",
-        "dominio": "elmundo.es",
-        "quando": "1 h"
+        "titolo": "De Paddy Noarbe a Inés García: así es la nueva generación de WAGs de la Selección en el Mundial 2026",
+        "fonte": "HOLA",
+        "link": "https://www.hola.com/actualidad/20260615906830/paddy-noarbe-ines-garcia-nueva-generacion-wags-seleccion-mundial-2026/",
+        "img": "https://www.hola.com/horizon/landscape/f067e0e54b79-saveclipapp710650848178771816326079598230689875635558878n.jpg?im=Resize=(1200)",
+        "dominio": "hola.com",
+        "quando": "5 h"
       }
     ]
   }
