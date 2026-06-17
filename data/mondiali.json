@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-06-17T18:16:57Z",
+  "aggiornato": "2026-06-17T23:23:04Z",
   "nome": "World Cup 2026",
   "groups": [
     {
@@ -2778,7 +2778,35 @@
             "iso": "cd",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              1,
+              1
+            ],
+            "ht": [
+              1,
+              1
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "João Neves",
+              "minute": "6",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": [
+            {
+              "name": "Yoane Wissa",
+              "minute": "45+5",
+              "pen": false,
+              "og": false
+            }
+          ]
         },
         {
           "round": "Matchday 7",
@@ -2894,36 +2922,19 @@
       "classifica": [
         {
           "team": {
-            "en": "Colombia",
-            "it": "Colombia",
-            "es": "Colombia",
-            "iso": "co",
-            "ph": false
-          },
-          "pg": 0,
-          "v": 0,
-          "n": 0,
-          "p": 0,
-          "gf": 0,
-          "gs": 0,
-          "pt": 0,
-          "dr": 0
-        },
-        {
-          "team": {
             "en": "DR Congo",
             "it": "RD Congo",
             "es": "RD Congo",
             "iso": "cd",
             "ph": false
           },
-          "pg": 0,
+          "pg": 1,
           "v": 0,
-          "n": 0,
+          "n": 1,
           "p": 0,
-          "gf": 0,
-          "gs": 0,
-          "pt": 0,
+          "gf": 1,
+          "gs": 1,
+          "pt": 1,
           "dr": 0
         },
         {
@@ -2932,6 +2943,23 @@
             "it": "Portogallo",
             "es": "Portugal",
             "iso": "pt",
+            "ph": false
+          },
+          "pg": 1,
+          "v": 0,
+          "n": 1,
+          "p": 0,
+          "gf": 1,
+          "gs": 1,
+          "pt": 1,
+          "dr": 0
+        },
+        {
+          "team": {
+            "en": "Colombia",
+            "it": "Colombia",
+            "es": "Colombia",
+            "iso": "co",
             "ph": false
           },
           "pg": 0,
@@ -2985,7 +3013,59 @@
             "iso": "hr",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              4,
+              2
+            ],
+            "ht": [
+              2,
+              2
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Harry Kane",
+              "minute": "12",
+              "pen": true,
+              "og": false
+            },
+            {
+              "name": "Harry Kane",
+              "minute": "42",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Jude Bellingham",
+              "minute": "47",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Marcus Rashford",
+              "minute": "85",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": [
+            {
+              "name": "Martin Baturina",
+              "minute": "36",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Petar Musa",
+              "minute": "45+5",
+              "pen": false,
+              "og": false
+            }
+          ]
         },
         {
           "round": "Matchday 7",
@@ -3101,37 +3181,20 @@
       "classifica": [
         {
           "team": {
-            "en": "Croatia",
-            "it": "Croazia",
-            "es": "Croacia",
-            "iso": "hr",
-            "ph": false
-          },
-          "pg": 0,
-          "v": 0,
-          "n": 0,
-          "p": 0,
-          "gf": 0,
-          "gs": 0,
-          "pt": 0,
-          "dr": 0
-        },
-        {
-          "team": {
             "en": "England",
             "it": "Inghilterra",
             "es": "Inglaterra",
             "iso": "gb-eng",
             "ph": false
           },
-          "pg": 0,
-          "v": 0,
+          "pg": 1,
+          "v": 1,
           "n": 0,
           "p": 0,
-          "gf": 0,
-          "gs": 0,
-          "pt": 0,
-          "dr": 0
+          "gf": 4,
+          "gs": 2,
+          "pt": 3,
+          "dr": 2
         },
         {
           "team": {
@@ -3166,6 +3229,23 @@
           "gs": 0,
           "pt": 0,
           "dr": 0
+        },
+        {
+          "team": {
+            "en": "Croatia",
+            "it": "Croazia",
+            "es": "Croacia",
+            "iso": "hr",
+            "ph": false
+          },
+          "pg": 1,
+          "v": 0,
+          "n": 0,
+          "p": 1,
+          "gf": 2,
+          "gs": 4,
+          "pt": 0,
+          "dr": -2
         }
       ]
     }
@@ -3909,14 +3989,6 @@
   "news": {
     "it": [
       {
-        "titolo": "La Francia e Mbappé spaventano il Mondiale: gran tris a un buon Senegal",
-        "fonte": "La Gazzetta dello Sport",
-        "link": "https://www.gazzetta.it/Calcio/Mondiali/16-06-2026/francia-senegal-live-risultato-e-marcatori-mondiali.shtml",
-        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/06/17/6a31ce154ce22.r_d.623-162-0.jpeg",
-        "dominio": "gazzetta.it",
-        "quando": "19 ore fa"
-      },
-      {
         "titolo": "Mondiali di Calcio 2026 2026 - Francia - Senegal 3-1: Highlights - Video",
         "fonte": "RaiPlay",
         "link": "https://www.raiplay.it/video/2026/06/Francia---Senegal-3-1-Highlights--Mondiali-di-Calcio-FIFA-2026-0f1c8e20-4e9c-4d53-a127-6603fb7255e0.html",
@@ -3925,184 +3997,192 @@
         "quando": "1 g fa"
       },
       {
-        "titolo": "Mondiali 2026. Francia-Senegal 3-1, la sintesi della partita",
+        "titolo": "Mondiali 2026, Inghilterra-Croazia 4-2: parte bene la squadra di Tuchel - Ghana-Panama, la cronaca testuale",
         "fonte": "RaiNews",
-        "link": "https://www.rainews.it/video/2026/06/sport-calcio-mondiali-2026-gruppo-i-francia-senegal-sintesi-partita-highlights-video-aa713e71-2971-4194-b94f-1a4cf442956d.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/16/1781637287913_BBQPJ.jpg",
+        "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-7-portogallo-congo-inghilterra-croazia-ghana-panama-uzbekistan-colombia-diretta-streaming-cronaca-highlights-video-live-risultati-e325c2f2-91e3-47ba-87ca-d9b17f4093fa.html",
+        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/17/1781721815280_.jpg",
         "dominio": "rainews.it",
-        "quando": "20 ore fa"
-      },
-      {
-        "titolo": "Il calcio in TV oggi: apre Cristiano Ronaldo, poi Inghilterra-Croazia. Dove vedere le dirette",
-        "fonte": "Libero",
-        "link": "https://www.libero.it/magazine/news/calcio-in-tv-oggi-programmazione-diretta-mercoledi-17-giugno-2026-cosa-vedere-211302",
-        "img": "https://wips.plug.it/cips/libero.it/magazine/cms/2026/06/harry-kane-cover-1217.jpg",
-        "dominio": "libero.it",
-        "quando": "11 ore fa"
-      },
-      {
-        "titolo": "Portogallo-Congo 1-1 LIVE ai Mondiali 2026, risultato in diretta: gol di Wissa, il Congo pareggia a fine primo tempo",
-        "fonte": "Fanpage",
-        "link": "https://www.fanpage.it/sport/live/mondiali-2026-portogallo-congo-live-oggi-in-tv-su-dazn-a-che-ora-vedere-le-partite/",
-        "img": "",
-        "dominio": "fanpage.it",
         "quando": "poco fa"
       },
       {
-        "titolo": "Mondiali 2026, news e risultati di oggi in diretta: record per Ronaldo ancor prima di scendere in campo",
-        "fonte": "Sky Sport",
-        "link": "https://sport.sky.it/calcio/mondiali/2026/06/17/mondiali-2026-news-oggi-17-giugno-diretta",
-        "img": "https://sport.sky.it/assets/images/1d1767db4681f88a90cf57752e9197a92ebbe163/skysport/it/calcio/mondiali/partite/2026/giornata-1/portogallo-congo/live/content/cristiano_ronaldo_portogallo_ipa.jpg?im=Resize,width=1218",
-        "dominio": "sport.sky.it",
-        "quando": "poco fa"
+        "titolo": "Inghilterra - Croazia (4-2) Mondiali 2026",
+        "fonte": "la Repubblica",
+        "link": "https://www.repubblica.it/sport/dirette/calcio/mondiali-2026/diretta-inghilterra-croazia-g2608263/",
+        "img": "https://www.repstatic.it/cless/main/nazionale/2013-v1/img/common/favicon/favicon-1500.png",
+        "dominio": "repubblica.it",
+        "quando": "3 ore fa"
       },
       {
-        "titolo": "Live Iran - Nuova Zelanda - Mondiali: Punteggi & Highlights Calcio - 16/06/2026",
-        "fonte": "eurosport.it",
-        "link": "https://www.eurosport.it/calcio/mondiali/2026/live-iran-nuova-zelanda_mtc1579456/live.shtml",
-        "img": "",
-        "dominio": "eurosport.it",
-        "quando": "2 g fa"
+        "titolo": "Inghilterra-Croazia, che meraviglia! Kane e Bellingham super, Tuchel fa poker",
+        "fonte": "La Gazzetta dello Sport",
+        "link": "https://www.gazzetta.it/Calcio/Mondiali/17-06-2026/inghilterra-croazia-live-risultato-e-marcatori-mondiali-girone-l-prima-giornata.shtml",
+        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/06/18/6a331bda9c0d6.r_d.1329-918-0.jpeg",
+        "dominio": "gazzetta.it",
+        "quando": "1 ore fa"
       },
       {
-        "titolo": "Mondiali di Calcio 2026 2026 - Iran - Nuova Zelanda 2-2: Highlights - Video",
+        "titolo": "Mondiali di Calcio 2026 2026 - Portogallo - R.D. del Congo 1-1: Highlights - Video",
         "fonte": "RaiPlay",
-        "link": "https://www.raiplay.it/video/2026/06/Iran---Nuova-Zelanda-2-2-Highlights--Mondiali-di-Calcio-FIFA-2026-c0b99774-d3b5-4964-a4a8-44fd87b0d537.html",
-        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/16/1781582161157_copertina.jpg",
+        "link": "https://www.raiplay.it/video/2026/06/Portogallo---RD-del-Congo-1-1-Highlights--Mondiali-di-Calcio-FIFA-2026-7236c61f-c5d6-4004-a7fa-b37cda55a571.html",
+        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/17/1781723918846_Porto4852.jpg",
         "dominio": "raiplay.it",
-        "quando": "1 g fa"
+        "quando": "23 ore fa"
+      },
+      {
+        "titolo": "Austria - Giordania (3-1) Mondiali 2026",
+        "fonte": "la Repubblica",
+        "link": "https://www.repubblica.it/sport/dirette/calcio/mondiali-2026/diretta-austria-giordania-g2608260/",
+        "img": "https://www.repstatic.it/cless/main/nazionale/2013-v1/img/common/favicon/favicon-1500.png",
+        "dominio": "repubblica.it",
+        "quando": "19 ore fa"
+      },
+      {
+        "titolo": "Mondiali di Calcio 2026 Austria - Austria - Giordania 3-1: Highlights - Video",
+        "fonte": "RaiPlay",
+        "link": "https://www.raiplay.it/video/2026/06/Austria---Giordania-3-1-Highlights--Mondiali-di-Calcio-FIFA-2026-c692ac39-4223-4c1f-b21a-73a62373c8fa.html",
+        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/17/1781680970850_1280x720-copertina.jpg",
+        "dominio": "raiplay.it",
+        "quando": "23 ore fa"
+      },
+      {
+        "titolo": "Mondiali, Austria-Giordania 3-1: in gol Schmid, Ali Olwan, autogol di Yazan Alarab, rig. Arnautovic - La classifica dei gironi",
+        "fonte": "RaiNews",
+        "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-6-diretta-streaming-cronaca-highlights-video-live-risultati-francia-senegal-iraq-norvegia-argentina-algeria-austria-giordania-0c9b7279-88b8-4a73-871c-d49aa32cc803.html",
+        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/17/1781677414442_rainewsedabdacee.jpg",
+        "dominio": "rainews.it",
+        "quando": "14 ore fa"
       }
     ],
     "en": [
-      {
-        "titolo": "World Cup 2026 fixtures, results and group tables",
-        "fonte": "The Independent",
-        "link": "https://www.independent.co.uk/sport/football/world-cup-fixtures-results-group-tables-standings-b2997616.html",
-        "img": "https://static.independent.co.uk/2026/06/17/05/download..?trim=0,0,0,0&width=1200&height=800&crop=1200:800",
-        "dominio": "independent.co.uk",
-        "quando": "1h ago"
-      },
-      {
-        "titolo": "Portugal XI vs DR Congo: Starting lineup and confirmed team news",
-        "fonte": "London Evening Standard",
-        "link": "https://www.standard.co.uk/sport/football/portugal-xi-vs-dr-congo-starting-lineup-confirmed-team-news-injury-latest-world-cup-2026-today-b1286398.html",
-        "img": "https://static.standard.co.uk/2026/06/17/7/56/PortugalDRCongo17062026.jpeg?width=1200&auto=webp&quality=75",
-        "dominio": "standard.co.uk",
-        "quando": "1h ago"
-      },
-      {
-        "titolo": "World Cup LIVE: Cristiano Ronaldo set for Lionel Messi reply as fans 'shot at' before game",
-        "fonte": "The Mirror",
-        "link": "https://www.mirror.co.uk/sport/football/world-cup-2026-live-england-37295478",
-        "img": "https://i2-prod.mirror.co.uk/article37311108.ece/ALTERNATES/s1200d/0_GettyImages-2282066039.jpg",
-        "dominio": "mirror.co.uk",
-        "quando": "just now"
-      },
       {
         "titolo": "Argentina 3-0 Algeria: World Cup 2026 – as it happened",
         "fonte": "The Guardian",
         "link": "https://www.theguardian.com/football/live/2026/jun/17/fifa-world-cup-2026-live-argentina-v-algeria-updates-arg-vs-alg-group-j-match-score-latest",
         "img": "https://i.guim.co.uk/img/media/ca4bf18946a6b1f0607ffc3b2f5c88ca1b64f06a/652_0_4567_3654/master/4567.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=51f9e6b0ebfa66d66753d1dbc5bd98b2",
         "dominio": "theguardian.com",
-        "quando": "14h ago"
+        "quando": "19h ago"
       },
       {
-        "titolo": "2026 FIFA World Cup: Argentina v Algeria Lionel Messi equals Miroslav Klose scoring record with hat-trick",
-        "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/videos/ce3ezqy2747o",
-        "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/a29f/live/94db0c40-69fa-11f1-8e1d-bbbb1017d210.jpg",
-        "dominio": "bbc.co.uk",
-        "quando": "14h ago"
+        "titolo": "Ghana vs Panama live updates: World Cup 2026 game latest score and goal alerts",
+        "fonte": "The New York Times",
+        "link": "https://www.nytimes.com/athletic/live-blogs/ghana-vs-panama-live-updates-world-cup-2026-score-result/fy7euLS0wLfD/",
+        "img": "https://cdn-media.theathletic.com/cdn-cgi/image/width=1200,height=630,fit=cover/fy7euLS0wLfD_k2Kgm3Ezh9nn_1440x960.jpg",
+        "dominio": "nytimes.com",
+        "quando": "just now"
       },
       {
-        "titolo": "FIFA World Cup 2026 stats: Messi's 38 breaks Ronaldo's record; Mbappe's 58 sets France record, Haaland's 2 first for Norway",
+        "titolo": "England 4-2 Croatia LIVE: World Cup 2026 reaction as Kane brace helps Three Lions begin campaign with thrilling win",
         "fonte": "ESPN",
-        "link": "https://www.espn.co.uk/football/story/_/id/49083873/fifa-world-cup-2026-stats-lionel-messi-38-breaks-cristiano-ronaldo-record-kylian-mbappe-58-sets-france-erling-haaland-2-first-norway",
-        "img": "https://a1.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0617%2Fr1674586_1296x729_16%2D9.jpg",
+        "link": "https://www.espn.co.uk/football/story/_/id/49097138/england-croatia-live-world-cup-2026-latest-updates-commentary-score-result",
+        "img": "https://a.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0617%2Fr1675138_1296x729_16%2D9.jpg",
         "dominio": "espn.co.uk",
-        "quando": "11h ago"
+        "quando": "just now"
       },
       {
-        "titolo": "Scotland news conference before Friday's World Cup match with Morocco",
+        "titolo": "Rate the players in England's World Cup opener against Croatia",
         "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/live/c1jyg3x0dj9t",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/e3ef/live/84b00560-6a67-11f1-844f-e7fab8caa838.jpg",
-        "dominio": "bbc.co.uk",
-        "quando": "7h ago"
+        "link": "https://www.bbc.com/sport/football/articles/cy4eg2k4l2xo",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/163d/live/146535b0-6a93-11f1-be54-c71c205a9fc3.jpg",
+        "dominio": "bbc.com",
+        "quando": "2h ago"
       },
       {
-        "titolo": "England v Croatia: World Cup 2026 – live",
+        "titolo": "World Cup 2026: Starmer tells England to ‘dare to dream’, environment protests planned for Mexico match – as it happened",
         "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/17/england-v-croatia-world-cup-2026-live-updates",
-        "img": "https://i.guim.co.uk/img/media/98afccc52dc82880136dc2c66b6822770e84c0b5/429_0_5000_4000/master/5000.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=e54c44db553aded0a28ccf0f78c95661",
+        "link": "https://www.theguardian.com/football/live/2026/jun/17/world-cup-2026-news-live-england-croatia-portugal-dr-congo-ghana-panama-uzbekistan-colombia",
+        "img": "https://i.guim.co.uk/img/media/49d070a41c3187340ada9c8fca1b13bdc67ab7d0/197_0_7200_5760/master/7200.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=1e3818436bd64bacedd26ae947bfd6cd",
+        "dominio": "theguardian.com",
+        "quando": "16h ago"
+      },
+      {
+        "titolo": "'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle",
+        "fonte": "BBC",
+        "link": "https://www.bbc.co.uk/sport/football/articles/cpq3734ln8yo",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/4ef3/live/c824fa90-6a84-11f1-b1db-af71d47507d6.jpg",
+        "dominio": "bbc.co.uk",
+        "quando": "1h ago"
+      },
+      {
+        "titolo": "FIFA World Cup 2026 Highlights: Portugal v DR Congo Highlights",
+        "fonte": "BBC",
+        "link": "https://www.bbc.co.uk/iplayer/episode/m002y384/fifa-world-cup-2026-fifa-world-cup-2026-highlights-portugal-v-dr-congo-highlights",
+        "img": "",
+        "dominio": "bbc.co.uk",
+        "quando": "2h ago"
+      },
+      {
+        "titolo": "Yoane Wissa gives DR Congo first ever World Cup point in draw with Portugal",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/2026/jun/17/portugal-dr-congo-world-cup-2026-group-k-match-report",
+        "img": "https://i.guim.co.uk/img/media/a4f1aeff95f4c0a82cec27a4146046a34e4bf452/297_0_5016_4013/master/5016.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=dabf28e4d7a108e803903e6b74dd9fef",
         "dominio": "theguardian.com",
         "quando": "just now"
       }
     ],
     "es": [
       {
-        "titolo": "Portugal - RD Congo, el partido del Mundial 2026 en directo| Joao Neves adelanta a Portugal con un cabezazo",
+        "titolo": "La muerte del fútbol en 2026",
         "fonte": "EL PAÍS",
-        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-17/portugal-rd-congo-en-directo-el-partido-del-grupo-k-del-mundial-2026-en-vivo.html",
+        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-16/la-muerte-del-futbol-en-2026.html",
+        "img": "",
+        "dominio": "elpais.com",
+        "quando": "1 d"
+      },
+      {
+        "titolo": "Inglaterra 4-2 Croacia: resumen, goles y resultado",
+        "fonte": "Diario AS",
+        "link": "https://as.com/futbol/mundial/inglaterra-croacia-hoy-en-directo-fase-de-grupos-del-mundial-2026-ultima-hora-del-grupo-i-f202606-d/",
+        "img": "",
+        "dominio": "as.com",
+        "quando": "1 h"
+      },
+      {
+        "titolo": "Así te hemos contado la victoria de Inglaterra ante Croacia en el Mundial 2026",
+        "fonte": "EL PAÍS",
+        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-17/inglaterra-croacia-en-directo-el-partido-del-grupo-l-del-mundial-2026-en-vivo.html",
         "img": "",
         "dominio": "elpais.com",
         "quando": "ahora"
       },
       {
-        "titolo": "Mundial 2026, en directo: noticias de la Copa del Mundo y última hora de las selecciones, hoy 17 de junio",
-        "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/mundial-2026-en-directo-noticias-de-la-copa-del-mundo-y-ultima-hora-de-las-selecciones-hoy-17-de-junio-f202606-d/",
-        "img": "",
-        "dominio": "as.com",
+        "titolo": "Inglaterra-Croacia, en directo: partido de fase de grupos del Mundial 2026, hoy en vivo",
+        "fonte": "SPORT",
+        "link": "https://www.sport.es/es/noticias/mundial-futbol/inglaterra-croacia-directo-partido-fase-131519973",
+        "img": "https://estaticos-cdn.prensaiberica.es/clip/4051b38c-a7c4-4f56-ab81-a213a7c320c5_16-9-discover-aspect-ratio_default_0_x1920y853.jpg",
+        "dominio": "sport.es",
         "quando": "ahora"
       },
       {
-        "titolo": "Alineaciones probables del Uzbekistán - Colombia del Mundial 2026",
+        "titolo": "Portugal 1-1 República del Congo | Resumen Mundial 2026",
         "fonte": "MARCA",
-        "link": "https://www.marca.com/futbol/mundial/2026/06/17/alineaciones-probables-uzbekistan-colombia-mundial-2026.html",
-        "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/06/16/6a3173cd8dc1e.jpeg",
+        "link": "https://www.marca.com/futbol/mundial/2026/06/17/portugal-1-1-republica-congo-resumen-mundial-2026-video.html",
+        "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/06/17/bhuIY1gClDrrKR6oP.jpeg",
         "dominio": "marca.com",
         "quando": "4 h"
       },
       {
-        "titolo": "Horario, canal y dónde ver por TV el México - Corea del Sur del Mundial 2026 de fútbol",
+        "titolo": "Portugal 1 - RD Congo 1: resumen, goles y resultado del Mundial 2026",
+        "fonte": "Diario AS",
+        "link": "https://as.com/futbol/mundial/portugal-rd-congo-en-directo-fase-de-grupos-del-mundial-2026-grupo-k-hoy-en-vivo-f202606-d/",
+        "img": "",
+        "dominio": "as.com",
+        "quando": "2 h"
+      },
+      {
+        "titolo": "Así te hemos contado el empate entre Portugal y RD Congo en el Mundial 2026",
+        "fonte": "EL PAÍS",
+        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-17/portugal-rd-congo-en-directo-el-partido-del-grupo-k-del-mundial-2026-en-vivo.html",
+        "img": "",
+        "dominio": "elpais.com",
+        "quando": "2 h"
+      },
+      {
+        "titolo": "Ghana - Panamá, en directo: resultado y marcador| Mundial 2026: fase de grupos",
         "fonte": "Mundo Deportivo",
-        "link": "https://www.mundodeportivo.com/horarios/futbol/20260617/1004196234/horario-canal-ver-tv-mexico-corea-sur-mundial-2026-futbol.html",
-        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/06/16/6a308f8120c7a.jpeg",
+        "link": "https://www.mundodeportivo.com/futbol/mundial/20260618/1004196104/ghana-panama-directo-mundial-2026-fase-grupos.html",
+        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/06/18/6a332bf695255.jpeg",
         "dominio": "mundodeportivo.com",
-        "quando": "1 h"
-      },
-      {
-        "titolo": "Exhibición de Mbappé en el estreno mundialista de Francia que tumba a una Senegal valiente",
-        "fonte": "RTVE.es",
-        "link": "https://www.rtve.es/deportes/20260616/mundial-2026-francia-senegal-directo-video-resumen-resultado/17111502.shtml",
-        "img": "https://img.rtve.es/imagenes/mundial-2026-francia-senegal-directo-video-resumen-resultado/01781644363160.jpg",
-        "dominio": "rtve.es",
-        "quando": "1 d"
-      },
-      {
-        "titolo": "Francia - Senegal: resumen, resultado y goles del partido del Mundial 2026",
-        "fonte": "SPORT",
-        "link": "https://www.sport.es/es/noticias/mundial-futbol/fracia-senegal-directo-partido-fase-grupos-mundial-2026-vivo-hoy-131474564",
-        "img": "https://estaticos-cdn.prensaiberica.es/clip/c3720bc4-05c4-4ccd-94b7-1cf535703b03_16-9-discover-aspect-ratio_default_1477005.jpg",
-        "dominio": "sport.es",
-        "quando": "20 h"
-      },
-      {
-        "titolo": "El doblete de Mbappé para hacer historia con Francia en el Mundial 2026",
-        "fonte": "El Mundo",
-        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/17/6a32339121efa0a30e8b4585-video.html",
-        "img": "https://e01-phantom-elmundo.uecdn.es/89c050604374d5238a547d30e8369f30/provider/dm/crop/150x0/1770x1080/resize/1200/f/webp/v/bh2A-1gCZHSCVnMU3/x1080",
-        "dominio": "elmundo.es",
-        "quando": "12 h"
-      },
-      {
-        "titolo": "El histórico hat-trick de Leo Messi en el Mundial 2026",
-        "fonte": "El Mundo",
-        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/17/6a323e26fdddffcc4f8b45d3-video.html",
-        "img": "https://e01-phantom-elmundo.uecdn.es/48d7eb5cbffd049910ea4f703111a333/provider/dm/crop/150x0/1770x1080/resize/1200/f/webp/v/bh4nQ1gCZuEBGgKCz/x1080",
-        "dominio": "elmundo.es",
-        "quando": "11 h"
+        "quando": "ahora"
       }
     ]
   }
