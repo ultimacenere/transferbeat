@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-06-18T18:07:41Z",
+  "aggiornato": "2026-06-19T00:28:26Z",
   "nome": "World Cup 2026",
   "groups": [
     {
@@ -421,7 +421,53 @@
             "iso": "ba",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              4,
+              1
+            ],
+            "ht": [
+              0,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Johan Manzambi",
+              "minute": "74",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Rubén Vargas",
+              "minute": "84",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Johan Manzambi",
+              "minute": "90",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Granit Xhaka",
+              "minute": "90+7",
+              "pen": true,
+              "og": false
+            }
+          ],
+          "goals2": [
+            {
+              "name": "Ermin Mahmic",
+              "minute": "90+3",
+              "pen": false,
+              "og": false
+            }
+          ]
         },
         {
           "round": "Matchday 8",
@@ -443,7 +489,58 @@
             "iso": "qa",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              6,
+              0
+            ],
+            "ht": [
+              3,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Cyle Larin",
+              "minute": "16",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Jonathan David",
+              "minute": "29",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Jonathan David",
+              "minute": "45+3",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Nathan Saliba",
+              "minute": "64",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Mohamed Manai",
+              "minute": "75",
+              "pen": false,
+              "og": true
+            },
+            {
+              "name": "Jonathan David",
+              "minute": "90+2",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": []
         },
         {
           "round": "Matchday 14",
@@ -493,54 +590,20 @@
       "classifica": [
         {
           "team": {
-            "en": "Bosnia & Herzegovina",
-            "it": "Bosnia ed Erzegovina",
-            "es": "Bosnia y Herzegovina",
-            "iso": "ba",
-            "ph": false
-          },
-          "pg": 1,
-          "v": 0,
-          "n": 1,
-          "p": 0,
-          "gf": 1,
-          "gs": 1,
-          "pt": 1,
-          "dr": 0
-        },
-        {
-          "team": {
             "en": "Canada",
             "it": "Canada",
             "es": "Canadá",
             "iso": "ca",
             "ph": false
           },
-          "pg": 1,
-          "v": 0,
+          "pg": 2,
+          "v": 1,
           "n": 1,
           "p": 0,
-          "gf": 1,
+          "gf": 7,
           "gs": 1,
-          "pt": 1,
-          "dr": 0
-        },
-        {
-          "team": {
-            "en": "Qatar",
-            "it": "Qatar",
-            "es": "Catar",
-            "iso": "qa",
-            "ph": false
-          },
-          "pg": 1,
-          "v": 0,
-          "n": 1,
-          "p": 0,
-          "gf": 1,
-          "gs": 1,
-          "pt": 1,
-          "dr": 0
+          "pt": 4,
+          "dr": 6
         },
         {
           "team": {
@@ -550,14 +613,48 @@
             "iso": "ch",
             "ph": false
           },
-          "pg": 1,
-          "v": 0,
+          "pg": 2,
+          "v": 1,
           "n": 1,
           "p": 0,
-          "gf": 1,
-          "gs": 1,
+          "gf": 5,
+          "gs": 2,
+          "pt": 4,
+          "dr": 3
+        },
+        {
+          "team": {
+            "en": "Bosnia & Herzegovina",
+            "it": "Bosnia ed Erzegovina",
+            "es": "Bosnia y Herzegovina",
+            "iso": "ba",
+            "ph": false
+          },
+          "pg": 2,
+          "v": 0,
+          "n": 1,
+          "p": 1,
+          "gf": 2,
+          "gs": 5,
           "pt": 1,
-          "dr": 0
+          "dr": -3
+        },
+        {
+          "team": {
+            "en": "Qatar",
+            "it": "Qatar",
+            "es": "Catar",
+            "iso": "qa",
+            "ph": false
+          },
+          "pg": 2,
+          "v": 0,
+          "n": 1,
+          "p": 1,
+          "gf": 1,
+          "gs": 7,
+          "pt": 1,
+          "dr": -6
         }
       ]
     },
@@ -4078,200 +4175,200 @@
   "news": {
     "it": [
       {
-        "titolo": "Mondiali di Calcio 2026 2026 - Inghilterra - Croazia 4-2: Highlights - Video",
-        "fonte": "RaiPlay",
-        "link": "https://www.raiplay.it/video/2026/06/Inghilterra---Croazia-4-2-Highlights--Mondiali-di-Calcio-FIFA-2026-5a8cc58c-7fbe-42b8-af07-76bac634cd98.html",
-        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/17/1781733434868_2048x1152-Recuperato.png",
-        "dominio": "raiplay.it",
-        "quando": "1 g fa"
-      },
-      {
-        "titolo": "Mondiali 2026, Inghilterra-Croazia 4-2: la sintesi della partita",
-        "fonte": "RaiNews",
-        "link": "https://www.rainews.it/video/2026/06/calcio-mondiali-2026-coppa-mondo-fifa-inghilterra-croazia-4-2-la-sintesi-della-partita-a18fa6fd-8013-4f61-b47a-21ab5c70e309.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/17/1781727855486_BG.jpg",
-        "dominio": "rainews.it",
-        "quando": "19 ore fa"
-      },
-      {
-        "titolo": "\"Siamo tornati\", i media inglesi applaudono la Nazionale ma c'è un reparto che preoccupa tutti",
-        "fonte": "Corriere dello Sport",
-        "link": "https://www.corrieredellosport.it/news/calcio/mondiali-2026/inghilterra/2026/06/18-149285144/siamo_tornati_i_media_inglesi_applaudono_la_nazionale_ma_c_un_reparto_che_preoccupa_tutti",
-        "img": "https://cdn.corrieredellosport.it/images/2026/06/18/130315027-029acd98-cb82-4d52-879d-82b2c3c48a66.jpg",
-        "dominio": "corrieredellosport.it",
-        "quando": "4 ore fa"
-      },
-      {
-        "titolo": "Da Pelé a Pulisic, la storia del calcio Usa in \"American Wedding\"",
+        "titolo": "LIVE Canada-Qatar 5-0: poker Saliba, poi l'autogol. Ma il brutto infortunio di Koné rovina la festa",
         "fonte": "La Gazzetta dello Sport",
-        "link": "https://www.gazzetta.it/Calcio/Mondiali/18-06-2026/mondiali-2026-il-documentario-american-wedding-racconta-la-storia-del-calcio-negli-usa.shtml",
-        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/06/18/6a3407ba49f13.jpeg",
+        "link": "https://www.gazzetta.it/Calcio/Mondiali/18-06-2026/canada-qatar-live-risultato-e-gol-in-diretta-mondiali.shtml",
+        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/06/19/6a348717b682c.r_d.667-482-0.jpeg",
         "dominio": "gazzetta.it",
+        "quando": "poco fa"
+      },
+      {
+        "titolo": "Mondiali 2026. Il Canada passeggia sul Qatar 6-0, infortunio shock per Koné. Tra poco Messico-Corea - Il Canada fa 6-0 al Qatar. Pesante infortunio per Koné",
+        "fonte": "RaiNews",
+        "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-8-repubblica-ceca-sudafrica-svizzera-bosnia-erzegovina-diretta-streaming-cronaca-highlights-video-live-risultati-d52e519e-7990-4b16-a40e-ff8e9da355f0.html",
+        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/19/1781825669210_.jpg",
+        "dominio": "rainews.it",
+        "quando": "poco fa"
+      },
+      {
+        "titolo": "Canada-Qatar 0-0 LIVE: diretta scritta e aggiornamenti in tempo reale della partita. Cronaca, gol, risultato e marcatori",
+        "fonte": "eurosport.it",
+        "link": "https://www.eurosport.it/calcio/mondiali/2026/live-canada-qatar_mtc1579424/live-commentary.shtml",
+        "img": "",
+        "dominio": "eurosport.it",
         "quando": "2 ore fa"
       },
       {
-        "titolo": "Repubblica Ceca-Sudafrica diretta: Mondiali 2026, segui la partita di oggi LIVE",
-        "fonte": "Corriere dello Sport",
-        "link": "https://www.corrieredellosport.it/news/calcio/mondiali-2026/2026/06/18-149286162/repubblica_ceca-sudafrica_diretta_mondiali_2026_segui_la_partita_di_oggi_live",
-        "img": "https://cdn.corrieredellosport.it/images/2026/06/18/175044143-98e7a3b6-4fd3-422c-aa73-846bb0810f01.jpg",
-        "dominio": "corrieredellosport.it",
-        "quando": "poco fa"
-      },
-      {
-        "titolo": "Mondiali 2026, Cechia-Sudafrica 1-1 all'83'. Alle 21 Svizzera-Bosnia Erzegovina - Repubblica Ceca-Sudafrica 1-0 dopo i primi 45’",
+        "titolo": "Mondiali 2026: Uzbekistan-Colombia 1-3, Ghana-Panama 1-0, Inghilterra-Croazia 4-2 - Aggiornamento del 18 Giugno delle ore 09:00",
         "fonte": "RaiNews",
-        "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-8-repubblica-ceca-sudafrica-svizzera-bosnia-erzegovina-diretta-streaming-cronaca-highlights-video-live-risultati-d52e519e-7990-4b16-a40e-ff8e9da355f0.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/18/1781802894298_.jpg",
+        "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-7-portogallo-congo-inghilterra-croazia-ghana-panama-uzbekistan-colombia-diretta-streaming-cronaca-highlights-video-live-risultati-e325c2f2-91e3-47ba-87ca-d9b17f4093fa.html",
+        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/18/1781742234946_InghilterraCroazia.jpg",
         "dominio": "rainews.it",
-        "quando": "1 ore fa"
+        "quando": "17 ore fa"
       },
       {
-        "titolo": "Mondiali 2026, le partite di oggi 18 giugno. Orari e dove vederle in tv",
-        "fonte": "Quotidiano Nazionale",
-        "link": "https://www.quotidiano.net/mondiali/mondiali-2026-le-partite-di-oggi-18-giugno-orari-e-dove-vederle-bb37ca18",
-        "img": "https://www.quotidiano.net/image-service/view/acePublic/alias/contentid/NTkxZWZmMjMtMTVlNC00/1/topshot-fbl-wc-2026-match01-mex-rsa.jpg?f=16:9&w=1200&h=675",
-        "dominio": "quotidiano.net",
-        "quando": "12 ore fa"
+        "titolo": "Cannavaro battuto all’esordio Mondiale: il suo Uzbekistan lotta ma perde 3-1 contro la Colombia",
+        "fonte": "la Repubblica",
+        "link": "https://www.repubblica.it/sport/dossier/mondiali-calcio/2026/06/18/news/cannavaro_mondiali_risultato_uzbekistan_colombia_sconfitta-425418017/",
+        "img": "https://www.repstatic.it/content/nazionale/img/2026/06/18/095623344-41409383-b495-472f-a5d9-ecff7040d4b4.jpg",
+        "dominio": "repubblica.it",
+        "quando": "19 ore fa"
       },
       {
-        "titolo": "Mondiali 2026, le news di oggi in diretta LIVE: Neymar non giocherà contro Haiti",
-        "fonte": "Sky Sport",
-        "link": "https://sport.sky.it/calcio/mondiali/2026/06/18/mondiali-2026-news-oggi-18-giugno-diretta",
-        "img": "https://sport.sky.it/assets/images/05b50e3a5685e736b6a8ed9529c44e34363e7857/skysport/it/calcio/mondiali/2026/06/17/mondiali-2026-news-oggi-17-giugno-diretta/getty_neymar_allenamento.jpg?im=Resize,width=1218",
-        "dominio": "sport.sky.it",
+        "titolo": "Mondiali 2026, la Colombia cala il tris all'Uzbekistan di Cannavaro. Ghana ok al 95'",
+        "fonte": "Sportmediaset",
+        "link": "https://www.sportmediaset.mediaset.it/speciale/mondiali-2026/mondiali-2026-colombia-uzbekistan-ghana-panama-risultati-gol_113309766-202602k.shtml",
+        "img": "https://img-api.cloud.mediaset.net/api/images/kn/v1/image_main/1200/675/113309582?r=9",
+        "dominio": "sportmediaset.mediaset.it",
+        "quando": "19 ore fa"
+      },
+      {
+        "titolo": "Mondiali: Ancelotti, 'possiamo e dobbiamo fare meglio'",
+        "fonte": "ANSA",
+        "link": "https://www.ansa.it/sito/notizie/sport/calcio/2026/06/19/mondiali-ancelotti-possiamo-e-dobbiamo-fare-meglio_ac312ed5-e8f8-4e79-aaff-fed93988ea5e.html",
+        "img": "https://www.ansa.it/webimages/img_1129x635/2026/6/11/563c6a1dfe662ba40648dbaebe1c4111.jpg",
+        "dominio": "ansa.it",
         "quando": "poco fa"
+      },
+      {
+        "titolo": "Mondiali 2026, Inghilterra-Croazia finisce 4-2. Portogallo-Congo 1-1",
+        "fonte": "Sky TG24",
+        "link": "https://tg24.sky.it/sport/2026/06/17/mondiali-calcio-2026-news-oggi-diretta",
+        "img": "https://tg24.sky.it/assets/images/b1d90cfdbeb75a57616c819dfae8667233cb924f/skytg24/it/sport/2026/06/17/mondiali-calcio-2026-news-oggi-diretta/SKYPAOLINI_20260617232324555_b3e6c22204b02f96974a7326f7e0c5bc.jpg?im=Resize,width=1218",
+        "dominio": "tg24.sky.it",
+        "quando": "18 ore fa"
       }
     ],
     "en": [
-      {
-        "titolo": "(1) Czechia v South Africa: World Cup – live",
-        "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/18/czechia-v-south-africa-world-cup-live",
-        "img": "https://i.guim.co.uk/img/media/17a9fef3a894a6384bf1f645675ce542baac3591/15_0_4228_3382/master/4228.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=5eae68db8f2030d244313f35ee4e8902",
-        "dominio": "theguardian.com",
-        "quando": "2h ago"
-      },
-      {
-        "titolo": "FIFA World Cup 2026 - Group Stage: Czech Republic v South Africa",
-        "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/iplayer/episode/m002xv7f/fifa-world-cup-2026-group-stage-czech-republic-v-south-africa",
-        "img": "",
-        "dominio": "bbc.co.uk",
-        "quando": "2h ago"
-      },
-      {
-        "titolo": "Czech Republic v South Africa LIVE: Score and latest updates from World Cup 2026 clash",
-        "fonte": "The Independent",
-        "link": "https://www.independent.co.uk/sport/football/czech-republic-south-africa-live-score-world-cup-2026-result-b2997798.html",
-        "img": "https://static.independent.co.uk/2026/06/18/18/2026-06-18T174646Z_1669260930_UP1EM6I1DDXQ2_RTRMADP_3_SOCCER-WORLDCUP-CZE-ZAF.JPG?trim=0,104,0,103&width=1200&height=800&crop=1200:800",
-        "dominio": "independent.co.uk",
-        "quando": "just now"
-      },
-      {
-        "titolo": "England 4-2 Croatia: World Cup 2026 – as it happened",
-        "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/17/england-v-croatia-world-cup-2026-live-updates",
-        "img": "https://i.guim.co.uk/img/media/c615356cc263909d860fcd57045a9e2454d6cb1e/631_0_3748_3000/master/3748.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=3616a1ac2aac72bf80d9661f6fc3ee5a",
-        "dominio": "theguardian.com",
-        "quando": "1d ago"
-      },
-      {
-        "titolo": "World Cup LIVE: 'Armed killer' near England camp as Messi family release statement",
-        "fonte": "Daily Express",
-        "link": "https://www.express.co.uk/sport/football/2218707/world-cup-live-england-croatia-spying-drone",
-        "img": "https://cdn.images.express.co.uk/img/dynamic/67/1200x630/6988401.jpg",
-        "dominio": "express.co.uk",
-        "quando": "just now"
-      },
-      {
-        "titolo": "England v Croatia LIVE: Thomas Tuchel gives Declan Rice injury update after thumping World Cup win",
-        "fonte": "The Independent",
-        "link": "https://www.independent.co.uk/sport/football/england-croatia-live-score-world-cup-2026-result-b2998125.html",
-        "img": "https://static.independent.co.uk/2026/06/18/01/500906a7f05dba310375ec5a7d8fb21bY29udGVudHNlYXJjaGFwaSwxNzgxODI5MTI2-2.84990335.jpg?width=1200&height=800&crop=1200:800",
-        "dominio": "independent.co.uk",
-        "quando": "6h ago"
-      },
       {
         "titolo": "From one to 48 - every World Cup team ranked after first game",
         "fonte": "BBC",
         "link": "https://www.bbc.com/sport/football/articles/cn4djkzxygjo",
         "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/ec6a/live/8ef6d710-6ac1-11f1-b1db-af71d47507d6.png",
         "dominio": "bbc.com",
-        "quando": "13h ago"
+        "quando": "19h ago"
       },
       {
-        "titolo": "2026 World Cup: Why are teams making so many mistakes?",
+        "titolo": "Uzbekistan 1-3 Colombia: World Cup 2026 – as it happened",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/live/2026/jun/18/fifa-world-cup-2026-live-uzbekistan-v-colombia-updates-uzb-vs-col-group-k-match-score-latest",
+        "img": "https://i.guim.co.uk/img/media/db73c3a5ddecec6fab01aff1317fd87c1a4c5485/1001_130_2111_1689/master/2111.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=9e1c35a93a3fa9f81761df4eaac5b83f",
+        "dominio": "theguardian.com",
+        "quando": "20h ago"
+      },
+      {
+        "titolo": "World Cup Daily LIVE: Canada cruises to first-ever World Cup win, Mexico up next",
+        "fonte": "ESPN",
+        "link": "https://www.espn.co.uk/football/story/_/id/49096431/world-cup-daily-congo-dr-fans-hit-portugal-cristiano-ronaldo-siuuu",
+        "img": "",
+        "dominio": "espn.co.uk",
+        "quando": "just now"
+      },
+      {
+        "titolo": "Canada v Qatar: World Cup 2026 – live",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/live/2026/jun/18/fifa-world-cup-2026-live-canada-v-qatar-updates-can-vs-qat-group-b-match-score-latest",
+        "img": "https://i.guim.co.uk/img/media/d25e151b5a30aac9b235745194db632e2556df65/230_156_3223_2577/master/3223.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=7426372e1b274f49ee56ce8575c2a4d1",
+        "dominio": "theguardian.com",
+        "quando": "2h ago"
+      },
+      {
+        "titolo": "World Cup LIVE: Canada vs Qatar updates with horror injury after VAR penalty and red card drama",
+        "fonte": "The Mirror",
+        "link": "https://www.mirror.co.uk/sport/football/news/world-cup-live-updates-england-37316471",
+        "img": "https://i2-prod.mirror.co.uk/article37317973.ece/ALTERNATES/s1200d/1_GettyImages-2282271643.jpg",
+        "dominio": "mirror.co.uk",
+        "quando": "1h ago"
+      },
+      {
+        "titolo": "Canada 6-0 Qatar: Co hosts thrash Qatar but lose Kone to serious-looking injury",
         "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/articles/c0jy7n2l51jo",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/e9ef/live/a40c3af0-6b1b-11f1-be36-65d2d6d55e70.jpg",
+        "link": "https://www.bbc.co.uk/sport/football/live/cgqj0zw4nn9t",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/229e/live/a8d143d0-6b6d-11f1-980f-5b3c93603bb9.jpg",
         "dominio": "bbc.co.uk",
-        "quando": "4h ago"
+        "quando": "1h ago"
+      },
+      {
+        "titolo": "Switzerland 4-1 Bosnia-Herzegovina: Johan Manzambi scores twice as Swiss win",
+        "fonte": "BBC",
+        "link": "https://www.bbc.com/sport/football/live/clyxn1d72n7t",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/a239/live/52c2c1c0-6b5a-11f1-b47c-952f3223237b.jpg",
+        "dominio": "bbc.com",
+        "quando": "2h ago"
+      },
+      {
+        "titolo": "Manzambi double inspires Switzerland rout of 10-man Bosnia and Herzegovina",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/2026/jun/18/switzerland-bosnia-and-herzegovina-group-b-match-report",
+        "img": "https://i.guim.co.uk/img/media/1cf2164c184e15868a6e20759164a55be51cf19f/425_0_3467_2773/master/3467.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=9964e89954309d0894a81a06faf34b36",
+        "dominio": "theguardian.com",
+        "quando": "just now"
       }
     ],
     "es": [
       {
-        "titolo": "Qué partidos se juegan hoy, jueves, en el Mundial 2026: horarios y dónde ver gratis en televisión y seguir online",
-        "fonte": "ABC",
-        "link": "https://www.abc.es/deportes/futbol/mundial/partidos-juegan-hoy-jueves-horarios-donde-ver-gratis-television-online-20260618050000-nt.html",
-        "img": "https://s1.abcstatics.com/abc/www/multimedia/deportes/2026/06/11/partidoshoy-kfyH-U30292564078NeD-1200x630@diario_abc.jpg",
-        "dominio": "abc.es",
-        "quando": "4 h"
+        "titolo": "Suiza derruye el muro bosnio en Los Ángeles y toma vuelo en el Mundial 2026",
+        "fonte": "RTVE.es",
+        "link": "https://www.rtve.es/deportes/20260618/mundial-2026-suiza-bosnia-directo-resumen-resultado/17117513.shtml",
+        "img": "https://img.rtve.es/imagenes/mundial-2026-suiza-bosnia-directo-resumen-resultado/01781810531918.jpg",
+        "dominio": "rtve.es",
+        "quando": "6 h"
       },
       {
-        "titolo": "República Checa 1-1 Sudáfrica: resumen, resultado y goles",
+        "titolo": "Así le hemos contado la victoria 4-1 de Suiza ante Bosnia",
+        "fonte": "EL PAÍS",
+        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-18/suiza-bosnia-y-herzegovina-en-directo-partido-del-grupo-b-del-mundial-en-vivo.html",
+        "img": "",
+        "dominio": "elpais.com",
+        "quando": "3 h"
+      },
+      {
+        "titolo": "Suiza olvida el estreno",
         "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/republica-checa-sudafrica-en-directo-grupo-a-del-mundial-hoy-en-vivo-f202606-d/",
-        "img": "https://img.asmedia.epimg.net/resizer/v2/YT7GN2VHJBL7PNPSJ5JQQGGP5A.jpg?auth=7996dfe17577f9b800793b2f14ef2deaa500d4152476dd85a4daadfd2535a665&width=1472&height=828&focal=3052%2C781",
+        "link": "https://as.com/futbol/mundial/suiza-se-olvida-de-lopetegui-f202606-n/",
+        "img": "https://img.asmedia.epimg.net/resizer/v2/BN3WX7QCFVJ27A3YL2J24NJWXY.jpg?auth=a4af7eb7a30a6df3c76444b285ada8f8de91b7a92245c93e149e5b89f852b23f&width=1472&height=828&smart=true",
         "dominio": "as.com",
-        "quando": "ahora"
+        "quando": "3 h"
       },
       {
-        "titolo": "Chequia - Sudáfrica, última hora en directo: resultado y goles | Mundial 2026 de fútbol: grupo A",
+        "titolo": "Mundial 2026: ¿qué partidos se juegan hoy, 18 de junio? Horarios y enfrentamientos",
+        "fonte": "CNN en Español",
+        "link": "https://cnnespanol.cnn.com/2026/06/18/deportes/mundial-2026-partidos-18-junio-orix",
+        "img": "",
+        "dominio": "cnnespanol.cnn.com",
+        "quando": "13 h"
+      },
+      {
+        "titolo": "Partidos de hoy, jueves 18 de junio, del Mundial 2026: horarios y dónde ver por TV",
+        "fonte": "El Mundo",
+        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/18/6a33ac6ce85eceba038b4575.html",
+        "img": "https://e01-phantom-elmundo.uecdn.es/b85646b27a774febcbfed9be19e94787/f/webp/assets/multimedia/imagenes/2026/06/18/17817717941378.jpg",
+        "dominio": "elmundo.es",
+        "quando": "15 h"
+      },
+      {
+        "titolo": "¿Cómo se jugarán los 16avos de final del Mundial 2026? Este es el formato de la nueva ronda de la Copa del Mundo",
+        "fonte": "MARCA",
+        "link": "https://www.marca.com/mx/futbol/mundial/2026/06/17/6a32c81d46163fa7198b45d4.html",
+        "img": "https://e01-phantom-marca-mx.uecdn.es/1f3be76fce988e10961afe0d5ad7cefc/resize/1200/f/jpg/mx/assets/multimedia/imagenes/2026/06/17/17817128615356.png",
+        "dominio": "marca.com",
+        "quando": "1 d"
+      },
+      {
+        "titolo": "Canadá - Qatar: resultado, resumen y goles | Mundial 2026 de fútbol: fase de grupos",
         "fonte": "Mundo Deportivo",
-        "link": "https://www.mundodeportivo.com/futbol/mundial/20260618/1004196367/republica-checa-sudafrica-directo-mundial-grupo-a.html",
-        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/06/18/6a342fc038c66.jpeg",
+        "link": "https://www.mundodeportivo.com/futbol/mundial/20260618/1004196773/canada-qatar-directo-mundial-2026-futbol-fase-grupos.html",
+        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/06/19/6a34807c029e4.jpeg",
         "dominio": "mundodeportivo.com",
         "quando": "ahora"
       },
       {
-        "titolo": "República Checa - Sudáfrica, hoy en directo | Sigue la última hora de la segunda jornada del Mundial, en vivo",
-        "fonte": "MARCA",
-        "link": "https://www.marca.com/futbol/mundial/republica-checa-sudafrica/2026/06/18/01_0117_20260618_367_522-directo.html",
-        "img": "https://objetos.estaticos-marca.com/assets/multimedia/imagenes/2026/06/18/17817895936725.jpg",
-        "dominio": "marca.com",
+        "titolo": "Canadá vs. Qatar por el Mundial 2026: goleada 6-0 de los locales, que sufrieron una dura lesión de un jugador",
+        "fonte": "La Nación",
+        "link": "https://www.lanacion.com.ar/deportes/futbol/canada-vs-qatar-en-vivo-por-el-mundial-2026-nid18062026/",
+        "img": "https://www.lanacion.com.ar/resizer/v2/el-festejo-especial-de-nathan-saliba-en-HZWXIHELAZFOXOGVZJLLPRUPEU.JPG?auth=347591fef306f95751de22550d3b68de73cca4627e759baf0d6c718b4e3616ef&width=1200&height=675&quality=70&smart=true",
+        "dominio": "lanacion.com.ar",
         "quando": "ahora"
-      },
-      {
-        "titolo": "Suiza - Bosnia Herzegovina, en directo",
-        "fonte": "El Mundo",
-        "link": "https://www.elmundo.es/deportes/futbol/mundial/suiza-bosnia-herzegovina/2026/06/18/01_0117_20260618_497_537-directo.html",
-        "img": "https://e01-phantom-elmundo.uecdn.es/35c3c2c813a9d521133567e8fff67d04/crop/13x0/1011x665/resize/998/assets/multimedia/imagenes/2026/06/18/17817967558110.jpg",
-        "dominio": "elmundo.es",
-        "quando": "ahora"
-      },
-      {
-        "titolo": "Hacienda podría reclamarte parte del dinero si vendes cromos del Mundial",
-        "fonte": "Libertad Digital",
-        "link": "https://www.libertaddigital.com/deportes/futbol/2026-06-18/hacienda-podria-reclamarte-parte-del-dinero-si-vendes-cromos-del-mundial-7423326/",
-        "img": "https://s1.staticld.com/2026/06/18/1200/675/cromos-mundial-2026.jpg",
-        "dominio": "libertaddigital.com",
-        "quando": "1 h"
-      },
-      {
-        "titolo": "Así vigila España el mercado de las apuestas durante el Mundial 2026",
-        "fonte": "La Razón",
-        "link": "https://www.larazon.es/deportes/futbol/asi-vigila-espana-mercado-apuestas-mundial-2026_202606186a340acb9f03cb0254d4c888.html",
-        "img": "https://fotografias-2.larazon.es/clipping/cmsimages02/2026/06/18/397A7B1B-384F-4AE0-940C-CE6D5BBD2392/98.jpg?crop=1920,1080,x0,y99&width=1900&height=1069&optimize=low&format=webply",
-        "dominio": "larazon.es",
-        "quando": "2 h"
-      },
-      {
-        "titolo": "Las botas de fútbol que dominan el Mundial 2026: ¿Por qué casi todos los jugadores las llevan de color rosa?",
-        "fonte": "El Independiente",
-        "link": "https://www.elindependiente.com/deportes/2026/06/18/botas-dominan-mundial-2026-modelos-exclusivos/",
-        "img": "https://www.elindependiente.com/wp-content/uploads/2026/06/europapress-7602316-kylian-mbappe-of-france-celebrates-goal-during-the-fifa-world-cup-2026-e1781781462834-1200x675.jpg",
-        "dominio": "elindependiente.com",
-        "quando": "5 h"
       }
     ]
   }
