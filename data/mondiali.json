@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-06-19T22:09:03Z",
+  "aggiornato": "2026-06-20T07:15:09Z",
   "nome": "World Cup 2026",
   "groups": [
     {
@@ -795,7 +795,28 @@
             "iso": "ma",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              0,
+              1
+            ],
+            "ht": [
+              0,
+              1
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [],
+          "goals2": [
+            {
+              "name": "Ismael Saibari",
+              "minute": "2",
+              "pen": false,
+              "og": false
+            }
+          ]
         },
         {
           "round": "Matchday 9",
@@ -817,7 +838,40 @@
             "iso": "ht",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              3,
+              0
+            ],
+            "ht": [
+              3,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Matheus Cunha",
+              "minute": "23",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Matheus Cunha",
+              "minute": "36",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Vinícius Júnior",
+              "minute": "45+3",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": []
         },
         {
           "round": "Matchday 14",
@@ -867,37 +921,20 @@
       "classifica": [
         {
           "team": {
-            "en": "Scotland",
-            "it": "Scozia",
-            "es": "Escocia",
-            "iso": "gb-sct",
-            "ph": false
-          },
-          "pg": 1,
-          "v": 1,
-          "n": 0,
-          "p": 0,
-          "gf": 1,
-          "gs": 0,
-          "pt": 3,
-          "dr": 1
-        },
-        {
-          "team": {
             "en": "Brazil",
             "it": "Brasile",
             "es": "Brasil",
             "iso": "br",
             "ph": false
           },
-          "pg": 1,
-          "v": 0,
+          "pg": 2,
+          "v": 1,
           "n": 1,
           "p": 0,
-          "gf": 1,
+          "gf": 4,
           "gs": 1,
-          "pt": 1,
-          "dr": 0
+          "pt": 4,
+          "dr": 3
         },
         {
           "team": {
@@ -907,13 +944,30 @@
             "iso": "ma",
             "ph": false
           },
-          "pg": 1,
-          "v": 0,
+          "pg": 2,
+          "v": 1,
           "n": 1,
           "p": 0,
+          "gf": 2,
+          "gs": 1,
+          "pt": 4,
+          "dr": 1
+        },
+        {
+          "team": {
+            "en": "Scotland",
+            "it": "Scozia",
+            "es": "Escocia",
+            "iso": "gb-sct",
+            "ph": false
+          },
+          "pg": 2,
+          "v": 1,
+          "n": 0,
+          "p": 1,
           "gf": 1,
           "gs": 1,
-          "pt": 1,
+          "pt": 3,
           "dr": 0
         },
         {
@@ -924,14 +978,14 @@
             "iso": "ht",
             "ph": false
           },
-          "pg": 1,
+          "pg": 2,
           "v": 0,
           "n": 0,
-          "p": 1,
+          "p": 2,
           "gf": 0,
-          "gs": 1,
+          "gs": 4,
           "pt": 0,
-          "dr": -1
+          "dr": -4
         }
       ]
     },
@@ -1124,7 +1178,28 @@
             "iso": "py",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              0,
+              1
+            ],
+            "ht": [
+              0,
+              1
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [],
+          "goals2": [
+            {
+              "name": "Matías Galarza",
+              "minute": "2",
+              "pen": false,
+              "og": false
+            }
+          ]
         },
         {
           "round": "Matchday 15",
@@ -1208,35 +1283,35 @@
         },
         {
           "team": {
-            "en": "Turkey",
-            "it": "Turchia",
-            "es": "Turquía",
-            "iso": "tr",
-            "ph": false
-          },
-          "pg": 1,
-          "v": 0,
-          "n": 0,
-          "p": 1,
-          "gf": 0,
-          "gs": 2,
-          "pt": 0,
-          "dr": -2
-        },
-        {
-          "team": {
             "en": "Paraguay",
             "it": "Paraguay",
             "es": "Paraguay",
             "iso": "py",
             "ph": false
           },
-          "pg": 1,
-          "v": 0,
+          "pg": 2,
+          "v": 1,
           "n": 0,
           "p": 1,
-          "gf": 1,
+          "gf": 2,
           "gs": 4,
+          "pt": 3,
+          "dr": -2
+        },
+        {
+          "team": {
+            "en": "Turkey",
+            "it": "Turchia",
+            "es": "Turquía",
+            "iso": "tr",
+            "ph": false
+          },
+          "pg": 2,
+          "v": 0,
+          "n": 0,
+          "p": 2,
+          "gf": 0,
+          "gs": 3,
           "pt": 0,
           "dr": -3
         }
@@ -4223,20 +4298,28 @@
   "news": {
     "it": [
       {
-        "titolo": "Messico, è festa! Il gol di Romo (ma che papera di Kim...) vale i sedicesimi",
-        "fonte": "La Gazzetta dello Sport",
-        "link": "https://www.gazzetta.it/Calcio/Mondiali/19-06-2026/messico-corea-del-sud-risultato-e-gol-in-diretta-mondiali-1.shtml",
-        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/06/19/6a34b067778da.jpeg",
-        "dominio": "gazzetta.it",
-        "quando": "11 ore fa"
+        "titolo": "Mondiali 2026, USA-Australia: le formazioni ufficiali",
+        "fonte": "Fantacalcio",
+        "link": "https://www.fantacalcio.it/news/calcio-estero/mondiali/19_06_2026/mondiali-2026-usa-australia-le-formazioni-ufficiali-494390",
+        "img": "https://content.fantacalcio.it/web/img/large/usa-ea11978d-fe37-44ea-8b6c-9f38a31fb560.jpg",
+        "dominio": "fantacalcio.it",
+        "quando": "13 ore fa"
       },
       {
-        "titolo": "Mondiali di Calcio 2026 2026 - Messico - Corea del Sud 1-0: Highlights - Video",
+        "titolo": "Mondiali di Calcio 2026 2026 - Stati Uniti - Australia 2-0: Highlights - Video",
         "fonte": "RaiPlay",
-        "link": "https://www.raiplay.it/video/2026/06/Messico---Corea-del-Sud-1-0-Highlights--Mondiali-di-Calcio-FIFA-2026-28ef76c6-8959-4816-9c2a-b2d5ef8c295c.html",
-        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/19/1781842705468_1280x720-copertina.jpg",
+        "link": "https://www.raiplay.it/video/2026/06/Stati-Uniti---Australia-2-0-Highlights--Mondiali-di-Calcio-FIFA-2026-1f563395-aca1-464f-8db0-44e0d2d2bcc5.html",
+        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/19/1781901429946_2048x1152-Recuperato.png",
         "dominio": "raiplay.it",
-        "quando": "22 ore fa"
+        "quando": "1 g fa"
+      },
+      {
+        "titolo": "Mondiali di calcio 2026, Usa-Australia 2-0. Statunitensi ai sedicesimi di finale",
+        "fonte": "Sky TG24",
+        "link": "https://tg24.sky.it/sport/2026/06/19/mondiali-calcio-2026-news-oggi-diretta",
+        "img": "https://tg24.sky.it/assets/images/46fa5c265eeaa2b11d2119a7a088a67d8a700924/skytg24/it/sport/2026/06/19/mondiali-calcio-2026-news-oggi-diretta/usa_ansa.jpg?im=Resize,width=1218",
+        "dominio": "tg24.sky.it",
+        "quando": "8 ore fa"
       },
       {
         "titolo": "Mondiali 2026. Messico ai 16esimi: 1-0 alla Corea del Sud. Canada, infortunio shock per Koné - Iran presenterà un reclamo contro 'restrizioni'",
@@ -4244,123 +4327,139 @@
         "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-8-repubblica-ceca-sudafrica-svizzera-bosnia-erzegovina-diretta-streaming-cronaca-highlights-video-live-risultati-d52e519e-7990-4b16-a40e-ff8e9da355f0.html",
         "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/19/1781825669210_.jpg",
         "dominio": "rainews.it",
-        "quando": "16 ore fa"
-      },
-      {
-        "titolo": "Mondiali di Calcio 2026 2026 - Canada - Qatar 6-0: Highlights - Video",
-        "fonte": "RaiPlay",
-        "link": "https://www.raiplay.it/video/2026/06/Canada---Qatar-6-0-Highlights--Mondiali-di-Calcio-FIFA-2026-18f64db3-eb36-45e6-9b44-f0917a0d8148.html",
-        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/19/1781827434072_1781824133680_LO%202048x1152.jpg",
-        "dominio": "raiplay.it",
         "quando": "1 g fa"
       },
       {
-        "titolo": "Canada-Qatar shock: il sogno spezzato di Koné, gamba spaccata e addio ai Mondiali",
-        "fonte": "RaiNews",
-        "link": "https://www.rainews.it/articoli/2026/06/canada-qatar-shock-il-sogno-spezzato-di-kone-gamba-spaccata-e-addio-ai-mondiali-calcio-f01a294c-9708-46ca-8bf3-59ee7ff0d662.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/19/1781842369750_.png",
-        "dominio": "rainews.it",
-        "quando": "18 ore fa"
-      },
-      {
-        "titolo": "Il Canada ne fa sei al Qatar in 9: tripletta di David, ma il brutto infortunio di Koné rovina la festa",
-        "fonte": "La Gazzetta dello Sport",
-        "link": "https://www.gazzetta.it/Calcio/Mondiali/18-06-2026/canada-qatar-live-risultato-e-gol-in-diretta-mondiali.shtml",
-        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/06/19/6a348717b682c.r_d.667-482-0.jpeg",
-        "dominio": "gazzetta.it",
-        "quando": "11 ore fa"
-      },
-      {
-        "titolo": "LIVE Mondiale: dichiarazioni fake e polemiche social su Cr7, Portogallo nel caos",
+        "titolo": "Mondiale, Georgina risponde a un profilo fake e tira in ballo CR7: scoppia il caos nel Portogallo",
         "fonte": "La Gazzetta dello Sport",
         "link": "https://www.gazzetta.it/Calcio/Mondiali/19-06-2026/live-mondiali-2026-cosa-succede-tra-usa-canada-e-messico.shtml",
-        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/06/19/6a35b041f0b1a.jpeg",
+        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2025/05/06/681a11adcff40.r_d.1500-830-0.jpeg",
         "dominio": "gazzetta.it",
-        "quando": "poco fa"
+        "quando": "4 ore fa"
       },
       {
-        "titolo": "Mondiali 2026, USA-Australia: le formazioni ufficiali",
-        "fonte": "Fantacalcio",
-        "link": "https://www.fantacalcio.it/news/calcio-estero/mondiali/19_06_2026/mondiali-2026-usa-australia-le-formazioni-ufficiali-494390",
-        "img": "https://content.fantacalcio.it/web/img/large/usa-ea11978d-fe37-44ea-8b6c-9f38a31fb560.jpg",
-        "dominio": "fantacalcio.it",
-        "quando": "3 ore fa"
+        "titolo": "Turchia - Paraguay (0-1) Mondiali 2026",
+        "fonte": "la Repubblica",
+        "link": "https://www.repubblica.it/sport/dirette/calcio/mondiali-2026/diretta-turchia-paraguay-g2608272/",
+        "img": "https://www.repstatic.it/cless/main/nazionale/2013-v1/img/common/favicon/favicon-1500.png",
+        "dominio": "repubblica.it",
+        "quando": "4 ore fa"
+      },
+      {
+        "titolo": "Mondiali 2026, le partite di oggi in diretta: Brasile-Haiti 3-0, Ancelotti azzecca tutto. Show Usa, è ai sedicesimi. Marocco ok, Turchia sotto con il Paraguay",
+        "fonte": "Corriere della Sera",
+        "link": "https://www.corriere.it/sport/calcio/mondiali/diretta-live/26_giugno_19/mondiali-2026-le-partite-di-oggi-in-diretta-usa-australia-alle-21-pulisic-non-ce-la-fa-nella-notte-il-brasile-il-marocco-e-la.shtml",
+        "img": "https://dimages2.corriereobjects.it/files/image_1200_900/files/fp/uploads/2026/06/20/6a35fd20e9f52.r_d.459-324-0.jpeg",
+        "dominio": "corriere.it",
+        "quando": "2 ore fa"
+      },
+      {
+        "titolo": "Mondiali 2026, Brasile-Haiti 3-0. Turchia ko 1-0 con il Paraguay: espulso Almiron. LIVE",
+        "fonte": "Sky TG24",
+        "link": "https://tg24.sky.it/sport/2026/06/20/mondiali-calcio-2026-news-oggi-diretta",
+        "img": "https://tg24.sky.it/assets/images/a8e43d8b3a1fbf9fc0a3b39975f1fff6d67c11e4/skytg24/it/sport/2026/06/20/mondiali-2026-risultati-partite-programma-oggi/paraguay_ipa.jpg?im=Resize,width=1218",
+        "dominio": "tg24.sky.it",
+        "quando": "1 ore fa"
       }
     ],
     "en": [
       {
-        "titolo": "World Cup 2026: Koné grateful for support after injury and Kane’s Wonderwall moment – as it happened",
-        "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/19/world-cup-2026-news-kone-injury-canada-rout-scotland-big-challenge-morocco-usa-australia-buildup-live",
-        "img": "https://i.guim.co.uk/img/media/97757f5cb1eeedb83e4535078155c206b454f613/289_0_3125_2500/master/3125.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=e8a79d4c6d4fc62b8990390bc9d33352",
-        "dominio": "theguardian.com",
-        "quando": "15h ago"
-      },
-      {
-        "titolo": "World Cup 2026: Fifa alters how World Cup tables work - it changes everything",
+        "titolo": "Highlights - Scotland 0-1 Morocco World Cup 2026 - 20 June 2026",
         "fonte": "BBC",
-        "link": "https://www.bbc.com/sport/football/articles/cn94jrj8d5go",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/1e25/live/0ab864e0-6c0c-11f1-866d-31e44f099e94.jpg",
-        "dominio": "bbc.com",
-        "quando": "3h ago"
-      },
-      {
-        "titolo": "FIFA World Cup 2026 - Group Stage: USA v Australia",
-        "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/iplayer/episode/m002xv9w/fifa-world-cup-2026-group-stage-usa-v-australia",
-        "img": "",
+        "link": "https://www.bbc.co.uk/sport/videos/cn59zxl376ro",
+        "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/479d/live/e6399970-6c3f-11f1-b1db-af71d47507d6.jpg",
         "dominio": "bbc.co.uk",
-        "quando": "3h ago"
+        "quando": "6h ago"
       },
       {
-        "titolo": "Scotland vs Morocco LIVE: Latest World Cup 2026 updates from Group C clash",
-        "fonte": "ESPN",
-        "link": "https://www.espn.co.uk/football/story/_/id/49119000/scotland-vs-morocco-latest-updates-commentary-score-world-cup-2026-live-result",
-        "img": "https://a.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0618%2Fr1675731_1296x729_16%2D9.jpg",
-        "dominio": "espn.co.uk",
-        "quando": "1h ago"
-      },
-      {
-        "titolo": "Gary Lineker to be guest on ITV’s World Cup coverage",
-        "fonte": "The Telegraph",
-        "link": "https://www.telegraph.co.uk/football/2026/06/19/lineker-itv-bbc-netflix-guest-world-cup-germany-ivory-coast/",
-        "img": "https://www.telegraph.co.uk/content/dam/football/2026/06/19/TELEMMGLPICT000489949092_17818937484200_trans_NvBQzQNjv4Bqofv3ewCvbij5BtuABAe67Zgo2oekEGMqiy29mRRH9oQ.jpeg?impolicy=OG-Standard",
-        "dominio": "telegraph.co.uk",
-        "quando": "3h ago"
-      },
-      {
-        "titolo": "USMNT qualifies for 2026 World Cup knockout round with 2-0 win over Australia: Live updates and reaction",
-        "fonte": "The New York Times",
-        "link": "https://www.nytimes.com/athletic/live-blogs/usmnt-vs-australia-live-updates-world-cup-2026-score-result/EWvOSId1kFIx/",
-        "img": "https://cdn-media.theathletic.com/cdn-cgi/image/width=1200,height=630,fit=cover/EWvOSId1kFIx_vbFS5ABd0cVZ_1440x960.jpg",
-        "dominio": "nytimes.com",
-        "quando": "just now"
-      },
-      {
-        "titolo": "USA vs Australia LIVE: World Cup 2026 latest score and updates",
-        "fonte": "London Evening Standard",
-        "link": "https://www.standard.co.uk/sport/football/usa-vs-australia-live-stream-latest-score-updates-result-world-cup-2026-b1286857.html",
-        "img": "https://static.standard.co.uk/2026/06/18/12/18/USAvsAustralia18062026.jpeg?width=1200&auto=webp&quality=75",
-        "dominio": "standard.co.uk",
+        "titolo": "2026 FIFA World Cup: Scotland vs Morocco",
+        "fonte": "BBC",
+        "link": "https://www.bbc.co.uk/sport/football/videos/c1myz9xye7xo",
+        "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/b7b0/live/d10815e0-6c44-11f1-8e1d-bbbb1017d210.jpg",
+        "dominio": "bbc.co.uk",
         "quando": "5h ago"
       },
       {
-        "titolo": "Preview: Belgium vs Iran - prediction, team news, lineups | World Cup 2026",
-        "fonte": "Sports Mole",
-        "link": "https://www.sportsmole.co.uk/football/belgium/world-cup-2026/preview/belgium-vs-iran-prediction-team-news-lineups_599586.html",
-        "img": "https://www.sportsmole.co.uk/thumbor/ip7oKihwbLqZ4YH2HlDeOydCd2o=/720x410/smart/filters:format(webp)/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F06%2Fjeremy-doku-3-6a2d928daa5dc953395963.jpg",
-        "dominio": "sportsmole.co.uk",
-        "quando": "13h ago"
+        "titolo": "World Cup 2026 today: Live updates, latest news as Scotland suffer narrow loss - June 20",
+        "fonte": "ESPN",
+        "link": "https://www.espn.co.uk/football/story/_/id/49123861/world-cup-2026-today-blog-20-06-2026-live-updates-news-fixtures-schedule-results-scotland-morocco-brazil",
+        "img": "https://a2.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0620%2Fr1676527_1296x729_16%2D9.jpg",
+        "dominio": "espn.co.uk",
+        "quando": "just now"
+      },
+      {
+        "titolo": "FIFA World Cup Group C LIVE: Brazil vs Haiti - score, radio commentary, text updates & match stats",
+        "fonte": "BBC",
+        "link": "https://www.bbc.co.uk/sport/football/live/cwy0e228196t",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/b453/live/09d93790-6c50-11f1-8e1d-bbbb1017d210.jpg",
+        "dominio": "bbc.co.uk",
+        "quando": "4h ago"
+      },
+      {
+        "titolo": "Brazil 3-0 Haiti: World Cup 2026 – as it happened",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/live/2026/jun/20/fifa-world-cup-2026-live-brazil-v-haiti-updates-bra-vs-hai-group-c-match-score-latest",
+        "img": "https://i.guim.co.uk/img/media/6b14ba21f3cd5ff6cb89b84d8e955f21625cf170/540_0_5524_4418/master/5524.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=5b2e847af553768f9cdbb562639dc50f",
+        "dominio": "theguardian.com",
+        "quando": "4h ago"
+      },
+      {
+        "titolo": "Brazil vs Haiti LIVE! World Cup 2026 Group C fixture, score, live updates and team news",
+        "fonte": "Sky Sports",
+        "link": "https://www.skysports.com/football/live-blog/12027/13553652/brazil-vs-haiti-live",
+        "img": "https://e0.365dm.com/26/06/1600x900/skysports-matheus-cunha-brazil_7278320.jpg?20260620025245",
+        "dominio": "skysports.com",
+        "quando": "6h ago"
+      },
+      {
+        "titolo": "Turkey 0-1 Paraguay: World Cup 2026 – as it happened",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/live/2026/jun/20/fifa-world-cup-2026-live-turkey-v-paraguay-updates-tur-vs-par-group-d-match-score-latest",
+        "img": "https://i.guim.co.uk/img/media/7efe83639e72afb729f3daf60bbc52eee0becb75/369_0_1824_1459/master/1824.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=0225d7716bfbc2e7c45adc5a2f90cb19",
+        "dominio": "theguardian.com",
+        "quando": "4h ago"
+      },
+      {
+        "titolo": "World Cup 2026 day 9 — as it happened",
+        "fonte": "The Times",
+        "link": "https://www.thetimes.com/sport/football/world-cup/article/world-cup-2026-latest-news-scores-team-updates-day-9-zpbz8qlz2",
+        "img": "https://www.thetimes.com/imageserver/image/6ee01399-d33b-4b05-900f-d7a01ef5b718.jpg?strip=all&format=webp&crop=3000px%2C1687px%2C0px%2C69px&resize=1200",
+        "dominio": "thetimes.com",
+        "quando": "2h ago"
       }
     ],
     "es": [
+      {
+        "titolo": "Turquía 0 - 1 Paraguay: resumen, resultado y gol",
+        "fonte": "Diario AS",
+        "link": "https://as.com/futbol/mundial/turquia-paraguay-en-directo-fase-de-grupos-del-mundial-2026-hoy-en-vivo-f202606-d/",
+        "img": "",
+        "dominio": "as.com",
+        "quando": "2 h"
+      },
+      {
+        "titolo": "Turquía - Paraguay, en directo | Mundial 2026 de fútbol: fase de grupos",
+        "fonte": "Mundo Deportivo",
+        "link": "https://www.mundodeportivo.com/futbol/mundial/20260620/1004197203/turquia-paraguay-directo-mundial-2026-futbol-fase-grupos.html",
+        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/06/20/6a3607bb8a1aa.jpeg",
+        "dominio": "mundodeportivo.com",
+        "quando": "2 h"
+      },
+      {
+        "titolo": "Turquía 0-1 Paraguay | Resumen Mundial 2026",
+        "fonte": "MARCA",
+        "link": "https://www.marca.com/futbol/mundial/2026/06/20/turquia-0-1-paraguay-resumen-mundial-2026-video.html",
+        "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/06/20/bnn2g1gDYGUs3tVME.jpeg",
+        "dominio": "marca.com",
+        "quando": "1 h"
+      },
       {
         "titolo": "Partidos de hoy, viernes 19 de junio, del Mundial 2026: horarios y dónde ver por TV",
         "fonte": "El Mundo",
         "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/19/6a33b700fdddff3f7a8b4593.html",
         "img": "https://e01-phantom-elmundo.uecdn.es/2fc588f22117f55ed2f97c73caba4422/resize/1200/f/webp/assets/multimedia/imagenes/2026/06/18/17817745946128.jpg",
         "dominio": "elmundo.es",
-        "quando": "14 h"
+        "quando": "23 h"
       },
       {
         "titolo": "Mundial 2026, en directo: noticias de la Copa del Mundo y última hora de las selecciones, hoy 19 de junio",
@@ -4368,55 +4467,31 @@
         "link": "https://as.com/futbol/mundial/mundial-2026-en-directo-noticias-de-la-copa-del-mundo-y-ultima-hora-de-las-selecciones-hoy-19-de-junio-f202606-d/",
         "img": "",
         "dominio": "as.com",
-        "quando": "ahora"
+        "quando": "2 h"
       },
       {
-        "titolo": "Así está el grupo F del Mundial 2026: clasificación, selecciones, calendario, partidos, horarios y favoritos",
-        "fonte": "MARCA",
-        "link": "https://www.marca.com/futbol/mundial/2026/06/19/asi-grupo-f-mundial-2026-clasificacion-selecciones-calendario-partidos-horarios-favoritos.html",
-        "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2024/09/05/17183088389148.jpeg",
-        "dominio": "marca.com",
+        "titolo": "Mundial 2026, últimas noticias en directo | Cubarsí: “Estamos con las pilas cargadas y queremos demostrarlo ante Arabia Saudí”",
+        "fonte": "EL PAÍS",
+        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-19/resumen-y-ultimas-noticias-de-la-copa-mundial-de-futbol.html",
+        "img": "https://imagenes.elpais.com/resizer/v2/77MYCJIDWRGGZN6M7OMRDLC7XQ.jpg?auth=993a6ccf6ea8a7155c6e2033e182913b0f053dcde9a15db2d2d72f3697dce6a4&width=1200",
+        "dominio": "elpais.com",
         "quando": "1 h"
       },
       {
-        "titolo": "Escocia - Marruecos, en directo | Mundial 2026 de fútbol: fase de grupos",
-        "fonte": "Mundo Deportivo",
-        "link": "https://www.mundodeportivo.com/futbol/mundial/20260619/1004197186/escocia-marruecos-directo-mundial-2026-futbol-fase-grupos.html",
-        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/files/fp/uploads/2026/06/14/6a2e1328a1e8e.r_d.890-329-12658.jpeg",
-        "dominio": "mundodeportivo.com",
+        "titolo": "Países Bajos - Suecia: horario y dónde ver hoy por TV el partido del Mundial 2026",
+        "fonte": "El Mundo",
+        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/20/6a35082ee85eceea738b4575.html",
+        "img": "https://e01-phantom-elmundo.uecdn.es/e30c7f9e36c65d4f82b296ecf8e12505/resize/1200/f/webp/assets/multimedia/imagenes/2026/06/19/17818605131927.jpg",
+        "dominio": "elmundo.es",
         "quando": "ahora"
       },
       {
-        "titolo": "Escocia - Marruecos hoy, en directo: partido de fase de grupos del Mundial 2026, en vivo",
-        "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/escocia-marruecos-en-directo-fase-de-grupos-del-mundial-2026-hoy-en-vivo-f202606-d/",
-        "img": "",
-        "dominio": "as.com",
-        "quando": "ahora"
-      },
-      {
-        "titolo": "Dónde ver gratis online y en televisión el partido de Marruecos hoy y a qué hora juega contra Escocia en el Mundial 2026",
-        "fonte": "ABC",
-        "link": "https://www.abc.es/deportes/futbol/mundial/donde-ver-gratis-online-television-partido-marruecos-hoy-hora-escocia-20260619053000-nt.html",
-        "img": "https://s1.abcstatics.com/abc/www/multimedia/deportes/2026/06/19/achraf-kzGI-U30373323230QjB-1200x630@diario_abc.JPG",
-        "dominio": "abc.es",
-        "quando": "3 h"
-      },
-      {
-        "titolo": "Las pausas de hidratación dividen el Mundial: partidos de cuatro tiempos, debate abierto, publicidad encubierta...",
+        "titolo": "Estados Unidos demuestra quién es el verdadero 'rey' del 'soccer'",
         "fonte": "MARCA",
-        "link": "https://www.marca.com/futbol/mundial/2026/06/19/pausas-hidratacion-dividen-mundial-partidos-cuatro-tiempos-debate-abierto-publicidad-encubierta.html",
-        "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/06/18/6a345db5c3a37.jpeg",
+        "link": "https://www.marca.com/futbol/mundial/cronica/2026/06/19/estados-unidos-demuestra-verdadero-rey-soccer.html",
+        "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/06/19/bnPx61gDREFca4eaX.jpeg",
         "dominio": "marca.com",
-        "quando": "4 h"
-      },
-      {
-        "titolo": "Estados Unidos - Australia en vivo hoy: partido de USA en Grupo D del Mundial 2026, en directo",
-        "fonte": "Diario AS",
-        "link": "https://as.com/us/futbol/mundial/estados-unidos-australia-en-vivo-hoy-goles-resultados-y-ultimas-noticias-del-usmnt-en-copa-del-mundo-2026-f202606-d/",
-        "img": "https://img.asmedia.epimg.net/resizer/v2/X3B57PUGCFILVGG5KG6FJF3TBQ.jpg?auth=eaa8395b27adeb19b64aae37877b04045aece1494ed39b3aa58a49d3240b7bbf&width=1472&height=828&smart=true",
-        "dominio": "as.com",
-        "quando": "ahora"
+        "quando": "10 h"
       }
     ]
   }
