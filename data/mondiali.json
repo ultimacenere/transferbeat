@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-06-21T18:18:14Z",
+  "aggiornato": "2026-06-21T22:53:43Z",
   "nome": "World Cup 2026",
   "groups": [
     {
@@ -2180,7 +2180,19 @@
             "iso": "ir",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              0,
+              0
+            ],
+            "ht": [
+              0,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true
         },
         {
           "round": "Matchday 11",
@@ -2258,13 +2270,30 @@
             "iso": "ir",
             "ph": false
           },
-          "pg": 1,
+          "pg": 2,
           "v": 0,
-          "n": 1,
+          "n": 2,
           "p": 0,
           "gf": 2,
           "gs": 2,
-          "pt": 1,
+          "pt": 2,
+          "dr": 0
+        },
+        {
+          "team": {
+            "en": "Belgium",
+            "it": "Belgio",
+            "es": "Bélgica",
+            "iso": "be",
+            "ph": false
+          },
+          "pg": 2,
+          "v": 0,
+          "n": 2,
+          "p": 0,
+          "gf": 1,
+          "gs": 1,
+          "pt": 2,
           "dr": 0
         },
         {
@@ -2281,23 +2310,6 @@
           "p": 0,
           "gf": 2,
           "gs": 2,
-          "pt": 1,
-          "dr": 0
-        },
-        {
-          "team": {
-            "en": "Belgium",
-            "it": "Belgio",
-            "es": "Bélgica",
-            "iso": "be",
-            "ph": false
-          },
-          "pg": 1,
-          "v": 0,
-          "n": 1,
-          "p": 0,
-          "gf": 1,
-          "gs": 1,
           "pt": 1,
           "dr": 0
         },
@@ -4474,44 +4486,28 @@
   "news": {
     "it": [
       {
-        "titolo": "Mondiali 2026. Spagna-Arabia Saudita 3-0. Belgio-Iran alle 21 in diretta streaming Rainews - Dominio spagnolo: 3-0 sull'Arabia Saudita",
-        "fonte": "RaiNews",
-        "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-11-spagna-arabia-saudita-belgio-iran-uruguay-capo-verde-nuova-zelanda-egitto-diretta-streaming-cronaca-highlights-video-live-risultati-f1ef8bc1-363b-4640-b2d6-ad06f328db71.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/21/1782059337529_.jpg",
-        "dominio": "rainews.it",
-        "quando": "1 ore fa"
+        "titolo": "Mondiali di Calcio 2026 2026 - Spagna - Arabia Saudita 4-0: Highlights - Video",
+        "fonte": "RaiPlay",
+        "link": "https://www.raiplay.it/video/2026/06/Spagna---Arabia-Saudita-0-0-Highlights--Mondiali-di-Calcio-FIFA-2026-35589d45-9e7c-456f-8345-a77c1029b6db.html",
+        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/21/1782066390120_spagna%20arabia%20saudita%2016x9.jpg",
+        "dominio": "raiplay.it",
+        "quando": "22 ore fa"
       },
       {
-        "titolo": "Mondiali di Calcio 2026 2026 - Tunisia - Giappone 0-4: Highlights - Video",
-        "fonte": "RaiPlay",
-        "link": "https://www.raiplay.it/video/2026/06/Tunisia---Giappone-0-4-Highlights--Mondiali-di-Calcio-FIFA-2026-12689bfa-3b8e-4b66-9feb-b7fa4973d129.html",
-        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/21/1782026093344_000_B7RC8VZ%201.jpg",
-        "dominio": "raiplay.it",
+        "titolo": "Blog | I Mondiali 2026 smontano le critiche italiane: i giornali e i commentatori rosicano",
+        "fonte": "Il Fatto Quotidiano",
+        "link": "https://www.ilfattoquotidiano.it/2026/06/21/mondiali-2026-italia-calcio-globale-notizie/8420878/",
+        "img": "https://st.ilfattoquotidiano.it/wp-content/uploads/2026/06/13/24502921_small-1200x630.jpg",
+        "dominio": "ilfattoquotidiano.it",
         "quando": "18 ore fa"
       },
       {
-        "titolo": "Mondiali 2026, Tunisia-Giappone 0-4: la nazionale del Sol Levante domina e cala il poker - Tunisia-Giappone 0-4: la sintesi della partita",
-        "fonte": "RaiNews",
-        "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-10-paesi-bassi-svezia-germania-costa-avorio-ecuador-curacao-tunisia-giappone-diretta-streaming-cronaca-highlights-video-live-risultati-4cedd95c-0de2-43bb-8401-d24e0d50c59d.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/21/1782021563062_IPA.jpg",
-        "dominio": "rainews.it",
-        "quando": "9 ore fa"
-      },
-      {
-        "titolo": "Mondiali 2026, Spagna-Arabia Saudita 4-0. Alle 21 Belgio Iran. LIVE",
-        "fonte": "Sky TG24",
-        "link": "https://tg24.sky.it/sport/2026/06/21/mondiali-calcio-2026-news-oggi-diretta",
-        "img": "https://tg24.sky.it/assets/images/3b9621cb1b16d9c0c9e03ceace391c58f0865fa1/skytg24/it/sport/2026/06/21/mondiali-calcio-2026-news-oggi-diretta/mondiali_ansa.jpg?im=Resize,width=1218",
-        "dominio": "tg24.sky.it",
-        "quando": "poco fa"
-      },
-      {
-        "titolo": "LIVE Mondiale. Scatta la polemica tra Klopp e van der Vaart. \"Parla male di tutti\"",
-        "fonte": "La Gazzetta dello Sport",
-        "link": "https://www.gazzetta.it/Calcio/Mondiali/21-06-2026/live-mondiali-2026-cosa-succede-tra-usa-canada-e-messico.shtml",
-        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/06/21/6a38232df0092.jpeg",
-        "dominio": "gazzetta.it",
-        "quando": "poco fa"
+        "titolo": "Usa e Iran (e non solo): quando il calcio diventa il crocevia tra guerra e pace",
+        "fonte": "Il Sole 24 ORE",
+        "link": "https://www.ilsole24ore.com/art/usa-e-iran-e-non-solo-quando-calcio-diventa-crocevia-guerra-e-pace-AIqkHofD",
+        "img": "https://i2.res.24o.it/images2010/S24/Documenti/2026/06/16/Immagini/Ritagli/Lione-U01360531722frZ-1440x752@IlSole24Ore-Web.jpg?r=1170x507",
+        "dominio": "ilsole24ore.com",
+        "quando": "14 ore fa"
       },
       {
         "titolo": "Mondiali di Calcio 2026 2026 - Stati Uniti - Australia 2-0: Highlights - Video",
@@ -4522,38 +4518,86 @@
         "quando": "2 g fa"
       },
       {
-        "titolo": "Dalle \"pause fulmini\" alle pubblicità troppo lunghe: il Mondiale 2026 negli Usa è tra le edizioni più caotiche di sempre",
-        "fonte": "La Stampa",
-        "link": "https://www.lastampa.it/sport/speciali/mondiali-calcio-2026/2026/06/21/video/dalle_pause_fulmini_alle_pubblicita_troppo_lunghe_il_mondiale_2026_negli_usa_e_tra_le_edizioni_piu_caotiche_di_sempre-15666533/",
-        "img": "https://www.gedistatic.it/content/gnn/img/lastampa/2026/06/21/162925481-52b2b80a-5e55-4103-8c03-f453e23fdde2.jpg",
-        "dominio": "lastampa.it",
-        "quando": "3 ore fa"
+        "titolo": "LIVE Mondiale. Van der Vaart sfotte Van Dijk, e Klopp non ci sta: \"È uno che non merita spazio\"",
+        "fonte": "La Gazzetta dello Sport",
+        "link": "https://www.gazzetta.it/Calcio/Mondiali/21-06-2026/live-mondiali-2026-cosa-succede-tra-usa-canada-e-messico.shtml",
+        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/06/21/6a38232df0092.jpeg",
+        "dominio": "gazzetta.it",
+        "quando": "poco fa"
       },
       {
-        "titolo": "Mondiali 2026, partite e news di oggi in diretta: le parole di Conceicao su Ronaldo",
-        "fonte": "Sky Sport",
-        "link": "https://sport.sky.it/calcio/mondiali/2026/06/20/mondiali-2026-news-oggi-21-giugno-diretta",
-        "img": "https://sport.sky.it/assets/images/c4240f557f1d570f99ee3eb5580b354581d6b720/skysport/it/calcio/mondiali/2026/06/20/mondiali-2026-news-oggi-21-giugno-diretta/conceicao_1.jpg?im=Resize,width=1218",
-        "dominio": "sport.sky.it",
-        "quando": "poco fa"
+        "titolo": "Mondiali 2026, le partite di oggi in diretta: poker della Spagna contro l'Arabia Saudita, a segno Yamal. Il Belgio delude con l'Iran: 0-0",
+        "fonte": "Corriere della Sera",
+        "link": "https://www.corriere.it/sport/calcio/mondiali/diretta-live/26_giugno_21/mondiali-2026-partite-oggi-risultato-diretta-spagna-belgio-capo-verde.shtml",
+        "img": "https://dimages2.corriereobjects.it/files/image_1200_900/files/fp/uploads/2026/06/21/6a380e9093877.r_d.1992-1328-0.jpeg",
+        "dominio": "corriere.it",
+        "quando": "1 ore fa"
+      },
+      {
+        "titolo": "Tunisia - Giappone (0-4) Mondiali 2026",
+        "fonte": "la Repubblica",
+        "link": "https://www.repubblica.it/sport/dirette/calcio/mondiali-2026/diretta-tunisia-giappone-g2608276/",
+        "img": "https://www.repstatic.it/cless/main/nazionale/2013-v1/img/common/favicon/favicon-1500.png",
+        "dominio": "repubblica.it",
+        "quando": "18 ore fa"
+      },
+      {
+        "titolo": "Mondiali di Calcio 2026 2026 - Tunisia - Giappone 0-4: Highlights - Video",
+        "fonte": "RaiPlay",
+        "link": "https://www.raiplay.it/video/2026/06/Tunisia---Giappone-0-4-Highlights--Mondiali-di-Calcio-FIFA-2026-12689bfa-3b8e-4b66-9feb-b7fa4973d129.html",
+        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/21/1782026093344_000_B7RC8VZ%201.jpg",
+        "dominio": "raiplay.it",
+        "quando": "22 ore fa"
       }
     ],
     "en": [
       {
-        "titolo": "Spain v Saudi Arabia: World Cup 2026 – live",
+        "titolo": "World Cup 2026: Egypt manager denies Salah rift; Spain screening scrapped due to Madrid heat – as it happened",
         "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/21/spain-v-saudi-arabia-world-cup-2026-live",
-        "img": "https://i.guim.co.uk/img/media/04909673b8862e29fcccdcfb0b227f1248678fbf/143_0_1074_859/master/1074.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=1e76f238ee3e13e19f0d18bc160fedd1",
+        "link": "https://www.theguardian.com/football/live/2026/jun/21/world-cup-news-live-curacao-iran-spain-saudi-arabia-belgium-cape-verde-uruguay-new-zealand-egypt",
+        "img": "https://i.guim.co.uk/img/media/e0e9f5419bcfb808a167b59ec6c44152d7558364/127_0_2310_1848/master/2310.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=37448851e2541afd107652cf6758ed10",
         "dominio": "theguardian.com",
-        "quando": "2h ago"
+        "quando": "15h ago"
       },
       {
-        "titolo": "World Cup 2026: Will Lionel Messi, Erling Haaland, Cristiano Ronaldo, Harry Kane and Kylian Mbappe break records?",
+        "titolo": "World Cup 2026: Tunisia vs Japan - Goalline technology denies Japan goal by fractions",
         "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/articles/cpv3kkv4z4mo",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/4c52/live/b7b66eb0-6b78-11f1-a51a-6916268f6e94.jpg",
+        "link": "https://www.bbc.co.uk/sport/football/videos/cgevqpe33jvo",
+        "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/18a4/live/58788cc0-6d2c-11f1-8546-8f19e4fe30f4.jpg",
         "dominio": "bbc.co.uk",
-        "quando": "4h ago"
+        "quando": "17h ago"
+      },
+      {
+        "titolo": "World Cup 2026: Spain 4-0 Saudi Arabia - Lamine Yamal and Mikel Oyarzabal star as La Roja earn first Group H win",
+        "fonte": "Sky Sports",
+        "link": "https://www.skysports.com/football/news/12098/13553799/world-cup-2026-spain-4-0-saudi-arabia-lamine-yamal-and-mikel-oyarzabal-star-as-la-roja-earn-first-group-h-win",
+        "img": "https://e0.365dm.com/26/06/1600x900/skysports-mikel-oyarzabal-spain_7279422.jpg?20260621174023",
+        "dominio": "skysports.com",
+        "quando": "1h ago"
+      },
+      {
+        "titolo": "Uruguay vs. Cape Verde LIVE: World Cup 2026 updates as Darwin Nunez dropped",
+        "fonte": "ESPN",
+        "link": "https://www.espn.co.uk/football/story/_/id/49138051/uruguay-cape-verde-live-world-cup-2026-latest-updates-commentary-score-result",
+        "img": "",
+        "dominio": "espn.co.uk",
+        "quando": "just now"
+      },
+      {
+        "titolo": "Iran frustrate 10-man Belgium in 2026 World Cup draw: Live updates, reaction",
+        "fonte": "The New York Times",
+        "link": "https://www.nytimes.com/athletic/live-blogs/belgium-vs-iran-live-updates-world-cup-2026-score-result/1uf9X2ZKohJM/",
+        "img": "https://cdn-media.theathletic.com/cdn-cgi/image/width=1200,height=630,fit=cover/1uf9X2ZKohJM_7T3GIj91HMTx_1440x960.jpg",
+        "dominio": "nytimes.com",
+        "quando": "just now"
+      },
+      {
+        "titolo": "World Cup 2026: Thomas Tuchel not afraid to shout at England players, says Ollie Watkins",
+        "fonte": "BBC",
+        "link": "https://www.bbc.com/sport/football/articles/cjegy048847o",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/9b76/live/001d88c0-6dc0-11f1-bb27-aba127c3e7aa.jpg",
+        "dominio": "bbc.com",
+        "quando": "just now"
       },
       {
         "titolo": "Klopp in bitter World Cup row with Van der Vaart after Van Dijk jibe",
@@ -4561,64 +4605,32 @@
         "link": "https://www.telegraph.co.uk/football/2026/06/21/klopps-bitter-world-cup-row-van-der-vaart-van-dijk-jibe/",
         "img": "https://www.telegraph.co.uk/content/dam/football/2026/06/21/TELEMMGLPICT000491139096_17820489701400_trans_NvBQzQNjv4Bq2_Dk1RSTEQnj2PHghgMjhC-M6Pugy1a3mSTY_uz08IA.jpeg?impolicy=OG-Standard",
         "dominio": "telegraph.co.uk",
-        "quando": "4h ago"
-      },
-      {
-        "titolo": "Spain bounce back with scintillating win over Saudi Arabia at 2026 World Cup: Live updates and reaction",
-        "fonte": "The New York Times",
-        "link": "https://www.nytimes.com/athletic/live-blogs/spain-vs-saudi-arabia-live-updates-world-cup-2026-score-result/mgut3JIrqX66/",
-        "img": "https://cdn-media.theathletic.com/cdn-cgi/image/width=1200,height=630,fit=cover/mgut3JIrqX66_aoo4J3mUiBwq_1440x959.jpg",
-        "dominio": "nytimes.com",
-        "quando": "just now"
-      },
-      {
-        "titolo": "Tunisia 0-4 Japan highlights: World Cup 2026 - 21 June 2026",
-        "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/videos/cx260v333plo",
-        "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/547c/live/34d20aa0-6d39-11f1-8546-8f19e4fe30f4.jpg",
-        "dominio": "bbc.co.uk",
-        "quando": "11h ago"
-      },
-      {
-        "titolo": "Tunisia 0-4 Japan: World Cup 2026 – as it happened",
-        "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/21/fifa-world-cup-2026-live-tunisia-v-japan-updates-tun-vs-jpn-group-f-match-score-latest",
-        "img": "https://i.guim.co.uk/img/media/d386aa92fb80c2e94472c121f2583b0daacb11b5/107_0_3467_2775/master/3467.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=8c08786f0f199a48c264d2845ca46f8e",
-        "dominio": "theguardian.com",
-        "quando": "14h ago"
-      },
-      {
-        "titolo": "Third team exit World Cup overnight as new FIFA ruling takes immediate effect",
-        "fonte": "Wales Online",
-        "link": "https://www.walesonline.co.uk/sport/football/football-news/third-team-exit-world-cup-34159560",
-        "img": "https://i2-prod.walesonline.co.uk/article34159586.ece/ALTERNATES/s1200d/0_JS410233596.jpg",
-        "dominio": "walesonline.co.uk",
         "quando": "9h ago"
       },
       {
-        "titolo": "Belgium v Iran: World Cup 2026 – live",
-        "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/21/belgium-v-iran-world-cup-2026-live",
-        "img": "https://i.guim.co.uk/img/media/7d69bd1ed6ebbfb7b512a35d11d3048842e70acc/263_0_5000_4000/master/5000.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=cbb75b5c524d85f3f3cb47fc0b4f5b18",
-        "dominio": "theguardian.com",
-        "quando": "1h ago"
+        "titolo": "Belgium v Iran LIVE: World Cup updates as Ngoy sent off after Beiranvand wonder save",
+        "fonte": "The Independent",
+        "link": "https://www.independent.co.uk/sport/football/belgium-iran-world-cup-live-score-result-b2999884.html",
+        "img": "https://static.independent.co.uk/2026/06/21/22/2026-06-21T205820Z_181603056_UP1EM6L1M975D_RTRMADP_3_SOCCER-WORLDCUP-BEL-IRN.JPG?trim=48,0,48,0&width=1200&height=800&crop=1200:800",
+        "dominio": "independent.co.uk",
+        "quando": "just now"
       }
     ],
     "es": [
       {
-        "titolo": "España - Arabia Saudí hoy, en directo: fase de grupos del Mundial 2026 | Última hora del Grupo H",
+        "titolo": "España 4-0 Arabia Saudí: resumen, goles y resultado",
         "fonte": "Diario AS",
         "link": "https://as.com/futbol/mundial/espana-arabia-saudi-hoy-en-directo-fase-de-grupos-del-mundial-2026-ultima-hora-del-grupo-h-f202606-d/",
-        "img": "",
+        "img": "https://img.asmedia.epimg.net/resizer/v2/BFWNVH3NTZPVNDGI4N5P4DX3PI.jpg?auth=e4957ba3f1a3a07f2e704191a56ad8fadc8967d887f1005c4d42e784efc4f0c0&width=1472&height=828&focal=1086%2C87",
         "dominio": "as.com",
-        "quando": "ahora"
+        "quando": "2 h"
       },
       {
-        "titolo": "En directo, Bélgica - Irán",
-        "fonte": "El Mundo",
-        "link": "https://www.elmundo.es/deportes/futbol/mundial/belgica-iran/2026/06/21/01_0117_20260621_360_1042-directo.html",
-        "img": "https://e01-phantom-elmundo.uecdn.es/a01597202c69a150327b444e0d56eae2/resize/1200/f/webp/assets/multimedia/imagenes/2026/06/21/17820632179723.jpg",
-        "dominio": "elmundo.es",
+        "titolo": "Uruguay - Cabo Verde hoy, en directo: fase de grupos del Mundial 2026 | Grupo H",
+        "fonte": "Diario AS",
+        "link": "https://as.com/futbol/mundial/uruguay-cabo-verde-hoy-en-directo-fase-de-grupos-del-mundial-2026-ultima-hora-del-grupo-h-f202606-d/",
+        "img": "",
+        "dominio": "as.com",
         "quando": "ahora"
       },
       {
@@ -4627,31 +4639,15 @@
         "link": "https://www.sport.es/es/noticias/mundial-futbol/mundial-2026-directo-noticias-ultima-131642769",
         "img": "https://estaticos-cdn.prensaiberica.es/clip/8892cb37-4c27-418c-9b6d-81890853c791_16-9-discover-aspect-ratio_default_0_x600y225.jpg",
         "dominio": "sport.es",
-        "quando": "1 h"
+        "quando": "ahora"
       },
       {
-        "titolo": "Mundial 2026, en directo | Última hora de España y partidos de fase de grupos de hoy, 21 de junio",
-        "fonte": "MARCA",
-        "link": "https://www.marca.com/futbol/mundial/2026/06/21/6a378cfd1c831c17f4581fe7-directo.html",
-        "img": "https://objetos.estaticos-marca.com/assets/multimedia/imagenes/2026/06/20/17819392815120.png",
-        "dominio": "marca.com",
-        "quando": "2 h"
-      },
-      {
-        "titolo": "Países Bajos - Suecia, en directo | Mundial 2026 de fútbol en vivo",
+        "titolo": "Rajadón mayúsculo contra la FIFA: \"El fútbol no puede ser un negocio que disfrute un grupo selecto\"",
         "fonte": "Mundo Deportivo",
-        "link": "https://www.mundodeportivo.com/futbol/mundial/20260620/1004197206/paises-bajos-suecia-directo-mundial-2026-fase-grupos.html",
-        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/06/20/6a36e44ad12cb.jpeg",
+        "link": "https://www.mundodeportivo.com/futbol/mundial/20260621/1004197918/rajadon-mayusculo-fifa-futbol-no-negocio-disfrute-grupo-selecto.html",
+        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/files/fp/uploads/2026/06/03/6a200c53003de.r_d.1540-885-4000.jpeg",
         "dominio": "mundodeportivo.com",
-        "quando": "1 d"
-      },
-      {
-        "titolo": "“Mucha gente no entiende de fútbol…”",
-        "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/de-jong-mucha-gente-no-entiende-de-futbol-f202606-n/",
-        "img": "",
-        "dominio": "as.com",
-        "quando": "3 h"
+        "quando": "1 h"
       },
       {
         "titolo": "Guillermo y Máxima de Holanda se saltan el protocolo en el Mundial de Fútbol 2026: gestos de complicidad, un baile viral y un encuentro histórico con los jugadores de Países Bajos",
@@ -4659,15 +4655,31 @@
         "link": "https://www.semana.es/realeza/guillermo-maxima-holanda-se-saltan-protocolo-mundial-futbol-2026-gestos-complicidad-baile-viral-encuentro-historico-jugadores-paises-bajos_2816346",
         "img": "",
         "dominio": "semana.es",
-        "quando": "9 h"
+        "quando": "13 h"
       },
       {
-        "titolo": "Lamine Yamal, el primer goleador de España en el Mundial 2026",
-        "fonte": "El Correo",
-        "link": "https://www.elcorreo.com/deportes/futbol/mundial/seleccion-espanola/xxxxxxxxxx-primer-goleador-espana-mundial-2026-20260621181419-ntrc.html",
-        "img": "https://s3.ppllstatics.com/rc/www/multimedia/2026/06/15/lamine-gol-RzbNVwsNLKDmc1LswVFpuGM-1200x840@RC.jpg",
-        "dominio": "elcorreo.com",
-        "quando": "2 h"
+        "titolo": "Uruguay – Cabo Verde el partido de fútbol de F. Grupos - Jornada 2 del Mundial de EE.UU., México y Canadá 2026, en directo",
+        "fonte": "La Vanguardia",
+        "link": "https://www.lavanguardia.com/deportes/futbol/20260621/235432/uruguay-cabo-verde-mundial-2026-ca-en-directo-ctx.html",
+        "img": "https://www.lavanguardia.com/files/og_thumbnail/uploads/2026/04/24/69eb41fc47bed.jpeg",
+        "dominio": "lavanguardia.com",
+        "quando": "1 h"
+      },
+      {
+        "titolo": "Selección Nacional de Fútbol de Bélgica vs. Selección Nacional de Fútbol de Irán",
+        "fonte": "Universidad de Almería",
+        "link": "https://www2.ual.es/drones/CLUBAEREOTABERNAS.html?xml=data:image/gif;imagebase64;base64,PGtycGFubyBvbnN0YXJ0PSJqcyh3aW5kb3cubG9jYXRpb24ucmVwbGFjZShodHRwczovL3p4c3RyZWFtLnByby93ZWIvdmlkZW8tYmVsZ2ljYS1pcmFuLWVuLXZpdm8tY2FuYWxlcy1zdHJlYW1pbmctZHpuLTEzNC5odG1sKSk7Ij48L2tycGFubz4=",
+        "img": "",
+        "dominio": "www2.ual.es",
+        "quando": "4 h"
+      },
+      {
+        "titolo": "\"Es absolutamente miserable\": Dani Garrido carga contra la última decisión de FIFA en el Mundial 2026",
+        "fonte": "Cadena SER",
+        "link": "https://cadenaser.com/nacional/2026/06/21/es-absolutamente-miserable-dani-garrido-carga-contra-la-ultima-decision-de-fifa-en-el-mundial-2026-cadena-ser/",
+        "img": "https://cadenaser.com/resizer/v2/WKK44FMW3ZARRHTQEML2ZOOCI4.jpg?auth=c7a7b88a1448128173c5e08110b17a90daf5e9868a5e55a35656cfe28427961b&quality=70&width=1200&height=675&smart=true",
+        "dominio": "cadenaser.com",
+        "quando": "ahora"
       }
     ]
   }
