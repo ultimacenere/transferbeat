@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-06-20T21:07:52Z",
+  "aggiornato": "2026-06-21T07:17:56Z",
   "nome": "World Cup 2026",
   "groups": [
     {
@@ -1469,7 +1469,41 @@
             "iso": "ci",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              2,
+              1
+            ],
+            "ht": [
+              0,
+              1
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Deniz Undav",
+              "minute": "68",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Deniz Undav",
+              "minute": "90+4",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": [
+            {
+              "name": "Franck Kessié",
+              "minute": "30",
+              "pen": false,
+              "og": false
+            }
+          ]
         },
         {
           "round": "Matchday 10",
@@ -1491,7 +1525,19 @@
             "iso": "cw",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              0,
+              0
+            ],
+            "ht": [
+              0,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true
         },
         {
           "round": "Matchday 15",
@@ -1547,14 +1593,14 @@
             "iso": "de",
             "ph": false
           },
-          "pg": 1,
-          "v": 1,
+          "pg": 2,
+          "v": 2,
           "n": 0,
           "p": 0,
-          "gf": 7,
-          "gs": 1,
-          "pt": 3,
-          "dr": 6
+          "gf": 9,
+          "gs": 2,
+          "pt": 6,
+          "dr": 7
         },
         {
           "team": {
@@ -1564,14 +1610,14 @@
             "iso": "ci",
             "ph": false
           },
-          "pg": 1,
+          "pg": 2,
           "v": 1,
           "n": 0,
-          "p": 0,
-          "gf": 1,
-          "gs": 0,
+          "p": 1,
+          "gf": 2,
+          "gs": 2,
           "pt": 3,
-          "dr": 1
+          "dr": 0
         },
         {
           "team": {
@@ -1581,13 +1627,13 @@
             "iso": "ec",
             "ph": false
           },
-          "pg": 1,
+          "pg": 2,
           "v": 0,
-          "n": 0,
+          "n": 1,
           "p": 1,
           "gf": 0,
           "gs": 1,
-          "pt": 0,
+          "pt": 1,
           "dr": -1
         },
         {
@@ -1598,13 +1644,13 @@
             "iso": "cw",
             "ph": false
           },
-          "pg": 1,
+          "pg": 2,
           "v": 0,
-          "n": 0,
+          "n": 1,
           "p": 1,
           "gf": 1,
           "gs": 7,
-          "pt": 0,
+          "pt": 1,
           "dr": -6
         }
       ]
@@ -1842,7 +1888,46 @@
             "iso": "jp",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              0,
+              4
+            ],
+            "ht": [
+              0,
+              2
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [],
+          "goals2": [
+            {
+              "name": "Daichi Kamada",
+              "minute": "4",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Ayase Ueda",
+              "minute": "31",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Junya Ito",
+              "minute": "69",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Ayase Ueda",
+              "minute": "83",
+              "pen": false,
+              "og": false
+            }
+          ]
         },
         {
           "round": "Matchday 15",
@@ -1909,6 +1994,23 @@
         },
         {
           "team": {
+            "en": "Japan",
+            "it": "Giappone",
+            "es": "Japón",
+            "iso": "jp",
+            "ph": false
+          },
+          "pg": 2,
+          "v": 1,
+          "n": 1,
+          "p": 0,
+          "gf": 6,
+          "gs": 2,
+          "pt": 4,
+          "dr": 4
+        },
+        {
+          "team": {
             "en": "Sweden",
             "it": "Svezia",
             "es": "Suecia",
@@ -1926,37 +2028,20 @@
         },
         {
           "team": {
-            "en": "Japan",
-            "it": "Giappone",
-            "es": "Japón",
-            "iso": "jp",
-            "ph": false
-          },
-          "pg": 1,
-          "v": 0,
-          "n": 1,
-          "p": 0,
-          "gf": 2,
-          "gs": 2,
-          "pt": 1,
-          "dr": 0
-        },
-        {
-          "team": {
             "en": "Tunisia",
             "it": "Tunisia",
             "es": "Túnez",
             "iso": "tn",
             "ph": false
           },
-          "pg": 1,
+          "pg": 2,
           "v": 0,
           "n": 0,
-          "p": 1,
+          "p": 2,
           "gf": 1,
-          "gs": 5,
+          "gs": 9,
           "pt": 0,
-          "dr": -4
+          "dr": -8
         }
       ]
     },
@@ -4350,60 +4435,28 @@
   "news": {
     "it": [
       {
-        "titolo": "Mondiali. Paesi Bassi-Svezia 4-1. Alle 22 Germania-Costa d'Avorio in diretta Rai - Paesi Bassi-Svezia, la cronaca testuale",
+        "titolo": "Non basta il cambio di allenatore: Tunisia travolta 4-0 dal Giappone e già eliminata",
+        "fonte": "La Gazzetta dello Sport",
+        "link": "https://www.gazzetta.it/Calcio/Mondiali/21-06-2026/giappone-tunisia-live-risultati-e-marcatori-mondiali-2026.shtml",
+        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/06/21/6a377c86b0fe2.jpeg",
+        "dominio": "gazzetta.it",
+        "quando": "1 ore fa"
+      },
+      {
+        "titolo": "Mondiali 2026, Tunisia-Giappone 0-4: la nazionale del Sol Levante domina e cala il poker - La classifica dei Gruppi",
         "fonte": "RaiNews",
         "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-10-paesi-bassi-svezia-germania-costa-avorio-ecuador-curacao-tunisia-giappone-diretta-streaming-cronaca-highlights-video-live-risultati-4cedd95c-0de2-43bb-8401-d24e0d50c59d.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/20/1781980887984_.jpg",
+        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/21/1782021563062_IPA.jpg",
         "dominio": "rainews.it",
-        "quando": "2 ore fa"
+        "quando": "1 ore fa"
       },
       {
-        "titolo": "Le pagelle di Stati Uniti-Australia 2-0",
-        "fonte": "Sky Sport",
-        "link": "https://sport.sky.it/calcio/mondiali/2026/06/19/stati-uniti-australia-pagelle-mondiali-2026",
-        "img": "https://sport.sky.it/assets/images/d111e49a371c27a64c8495fa020c3c79da90b9ac/skysport/it/calcio/mondiali/2026/06/19/stati-uniti-australia-pagelle-mondiali-2026/balogun_stati_uniti_australia_getty.jpg?im=Resize,width=1218",
-        "dominio": "sport.sky.it",
-        "quando": "23 ore fa"
-      },
-      {
-        "titolo": "Mondiali di Calcio 2026 2026 - Stati Uniti - Australia 2-0: Highlights - Video",
-        "fonte": "RaiPlay",
-        "link": "https://www.raiplay.it/video/2026/06/Stati-Uniti---Australia-2-0-Highlights--Mondiali-di-Calcio-FIFA-2026-1f563395-aca1-464f-8db0-44e0d2d2bcc5.html",
-        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/19/1781901429946_2048x1152-Recuperato.png",
-        "dominio": "raiplay.it",
-        "quando": "1 g fa"
-      },
-      {
-        "titolo": "Mondiali 2026, Stati Uniti-Australia 1-0: la goffa autorete di Burgess",
-        "fonte": "RaiNews",
-        "link": "https://www.rainews.it/video/2026/06/calcio-mondiali-2026-giorno-9-stati-uniti-australia-autogol-cameron-burgess-video-b908ca02-7ae2-48f5-b170-51fc7565b3e3.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/19/1781896619526_.jpg",
-        "dominio": "rainews.it",
-        "quando": "1 g fa"
-      },
-      {
-        "titolo": "LIVE Alle 22 Germania-Costa d'Avorio, le ufficiali: Havertz contro Diomande e Bonny",
-        "fonte": "La Gazzetta dello Sport",
-        "link": "https://www.gazzetta.it/Calcio/Mondiali/20-06-2026/live-germania-costa-d-avorioai-mondiali-live-gol-e-risultato-la-diretta.shtml",
-        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/06/20/6a36fb8c62a51.r_d.1478-1215-0.jpeg",
-        "dominio": "gazzetta.it",
-        "quando": "2 ore fa"
-      },
-      {
-        "titolo": "Germania - Costa d'Avorio (0-0) Mondiali 2026",
+        "titolo": "Tunisia - Giappone (0-4) Mondiali 2026",
         "fonte": "la Repubblica",
-        "link": "https://www.repubblica.it/sport/dirette/calcio/mondiali-2026/diretta-germania-costa-davorio-g2608273/",
-        "img": "https://www.repstatic.it/cless/main/nazionale/2013-v1/img/common/favicon/favicon-1500.png",
+        "link": "https://www.repubblica.it/sport/dirette/calcio/mondiali-2026/diretta-tunisia-giappone-g2608276/",
+        "img": "",
         "dominio": "repubblica.it",
-        "quando": "2 ore fa"
-      },
-      {
-        "titolo": "Germania-Costa d'Avorio LIVE, tedeschi a caccia della 2^ vittoria di fila",
-        "fonte": "Sky Sport",
-        "link": "https://sport.sky.it/calcio/mondiali/partite/2026/giornata-2/germania-costa-davorio/risultato-gol",
-        "img": "https://sport.sky.it/assets/images/8f30096605d62fc42615736866111a805bf4b207/skysport/it/calcio/mondiali/partite/2026/giornata-2/germania-costa-davorio/live/content/kessie_getty.jpg?im=Resize,width=1218",
-        "dominio": "sport.sky.it",
-        "quando": "2 ore fa"
+        "quando": "3 ore fa"
       },
       {
         "titolo": "Mondiali 2026, i risultati e le news di oggi LIVE: l'esito degli esami di Raphinha",
@@ -4411,57 +4464,97 @@
         "link": "https://sport.sky.it/calcio/mondiali/2026/06/20/mondiali-2026-news-oggi-20-giugno-diretta",
         "img": "https://sport.sky.it/assets/images/ead40ef148129bff73e93022dc233f1ba982f8dc/skysport/it/calcio/mondiali/2026/06/20/mondiali-2026-news-oggi-20-giugno-diretta/raphinha_1.jpg?im=Resize,width=1218",
         "dominio": "sport.sky.it",
-        "quando": "poco fa"
+        "quando": "9 ore fa"
+      },
+      {
+        "titolo": "Il calcio in TV oggi: la programmazione di sabato 20 giugno 2026: da Olanda-Svezia a Germania-Costa D'avorio",
+        "fonte": "Libero",
+        "link": "https://www.libero.it/magazine/news/calcio-in-tv-oggi-programmazione-diretta-sabato-20-giugno-2026-cosa-vedere-211767",
+        "img": "https://wips.plug.it/cips/libero.it/magazine/cms/2026/06/stasera_magazine_calcio_20-giugno-2026.png",
+        "dominio": "libero.it",
+        "quando": "22 ore fa"
+      },
+      {
+        "titolo": "Blog | I Mondiali 2026 smontano le critiche italiane: i giornali e i commentatori rosicano",
+        "fonte": "Il Fatto Quotidiano",
+        "link": "https://www.ilfattoquotidiano.it/2026/06/21/mondiali-2026-italia-calcio-globale-notizie/8420878/",
+        "img": "https://st.ilfattoquotidiano.it/wp-content/uploads/2026/06/13/24502921_small-1200x630.jpg",
+        "dominio": "ilfattoquotidiano.it",
+        "quando": "2 ore fa"
+      },
+      {
+        "titolo": "LIVE Mondiale: i tifosi della Scozia fanno il pieno, birra esaurita a Boston",
+        "fonte": "La Gazzetta dello Sport",
+        "link": "https://www.gazzetta.it/Calcio/Mondiali/20-06-2026/live-mondiali-2026-cosa-succede-tra-usa-canada-e-messico.shtml",
+        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/06/20/6a36a25c5a3c8.jpeg",
+        "dominio": "gazzetta.it",
+        "quando": "16 ore fa"
+      },
+      {
+        "titolo": "Mondiali di Calcio 2026 2026 - Ecuador - Curaçao 0-0: Highlights - Video",
+        "fonte": "RaiPlay",
+        "link": "https://www.raiplay.it/video/2026/06/Ecuador---Curacao-0-0-Highlights--Mondiali-di-Calcio-FIFA-2026-23599725-d78a-443e-9a10-773e0cfd11fe.html",
+        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/21/1782007942106_Ecuador4852.jpg",
+        "dominio": "raiplay.it",
+        "quando": "1 g fa"
       }
     ],
     "en": [
       {
-        "titolo": "Brazil 3-0 Haiti: World Cup 2026 – as it happened",
+        "titolo": "World Cup 2026: USA’s ‘high IQ’ squad backed to handle hype; Casemiro heading for Miami; Sweden set for Dutch test – as it happened",
         "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/20/fifa-world-cup-2026-live-brazil-v-haiti-updates-bra-vs-hai-group-c-match-score-latest",
-        "img": "https://i.guim.co.uk/img/media/6b14ba21f3cd5ff6cb89b84d8e955f21625cf170/540_0_5524_4418/master/5524.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=5b2e847af553768f9cdbb562639dc50f",
+        "link": "https://www.theguardian.com/football/live/2026/jun/20/world-cup-2026-scotland-morocco-usa-australia-netherlands-sweden-germany-cote-d-ivoire-ecuador-curacao-tunisia-japan",
+        "img": "https://i.guim.co.uk/img/media/13c4e334aed54bdbfaf984ad158b2a88317e7bf6/239_0_4276_3420/master/4276.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=11facf27106c80ae8d618872913ab688",
         "dominio": "theguardian.com",
-        "quando": "20h ago"
+        "quando": "23h ago"
       },
       {
-        "titolo": "Turkey 0-1 Paraguay: World Cup 2026 – as it happened",
-        "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/20/fifa-world-cup-2026-live-turkey-v-paraguay-updates-tur-vs-par-group-d-match-score-latest",
-        "img": "https://i.guim.co.uk/img/media/7efe83639e72afb729f3daf60bbc52eee0becb75/369_0_1824_1459/master/1824.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=0225d7716bfbc2e7c45adc5a2f90cb19",
-        "dominio": "theguardian.com",
-        "quando": "18h ago"
-      },
-      {
-        "titolo": "World Cup 2026: Bukayo Saka trains alone as England prepare for Ghana game",
-        "fonte": "BBC",
-        "link": "https://www.bbc.com/sport/football/articles/cr47wqdq26lo",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/ed1e/live/7d2c8b10-6cce-11f1-af86-f18c6df0a749.jpg",
-        "dominio": "bbc.com",
-        "quando": "3h ago"
-      },
-      {
-        "titolo": "Germany v Côte d’Ivoire: World Cup 2026 – live",
-        "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/20/germany-v-cote-divoire-world-cup-2026-live",
-        "img": "https://i.guim.co.uk/img/media/b8b1b8e46ae1953ad335fd03f5b6576b890f35e4/228_0_2877_2301/master/2877.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=cd25cbb5ef41320194bdfd639d70de55",
-        "dominio": "theguardian.com",
-        "quando": "1h ago"
-      },
-      {
-        "titolo": "Germany vs Ivory Coast live updates: Kessie goal opens scoring in World Cup 2026 clash - The Athletic",
-        "fonte": "The New York Times",
-        "link": "https://www.nytimes.com/athletic/live-blogs/germany-vs-ivory-coast-live-updates-world-cup-2026-score-result/ARDIuH2TBoAU/",
-        "img": "https://cdn-media.theathletic.com/cdn-cgi/image/width=1200,height=630,fit=cover/ARDIuH2TBoAU_CfGUqoDEx6MU_1440x959.jpg",
-        "dominio": "nytimes.com",
+        "titolo": "Which teams have qualified for the World Cup 2026 knockouts, round of 32?",
+        "fonte": "Al Jazeera",
+        "link": "https://www.aljazeera.com/sports/2026/6/21/which-teams-have-qualified-for-the-world-cup-2026-knockouts-round-of-32",
+        "img": "https://www.aljazeera.com/wp-content/uploads/2026/06/2026-06-20T220811Z_1646985383_UP1EM6K1PHL1O_RTRMADP_3_SOCCER-WORLDCUP-GER-CIV-1782003822.jpg?resize=1920%2C1440",
+        "dominio": "aljazeera.com",
         "quando": "just now"
       },
       {
-        "titolo": "Germany - Côte d'Ivoire",
-        "fonte": "TNT Sports",
-        "link": "https://www.tntsports.co.uk/football/world-cup/2026/live-germany-cote-d-ivoire_mtc1579443/live-commentary.shtml",
+        "titolo": "FIFA World Cup 2026 Highlights: Ecuador v Curacao Highlights",
+        "fonte": "BBC",
+        "link": "https://www.bbc.co.uk/iplayer/episode/m002y422/fifa-world-cup-2026-fifa-world-cup-2026-highlights-ecuador-v-curacao-highlights",
         "img": "",
-        "dominio": "tntsports.co.uk",
-        "quando": "1h ago"
+        "dominio": "bbc.co.uk",
+        "quando": "2h ago"
+      },
+      {
+        "titolo": "Why is World Cup 2026 referee Istvan Kovacs wearing a gold trimmed kit for Japan vs Tunisia?",
+        "fonte": "The Sun",
+        "link": "https://www.thesun.co.uk/sport/39481990/world-cup-referee-istvan-kovacs-gold-kit-japan-vs-tunisia/",
+        "img": "",
+        "dominio": "thesun.co.uk",
+        "quando": "3h ago"
+      },
+      {
+        "titolo": "Germany 2-1 Côte d’Ivoire: World Cup 2026 – as it happened",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/live/2026/jun/20/germany-v-cote-divoire-world-cup-2026-live",
+        "img": "https://i.guim.co.uk/img/media/2d7e48e1bba2c60f8fc5fbc7619b9aa58c27bf68/585_30_2889_2313/master/2889.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=5b97bbf22eba6f5530cd16ded8d5f4cf",
+        "dominio": "theguardian.com",
+        "quando": "11h ago"
+      },
+      {
+        "titolo": "'Cancel the World Cup' - Ivory Coast centre back's 'sickening' shirt number in Germany clash sparks uproar",
+        "fonte": "The Sun",
+        "link": "https://www.thesun.co.uk/sport/39485169/world-cup-ivory-coast-kossounou-squad-number/",
+        "img": "",
+        "dominio": "thesun.co.uk",
+        "quando": "9h ago"
+      },
+      {
+        "titolo": "Deniz Undav is Germany’s unlikely World Cup hero who was playing semi-pro at 23",
+        "fonte": "The Telegraph",
+        "link": "https://www.telegraph.co.uk/football/2026/06/20/germany-vs-ivory-coast-live-score-latest-world-cup-updates/",
+        "img": "https://www.telegraph.co.uk/content/dam/football/2026/06/20/TELEMMGLPICT000491669967_17819959311450_trans_NvBQzQNjv4BqwU1VAhsJecnILhVCc2e7G-t7gP1iO36sez73r5daroc.jpeg?impolicy=OG-Live",
+        "dominio": "telegraph.co.uk",
+        "quando": "9h ago"
       },
       {
         "titolo": "Highlights - Netherlands 5-1 Sweden World Cup 2026 - 20 June 2026",
@@ -4469,81 +4562,73 @@
         "link": "https://www.bbc.co.uk/sport/football/videos/c17yl58xlpdo",
         "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/1c4a/live/9f160a30-6cdd-11f1-8e1d-bbbb1017d210.jpg",
         "dominio": "bbc.co.uk",
-        "quando": "1h ago"
-      },
-      {
-        "titolo": "Netherlands 5-1 Sweden: World Cup 2026 – as it happened",
-        "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/20/netherlands-v-sweden-world-cup-2026-live",
-        "img": "https://i.guim.co.uk/img/media/c9b81592f42c1bb92ff06b1ec921e34fb75f90a5/327_0_2978_2383/master/2978.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=f7f9ae8e8c142874f62b9248cd9c5d8b",
-        "dominio": "theguardian.com",
-        "quando": "4h ago"
+        "quando": "11h ago"
       }
     ],
     "es": [
       {
-        "titolo": "Mundial 2026, en directo hoy: 20 de junio: rueda de prensa de Luis de la Fuente",
-        "fonte": "RTVE.es",
-        "link": "https://www.rtve.es/deportes/20260620/mundial-2026-directo-hoy-partidos-resultados-clasificacion-goles-resumen-20-junio/17117473.shtml",
-        "img": "https://img.rtve.es/imagenes/mundial-2026-directo-hoy-partidos-resultados-clasificacion-goles-resumen-20-junio/01781191385317.jpg",
-        "dominio": "rtve.es",
-        "quando": "12 h"
+        "titolo": "Mundial 2026, últimas noticias en directo | Países Bajos golea a Suecia y Alemania remonta a Costa de Marfil",
+        "fonte": "EL PAÍS",
+        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-20/resumen-y-ultimas-noticias-de-la-copa-mundial-de-futbol.html",
+        "img": "",
+        "dominio": "elpais.com",
+        "quando": "8 h"
       },
       {
-        "titolo": "Vídeo Goles Brasil 3-0 Haití | Mundial 2026",
+        "titolo": "España - Arabia Saudí: horario y dónde ver hoy por TV el partido del Mundial 2026",
         "fonte": "El Mundo",
-        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/20/6a3654b621efa0550a8b4599-video.html",
-        "img": "https://e01-phantom-elmundo.uecdn.es/95e1c965e5b48311c7a6c3feba118c25/provider/dm/crop/150x0/1770x1080/resize/1200/f/webp/v/bnxWg1gDbIkEmo6HL/x1080",
+        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/21/6a351143e4d4d82f5d8b45a4.html",
+        "img": "https://e01-phantom-elmundo.uecdn.es/b8ec7d63899bef7f6b19d107d674bfd4/f/webp/assets/multimedia/imagenes/2026/06/19/17818642981269.jpg",
         "dominio": "elmundo.es",
-        "quando": "12 h"
-      },
-      {
-        "titolo": "Brasil 3-0 Haití: goles, resumen y resultado",
-        "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/brasil-haiti-en-directo-previa-y-ultima-hora-de-la-seleccion-de-ancelotti-en-el-mundial-2026-en-vivo-f202606-d/",
-        "img": "https://img.asmedia.epimg.net/resizer/v2/KP6GOGRCLNKZFHHQRDRSKA25IQ.jpg?auth=ccf9dc5f657cbbb708f893ae626a2adb9fd29f7d967fbd059e357c2f74acfa8a&width=1472&height=828&focal=3191%2C1672",
-        "dominio": "as.com",
-        "quando": "17 h"
-      },
-      {
-        "titolo": "Brasil confirma la lesión muscular de Raphinha",
-        "fonte": "EL PAÍS",
-        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-20/brasil-confirma-la-lesion-muscular-de-raphinha.html",
-        "img": "",
-        "dominio": "elpais.com",
         "quando": "ahora"
       },
       {
-        "titolo": "Alemania - Costa de Marfil hoy, en directo: fase de grupos del Mundial 2026 | Última hora del Grupo E",
-        "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/alemania-costa-de-marfil-hoy-en-directo-fase-de-grupos-del-mundial-2026-ultima-hora-del-grupo-e-f202606-d/",
-        "img": "",
-        "dominio": "as.com",
+        "titolo": "De Jong, sin pelos en la lengua: \"Tengo la sensación de que mucha gente no entiende nada de fútbol\"",
+        "fonte": "MARCA",
+        "link": "https://www.marca.com/futbol/mundial/2026/06/21/jong-pelos-lengua-sensacion-gente-entiende-futbol.html",
+        "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/06/21/6a378807079f7.jpeg",
+        "dominio": "marca.com",
         "quando": "ahora"
       },
       {
-        "titolo": "Alemania - Costa de Marfil, el partido del Mundial 2026 en directo | Nagelsmann repite el mismo once que en la goleada ante Curazao",
-        "fonte": "EL PAÍS",
-        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-20/alemania-costa-de-marfil-en-directo-el-partido-del-grupo-e-del-mundial-2026-en-vivo.html",
-        "img": "",
-        "dominio": "elpais.com",
-        "quando": "2 h"
-      },
-      {
-        "titolo": "Alemania - Costa de Marfil, en directo hoy: Gol de Kessié | Mundial 2026: jornada del grupo E",
+        "titolo": "Túnez - Japón | Mundial 2026 de fútbol en vivo: fase de grupos",
         "fonte": "Mundo Deportivo",
-        "link": "https://www.mundodeportivo.com/futbol/mundial/20260620/1004197298/alemania-costa-marfil-directo-mundial-2026-grupo-e.html",
-        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/06/20/6a36f848b4e1d.jpeg",
+        "link": "https://www.mundodeportivo.com/futbol/mundial/20260621/1004197525/tunez-japon-directo-mundial-2026-futbol-vivo-fase-grupos.html",
+        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/06/20/6a36d95f179f3.jpeg",
         "dominio": "mundodeportivo.com",
         "quando": "ahora"
       },
       {
-        "titolo": "Países Bajos pasa por encima de Suecia: Brobbey y Gakpo marcan el camino, Summerville pone la guinda",
-        "fonte": "RTVE.es",
-        "link": "https://www.rtve.es/deportes/20260620/mundial-2026-paises-bajos-suecia-directo-video-resumen-resultado/17117432.shtml",
-        "img": "https://img.rtve.es/imagenes/mundial-2026-paises-bajos-suecia-directo-video-resumen-resultado/01781976255772.jpg",
-        "dominio": "rtve.es",
+        "titolo": "Túnez 0 - Japón 4: resumen, goles y resultado del partido de fase de grupos del Mundial 2026",
+        "fonte": "Diario AS",
+        "link": "https://as.com/futbol/mundial/tunez-japon-hoy-en-directo-fase-de-grupos-del-mundial-2026-ultima-hora-del-grupo-f-f202606-d/",
+        "img": "",
+        "dominio": "as.com",
+        "quando": "1 h"
+      },
+      {
+        "titolo": "Partidos de hoy, domingo 21 de junio, del Mundial 2026: horarios y dónde ver por TV",
+        "fonte": "El Mundo",
+        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/21/6a34ee5821efa0b0708b4585.html",
+        "img": "https://e01-phantom-elmundo.uecdn.es/43c26ed350b8d4a62d2c681e7fe053b4/crop/56x34/3072x2045/resize/1200/f/webp/assets/multimedia/imagenes/2026/06/19/17818607842851.jpg",
+        "dominio": "elmundo.es",
         "quando": "ahora"
+      },
+      {
+        "titolo": "Ecuador 0-0 Curazao: Resumen y resultado del partido | Mundial 2026 en directo",
+        "fonte": "Diario AS",
+        "link": "https://as.com/futbol/mundial/ecuador-curazao-hoy-en-directo-fase-de-grupos-del-mundial-2026-ultima-hora-del-grupo-e-f202606-d/",
+        "img": "",
+        "dominio": "as.com",
+        "quando": "4 h"
+      },
+      {
+        "titolo": "Teleamazonas transmitió el partido Ecuador vs. Curazao por el Mundial 2026",
+        "fonte": "Depor",
+        "link": "https://depor.com/futbol-internacional/mundial/canal-del-futbol-teleamazonas-mirar-el-partido-ecuador-vs-curazao-por-el-mundial-2026-nnda-nnrt-noticia/",
+        "img": "https://depor.com/resizer/v2/IYJH2PZZYJA7XPS7MKRPCRM3KY.jpg?auth=dc33b3c2562c55d4bc86d4c63019d84ad5261953475199421b8b7f0a28690906&width=980&height=528&quality=75&smart=true",
+        "dominio": "depor.com",
+        "quando": "3 h"
       }
     ]
   }
