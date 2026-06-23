@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-06-23T00:12:10Z",
+  "aggiornato": "2026-06-23T07:16:39Z",
   "nome": "World Cup 2026",
   "groups": [
     {
@@ -2851,7 +2851,40 @@
             "iso": "iq",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              3,
+              0
+            ],
+            "ht": [
+              1,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Kylian Mbappé",
+              "minute": "14",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Kylian Mbappé",
+              "minute": "54",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Ousmane Dembélé",
+              "minute": "66",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": []
         },
         {
           "round": "Matchday 12",
@@ -2873,7 +2906,53 @@
             "iso": "sn",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              3,
+              2
+            ],
+            "ht": [
+              1,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Marcus Holmgren Pedersen",
+              "minute": "43",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Erling Haaland",
+              "minute": "48",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Erling Haaland",
+              "minute": "58",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": [
+            {
+              "name": "Ismaïla Sarr",
+              "minute": "53",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Ismaïla Sarr",
+              "minute": "90+3",
+              "pen": false,
+              "og": false
+            }
+          ]
         },
         {
           "round": "Matchday 16",
@@ -2923,37 +3002,37 @@
       "classifica": [
         {
           "team": {
-            "en": "Norway",
-            "it": "Norvegia",
-            "es": "Noruega",
-            "iso": "no",
-            "ph": false
-          },
-          "pg": 1,
-          "v": 1,
-          "n": 0,
-          "p": 0,
-          "gf": 4,
-          "gs": 1,
-          "pt": 3,
-          "dr": 3
-        },
-        {
-          "team": {
             "en": "France",
             "it": "Francia",
             "es": "Francia",
             "iso": "fr",
             "ph": false
           },
-          "pg": 1,
-          "v": 1,
+          "pg": 2,
+          "v": 2,
           "n": 0,
           "p": 0,
-          "gf": 3,
+          "gf": 6,
           "gs": 1,
-          "pt": 3,
-          "dr": 2
+          "pt": 6,
+          "dr": 5
+        },
+        {
+          "team": {
+            "en": "Norway",
+            "it": "Norvegia",
+            "es": "Noruega",
+            "iso": "no",
+            "ph": false
+          },
+          "pg": 2,
+          "v": 2,
+          "n": 0,
+          "p": 0,
+          "gf": 7,
+          "gs": 3,
+          "pt": 6,
+          "dr": 4
         },
         {
           "team": {
@@ -2963,14 +3042,14 @@
             "iso": "sn",
             "ph": false
           },
-          "pg": 1,
+          "pg": 2,
           "v": 0,
           "n": 0,
-          "p": 1,
-          "gf": 1,
-          "gs": 3,
+          "p": 2,
+          "gf": 3,
+          "gs": 6,
           "pt": 0,
-          "dr": -2
+          "dr": -3
         },
         {
           "team": {
@@ -2980,14 +3059,14 @@
             "iso": "iq",
             "ph": false
           },
-          "pg": 1,
+          "pg": 2,
           "v": 0,
           "n": 0,
-          "p": 1,
+          "p": 2,
           "gf": 1,
-          "gs": 4,
+          "gs": 7,
           "pt": 0,
-          "dr": -3
+          "dr": -6
         }
       ]
     },
@@ -3180,7 +3259,41 @@
             "iso": "dz",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              1,
+              2
+            ],
+            "ht": [
+              1,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Nizar Al-Rashdan",
+              "minute": "36",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": [
+            {
+              "name": "Nadhir Benbouali",
+              "minute": "69",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Amine Gouiri",
+              "minute": "82",
+              "pen": false,
+              "og": false
+            }
+          ]
         },
         {
           "round": "Matchday 17",
@@ -3264,35 +3377,35 @@
         },
         {
           "team": {
-            "en": "Jordan",
-            "it": "Giordania",
-            "es": "Jordania",
-            "iso": "jo",
-            "ph": false
-          },
-          "pg": 1,
-          "v": 0,
-          "n": 0,
-          "p": 1,
-          "gf": 1,
-          "gs": 3,
-          "pt": 0,
-          "dr": -2
-        },
-        {
-          "team": {
             "en": "Algeria",
             "it": "Algeria",
             "es": "Argelia",
             "iso": "dz",
             "ph": false
           },
-          "pg": 1,
-          "v": 0,
+          "pg": 2,
+          "v": 1,
           "n": 0,
           "p": 1,
-          "gf": 0,
-          "gs": 3,
+          "gf": 2,
+          "gs": 4,
+          "pt": 3,
+          "dr": -2
+        },
+        {
+          "team": {
+            "en": "Jordan",
+            "it": "Giordania",
+            "es": "Jordania",
+            "iso": "jo",
+            "ph": false
+          },
+          "pg": 2,
+          "v": 0,
+          "n": 0,
+          "p": 2,
+          "gf": 2,
+          "gs": 5,
           "pt": 0,
           "dr": -3
         }
@@ -4593,200 +4706,200 @@
   "news": {
     "it": [
       {
-        "titolo": "Mondiali 2026. Dopo 2 ore riprende Francia-Iraq. In campo anche Norvegia-Senegal - Francia-Iraq, la cronaca testuale",
-        "fonte": "RaiNews",
-        "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-12-argentina-austria-francia-iraq-norvegia-senegal-giordania-algeria-diretta-streaming-cronaca-highlights-video-live-risultati-cb89b5a9-a448-4aee-90b5-302f8e7bacc8.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/22/1782163536133_.jpg",
-        "dominio": "rainews.it",
-        "quando": "poco fa"
-      },
-      {
-        "titolo": "Mondiali 2026, le news di oggi in diretta live: temporali in Francia-Iraq",
-        "fonte": "Sky Sport",
-        "link": "https://sport.sky.it/calcio/mondiali/2026/06/22/mondiali-2026-news-oggi-22-giugno-diretta",
-        "img": "https://sport.sky.it/assets/images/eb749362b3dc6c173601edf82a9faf3cf1d61d51/skysport/it/calcio/mondiali/2026/06/22/mondiali-2026-news-oggi-22-giugno-diretta/stadio.jpg?im=Resize,width=1218",
-        "dominio": "sport.sky.it",
-        "quando": "1 ore fa"
-      },
-      {
-        "titolo": "LIVE Francia-Iraq 1-0: cross di Mbappé, palla lunga sul secondo palo",
+        "titolo": "Messi sbaglia un rigore, poi fa 2 gol e scrive la storia: l'Argentina batte l'Austria, è ai sedicesimi",
         "fonte": "La Gazzetta dello Sport",
-        "link": "https://www.gazzetta.it/Calcio/Mondiali/22-06-2026/live-francia-iraq-risultato-e-gol-in-diretta-mondiali.shtml",
-        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/06/23/6a39cde4dc15e.r_d.1500-830-0.jpeg",
+        "link": "https://www.gazzetta.it/Calcio/Mondiali/22-06-2026/argentina-austria-live-risultato-e-gol-in-diretta-mondiale-2026.shtml",
+        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/06/22/6a398780b33d8.jpeg",
         "dominio": "gazzetta.it",
-        "quando": "poco fa"
-      },
-      {
-        "titolo": "Mondiali di Calcio 2026 2026 - Argentina - Austria 2-0: Highlights - Video",
-        "fonte": "RaiPlay",
-        "link": "https://www.raiplay.it/video/2026/06/Argentina---Austria-2-0-Highlights--Mondiali-di-Calcio-FIFA-2026-32a21cb8-aeec-4f4c-b3e5-6b27ff99714b.html",
-        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/22/1782153823725_LO%202048x1536.jpg",
-        "dominio": "raiplay.it",
-        "quando": "1 g fa"
-      },
-      {
-        "titolo": "Mondiali di Calcio 2026 2026 - Nuova Zelanda - Egitto 1-3: Highlights - Video",
-        "fonte": "RaiPlay",
-        "link": "https://www.raiplay.it/video/2026/06/Nuova-Zelanda---Egitto-1-3-Highlights--Mondiali-di-Calcio-FIFA-2026-2957e800-5864-4815-8445-4c56a17094a0.html",
-        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/22/1782100970702_1280x720-copertina.jpg",
-        "dominio": "raiplay.it",
-        "quando": "1 g fa"
-      },
-      {
-        "titolo": "Sexy tifose sugli spalti ai mondiali: milioni di visualizzazioni, ma sono create dall'intelligenza artificiale",
-        "fonte": "Corriere dello Sport",
-        "link": "https://www.corrieredellosport.it/foto/calcio/mondiali-2026/2026/06/22-149374399/sexy_tifose_sugli_spalti_ai_mondiali_milioni_di_visualizzazioni_ma_sono_create_dall_intelligenza_artificiale",
-        "img": "https://cdn.corrieredellosport.it/images/2026/06/22/061807376-505ed572-f59d-430b-82b2-be919f9f4822.jpg",
-        "dominio": "corrieredellosport.it",
-        "quando": "17 ore fa"
-      },
-      {
-        "titolo": "Mondiali 2026, la classifica marcatori in diretta",
-        "fonte": "Il Fatto Quotidiano",
-        "link": "https://www.ilfattoquotidiano.it/2026/06/22/mondiali-2026-classifica-marcatori-diretta/8416941/",
-        "img": "https://st.ilfattoquotidiano.it/wp-content/uploads/2026/06/22/leo-messi-1.jpg",
-        "dominio": "ilfattoquotidiano.it",
-        "quando": "6 ore fa"
-      },
-      {
-        "titolo": "Quale partita sulla RAI oggi, Mondiali calcio 2026: orario lunedì 22 giugno, canale, streaming",
-        "fonte": "OA Sport",
-        "link": "https://www.oasport.it/2026/06/quale-partita-sulla-rai-oggi-mondiali-calcio-2026-orario-22-giugno-canale-in-chiaro-streaming/",
-        "img": "",
-        "dominio": "oasport.it",
         "quando": "4 ore fa"
+      },
+      {
+        "titolo": "Mondiali 2026, Norvegia-Senegal-3-2: la sintesi della partita",
+        "fonte": "RaiNews",
+        "link": "https://www.rainews.it/video/2026/06/calcio-coppa-del-mondo-mondiai-2026-norvegia-senegal-3-2-highlights-sintesi-partita-video-927dbce5-2a7e-4e46-bf0e-0c5c48291313.html",
+        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/23/1782191724562_BXUV.jpg",
+        "dominio": "rainews.it",
+        "quando": "2 ore fa"
+      },
+      {
+        "titolo": "Mondiali 2026, le partite di oggi: il Portogallo e CR7 cercano riscatto, per la Croazia è una sfida decisiva",
+        "fonte": "Il Fatto Quotidiano",
+        "link": "https://www.ilfattoquotidiano.it/2026/06/23/partite-oggi-mondiali-23-24-giugno/8426668/",
+        "img": "https://st.ilfattoquotidiano.it/wp-content/uploads/2026/06/22/cristiano-ronaldo-2.jpg",
+        "dominio": "ilfattoquotidiano.it",
+        "quando": "2 ore fa"
+      },
+      {
+        "titolo": "Mondiali di Calcio 2026 2026 - Francia - Iraq 3-0: Highlights - Video",
+        "fonte": "RaiPlay",
+        "link": "https://www.raiplay.it/video/2026/06/Francia---Iraq-3-0-Highlights--Mondiali-di-Calcio-FIFA-2026-444b4da7-05c1-4b01-a992-915617124234.html",
+        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/23/1782186464984_1782176127262_LO%202048x1152.jpg",
+        "dominio": "raiplay.it",
+        "quando": "1 g fa"
+      },
+      {
+        "titolo": "Quale partita sulla RAI oggi, Mondiali calcio 2026: orario martedì 23 giugno, canale, streaming",
+        "fonte": "OA Sport",
+        "link": "https://www.oasport.it/2026/06/quale-partita-sulla-rai-oggi-mondiali-calcio-2026-orario-23-giugno-canale-in-chiaro-streaming/",
+        "img": "https://www.oasport.it/wp-content/uploads/2026/06/24404856_small-e1781871738869.jpg",
+        "dominio": "oasport.it",
+        "quando": "3 ore fa"
+      },
+      {
+        "titolo": "Mondiali 2026: già sette autogol nella prima fase del torneo. Gli esperti: \"Il calcio moderno mette i difensori sotto pressione come mai prima\"",
+        "fonte": "Sportmediaset",
+        "link": "https://www.sportmediaset.mediaset.it/speciale/mondiali-2026/mondiali-2026-gia-sette-autogol-nella-prima-fase-del-torneo-gli-esperti-il-calcio-moderno-mette-i-difensori-sotto-pressio_113462790-202602k.shtml",
+        "img": "https://img-api.cloud.mediaset.net/api/images/kn/v1/image_main/1200/675/113462954?r=4",
+        "dominio": "sportmediaset.mediaset.it",
+        "quando": "22 ore fa"
+      },
+      {
+        "titolo": "Mondiali 2026, come seguire il grande calcio internazionale su DAZN",
+        "fonte": "Corriere dello Sport",
+        "link": "https://www.corrieredellosport.it/news/attualit/2026/06/22-149380418/mondiali_2026_come_seguire_il_grande_calcio_internazionale_su_dazn",
+        "img": "https://cdn.corrieredellosport.it/images/2026/06/22/102318961-31a74d34-26cd-4380-8b9e-1984345fab3d.jpg",
+        "dominio": "corrieredellosport.it",
+        "quando": "20 ore fa"
+      },
+      {
+        "titolo": "Portogallo-Uzbekistan: orario, diretta, probabili formazioni e dove vedere in tv e streaming i Mondiali 2026",
+        "fonte": "Tuttosport",
+        "link": "https://www.tuttosport.com/news/calcio/mondiali-2026/2026/06/23-149403805/portogallo-uzbekistan_orario_diretta_probabili_formazioni_e_dove_vedere_in_tv_e_streaming_i_mondiali_2026",
+        "img": "https://cdn.tuttosport.com/images/2026/06/23/054037924-7583e3a7-0bf6-4e8c-b5d0-73dc63555cc6.jpg",
+        "dominio": "tuttosport.com",
+        "quando": "1 ore fa"
       }
     ],
     "en": [
       {
-        "titolo": "France v Iraq: match resumes after two-hour storm delay at World Cup 2026 – live",
-        "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/22/france-v-iraq-world-cup-2026-live-updates",
-        "img": "https://i.guim.co.uk/img/media/74dbafdba9896672a35b1083e83148dd04ced884/639_0_4453_3562/master/4453.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=4fe7ea8f2fa606cd56798646ec529fc9",
-        "dominio": "theguardian.com",
-        "quando": "5h ago"
-      },
-      {
-        "titolo": "LIVE: France vs Iraq – World Cup 2026",
-        "fonte": "Al Jazeera",
-        "link": "https://www.aljazeera.com/sports/liveblog/2026/6/22/live-france-vs-iraq-world-cup-2026",
-        "img": "https://www.aljazeera.com/wp-content/uploads/2026/06/2026-06-22T215820Z_1665435368_UP1EM6M1P16YL_RTRMADP_3_SOCCER-WORLDCUP-FRA-IRQ-1782165816_020d74-1782166002.jpg?resize=1200%2C630&quality=80",
-        "dominio": "aljazeera.com",
+        "titolo": "World Cup 2026: Why Scotland can't play for draw or narrow defeat against Brazil",
+        "fonte": "BBC",
+        "link": "https://www.bbc.com/sport/football/articles/c79ylvq54e9o",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/7f21/live/585b3250-6e40-11f1-8a85-d1d176b992ab.jpg",
+        "dominio": "bbc.com",
         "quando": "1h ago"
       },
       {
-        "titolo": "FIFA World Cup 2026 - Group Stage: France v Iraq",
-        "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/iplayer/episode/m002y49f/fifa-world-cup-2026-group-stage-france-v-iraq",
-        "img": "",
-        "dominio": "bbc.co.uk",
-        "quando": "3h ago"
+        "titolo": "World Cup chaos overnight as match stopped and FIFA rule change knocks team out",
+        "fonte": "Wales Online",
+        "link": "https://www.walesonline.co.uk/sport/football/football-news/world-cup-chaos-overnight-match-34169201",
+        "img": "https://i2-prod.walesonline.co.uk/article34169207.ece/ALTERNATES/s1200d/0_JS410378577.jpg",
+        "dominio": "walesonline.co.uk",
+        "quando": "1h ago"
       },
       {
-        "titolo": "France v Iraq delayed due to lightning as Fifa action World Cup 2026 weather protocol",
-        "fonte": "The Independent",
-        "link": "https://www.independent.co.uk/sport/football/france-iraq-delay-world-cup-2026-lightning-thunderstorms-rule-b3000836.html",
-        "img": "https://static.independent.co.uk/2026/06/22/23/2026-06-22T220355Z_1670502250_UP1EM6M1P33YM_RTRMADP_3_SOCCER-WORLDCUP-FRA-IRQ.JPG?width=1200&height=800&crop=1200:800",
-        "dominio": "independent.co.uk",
+        "titolo": "Ronaldo, Portugal play Uzbekistan in World Cup: prediction and team news",
+        "fonte": "Al Jazeera",
+        "link": "https://www.aljazeera.com/sports/2026/6/23/portugal-vs-uzbekistan-world-cup-ronaldo-prediction-kickoff-team-news",
+        "img": "https://www.aljazeera.com/wp-content/uploads/2026/06/2026-06-19T162500Z_261781156_RC2SVLA9E54D_RTRMADP_3_SOCCER-WORLDCUP-PHOTODAILY-ONE-1782184591_f115bb-1782189237.jpg?resize=1200%2C630&quality=80",
+        "dominio": "aljazeera.com",
         "quando": "just now"
       },
       {
-        "titolo": "Argentina 2-0 Austria: Messi breaks scoring record at World Cup 2026 – as it happened",
+        "titolo": "France 3-0 Iraq after two-hour storm delay at World Cup 2026 – as it happened",
         "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/22/argentina-v-austria-world-cup-2026-live",
-        "img": "https://i.guim.co.uk/img/media/77a6195f791dc53aa0de44d7d09c2b587aaca3ae/407_0_2967_2373/master/2967.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=370a2cc3ce87d976986e1cb0765eec98",
+        "link": "https://www.theguardian.com/football/live/2026/jun/22/france-v-iraq-world-cup-2026-live-updates",
+        "img": "https://i.guim.co.uk/img/media/b313fa914eac2f79bfde06bb9b5ef191018bfa2c/423_0_2898_2319/master/2898.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=98118abf14029c79b8331474afbe7648",
+        "dominio": "theguardian.com",
+        "quando": "12h ago"
+      },
+      {
+        "titolo": "Iraq fans ‘proud’ and joyful despite World Cup loss to France",
+        "fonte": "Al Jazeera",
+        "link": "https://www.aljazeera.com/sports/2026/6/23/iraq-fans-proud-and-joyful-despite-world-cup-loss-to-france",
+        "img": "https://www.aljazeera.com/wp-content/uploads/2026/06/2026-06-22T223654Z_1426910311_UP1EM6M1QTH07_RTRMADP_3_SOCCER-WORLDCUP-FRA-IRQ-1782185905.jpg?resize=1920%2C1440",
+        "dominio": "aljazeera.com",
+        "quando": "2h ago"
+      },
+      {
+        "titolo": "Mbappe two goals shy of Messi record after France beat Iraq in four-hour game",
+        "fonte": "The Telegraph",
+        "link": "https://www.telegraph.co.uk/football/2026/06/22/france-vs-iraq-live-score-latest-2026-world-cup/",
+        "img": "https://www.telegraph.co.uk/content/dam/football/2026/06/23/TELEMMGLPICT000491922945_17821744396690_trans_NvBQzQNjv4Bqi2ctj82rCJy3QOqq5vOjvf4Xpit_DMGvdp2n7FDd82k.jpeg?impolicy=OG-Live",
+        "dominio": "telegraph.co.uk",
+        "quando": "6h ago"
+      },
+      {
+        "titolo": "World Cup 2026 highlights: Norway v Senegal - Erling Haaland scores twice",
+        "fonte": "BBC",
+        "link": "https://www.bbc.co.uk/sport/football/videos/cze9g17p6rlo",
+        "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/ea32/live/4c124f00-6eaa-11f1-b1db-af71d47507d6.jpg",
+        "dominio": "bbc.co.uk",
+        "quando": "4h ago"
+      },
+      {
+        "titolo": "Norway 3-2 Senegal: World Cup 2026 – as it happened",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/live/2026/jun/22/norway-v-senegal-world-cup-2026-live",
+        "img": "https://i.guim.co.uk/img/media/260bce7676b74aefddef7fd3902d0e789cf24e83/647_0_5919_4736/master/5919.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=d8535e3337413fb3fd69d0471a4b3e8c",
         "dominio": "theguardian.com",
         "quando": "9h ago"
-      },
-      {
-        "titolo": "Argentina 2-0 Austria: Lionel Messi scores brace to become all-time leading World Cup goalscorer - as it happened",
-        "fonte": "ESPN",
-        "link": "https://www.espn.co.uk/football/story/_/id/49144198/argentina-austria-live-world-cup-2026-latest-updates-commentary-score-result-lionel-messi",
-        "img": "https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0622%2Fr1677679_1296x729_16%2D9.jpg",
-        "dominio": "espn.co.uk",
-        "quando": "4h ago"
-      },
-      {
-        "titolo": "Messi becomes all-time leading World Cup scorer to end Ronaldo argument for good",
-        "fonte": "The Telegraph",
-        "link": "https://www.telegraph.co.uk/football/2026/06/22/argentina-vs-austria-live-score-latest-2026-world-cup/",
-        "img": "https://www.telegraph.co.uk/content/dam/football/2026/06/22/TELEMMGLPICT000491895090_17821554032490_trans_NvBQzQNjv4BqVPXug32szxcb3X7tI1z2r6hgReHHddkllEYs_8dCtj4.jpeg?impolicy=OG-Live",
-        "dominio": "telegraph.co.uk",
-        "quando": "4h ago"
-      },
-      {
-        "titolo": "World Cup 2026: New Zealand 1-3 Egypt - Mohamed Salah inspires Pharaohs to historic first win in Vancouver",
-        "fonte": "Sky Sports",
-        "link": "https://www.skysports.com/football/news/35849/13553798/world-cup-2026-new-zealand-x-x-egypt",
-        "img": "https://e0.365dm.com/26/06/1600x900/skysports-world-cup-egypt-new-zealand_7279724.jpg?20260622082125",
-        "dominio": "skysports.com",
-        "quando": "1h ago"
       }
     ],
     "es": [
       {
-        "titolo": "Francia - Irak en directo hoy: suspensión por tormenta eléctrica, goles y resultado del Mundial 2026 en vivo | Grupo I",
+        "titolo": "Messi dispara de nuevo, hace volar a Argentina y se eleva a los altares del Mundial",
+        "fonte": "RTVE.es",
+        "link": "https://www.rtve.es/deportes/20260622/mundial-2026-argentina-austria-directo-video-resumen-resultado/17119891.shtml",
+        "img": "https://img.rtve.es/imagenes/mundial-2026-argentina-austria-directo-video-resumen-resultado/01782155867390.jpg",
+        "dominio": "rtve.es",
+        "quando": "15 h"
+      },
+      {
+        "titolo": "Argentina - Austria. resumen, resultado y goles | Mundial 2026: jornada 2 del grupo J",
+        "fonte": "Mundo Deportivo",
+        "link": "https://www.mundodeportivo.com/futbol/mundial/20260622/1004197809/argentina-austria-directo-mundial-2026-fase-grupos.html",
+        "img": "",
+        "dominio": "mundodeportivo.com",
+        "quando": "11 h"
+      },
+      {
+        "titolo": "Mbappé y Messi, la histórica batalla por el trono del Mundial 2026",
+        "fonte": "MARCA",
+        "link": "https://www.marca.com/mx/futbol/mundial/2026/06/23/6a3a2162268e3edb4c8b4588.html",
+        "img": "https://e01-phantom-marca-mx.uecdn.es/fa4fe60c5f501fd133f229902d9cfb88/resize/1200/f/jpg/mx/assets/multimedia/imagenes/2026/06/23/17821939377252.jpg",
+        "dominio": "marca.com",
+        "quando": "1 h"
+      },
+      {
+        "titolo": "Julián Alvarez, rendido a Messi: \"Es el mejor de la historia\"",
+        "fonte": "Mundo Deportivo",
+        "link": "https://www.mundodeportivo.com/futbol/mundial/20260622/1004198302/julian-alvarez-rendido-messi-mejor-historia.html",
+        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/06/22/6a39937dd1574.jpeg",
+        "dominio": "mundodeportivo.com",
+        "quando": "9 h"
+      },
+      {
+        "titolo": "Julián Alvarez pide salir del Atlético y el club rojiblanco se plantea denunciar al Barça ante la FIFA: “No puedo esconderme, lo mejor es una transferencia, quiero cumplir mi sueño”",
+        "fonte": "EL PAÍS",
+        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-22/julian-alvarez-pide-salir-del-atletico-no-puedo-esconderme-lo-mejor-es-una-transferencia-quiero-cumplir-mi-sueno.html",
+        "img": "",
+        "dominio": "elpais.com",
+        "quando": "9 h"
+      },
+      {
+        "titolo": "Julián Álvarez, sobre su futuro en el Atlético: \"Lo mejor para todos es una transferencia, quiero cumplir mi sueño\"",
+        "fonte": "El Mundo",
+        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/22/6a39a638e9cf4acf198b4583.html",
+        "img": "https://e01-phantom-elmundo.uecdn.es/5f57d2ca99f53505635b330359c2bd15/crop/110x0/2392x1521/resize/1200/f/webp/assets/multimedia/imagenes/2026/06/22/17821629837940.jpg",
+        "dominio": "elmundo.es",
+        "quando": "9 h"
+      },
+      {
+        "titolo": "Francia 3-0 Irak: suspensión por tormenta eléctrica, goles y resultado del Mundial 2026| Grupo I",
         "fonte": "Diario AS",
         "link": "https://as.com/futbol/mundial/francia-irak-hoy-en-directo-fase-de-grupos-del-mundial-2026-ultima-hora-del-grupo-i-f202606-d/",
-        "img": "https://img.asmedia.epimg.net/resizer/v2/RRNW4ZK22VJJ5NQXEY44DICRIY.jpg?auth=9f5e613af6ae540c6088c4c45e75da4ce304a76e78d8508b9792f3e43de14acd&width=1472&height=828&focal=3015%2C584",
+        "img": "",
         "dominio": "as.com",
-        "quando": "ahora"
+        "quando": "6 h"
       },
       {
-        "titolo": "Argentina - Austria: Mundial 2026, en directo | Resultado y última hora del partido",
-        "fonte": "El Mundo",
-        "link": "https://www.elmundo.es/deportes/futbol/mundial/argentina-austria/2026/06/22/01_0117_20260622_632_515-directo.html",
-        "img": "https://e01-phantom-elmundo.uecdn.es/09a5ba4a8011a886e6c4f07ec8fd44d1/resize/1200/f/webp/assets/multimedia/imagenes/2026/06/22/17821534760497.jpg",
-        "dominio": "elmundo.es",
-        "quando": "2 h"
-      },
-      {
-        "titolo": "España - Arabia Saudí, Mundial 2026 fútbol hoy | Resultado y goles de la selección española, en directo",
-        "fonte": "El Español",
-        "link": "https://www.elespanol.com/deportes/futbol/mundial/20260621/espana-arabia-saudi-mundial-2026-futbol-hoy-ultima-hora-resultado-goles-en-directo-seleccion-espanola/1003744294447_10.html",
-        "img": "https://s3.elespanol.com/k/imgp/cms/elespanol/11298736.jpg?p=f:jpeg/w:1706/h:960&h=kBaYeCV4",
-        "dominio": "elespanol.com",
-        "quando": "1 d"
-      },
-      {
-        "titolo": "España en el Mundial 2026, en directo: última hora de la Selección Española hoy 22 de junio | Pedri, Lamine...",
-        "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/espana-en-el-mundial-2026-en-directo-ultima-hora-de-la-seleccion-espanola-hoy-22-de-junio-pedri-lamine-f202606-d/",
-        "img": "https://img.asmedia.epimg.net/resizer/v2/D4LDTCQZBVBKBJPEFL6UYH3RYA.png?auth=ab7ac398de8d3d480319145beada4673aa8af12810a455ba4dcec8589fa9bcd2&width=1472&height=828&smart=true",
-        "dominio": "as.com",
-        "quando": "4 h"
-      },
-      {
-        "titolo": "Mundial 2026: Lamine Yamal ya está aquí",
-        "fonte": "La Vanguardia",
-        "link": "https://www.lavanguardia.com/deportes/futbol/20260622/11572589/lamine-yamal-espana-mundial-2026.html",
-        "img": "https://www.lavanguardia.com/files/og_thumbnail/uploads/2026/06/22/6a3958e6debc7.jpeg",
-        "dominio": "lavanguardia.com",
-        "quando": "8 h"
-      },
-      {
-        "titolo": "Así funciona el protocolo de tormentas que amenaza con hacer interminables los partidos del Mundial",
-        "fonte": "MARCA",
-        "link": "https://www.marca.com/futbol/mundial/2026/06/22/asi-funciona-protocolo-tormentas-amenaza-interminables-partidos-mundial.html",
-        "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/06/11/6a2a8fc68cb0b.jpeg",
-        "dominio": "marca.com",
-        "quando": "2 h"
-      },
-      {
-        "titolo": "Noruega - Senegal, en directo | Mundial 2026: fase de grupos",
-        "fonte": "Mundo Deportivo",
-        "link": "https://www.mundodeportivo.com/futbol/mundial/20260623/1004198054/noruega-senegal-directo-mundial-2026-fase-grupos.html",
-        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/06/23/6a39c59e36f02.jpeg",
-        "dominio": "mundodeportivo.com",
-        "quando": "ahora"
-      },
-      {
-        "titolo": "Noruega - Senegal en directo: partido del Grupo I del Mundial 2026, en vivo",
+        "titolo": "Así le hemos contado el partido de Francia - Irak (3-0) en el Mundial",
         "fonte": "EL PAÍS",
-        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-23/noruega-senegal-en-directo-partido-del-grupo-i-del-mundial-2026-en-vivo.html",
-        "img": "https://imagenes.elpais.com/resizer/v2/DLZVDECVMFJXPGZPBV3ASU5BII.jpg?auth=ff4b3ef4e4abfc49cf43d8116655f5aa59719d70eb42f2c3566cddad44e1d2f7&width=1200",
+        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-22/francia-irak-en-directo-el-partido-del-grupo-i-del-mundial-2026-en-vivo.html",
+        "img": "",
         "dominio": "elpais.com",
-        "quando": "ahora"
+        "quando": "6 h"
       }
     ]
   }
