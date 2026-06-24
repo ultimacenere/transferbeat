@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-06-24T20:12:36Z",
+  "aggiornato": "2026-06-24T21:53:41Z",
   "nome": "World Cup 2026",
   "groups": [
     {
@@ -583,7 +583,41 @@
             "iso": "ca",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              2,
+              1
+            ],
+            "ht": [
+              0,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Rubén Vargas",
+              "minute": "46",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Johan Manzambi",
+              "minute": "57",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": [
+            {
+              "name": "Promise David",
+              "minute": "76",
+              "pen": false,
+              "og": false
+            }
+          ]
         },
         {
           "round": "Matchday 14",
@@ -605,27 +639,50 @@
             "iso": "qa",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              3,
+              1
+            ],
+            "ht": [
+              2,
+              1
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Kerim Alajbegovic",
+              "minute": "29",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Mahmoud Abunada",
+              "minute": "34",
+              "pen": false,
+              "og": true
+            },
+            {
+              "name": "Ermin Mahmic",
+              "minute": "80",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": [
+            {
+              "name": "Hassan Al-Haydos",
+              "minute": "42",
+              "pen": false,
+              "og": false
+            }
+          ]
         }
       ],
       "classifica": [
-        {
-          "team": {
-            "en": "Canada",
-            "it": "Canada",
-            "es": "Canadá",
-            "iso": "ca",
-            "ph": false
-          },
-          "pg": 2,
-          "v": 1,
-          "n": 1,
-          "p": 0,
-          "gf": 7,
-          "gs": 1,
-          "pt": 4,
-          "dr": 6
-        },
         {
           "team": {
             "en": "Switzerland",
@@ -634,14 +691,31 @@
             "iso": "ch",
             "ph": false
           },
-          "pg": 2,
-          "v": 1,
+          "pg": 3,
+          "v": 2,
           "n": 1,
           "p": 0,
-          "gf": 5,
-          "gs": 2,
+          "gf": 7,
+          "gs": 3,
+          "pt": 7,
+          "dr": 4
+        },
+        {
+          "team": {
+            "en": "Canada",
+            "it": "Canada",
+            "es": "Canadá",
+            "iso": "ca",
+            "ph": false
+          },
+          "pg": 3,
+          "v": 1,
+          "n": 1,
+          "p": 1,
+          "gf": 8,
+          "gs": 3,
           "pt": 4,
-          "dr": 3
+          "dr": 5
         },
         {
           "team": {
@@ -651,14 +725,14 @@
             "iso": "ba",
             "ph": false
           },
-          "pg": 2,
-          "v": 0,
+          "pg": 3,
+          "v": 1,
           "n": 1,
           "p": 1,
-          "gf": 2,
-          "gs": 5,
-          "pt": 1,
-          "dr": -3
+          "gf": 5,
+          "gs": 6,
+          "pt": 4,
+          "dr": -1
         },
         {
           "team": {
@@ -668,14 +742,14 @@
             "iso": "qa",
             "ph": false
           },
-          "pg": 2,
+          "pg": 3,
           "v": 0,
           "n": 1,
-          "p": 1,
-          "gf": 1,
-          "gs": 7,
+          "p": 2,
+          "gf": 2,
+          "gs": 10,
           "pt": 1,
-          "dr": -6
+          "dr": -8
         }
       ]
     },
@@ -4816,173 +4890,165 @@
         "titolo": "Mondiali 2026: la classifica aggiornata di tutti i gironi",
         "fonte": "Il Fatto Quotidiano",
         "link": "https://www.ilfattoquotidiano.it/2026/06/24/mondiali-2026-risultati-oggi-nuova-classifica-gironi/8416831/",
-        "img": "https://st.ilfattoquotidiano.it/wp-content/uploads/2026/06/13/tuchel-inghilterra.jpg",
+        "img": "https://st.ilfattoquotidiano.it/wp-content/uploads/2026/06/19/24521568_small-1200x630.jpg",
         "dominio": "ilfattoquotidiano.it",
+        "quando": "14 ore fa"
+      },
+      {
+        "titolo": "Mondiali 2026, Scozia-Brasile: le formazioni ufficiali",
+        "fonte": "Fantacalcio",
+        "link": "https://www.fantacalcio.it/news/calcio-estero/mondiali/24_06_2026/mondiali-2026-scozia-brasile-le-formazioni-ufficiali-494549",
+        "img": "https://content.fantacalcio.it/web/img/large/mctominay-9297346b-036f-4344-abe9-fc041208d780.jpg",
+        "dominio": "fantacalcio.it",
+        "quando": "1 ore fa"
+      },
+      {
+        "titolo": "Scozia-Brasile LIVE, Ancelotti per il primo posto",
+        "fonte": "Sky Sport",
+        "link": "https://sport.sky.it/calcio/mondiali/partite/2026/giornata-3/scozia-brasile/risultato-gol",
+        "img": "https://sport.sky.it/assets/images/1c2d6e498614de239cceae75fa5c89ad16c36912/skysport/it/calcio/mondiali/partite/2026/giornata-3/scozia-brasile/live/content/cunha_brasile_getty.jpg?im=Resize,width=1218",
+        "dominio": "sport.sky.it",
+        "quando": "1 ore fa"
+      },
+      {
+        "titolo": "Mondiali 2026, le partite di oggi 24 giugno. Orari e dove vederle in tv. C’è Scozia-Brasile",
+        "fonte": "Quotidiano Nazionale",
+        "link": "https://www.quotidiano.net/mondiali/mondiali-2026-le-partite-di-oggi-24-giugno-orari-e-dove-vederle-b73fc262",
+        "img": "https://www.quotidiano.net/image-service/view/acePublic/alias/contentid/MmVmOGIxOTUtZGMzZS00/0/neymar-con-carlo-ancelotti.jpg?f=16:9&w=1200&h=675",
+        "dominio": "quotidiano.net",
         "quando": "13 ore fa"
       },
       {
-        "titolo": "Mondiali 2026, al 46’: Canada-Svizzera 0-1 diretta streaming. Bosnia Erzegovina-Qatar 2-1 - Dopo 45' Canada-Svizzera termina 0-0",
-        "fonte": "RaiNews",
-        "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-14-svizzera-canada-bosnia-erzegovina-qatar-scozia-brasile-marocco-haiti-cechia-messico-sudafrica-corea-del-sud-diretta-streaming-cronaca-highlights-video-live-risultati-e0466cdf-9c8d-4169-901c-5e067260ad58.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/19/1781825669210_.jpg",
-        "dominio": "rainews.it",
+        "titolo": "Bosnia Erzegovina - Qatar (3-1) Mondiali 2026",
+        "fonte": "la Repubblica",
+        "link": "https://www.repubblica.it/sport/dirette/calcio/mondiali-2026/diretta-bosnia-erzegovina-qatar-g2608292/",
+        "img": "https://www.repstatic.it/cless/main/nazionale/2013-v1/img/common/favicon/favicon-1500.png",
+        "dominio": "repubblica.it",
         "quando": "poco fa"
       },
       {
-        "titolo": "LIVE Alle 21 Svizzera-Canada, le ufficiali: David guida la carica per il primo posto del Girone B",
+        "titolo": "Dzeko e compagni sognano: la Bosnia batte il Qatar 3-1 e vede i sedicesimi",
         "fonte": "La Gazzetta dello Sport",
-        "link": "https://www.gazzetta.it/Calcio/Mondiali/24-06-2026/svizzera-canada-live-risultato-e-gol-in-diretta-mondiali-2026.shtml",
-        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/06/24/6a3c39973f8a0.r_d.1500-1222-0.jpeg",
+        "link": "https://www.gazzetta.it/Calcio/Mondiali/24-06-2026/bosnia-qatar-live-risultato-e-gol-in-diretta-mondiali.shtml",
+        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/06/24/6a3c436fd404d.r_d.1500-886-0.jpeg",
         "dominio": "gazzetta.it",
-        "quando": "2 ore fa"
-      },
-      {
-        "titolo": "Mondiali 2026, Svizzera-Canada 1-0 e Bosnia-Qatar 2-1. Attesa per il Brasile. LIVE",
-        "fonte": "Sky TG24",
-        "link": "https://tg24.sky.it/sport/2026/06/24/mondiali-calcio-2026-news-oggi-diretta",
-        "img": "https://tg24.sky.it/assets/images/3a40306f4e984f930c5446205440ca3ff53feb68/skytg24/it/sport/2026/06/24/mondiali-calcio-2026-news-oggi-diretta/collage_mondiali_ansa1.jpg?im=Resize,width=1218",
-        "dominio": "tg24.sky.it",
         "quando": "poco fa"
       },
       {
-        "titolo": "Mondiali 2026, le news di oggi in diretta live: le condizioni di Pulisic",
-        "fonte": "Sky Sport",
-        "link": "https://sport.sky.it/calcio/mondiali/2026/06/24/mondiali-2026-news-oggi-24-giugno-diretta",
-        "img": "https://sport.sky.it/assets/images/e96862e4776295d28604ecefc45fa7e67494fe62/skysport/it/calcio/mondiali/2026/06/24/mondiali-2026-news-oggi-24-giugno-diretta/pulisic_usa.jpg?im=Resize,width=1218",
-        "dominio": "sport.sky.it",
+        "titolo": "Dzeko e compagni trionfano 3-1 e sperano nella qualificazione",
+        "fonte": "eurosport.it",
+        "link": "https://www.eurosport.it/calcio/mondiali/2026/la-bosnia-si-impone-3-1-sul-qatar-grande-prestazione-di-alajbegovic.-ora-dzeko-e-compagni-possono-sperare-nella-qualificazione.-qatar-eliminato_sto23312857/story.shtml",
+        "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg):focal(198x94:200x92)/origin-imgresizer.eurosport.com/2026/06/24/image-a6a16ccb-084c-4902-b8c9-284ab5fb2738-85-2560-1440.jpeg",
+        "dominio": "eurosport.it",
         "quando": "poco fa"
-      },
-      {
-        "titolo": "Mondiali 2026, il Portogallo cala il pokerissimo contro l’Uzbekistan: doppietta di Cristiano Ronaldo",
-        "fonte": "OA Sport",
-        "link": "https://www.oasport.it/2026/06/mondiali-2026-il-portogallo-cala-il-pokerissimo-contro-luzbekistan-doppietta-di-cristano-ronaldo/",
-        "img": "https://www.oasport.it/wp-content/uploads/2026/06/24534575_small-e1782241787322.jpg",
-        "dominio": "oasport.it",
-        "quando": "1 g fa"
-      },
-      {
-        "titolo": "Mondiali di Calcio 2026 2026 - Portogallo - Uzbekistan 5-0: Highlights - Video",
-        "fonte": "RaiPlay",
-        "link": "https://www.raiplay.it/video/2026/06/Portogallo---Uzbekistan-5-0-Highlights--Mondiali-di-Calcio-FIFA-2026-49186b21-3fef-4e9d-b4d6-2066ad2a69a4.html",
-        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/23/1782239181689_Portogallo4852.jpg",
-        "dominio": "raiplay.it",
-        "quando": "1 g fa"
       }
     ],
     "en": [
       {
-        "titolo": "Switzerland v Canada: World Cup 2026 – live",
+        "titolo": "How does Ronaldo turning up change things? Re-ranking the 48 World Cup teams after day 13 - The Athletic",
+        "fonte": "The New York Times",
+        "link": "https://www.nytimes.com/athletic/7329359/2026/06/24/world-cup-2026-teams-ranked/",
+        "img": "https://static01.nyt.com/athletic/uploads/wp/2026/06/24052846/GettyImages-2282526182-scaled.jpg?width=1200&height=630&fit=cover",
+        "dominio": "nytimes.com",
+        "quando": "2h ago"
+      },
+      {
+        "titolo": "World Cup 2026: Qatar's Assim Madibo given five-match ban for foul on Canada's Ismael Kone",
+        "fonte": "BBC",
+        "link": "https://www.bbc.com/sport/football/articles/c0lykrnw64xo",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/6115/live/d31f6b90-7012-11f1-8546-8f19e4fe30f4.jpg",
+        "dominio": "bbc.com",
+        "quando": "2h ago"
+      },
+      {
+        "titolo": "Watch: Shankland & Gannon-Doak named in attacking Scotland XI to face Brazil",
+        "fonte": "BBC",
+        "link": "https://www.bbc.co.uk/sport/football/live/cdx75ry1q9kt",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/d9af/live/b7ffaf80-7014-11f1-8e1d-bbbb1017d210.jpg",
+        "dominio": "bbc.co.uk",
+        "quando": "just now"
+      },
+      {
+        "titolo": "Scotland v Brazil: World Cup 2026 – live",
         "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/24/switzerland-v-canada-world-cup-2026-live",
-        "img": "https://i.guim.co.uk/img/media/b7264573d0bfaa5ecdc5274f5e8e804781eb33fd/57_0_2689_2152/master/2689.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=91c0307d8a4ef4da4e287e2003e4613f",
+        "link": "https://www.theguardian.com/football/live/2026/jun/24/scotland-v-brazil-world-cup-2026-live",
+        "img": "https://i.guim.co.uk/img/media/f69573242e86bee63ca9591fa4bf27d585a41dec/330_0_4648_3718/master/4648.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=f3819ceda01f7f2c66f73573004e4dd1",
         "dominio": "theguardian.com",
+        "quando": "just now"
+      },
+      {
+        "titolo": "World Cup 2026 today: Live updates, latest news as it happened - June 24",
+        "fonte": "ESPN",
+        "link": "https://www.espn.co.uk/football/story/_/id/49162646/world-cup-2026-today-blog-24-06-2026-live-updates-news-fixtures-schedule-results-england-ghana-draw-scotland",
+        "img": "",
+        "dominio": "espn.co.uk",
         "quando": "3h ago"
       },
       {
-        "titolo": "Switzerland vs. Canada (24 Jun, 2026) Live Score",
+        "titolo": "Switzerland 2-1 Canada: World Cup 2026 – as it happened",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/live/2026/jun/24/switzerland-v-canada-world-cup-2026-live",
+        "img": "https://i.guim.co.uk/img/media/f40fa158a44dad2d7aef8128a29ee29958d5d75d/166_0_1318_1055/master/1318.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=66f8f4117f6d1c86fde4c7be89856162",
+        "dominio": "theguardian.com",
+        "quando": "2h ago"
+      },
+      {
+        "titolo": "Canada vs. Switzerland LIVE: World Cup 2026 updates as Swiss top Group B",
         "fonte": "ESPN",
-        "link": "https://www.espn.co.uk/football/match/_/gameId/760463",
+        "link": "https://www.espn.co.uk/football/story/_/id/49166718/canada-vs-switzerland-live-world-cup-2026-updates-group-b-decider-vancouver",
         "img": "",
         "dominio": "espn.co.uk",
-        "quando": "1h ago"
+        "quando": "2h ago"
       },
       {
-        "titolo": "Switzerland vs Canada live updates: World Cup 2026 latest score with top spot up for grabs",
-        "fonte": "The New York Times",
-        "link": "https://www.nytimes.com/athletic/live-blogs/switzerland-vs-canada-live-updates-world-cup-2026-score-result/jXjYOLQ2b7LT/",
-        "img": "https://cdn-media.theathletic.com/cdn-cgi/image/width=1200,height=630,fit=cover/jXjYOLQ2b7LT_ukHAjHDpfN1b_1440x960.jpg",
-        "dominio": "nytimes.com",
-        "quando": "1h ago"
-      },
-      {
-        "titolo": "Bosnia vs Qatar live updates: Al-Haydos halves World Cup 2026 deficit after Alajbegovic opens scoring",
-        "fonte": "The New York Times",
-        "link": "https://www.nytimes.com/athletic/live-blogs/bosnia-vs-qatar-live-updates-world-cup-2026-score-result/uVaQtU7Sf2si/",
-        "img": "https://cdn-media.theathletic.com/cdn-cgi/image/width=1200,height=630,fit=cover/uVaQtU7Sf2si_FCrapjURklGx_1440x960.jpg",
-        "dominio": "nytimes.com",
-        "quando": "just now"
-      },
-      {
-        "titolo": "Bosnia and Herzegovina v Qatar: World Cup 2026 – live",
-        "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/24/bosnia-and-herzegovina-v-qatar-world-cup-2026-live",
-        "img": "https://i.guim.co.uk/img/media/9e19bd49a07e50ca7ba07c5ea44effbb1c5d057d/9_0_6115_4892/master/6115.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=965e056be1dadedee5264625edde4e71",
-        "dominio": "theguardian.com",
-        "quando": "1h ago"
-      },
-      {
-        "titolo": "World Cup Group B live updates, scores: Follow Bosnia and Herzegovina vs. Qatar, Canada vs. Switzerland",
-        "fonte": "Yahoo Sports",
-        "link": "https://sports.yahoo.com/soccer/live/world-cup-live-updates-scores-schedule-results-group-a-group-b-group-c-195336732.html",
-        "img": "https://s.yimg.com/ny/api/res/1.2/gOsMIBafxWGObakHLmCOdQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA7Y2Y9d2VicA--/https://d29szjachogqwa.cloudfront.net/images/2026-06/c1b0160a-17f6-43df-bf69-82e24cb22d5c",
-        "dominio": "sports.yahoo.com",
-        "quando": "just now"
-      },
-      {
-        "titolo": "Scotland on 'brink of history' ahead of Brazil World Cup tie",
+        "titolo": "2026 Fifa World Cup: Switzerland vs Canada - Promise David makes it 2-1 with his first touch of the game",
         "fonte": "BBC",
-        "link": "https://www.bbc.com/news/articles/cdejr7gey9do",
-        "img": "https://ichef.bbci.co.uk/news/1024/branded_news/daec/live/d195f820-6fe0-11f1-b763-7be8e457290d.jpg",
-        "dominio": "bbc.com",
-        "quando": "4h ago"
-      },
-      {
-        "titolo": "World Cup 2026: Norway’s ‘Viking row’ celebration irks neighbours; Infantino defends hydration breaks – as it happened",
-        "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/24/world-cup-2026-final-group-games-bosnia-and-herzegovina-qatar-switzerland-canada-scotland-brazil-morocco-haiti-czechia-mexico-south-africa-south-korea-live",
-        "img": "https://i.guim.co.uk/img/media/1ca61f6f70ca0b63bcced26659ad8e5c508d94f2/266_0_3734_2988/master/3734.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=8f65878f77330174c597bb5716497b2a",
-        "dominio": "theguardian.com",
-        "quando": "13h ago"
+        "link": "https://www.bbc.co.uk/sport/football/videos/c0qy7kg7927o",
+        "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/3dc2/live/5e5e1340-700f-11f1-8546-8f19e4fe30f4.jpg",
+        "dominio": "bbc.co.uk",
+        "quando": "just now"
       }
     ],
     "es": [
       {
-        "titolo": "Bosnia - Qatar hoy, en directo: fase de grupos del Mundial 2026 | Última hora del Grupo B",
-        "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/bosnia-qatar-hoy-en-directo-fase-de-grupos-del-mundial-2026-ultima-hora-del-grupo-b-f202606-d/",
-        "img": "",
-        "dominio": "as.com",
+        "titolo": "Suiza 2-1 Canadá: resumen, resultado y goles del partido del grupo B del Mundial 2026",
+        "fonte": "Cadena SER",
+        "link": "https://cadenaser.com/nacional/2026/06/24/suiza-2-1-canada-resumen-resultado-y-goles-del-partido-del-grupo-b-del-mundial-2026-cadena-ser/",
+        "img": "https://cadenaser.com/resizer/v2/ZPJ54WNNN5GLRL5MZOABPUXEKA.jpg?auth=42c5c3e6b0d5ef4c99dd38745cde1ac9b8799a9ccc579c6211f97fe32052126a&quality=70&width=1200&height=675&smart=true",
+        "dominio": "cadenaser.com",
         "quando": "ahora"
       },
       {
-        "titolo": "Mundial 2026, últimas noticias en directo | Brasil y Marruecos se juegan hoy la primera plaza de su grupo",
-        "fonte": "EL PAÍS",
-        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-24/resumen-y-ultimas-noticias-de-la-copa-mundial-de-futbol.html",
-        "img": "",
-        "dominio": "elpais.com",
-        "quando": "ahora"
+        "titolo": "Suiza - Canadá, en directo hoy | Mundial 2026 de fútbol en vivo y online: grupo B",
+        "fonte": "Mundo Deportivo",
+        "link": "https://www.mundodeportivo.com/futbol/mundial/20260624/1004198720/suiza-canada-directo-mundial-2026-futbol-fase-grupos.html",
+        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/06/24/6a3c452d0f5a8.jpeg",
+        "dominio": "mundodeportivo.com",
+        "quando": "1 h"
       },
       {
         "titolo": "Suiza - Canadá, en directo: fase de grupos del Mundial 2026, Grupo B hoy en vivo",
         "fonte": "Diario AS",
         "link": "https://as.com/futbol/mundial/suiza-canada-hoy-en-directo-fase-de-grupos-del-mundial-2026-ultima-hora-del-grupo-b-f202606-d/",
-        "img": "",
+        "img": "https://img.asmedia.epimg.net/resizer/v2/WZJV7J5FZJOP3OEVLIVZZHXNGE.jpg?auth=082b5433eb4bc59f4277892c30a1a01a505dd0c66d5c46823ca1721f53493c1a&width=1472&height=828&focal=1264%2C607",
         "dominio": "as.com",
         "quando": "ahora"
       },
       {
-        "titolo": "Suiza - Canadá, en directo hoy el partido del grupo B del Mundial 2026",
-        "fonte": "RTVE.es",
-        "link": "https://www.rtve.es/deportes/20260624/mundial-2026-suiza-canada-directo-resumen-resultado/17123639.shtml",
-        "img": "https://img.rtve.es/imagenes/mundial-2026-suiza-canada-directo-resumen-resultado/01781608525774.jpg",
-        "dominio": "rtve.es",
-        "quando": "2 h"
+        "titolo": "Escocia - Brasil hoy, en directo: previa y última hora del Mundial 2026 | Partido del Grupo C, en vivo",
+        "fonte": "Diario AS",
+        "link": "https://as.com/futbol/mundial/escocia-brasil-en-directo-fase-de-grupos-del-mundial-2026-hoy-en-vivo-ultima-hora-del-grupo-c-f202606-d/",
+        "img": "https://img.asmedia.epimg.net/resizer/v2/2CMQG2GRGVIRRKK7ZLCR63WFOM.jpg?auth=64072b761808f087e3fed6e734daaa0009f33dfdb3886fccaca24d2a581fb4ee&width=1472&height=828&focal=465%2C74",
+        "dominio": "as.com",
+        "quando": "1 h"
       },
       {
-        "titolo": "Suiza - Canadá en directo | Fase de grupos del Mundial hoy en vivo",
-        "fonte": "MARCA",
-        "link": "https://www.marca.com/futbol/mundial/suiza-canada/2026/06/24/01_0117_20260624_497_597-directo.html",
-        "img": "https://objetos.estaticos-marca.com/assets/multimedia/imagenes/2026/06/24/17823204212787.jpg",
-        "dominio": "marca.com",
-        "quando": "ahora"
-      },
-      {
-        "titolo": "Mundial 2026, en directo especial En Play - 23/06/26",
-        "fonte": "RTVE.es",
-        "link": "https://www.rtve.es/play/videos/directo/mundial-2026-partidos-programas/mundial-2026-en-play-23-junio/",
-        "img": "",
-        "dominio": "rtve.es",
-        "quando": "1 d"
+        "titolo": "La surrealista predicción del Mundial 2026 de la vidente Vó Bahiana: habrá una abducción extraterrestre en el Brasil - Escocia",
+        "fonte": "20Minutos",
+        "link": "https://www.20minutos.es/deportes/futbol/surrealista-prediccion-mundial-2026-vidente-vo-bahiana-habra-una-abduccion-extraterrestre-brasil-escocia_7006380_0.html",
+        "img": "https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2026/06/24/6a3bf6b35eba76-84181757.jpeg",
+        "dominio": "20minutos.es",
+        "quando": "5 h"
       },
       {
         "titolo": "Mundial 2026, en directo: noticias y última hora de la Copa del Mundo, hoy en vivo",
@@ -4990,15 +5056,23 @@
         "link": "https://www.sport.es/es/noticias/mundial-futbol/mundial-2026-directo-noticias-ultima-131748738",
         "img": "https://estaticos-cdn.prensaiberica.es/clip/97eb638f-da18-40b1-a4ee-b63d60e617e7_16-9-discover-aspect-ratio_default_0_x600y225.jpg",
         "dominio": "sport.es",
+        "quando": "1 h"
+      },
+      {
+        "titolo": "Bosnia y Herzegovina - Qatar : Mundial 2026, en directo | Victoria de los balcánicos que los mete de lleno en la pelea por los dieciseisavos",
+        "fonte": "EL PAÍS",
+        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-24/mundial-de-2026-en-directo-bosnia-y-herzegoviana-qatar-en-vivo.html",
+        "img": "https://imagenes.elpais.com/resizer/v2/3IHY5FI5TRJX7NYPQCNYTZ4HGE.jpg?auth=93e2c1bf447d8fc5188a11cdf40107a6f48780b0389c5de225042795f96838ac&width=1200",
+        "dominio": "elpais.com",
         "quando": "ahora"
       },
       {
-        "titolo": "Mundial 2026: ¿qué partidos se juegan hoy, 24 de junio? Horarios y enfrentamientos",
-        "fonte": "CNN en Español",
-        "link": "https://cnnespanol.cnn.com/2026/06/24/deportes/mundial-2026-partidos-24-junio-orix",
-        "img": "",
-        "dominio": "cnnespanol.cnn.com",
-        "quando": "8 h"
+        "titolo": "Bosnia - Qatar, en directo hoy: resultado y marcador | Mundial 2026 de fútbol en vivo y online: grupo B",
+        "fonte": "Mundo Deportivo",
+        "link": "https://www.mundodeportivo.com/futbol/mundial/20260624/1004198722/bosnia-qatar-directo-mundial-2026-futbol-fase-grupos.html",
+        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/06/24/6a3c3dbc8a4a5.jpeg",
+        "dominio": "mundodeportivo.com",
+        "quando": "1 h"
       }
     ]
   }
