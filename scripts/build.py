@@ -186,6 +186,14 @@ def _surname_key(g):
     toks = _deaccent(g or "").lower().split()
     return toks[-1] if toks else ""
 
+# Correzione nomi-fantasma: l'LLM inventa il nome di battesimo per cognomi noti.
+SURNAME_CANON = {"frattesi": "Davide Frattesi", "palestra": "Marco Palestra"}
+# Cognomi sospesi su richiesta editoriale (non mostrare nei Nomi).
+SUPPRESS_SURNAMES = {"palestra"}
+
+def _canon_name(g):
+    return SURNAME_CANON.get(_surname_key(g), g)
+
 def _gate_state(g, st, batch_low):
     """done richiede prova di ufficialita' nei titoli che citano il giocatore; conf richiede accordo."""
     if st not in ("done", "conf"):
@@ -236,6 +244,9 @@ def extract_movements_global(titles):
                     g = (m.get("giocatore") or "").strip()
                     st = m.get("stato") if m.get("stato") in ("rumor", "obj", "conf", "done") else "rumor"
                     if not (g and len(g) > 2 and _looks_like_name(g) and not brain.is_coach(g)):
+                        continue
+                    g = _canon_name(g)                        # correggi nomi-fantasma noti
+                    if _surname_key(g) in SUPPRESS_SURNAMES:  # sospeso su richiesta editoriale
                         continue
                     if _norm_name(g) in noise:
                         continue
@@ -433,7 +444,7 @@ def merge_nomi(old, new, today, max_age=60):
     for it in m.values():
         nm = it.get("giocatore", "")
         toks = _deaccent(nm).lower().split()
-        if toks and toks[-1] in HIST_BLACKLIST:
+        if toks and (toks[-1] in HIST_BLACKLIST or toks[-1] in SUPPRESS_SURNAMES):
             continue
         stale = _days_since(it["_seen"])
         if stale >= STALE_DAYS:                       # scade su TUTTI gli stati, non solo rumor
