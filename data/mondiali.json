@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-06-23T23:03:26Z",
+  "aggiornato": "2026-06-24T07:18:43Z",
   "nome": "World Cup 2026",
   "groups": [
     {
@@ -3613,7 +3613,28 @@
             "iso": "cd",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              1,
+              0
+            ],
+            "ht": [
+              0,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Daniel Muñoz",
+              "minute": "76",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": []
         },
         {
           "round": "Matchday 17",
@@ -3663,6 +3684,23 @@
       "classifica": [
         {
           "team": {
+            "en": "Colombia",
+            "it": "Colombia",
+            "es": "Colombia",
+            "iso": "co",
+            "ph": false
+          },
+          "pg": 2,
+          "v": 2,
+          "n": 0,
+          "p": 0,
+          "gf": 4,
+          "gs": 1,
+          "pt": 6,
+          "dr": 3
+        },
+        {
+          "team": {
             "en": "Portugal",
             "it": "Portogallo",
             "es": "Portugal",
@@ -3680,37 +3718,20 @@
         },
         {
           "team": {
-            "en": "Colombia",
-            "it": "Colombia",
-            "es": "Colombia",
-            "iso": "co",
-            "ph": false
-          },
-          "pg": 1,
-          "v": 1,
-          "n": 0,
-          "p": 0,
-          "gf": 3,
-          "gs": 1,
-          "pt": 3,
-          "dr": 2
-        },
-        {
-          "team": {
             "en": "DR Congo",
             "it": "RD Congo",
             "es": "RD Congo",
             "iso": "cd",
             "ph": false
           },
-          "pg": 1,
+          "pg": 2,
           "v": 0,
           "n": 1,
-          "p": 0,
+          "p": 1,
           "gf": 1,
-          "gs": 1,
+          "gs": 2,
           "pt": 1,
-          "dr": 0
+          "dr": -1
         },
         {
           "team": {
@@ -3905,7 +3926,28 @@
             "iso": "hr",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              0,
+              1
+            ],
+            "ht": [
+              0,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [],
+          "goals2": [
+            {
+              "name": "Ante Budimir",
+              "minute": "54",
+              "pen": false,
+              "og": false
+            }
+          ]
         },
         {
           "round": "Matchday 17",
@@ -3989,35 +4031,35 @@
         },
         {
           "team": {
-            "en": "Panama",
-            "it": "Panama",
-            "es": "Panamá",
-            "iso": "pa",
-            "ph": false
-          },
-          "pg": 1,
-          "v": 0,
-          "n": 0,
-          "p": 1,
-          "gf": 0,
-          "gs": 1,
-          "pt": 0,
-          "dr": -1
-        },
-        {
-          "team": {
             "en": "Croatia",
             "it": "Croazia",
             "es": "Croacia",
             "iso": "hr",
             "ph": false
           },
-          "pg": 1,
-          "v": 0,
+          "pg": 2,
+          "v": 1,
           "n": 0,
           "p": 1,
-          "gf": 2,
+          "gf": 3,
           "gs": 4,
+          "pt": 3,
+          "dr": -1
+        },
+        {
+          "team": {
+            "en": "Panama",
+            "it": "Panama",
+            "es": "Panamá",
+            "iso": "pa",
+            "ph": false
+          },
+          "pg": 2,
+          "v": 0,
+          "n": 0,
+          "p": 2,
+          "gf": 0,
+          "gs": 2,
           "pt": 0,
           "dr": -2
         }
@@ -4763,60 +4805,12 @@
   "news": {
     "it": [
       {
-        "titolo": "Diluvio e stop di 2 ore, poi la Francia travolge l’Iraq e si qualifica. Mbappé a 16 gol ai Mondiali",
-        "fonte": "La Gazzetta dello Sport",
-        "link": "https://www.gazzetta.it/Calcio/Mondiali/22-06-2026/live-francia-iraq-risultato-e-gol-in-diretta-mondiali.shtml",
-        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/06/23/6a39d7f221a73.r_d.1500-603-0.jpeg",
-        "dominio": "gazzetta.it",
-        "quando": "20 ore fa"
-      },
-      {
-        "titolo": "Mondiali 2026. Giordania-Algeria 1-2: algerini ribaltano il risultato. Francia e Norvegia ai 16mi - La classifica dei Gironi",
-        "fonte": "RaiNews",
-        "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-12-argentina-austria-francia-iraq-norvegia-senegal-giordania-algeria-diretta-streaming-cronaca-highlights-video-live-risultati-cb89b5a9-a448-4aee-90b5-302f8e7bacc8.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/23/1782190160262__.jpg",
-        "dominio": "rainews.it",
-        "quando": "16 ore fa"
-      },
-      {
-        "titolo": "Mondiali di Calcio 2026 2026 - Francia - Iraq 3-0: Highlights - Video",
-        "fonte": "RaiPlay",
-        "link": "https://www.raiplay.it/video/2026/06/Francia---Iraq-3-0-Highlights--Mondiali-di-Calcio-FIFA-2026-444b4da7-05c1-4b01-a992-915617124234.html",
-        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/23/1782186464984_1782176127262_LO%202048x1152.jpg",
-        "dominio": "raiplay.it",
-        "quando": "1 g fa"
-      },
-      {
-        "titolo": "Mondiali 2026: la classifica aggiornata di tutti i gironi",
-        "fonte": "Il Fatto Quotidiano",
-        "link": "https://www.ilfattoquotidiano.it/2026/06/23/mondiali-2026-risultati-oggi-nuova-classifica-gironi/8416831/",
-        "img": "https://st.ilfattoquotidiano.it/wp-content/uploads/2026/06/23/norvegia-francia-mondiali.jpg",
-        "dominio": "ilfattoquotidiano.it",
-        "quando": "16 ore fa"
-      },
-      {
-        "titolo": "Mondiali 2026. Il Ghana ferma l'Inghilterra sullo 0-0. All'1 Panama-Croazia - Il Ghana costringe l'Inghilterra allo 0-0",
-        "fonte": "RaiNews",
-        "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-13-portogallo-uzbekistan-inghilterra-ghana-panama-croazia-colombia-congo-diretta-streaming-cronaca-highlights-video-live-risultati-9e9f8925-4351-4734-b7e6-53644567f14f.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/24/1782252533850_BNE.jpg",
-        "dominio": "rainews.it",
-        "quando": "1 ore fa"
-      },
-      {
-        "titolo": "L'Inghilterra sbatte contro il muro del Ghana e fa 0-0: serata no per Kane e compagni",
-        "fonte": "La Gazzetta dello Sport",
-        "link": "https://www.gazzetta.it/Calcio/Mondiali/23-06-2026/inghilterra-ghana-live-risultato-e-marcatori-mondiali.shtml",
-        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/06/24/6a3b0476ab397.r_d.2218-814-0.jpeg",
-        "dominio": "gazzetta.it",
-        "quando": "1 ore fa"
-      },
-      {
-        "titolo": "Inghilterra - Ghana (0-0) Mondiali 2026",
-        "fonte": "la Repubblica",
-        "link": "https://www.repubblica.it/sport/dirette/calcio/mondiali-2026/diretta-inghilterra-ghana-g2608287/",
-        "img": "https://www.repstatic.it/cless/main/nazionale/2013-v1/img/common/favicon/favicon-1500.png",
-        "dominio": "repubblica.it",
-        "quando": "3 ore fa"
+        "titolo": "Mondiali 2026, Portogallo-Uzbekistan 5-0, doppietta di CR7. Inghilterra-Ghana 0-0",
+        "fonte": "Sky TG24",
+        "link": "https://tg24.sky.it/sport/2026/06/23/mondiali-calcio-2026-news-oggi-diretta",
+        "img": "https://tg24.sky.it/assets/images/8cc9347b5017880f67d492ce600704ecc23f0542/skytg24/it/sport/2026/06/23/mondiali-calcio-2026-news-oggi-diretta/cristiano_ansa.jpg?im=Resize,width=1218",
+        "dominio": "tg24.sky.it",
+        "quando": "9 ore fa"
       },
       {
         "titolo": "Mondiali di Calcio 2026 2026 - Portogallo - Uzbekistan 5-0: Highlights - Video",
@@ -4824,41 +4818,73 @@
         "link": "https://www.raiplay.it/video/2026/06/Portogallo---Uzbekistan-5-0-Highlights--Mondiali-di-Calcio-FIFA-2026-49186b21-3fef-4e9d-b4d6-2066ad2a69a4.html",
         "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/23/1782239181689_Portogallo4852.jpg",
         "dominio": "raiplay.it",
-        "quando": "23 ore fa"
+        "quando": "1 g fa"
+      },
+      {
+        "titolo": "Mondiali 2026, le news di oggi in diretta live",
+        "fonte": "Sky Sport",
+        "link": "https://sport.sky.it/calcio/mondiali/2026/06/24/mondiali-2026-news-oggi-24-giugno-diretta",
+        "img": "https://sport.sky.it/assets/images/2643bbf30e89affbaa89c7b25c08011630395913/external-upload/liveblog-manager/sport/2026/06/23/Deschamps.jpg?im=Resize,width=1218",
+        "dominio": "sport.sky.it",
+        "quando": "poco fa"
+      },
+      {
+        "titolo": "Mondiali 2026. Giordania-Algeria 1-2: algerini ribaltano il risultato. Francia e Norvegia ai 16mi - La classifica dei Gironi",
+        "fonte": "RaiNews",
+        "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-12-argentina-austria-francia-iraq-norvegia-senegal-giordania-algeria-diretta-streaming-cronaca-highlights-video-live-risultati-cb89b5a9-a448-4aee-90b5-302f8e7bacc8.html",
+        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/23/1782190160262__.jpg",
+        "dominio": "rainews.it",
+        "quando": "1 g fa"
+      },
+      {
+        "titolo": "LIVE Mondiale: il debutto di Lumumba, la statua vivente. Spence si rifiuta di stringere la mano a Partey",
+        "fonte": "La Gazzetta dello Sport",
+        "link": "https://www.gazzetta.it/Calcio/Mondiali/24-06-2026/live-mondiali-2026-cosa-succede-tra-usa-canada-e-messico.shtml",
+        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/06/24/6a3b7619e5cd7.jpeg",
+        "dominio": "gazzetta.it",
+        "quando": "poco fa"
+      },
+      {
+        "titolo": "Mondiali 2026, le news di oggi: lutto per Deschamps, salta Francia-Norvegia",
+        "fonte": "Sky Sport",
+        "link": "https://sport.sky.it/calcio/mondiali/2026/06/23/mondiali-2026-news-oggi-23-giugno-diretta",
+        "img": "https://sport.sky.it/assets/images/2643bbf30e89affbaa89c7b25c08011630395913/skysport/it/calcio/mondiali/2026/06/23/mondiali-2026-news-oggi-23-giugno-diretta/Deschamps.jpg?im=Resize,width=1218",
+        "dominio": "sport.sky.it",
+        "quando": "poco fa"
+      },
+      {
+        "titolo": "Mondiali 2026: è arrivato il momento dei primi verdetti. Brasile-Scozia a mezzanotte",
+        "fonte": "Il Fatto Quotidiano",
+        "link": "https://www.ilfattoquotidiano.it/2026/06/24/partite-oggi-mondiali-24-25-giugno/8427808/",
+        "img": "https://st.ilfattoquotidiano.it/wp-content/uploads/2026/06/23/ancelotti-brasile-mondiali-oggi.jpg",
+        "dominio": "ilfattoquotidiano.it",
+        "quando": "1 ore fa"
+      },
+      {
+        "titolo": "Mondiali di Calcio 2026 2026 - Inghilterra - Ghana 0-0: Highlights - Video",
+        "fonte": "RaiPlay",
+        "link": "https://www.raiplay.it/video/2026/06/Inghilterra---Ghana-0-0-Highlights--Mondiali-di-Calcio-FIFA-2026-e044750b-3b18-48a8-90f8-9ab805c14149.html",
+        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/24/1782252008499_Inghilterra4852%201.jpg",
+        "dominio": "raiplay.it",
+        "quando": "1 g fa"
       }
     ],
     "en": [
       {
-        "titolo": "World Cup 2026: Have changes damaged the end of the group stage?",
-        "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/articles/cdejryxlkxro",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/f376/live/dcd06300-6f05-11f1-87e9-1dc598ae70b3.jpg",
-        "dominio": "bbc.co.uk",
-        "quando": "6h ago"
-      },
-      {
-        "titolo": "France rocked as boss Deschamps leaves World Cup to fly home after mum's death",
-        "fonte": "The Sun",
-        "link": "https://www.thesun.co.uk/sport/39517660/didier-deschamps-france-manager-mum-death-funeral/",
-        "img": "",
-        "dominio": "thesun.co.uk",
-        "quando": "3h ago"
-      },
-      {
-        "titolo": "World Cup 2026: Jude Bellingham's post-match interview",
-        "fonte": "BBC",
-        "link": "https://www.bbc.com/sport/football/videos/ce8m0257j03o",
-        "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/13ae/live/7b577060-6f54-11f1-8546-8f19e4fe30f4.jpg",
-        "dominio": "bbc.com",
+        "titolo": "Which teams have qualified for the World Cup 2026 knockouts, round of 32?",
+        "fonte": "Al Jazeera",
+        "link": "https://www.aljazeera.com/sports/2026/6/24/which-teams-have-qualified-for-the-world-cup-2026-knockouts-round-of-32",
+        "img": "https://www.aljazeera.com/wp-content/uploads/2026/06/2026-06-24T034630Z_1021751167_UP1EM6O0A7QBA_RTRMADP_3_SOCCER-WORLDCUP-COL-COD-1782274536_9d72a9-1782274656.jpg?resize=1200%2C630&quality=80",
+        "dominio": "aljazeera.com",
         "quando": "just now"
       },
       {
-        "titolo": "England 0-0 Ghana: World Cup 2026 – live",
+        "titolo": "World Cup 2026: England frustrated; final group games kick off as Scotland face Brazil – live",
         "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/23/england-v-ghana-world-cup-2026-live",
-        "img": "https://i.guim.co.uk/img/media/cbc982c661b7f5f9f0ef7dfad65de6a5bb1f362f/77_0_2951_2361/master/2951.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=c6a042da0ba1e2058171847ebe36bc5f",
+        "link": "https://www.theguardian.com/football/live/2026/jun/24/world-cup-2026-final-group-games-bosnia-and-herzegovina-qatar-switzerland-canada-scotland-brazil-morocco-haiti-czechia-mexico-south-africa-south-korea-live",
+        "img": "https://i.guim.co.uk/img/media/6ccacf6c9f5a4a0319b30e65e0e6dcceb2c700e9/627_0_5000_4000/master/5000.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=ed8a6de5cd7a02d5597b123a309b7ac2",
         "dominio": "theguardian.com",
-        "quando": "5h ago"
+        "quando": "just now"
       },
       {
         "titolo": "FIFA World Cup 2026 - Group Stage: England v Ghana",
@@ -4866,15 +4892,31 @@
         "link": "https://www.bbc.co.uk/iplayer/episode/m002y4k3/fifa-world-cup-2026-group-stage-england-v-ghana",
         "img": "",
         "dominio": "bbc.co.uk",
-        "quando": "3h ago"
+        "quando": "12h ago"
       },
       {
-        "titolo": "England 0-0 Ghana LIVE: World Cup 2026 reaction as Three Lions held to goalless draw",
+        "titolo": "England 0-0 Ghana: World Cup 2026 – as it happened",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/live/2026/jun/23/england-v-ghana-world-cup-2026-live",
+        "img": "https://i.guim.co.uk/img/media/cbc982c661b7f5f9f0ef7dfad65de6a5bb1f362f/77_0_2951_2361/master/2951.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=c6a042da0ba1e2058171847ebe36bc5f",
+        "dominio": "theguardian.com",
+        "quando": "13h ago"
+      },
+      {
+        "titolo": "World Cup 2026 today: Live updates, latest news as England held to bore draw - June 24",
         "fonte": "ESPN",
-        "link": "https://www.espn.co.uk/football/story/_/id/49155118/england-ghana-live-world-cup-2026-latest-updates-commentary-score-result",
-        "img": "https://a.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0623%2Fr1678417_1296x729_16%2D9.jpg",
+        "link": "https://www.espn.co.uk/football/story/_/id/49162646/world-cup-2026-today-blog-24-06-2026-live-updates-news-fixtures-schedule-results-england-ghana-draw-scotland",
+        "img": "",
         "dominio": "espn.co.uk",
         "quando": "just now"
+      },
+      {
+        "titolo": "Portugal 5-0 Uzbekistan: World Cup 2026 – as it happened",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/live/2026/jun/23/portugal-v-uzbekistan-world-cup-2026-live",
+        "img": "https://i.guim.co.uk/img/media/df4e488cb67c85eb8d1d8c8a2e5823ac7bedfbec/483_50_2887_2310/master/2887.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=009820ca3027fc6426ec2abae6606438",
+        "dominio": "theguardian.com",
+        "quando": "14h ago"
       },
       {
         "titolo": "'I'm back' - record-breaking Ronaldo answers critics",
@@ -4882,7 +4924,7 @@
         "link": "https://www.bbc.co.uk/sport/football/articles/clyx746enj9o",
         "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/3002/live/78536280-6f30-11f1-8453-3df0e929f7f2.jpg",
         "dominio": "bbc.co.uk",
-        "quando": "1h ago"
+        "quando": "5h ago"
       },
       {
         "titolo": "World Cup 2026: Jordan fan dies in crowd crush; criticism of Ronaldo and Portugal ‘unfair’; England face Ghana – as it happened",
@@ -4890,17 +4932,57 @@
         "link": "https://www.theguardian.com/football/live/2026/jun/23/world-cup-2026-news-live-messi-mbappe-haaland-england-ghana-portugal-uzbekistan-panama-croatia-colombia-dr-congo",
         "img": "https://i.guim.co.uk/img/media/a2a95968094ae9a6cfe31e03f9ba93cf2fd9c063/80_0_5498_4399/master/5498.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=c2b38ddfd1df9ee621040a2db3708f18",
         "dominio": "theguardian.com",
-        "quando": "7h ago"
+        "quando": "15h ago"
       }
     ],
     "es": [
       {
-        "titolo": "Inglaterra - Ghana hoy, en directo: última hora de la fase de grupos del Mundial 2026, Grupo L en vivo",
+        "titolo": "Colombia 1 - 0 República del Congo | Resumen Mundial 2026",
+        "fonte": "El Mundo",
+        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/24/6a3b7ac2e85ece4d778b456c-video.html",
+        "img": "https://e01-phantom-elmundo.uecdn.es/11ebcc6ec4d6e1bad0ca2a134d40d6ff/provider/dm/crop/150x0/1770x1080/resize/1200/f/webp/v/btnMg1gEtgNqcdrb1/x1080",
+        "dominio": "elmundo.es",
+        "quando": "ahora"
+      },
+      {
+        "titolo": "📀 VER ESPN HD EN VIVO | Transmisión del Colombia vs. RD Congo ONLINE por Disney Plus",
+        "fonte": "Depor",
+        "link": "https://depor.com/futbol-internacional/mundial/espn-en-vivo-gratis-ver-partido-colombia-vs-rd-congo-en-directo-con-luis-diaz-por-futbol-tv-y-disney-plus-online-video-mundial-2026-nnda-nnrt-noticia/",
+        "img": "https://i.ytimg.com/vi/WrWBW8E9ClQ/hqdefault.jpg",
+        "dominio": "depor.com",
+        "quando": "5 h"
+      },
+      {
+        "titolo": "Colombia - RD Congo, en directo | Mundial 2026 de fútbol: fase de grupos",
+        "fonte": "Mundo Deportivo",
+        "link": "https://www.mundodeportivo.com/futbol/mundial/20260624/1004198715/colombia-rp-congo-directo-mundial-2026-futbol-fase-grupos.html",
+        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/files/fp/uploads/2026/03/20/69bcec74e92df.r_d.1511-791-11706.jpeg",
+        "dominio": "mundodeportivo.com",
+        "quando": "3 h"
+      },
+      {
+        "titolo": "Portugal 5-0 Uzbekistán: resumen, goles y resultado",
         "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/inglaterra-ghana-en-directo-mundial-2026-hoy-en-vivo-f202606-d/",
-        "img": "https://img.asmedia.epimg.net/resizer/v2/7M65TZ6SYBIE5MZNN64VLITD3Q.jpg?auth=63d6107cfa82187d15d83c5290ef79b4ec43ada41e36333cdde853fe5a23aa4e&width=1472&height=828&smart=true",
+        "link": "https://as.com/futbol/mundial/portugal-uzbekistan-hoy-en-directo-fase-de-grupos-del-mundial-2026-ultima-hora-del-grupo-k-f202606-d/",
+        "img": "https://img.asmedia.epimg.net/resizer/v2/BXMF6E5VKBCXPJYFRDOBE7MG2A.JPG?auth=3e643b0dfd9a57dd27f84256bbd95308b7f29e0d22f8051343b1f3e1cf628788&width=1472&height=828&focal=838%2C237",
         "dominio": "as.com",
-        "quando": "1 h"
+        "quando": "12 h"
+      },
+      {
+        "titolo": "Así le hemos contado la goleada de Portugal ante Uzbekistán en la fase de grupos del Mundial 2026",
+        "fonte": "EL PAÍS",
+        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-23/mundial-de-2026-en-directo-portugal-uzbekistan-en-vivo.html",
+        "img": "https://imagenes.elpais.com/resizer/v2/3L6LE54ZRBO4VN5EMILPCVUOQI.jpg?auth=1754d0b0d5cc3d5eaca0696ca4dc9c4ee8b513e6daaf627180cef896144a97b6&width=1200",
+        "dominio": "elpais.com",
+        "quando": "11 h"
+      },
+      {
+        "titolo": "Portugal - Uzbekistán: resumen, resultado y goles | Mundial 2026 de fútbol: grupo K",
+        "fonte": "Mundo Deportivo",
+        "link": "https://www.mundodeportivo.com/futbol/mundial/20260623/1004198337/portugal-uzbekistan-directo-hoy-mundial-2026-grupo-k.html",
+        "img": "",
+        "dominio": "mundodeportivo.com",
+        "quando": "12 h"
       },
       {
         "titolo": "Inglaterra - Ghana: resumen y resultado del partido del Grupo L del Mundial 2026 de fútbol",
@@ -4908,55 +4990,15 @@
         "link": "https://www.mundodeportivo.com/futbol/mundial/20260623/1004198345/inglaterra-ghana-directo-mundial-2026-futbol-grupo-l.html",
         "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/06/24/6a3b02989494f.jpeg",
         "dominio": "mundodeportivo.com",
-        "quando": "3 h"
+        "quando": "11 h"
       },
       {
-        "titolo": "Ghana levanta un muro ante Inglaterra y deja abierto el grupo L con un punto de oro en Boston",
-        "fonte": "RTVE.es",
-        "link": "https://www.rtve.es/deportes/20260623/mundial-2026-inglaterra-ghana-directo-video-resumen-resultado/17122982.shtml",
-        "img": "https://img.rtve.es/imagenes/mundial-2026-inglaterra-ghana-directo-video-resumen-resultado/01782252966811.jpg",
-        "dominio": "rtve.es",
-        "quando": "ahora"
-      },
-      {
-        "titolo": "Portugal 5-0 Uzbekistán: resumen, resultado y goles del partido del grupo K del Mundial 2026",
-        "fonte": "Cadena SER",
-        "link": "https://cadenaser.com/nacional/2026/06/23/portugal-5-0-uzbekistan-resumen-resultado-y-goles-del-partido-del-grupo-k-del-mundial-2026-cadena-ser/",
-        "img": "https://cadenaser.com/resizer/v2/72R6KE3BT5E4JMJA7ZZW4T5ERA.jpg?auth=83d6fac0c85972f158b8663faff17d3e8824bee8eb6f35689490dede7727335d&quality=70&width=1200&height=675&focal=2456,916",
-        "dominio": "cadenaser.com",
+        "titolo": "El momento de Gordon retorciéndose de dolor ante el partido contra Ghana",
+        "fonte": "El Mundo",
+        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/24/6a3b71a1fc6c833b5c8b45a8-video.html",
+        "img": "https://e01-phantom-elmundo.uecdn.es/0d362d7b91cc089dc45727fd2028ef61/provider/dm/crop/150x0/1770x1080/resize/1200/f/webp/v/btk3M1gEt4Ndbx-3n/x1080",
+        "dominio": "elmundo.es",
         "quando": "1 h"
-      },
-      {
-        "titolo": "Portugal 5-0 Uzbekistán: resumen, goles y resultado",
-        "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/portugal-uzbekistan-hoy-en-directo-fase-de-grupos-del-mundial-2026-ultima-hora-del-grupo-k-f202606-d/",
-        "img": "",
-        "dominio": "as.com",
-        "quando": "3 h"
-      },
-      {
-        "titolo": "Portugal - Uzbekistán: resumen, resultado y goles | Mundial 2026 de fútbol: grupo K",
-        "fonte": "Mundo Deportivo",
-        "link": "https://www.mundodeportivo.com/futbol/mundial/20260623/1004198337/portugal-uzbekistan-directo-hoy-mundial-2026-grupo-k.html",
-        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/06/23/6a3ad727df79e.jpeg",
-        "dominio": "mundodeportivo.com",
-        "quando": "3 h"
-      },
-      {
-        "titolo": "Panamá - Croacia, en directo | Mundial 2026 de fútbol en vivo y online",
-        "fonte": "Mundo Deportivo",
-        "link": "https://www.mundodeportivo.com/futbol/mundial/20260624/1004198711/panama-croacia-directo-mundial-2026-futbol-vivo-online.html",
-        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/06/23/6a3ae318f0fe1.jpeg",
-        "dominio": "mundodeportivo.com",
-        "quando": "ahora"
-      },
-      {
-        "titolo": "Panamá - Croacia hoy, en directo: partido de fase de grupos del Mundial 2026 | Grupo L en vivo",
-        "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/panama-croacia-hoy-en-directo-partido-de-fase-de-grupos-del-mundial-2026-grupo-l-en-vivo-f202606-d/",
-        "img": "https://img.asmedia.epimg.net/resizer/v2/IEFHC6ZCDVP2LGFIL3CKE2Q42Q.jpg?auth=65cd7a10b367ccddcd9d6e1239cfb18f88ff6eb1a4167ffdb4450946a1e501e6&width=1472&height=828&focal=2292%2C1205",
-        "dominio": "as.com",
-        "quando": "ahora"
       }
     ]
   }
