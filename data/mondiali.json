@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-06-26T23:29:18Z",
+  "aggiornato": "2026-06-27T07:16:29Z",
   "nome": "World Cup 2026",
   "groups": [
     {
@@ -2676,7 +2676,35 @@
             "iso": "ir",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              1,
+              1
+            ],
+            "ht": [
+              1,
+              1
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Mahmoud Saber",
+              "minute": "5",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": [
+            {
+              "name": "Ramin Rezaeian",
+              "minute": "14",
+              "pen": false,
+              "og": false
+            }
+          ]
         },
         {
           "round": "Matchday 16",
@@ -2698,10 +2726,79 @@
             "iso": "be",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              1,
+              5
+            ],
+            "ht": [
+              0,
+              1
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Elijah Just",
+              "minute": "84",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": [
+            {
+              "name": "Leandro Trossard",
+              "minute": "28",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Leandro Trossard",
+              "minute": "50",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Kevin De Bruyne",
+              "minute": "66",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Romelu Lukaku",
+              "minute": "86",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Alexis Saelemaekers",
+              "minute": "90+4",
+              "pen": false,
+              "og": false
+            }
+          ]
         }
       ],
       "classifica": [
+        {
+          "team": {
+            "en": "Belgium",
+            "it": "Belgio",
+            "es": "Bélgica",
+            "iso": "be",
+            "ph": false
+          },
+          "pg": 3,
+          "v": 1,
+          "n": 2,
+          "p": 0,
+          "gf": 6,
+          "gs": 2,
+          "pt": 5,
+          "dr": 4
+        },
         {
           "team": {
             "en": "Egypt",
@@ -2710,13 +2807,13 @@
             "iso": "eg",
             "ph": false
           },
-          "pg": 2,
+          "pg": 3,
           "v": 1,
-          "n": 1,
+          "n": 2,
           "p": 0,
-          "gf": 4,
-          "gs": 2,
-          "pt": 4,
+          "gf": 5,
+          "gs": 3,
+          "pt": 5,
           "dr": 2
         },
         {
@@ -2727,30 +2824,13 @@
             "iso": "ir",
             "ph": false
           },
-          "pg": 2,
+          "pg": 3,
           "v": 0,
-          "n": 2,
+          "n": 3,
           "p": 0,
-          "gf": 2,
-          "gs": 2,
-          "pt": 2,
-          "dr": 0
-        },
-        {
-          "team": {
-            "en": "Belgium",
-            "it": "Belgio",
-            "es": "Bélgica",
-            "iso": "be",
-            "ph": false
-          },
-          "pg": 2,
-          "v": 0,
-          "n": 2,
-          "p": 0,
-          "gf": 1,
-          "gs": 1,
-          "pt": 2,
+          "gf": 3,
+          "gs": 3,
+          "pt": 3,
           "dr": 0
         },
         {
@@ -2761,14 +2841,14 @@
             "iso": "nz",
             "ph": false
           },
-          "pg": 2,
+          "pg": 3,
           "v": 0,
           "n": 1,
-          "p": 1,
-          "gf": 3,
-          "gs": 5,
+          "p": 2,
+          "gf": 4,
+          "gs": 10,
           "pt": 1,
-          "dr": -2
+          "dr": -6
         }
       ]
     },
@@ -3002,7 +3082,19 @@
             "iso": "sa",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              0,
+              0
+            ],
+            "ht": [
+              0,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true
         },
         {
           "round": "Matchday 16",
@@ -3024,7 +3116,28 @@
             "iso": "es",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              0,
+              1
+            ],
+            "ht": [
+              0,
+              1
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [],
+          "goals2": [
+            {
+              "name": "Álex Baena",
+              "minute": "42",
+              "pen": false,
+              "og": false
+            }
+          ]
         }
       ],
       "classifica": [
@@ -3036,31 +3149,14 @@
             "iso": "es",
             "ph": false
           },
-          "pg": 2,
-          "v": 1,
+          "pg": 3,
+          "v": 2,
           "n": 1,
           "p": 0,
-          "gf": 4,
+          "gf": 5,
           "gs": 0,
-          "pt": 4,
-          "dr": 4
-        },
-        {
-          "team": {
-            "en": "Uruguay",
-            "it": "Uruguay",
-            "es": "Uruguay",
-            "iso": "uy",
-            "ph": false
-          },
-          "pg": 2,
-          "v": 0,
-          "n": 2,
-          "p": 0,
-          "gf": 3,
-          "gs": 3,
-          "pt": 2,
-          "dr": 0
+          "pt": 7,
+          "dr": 5
         },
         {
           "team": {
@@ -3070,14 +3166,31 @@
             "iso": "cv",
             "ph": false
           },
-          "pg": 2,
+          "pg": 3,
           "v": 0,
-          "n": 2,
+          "n": 3,
           "p": 0,
           "gf": 2,
           "gs": 2,
-          "pt": 2,
+          "pt": 3,
           "dr": 0
+        },
+        {
+          "team": {
+            "en": "Uruguay",
+            "it": "Uruguay",
+            "es": "Uruguay",
+            "iso": "uy",
+            "ph": false
+          },
+          "pg": 3,
+          "v": 0,
+          "n": 2,
+          "p": 1,
+          "gf": 3,
+          "gs": 4,
+          "pt": 2,
+          "dr": -1
         },
         {
           "team": {
@@ -3087,13 +3200,13 @@
             "iso": "sa",
             "ph": false
           },
-          "pg": 2,
+          "pg": 3,
           "v": 0,
-          "n": 1,
+          "n": 2,
           "p": 1,
           "gf": 1,
           "gs": 5,
-          "pt": 1,
+          "pt": 2,
           "dr": -4
         }
       ]
@@ -5296,110 +5409,126 @@
   "news": {
     "it": [
       {
-        "titolo": "Mondiali 2026: la classifica aggiornata di tutti i gironi",
-        "fonte": "Il Fatto Quotidiano",
-        "link": "https://www.ilfattoquotidiano.it/2026/06/26/mondiali-2026-risultati-oggi-nuova-classifica-gironi/8416831/",
-        "img": "https://st.ilfattoquotidiano.it/wp-content/uploads/2026/06/26/ecuador.jpg",
-        "dominio": "ilfattoquotidiano.it",
-        "quando": "1 ore fa"
+        "titolo": "Favola Capo Verde: storica qualificazione ai sedicesimi del Mondiale",
+        "fonte": "Sky Sport",
+        "link": "https://sport.sky.it/calcio/mondiali/2026/06/27/capo-verde-arabia-saudita-mondiali-2026-risultato-gol-classifica-statistiche",
+        "img": "https://sport.sky.it/assets/images/0809e89beb86b33b0ff21d5ff982b0797e3b03ce/skysport/it/calcio/mondiali/2026/06/27/capo-verde-arabia-saudita-mondiali-2026-risultato-gol-classifica-statistiche/capo_verde_esultanza_getty.jpg?im=Resize,width=1218",
+        "dominio": "sport.sky.it",
+        "quando": "5 ore fa"
       },
       {
-        "titolo": "Mondiali di Calcio 2026 2026 - Tunisia - Olanda 1-3: Highlights - Video",
+        "titolo": "Mondiali di Calcio 2026 2026 - Norvegia - Francia 1-4: Highlights - Video",
         "fonte": "RaiPlay",
-        "link": "https://www.raiplay.it/video/2026/06/Tunisia---Olanda-1-3-Highlights--Mondiali-di-Calcio-FIFA-2026-f69d28d5-f4f3-47de-b5ed-ecbc75559bf0.html",
-        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/26/1782436869631_Olanda4852.jpg",
+        "link": "https://www.raiplay.it/video/2026/06/Norvegia---Francia-1-4-Highlights--Mondiali-di-Calcio-FIFA-2026-29799917-c8a3-437d-82fe-822b5db4681c.html",
+        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/26/1782506104421_000_B8GF9AG%201.jpg",
         "dominio": "raiplay.it",
         "quando": "1 g fa"
       },
       {
-        "titolo": "LIVE Mondiale: Uruguay, fronda nello spogliatoio. I giocatori contro Bielsa",
-        "fonte": "La Gazzetta dello Sport",
-        "link": "https://www.gazzetta.it/Calcio/Mondiali/26-06-2026/live-mondiali-2026-cosa-succede-tra-usa-canada-e-messico.shtml",
-        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/06/26/6a3e698dc1166.jpeg",
-        "dominio": "gazzetta.it",
-        "quando": "2 ore fa"
+        "titolo": "Mondiali 2026, news e risultati di oggi in diretta LIVE",
+        "fonte": "Sky Sport",
+        "link": "https://sport.sky.it/calcio/mondiali/2026/06/26/mondiali-2026-news-oggi-26-giugno-diretta",
+        "img": "https://sport.sky.it/assets/images/0d8ea0aec9b2cae3ba89abe2bba26ffd194b0b18/skysport/it/calcio/mondiali/2026/06/26/mondiali-2026-news-oggi-26-giugno-diretta/belgio.jpg?im=Resize,width=1218",
+        "dominio": "sport.sky.it",
+        "quando": "9 ore fa"
       },
       {
-        "titolo": "Mondiale 2026, Norvegia-Francia: le formazioni ufficiali",
-        "fonte": "Fantacalcio",
-        "link": "https://www.fantacalcio.it/news/calcio-estero/mondiali/26_06_2026/mondiale-2026-norvegia-francia-le-formazioni-ufficiali-494653",
-        "img": "https://content.fantacalcio.it/web/img/large/mbappe-3ffcabe6-0b27-4b5a-bf4a-707617b695e1.jpg",
-        "dominio": "fantacalcio.it",
-        "quando": "5 ore fa"
-      },
-      {
-        "titolo": "Senegal senza pietà contro l'Iraq in 10: stravince 5-0 e \"vede\" i sedicesimi",
-        "fonte": "La Gazzetta dello Sport",
-        "link": "https://www.gazzetta.it/Calcio/Mondiali/26-06-2026/senegal-iraq-live-risultato-e-gol-in-diretta-mondiali.shtml",
-        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/06/26/6a3ee4325f3d7.jpeg",
-        "dominio": "gazzetta.it",
-        "quando": "2 ore fa"
-      },
-      {
-        "titolo": "Mondiali 2026. Senegal-Iraq 5-0, la sintesi della partita",
-        "fonte": "RaiNews",
-        "link": "https://www.rainews.it/video/2026/06/calcio-coppa-del-mondo-mondiali-2026-giorno-16-senegal-iraq-5-0-sintesi-partita-highlights-video--e98474de-bcca-4ce2-a385-781ec816543a.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/26/1782503538071_.jpg",
-        "dominio": "rainews.it",
+        "titolo": "Mondiali 2026: l'Egitto pareggia 1-1 e passa come secondo, illusione Iran che spera ancora",
+        "fonte": "Sportmediaset",
+        "link": "https://www.sportmediaset.mediaset.it/speciale/mondiali-2026/mondiali-2026-l-egitto-pareggia-1-1-e-passa-come-secondo-illusione-iran-che-spera-ancora_113658010-202602k.shtml",
+        "img": "https://img-api.cloud.mediaset.net/api/images/kn/v1/image_main/1200/675/113658212?r=28",
+        "dominio": "sportmediaset.mediaset.it",
         "quando": "1 ore fa"
       },
       {
-        "titolo": "Senegal - Iraq (5-0) Mondiali 2026",
+        "titolo": "Khalilzadeh gol al 93’, il Var lo annulla: Egitto secondo, sfiderà l’Australia. Iran terzo, ma spera",
+        "fonte": "La Gazzetta dello Sport",
+        "link": "https://www.gazzetta.it/Calcio/Mondiali/27-06-2026/mondiali-egitto-iran-1-1.shtml",
+        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/06/27/6a3f480f6abf2.jpeg",
+        "dominio": "gazzetta.it",
+        "quando": "1 ore fa"
+      },
+      {
+        "titolo": "Ct di Egitto e Iran dribblano il tema Pride: \"Rispetto ma pensiamo al calcio\"",
+        "fonte": "RaiNews",
+        "link": "https://www.rainews.it/articoli/2026/06/-ct-di-egitto-e-iran-dribblano-tema-pride-rispetto-ma-pensiamo-al-calcio-1438ebf9-21f5-41f7-b2ae-69e104162c20.html",
+        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/26/1782480607060_Schermata__alle_...png",
+        "dominio": "rainews.it",
+        "quando": "17 ore fa"
+      },
+      {
+        "titolo": "Nuova Zelanda - Belgio (1-5) Mondiali 2026",
         "fonte": "la Repubblica",
-        "link": "https://www.repubblica.it/sport/dirette/calcio/mondiali-2026/diretta-senegal-iraq-g2608306/",
+        "link": "https://www.repubblica.it/sport/dirette/calcio/mondiali-2026/diretta-nuova-zelanda-belgio-g2608301/",
         "img": "https://www.repstatic.it/cless/main/nazionale/2013-v1/img/common/favicon/favicon-1500.png",
         "dominio": "repubblica.it",
         "quando": "4 ore fa"
       },
       {
-        "titolo": "Mondiali 2026. Ecco il tabellone dei 16esimi di finale. Gli orari e dove vederli",
-        "fonte": "RaiNews",
-        "link": "https://www.rainews.it/articoli/2026/06/calcio-mondiali-2026-sedicesimi-16esimi-finale-tabellone-partite-orari-e-dove-vederle-dirette-rai-raisport-rainews-raiplay-28634904-d3df-44bf-a216-7c55f032bc9b.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/11/1781204197299_.png",
-        "dominio": "rainews.it",
-        "quando": "21 ore fa"
+        "titolo": "Il Belgio vola ai sedicesimi da primo! L'Egitto passa da seconda",
+        "fonte": "eurosport.it",
+        "link": "https://www.eurosport.it/calcio/mondiali/2026/il-belgio-batte-5-1-la-nuova-zelanda-e-vola-ai-sedicesimi-da-prima-della-classe-legitto-pareggia-1-1-con-liran-e-passa-da-seconda_sto23313570/story.shtml",
+        "img": "",
+        "dominio": "eurosport.it",
+        "quando": "1 ore fa"
       }
     ],
     "en": [
       {
-        "titolo": "Uruguay vs Spain LIVE: FIFA World Cup 2026",
+        "titolo": "Which teams have qualified for the World Cup 2026 knockouts, round of 32?",
         "fonte": "Al Jazeera",
-        "link": "https://www.aljazeera.com/sports/liveblog/2026/6/26/uruguay-vs-spain-live-world-cup-2026",
-        "img": "https://www.aljazeera.com/wp-content/uploads/2026/06/2026-06-26T230032Z_1440893499_UP1EM6Q1RWU8P_RTRMADP_3_SOCCER-WORLDCUP-URY-ESP-1782515305.jpg?resize=1920%2C1440",
+        "link": "https://www.aljazeera.com/sports/2026/6/27/which-teams-have-qualified-for-the-world-cup-2026-knockouts-round-of-32",
+        "img": "https://www.aljazeera.com/wp-content/uploads/2026/06/2026-06-27T042637Z_1655435390_UP1EM6R0CCB6Z_RTRMADP_3_SOCCER-WORLDCUP-EGY-IRN-1782540336.jpg?resize=1920%2C1440",
         "dominio": "aljazeera.com",
+        "quando": "1h ago"
+      },
+      {
+        "titolo": "World Cup 2026: Cape Verde, Spain, Belgium & Egypt progress to last 32",
+        "fonte": "BBC",
+        "link": "https://www.bbc.co.uk/sport/football/live/cm20lr7yjj7t",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/d39d/live/3b9a1410-71ec-11f1-8e1d-bbbb1017d210.png",
+        "dominio": "bbc.co.uk",
+        "quando": "1h ago"
+      },
+      {
+        "titolo": "The three World Cup results Scotland need to qualify for knockout stages",
+        "fonte": "The Independent",
+        "link": "https://www.independent.co.uk/sport/football/scotland-world-cup-2026-knockout-rounds-qualify-opponents-b3004134.html",
+        "img": "https://static.independent.co.uk/2026/06/25/00/2283183883..?trim=0,1,0,1&width=1200&height=800&crop=1200:800",
+        "dominio": "independent.co.uk",
+        "quando": "1h ago"
+      },
+      {
+        "titolo": "World Cup 2026: Spain's Yeremy Pino plays on with suspected broken collarbone and may miss rest of World Cup",
+        "fonte": "BBC",
+        "link": "https://www.bbc.com/sport/football/articles/c77y384r670o",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/915c/live/b5b24180-71df-11f1-8105-a94310744a25.jpg",
+        "dominio": "bbc.com",
+        "quando": "2h ago"
+      },
+      {
+        "titolo": "Uruguay vs Spain LIVE: FIFA World Cup Group H score, commentary, updates & stats",
+        "fonte": "BBC",
+        "link": "https://www.bbc.co.uk/sport/football/live/cx2kqd1ywzdt",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/a0bf/live/1e2a2a70-71c2-11f1-8241-fd7cfef85eb2.jpg",
+        "dominio": "bbc.co.uk",
+        "quando": "5h ago"
+      },
+      {
+        "titolo": "Uruguay slump to shock early World Cup exit after Baena strike sends Spain through",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/2026/jun/27/uruguay-spain-world-cup-match-report",
+        "img": "https://i.guim.co.uk/img/media/05eaba596b42cf3cacfbfc68c09f46c12bbbbd11/65_0_3644_2917/master/3644.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=2f30a055fcd44c7dff3cfd2c4dcab838",
+        "dominio": "theguardian.com",
         "quando": "just now"
       },
       {
-        "titolo": "World Cup 2026 today: Live updates, latest news as it happened - June 26",
+        "titolo": "World Cup 2026 today: Live updates, latest news as Cape Verde make history, Uruguay crash out - June 27",
         "fonte": "ESPN",
-        "link": "https://www.espn.co.uk/football/story/_/id/49183943/world-cup-2026-today-blog-26-06-2026-live-updates-news-fixtures-schedule-results-ecuador-sweden-norway-france",
-        "img": "",
+        "link": "https://www.espn.co.uk/football/story/_/id/49194724/world-cup-2026-today-blog-27-06-2026-live-updates-news-fixtures-schedule-results-cape-verde-uruguay-england",
+        "img": "https://a1.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0627%2Fr1680358_1296x729_16%2D9.jpg",
         "dominio": "espn.co.uk",
-        "quando": "1h ago"
-      },
-      {
-        "titolo": "Norway 1-4 France: World Cup 2026 – as it happened",
-        "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/26/norway-v-france-world-cup-2026-live-updates",
-        "img": "https://i.guim.co.uk/img/media/8479c194da455c92dfa7b7f62334bc2ba97de303/579_0_3462_2770/master/3462.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=505628b0750bb97da05072804597a2e7",
-        "dominio": "theguardian.com",
-        "quando": "6h ago"
-      },
-      {
-        "titolo": "Dembele scores hat-trick as France beat Norway 4-1 at World Cup 2026",
-        "fonte": "Al Jazeera",
-        "link": "https://www.aljazeera.com/sports/2026/6/26/dembele-scores-hat-trick-as-france-beat-norway-4-1-at-world-cup-2026",
-        "img": "https://www.aljazeera.com/wp-content/uploads/2026/06/afp_6a3eeb762a1b-1782508406_5c4516-1782509061.jpg?resize=1200%2C630&quality=80",
-        "dominio": "aljazeera.com",
-        "quando": "1h ago"
-      },
-      {
-        "titolo": "World Cup 2026: Norway v France & can Cape Verde progress to the last 32?",
-        "fonte": "BBC",
-        "link": "https://www.bbc.com/sport/football/live/c4gye5l0l6nt",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/cdb8/live/4b49b4c0-7150-11f1-8e1d-bbbb1017d210.png",
-        "dominio": "bbc.com",
-        "quando": "10h ago"
+        "quando": "just now"
       },
       {
         "titolo": "World Cup 2026: James set to miss Panama match; Schweinsteiger defends Côte d’Ivoire comments – as it happened",
@@ -5407,89 +5536,73 @@
         "link": "https://www.theguardian.com/football/live/2026/jun/26/world-cup-2026-norway-france-senegal-iraq-cape-verde-saudi-arabia-uruguay-spain-egypt-iran-new-zealand-belgium-live",
         "img": "https://i.guim.co.uk/img/media/559974ee9c62fd7d2d9ed0b2efaed77a6565e73c/195_0_3815_3053/master/3815.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=b28c9c14ba882c263cbb0e6b05fbd3f6",
         "dominio": "theguardian.com",
-        "quando": "16h ago"
-      },
-      {
-        "titolo": "World Cup 2026: Norway face questions as Erling Haaland rested against France",
-        "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/articles/cp3xd37np9po",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/0b54/live/a76fe620-71af-11f1-8546-8f19e4fe30f4.jpg",
-        "dominio": "bbc.co.uk",
-        "quando": "just now"
-      },
-      {
-        "titolo": "Norway vs France, Senegal vs Iraq LIVE! World Cup 2026 Group I fixtures, scores, live updates and team news",
-        "fonte": "Sky Sports",
-        "link": "https://www.skysports.com/football/live-blog/12098/13557070/norway-vs-france-senegal-vs-iraq-live-world-cup-2026-group-i-fixtures-scores-live-updates-and-team-news",
-        "img": "https://e0.365dm.com/26/06/1600x900/skysports-ousmane-dembele-france_7283904.jpg?20260626201258",
-        "dominio": "skysports.com",
-        "quando": "5h ago"
+        "quando": "1d ago"
       }
     ],
     "es": [
       {
-        "titolo": "Cabo Verde - Arabia Saudí en directo",
-        "fonte": "El Mundo",
-        "link": "https://www.elmundo.es/deportes/futbol/mundial/cabo-verde-arabia-saudi/2026/06/27/01_0117_20260627_1529_1264-directo.html",
-        "img": "https://e01-phantom-elmundo.uecdn.es/bb0fb3ff352d375d765aed2b3d3231fd/resize/1200/f/webp/assets/multimedia/imagenes/2026/06/27/17825156650635.jpg",
-        "dominio": "elmundo.es",
-        "quando": "ahora"
-      },
-      {
-        "titolo": "Colombia vs Portugal Alineaciones: ¿Estarán Cristiano Ronaldo y James Rodríguez en el partido de fase de grupos?",
-        "fonte": "MARCA",
-        "link": "https://www.marca.com/mx/futbol/mundial/2026/06/27/6a3f01d3ca474186488b45a1.html",
-        "img": "https://e01-phantom-marca-mx.uecdn.es/3e41102589c7d71db419e393378ef11c/resize/1200/f/jpg/mx/assets/multimedia/imagenes/2026/06/27/17825140848244.jpg",
-        "dominio": "marca.com",
-        "quando": "ahora"
-      },
-      {
-        "titolo": "Uruguay - España hoy, en directo: última hora y previa de la Selección | Fase de grupos del Mundial 2026",
+        "titolo": "Uruguay 0-1 España: resumen, goles y resultado",
         "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/uruguay-espana-en-directo-previa-y-ultima-hora-del-partido-de-la-seleccion-espanola-en-el-mundial-hoy-en-vivo-f202606-d/",
+        "link": "https://as.com/futbol/mundial/uruguay-espana-hoy-en-directo-ultima-hora-de-la-seleccion-en-el-mundial-2026-en-vivo-f202606-d/",
         "img": "",
         "dominio": "as.com",
-        "quando": "3 h"
-      },
-      {
-        "titolo": "Uruguay - España, en directo hoy: horario, donde ver gratis en TV y última hora del Mundial 2026",
-        "fonte": "La Razón",
-        "link": "https://www.larazon.es/deportes/futbol/uruguay-espana-directo-hoy-horario-donde-ver-gratis-ultima-hora-mundial-2026_202606266a3e2c277a154352a3a4e733.html",
-        "img": "https://fotografias-2.larazon.es/clipping/cmsimages02/2026/06/25/3590332D-6B98-4961-8D8B-334E2646CC1A/98.jpg?crop=3415,1921,x0,y177&width=1900&height=1069&optimize=low&format=webply",
-        "dominio": "larazon.es",
-        "quando": "3 h"
-      },
-      {
-        "titolo": "España - Uruguay del Mundial 2026, en directo: previa y última hora del partido de la Selección Española en la fase de grupos",
-        "fonte": "20Minutos",
-        "link": "https://www.20minutos.es/deportes/futbol/uruguay-espana-mundial-2026-directo-previa-ultima-hora-partido-seleccion-espanola-fase-grupos_7007400_6.html",
-        "img": "https://imagenes.20minutos.es/files/image_1920_1080/files/fp/uploads/imagenes/2026/06/26/6a3e711c666ec5-13726474.r_d.998-416.png",
-        "dominio": "20minutos.es",
-        "quando": "1 h"
-      },
-      {
-        "titolo": "Noruega - Francia: resumen, resultado y goles | Mundial 2026 de fútbol: grupo I",
-        "fonte": "Mundo Deportivo",
-        "link": "https://www.mundodeportivo.com/futbol/mundial/20260626/1004199440/noruega-francia-directo-mundial-2026-futbol-grupo-i.html",
-        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/06/26/6a3eeb52c8db0.jpeg",
-        "dominio": "mundodeportivo.com",
         "quando": "2 h"
       },
       {
-        "titolo": "Noruega - Francia hoy, en directo: fase de grupos del Mundial 2026 | Grupo I, en vivo",
-        "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/noruega-francia-en-directo-fase-de-grupos-del-mundial-2026-hoy-en-vivo-ultima-hora-del-grupo-i-f202606-d/",
-        "img": "",
-        "dominio": "as.com",
-        "quando": "3 h"
+        "titolo": "Uruguay - España: resumen, resultado y goles del partido del Mundial 2026",
+        "fonte": "SPORT",
+        "link": "https://www.sport.es/es/noticias/mundial-futbol/uruguay-espana-directo-horario-alineaciones-131865580",
+        "img": "https://estaticos-cdn.prensaiberica.es/clip/11ad7c8e-f150-4747-b487-b9fdbb3f2884_16-9-discover-aspect-ratio_default_0_x1000y444.jpg",
+        "dominio": "sport.es",
+        "quando": "4 h"
       },
       {
-        "titolo": "Mundial 2026, en directo | España y Francia afrontan un día clave",
+        "titolo": "Mundial 2026, en directo | España vence a Uruguay, que queda eliminada, y avanza como primera de grupo",
         "fonte": "EL PAÍS",
         "link": "https://elpais.com/deportes/mundial-futbol/2026-06-26/resumen-y-ultimas-noticias-de-la-copa-mundial-de-futbol.html",
-        "img": "https://imagenes.elpais.com/resizer/v2/BVZUCD6UINNE7HMA5DIOQ63CRM.jpg?auth=c61b58dfa7d62f5269f49c2d170ddb8485ebffa63f8909f646532fbf58072983&width=1200",
+        "img": "",
+        "dominio": "elpais.com",
+        "quando": "1 h"
+      },
+      {
+        "titolo": "Clasificación histórica de Cabo Verde para las eliminatorias del Mundial 2026, donde se enfrentará a la Argentina de Messi",
+        "fonte": "20Minutos",
+        "link": "https://www.20minutos.es/deportes/futbol/cabo-verde-arabia-saudi-mundial-2026-directo-goles-marcador-ultima-hora-fase-grupos_7007431_0.html",
+        "img": "https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2026/06/27/6a3f321cd12aa9-09659441.jpeg",
+        "dominio": "20minutos.es",
+        "quando": "7 h"
+      },
+      {
+        "titolo": "Cabo Verde 0 - 0 Arabia Saudí: resumen y resultado de la fase de grupos del Mundial 2026 | Grupo H",
+        "fonte": "Diario AS",
+        "link": "https://as.com/futbol/mundial/cabo-verde-arabia-saudi-hoy-en-directo-fase-de-grupos-del-mundial-2026-ultima-hora-del-grupo-h-f202606-d/",
+        "img": "",
+        "dominio": "as.com",
+        "quando": "4 h"
+      },
+      {
+        "titolo": "Cabo Verde es el héroe del Mundial: jugará los dieciseisavos contra Argentina",
+        "fonte": "EL PAÍS",
+        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-27/cabo-verde-son-los-heroes-del-mundial-jugaran-los-dieciseisavos-contra-argentina.html",
+        "img": "",
         "dominio": "elpais.com",
         "quando": "4 h"
+      },
+      {
+        "titolo": "Irán y Egipto firman tablas en su batalla contra el Orgullo gay en el Mundial",
+        "fonte": "El Mundo",
+        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/27/6a3f6047e9cf4a1a278b4583.html",
+        "img": "https://e01-phantom-elmundo.uecdn.es/8c46aa53acf2880b7bc8e64f7a6df023/f/webp/assets/multimedia/imagenes/2026/06/27/17825382765359.jpg",
+        "dominio": "elmundo.es",
+        "quando": "1 h"
+      },
+      {
+        "titolo": "Egipto - Irán hoy, en directo: fase de grupos del Mundial 2026 | Grupo G hoy en vivo",
+        "fonte": "AS Chile",
+        "link": "https://chile.as.com/futbol/egipto-iran-hoy-en-directo-fase-de-grupos-del-mundial-2026-grupo-g-hoy-en-vivo-f202606-d/",
+        "img": "",
+        "dominio": "chile.as.com",
+        "quando": "2 h"
       }
     ]
   }
