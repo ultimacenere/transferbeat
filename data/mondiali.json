@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-06-27T21:31:21Z",
+  "aggiornato": "2026-06-27T23:50:51Z",
   "nome": "World Cup 2026",
   "groups": [
     {
@@ -4573,7 +4573,34 @@
             "iso": "gb-eng",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              0,
+              2
+            ],
+            "ht": [
+              0,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [],
+          "goals2": [
+            {
+              "name": "Jude Bellingham",
+              "minute": "62",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Harry Kane",
+              "minute": "67",
+              "pen": false,
+              "og": false
+            }
+          ]
         },
         {
           "round": "Matchday 17",
@@ -4595,7 +4622,41 @@
             "iso": "gh",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              2,
+              1
+            ],
+            "ht": [
+              1,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Petar Sucic",
+              "minute": "31",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Nikola Vlasic",
+              "minute": "83",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": [
+            {
+              "name": "Derrick Luckassen",
+              "minute": "73",
+              "pen": false,
+              "og": false
+            }
+          ]
         }
       ],
       "classifica": [
@@ -4607,31 +4668,14 @@
             "iso": "gb-eng",
             "ph": false
           },
-          "pg": 2,
-          "v": 1,
+          "pg": 3,
+          "v": 2,
           "n": 1,
           "p": 0,
-          "gf": 4,
+          "gf": 6,
           "gs": 2,
-          "pt": 4,
-          "dr": 2
-        },
-        {
-          "team": {
-            "en": "Ghana",
-            "it": "Ghana",
-            "es": "Ghana",
-            "iso": "gh",
-            "ph": false
-          },
-          "pg": 2,
-          "v": 1,
-          "n": 1,
-          "p": 0,
-          "gf": 1,
-          "gs": 0,
-          "pt": 4,
-          "dr": 1
+          "pt": 7,
+          "dr": 4
         },
         {
           "team": {
@@ -4641,14 +4685,31 @@
             "iso": "hr",
             "ph": false
           },
-          "pg": 2,
-          "v": 1,
+          "pg": 3,
+          "v": 2,
           "n": 0,
           "p": 1,
-          "gf": 3,
-          "gs": 4,
-          "pt": 3,
-          "dr": -1
+          "gf": 5,
+          "gs": 5,
+          "pt": 6,
+          "dr": 0
+        },
+        {
+          "team": {
+            "en": "Ghana",
+            "it": "Ghana",
+            "es": "Ghana",
+            "iso": "gh",
+            "ph": false
+          },
+          "pg": 3,
+          "v": 1,
+          "n": 1,
+          "p": 1,
+          "gf": 2,
+          "gs": 2,
+          "pt": 4,
+          "dr": 0
         },
         {
           "team": {
@@ -4658,14 +4719,14 @@
             "iso": "pa",
             "ph": false
           },
-          "pg": 2,
+          "pg": 3,
           "v": 0,
           "n": 0,
-          "p": 2,
+          "p": 3,
           "gf": 0,
-          "gs": 2,
+          "gs": 4,
           "pt": 0,
-          "dr": -2
+          "dr": -4
         }
       ]
     }
@@ -5409,44 +5470,52 @@
   "news": {
     "it": [
       {
-        "titolo": "Mondiali di Calcio 2026 2026 - Norvegia - Francia 1-4: Highlights - Video",
-        "fonte": "RaiPlay",
-        "link": "https://www.raiplay.it/video/2026/06/Norvegia---Francia-1-4-Highlights--Mondiali-di-Calcio-FIFA-2026-29799917-c8a3-437d-82fe-822b5db4681c.html",
-        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/06/26/1782506104421_000_B8GF9AG%201.jpg",
-        "dominio": "raiplay.it",
-        "quando": "1 g fa"
-      },
-      {
         "titolo": "Mondiali 2026: la classifica aggiornata di tutti i gironi",
         "fonte": "Il Fatto Quotidiano",
         "link": "https://www.ilfattoquotidiano.it/2026/06/27/mondiali-2026-risultati-oggi-nuova-classifica-gironi/8416831/",
         "img": "https://st.ilfattoquotidiano.it/wp-content/uploads/2026/06/26/ecuador.jpg",
         "dominio": "ilfattoquotidiano.it",
-        "quando": "16 ore fa"
+        "quando": "19 ore fa"
       },
       {
-        "titolo": "DIRETTA Mondiali, alle 23 Croazia-Ghana e Panama-Inghilterra: 7 gli “italiani” titolari - Croazia-Ghana, la cronaca testuale",
+        "titolo": "Attraversando tre nazioni nel turbine del gol più grande: gli stadi dei Mondiali di Calcio 2026",
+        "fonte": "SiViaggia",
+        "link": "https://siviaggia.it/idee-di-viaggio/stadi-mondiali-calcio-2026/593461/",
+        "img": "https://siviaggia.it/wp-content/uploads/sites/2/2026/06/Monterrey-Stadium.jpg",
+        "dominio": "siviaggia.it",
+        "quando": "10 ore fa"
+      },
+      {
+        "titolo": "DIRETTA Mondiali, Croazia-Ghana 2-1 e Panama-Inghilterra 0-2: gol di Vlasic - Croazia-Ghana, la cronaca testuale",
         "fonte": "RaiNews",
         "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-17-panama-inghilterra-croazia-ghana-colombia-portogallo-congo-uzbekistan-algeria-austria-giordania-argentina-diretta-streaming-cronaca-highlights-video-live-risultati--778c00e6-ac7e-4ecb-83c5-384146cfd3ae.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/27/1782594675159_.jpg",
+        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/27/1782596628454_.jpg",
         "dominio": "rainews.it",
         "quando": "1 ore fa"
       },
       {
-        "titolo": "LIVE Alle 23 Croazia-Ghana, le ufficiali: ai croati serve un punto per passare, africani già qualificati",
-        "fonte": "La Gazzetta dello Sport",
-        "link": "https://www.gazzetta.it/Calcio/Mondiali/27-06-2026/croazia-ghana-live-risultato-e-marcatori-mondiali.shtml",
-        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/06/27/6a404023c30f1.r_d.1486-918-0.jpeg",
-        "dominio": "gazzetta.it",
-        "quando": "1 ore fa"
+        "titolo": "Panama - Inghilterra (0-2) Mondiali 2026",
+        "fonte": "la Repubblica",
+        "link": "https://www.repubblica.it/sport/dirette/calcio/mondiali-2026/diretta-panama-inghilterra-g2608311/",
+        "img": "https://www.repstatic.it/cless/main/nazionale/2013-v1/img/common/favicon/favicon-1500.png",
+        "dominio": "repubblica.it",
+        "quando": "2 ore fa"
       },
       {
         "titolo": "Panama-Inghilterra LIVE, gli inglesi vogliono il primo posto nel girone",
         "fonte": "Sky Sport",
         "link": "https://sport.sky.it/calcio/mondiali/partite/2026/giornata-3/panama-inghilterra/risultato-gol",
-        "img": "https://sport.sky.it/assets/images/53fb4d1874fec896a3dc439c0bb51a0fc21dbd82/skysport/it/calcio/mondiali/partite/2026/giornata-3/panama-inghilterra/live/content/ipa_saka_panama_inghilterra.jpg?im=Resize,width=1218",
+        "img": "https://sport.sky.it/assets/images/8affc69d36aaa796257b0ef773d08c64df898df1/skysport/it/calcio/mondiali/partite/2026/giornata-3/panama-inghilterra/live/content/ipa_kane_bellingham_panama_inghilterra.jpg?im=Resize,width=1218",
         "dominio": "sport.sky.it",
-        "quando": "1 ore fa"
+        "quando": "4 ore fa"
+      },
+      {
+        "titolo": "Le partite di oggi ai Mondiali 2026: alle 23 Inghilterra contro Panama, nella notte Portogallo e Argentina",
+        "fonte": "Corriere della Sera",
+        "link": "https://www.corriere.it/sport/calcio/mondiali/26_giugno_27/partite-oggi-mondiali-programma-inghilterra-argentina-portogallo-fd37d57b-a380-4adf-87c0-255cb3d72xlk.shtml",
+        "img": "https://dimages2.corriereobjects.it/files/og_thumbnail/uploads/2026/06/26/6a3ee208095ae.jpeg",
+        "dominio": "corriere.it",
+        "quando": "18 ore fa"
       },
       {
         "titolo": "Muslera, Valverde e la rottura con la squadra: il fallimento di Bielsa con l'Uruguay",
@@ -5454,54 +5523,70 @@
         "link": "https://www.gazzetta.it/Calcio/Mondiali/27-06-2026/mondiali-bielsa-disastro-uruguay.shtml",
         "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/06/27/6a3fe14005478.r_d.1478-895-0.jpeg",
         "dominio": "gazzetta.it",
-        "quando": "5 ore fa"
+        "quando": "8 ore fa"
       },
       {
         "titolo": "Uruguay eliminato, la rabbia della Federazione: i giocatori dovranno pagarsi il volo per rientrare",
         "fonte": "eurosport.it",
         "link": "https://www.eurosport.it/calcio/mondiali/2026/uruguay-eliminato-la-rabbia-della-federazione-cancellato-il-volo-charter-per-tornare-a-montevideo.-tutti-i-giocatori-dovranno-pagarsi-il-volo_sto23313860/story.shtml",
-        "img": "",
+        "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg):focal(234x92:236x90)/origin-imgresizer.eurosport.com/2026/06/27/image-b6af9acb-3d55-4896-88f1-f5f05da7b822-85-2560-1440.jpeg",
         "dominio": "eurosport.it",
-        "quando": "poco fa"
-      },
-      {
-        "titolo": "Uruguay - Spagna (0-1) Mondiali 2026",
-        "fonte": "la Repubblica",
-        "link": "https://www.repubblica.it/sport/dirette/calcio/mondiali-2026/diretta-uruguay-spagna-g2608303/",
-        "img": "https://www.repstatic.it/cless/main/nazionale/2013-v1/img/common/favicon/favicon-1500.png",
-        "dominio": "repubblica.it",
-        "quando": "21 ore fa"
+        "quando": "2 ore fa"
       }
     ],
     "en": [
       {
-        "titolo": "Panama v England: World Cup 2026 – live",
+        "titolo": "Panama 0-2 England: World Cup 2026 – as it happened",
         "fonte": "The Guardian",
         "link": "https://www.theguardian.com/football/live/2026/jun/27/panama-v-england-world-cup-2026-live-updates",
-        "img": "https://i.guim.co.uk/img/media/40f8e9245e06d8a80c3cdbaf83d6023b5814871a/464_119_2073_1658/master/2073.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=e7aed59a5a347cf6232df65f575fdfea",
+        "img": "https://i.guim.co.uk/img/media/a17392a8940ddc28033830a8c8a12e3fd8e36a8d/274_0_4081_3266/master/4081.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=27602ab81b943b330085ed851cdbd5c9",
         "dominio": "theguardian.com",
+        "quando": "2h ago"
+      },
+      {
+        "titolo": "Scotland out of World Cup 2026: Steve Clarke's side eliminated in group stage",
+        "fonte": "BBC",
+        "link": "https://www.bbc.co.uk/sport/football/articles/cddl508zgp5o",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/84b9/live/16c604b0-71c8-11f1-b1db-af71d47507d6.jpg",
+        "dominio": "bbc.co.uk",
+        "quando": "just now"
+      },
+      {
+        "titolo": "England’s round of 32 opponents and route to the World Cup final",
+        "fonte": "The Telegraph",
+        "link": "https://www.telegraph.co.uk/football/2026/06/27/englands-route-final-if-they-win-their-group/",
+        "img": "https://www.telegraph.co.uk/content/dam/football/2026/06/27/TELEMMGLPICT000492803226_17826014534710_trans_NvBQzQNjv4BqqVzuuqpFlyLIwiB6NTmJwauLYewjGO21NF-o1gxbkUI.jpeg?impolicy=OG-Standard",
+        "dominio": "telegraph.co.uk",
+        "quando": "just now"
+      },
+      {
+        "titolo": "England vs Panama LIVE: Rashford heads chance over the bar & free-kick goes wide",
+        "fonte": "The Sun",
+        "link": "https://www.thesun.co.uk/sport/39544601/england-vs-panama-live-score-world-cup-harry-kane-updates/",
+        "img": "",
+        "dominio": "thesun.co.uk",
         "quando": "1h ago"
       },
       {
-        "titolo": "England v Panama World Cup 2026 LIVE: predictions, team news and selection debate",
+        "titolo": "FIFA World Cup 2026",
         "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/live/cm20lr7yjj7t",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/83d3/live/cc1a4670-7220-11f1-8546-8f19e4fe30f4.jpg",
-        "dominio": "bbc.co.uk",
-        "quando": "15h ago"
-      },
-      {
-        "titolo": "'Thought it's AI' - Fans stunned by view from World Cup's most beautiful stadium",
-        "fonte": "The Sun",
-        "link": "https://www.thesun.co.uk/sport/39567188/estadio-monterrey-view/",
+        "link": "https://www.bbc.co.uk/iplayer/episode/m002yf9c/fifa-world-cup-2026-group-stage-colombia-v-portugal",
         "img": "",
-        "dominio": "thesun.co.uk",
-        "quando": "4h ago"
+        "dominio": "bbc.co.uk",
+        "quando": "just now"
       },
       {
-        "titolo": "England vs. Panama LIVE: World Cup 2026 updates as Thomas Tuchel's men look to seal top spot",
+        "titolo": "Colombia v Portugal: World Cup 2026 – live",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/live/2026/jun/27/colombia-v-portugal-world-cup-2026-live",
+        "img": "https://i.guim.co.uk/img/media/51f5a25a6d66f5235f0bbaaa8932ddc6b25eeced/204_0_3282_2626/master/3282.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=48d98c2aa9c251d2b390789b0fc09bd5",
+        "dominio": "theguardian.com",
+        "quando": "just now"
+      },
+      {
+        "titolo": "Colombia vs. Portugal LIVE: World Cup 2026 updates as Ronaldo and co. aim to go top",
         "fonte": "ESPN",
-        "link": "https://www.espn.co.uk/football/story/_/id/49199409/england-panama-live-world-cup-2026-latest-updates-commentary-score-result",
+        "link": "https://www.espn.co.uk/football/story/_/id/49200294/colombia-portugal-live-world-cup-2026-latest-updates-commentary-score-result",
         "img": "",
         "dominio": "espn.co.uk",
         "quando": "1h ago"
@@ -5512,84 +5597,12 @@
         "link": "https://www.theguardian.com/football/live/2026/jun/27/fifa-world-cup-2026-live-egypt-v-iran-updates-egy-vs-irn-group-g-match-score-latest",
         "img": "https://i.guim.co.uk/img/media/44bbd53d3d9fee269cb1f7da93c1abd370b99b14/208_0_3870_3096/master/3870.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=e6a5283a4a5f7c36356c1201f90cc55f",
         "dominio": "theguardian.com",
-        "quando": "15h ago"
-      },
-      {
-        "titolo": "World Cup 2026: Egypt vs Iran - Shoja Khalilzadeh's injury time winning goal ruled out by VAR",
-        "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/videos/c2lyvj54k7ro",
-        "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/cebe/live/6d8e3170-71e9-11f1-8546-8f19e4fe30f4.jpg",
-        "dominio": "bbc.co.uk",
-        "quando": "15h ago"
-      },
-      {
-        "titolo": "Iran urge FIFA to stand up to ‘really terrible’ World Cup treatment by US",
-        "fonte": "Al Jazeera",
-        "link": "https://www.aljazeera.com/sports/2026/6/27/iran-urge-fifa-to-stand-up-to-really-terrible-world-cup-treatment-by-us",
-        "img": "https://www.aljazeera.com/wp-content/uploads/2026/06/2026-06-27T030628Z_576222433_UP1EM6R08MRYO_RTRMADP_3_SOCCER-WORLDCUP-EGY-IRN-1782583581.jpg?resize=1920%2C1440",
-        "dominio": "aljazeera.com",
-        "quando": "2h ago"
-      },
-      {
-        "titolo": "Neville: Cape Verde shows football is unpredictable - that's why we love it!",
-        "fonte": "Sky Sports",
-        "link": "https://www.skysports.com/football/news/11095/13556682/world-cup-2026-cape-verde-0-0-saudi-arabia-cape-verde-reach-round-of-32-as-group-h-runners-up-with-saudi-knocked-out",
-        "img": "https://e0.365dm.com/26/06/1600x900/skysports-cape-verde-saudi-arabia_7283994.jpg?20260627031633",
-        "dominio": "skysports.com",
-        "quando": "just now"
+        "quando": "18h ago"
       }
     ],
     "es": [
       {
-        "titolo": "16avos de Final Mundial 2026: Tabla de posiciones, equipos clasificados y cruces de la siguiente fase de Copa del Mundo",
-        "fonte": "MARCA",
-        "link": "https://www.marca.com/mx/futbol/mundial/2026/06/27/6a3f7659e2704e954a8b4573.html",
-        "img": "https://e01-phantom-marca-mx.uecdn.es/3f5ff2d65d4b6aed5cef17a3e66620d3/resize/1200/f/jpg/mx/assets/multimedia/imagenes/2026/06/27/17825437358826.jpg",
-        "dominio": "marca.com",
-        "quando": "ahora"
-      },
-      {
-        "titolo": "Récords al peso",
-        "fonte": "El Mundo",
-        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/27/6a3fd876fc6c838b048b4570.html",
-        "img": "https://e01-phantom-elmundo.uecdn.es/c2fa7c8ada31f68d6a9473e54be3b762/crop/599x387/3057x2025/resize/1200/f/webp/assets/multimedia/imagenes/2026/06/27/17825690226465.jpg",
-        "dominio": "elmundo.es",
-        "quando": "1 h"
-      },
-      {
-        "titolo": "Uruguay 0-1 España: resumen, goles y resultado",
-        "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/uruguay-espana-hoy-en-directo-ultima-hora-de-la-seleccion-en-el-mundial-2026-en-vivo-f202606-d/",
-        "img": "",
-        "dominio": "as.com",
-        "quando": "14 h"
-      },
-      {
-        "titolo": "España sobrevive a la dureza Uruguay, amarra el liderato del grupo H y manda a Bielsa a casa",
-        "fonte": "RTVE.es",
-        "link": "https://www.rtve.es/deportes/20260627/mundial-2026-uruguay-espana-directo-video-resumen-resultado/17127641.shtml",
-        "img": "https://img.rtve.es/imagenes/mundial-2026-uruguay-espana-directo-video-resumen-resultado/01782525408690.jpg",
-        "dominio": "rtve.es",
-        "quando": "22 h"
-      },
-      {
-        "titolo": "Mundial 2026, en directo: noticias y última hora de la Copa del Mundo, hoy en vivo",
-        "fonte": "SPORT",
-        "link": "https://www.sport.es/es/noticias/mundial-futbol/mundial-2026-directo-noticias-ultima-hora-espana-131879408",
-        "img": "https://estaticos-cdn.prensaiberica.es/clip/07035686-f0ed-49ec-af6f-b9d145b7eccf_16-9-discover-aspect-ratio_default_0_x1000y445.jpg",
-        "dominio": "sport.es",
-        "quando": "1 h"
-      },
-      {
-        "titolo": "Panamá – Inglaterra, en directo hoy el partido del grupo L del Mundial 2026",
-        "fonte": "RTVE.es",
-        "link": "https://www.rtve.es/deportes/20260627/mundial-2026-panama-inglaterra-directo-resumen-resultado/17130272.shtml",
-        "img": "https://img.rtve.es/imagenes/mundial-2026-panama-inglaterra-directo-resumen-resultado/01781793119157.jpg",
-        "dominio": "rtve.es",
-        "quando": "1 h"
-      },
-      {
-        "titolo": "Panamá - Inglaterra, en directo: fase de grupos del Mundial 2026, hoy en vivo | Última hora del grupo L",
+        "titolo": "Panamá - Inglaterra hoy, en directo: partido de fase de grupos del Mundial 2026, en vivo",
         "fonte": "Diario AS",
         "link": "https://as.com/futbol/mundial/panama-inglaterra-en-directo-fase-de-grupos-del-mundial-2026-hoy-en-vivo-ultima-hora-del-grupo-l-f202606-d/",
         "img": "",
@@ -5597,12 +5610,60 @@
         "quando": "1 h"
       },
       {
-        "titolo": "Panamá - Inglaterra, en directo hoy | Mundial 2026: fase de grupos",
-        "fonte": "Mundo Deportivo",
-        "link": "https://www.mundodeportivo.com/futbol/mundial/20260627/1004199893/panama-inglaterra-directo-mundial-2026-fase-grupos.html",
-        "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/06/27/6a403cee87582.jpeg",
-        "dominio": "mundodeportivo.com",
+        "titolo": "Panamá 0-2 Inglaterra | Resumen Mundial 2026",
+        "fonte": "MARCA",
+        "link": "https://www.marca.com/futbol/mundial/2026/06/28/panama-0-2-inglaterra-resumen-mundial-2026-video.html",
+        "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/06/28/kPo1gG5cN8mE82L.jpeg",
+        "dominio": "marca.com",
         "quando": "ahora"
+      },
+      {
+        "titolo": "Panamá - Inglaterra, en directo",
+        "fonte": "El Mundo",
+        "link": "https://www.elmundo.es/deportes/futbol/mundial/panama-inglaterra/2026/06/27/01_0117_20260627_1869_114-directo.html",
+        "img": "https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2026/06/27/17825741829963.jpg",
+        "dominio": "elmundo.es",
+        "quando": "1 h"
+      },
+      {
+        "titolo": "Colombia - Portugal, en directo hoy en vídeo el partido del grupo K del Mundial 2026",
+        "fonte": "RTVE.es",
+        "link": "https://www.rtve.es/deportes/20260628/mundial-2026-colombia-portugal-directo-video-resumen-resultado/17132512.shtml",
+        "img": "https://img.rtve.es/imagenes/mundial-2026-colombia-portugal-directo-video-resumen-resultado/01781514601419.jpg",
+        "dominio": "rtve.es",
+        "quando": "1 h"
+      },
+      {
+        "titolo": "Colombia - Portugal hoy, en directo: fase de grupos del Mundial 2026 | Última hora del Grupo K",
+        "fonte": "Diario AS",
+        "link": "https://as.com/futbol/mundial/colombia-portugal-hoy-en-directo-fase-de-grupos-del-mundial-2026-ultima-hora-del-grupo-k-f202606-d/",
+        "img": "https://img.asmedia.epimg.net/resizer/v2/DSSVBCWVGJL3RAF2K3IYB3MBRE.jpg?auth=e9f7f43a4f938a63f75e6427709d5a401813fadc37d2e0804e335bd95069bf9a&width=1472&height=828&smart=true",
+        "dominio": "as.com",
+        "quando": "ahora"
+      },
+      {
+        "titolo": "⚪ Canal RCN EN VIVO GRATIS — ver partido Colombia vs. Portugal EN DIRECTO por señal abierta",
+        "fonte": "Depor",
+        "link": "https://depor.com/futbol-internacional/mundial/senal-canal-rcn-en-vivo-gratis-ver-partido-colombia-vs-portugal-en-directo-por-tv-abierta-y-futbol-online-video-mundial-2026-nnda-nnrt-noticia/",
+        "img": "https://i.ytimg.com/vi/b3p5ea9pDsk/hqdefault.jpg",
+        "dominio": "depor.com",
+        "quando": "1 h"
+      },
+      {
+        "titolo": "Croacia - Ghana, el partido del Mundial 2026 en directo | Croacia doblega a una aguerrida Ghana y pasa como segunda de grupo",
+        "fonte": "EL PAÍS",
+        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-27/croacia-ghana-en-directo-el-partido-del-grupo-l-del-mundial-en-vivo.html",
+        "img": "",
+        "dominio": "elpais.com",
+        "quando": "ahora"
+      },
+      {
+        "titolo": "Croacia - Ghana hoy, en directo: fase de grupos del Mundial 2026 | Grupo L en vivo",
+        "fonte": "Diario AS",
+        "link": "https://as.com/futbol/mundial/croacia-ghana-hoy-en-directo-fase-de-grupos-del-mundial-2026-ultima-hora-del-grupo-l-f202606-d/",
+        "img": "",
+        "dominio": "as.com",
+        "quando": "1 h"
       }
     ]
   }
