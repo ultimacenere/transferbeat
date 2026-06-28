@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-06-28T11:20:43",
+  "aggiornato": "2026-06-28T12:00:54",
   "giorno": "Domenica 28 giugno",
   "squadre": {
     "Inter": {
@@ -8,6 +8,13 @@
       "league": "Serie A",
       "colonne": {
         "rumor": [
+          {
+            "titolo": "Calciomercato, le news del 27 giugno",
+            "fonte": "Sky Sport",
+            "link": "https://sport.sky.it",
+            "affidabilita": 3,
+            "quando": "2 ore fa"
+          },
           {
             "titolo": "Calciomercato, le news di oggi LIVE",
             "fonte": "Sky Sport",
@@ -20,7 +27,7 @@
             "fonte": "Sportmediaset",
             "link": "https://www.sportmediaset.mediaset.it",
             "affidabilita": 2,
-            "quando": "poco fa"
+            "quando": "1 ore fa"
           },
           {
             "titolo": "Inter, 60 milioni per Nico Paz. Milan, Amorim può convincere Modric a restare? Juve sempre al lavoro per Kolo Muani",
@@ -41,13 +48,6 @@
             "fonte": "Calciomercato",
             "link": "https://www.calciomercato.com",
             "affidabilita": 1,
-            "quando": "23 ore fa"
-          },
-          {
-            "titolo": "Le notizie di calciomercato del 26 giugno 2026: il Milan acquista Goncalo Ramos, il Como si riprende Nico Paz",
-            "fonte": "Fanpage",
-            "link": "https://www.fanpage.it",
-            "affidabilita": 1,
             "quando": "1 g fa"
           }
         ],
@@ -57,7 +57,7 @@
             "fonte": "eurosport.it",
             "link": "https://www.eurosport.it",
             "affidabilita": 2,
-            "quando": "2 ore fa"
+            "quando": "3 ore fa"
           },
           {
             "titolo": "Inter, che extra-budget dagli esuberi: obiettivo 100 milioni tra Frattesi, Luis Henrique e...",
@@ -71,6 +71,16 @@
         "done": []
       },
       "feed": [
+        {
+          "titolo": "Calciomercato, le news del 27 giugno",
+          "fonte": "Sky Sport",
+          "stato": "rumor",
+          "link": "https://sport.sky.it/calciomercato/2026/06/27/calciomercato-news-trattative-oggi-27-giugno",
+          "img": "https://sport.sky.it/assets/images/c61dd3f7577aac56afaecea752ee1a951ca12c0a/skysport/it/calcio/calciomercato/2024/06/17/calciomercato-news-trattative-oggi-17-giugno/logo_calciomercato_liveblog.jpg?im=Resize,width=1218",
+          "dominio": "sport.sky.it",
+          "affidabilita": 3,
+          "quando": "2 ore fa"
+        },
         {
           "titolo": "Calciomercato, le news di oggi LIVE",
           "fonte": "Sky Sport",
@@ -89,17 +99,7 @@
           "img": "https://img-api.cloud.mediaset.net/api/images/kn/v1/image_main/1200/675/113705016?r=27",
           "dominio": "sportmediaset.mediaset.it",
           "affidabilita": 2,
-          "quando": "poco fa"
-        },
-        {
-          "titolo": "🗞️ Juve, ora spunta Soulè. Ibra stregato da Alajbegovic, il Milan ci prova",
-          "fonte": "eurosport.it",
-          "stato": "obj",
-          "link": "https://www.eurosport.it/calcio/calciomercato/2025-2026/juve-ora-spunta-soule-per-lattacco-oltre-a-kolo-muani.-sfida-napoli-inter-per-khalaili.-alajbegovic-tentazione-milan_sto23313912/story.shtml",
-          "img": "",
-          "dominio": "eurosport.it",
-          "affidabilita": 2,
-          "quando": "2 ore fa"
+          "quando": "1 ore fa"
         }
       ],
       "nomi": {
@@ -132,14 +132,6 @@
             "giocatore": "Dybala",
             "direzione": "in",
             "club": "",
-            "_first": "2026-06-26",
-            "_seen": "2026-06-28",
-            "_strong": ""
-          },
-          {
-            "giocatore": "Mancini",
-            "direzione": "in",
-            "club": "Roma",
             "_first": "2026-06-26",
             "_seen": "2026-06-28",
             "_strong": ""
@@ -217,16 +209,32 @@
             "_strong": ""
           },
           {
-            "giocatore": "Akinsanmiro",
+            "giocatore": "Carlos Augusto",
             "direzione": "in",
-            "club": "Pisa",
+            "club": "",
+            "_first": "2026-06-28",
+            "_seen": "2026-06-28",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Pio Esposito",
+            "direzione": "out",
+            "club": "Manchester United",
             "_first": "2026-06-26",
             "_seen": "2026-06-28",
             "_strong": ""
           },
           {
-            "giocatore": "Carlos Augusto",
+            "giocatore": "Manuel Mancini",
             "direzione": "in",
+            "club": "Roma",
+            "_first": "2026-06-26",
+            "_seen": "2026-06-28",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Piotr Zielinski",
+            "direzione": "out",
             "club": "",
             "_first": "2026-06-28",
             "_seen": "2026-06-28",
@@ -263,17 +271,17 @@
             "_first": "2026-06-26",
             "_seen": "2026-06-26",
             "_strong": ""
-          },
-          {
-            "giocatore": "Pio Esposito",
-            "direzione": "out",
-            "club": "Manchester United",
-            "_first": "2026-06-26",
-            "_seen": "2026-06-26",
-            "_strong": ""
           }
         ],
         "obj": [
+          {
+            "giocatore": "Akinsanmiro",
+            "direzione": "in",
+            "club": "Pisa",
+            "_first": "2026-06-26",
+            "_seen": "2026-06-28",
+            "_strong": ""
+          },
           {
             "giocatore": "Davide Frattesi",
             "direzione": "out",
@@ -342,18 +350,18 @@
             "quando": "2 ore fa"
           },
           {
+            "titolo": "Kolo Muani, la Juve ci crede: la missione di Carnevali per convincere il Psg",
+            "fonte": "Corriere dello Sport",
+            "link": "https://www.corrieredellosport.it",
+            "affidabilita": 2,
+            "quando": "3 ore fa"
+          },
+          {
             "titolo": "Dibu Martinez si avvicina alla Juve, l'Aston Villa pronto allo sconto. Vicario resta l'alternativa",
             "fonte": "Corriere dello Sport",
             "link": "https://www.corrieredellosport.it",
             "affidabilita": 2,
-            "quando": "2 ore fa"
-          },
-          {
-            "titolo": "Calciomercato Juve: gli obiettivi per le fasce, Puczka al test Spalletti e il futuro di Cambiaso",
-            "fonte": "Tuttosport",
-            "link": "https://www.tuttosport.com",
-            "affidabilita": 2,
-            "quando": "1 g fa"
+            "quando": "3 ore fa"
           },
           {
             "titolo": "Vuoto David, cosa succede con Sorloth: ora c’è chi si propone alla Juve!",
@@ -363,18 +371,18 @@
             "quando": "1 g fa"
           },
           {
+            "titolo": "Juve, svolta per Kolo Muani: la mossa dell’attaccante fa felice Spalletti",
+            "fonte": "Corriere dello Sport",
+            "link": "https://www.corrieredellosport.it",
+            "affidabilita": 2,
+            "quando": "1 g fa"
+          },
+          {
             "titolo": "Calciomercato Roma: idea Soulè bis per la Juventus",
             "fonte": "LaRoma24",
             "link": "https://laroma24.it",
             "affidabilita": 1,
-            "quando": "poco fa"
-          },
-          {
-            "titolo": "Perché la Juventus può prendere Muharemovic alla metà del prezzo",
-            "fonte": "Calciomercato",
-            "link": "https://www.calciomercato.com",
-            "affidabilita": 1,
-            "quando": "15 ore fa"
+            "quando": "1 ore fa"
           }
         ],
         "obj": [
@@ -383,35 +391,28 @@
             "fonte": "La Gazzetta dello Sport",
             "link": "https://www.gazzetta.it",
             "affidabilita": 2,
-            "quando": "1 ore fa"
+            "quando": "2 ore fa"
           },
           {
             "titolo": "🗞️ Juve, ora spunta Soulè. Ibra stregato da Alajbegovic, il Milan ci prova",
             "fonte": "eurosport.it",
             "link": "https://www.eurosport.it",
             "affidabilita": 2,
-            "quando": "2 ore fa"
+            "quando": "3 ore fa"
           },
           {
             "titolo": "Juve, Vlahovic dentro o fuori: arriva la super-offerta del Besiktas, Dusan prende tempo",
             "fonte": "Sportmediaset",
             "link": "https://www.sportmediaset.mediaset.it",
             "affidabilita": 2,
-            "quando": "18 ore fa"
+            "quando": "19 ore fa"
           },
           {
-            "titolo": "Dentro o fuori: Vlahovic, il tempo è scaduto, la Juve vuole subito una risposta",
-            "fonte": "La Gazzetta dello Sport",
-            "link": "https://www.gazzetta.it",
-            "affidabilita": 2,
-            "quando": "1 g fa"
-          },
-          {
-            "titolo": "Calciomercato, le notizie del 20 giugno: Tonali si avvicina al Tottenham, su Zaniolo Milan e Juve, il Napoli vuole Khalaili. Real, smentita su Olise",
+            "titolo": "Calciomercato, le notizie del 22 giugno 2026: Bremer vuole restare alla Juve. Inter, sono i giorni di Palestra. Fiorentina, le novità su Thorstvedt",
             "fonte": "Corriere della Sera",
             "link": "https://www.corriere.it",
             "affidabilita": 1,
-            "quando": "7 g fa"
+            "quando": "5 g fa"
           }
         ],
         "conf": [],
@@ -436,17 +437,17 @@
           "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/03/25/69c459f817c5e.r_d.356-201-0.webp",
           "dominio": "gazzetta.it",
           "affidabilita": 2,
-          "quando": "1 ore fa"
+          "quando": "2 ore fa"
         },
         {
           "titolo": "🗞️ Juve, ora spunta Soulè. Ibra stregato da Alajbegovic, il Milan ci prova",
           "fonte": "eurosport.it",
           "stato": "obj",
           "link": "https://www.eurosport.it/calcio/calciomercato/2025-2026/juve-ora-spunta-soule-per-lattacco-oltre-a-kolo-muani.-sfida-napoli-inter-per-khalaili.-alajbegovic-tentazione-milan_sto23313912/story.shtml",
-          "img": "",
+          "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg):focal(199x51:201x49)/origin-imgresizer.eurosport.com/2026/06/28/image-8e7eaffc-eff3-4689-9f17-492ab4e8b5ff-85-2560-1440.png",
           "dominio": "eurosport.it",
           "affidabilita": 2,
-          "quando": "2 ore fa"
+          "quando": "3 ore fa"
         }
       ],
       "nomi": {
@@ -738,6 +739,13 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "Calciomercato, le news di venerdì 26 giugno",
+            "fonte": "Sky Sport",
+            "link": "https://sport.sky.it",
+            "affidabilita": 3,
+            "quando": "1 g fa"
+          },
+          {
             "titolo": "Milan, telefonata Amorim-Leao: il punto",
             "fonte": "Sky Sport",
             "link": "https://sport.sky.it",
@@ -763,7 +771,7 @@
             "fonte": "Milan Vibes",
             "link": "https://milanvibes.it",
             "affidabilita": 1,
-            "quando": "2 ore fa"
+            "quando": "3 ore fa"
           },
           {
             "titolo": "Calciomercato Roma, su Alajbegovic c'è anche il Milan. Ibrahimovic stregato: \"Un diciottenne ai Mondiali che gioca come fosse il padrone dello stadio\"",
@@ -771,24 +779,9 @@
             "link": "https://laroma24.it",
             "affidabilita": 1,
             "quando": "1 g fa"
-          },
-          {
-            "titolo": "Milan, cosa filtra dal Porto su Santiago Gimenez: ecco il punto di Fabrizio Romano",
-            "fonte": "SOS Fanta",
-            "link": "https://www.sosfanta.com",
-            "affidabilita": 1,
-            "quando": "2 g fa"
           }
         ],
-        "obj": [
-          {
-            "titolo": "Atalanta, Sarri punta forte su Jashari e Ricci: la risposta del Milan",
-            "fonte": "Calciomercato",
-            "link": "https://www.calciomercato.com",
-            "affidabilita": 1,
-            "quando": "1 g fa"
-          }
-        ],
+        "obj": [],
         "conf": [],
         "done": [
           {
@@ -816,6 +809,16 @@
       },
       "feed": [
         {
+          "titolo": "Calciomercato, le news di venerdì 26 giugno",
+          "fonte": "Sky Sport",
+          "stato": "rumor",
+          "link": "https://sport.sky.it/calciomercato/2026/06/26/calciomercato-news-trattative-oggi-26-giugno",
+          "img": "https://sport.sky.it/assets/images/5d4cafdb85944fa14b84abee217f6e9a5a068aec/skysport/it/calcio/calciomercato/2026/06/01/calciomercato-news-trattative-oggi-1-giugno/calciomercato.jpg?im=Resize,width=1218",
+          "dominio": "sport.sky.it",
+          "affidabilita": 3,
+          "quando": "1 g fa"
+        },
+        {
           "titolo": "Milan, telefonata Amorim-Leao: il punto",
           "fonte": "Sky Sport",
           "stato": "rumor",
@@ -834,16 +837,6 @@
           "dominio": "sport.sky.it",
           "affidabilita": 3,
           "quando": "12 g fa"
-        },
-        {
-          "titolo": "Gonçalo Ramos al Milan, è fatta: operazione record da 74 milioni",
-          "fonte": "eurosport.it",
-          "stato": "done",
-          "link": "https://www.eurosport.it/calcio/calciomercato/2026-2027/goncalo-ramos-al-milan-e-fatta-al-psg-vanno-piu-di-50-milioni.-cifre-e-dettagli-del-trasferimento-il-piu-costoso-nella-storia-del-club_sto23313491/story.shtml",
-          "img": "",
-          "dominio": "eurosport.it",
-          "affidabilita": 2,
-          "quando": "1 g fa"
         }
       ],
       "nomi": {
@@ -1019,14 +1012,6 @@
             "_strong": "2026-06-26"
           },
           {
-            "giocatore": "Nico Paz",
-            "direzione": "in",
-            "club": "Inter",
-            "_first": "2026-06-24",
-            "_seen": "2026-06-27",
-            "_strong": "2026-06-26"
-          },
-          {
             "giocatore": "Matteo Gabbia",
             "direzione": "out",
             "club": "Villarreal",
@@ -1045,6 +1030,14 @@
         ],
         "conf": [],
         "done": [
+          {
+            "giocatore": "Nico Paz",
+            "direzione": "in",
+            "club": "Inter",
+            "_first": "2026-06-24",
+            "_seen": "2026-06-28",
+            "_strong": "2026-06-28"
+          },
           {
             "giocatore": "Suso",
             "direzione": "out",
@@ -1106,7 +1099,7 @@
             "fonte": "Sportmediaset",
             "link": "https://www.sportmediaset.mediaset.it",
             "affidabilita": 2,
-            "quando": "poco fa"
+            "quando": "1 ore fa"
           },
           {
             "titolo": "L'Inter sfida il Napoli per Stones. Como su Sanchez: le 5 trattative che vi siete persi oggi (27/6)",
@@ -1134,7 +1127,7 @@
             "fonte": "Il Mattino",
             "link": "https://www.ilmattino.it",
             "affidabilita": 1,
-            "quando": "1 ore fa"
+            "quando": "2 ore fa"
           }
         ],
         "obj": [
@@ -1168,14 +1161,14 @@
           "img": "https://img-api.cloud.mediaset.net/api/images/kn/v1/image_main/1200/675/113705016?r=27",
           "dominio": "sportmediaset.mediaset.it",
           "affidabilita": 2,
-          "quando": "poco fa"
+          "quando": "1 ore fa"
         },
         {
           "titolo": "L'Inter sfida il Napoli per Stones. Como su Sanchez: le 5 trattative che vi siete persi oggi (27/6)",
           "fonte": "eurosport.it",
           "stato": "rumor",
           "link": "https://www.eurosport.it/calcio/calciomercato/2025-2026/kessie-juventus-inter-e-napoli-su-stones-como-su-sanchez.-roma-si-tratta-con-lal-ahli-per-soule.-le-5-trattative-che-vi-siete-persi-oggi-276_sto23313794/story.shtml",
-          "img": "",
+          "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg):focal(176x68:178x66)/origin-imgresizer.eurosport.com/2026/06/27/image-f4300735-a670-4254-b868-c9a0d337e593-85-2560-1440.jpeg",
           "dominio": "eurosport.it",
           "affidabilita": 2,
           "quando": "16 ore fa"
@@ -1460,7 +1453,7 @@
             "fonte": "Forzaroma.info",
             "link": "https://www.forzaroma.info",
             "affidabilita": 1,
-            "quando": "3 ore fa"
+            "quando": "4 ore fa"
           }
         ],
         "obj": [
@@ -1476,14 +1469,14 @@
             "fonte": "LaRoma24",
             "link": "https://laroma24.it",
             "affidabilita": 1,
-            "quando": "poco fa"
+            "quando": "1 ore fa"
           },
           {
             "titolo": "Calciomercato Roma, Engels nel mirino: Gasperini conosce già il centrocampista del Celtic",
             "fonte": "Pagine Romaniste",
             "link": "https://pagineromaniste.com",
             "affidabilita": 1,
-            "quando": "15 ore fa"
+            "quando": "16 ore fa"
           }
         ],
         "conf": [],
@@ -1505,7 +1498,7 @@
           "fonte": "eurosport.it",
           "stato": "rumor",
           "link": "https://www.eurosport.it/calcio/calciomercato/2025-2026/kessie-juventus-inter-e-napoli-su-stones-como-su-sanchez.-roma-si-tratta-con-lal-ahli-per-soule.-le-5-trattative-che-vi-siete-persi-oggi-276_sto23313794/story.shtml",
-          "img": "",
+          "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg):focal(176x68:178x66)/origin-imgresizer.eurosport.com/2026/06/27/image-f4300735-a670-4254-b868-c9a0d337e593-85-2560-1440.jpeg",
           "dominio": "eurosport.it",
           "affidabilita": 2,
           "quando": "16 ore fa"
@@ -1655,6 +1648,22 @@
             "giocatore": "Vaz",
             "direzione": "out",
             "club": "",
+            "_first": "2026-06-28",
+            "_seen": "2026-06-28",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Matteo Soulé",
+            "direzione": "out",
+            "club": "",
+            "_first": "2026-06-28",
+            "_seen": "2026-06-28",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Dodò",
+            "direzione": "in",
+            "club": "Fiorentina",
             "_first": "2026-06-28",
             "_seen": "2026-06-28",
             "_strong": ""
@@ -1939,7 +1948,7 @@
             "fonte": "Corriere dello Sport",
             "link": "https://m.corrieredellosport.it",
             "affidabilita": 2,
-            "quando": "1 ore fa"
+            "quando": "2 ore fa"
           },
           {
             "titolo": "Pazza idea Lazio, ci prova per Zaniolo. L'ex Roma è in rotta con l'Udinese e Gattuso lo vuole nel suo attacco",
@@ -1978,14 +1987,14 @@
           "img": "https://cdn.corrieredellosport.it/img/1200/600/2026/06/28/072916163-d152553d-83d3-4b1b-98cd-f442aef6c53f.jpg",
           "dominio": "m.corrieredellosport.it",
           "affidabilita": 2,
-          "quando": "1 ore fa"
+          "quando": "2 ore fa"
         },
         {
           "titolo": "Milan su Jackson, la Lazio blinda Gila: le 5 trattative che vi siete persi oggi (25/6)",
           "fonte": "eurosport.it",
           "stato": "rumor",
           "link": "https://www.eurosport.it/calcio/calciomercato/2026-2027/milan-su-jackson-la-lazio-blinda-gila-la-juve-offre-gatti-per-arrivare-a-lobotka-le-5-trattative-che-vi-siete-persi-oggi-giovedi-25-giugno_sto23313072/story.shtml",
-          "img": "",
+          "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg):focal(198x79:200x77)/origin-imgresizer.eurosport.com/2026/06/25/image-0bca9c47-c926-4d9e-b87a-87b6219befb1-85-2560-1440.jpeg",
           "dominio": "eurosport.it",
           "affidabilita": 2,
           "quando": "2 g fa"
@@ -2138,7 +2147,7 @@
             "fonte": "SportPaper",
             "link": "https://www.sportpaper.it",
             "affidabilita": 2,
-            "quando": "1 g fa"
+            "quando": "2 g fa"
           },
           {
             "titolo": "Calciomercato Serie A: Vergara conteso da Atalanta e Como, Bologna sempre su Koopmeiners",
@@ -2159,7 +2168,7 @@
             "fonte": "Bergamonews",
             "link": "https://www.bergamonews.it",
             "affidabilita": 1,
-            "quando": "11 ore fa"
+            "quando": "12 ore fa"
           }
         ],
         "obj": [
@@ -2177,7 +2186,7 @@
             "fonte": "Calciomercato",
             "link": "https://www.calciomercato.com",
             "affidabilita": 1,
-            "quando": "12 ore fa"
+            "quando": "13 ore fa"
           }
         ],
         "done": [
@@ -2219,7 +2228,7 @@
           "img": "https://www.sportpaper.it/wp-content/uploads/2021/04/Freuler.jpg",
           "dominio": "sportpaper.it",
           "affidabilita": 2,
-          "quando": "1 g fa"
+          "quando": "2 g fa"
         }
       ],
       "nomi": {
@@ -2362,7 +2371,7 @@
             "fonte": "SportParma",
             "link": "https://sportparma.com",
             "affidabilita": 2,
-            "quando": "9 ore fa"
+            "quando": "10 ore fa"
           },
           {
             "titolo": "LIVE Mercato: Parma, verso il riscatto di Cremaschi. Catania, scelto il nuovo allenatore",
@@ -2442,7 +2451,7 @@
           "img": "https://sportparma.com/wp-content/uploads/2026/06/tabellone-calciomercato-serie-a-estate-2026-1000x600.jpg",
           "dominio": "sportparma.com",
           "affidabilita": 2,
-          "quando": "9 ore fa"
+          "quando": "10 ore fa"
         }
       ],
       "nomi": {
@@ -2621,7 +2630,7 @@
             "fonte": "OneFootball",
             "link": "https://onefootball.com",
             "affidabilita": 1,
-            "quando": "17 ore fa"
+            "quando": "18 ore fa"
           }
         ],
         "obj": [
@@ -2687,14 +2696,6 @@
       "nomi": {
         "rumor": [
           {
-            "giocatore": "Raimondo",
-            "direzione": "out",
-            "club": "Frosinone",
-            "_first": "2026-06-26",
-            "_seen": "2026-06-28",
-            "_strong": ""
-          },
-          {
             "giocatore": "Teun Koopmeiners",
             "direzione": "in",
             "club": "Juventus",
@@ -2728,6 +2729,14 @@
           }
         ],
         "obj": [
+          {
+            "giocatore": "Raimondo",
+            "direzione": "out",
+            "club": "Frosinone",
+            "_first": "2026-06-26",
+            "_seen": "2026-06-28",
+            "_strong": ""
+          },
           {
             "giocatore": "Nicolo' Miretti",
             "direzione": "in",
@@ -2800,21 +2809,21 @@
             "fonte": "Toro News",
             "link": "https://www.toronews.net",
             "affidabilita": 1,
-            "quando": "poco fa"
+            "quando": "1 ore fa"
           },
           {
             "titolo": "Calciomercato Torino: granata di nuovo su Oristanio",
             "fonte": "Toro.it",
             "link": "https://www.toro.it",
             "affidabilita": 1,
-            "quando": "5 ore fa"
+            "quando": "6 ore fa"
           },
           {
             "titolo": "Calciomercato Serie A / Genoa su Cajuste, Suzuki corteggiato in Inghilterra",
             "fonte": "Toro.it",
             "link": "https://www.toro.it",
             "affidabilita": 1,
-            "quando": "19 ore fa"
+            "quando": "20 ore fa"
           },
           {
             "titolo": "Benfica, Obrador non convocato per il raduno: il Torino può cogliere l’occasione",
@@ -2840,6 +2849,13 @@
         ],
         "obj": [
           {
+            "titolo": "Calciomercato Serie A: Como PAZzo per Nico, il Cagliari su un ex obiettivo granata",
+            "fonte": "Toro News",
+            "link": "https://www.toronews.net",
+            "affidabilita": 1,
+            "quando": "1 g fa"
+          },
+          {
             "titolo": "Casadei, cosa farai? Il giocatore piace all'estero, ma il Toro lo vuole tenere",
             "fonte": "Toro News",
             "link": "https://www.toronews.net",
@@ -2861,7 +2877,7 @@
             "fonte": "Toro.it",
             "link": "https://www.toro.it",
             "affidabilita": 1,
-            "quando": "1 g fa"
+            "quando": "2 g fa"
           }
         ]
       },
@@ -2874,7 +2890,7 @@
           "img": "https://static.toronews.net/202603/611323e642ffb091b425b083dd7bc37a-2048x1365.jpg",
           "dominio": "toronews.net",
           "affidabilita": 1,
-          "quando": "poco fa"
+          "quando": "1 ore fa"
         },
         {
           "titolo": "Calciomercato Torino: granata di nuovo su Oristanio",
@@ -2884,7 +2900,7 @@
           "img": "https://www.toro.it/wp-content/uploads/2025/07/Gaetano_Oristanio_Venezia.jpg",
           "dominio": "toro.it",
           "affidabilita": 1,
-          "quando": "5 ore fa"
+          "quando": "6 ore fa"
         },
         {
           "titolo": "Calciomercato Serie A / Genoa su Cajuste, Suzuki corteggiato in Inghilterra",
@@ -2894,7 +2910,7 @@
           "img": "https://www.toro.it/wp-content/uploads/2026/03/1NC9857.jpg",
           "dominio": "toro.it",
           "affidabilita": 1,
-          "quando": "19 ore fa"
+          "quando": "20 ore fa"
         }
       ],
       "nomi": {
@@ -2940,14 +2956,6 @@
             "_strong": ""
           },
           {
-            "giocatore": "Oristanio",
-            "direzione": "in",
-            "club": "",
-            "_first": "2026-06-28",
-            "_seen": "2026-06-28",
-            "_strong": ""
-          },
-          {
             "giocatore": "Raoul Bellaraba Barbieri",
             "direzione": "in",
             "club": "",
@@ -2960,6 +2968,30 @@
             "direzione": "in",
             "club": "",
             "_first": "2026-06-26",
+            "_seen": "2026-06-28",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Gaetano Oristanio",
+            "direzione": "in",
+            "club": "",
+            "_first": "2026-06-28",
+            "_seen": "2026-06-28",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Matteo Barbieri",
+            "direzione": "in",
+            "club": "",
+            "_first": "2026-06-28",
+            "_seen": "2026-06-28",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Aarón Escandell",
+            "direzione": "in",
+            "club": "",
+            "_first": "2026-06-28",
             "_seen": "2026-06-28",
             "_strong": ""
           },
@@ -3022,7 +3054,7 @@
             "fonte": "La Gazzetta dello Sport",
             "link": "https://www.gazzetta.it",
             "affidabilita": 2,
-            "quando": "19 ore fa"
+            "quando": "20 ore fa"
           },
           {
             "titolo": "AS Roma, Baldanzi resta al Genoa: le cifre della cessione",
@@ -3035,6 +3067,13 @@
             "titolo": "Genoa e Bologna su un giocatore del Napoli da rilanciare. E sul futuro di Baldanzi…",
             "fonte": "SOS Fanta",
             "link": "https://www.sosfanta.com",
+            "affidabilita": 1,
+            "quando": "14 g fa"
+          },
+          {
+            "titolo": "Calciomercato Serie A: il Milan ha scelto l'allenatore, due ex Toro per il Monza",
+            "fonte": "Toro News",
+            "link": "https://www.toronews.net",
             "affidabilita": 1,
             "quando": "14 g fa"
           },
@@ -3082,7 +3121,7 @@
           "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/06/26/6a3e8cda818e5.r_d.1788-634-0.jpeg",
           "dominio": "gazzetta.it",
           "affidabilita": 2,
-          "quando": "19 ore fa"
+          "quando": "20 ore fa"
         },
         {
           "titolo": "Roma, ufficiale la cessione di Baldanzi al Genoa: i dettagli",
@@ -3194,21 +3233,21 @@
             "fonte": "Messaggero Veneto",
             "link": "https://www.messaggeroveneto.it",
             "affidabilita": 1,
-            "quando": "4 ore fa"
+            "quando": "5 ore fa"
           },
           {
             "titolo": "Calciomercato, Nico Paz può sciogliere il nodo Zaniolo a Udine",
             "fonte": "Il Gazzettino",
             "link": "https://www.ilgazzettino.it",
             "affidabilita": 1,
-            "quando": "21 ore fa"
+            "quando": "22 ore fa"
           },
           {
             "titolo": "Calciomercato Milan, si allontana il rinnovo di Zaniolo con l’Udinese",
             "fonte": "Milan Vibes",
             "link": "https://milanvibes.it",
             "affidabilita": 1,
-            "quando": "21 ore fa"
+            "quando": "22 ore fa"
           }
         ],
         "obj": [],
@@ -3357,7 +3396,7 @@
             "quando": "1 g fa"
           },
           {
-            "titolo": "Mercato | Cagliari, Romano a un passo. Gaetano-Atalanta, si discute: proposto Touré, ma…",
+            "titolo": "Mercato Cagliari | Fatta per Romano, arriva in Sardegna in prestito con obbligo: le cifre",
             "fonte": "Centotrentuno",
             "link": "https://centotrentuno.com",
             "affidabilita": 1,
@@ -3368,7 +3407,7 @@
             "fonte": "CagliariToday",
             "link": "https://www.cagliaritoday.it",
             "affidabilita": 1,
-            "quando": "16 ore fa"
+            "quando": "17 ore fa"
           },
           {
             "titolo": "Calciomercato Torino, Simeone resterà sotto la Mole",
@@ -3378,11 +3417,11 @@
             "quando": "1 g fa"
           },
           {
-            "titolo": "Mercato Cagliari | Fatta per Romano, arriva in Sardegna in prestito con obbligo: le cifre",
+            "titolo": "Mercato | Cagliari, Romano a un passo. Gaetano-Atalanta, si discute: proposto Touré, ma…",
             "fonte": "Centotrentuno",
             "link": "https://centotrentuno.com",
             "affidabilita": 1,
-            "quando": "1 g fa"
+            "quando": "2 g fa"
           }
         ],
         "obj": [
@@ -3391,7 +3430,7 @@
             "fonte": "Casteddu On line",
             "link": "https://www.castedduonline.it",
             "affidabilita": 2,
-            "quando": "3 g fa"
+            "quando": "4 g fa"
           },
           {
             "titolo": "Cagliari, Romano primo acquisto del mercato estivo: ecco chi è il centrocampista",
@@ -3435,7 +3474,7 @@
             "fonte": "L'Unione Sarda.it",
             "link": "https://www.unionesarda.it",
             "affidabilita": 1,
-            "quando": "14 ore fa"
+            "quando": "15 ore fa"
           }
         ],
         "done": []
@@ -3469,7 +3508,7 @@
           "img": "https://www.castedduonline.it/wp-content/uploads/2026/06/foto_articolo-3.jpg",
           "dominio": "castedduonline.it",
           "affidabilita": 2,
-          "quando": "3 g fa"
+          "quando": "4 g fa"
         }
       ],
       "nomi": {
@@ -3553,7 +3592,7 @@
             "direzione": "out",
             "club": "Atalanta",
             "_first": "2026-06-05",
-            "_seen": "2026-06-27",
+            "_seen": "2026-06-28",
             "_strong": ""
           },
           {
@@ -3640,7 +3679,7 @@
             "fonte": "Planetwin365 news",
             "link": "https://www.planetwin365.news",
             "affidabilita": 1,
-            "quando": "2 g fa"
+            "quando": "3 g fa"
           }
         ],
         "conf": [
@@ -3729,19 +3768,11 @@
             "_strong": ""
           },
           {
-            "giocatore": "Chalobah",
-            "direzione": "in",
-            "club": "Chelsea",
-            "_first": "2026-06-26",
-            "_seen": "2026-06-27",
-            "_strong": ""
-          },
-          {
             "giocatore": "Federico Chiesa",
             "direzione": "in",
             "club": "Liverpool",
             "_first": "2026-06-11",
-            "_seen": "2026-06-26",
+            "_seen": "2026-06-28",
             "_strong": ""
           },
           {
@@ -3749,7 +3780,23 @@
             "direzione": "in",
             "club": "Real Madrid",
             "_first": "2026-06-11",
-            "_seen": "2026-06-26",
+            "_seen": "2026-06-28",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Gabriel Paz",
+            "direzione": "in",
+            "club": "",
+            "_first": "2026-06-28",
+            "_seen": "2026-06-28",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Chalobah",
+            "direzione": "in",
+            "club": "Chelsea",
+            "_first": "2026-06-26",
+            "_seen": "2026-06-27",
             "_strong": ""
           },
           {
@@ -3771,14 +3818,6 @@
             "_strong": ""
           },
           {
-            "giocatore": "Milla",
-            "direzione": "in",
-            "club": "Getafe",
-            "_first": "2026-06-24",
-            "_seen": "2026-06-26",
-            "_strong": ""
-          },
-          {
             "giocatore": "Da Cunha",
             "direzione": "in",
             "club": "Braga",
@@ -3793,6 +3832,14 @@
             "direzione": "in",
             "club": "Real Madrid",
             "_first": "2026-06-12",
+            "_seen": "2026-06-28",
+            "_strong": "2026-06-28"
+          },
+          {
+            "giocatore": "Luis Milla",
+            "direzione": "in",
+            "club": "Getafe",
+            "_first": "2026-06-24",
             "_seen": "2026-06-28",
             "_strong": "2026-06-28"
           }
@@ -3916,7 +3963,7 @@
             "direzione": "out",
             "club": "",
             "_first": "2026-06-25",
-            "_seen": "2026-06-27",
+            "_seen": "2026-06-28",
             "_strong": ""
           },
           {
@@ -3924,7 +3971,7 @@
             "direzione": "in",
             "club": "",
             "_first": "2026-06-25",
-            "_seen": "2026-06-27",
+            "_seen": "2026-06-28",
             "_strong": ""
           }
         ],
@@ -3960,21 +4007,14 @@
             "fonte": "Calcio Hellas",
             "link": "https://www.calciohellas.it",
             "affidabilita": 2,
-            "quando": "20 ore fa"
-          },
-          {
-            "titolo": "Verona, quelli che tornano: i giocatori al rientro dai prestiti",
-            "fonte": "Hellas 1903",
-            "link": "https://www.hellas1903.it",
-            "affidabilita": 2,
-            "quando": "23 g fa"
+            "quando": "21 ore fa"
           },
           {
             "titolo": "Calciomercato Serie A / Genoa su Cajuste, Suzuki corteggiato in Inghilterra",
             "fonte": "Toro.it",
             "link": "https://www.toro.it",
             "affidabilita": 1,
-            "quando": "19 ore fa"
+            "quando": "20 ore fa"
           },
           {
             "titolo": "CALCIOMERCATO | Da Bologna: \"Chieste informazioni al Verona per Oyegoke\"",
@@ -3987,6 +4027,13 @@
             "titolo": "Calciomercato Torino, occasioni dalle retrocesse: i nomi più interessanti",
             "fonte": "Toro News",
             "link": "https://www.toronews.net",
+            "affidabilita": 1,
+            "quando": "3 g fa"
+          },
+          {
+            "titolo": "CALCIOMERCATO | Korac, il difensore del Venezia che piace al Verona",
+            "fonte": "TgGialloblu",
+            "link": "https://tggialloblu.telenuovo.it",
             "affidabilita": 1,
             "quando": "3 g fa"
           }
@@ -4015,7 +4062,15 @@
           }
         ],
         "conf": [],
-        "done": []
+        "done": [
+          {
+            "titolo": "Mercato, Bega al Verona, presto la firma: il centrocampista all'Hellas",
+            "fonte": "Hellas 1903",
+            "link": "https://www.hellas1903.it",
+            "affidabilita": 2,
+            "quando": "13 g fa"
+          }
+        ]
       },
       "feed": [
         {
@@ -4036,7 +4091,7 @@
           "img": "",
           "dominio": "calciohellas.it",
           "affidabilita": 2,
-          "quando": "20 ore fa"
+          "quando": "21 ore fa"
         },
         {
           "titolo": "Mercato, il Bologna vuole Oyegoke, il Verona chiede 5 milioni",
@@ -4134,7 +4189,7 @@
             "fonte": "SportParma",
             "link": "https://sportparma.com",
             "affidabilita": 2,
-            "quando": "9 ore fa"
+            "quando": "10 ore fa"
           },
           {
             "titolo": "Mercato: le cifre del riscatto di Cremaschi dall’Inter Miami",
@@ -4162,14 +4217,14 @@
             "fonte": "stadiotardini.it",
             "link": "https://www.stadiotardini.it",
             "affidabilita": 1,
-            "quando": "poco fa"
+            "quando": "1 ore fa"
           },
           {
             "titolo": "Calciomercato Torino: granata di nuovo su Oristanio",
             "fonte": "Toro.it",
             "link": "https://www.toro.it",
             "affidabilita": 1,
-            "quando": "5 ore fa"
+            "quando": "6 ore fa"
           }
         ],
         "obj": [
@@ -4187,7 +4242,7 @@
             "fonte": "SportParma",
             "link": "https://sportparma.com",
             "affidabilita": 2,
-            "quando": "1 g fa"
+            "quando": "2 g fa"
           }
         ],
         "done": []
@@ -4201,7 +4256,7 @@
           "img": "https://sportparma.com/wp-content/uploads/2026/06/tabellone-calciomercato-serie-a-estate-2026-1000x600.jpg",
           "dominio": "sportparma.com",
           "affidabilita": 2,
-          "quando": "9 ore fa"
+          "quando": "10 ore fa"
         },
         {
           "titolo": "Mercato: le cifre del riscatto di Cremaschi dall’Inter Miami",
@@ -4221,7 +4276,7 @@
           "img": "https://sportparma.com/wp-content/uploads/2026/06/Simone-Lontani.jpg",
           "dominio": "sportparma.com",
           "affidabilita": 2,
-          "quando": "1 g fa"
+          "quando": "2 g fa"
         }
       ],
       "nomi": {
@@ -4647,17 +4702,17 @@
             "_first": "2026-06-26",
             "_seen": "2026-06-26",
             "_strong": ""
-          },
+          }
+        ],
+        "obj": [
           {
             "giocatore": "Akinsanmiro",
             "direzione": "out",
             "club": "Inter",
             "_first": "2026-06-26",
-            "_seen": "2026-06-26",
+            "_seen": "2026-06-28",
             "_strong": ""
-          }
-        ],
-        "obj": [
+          },
           {
             "giocatore": "Marras",
             "direzione": "in",
@@ -4748,7 +4803,7 @@
             "fonte": "Planetwin365 news",
             "link": "https://www.planetwin365.news",
             "affidabilita": 1,
-            "quando": "2 g fa"
+            "quando": "3 g fa"
           }
         ],
         "conf": [],
@@ -4825,7 +4880,7 @@
             "direzione": "out",
             "club": "AEK Atene",
             "_first": "2026-06-27",
-            "_seen": "2026-06-27",
+            "_seen": "2026-06-28",
             "_strong": ""
           },
           {
@@ -4833,7 +4888,7 @@
             "direzione": "out",
             "club": "Como",
             "_first": "2026-06-11",
-            "_seen": "2026-06-26",
+            "_seen": "2026-06-28",
             "_strong": ""
           },
           {
@@ -4982,7 +5037,7 @@
           "fonte": "eurosport.it",
           "stato": "done",
           "link": "https://www.eurosport.it/calcio/calciomercato/2025-2026/ufficiale-flick-barcellona-avanti-insieme-lallenatore-tedesco-ha-rinnovato-il-proprio-contratto-sino-al-2028_sto23300870/story.shtml",
-          "img": "",
+          "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg)/origin-imgresizer.eurosport.com/2026/05/18/image-a11f88ef-0b4f-4413-99f6-5ed5ca3d47eb-85-2560-1440.jpeg",
           "dominio": "eurosport.it",
           "affidabilita": 2,
           "quando": "41 g fa"
@@ -5084,7 +5139,7 @@
             "fonte": "Calcio.com",
             "link": "https://www.calcio.com",
             "affidabilita": 1,
-            "quando": "18 ore fa"
+            "quando": "19 ore fa"
           },
           {
             "titolo": "Calciomercato Roma, dall'Inghilterra: contatti positivi con Brandt. Atletico Madrid in pole, molta concorrenza dalla Premier",
@@ -5131,7 +5186,7 @@
           "fonte": "eurosport.it",
           "stato": "done",
           "link": "https://www.eurosport.it/calcio/calciomercato/2026-2027/inter-si-complica-anche-solet-latletico-madrid-prepara-lassalto.-in-settimana-offerta-ufficiale-alludinese_sto23312730/story.shtml",
-          "img": "",
+          "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg)/origin-imgresizer.eurosport.com/2026/02/15/image-0d13cacc-c06f-4e2d-bbd4-11770b8abc0e-85-2560-1440.jpeg",
           "dominio": "eurosport.it",
           "affidabilita": 2,
           "quando": "3 g fa"
@@ -5160,6 +5215,14 @@
             "direzione": "out",
             "club": "",
             "_first": "2026-06-27",
+            "_seen": "2026-06-28",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Alvaro Alvarez",
+            "direzione": "in",
+            "club": "",
+            "_first": "2026-06-28",
             "_seen": "2026-06-28",
             "_strong": ""
           },
@@ -5256,13 +5319,6 @@
             "quando": "173 g fa"
           },
           {
-            "titolo": "Nico Williams resta all'Athletic Club",
-            "fonte": "Sky Sport",
-            "link": "https://sport.sky.it",
-            "affidabilita": 3,
-            "quando": "691 g fa"
-          },
-          {
             "titolo": "Niente Barcellona, Nico Williams resta all’Athletic Bilbao",
             "fonte": "Tuttosport",
             "link": "https://www.tuttosport.com",
@@ -5289,6 +5345,13 @@
             "link": "https://www.palermotoday.it",
             "affidabilita": 1,
             "quando": "188 g fa"
+          },
+          {
+            "titolo": "La FIFA chiude il caso Laporte: via libera al trasferimento all'Athletic Bilbao, riconosciuto l'errore dell'Al-Nassr",
+            "fonte": "Goal.com",
+            "link": "https://www.goal.com",
+            "affidabilita": 1,
+            "quando": "289 g fa"
           }
         ],
         "obj": [],
@@ -5315,16 +5378,6 @@
           "quando": "173 g fa"
         },
         {
-          "titolo": "Nico Williams resta all'Athletic Club",
-          "fonte": "Sky Sport",
-          "stato": "rumor",
-          "link": "https://sport.sky.it/calciomercato/2024/08/06/nico-williams-athletic-bilbao-video",
-          "img": "https://sport.sky.it/assets/images/8a3af2bef311f008d86b1e6e03bd00052cc6e630/skysport/it/calcio/calciomercato/2024/08/06/nico-williams-athletic-bilbao-video/og_williams_nico_ipa_1.jpg?im=Resize,width=1218",
-          "dominio": "sport.sky.it",
-          "affidabilita": 3,
-          "quando": "691 g fa"
-        },
-        {
           "titolo": "Niente Barcellona, Nico Williams resta all’Athletic Bilbao",
           "fonte": "Tuttosport",
           "stato": "rumor",
@@ -5333,6 +5386,16 @@
           "dominio": "tuttosport.com",
           "affidabilita": 2,
           "quando": "358 g fa"
+        },
+        {
+          "titolo": "Niente Barcellona per Nico Williams: rinnovo e amore per l'Athletic",
+          "fonte": "eurosport.it",
+          "stato": "rumor",
+          "link": "https://www.eurosport.it/calcio/calciomercato/2025-2026/nico-williams-resta-allathletic-club-rinnovo-fino-al-2035-e-clausola-alzata-a-87-milioni-niente-da-fare-per-il-barcellona_sto23198426/story.shtml",
+          "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg)/origin-imgresizer.eurosport.com/2025/06/26/image-8ccb394c-fc91-4349-a1e9-359d7e86ed4d-85-2560-1440.jpeg",
+          "dominio": "eurosport.it",
+          "affidabilita": 2,
+          "quando": "359 g fa"
         }
       ],
       "nomi": {
@@ -5497,7 +5560,7 @@
             "fonte": "Pagine Romaniste",
             "link": "https://pagineromaniste.com",
             "affidabilita": 1,
-            "quando": "8 g fa"
+            "quando": "9 g fa"
           },
           {
             "titolo": "Calciomercato Roma, contatti con il Betis: Angelino può salutare i giallorossi",
@@ -5739,7 +5802,7 @@
           "fonte": "SNAI sportnews",
           "stato": "rumor",
           "link": "https://sportnews.snai.it/calcio/calciomercato-juventus-e-milan-su-kim-la-situazione",
-          "img": "https://sportnews.snai.it/wp-content/uploads/2025/10/Kim-scaled.jpg",
+          "img": "",
           "dominio": "sportnews.snai.it",
           "affidabilita": 2,
           "quando": "256 g fa"
@@ -5752,6 +5815,14 @@
             "direzione": "out",
             "club": "Brighton",
             "_first": "2026-06-26",
+            "_seen": "2026-06-28",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Eldin Jakupovic Adams",
+            "direzione": "out",
+            "club": "",
+            "_first": "2026-06-28",
             "_seen": "2026-06-28",
             "_strong": ""
           }
@@ -6015,7 +6086,15 @@
             "quando": "27 g fa"
           }
         ],
-        "obj": [],
+        "obj": [
+          {
+            "titolo": "Juventus, tra il sogno Kim e i contatti con Alaba: da Madrid rassicurazioni sulle condizioni fisiche",
+            "fonte": "Calciomercato",
+            "link": "https://www.calciomercato.com",
+            "affidabilita": 1,
+            "quando": "26 g fa"
+          }
+        ],
         "conf": [],
         "done": []
       },
@@ -6029,6 +6108,16 @@
           "dominio": "gonfialarete.com",
           "affidabilita": 1,
           "quando": "1 g fa"
+        },
+        {
+          "titolo": "Juventus, tra il sogno Kim e i contatti con Alaba: da Madrid rassicurazioni sulle condizioni fisiche",
+          "fonte": "Calciomercato",
+          "stato": "obj",
+          "link": "https://www.calciomercato.com/liste/juventus-tra-il-sogno-kim-e-i-contatti-con-alaba-da-madrid-rassicurazioni-sulle-condizioni-fisiche/blt22431ae3c14bcc22",
+          "img": "https://assets.calciomercato.com/images/v3/getty-2264267741/crop/MM5DGMRRGY5DCOBQHE5G433XMU5DENJUHIZDIMI=/GettyImages-2264267741.jpg",
+          "dominio": "calciomercato.com",
+          "affidabilita": 1,
+          "quando": "26 g fa"
         },
         {
           "titolo": "Mohamed Salah, Bernardo Silva, Robert Lewandowski e i 20 migliori giocatori in scadenza di contratto per il calciomercato estivo 2026",
@@ -6073,44 +6162,77 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "Como, Luis Milla per Fabregas: il colpo da Champions",
+            "fonte": "Calcio style",
+            "link": "https://calciostyle.it",
+            "affidabilita": 1,
+            "quando": "8 g fa"
+          },
+          {
+            "titolo": "Como, vicino il colpo Milla: 5 milioni di euro al Getafe",
+            "fonte": "Calciomercato",
+            "link": "https://www.calciomercato.com",
+            "affidabilita": 1,
+            "quando": "9 g fa"
+          },
+          {
             "titolo": "Calciomercato Serie A: Ruggeri torna in Italia? Schuurs torna in Olanda",
             "fonte": "Toro News",
             "link": "https://www.toronews.net",
             "affidabilita": 1,
             "quando": "16 g fa"
-          },
-          {
-            "titolo": "Morata, futuro al Como incerto dopo la stagione deludente: non c’è solo l’Arabia su di lui",
-            "fonte": "SOS Fanta",
-            "link": "https://www.sosfanta.com",
-            "affidabilita": 1,
-            "quando": "28 g fa"
           }
         ],
-        "obj": [],
-        "conf": [],
+        "obj": [
+          {
+            "titolo": "Como avanti per Luis Milla, centrocampista del Getafe",
+            "fonte": "Gianluca Di Marzio",
+            "link": "https://www.gianlucadimarzio.com",
+            "affidabilita": 3,
+            "quando": "19 g fa"
+          }
+        ],
+        "conf": [
+          {
+            "titolo": "Como, accordo raggiunto con Luis Milla: si cerca l’intesa con il Getafe",
+            "fonte": "Chiamarsi Bomber",
+            "link": "https://www.chiamarsibomber.com",
+            "affidabilita": 1,
+            "quando": "8 g fa"
+          }
+        ],
         "done": []
       },
       "feed": [
         {
-          "titolo": "Calciomercato Serie A: Ruggeri torna in Italia? Schuurs torna in Olanda",
-          "fonte": "Toro News",
-          "stato": "rumor",
-          "link": "https://www.toronews.net/calcio-mercato/calciomercato-serie-a-ruggieri-torna-in-italia-schuurs-torna-in-olanda/4/",
-          "img": "https://static.toronews.net/202409/350362fb137827c0965cc029bc3ffdf6-1536x863.jpeg",
-          "dominio": "toronews.net",
-          "affidabilita": 1,
-          "quando": "16 g fa"
+          "titolo": "Como avanti per Luis Milla, centrocampista del Getafe",
+          "fonte": "Gianluca Di Marzio",
+          "stato": "obj",
+          "link": "https://www.gianlucadimarzio.com/calciomercato/como-luis-milla-centrocampista-getafe-493328",
+          "img": "https://net-storage-auto.tcccdn.com/storage/gianlucadimarzio.com/img_notizie/thumb3/dc/dc5f6e557ad71f6b43faa73e9a8dc73e-97406-oooz0000.jpeg",
+          "dominio": "gianlucadimarzio.com",
+          "affidabilita": 3,
+          "quando": "19 g fa"
         },
         {
-          "titolo": "Morata, futuro al Como incerto dopo la stagione deludente: non c’è solo l’Arabia su di lui",
-          "fonte": "SOS Fanta",
+          "titolo": "Como, Luis Milla per Fabregas: il colpo da Champions",
+          "fonte": "Calcio style",
           "stato": "rumor",
-          "link": "https://www.sosfanta.com/news/morata-futuro-al-como-incerto-dopo-la-stagione-deludente-non-ce-solo-larabia-su-di-lui/",
-          "img": "https://images2-gazzanet.gazzettaobjects.it/tyS10AH7gDy57mxGEq_alVI9vjk=/1200x627/smart/www.sosfanta.com/assets/uploads/202508/28b2bdc25c315d720f8d2d1ce8effbc7-e1755037970777.jpeg",
-          "dominio": "sosfanta.com",
+          "link": "https://calciostyle.it/calciomercato/como-luis-milla-per-fabregas-il-colpo-da-champions",
+          "img": "https://calciostyle.it/wp-content/uploads/2026/06/luis-milla-2-1000x600.webp",
+          "dominio": "calciostyle.it",
           "affidabilita": 1,
-          "quando": "28 g fa"
+          "quando": "8 g fa"
+        },
+        {
+          "titolo": "Como, accordo raggiunto con Luis Milla: si cerca l’intesa con il Getafe",
+          "fonte": "Chiamarsi Bomber",
+          "stato": "conf",
+          "link": "https://www.chiamarsibomber.com/news/calciomercato/como-accordo-raggiunto-con-luis-milla-si-cerca-lintesa-con-il-getafe/",
+          "img": "https://www.chiamarsibomber.com/wp-content/uploads/2026/06/may-23-2026-getafe-madrid-1077795087-1200x800.jpg",
+          "dominio": "chiamarsibomber.com",
+          "affidabilita": 1,
+          "quando": "8 g fa"
         }
       ],
       "nomi": {
@@ -6124,17 +6246,17 @@
             "_strong": ""
           }
         ],
-        "obj": [
+        "obj": [],
+        "conf": [
           {
-            "giocatore": "Milla",
+            "giocatore": "Luis Milla",
             "direzione": "out",
             "club": "Como",
             "_first": "2026-06-24",
-            "_seen": "2026-06-26",
-            "_strong": ""
+            "_seen": "2026-06-28",
+            "_strong": "2026-06-28"
           }
         ],
-        "conf": [],
         "done": [
           {
             "giocatore": "Mason Greenwood",
@@ -6163,6 +6285,13 @@
         ],
         "obj": [
           {
+            "titolo": "Endrick torna per restare: Mourinho lo vuole con sé al Real Madrid",
+            "fonte": "DerbyDerbyDerby",
+            "link": "https://www.derbyderbyderby.it",
+            "affidabilita": 1,
+            "quando": "2 g fa"
+          },
+          {
             "titolo": "Lazio, spunta Arnau Martinez tra Coppola e Chiarodia: Pellegrini richiesto dal Como",
             "fonte": "Calciomercato",
             "link": "https://www.calciomercato.com",
@@ -6179,10 +6308,20 @@
           "fonte": "eurosport.it",
           "stato": "rumor",
           "link": "https://www.eurosport.it/calcio/segunda-federacion/2023-2024/live-lleida-cf-rcd-espanyol-b_mtc1478051/live-stats.shtml",
-          "img": "",
+          "img": "https://assets.eurosport.io/web/img/og/eurosport.jpg",
           "dominio": "eurosport.it",
           "affidabilita": 2,
           "quando": "10 g fa"
+        },
+        {
+          "titolo": "Endrick torna per restare: Mourinho lo vuole con sé al Real Madrid",
+          "fonte": "DerbyDerbyDerby",
+          "stato": "obj",
+          "link": "https://www.derbyderbyderby.it/calciomercato/endrick-torna-per-restare-mourinho-lo-vuole-con-se-al-real-madrid/amp/",
+          "img": "https://static.derbyderbyderby.it/2026/06/GettyImages-2236406966-8f48fb4eb2bc-960x640.jpg",
+          "dominio": "derbyderbyderby.it",
+          "affidabilita": 1,
+          "quando": "2 g fa"
         },
         {
           "titolo": "Lazio, spunta Arnau Martinez tra Coppola e Chiarodia: Pellegrini richiesto dal Como",
@@ -6209,111 +6348,27 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "Maiorca Real Madrid, formazioni ufficiali e risultato in diretta live",
-            "fonte": "Sky Sport",
-            "link": "https://sport.sky.it",
-            "affidabilita": 3,
-            "quando": "678 g fa"
-          },
-          {
-            "titolo": "Griezmann saluta il popolo Colchoneros, il Valencia vince e sogna",
-            "fonte": "eurosport.it",
-            "link": "https://www.eurosport.it",
-            "affidabilita": 2,
-            "quando": "42 g fa"
-          },
-          {
-            "titolo": "Mallorca - Real Oviedo: 3-0 | Liga - Risultati",
+            "titolo": "Real Madrid - Mallorca: 2-0 | Liga - Risultati",
             "fonte": "La Gazzetta dello Sport",
             "link": "https://www.gazzetta.it",
             "affidabilita": 2,
-            "quando": "52 g fa"
-          },
-          {
-            "titolo": "Muriqi e Morlanes inguaiano il Real Madrid! Vince il Maiorca 2-1",
-            "fonte": "eurosport.it",
-            "link": "https://www.eurosport.it",
-            "affidabilita": 2,
-            "quando": "85 g fa"
-          },
-          {
-            "titolo": "Muriqi, dal flop alla Lazio alla rinascita in Liga: 21 goal e record con il Maiorca, ora è tra i bomber più decisivi d’Europa",
-            "fonte": "Goal.com",
-            "link": "https://www.goal.com",
-            "affidabilita": 1,
-            "quando": "57 g fa"
-          },
-          {
-            "titolo": "Cagliari, Luvumbo saluta e va al Mallorca - L'Unione Sarda.it",
-            "fonte": "L'Unione Sarda.it",
-            "link": "https://www.unionesarda.it",
-            "affidabilita": 1,
-            "quando": "145 g fa"
+            "quando": "6 g fa"
           }
         ],
         "obj": [],
         "conf": [],
-        "done": [
-          {
-            "titolo": "La Roma cede Kumbulla al Maiorca: l'accordo è ufficiale",
-            "fonte": "Corriere dello Sport",
-            "link": "https://www.corrieredellosport.it",
-            "affidabilita": 2,
-            "quando": "314 g fa"
-          },
-          {
-            "titolo": "Lazio, Muriqi ceduto al Mallorca: l'annuncio ufficiale",
-            "fonte": "Tuttosport",
-            "link": "https://www.tuttosport.com",
-            "affidabilita": 2,
-            "quando": "1437 g fa"
-          },
-          {
-            "titolo": "Lazio, Muriqi al Mallorca: l'annuncio ufficiale",
-            "fonte": "Corriere dello Sport",
-            "link": "https://www.corrieredellosport.it",
-            "affidabilita": 2,
-            "quando": "1437 g fa"
-          },
-          {
-            "titolo": "Ufficiale, il Maiorca annuncia l'accordo per il prestito di Kumbulla: diritto d'acquito per il club spagnolo",
-            "fonte": "Diretta",
-            "link": "https://www.diretta.it",
-            "affidabilita": 1,
-            "quando": "314 g fa"
-          }
-        ]
+        "done": []
       },
       "feed": [
         {
-          "titolo": "Maiorca Real Madrid, formazioni ufficiali e risultato in diretta live",
-          "fonte": "Sky Sport",
-          "stato": "rumor",
-          "link": "https://sport.sky.it/calcio/liga/partite/2024/giornata-1/maiorca-real-madrid/risultato-gol",
-          "img": "https://sport.sky.it/assets/images/fe3002a460d9904efad96e7882361f17a7cc77c2/skysport/configurations/skysport_condivisione.jpg?im=Resize,width=1218",
-          "dominio": "sport.sky.it",
-          "affidabilita": 3,
-          "quando": "678 g fa"
-        },
-        {
-          "titolo": "Griezmann saluta il popolo Colchoneros, il Valencia vince e sogna",
-          "fonte": "eurosport.it",
-          "stato": "rumor",
-          "link": "https://www.eurosport.it/calcio/la-liga/2025-2026/valencia-e-levante-da-sogno-real-e-atletico-vincono-1-0-incubo-maiorca-che-vede-la-retrocessione-ad-un-passo_sto23300554/story.shtml",
-          "img": "",
-          "dominio": "eurosport.it",
-          "affidabilita": 2,
-          "quando": "42 g fa"
-        },
-        {
-          "titolo": "Mallorca - Real Oviedo: 3-0 | Liga - Risultati",
+          "titolo": "Real Madrid - Mallorca: 2-0 | Liga - Risultati",
           "fonte": "La Gazzetta dello Sport",
           "stato": "rumor",
-          "link": "https://www.gazzetta.it/calcio/liga/partita/mallorca-real-oviedo/2572313/",
+          "link": "https://www.gazzetta.it/calcio/liga/partita/real-madrid-mallorca/1075121/",
           "img": "https://www.gazzetta.it/images/logo-gazzetta.png",
           "dominio": "gazzetta.it",
           "affidabilita": 2,
-          "quando": "52 g fa"
+          "quando": "6 g fa"
         }
       ],
       "nomi": {
@@ -6471,7 +6526,7 @@
           "fonte": "eurosport.it",
           "stato": "rumor",
           "link": "https://www.eurosport.it/calcio/liga-f-moeve/2025-2026/live-fc-badalona-levante-ud_mtc1611377/live.shtml",
-          "img": "",
+          "img": "https://assets.eurosport.io/web/img/og/eurosport.jpg",
           "dominio": "eurosport.it",
           "affidabilita": 2,
           "quando": "3 g fa"
@@ -6481,7 +6536,7 @@
           "fonte": "eurosport.it",
           "stato": "rumor",
           "link": "https://www.eurosport.it/calcio/liga-f-moeve/2025-2026/live-fc-badalona-levante-ud_mtc1611377/live-lineup.shtml",
-          "img": "",
+          "img": "https://assets.eurosport.io/web/img/og/eurosport.jpg",
           "dominio": "eurosport.it",
           "affidabilita": 2,
           "quando": "14 g fa"
@@ -6605,6 +6660,27 @@
             "quando": "35 g fa"
           },
           {
+            "titolo": "L'Inter spinge per il vice Sommer",
+            "fonte": "Sky Sport",
+            "link": "https://sport.sky.it",
+            "affidabilita": 3,
+            "quando": "749 g fa"
+          },
+          {
+            "titolo": "Real Madrid contestato al Bernabeu: striscioni contro Florentino Perez, fischi fragorosi per Mbappé",
+            "fonte": "Calciomercato",
+            "link": "https://www.calciomercato.com",
+            "affidabilita": 1,
+            "quando": "45 g fa"
+          },
+          {
+            "titolo": "Real Oviedo, Cazorla: \"Salvezza difficile ma ci dobbiamo credere. Pedri è uno dei migliori al mondo\"",
+            "fonte": "DerbyDerbyDerby",
+            "link": "https://www.derbyderbyderby.it",
+            "affidabilita": 1,
+            "quando": "89 g fa"
+          },
+          {
             "titolo": "Calciomercato Torino: piace il portiere Aarón Escandell",
             "fonte": "Cuore Toro",
             "link": "https://www.cuoretoro.it",
@@ -6617,20 +6693,6 @@
             "link": "https://www.calciomercato.com",
             "affidabilita": 1,
             "quando": "332 g fa"
-          },
-          {
-            "titolo": "Santi Cazorla in campo a 40 anni: ha rinnovato il contratto con il Real Oviedo",
-            "fonte": "Goal.com",
-            "link": "https://www.goal.com",
-            "affidabilita": 1,
-            "quando": "729 g fa"
-          },
-          {
-            "titolo": "Mariga lascia l'Italia e torna in Spagna: va al Real Oviedo",
-            "fonte": "Goal.com",
-            "link": "https://www.goal.com",
-            "affidabilita": 1,
-            "quando": "3253 g fa"
           }
         ],
         "obj": [
@@ -6665,24 +6727,24 @@
           "quando": "35 g fa"
         },
         {
-          "titolo": "Calciomercato Torino: piace il portiere Aarón Escandell",
-          "fonte": "Cuore Toro",
+          "titolo": "L'Inter spinge per il vice Sommer",
+          "fonte": "Sky Sport",
           "stato": "rumor",
-          "link": "https://www.cuoretoro.it/news/452298444294/calciomercato-torino-escandell-portiere-oviedo",
-          "img": "https://slyvi-tstorage.fra1.cdn.digitaloceanspaces.com/l261811486920_tml2352218093313_274069738709_1771602145489938.webp",
-          "dominio": "cuoretoro.it",
-          "affidabilita": 1,
-          "quando": "128 g fa"
+          "link": "https://sport.sky.it/calciomercato/2024/06/09/inter-josep-martinez-news-calciomercato",
+          "img": "https://sport.sky.it/assets/images/5081dd51251b812b5346f6bda9be773ec31b72cb/skysport/it/calcio/serie-a/2024/05/19/marotta-inter-lazio-intervista/IPA_og_marotta_inter.jpg?im=Resize,width=1218",
+          "dominio": "sport.sky.it",
+          "affidabilita": 3,
+          "quando": "749 g fa"
         },
         {
-          "titolo": "UFFICIALE - Luka Jović all'AEK Atene: Real Oviedo beffato",
-          "fonte": "DerbyDerbyDerby",
-          "stato": "done",
-          "link": "https://www.derbyderbyderby.it/calciomercato/ufficiale-luka-jovic-allaek-atene-real-oviedo-beffato/",
-          "img": "https://static.derbyderbyderby.it/202508/44fb7cf0c4a33735bdd4dc9b5aee0bf8-768x512.jpg",
-          "dominio": "derbyderbyderby.it",
+          "titolo": "Real Madrid contestato al Bernabeu: striscioni contro Florentino Perez, fischi fragorosi per Mbappé",
+          "fonte": "Calciomercato",
+          "stato": "rumor",
+          "link": "https://www.calciomercato.com/liste/real-madrid-contestato-al-bernabeu-striscioni-contro-florentino-perez-e-fischi-alla-squadra-mbappe-il-piu-bersagliato/blt2e60172cfec2d2b9",
+          "img": "https://assets.calciomercato.com/images/v3/getty-2276272683/crop/MM5DKMRSG45DEOJUGA5G433XMU5DAORRGI3Q====/GettyImages-2276272683.jpg",
+          "dominio": "calciomercato.com",
           "affidabilita": 1,
-          "quando": "327 g fa"
+          "quando": "45 g fa"
         }
       ],
       "nomi": {
@@ -6832,19 +6894,19 @@
             "_strong": ""
           },
           {
+            "giocatore": "Federico Chiesa",
+            "direzione": "out",
+            "club": "Napoli",
+            "_first": "2026-06-10",
+            "_seen": "2026-06-28",
+            "_strong": ""
+          },
+          {
             "giocatore": "Robertson",
             "direzione": "out",
             "club": "Tottenham",
             "_first": "2026-06-27",
             "_seen": "2026-06-27",
-            "_strong": ""
-          },
-          {
-            "giocatore": "Federico Chiesa",
-            "direzione": "out",
-            "club": "Napoli",
-            "_first": "2026-06-10",
-            "_seen": "2026-06-26",
             "_strong": ""
           }
         ],
@@ -6993,7 +7055,7 @@
             "direzione": "in",
             "club": "Marseille",
             "_first": "2026-06-24",
-            "_seen": "2026-06-27",
+            "_seen": "2026-06-28",
             "_strong": ""
           },
           {
@@ -7137,7 +7199,7 @@
           "fonte": "eurosport.it",
           "stato": "rumor",
           "link": "https://www.eurosport.it/calcio/calciomercato/2026-2027/elliot-anderson-al-city-per-150-milioni-di-euro-follia-di-mercato-o-valutazione-congrua-e-perche-conta-la-homegrown-rule_sto23313361/story.shtml",
-          "img": "",
+          "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg):focal(174x75:176x73)/origin-imgresizer.eurosport.com/2026/06/25/image-d11ab4f7-2ad6-4fcf-8b2d-ccbcb7223a4a-85-2560-1440.jpeg",
           "dominio": "eurosport.it",
           "affidabilita": 2,
           "quando": "1 g fa"
@@ -7389,6 +7451,13 @@
             "quando": "12 g fa"
           },
           {
+            "titolo": "Pio Esposito protagonista nella giovane Italia, le voci sull'interesse del Manchester United: la posizione dell'Inter è chiarissima",
+            "fonte": "Goal.com",
+            "link": "https://www.goal.com",
+            "affidabilita": 1,
+            "quando": "19 g fa"
+          },
+          {
             "titolo": "Manchester United, scelto il partner di Ederson: tutto su Tchouameni",
             "fonte": "Planetwin365 news",
             "link": "https://www.planetwin365.news",
@@ -7410,15 +7479,7 @@
             "quando": "26 g fa"
           }
         ],
-        "obj": [
-          {
-            "titolo": "Amorim punta sul suo pupillo: il Milan bussa in casa Manchester United",
-            "fonte": "Tuttosport",
-            "link": "https://www.tuttosport.com",
-            "affidabilita": 2,
-            "quando": "9 g fa"
-          }
-        ],
+        "obj": [],
         "conf": [
           {
             "titolo": "Atalanta, ok alle visite mediche per Ederson col Manchester United",
@@ -7432,21 +7493,11 @@
       },
       "feed": [
         {
-          "titolo": "Amorim punta sul suo pupillo: il Milan bussa in casa Manchester United",
-          "fonte": "Tuttosport",
-          "stato": "obj",
-          "link": "https://www.tuttosport.com/news/calcio/calciomercato/2026/06/19-149309057/amorim_punta_sul_suo_pupillo_il_milan_bussa_in_casa_manchester_united",
-          "img": "https://cdn.tuttosport.com/images/2026/06/19/125230223-378d4c00-d6a1-4f32-abce-7abdcc7c3bbf.jpg",
-          "dominio": "tuttosport.com",
-          "affidabilita": 2,
-          "quando": "9 g fa"
-        },
-        {
           "titolo": "Amorim-Milan, dall'Inghilterra: \"Senza filtri come Mou, allo United ha fallito per testardaggine\"",
           "fonte": "eurosport.it",
           "stato": "rumor",
           "link": "https://www.eurosport.it/calcio/calciomercato/2025-2026/ruben-amorim-al-milan.-la-redazione-di-eurosport-uk-onesto-come-mourinho-ma-ostinato-sul-modulo-la-mancanza-di-un-management-forte-puo-aiutarlo_sto23310189/story.shtml",
-          "img": "",
+          "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg):focal(181x48:183x46)/origin-imgresizer.eurosport.com/2026/06/16/image-b6ee896f-2e70-44e3-9960-97d9569f3327-85-2560-1440.png",
           "dominio": "eurosport.it",
           "affidabilita": 2,
           "quando": "12 g fa"
@@ -7460,6 +7511,16 @@
           "dominio": "fantacalcio.it",
           "affidabilita": 1,
           "quando": "14 g fa"
+        },
+        {
+          "titolo": "Pio Esposito protagonista nella giovane Italia, le voci sull'interesse del Manchester United: la posizione dell'Inter è chiarissima",
+          "fonte": "Goal.com",
+          "stato": "rumor",
+          "link": "https://www.goal.com/it/liste/pio-esposito-protagonista-nella-giovane-italia-le-voci-sull-interesse-del-manchester-united-la-posizione-dell-inter-e-chiarissima/bltcf4eb06107b16df7",
+          "img": "https://assets.goal.com/images/v3/blt9a483faf17eb950d/Introducing%20Pio%20Esposito.jpg",
+          "dominio": "goal.com",
+          "affidabilita": 1,
+          "quando": "19 g fa"
         }
       ],
       "nomi": {
@@ -7469,7 +7530,7 @@
             "direzione": "in",
             "club": "Inter",
             "_first": "2026-06-26",
-            "_seen": "2026-06-26",
+            "_seen": "2026-06-28",
             "_strong": ""
           }
         ],
@@ -7538,7 +7599,7 @@
             "fonte": "La Gazzetta dello Sport",
             "link": "https://www.gazzetta.it",
             "affidabilita": 2,
-            "quando": "1 ore fa"
+            "quando": "2 ore fa"
           },
           {
             "titolo": "Tonali obiettivo di mercato del Tottenham di De Zerbi, trattativa col Newcastle: le cifre dell'affare e quanto incassa il Milan",
@@ -7563,7 +7624,7 @@
             "fonte": "L Football",
             "link": "https://www.lfootball.it",
             "affidabilita": 1,
-            "quando": "1 g fa"
+            "quando": "2 g fa"
           }
         ]
       },
@@ -7586,7 +7647,7 @@
           "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/03/25/69c459f817c5e.r_d.356-201-0.webp",
           "dominio": "gazzetta.it",
           "affidabilita": 2,
-          "quando": "1 ore fa"
+          "quando": "2 ore fa"
         },
         {
           "titolo": "Napoli, cambio in porta: la prima scelta di Allegri è Vicario. Ma prima le uscite",
@@ -7606,6 +7667,14 @@
             "direzione": "out",
             "club": "Inter",
             "_first": "2026-06-10",
+            "_seen": "2026-06-28",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Guilermo Vicario",
+            "direzione": "out",
+            "club": "Napoli",
+            "_first": "2026-06-28",
             "_seen": "2026-06-28",
             "_strong": ""
           },
@@ -7674,17 +7743,17 @@
             "_first": "2026-06-25",
             "_seen": "2026-06-28",
             "_strong": "2026-06-27"
-          },
+          }
+        ],
+        "conf": [
           {
             "giocatore": "Marcos Senesi",
             "direzione": "in",
             "club": "Bournemouth",
             "_first": "2026-06-24",
-            "_seen": "2026-06-27",
-            "_strong": "2026-06-27"
-          }
-        ],
-        "conf": [
+            "_seen": "2026-06-28",
+            "_strong": "2026-06-28"
+          },
           {
             "giocatore": "Marley Senesi",
             "direzione": "in",
@@ -7851,7 +7920,7 @@
             "fonte": "Corriere dello Sport",
             "link": "https://www.corrieredellosport.it",
             "affidabilita": 2,
-            "quando": "2 ore fa"
+            "quando": "3 ore fa"
           },
           {
             "titolo": "Juve: perché il Dibu Martínez può essere il portiere giusto per il futuro bianconero",
@@ -7861,18 +7930,11 @@
             "quando": "18 g fa"
           },
           {
-            "titolo": "Douglas Luiz ritorna alla Juve: l'Aston Villa non esercita la clausola per il riscatto, il punto",
-            "fonte": "Tuttosport",
-            "link": "https://www.tuttosport.com",
-            "affidabilita": 2,
-            "quando": "30 g fa"
-          },
-          {
             "titolo": "Zvone Boban su Hendrik Almstadt, l'uomo mercato del Milan: \"Cosa ne capisce lui di pallone\"",
             "fonte": "Fanpage",
             "link": "https://www.fanpage.it",
             "affidabilita": 1,
-            "quando": "5 g fa"
+            "quando": "6 g fa"
           }
         ],
         "obj": [
@@ -7887,6 +7949,13 @@
             "titolo": "Calciomercato Juventus, per la porta tutto sul Dibu Martinez: la trattativa e i costi dell'operazione",
             "fonte": "Sisal",
             "link": "https://www.sisal.it",
+            "affidabilita": 1,
+            "quando": "18 g fa"
+          },
+          {
+            "titolo": "Calciomercato Juventus, il Dibu Martinez dice sì! I dettagli della trattativa con l'Aston Villa",
+            "fonte": "Betfair",
+            "link": "https://www.betfair.it",
             "affidabilita": 1,
             "quando": "18 g fa"
           },
@@ -8179,6 +8248,13 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "Glasner avvisa il Milan: 'Per accettare deve essere tutto perfetto'",
+            "fonte": "Sky Sport",
+            "link": "https://sport.sky.it",
+            "affidabilita": 3,
+            "quando": "18 g fa"
+          },
+          {
             "titolo": "Allenatore Milan, previsto un contatto con Glasner",
             "fonte": "Sky Sport",
             "link": "https://sport.sky.it",
@@ -8213,6 +8289,16 @@
       },
       "feed": [
         {
+          "titolo": "Glasner avvisa il Milan: 'Per accettare deve essere tutto perfetto'",
+          "fonte": "Sky Sport",
+          "stato": "rumor",
+          "link": "https://sport.sky.it/calciomercato/2026/06/10/glasner-milan-calciomercato-news",
+          "img": "https://sport.sky.it/assets/images/febfd3dbf3b78c29636b385f2848b53bc01a1f6d/skysport/it/calcio/calciomercato/2026/06/10/milan-glasner-rangnick-calciomercato-news/glasner_milan_ipa.jpg?im=Resize,width=1218",
+          "dominio": "sport.sky.it",
+          "affidabilita": 3,
+          "quando": "18 g fa"
+        },
+        {
           "titolo": "Allenatore Milan, previsto un contatto con Glasner",
           "fonte": "Sky Sport",
           "stato": "rumor",
@@ -8231,16 +8317,6 @@
           "dominio": "ansa.it",
           "affidabilita": 1,
           "quando": "25 g fa"
-        },
-        {
-          "titolo": "Calciomercato: Glasner saluta il Crystal Palace, per il Milan anche Jaissle",
-          "fonte": "ANSA",
-          "stato": "rumor",
-          "link": "https://www.ansa.it/sito/notizie/sport/calcio/2026/06/02/glasner-saluta-il-crystal-palace-costruito-una-mentalita-vincente_e9860ee2-3358-4586-acdc-dccb9d96cc43.html",
-          "img": "https://www.ansa.it/webimages/img_1129x635/2026/5/27/2616dcd66385bc09bf075ab9f3129745.jpg",
-          "dominio": "ansa.it",
-          "affidabilita": 1,
-          "quando": "26 g fa"
         }
       ],
       "nomi": {
@@ -8393,17 +8469,18 @@
             "_first": "2026-06-05",
             "_seen": "2026-06-28",
             "_strong": ""
-          },
+          }
+        ],
+        "conf": [
           {
             "giocatore": "Marcos Senesi",
             "direzione": "out",
             "club": "Tottenham",
             "_first": "2026-06-25",
             "_seen": "2026-06-28",
-            "_strong": "2026-06-27"
+            "_strong": "2026-06-28"
           }
         ],
-        "conf": [],
         "done": [
           {
             "giocatore": "Cristian Mandas",
@@ -8444,11 +8521,11 @@
             "quando": "167 g fa"
           },
           {
-            "titolo": "A beautiful mind (and club)",
-            "fonte": "Rivista Contrasti",
-            "link": "https://www.rivistacontrasti.it",
+            "titolo": "Calcio, Brentford da sogno: è in Premier League per la 1a volta nella sua storia",
+            "fonte": "eurosport.it",
+            "link": "https://www.eurosport.it",
             "affidabilita": 2,
-            "quando": "1750 g fa"
+            "quando": "1856 g fa"
           },
           {
             "titolo": "Chi è Igor Thiago, il bomber del Brentford che sogna Scarpa d'Oro della Premier League e Mondiali 2026 col Brasile",
@@ -8517,7 +8594,7 @@
           "fonte": "eurosport.it",
           "stato": "rumor",
           "link": "https://www.eurosport.it/calcio/the-emirates-fa-cup/2025-2026/live-macclesfield-fc-brentford_mtc1648173/live.shtml",
-          "img": "",
+          "img": "https://assets.eurosport.io/web/img/og/eurosport.jpg",
           "dominio": "eurosport.it",
           "affidabilita": 2,
           "quando": "131 g fa"
@@ -8632,7 +8709,7 @@
           "fonte": "eurosport.it",
           "stato": "done",
           "link": "https://www.eurosport.it/calcio/calciomercato/2025-2026/milan-musah-e-chukwueze-ceduti-lamericano-e-ufficiale-allatalanta-il-nigeriano-va-al-fulham_sto23217270/story.shtml",
-          "img": "",
+          "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg)/origin-imgresizer.eurosport.com/2025/09/01/image-c8ae9819-778a-4d59-835d-d826d9f2c2e7-85-2560-1440.jpeg",
           "dominio": "eurosport.it",
           "affidabilita": 2,
           "quando": "300 g fa"
@@ -8871,7 +8948,7 @@
           "fonte": "eurosport.it",
           "stato": "rumor",
           "link": "https://www.eurosport.it/calcio/calciomercato/2026-2027/elliot-anderson-al-city-per-150-milioni-di-euro-follia-di-mercato-o-valutazione-congrua-e-perche-conta-la-homegrown-rule_sto23313361/story.shtml",
-          "img": "",
+          "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg):focal(174x75:176x73)/origin-imgresizer.eurosport.com/2026/06/25/image-d11ab4f7-2ad6-4fcf-8b2d-ccbcb7223a4a-85-2560-1440.jpeg",
           "dominio": "eurosport.it",
           "affidabilita": 2,
           "quando": "1 g fa"
@@ -8921,7 +8998,7 @@
             "fonte": "Toro.it",
             "link": "https://www.toro.it",
             "affidabilita": 1,
-            "quando": "19 ore fa"
+            "quando": "20 ore fa"
           },
           {
             "titolo": "Calciomercato Serie A: clamorosa scelta di Nico Paz, doppia ufficialità Milan",
@@ -8944,7 +9021,7 @@
           "img": "https://www.toro.it/wp-content/uploads/2026/03/1NC9857.jpg",
           "dominio": "toro.it",
           "affidabilita": 1,
-          "quando": "19 ore fa"
+          "quando": "20 ore fa"
         },
         {
           "titolo": "Calciomercato Serie A: clamorosa scelta di Nico Paz, doppia ufficialità Milan",
@@ -9048,7 +9125,7 @@
             "fonte": "Sky Sport",
             "link": "https://sport.sky.it",
             "affidabilita": 3,
-            "quando": "332 g fa"
+            "quando": "333 g fa"
           },
           {
             "titolo": "Sunderland promosso in Premier, scatta l'obbligo di riscatto per Le Fée",
@@ -9112,6 +9189,13 @@
             "quando": "332 g fa"
           },
           {
+            "titolo": "Le Fee dalla Roma al Sunderland, è ufficiale: cifre e formula del trasferimento",
+            "fonte": "Goal.com",
+            "link": "https://www.goal.com",
+            "affidabilita": 1,
+            "quando": "533 g fa"
+          },
+          {
             "titolo": "Jobe Bellingham firma per il Sunderland: è ufficiale il suo trasferimento",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
@@ -9129,7 +9213,7 @@
           "img": "https://sport.sky.it/assets/images/skysport/it/calcio/squadre/team_logo_56.png.transform/original/daf3d61a353cc1c6bba4dd2de00b07bf75b6b4f1/img.png",
           "dominio": "sport.sky.it",
           "affidabilita": 3,
-          "quando": "332 g fa"
+          "quando": "333 g fa"
         },
         {
           "titolo": "Sunderland promosso in Premier, scatta l'obbligo di riscatto per Le Fée",
