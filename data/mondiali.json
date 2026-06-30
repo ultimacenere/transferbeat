@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-06-30T20:45:22Z",
+  "aggiornato": "2026-06-30T23:43:37Z",
   "nome": "World Cup 2026",
   "groups": [
     {
@@ -5166,7 +5166,40 @@
             "iso": "se",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              3,
+              0
+            ],
+            "ht": [
+              1,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Kylian Mbappé",
+              "minute": "45",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Bradley Barcola",
+              "minute": "53",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Kylian Mbappé",
+              "minute": "74",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": []
         },
         {
           "round": "Round of 32",
@@ -5771,6 +5804,14 @@
   "news": {
     "it": [
       {
+        "titolo": "DIRETTA Mondiali 2026, Francia-Svezia 3-0, doppietta di Mbappé e gol di Barcola - Francia-Svezia, la cronaca testuale",
+        "fonte": "RaiNews",
+        "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-20-sedicesimi-costa-d-avorio-norvegia-francia-svezia-messico-ecuador-diretta-streaming-cronaca-highlights-video-live-risultati-564dd5a3-8c7a-456a-9d9c-4a71b2c05a1f.html",
+        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/07/01/1782859409444_.jpg",
+        "dominio": "rainews.it",
+        "quando": "1 ore fa"
+      },
+      {
         "titolo": "Mondiali 2026: la classifica aggiornata di tutti i gironi",
         "fonte": "Il Fatto Quotidiano",
         "link": "https://www.ilfattoquotidiano.it/2026/06/28/mondiali-2026-risultati-oggi-nuova-classifica-gironi/8416831/",
@@ -5779,20 +5820,28 @@
         "quando": "2 g fa"
       },
       {
-        "titolo": "Mondiali 2026, le partite di oggi in diretta: Costa d'Avorio-Norvegia 1-2, gol di Haaland nel finale, agli ottavi c'è il Brasile. Alle 23 Francia-Svezia",
-        "fonte": "corriere.it",
-        "link": "https://www.corriere.it/sport/calcio/mondiali/diretta-live/26_giugno_30/mondiali-2026-partite-oggi-risultato-diretta-francia-norvegia-messico.shtml",
-        "img": "https://dimages2.corriereobjects.it/files/image_1200_900/files/fp/uploads/2026/06/30/6a441270e0c1a.r_d.1973-1264-0.jpeg",
-        "dominio": "corriere.it",
-        "quando": "poco fa"
+        "titolo": "Francia-Svezia 0-0 LIVE ai Mondiali 2026, risultato in diretta: Mbappé sbatte contro un muro \"giallo\"",
+        "fonte": "Fanpage",
+        "link": "https://www.fanpage.it/sport/live/francia-svezia-live-ai-mondiali-2026-diretta-tv-su-dazn-a-che-ora-vedere-la-partita/",
+        "img": "",
+        "dominio": "fanpage.it",
+        "quando": "2 ore fa"
       },
       {
-        "titolo": "Mondiali 2026. Il Marocco va agli ottavi: Olanda battuta ai calci di rigore - Aggiornamento del 30 Giugno delle ore 08:23",
-        "fonte": "RaiNews",
-        "link": "https://www.rainews.it/maratona/2026/06/calcio-mondiali-2026-giorno-19-sedicesimi-brasile-giappone-germania-paraguay-paesi-bassi-olanda-marocco-diretta-streaming-cronaca-highlights-video-live-risultati-95b1f69e-cc66-48e3-9bbb-a98b1e90cb4e.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/06/30/1782775867262_.jpg",
-        "dominio": "rainews.it",
-        "quando": "14 ore fa"
+        "titolo": "Bielsa lascia l'Uruguay: \"È un addio molto doloroso\". Poi spiega la sostituzione di Muslera contro la Spagna",
+        "fonte": "Corriere dello Sport",
+        "link": "https://www.corrieredellosport.it/news/calcio/mondiali-2026/uruguay/2026/06/30-149582104/bielsa_lascia_l_uruguay_un_addio_molto_doloroso_poi_spiega_la_sostituzione_di_muslera_contro_la_spagna",
+        "img": "https://cdn.corrieredellosport.it/images/2026/06/30/214719878-77042e5f-0bf7-45b9-a3b8-e75b44c473e8.jpg",
+        "dominio": "corrieredellosport.it",
+        "quando": "1 ore fa"
+      },
+      {
+        "titolo": "Il calcio in TV oggi: alle 19 c'è Brasile-Giappone, poi Germania e Olanda. Dove vedere le partite in diretta",
+        "fonte": "Libero",
+        "link": "https://www.libero.it/magazine/news/calcio-in-tv-oggi-programmazione-diretta-lunedi-29-giugno-2026-cosa-vedere-212921",
+        "img": "https://wips.plug.it/cips/libero.it/magazine/cms/2026/06/vinicius-cover-1217.jpg",
+        "dominio": "libero.it",
+        "quando": "1 g fa"
       },
       {
         "titolo": "Mondiali di Calcio 2026 2026 - Brasile - Giappone 2-1: Highlights - Video",
@@ -5803,102 +5852,86 @@
         "quando": "1 g fa"
       },
       {
-        "titolo": "Cos'è successo ai Mondiali di Canada-Messico e Stati Uniti: Germania e Olanda eliminate ai rigori, imprese Paraguay e Marocco; il Brasile si spaventa ma batte 2-1 il Giappone al 95'",
-        "fonte": "corriere.it",
-        "link": "https://www.corriere.it/sport/calcio/mondiali/diretta-live/26_giugno_29/mondiali-2026-partite-oggi-risultati-diretta-brasile-giappone-germania-paraguay-olanda-marocco.shtml",
-        "img": "https://dimages2.corriereobjects.it/files/og_thumbnail/uploads/2026/06/30/6a430168110d4.jpeg",
-        "dominio": "corriere.it",
-        "quando": "15 ore fa"
-      },
-      {
-        "titolo": "Mondiali, le probabili formazioni di Francia-Svezia",
+        "titolo": "2025 ottavi brasile-norvegia preview",
         "fonte": "Sky Sport",
-        "link": "https://sport.sky.it/calcio/mondiali/2026/06/30/francia-svezia-probabili-formazioni-mondiali-2026",
-        "img": "https://sport.sky.it/assets/images/2e7f3745176c2431131a596c0f1a06617954ab2c/skysport/it/calcio/mondiali/2026/06/30/francia-svezia-probabili-formazioni-mondiali-2026/mbappe_francia_ipa.jpg?im=Resize,width=1218",
+        "link": "https://sport.sky.it/calcio/mondiali/partite/2026/ottavi/brasile-norvegia",
+        "img": "https://sport.sky.it/assets/images/fe3002a460d9904efad96e7882361f17a7cc77c2/skysport/configurations/skysport_condivisione.jpg?im=Resize,width=1218",
         "dominio": "sport.sky.it",
-        "quando": "11 ore fa"
+        "quando": "4 ore fa"
       },
       {
-        "titolo": "Francia - Svezia (0-0) Mondiali 2026",
-        "fonte": "la Repubblica",
-        "link": "https://www.repubblica.it/sport/dirette/calcio/mondiali-2026/diretta-francia-svezia-g2608317/",
-        "img": "https://www.repstatic.it/cless/main/nazionale/2013-v1/img/common/favicon/favicon-1500.png",
-        "dominio": "repubblica.it",
-        "quando": "poco fa"
-      },
-      {
-        "titolo": "Calcio in TV oggi: occhi puntati su Francia-Svezia. Dove vedere tutte le partite in diretta",
-        "fonte": "Libero",
-        "link": "https://www.libero.it/magazine/news/calcio-in-tv-oggi-programmazione-diretta-martedi-30-giugno-2026-cosa-vedere-213047",
-        "img": "https://wips.plug.it/cips/libero.it/magazine/cms/2026/06/dembele-cover-1217.jpg",
-        "dominio": "libero.it",
-        "quando": "14 ore fa"
+        "titolo": "Gakpo, gol e lacrime. Diop riprende l'Olanda al 91', poi il Marocco vince ai rigori e vola agli ottavi",
+        "fonte": "La Gazzetta dello Sport",
+        "link": "https://www.gazzetta.it/Calcio/Mondiali/30-06-2026/mondiali-risultati-olanda-marocco-la-diretta.shtml",
+        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/06/30/6a43408590d45.jpeg",
+        "dominio": "gazzetta.it",
+        "quando": "19 ore fa"
       }
     ],
     "en": [
-      {
-        "titolo": "The U.S. move into the top 10 for the first time. Re-ranking the 48 World Cup teams after day 19 - The Athletic",
-        "fonte": "The New York Times",
-        "link": "https://www.nytimes.com/athletic/7329359/2026/06/30/world-cup-2026-teams-ranked/",
-        "img": "https://static01.nyt.com/athletic/uploads/wp/2026/06/30055600/GettyImages-2281311970-scaled.jpg?width=1200&height=630&fit=cover",
-        "dominio": "nytimes.com",
-        "quando": "9h ago"
-      },
-      {
-        "titolo": "'A moment of real quality' - Nusa's sensational strike puts Norway ahead",
-        "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/videos/cj0gd9q322zo",
-        "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/a906/live/eeb1b070-74ae-11f1-8e1d-bbbb1017d210.jpg",
-        "dominio": "bbc.co.uk",
-        "quando": "2h ago"
-      },
-      {
-        "titolo": "World Cup 2026: Ecuador make Mexico fans hotel noise complaint",
-        "fonte": "BBC",
-        "link": "https://www.bbc.com/sport/football/articles/clyrgng719eo",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/2058/live/5f9b81a0-74b7-11f1-8572-b986307331bd.jpg",
-        "dominio": "bbc.com",
-        "quando": "1h ago"
-      },
-      {
-        "titolo": "France vs Sweden live updates: Mbappe set to start today’s 2026 World Cup knockout clash",
-        "fonte": "The New York Times",
-        "link": "https://www.nytimes.com/athletic/live-blogs/france-vs-sweden-live-updates-world-cup-2026-score-result/UBqUo1Ql2ftp/",
-        "img": "https://cdn-media.theathletic.com/cdn-cgi/image/width=1200,height=630,fit=cover/UBqUo1Ql2ftp_c1Up5SvKyBCA_1440x960.jpg",
-        "dominio": "nytimes.com",
-        "quando": "1h ago"
-      },
-      {
-        "titolo": "France v Sweden: World Cup 2026 last 32 – live",
-        "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jun/30/france-v-sweden-world-cup-2026-last-32-live",
-        "img": "https://i.guim.co.uk/img/media/bbf00d04b0aed078726fe31f18300be1de01e004/502_0_5000_4000/master/5000.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=b649cdedfb05dd910f68463408cd5657",
-        "dominio": "theguardian.com",
-        "quando": "just now"
-      },
-      {
-        "titolo": "France vs Sweden live: Score and latest 2026 World Cup updates",
-        "fonte": "The Telegraph",
-        "link": "https://www.telegraph.co.uk/football/2026/06/30/france-vs-sweden-live-score-latest-2026-world-cup-updates/",
-        "img": "",
-        "dominio": "telegraph.co.uk",
-        "quando": "just now"
-      },
       {
         "titolo": "World Cup 2026: Klopp plays down Germany job links; Livramento has surgery – as it happened",
         "fonte": "The Guardian",
         "link": "https://www.theguardian.com/football/live/2026/jun/30/world-cup-2026-netherlands-and-germany-crash-out-plus-cote-divoire-v-norway-buildup-live",
         "img": "https://i.guim.co.uk/img/media/48b1e0b6af06170dfa26100cd5e74135c7eec56f/0_0_4551_3642/master/4551.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=5da9486adbcc92bbf5bb8183ce355ae4",
         "dominio": "theguardian.com",
-        "quando": "13h ago"
+        "quando": "16h ago"
       },
       {
-        "titolo": "Football Daily | What next for Germany as Paraguay and penalties fuel more World Cup pain?",
-        "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/2026/jun/30/what-next-for-germany-as-paraguay-and-penalties-fuel-more-world-cup-pain",
-        "img": "https://i.guim.co.uk/img/media/fd56bed1f6cbdc6f24ed4b73923080d57d176600/361_0_2976_2382/master/2976.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=38b666c64e410087050ff67da5177867",
-        "dominio": "theguardian.com",
-        "quando": "5h ago"
+        "titolo": "World Cup 2026: Last 16 for Paraguay, Morocco & Brazil as Germany, Netherlands and Japan go out",
+        "fonte": "BBC",
+        "link": "https://www.bbc.co.uk/sport/football/live/czrx1dvlmydt",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/5810/live/60a4d390-7470-11f1-b1db-af71d47507d6.png",
+        "dominio": "bbc.co.uk",
+        "quando": "11h ago"
+      },
+      {
+        "titolo": "World Cup 2026: Koeman resigns as Netherlands report 'appalling' racist abuse",
+        "fonte": "BBC",
+        "link": "https://www.bbc.com/sport/football/articles/cly0g1y3v00o",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/52d3/live/6fd8e880-74cd-11f1-a83d-c354d9be0694.jpg",
+        "dominio": "bbc.com",
+        "quando": "2h ago"
+      },
+      {
+        "titolo": "France vs Sweden LIVE: World Cup 2026 reaction as Mbappé hits another brace, Les Bleus flex their muscles",
+        "fonte": "ESPN",
+        "link": "https://www.espn.co.uk/football/story/_/id/49227768/france-sweden-live-world-cup-2026-latest-updates-commentary-score-result",
+        "img": "",
+        "dominio": "espn.co.uk",
+        "quando": "just now"
+      },
+      {
+        "titolo": "Mexico vs Ecuador live updates: World Cup 2026 round of 32 game latest score and team news",
+        "fonte": "The New York Times",
+        "link": "https://www.nytimes.com/athletic/live-blogs/mexico-vs-ecuador-live-updates-world-cup-2026-score-result/8dUPZ0UUYKKQ/",
+        "img": "https://cdn-media.theathletic.com/cdn-cgi/image/width=1200,height=630,fit=cover/8dUPZ0UUYKKQ_sWRjBK5DfCZg_1440x973.jpg",
+        "dominio": "nytimes.com",
+        "quando": "just now"
+      },
+      {
+        "titolo": "World Cup news latest: Tuchel says key player will start for England - after another Haaland World Cup winner",
+        "fonte": "Sky News",
+        "link": "https://news.sky.com/story/world-cup-live-morocco-germany-netherlands-paraguay-england-three-lions-latest-13535760",
+        "img": "",
+        "dominio": "news.sky.com",
+        "quando": "2d ago"
+      },
+      {
+        "titolo": "World Cup 2026: Why England and Thomas Tuchel should be worried about DR Congo ahead of last-32 clash",
+        "fonte": "Sky Sports",
+        "link": "https://www.skysports.com/football/news/12098/13558773/world-cup-2026-why-england-and-thomas-tuchel-should-be-worried-about-dr-congo-ahead-of-their-last-32-clash",
+        "img": "https://e0.365dm.com/26/06/1600x900/skysports-dr-congo-wissa-aaron-wan-bissaka_7285527.jpg?20260629102240",
+        "dominio": "skysports.com",
+        "quando": "15h ago"
+      },
+      {
+        "titolo": "German chancellor faces backlash for being ‘thrilled’ by World Cup flops",
+        "fonte": "The Telegraph",
+        "link": "https://www.telegraph.co.uk/football/2026/06/30/germany-calls-for-jurgen-klopp-after-world-cup-humiliation/",
+        "img": "https://www.telegraph.co.uk/content/dam/briefs/2026/06/30/TELEMMGLPICT000493114738_17828067878410_trans_NvBQzQNjv4BqVYxRx2_9udgNR4uaqOYbBqS-UyG44at75VysheuSlvg.jpeg?impolicy=OG-Standard",
+        "dominio": "telegraph.co.uk",
+        "quando": "12h ago"
       }
     ],
     "es": [
@@ -5911,28 +5944,44 @@
         "quando": "1 d"
       },
       {
-        "titolo": "Cuadro del Mundial 2026: cruces, equipos clasificados y posibles rivales de España",
-        "fonte": "El Mundo",
-        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/29/6a425851fc6c83fb268b4576.html",
-        "img": "https://e01-phantom-elmundo.uecdn.es/35d5175423c38cb7f56ed42d336199e9/resize/1200/f/webp/assets/multimedia/imagenes/2026/06/29/17827477017128.jpg",
-        "dominio": "elmundo.es",
-        "quando": "14 h"
-      },
-      {
-        "titolo": "Lamine Yamal: \"Somos la única selección a la que se le exige jugar muy bien. Cuando lo hagamos, seremos imparables\"",
-        "fonte": "Cadena SER",
-        "link": "https://cadenaser.com/nacional/2026/06/30/lamine-yamal-somos-la-unica-seleccion-a-la-que-se-le-exige-jugar-muy-bien-cuando-lo-hagamos-seremos-imparables-cadena-ser/",
-        "img": "https://cadenaser.com/resizer/v2/J433OJT6HZA3BHBEVYPAZJRWXU.jpg?auth=882497a01113f4777594e17550deaaac4833565d7f817a0f19e306ff97aeafbd&quality=70&width=1200&height=675&focal=771,3",
-        "dominio": "cadenaser.com",
-        "quando": "2 h"
-      },
-      {
-        "titolo": "Costa de Marfil - Noruega hoy, en directo: dieciseisavos de final del Mundial 2026, resultado en vivo",
-        "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/costa-de-marfil-noruega-en-directo-partido-de-dieciseisavos-de-final-del-mundial-2026-hoy-en-vivo-f202606-d/",
+        "titolo": "Mundial 2026: ¿qué partidos se juegan hoy, 30 de junio? Horarios y enfrentamientos",
+        "fonte": "CNN en Español",
+        "link": "https://cnnespanol.cnn.com/2026/06/30/deportes/mundial-2026-partidos-30-junio-orix",
         "img": "",
+        "dominio": "cnnespanol.cnn.com",
+        "quando": "12 h"
+      },
+      {
+        "titolo": "Cenar a las 20.00, en la cama a las 22.30, desayunando (con poco aguacate) a las 8.00... las rutinas de España para los partidos matinales del Mundial",
+        "fonte": "El Mundo",
+        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/07/01/6a42f8e9fdddff5f358b4587.html",
+        "img": "https://e01-phantom-elmundo.uecdn.es/01fb5492f9f5b892a99ed8a56a1f042d/resize/1200/f/webp/assets/multimedia/imagenes/2026/06/30/17828453271403.jpg",
+        "dominio": "elmundo.es",
+        "quando": "ahora"
+      },
+      {
+        "titolo": "Francia - Suecia hoy, en directo: partido de dieciseisavos de final del Mundial 2026, en vivo",
+        "fonte": "Diario AS",
+        "link": "https://as.com/futbol/mundial/francia-suecia-hoy-en-directo-dieciseisavos-de-final-del-mundial-2026-resultado-en-vivo-f202606-d/",
+        "img": "https://img.asmedia.epimg.net/resizer/v2/6F6SL5535BKKDHABSO5JO7XNLY.jpg?auth=50414edd95799c873d5ce9fa3e61af4b59727e20fe42fda77b63fa25b35bd4ac&width=1472&height=828&focal=1124%2C348",
         "dominio": "as.com",
-        "quando": "2 h"
+        "quando": "1 h"
+      },
+      {
+        "titolo": "Francia - Suecia : Mundial 2026, en directo | Dos goles de Mbappé y uno de Barcola encumbran a una Francia que da miedo",
+        "fonte": "EL PAÍS",
+        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-30/francia-suecia-en-directo-partido-de-dieciseisavos-de-final-del-mundial-2026-en-vivo.html",
+        "img": "https://imagenes.elpais.com/resizer/v2/XFNUHDXW5JNFFFSXRCJCPDW4YI.jpg?auth=8c09a5ac81d9f4e4c3714d3382285dc13835b9f45c22abfef8503d34265bac41&width=1200",
+        "dominio": "elpais.com",
+        "quando": "ahora"
+      },
+      {
+        "titolo": "Mbappé arrasa a Suecia y Francia avanza a octavos, donde ya espera el 'matagigantes' del Mundial 2026",
+        "fonte": "20minutos.es",
+        "link": "https://www.20minutos.es/deportes/futbol/francia-suecia-mundial-2026-directo-goles-marcador-ultima-hora-los-dieciseisavos-final_7009003_6.html",
+        "img": "https://imagenes.20minutos.es/files/image_1920_1080/files/fp/uploads/imagenes/2026/07/01/6a4445b260eaa0-50521305.r_d.853-572.jpeg",
+        "dominio": "20minutos.es",
+        "quando": "ahora"
       },
       {
         "titolo": "Costa de Marfil 1-2 Noruega | Resumen Mundial 2026",
@@ -5940,31 +5989,15 @@
         "link": "https://www.marca.com/futbol/mundial/2026/06/30/costa-marfil-1-2-noruega-resumen-mundial-2026-video.html",
         "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/06/30/c2y_I1gH1Tjp0JzC7.jpeg",
         "dominio": "marca.com",
-        "quando": "1 h"
+        "quando": "4 h"
       },
       {
-        "titolo": "El hipnótico 'remo vikingo' de Noruega tras su victoria de 1-2 ante Costa de Marfil que se ha viralizado",
-        "fonte": "El Mundo",
-        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/06/30/6a4423fafc6c836f138b4589-video.html",
-        "img": "https://e01-phantom-elmundo.uecdn.es/620b58a1e778efe000191ebac944164f/provider/dm/crop/150x0/1770x1080/resize/1200/f/webp/v/c2_Vg1gH2E_p5Zg9x/x1080",
-        "dominio": "elmundo.es",
-        "quando": "ahora"
-      },
-      {
-        "titolo": "Mundial de 2026, en directo : Francia - Suecia, en vivo",
-        "fonte": "EL PAÍS",
-        "link": "https://elpais.com/deportes/mundial-futbol/2026-06-30/francia-suecia-en-directo-partido-de-dieciseisavos-de-final-del-mundial-2026-en-vivo.html",
-        "img": "",
-        "dominio": "elpais.com",
-        "quando": "ahora"
-      },
-      {
-        "titolo": "Francia - Suecia hoy, en directo: dieciseisavos de final del Mundial 2026, resultado en vivo",
+        "titolo": "Resumen y goles del Noruega vs Costa de Marfil, 1/16 del Mundial 2026",
         "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/francia-suecia-hoy-en-directo-dieciseisavos-de-final-del-mundial-2026-resultado-en-vivo-f202606-d/",
-        "img": "",
+        "link": "https://as.com/futbol/videos/resumen-y-goles-del-noruega-vs-costa-de-marfil-116-del-mundial-2026-f202606-v/",
+        "img": "https://img.asmedia.epimg.net/resizer/v2/3355NAXXNJN2PCK2YXSNPWHD2Y.jpg?auth=5328a468f71617877413f6a4d0d7f7faba5038e258ec2c08077fc1dc5db2170a&width=1472&height=828&smart=true",
         "dominio": "as.com",
-        "quando": "ahora"
+        "quando": "4 h"
       }
     ]
   }
