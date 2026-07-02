@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-07-02T20:31:01Z",
+  "aggiornato": "2026-07-02T22:08:06Z",
   "nome": "World Cup 2026",
   "groups": [
     {
@@ -5446,7 +5446,40 @@
             "iso": "at",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              3,
+              0
+            ],
+            "ht": [
+              1,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Mikel Oyarzabal",
+              "minute": "36",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Pedro Porro",
+              "minute": "66",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Mikel Oyarzabal",
+              "minute": "89",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": []
         },
         {
           "round": "Round of 32",
@@ -5941,52 +5974,12 @@
   "news": {
     "it": [
       {
-        "titolo": "Spagna - Austria Mondiali 2026",
+        "titolo": "Spagna - Austria (3-0) Mondiali 2026",
         "fonte": "la Repubblica",
         "link": "https://www.repubblica.it/sport/dirette/calcio/mondiali-2026/diretta-spagna-austria-g2608324/",
         "img": "https://www.repstatic.it/cless/main/nazionale/2013-v1/img/common/favicon/favicon-1500.png",
         "dominio": "repubblica.it",
-        "quando": "2 ore fa"
-      },
-      {
-        "titolo": "Mondiali di Calcio 2026 2026 - Inghilterra - R.D. del Congo 2-1: Highlights - Video",
-        "fonte": "RaiPlay",
-        "link": "https://www.raiplay.it/video/2026/07/Inghilterra---RD-del-Congo-2-1-Highlights--Mondiali-di-Calcio-FIFA-2026-d1eca037-a5e3-46b9-968c-a2723b6d1944.html",
-        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/07/01/1782930365728_Inghliterra4852.jpg",
-        "dominio": "raiplay.it",
-        "quando": "1 g fa"
-      },
-      {
-        "titolo": "Dove vedere Portogallo-Croazia, Mondiali 2026: Dazn o Rai, orario, tv e streaming",
-        "fonte": "Corriere dello Sport",
-        "link": "https://www.corrieredellosport.it/news/calcio/mondiali-2026/2026/07/02-149611582/dove_vedere_portogallo-croazia_mondiali_2026_dazn_o_rai_orario_tv_e_streaming",
-        "img": "https://cdn.corrieredellosport.it/images/2026/07/02/075306740-cef670e1-eae5-439a-8d23-1d8e508950b8.jpg",
-        "dominio": "corrieredellosport.it",
-        "quando": "12 ore fa"
-      },
-      {
-        "titolo": "Mondiali di Calcio 2026 2026 - Belgio - Senegal 3-2: Rigore di Tielemans - Video",
-        "fonte": "RaiPlay",
-        "link": "https://www.raiplay.it/video/2026/07/Belgio---Senegal-3-2-Rigore-di-Tielemans--Mondiali-di-Calcio-FIFA-2026-e4fcf062-e34f-4211-b437-225463ae36d3.html",
-        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/07/02/1782947754810_mondiali%20di%20calcio%202026%20belgio%20senegal%20tielemans.jpg",
-        "dominio": "raiplay.it",
-        "quando": "20 ore fa"
-      },
-      {
-        "titolo": "Ribaltone Belgio: da 0-2 a 3-2 contro il Senegal. La decide Tielemans nel recupero dei supplementari",
-        "fonte": "La Gazzetta dello Sport",
-        "link": "https://www.gazzetta.it/Calcio/Mondiali/01-07-2026/mondiali-la-diretta-di-belgio-senegal-live-e-risultato.shtml",
-        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/07/02/6a459a1272ef4.r_d.1491-1040-0.jpeg",
-        "dominio": "gazzetta.it",
-        "quando": "14 ore fa"
-      },
-      {
-        "titolo": "Mondiali 2026, nella ripresa il Senegal raddoppia con Sarr",
-        "fonte": "RaiNews",
-        "link": "https://www.rainews.it/video/2026/07/mondiali-di-calcio-coppa-del-mondo-fifa-2026-senegal-belgio-gol-sarr-eb870664-23e5-4cac-8ddb-c3d0a24a312c.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/07/01/1782940851018_.png",
-        "dominio": "rainews.it",
-        "quando": "23 ore fa"
+        "quando": "3 ore fa"
       },
       {
         "titolo": "Usa agli ottavi: Bosnia ko 2-0. Balogun espulso",
@@ -5994,7 +5987,7 @@
         "link": "https://sport.sky.it/calcio/mondiali/2026/07/02/stati-uniti-bosnia-mondiali-2026-risultato-gol-statis",
         "img": "https://sport.sky.it/assets/images/627d8ab358ac5f470acb51b8f994bb47529a9f43/skysport/it/calcio/mondiali/2026/07/02/stati-uniti-bosnia-mondiali-2026-risultato-gol-statis/ansa_stati_uniti_bosnia.jpg?im=Resize,width=1218",
         "dominio": "sport.sky.it",
-        "quando": "16 ore fa"
+        "quando": "18 ore fa"
       },
       {
         "titolo": "Mondiali di Calcio 2026 2026 - Stati Uniti - Bosnia ed Erzegovina 2-0: Highlights - Video",
@@ -6002,65 +5995,89 @@
         "link": "https://www.raiplay.it/video/2026/07/Stati-Uniti---Bosnia-ed-Erzegovina-2-0-Highlights--Mondiali-di-Calcio-FIFA-2026-2207f836-facb-4b41-aec6-083d63b81050.html",
         "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/07/02/1782962194171_1280x720.jpg",
         "dominio": "raiplay.it",
-        "quando": "20 ore fa"
+        "quando": "22 ore fa"
+      },
+      {
+        "titolo": "Mondiali 2026, USA-Bosnia: le formazioni ufficiali",
+        "fonte": "Fantacalcio",
+        "link": "https://www.fantacalcio.it/news/calcio-estero/mondiali/01_07_2026/mondiali-2026-usa-bosnia-formazioni-ufficiali-494847",
+        "img": "https://content.fantacalcio.it/web/img/large/usa-532da890-b50a-4c84-a1f5-8320152a62d5.jpg",
+        "dominio": "fantacalcio.it",
+        "quando": "23 ore fa"
+      },
+      {
+        "titolo": "LIVE All'1 Portogallo-Croazia: CR7 sfida Modric, chi vince trova la Spagna",
+        "fonte": "La Gazzetta dello Sport",
+        "link": "https://www.gazzetta.it/Calcio/Mondiali/02-07-2026/portogallo-croazia-live-risultato-e-gol-in-diretta-mondiali.shtml",
+        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/07/02/6a46c1a13e6c5.jpeg",
+        "dominio": "gazzetta.it",
+        "quando": "poco fa"
+      },
+      {
+        "titolo": "Portogallo - Croazia Mondiali 2026",
+        "fonte": "la Repubblica",
+        "link": "https://www.repubblica.it/sport/dirette/calcio/mondiali-2026/diretta-portogallo-croazia-g2608323/",
+        "img": "https://www.repstatic.it/cless/main/nazionale/2013-v1/img/common/favicon/favicon-1500.png",
+        "dominio": "repubblica.it",
+        "quando": "poco fa"
+      },
+      {
+        "titolo": "Dove vedere Portogallo-Croazia, Mondiali 2026: Dazn o Rai, orario, tv e streaming",
+        "fonte": "Corriere dello Sport",
+        "link": "https://www.corrieredellosport.it/news/calcio/mondiali-2026/2026/07/02-149611582/dove_vedere_portogallo-croazia_mondiali_2026_dazn_o_rai_orario_tv_e_streaming",
+        "img": "https://cdn.corrieredellosport.it/images/2026/07/02/075306740-cef670e1-eae5-439a-8d23-1d8e508950b8.jpg",
+        "dominio": "corrieredellosport.it",
+        "quando": "13 ore fa"
+      },
+      {
+        "titolo": "Mondiali di Calcio 2026 2026 - Belgio - Senegal 3-2: Rigore di Tielemans - Video",
+        "fonte": "RaiPlay",
+        "link": "https://www.raiplay.it/video/2026/07/Belgio---Senegal-3-2-Rigore-di-Tielemans--Mondiali-di-Calcio-FIFA-2026-e4fcf062-e34f-4211-b437-225463ae36d3.html",
+        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/07/02/1782947754810_mondiali%20di%20calcio%202026%20belgio%20senegal%20tielemans.jpg",
+        "dominio": "raiplay.it",
+        "quando": "22 ore fa"
       }
     ],
     "en": [
-      {
-        "titolo": "World Cup 2026: An audience of 16.3m tunes in to watch England's win over DR Congo",
-        "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/articles/cvg40883026o",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/9d99/live/e7b45390-75f8-11f1-8c3f-e37c76e39331.jpg",
-        "dominio": "bbc.co.uk",
-        "quando": "8h ago"
-      },
       {
         "titolo": "The USMNT are on the rise: Re-ranking the 48 World Cup teams after day 21 - The Athletic",
         "fonte": "The New York Times",
         "link": "https://www.nytimes.com/athletic/7329359/2026/07/01/world-cup-2026-teams-ranked/",
         "img": "https://static01.nyt.com/athletic/uploads/wp/2026/07/02045027/GettyImages-2284259839-scaled-e1782982260140.jpg?width=1200&height=630&fit=cover",
         "dominio": "nytimes.com",
-        "quando": "8h ago"
+        "quando": "10h ago"
       },
       {
-        "titolo": "FIFA World Cup 2026",
+        "titolo": "Portugal v Croatia: World Cup 2026 last 32 – live",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/live/2026/jul/02/portugal-v-croatia-world-cup-2026-last-32-live",
+        "img": "https://i.guim.co.uk/img/media/66962b99fe9905775a724f88778672fa5eaebdc4/185_0_4164_3333/master/4164.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=aa4d6279e97c31434b6a87c236e7d958",
+        "dominio": "theguardian.com",
+        "quando": "just now"
+      },
+      {
+        "titolo": "FIFA World Cup 2026 - Round of 32: Spain v Austria",
         "fonte": "BBC",
         "link": "https://www.bbc.co.uk/iplayer/episode/m002yzbs/fifa-world-cup-2026-round-of-32-spain-v-austria",
         "img": "",
         "dominio": "bbc.co.uk",
-        "quando": "1h ago"
-      },
-      {
-        "titolo": "Spain v Austria: World Cup 2026 last 32 – live",
-        "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jul/02/spain-v-austria-world-cup-2026-last-32-live",
-        "img": "https://i.guim.co.uk/img/media/49bd31d92bc8bfd4a8ac2c6d59482e8cefb4ac67/817_189_2440_1952/master/2440.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=fecbc1c8abbdbc45b93e6ae7e84b8b97",
-        "dominio": "theguardian.com",
         "quando": "3h ago"
       },
       {
-        "titolo": "Spain vs. Austria (2 Jul, 2026) Live Score",
-        "fonte": "ESPN",
-        "link": "https://www.espn.co.uk/football/match/_/gameId/760497",
-        "img": "https://a.espncdn.com/combiner/i?img=/i/espn/misc_logos/500/soccer.png",
-        "dominio": "espn.co.uk",
-        "quando": "1h ago"
+        "titolo": "Mikel Oyarzabal at the double as Spain beat Austria and cruise into last 16",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/2026/jul/02/spain-austria-world-cup-2026-last-32-match-report",
+        "img": "https://i.guim.co.uk/img/media/69c5f8122c35f6aa5524f310c0d6aa8fd5bd924c/291_0_2916_2332/master/2916.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=371aa38301fc32ae1a7401065da080e1",
+        "dominio": "theguardian.com",
+        "quando": "just now"
       },
       {
-        "titolo": "World Cup 2026: England keep Mexico venue quiet to avoid noisy locals",
+        "titolo": "World Cup 2026: Rate the players in Spain v Austria",
         "fonte": "BBC",
-        "link": "https://www.bbc.com/sport/football/articles/c74y7jwj30eo",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/4e17/live/e9353cb0-7644-11f1-80e8-6762ba9fc358.jpg",
+        "link": "https://www.bbc.com/sport/football/articles/c982p3vppjno",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/ecde/live/59521570-7322-11f1-8546-8f19e4fe30f4.png",
         "dominio": "bbc.com",
         "quando": "1h ago"
-      },
-      {
-        "titolo": "LIVE: Portugal vs Croatia – FIFA World Cup 2026",
-        "fonte": "Al Jazeera",
-        "link": "https://www.aljazeera.com/sports/liveblog/2026/7/2/live-portugal-vs-croatia-fifa-world-cup-2026",
-        "img": "https://www.aljazeera.com/wp-content/uploads/2026/07/afp_6a461b7b9e75-1782979451_e1536c-1782979914.jpg?resize=1200%2C630&quality=80",
-        "dominio": "aljazeera.com",
-        "quando": "just now"
       },
       {
         "titolo": "World Cup 2026: Klopp linked with Germany job; Spain and Portugal face last-32 tests – as it happened",
@@ -6068,25 +6085,33 @@
         "link": "https://www.theguardian.com/football/live/2026/jul/02/world-cup-2026-england-and-belgium-fight-back-spain-v-austria-buildup-and-more-live",
         "img": "",
         "dominio": "theguardian.com",
-        "quando": "13h ago"
+        "quando": "4h ago"
+      },
+      {
+        "titolo": "England’s plan to deal with Azteca’s high altitude and Mexican tricks",
+        "fonte": "The Telegraph",
+        "link": "https://www.telegraph.co.uk/football/2026/07/02/england-plan-conquer-azteca-altitude-travel-dirty-tricks/",
+        "img": "https://www.telegraph.co.uk/content/dam/football/2026/07/02/TELEMMGLPICT000493247458_17830144307780_trans_NvBQzQNjv4Bq8U8GbrEFpXuB8cltYGNf4Bj54i6QPUHxPvjjGabkY9g.jpeg?impolicy=OG-Standard",
+        "dominio": "telegraph.co.uk",
+        "quando": "4h ago"
+      },
+      {
+        "titolo": "Mexico vs England: Pubs allowed to stay open until 5am for Three Lions' World Cup last-16 tie",
+        "fonte": "Sky Sports",
+        "link": "https://www.skysports.com/football/news/11095/13559749/england-bank-holiday",
+        "img": "https://e0.365dm.com/26/07/1600x900/skysports-england-fans-world-cup_7288255.jpg?20260702163410",
+        "dominio": "skysports.com",
+        "quando": "5h ago"
       }
     ],
     "es": [
       {
-        "titolo": "Cuadro del Mundial 2026: equipos clasificados a octavos, cruces y quién se enfrenta a quién en dieciseisavos d",
-        "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/cuadro-del-mundial-2026-equipos-clasificados-a-octavos-cruces-y-quien-se-enfrenta-a-quien-en-dieciseisavos-de-la-copa-del-mundo-f202607-n/",
-        "img": "",
-        "dominio": "as.com",
-        "quando": "13 h"
-      },
-      {
-        "titolo": "Mundial 2026, en directo especial En Play - 02/07/26",
-        "fonte": "RTVE.es",
-        "link": "https://www.rtve.es/play/videos/directo/mundial-2026-partidos-programas/en-play-especial-mundial-02-julio/",
-        "img": "",
-        "dominio": "rtve.es",
-        "quando": "3 h"
+        "titolo": "Tabla de goleadores del Mundial 2026: Oyarzabal se acerca a Messi y Mbappé",
+        "fonte": "MARCA",
+        "link": "https://www.marca.com/futbol/mundial/2026/07/02/tabla-goleadores-mundial-2026-oyarzabal-acerca-messi-mbappe.html",
+        "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/07/02/6a46d54802596.jpeg",
+        "dominio": "marca.com",
+        "quando": "ahora"
       },
       {
         "titolo": "Españoles en Los Ángeles en el Mundial más caro de la historia: \"Hemos venido a un solo partido porque está todo prohibitivo\"",
@@ -6094,14 +6119,38 @@
         "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/07/02/6a46c751e9cf4a33168b4594.html",
         "img": "https://e01-phantom-elmundo.uecdn.es/e3fb0b768ddbef032cd6ef79e1d1493a/crop/15x111/3059x2141/resize/1200/f/webp/assets/multimedia/imagenes/2026/07/02/17830236779125.jpg",
         "dominio": "elmundo.es",
-        "quando": "ahora"
+        "quando": "1 h"
       },
       {
-        "titolo": "¿Cuánto duran las pausas de hidratación en el Mundial 2026 y por qué son obligatorias?",
-        "fonte": "MARCA",
-        "link": "https://www.marca.com/futbol/mundial/2026/07/02/cuanto-duran-pausas-hidratacion-mundial-2026-son-obligatorias.html",
-        "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/06/26/6a3e61035a070.jpeg",
-        "dominio": "marca.com",
+        "titolo": "Así está el cuadro del Mundial 2026 en octavos: cruces, selecciones clasificadas y rival de España",
+        "fonte": "SPORT",
+        "link": "https://www.sport.es/es/noticias/mundial-futbol/cuadro-mundial-2026-octavos-cruces-selecciones-rival-espana-131912956",
+        "img": "https://estaticos-cdn.prensaiberica.es/clip/91b7f24a-52fa-47d3-a56b-3117f25ac7f7_16-9-discover-aspect-ratio_default_0_x960y360.jpg",
+        "dominio": "sport.es",
+        "quando": "1 h"
+      },
+      {
+        "titolo": "España - Austria hoy: última hora del Mundial 2026, en directo | Oyarzabal anota el primero de España tras un gran centro de Cucurella",
+        "fonte": "El Mundo",
+        "link": "https://www.elmundo.es/deportes/futbol/mundial/espana-austria/2026/07/02/01_0117_20260702_118_515-directo.html",
+        "img": "https://e01-phantom-elmundo.uecdn.es/bc8088f37340bbc97a3e192f01aefc85/crop/4x65/823x611/f/webp/assets/multimedia/imagenes/2026/07/02/17830259776494.jpg",
+        "dominio": "elmundo.es",
+        "quando": "1 h"
+      },
+      {
+        "titolo": "España - Austria, en directo hoy en vídeo el partido de dieciseisavos de final del Mundial 2026",
+        "fonte": "RTVE.es",
+        "link": "https://www.rtve.es/deportes/20260702/mundial-2026-espana-austria-directo-video-resumen-resultado-dieciseisavos-final/17138331.shtml",
+        "img": "https://img.rtve.es/imagenes/mundial-2026-espana-austria-directo-video-resumen-resultado-dieciseisavos-final/01783028910498.jpg",
+        "dominio": "rtve.es",
+        "quando": "1 h"
+      },
+      {
+        "titolo": "España - Austria: Mundial 2026, en directo | La Selección pasa por encima de Austria y ya está en octavos",
+        "fonte": "EL PAÍS",
+        "link": "https://elpais.com/deportes/mundial-futbol/2026-07-02/espana-austria-en-directo-partido-de-dieciseisavos-del-mundial-2026-en-vivo.html",
+        "img": "",
+        "dominio": "elpais.com",
         "quando": "ahora"
       },
       {
@@ -6110,31 +6159,15 @@
         "link": "https://as.com/futbol/mundial/espana-austria-en-directo-partido-de-la-seleccion-en-el-mundial-2026-hoy-en-vivo-f202607-d/",
         "img": "",
         "dominio": "as.com",
-        "quando": "1 h"
-      },
-      {
-        "titolo": "España - Austria: Mundial 2026, en directo | Oyarzabal adelanta a la Selección en Los Ángeles",
-        "fonte": "EL PAÍS",
-        "link": "https://elpais.com/deportes/mundial-futbol/2026-07-02/espana-austria-en-directo-partido-de-dieciseisavos-del-mundial-2026-en-vivo.html",
-        "img": "",
-        "dominio": "elpais.com",
         "quando": "ahora"
       },
       {
-        "titolo": "Las mejores imágenes del España - Austria de dieciseisavos del Mundial",
-        "fonte": "El Mundo",
-        "link": "https://www.elmundo.es/album/deportes/futbol/mundial-de-futbol/2026/07/02/6a46a3c021efa0195c8b459e.html",
-        "img": "https://e01-phantom-elmundo.uecdn.es/b03484de636a4fbbffeb05fcdd67f363/resize/1200/f/webp/assets/multimedia/imagenes/2026/07/02/17830235475466.jpg",
-        "dominio": "elmundo.es",
-        "quando": "1 h"
-      },
-      {
-        "titolo": "España - Austria, en directo: previa, onces y última hora de dieciseisavos del Mundial 2026",
-        "fonte": "20Minutos",
-        "link": "https://www.20minutos.es/deportes/futbol/espana-austria-mundial-2026-directo-ultima-hora-previa-posibles-alineaciones-los-dieciseisavos-final_7009623_6.html",
-        "img": "https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2026/07/02/6a46194be9ddb6-03043567.png",
-        "dominio": "20minutos.es",
-        "quando": "1 h"
+        "titolo": "Mundial 2026, en directo hoy, 2 de julio: Reino Unido autoriza a los pubs a ampliar horario por la selección",
+        "fonte": "RTVE.es",
+        "link": "https://www.rtve.es/deportes/20260702/mundial-2026-directo-hoy-partidos-resultados-clasificacion-goles-resumen-30-junio/17136654.shtml",
+        "img": "https://img.rtve.es/imagenes/mundial-2026-directo-hoy-partidos-resultados-clasificacion-goles-resumen-30-junio/01781191385317.jpg",
+        "dominio": "rtve.es",
+        "quando": "12 h"
       }
     ]
   }
