@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-07-05T21:50:25Z",
+  "aggiornato": "2026-07-05T23:51:34Z",
   "nome": "World Cup 2026",
   "groups": [
     {
@@ -5879,7 +5879,41 @@
             "iso": "no",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              1,
+              2
+            ],
+            "ht": [
+              0,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Neymar",
+              "minute": "90+10",
+              "pen": true,
+              "og": false
+            }
+          ],
+          "goals2": [
+            {
+              "name": "Erling Haaland",
+              "minute": "79",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Erling Haaland",
+              "minute": "90",
+              "pen": false,
+              "og": false
+            }
+          ]
         },
         {
           "round": "Round of 16",
@@ -6201,179 +6235,155 @@
         "quando": "1 g fa"
       },
       {
-        "titolo": "LIVE Ibra su Francia-Paraguay: \"Io avrei preso quattro rossi\". I Bleus bloccati in aereo da una tempesta",
-        "fonte": "La Gazzetta dello Sport",
-        "link": "https://www.gazzetta.it/Calcio/Mondiali/05-07-2026/live-mondiali-2026-cosa-succede-tra-usa-canada-e-messico.shtml",
-        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/07/05/6a4a14c759c2e.jpeg",
-        "dominio": "gazzetta.it",
-        "quando": "4 ore fa"
-      },
-      {
         "titolo": "Mondiali 2026. Francia ai quarti: Paraguay battuto 1-0, Mbappé su rigore - Francia ai quarti: decide Mbappé su rigore",
         "fonte": "RaiNews",
         "link": "https://www.rainews.it/maratona/2026/07/calcio-mondiali-2026-giorno-23-ottavi-di-finale-canada-marocco-paraguay-francia-diretta-streaming-cronaca-highlights-video-live-risultati-b49392b0-0704-4a24-b360-20affc63ae31.html",
         "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/07/05/1783205519806_BADAN.jpg",
         "dominio": "rainews.it",
-        "quando": "22 ore fa"
-      },
-      {
-        "titolo": "DIRETTA Mondiali 2026, Brasile-Norvegia 0-0: Bruno Guimaraes sbaglia un rigore - Brasile-Norvegia, la cronaca testuale",
-        "fonte": "RaiNews",
-        "link": "https://www.rainews.it/maratona/2026/07/calcio-mondiali-2026-giorno-24-ottavi-di-finale-brasile-norvegia-diretta-streaming-cronaca-highlights-video-live-risultati-d86c57ee-7480-479e-8efd-69bbe41ae82b.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/07/05/1783283365084_.png",
-        "dominio": "rainews.it",
-        "quando": "1 ore fa"
-      },
-      {
-        "titolo": "Mondiali 2026, le news di oggi in diretta live: il comunicato del Belgio dopo il caso Balogun",
-        "fonte": "Sky Sport",
-        "link": "https://sport.sky.it/calcio/mondiali/2026/07/05/mondiali-2026-news-oggi-5-luglio-diretta",
-        "img": "https://sport.sky.it/assets/images/f476d03607abd3b56f984952dfe5c2fe902b3e9b/skysport/it/calcio/mondiali/2026/07/05/mondiali-2026-news-oggi-5-luglio-diretta/azteca.jpg?im=Resize,width=1218",
-        "dominio": "sport.sky.it",
-        "quando": "2 ore fa"
-      },
-      {
-        "titolo": "Quale partita sulla RAI oggi, Mondiali calcio 2026: orario domenica 5 luglio, canale, streaming",
-        "fonte": "OA Sport",
-        "link": "https://www.oasport.it/2026/07/quale-partita-sulla-rai-oggi-mondiali-calcio-2026-orario-5-luglio-canale-in-chiaro-streaming/",
-        "img": "https://www.oasport.it/wp-content/uploads/2026/07/24559839_small-e1782893337152.jpg",
-        "dominio": "oasport.it",
-        "quando": "3 ore fa"
-      },
-      {
-        "titolo": "Mondiali di Calcio 2026 2026 - Canada - Marocco 0-3: Highlights - Video",
-        "fonte": "RaiPlay",
-        "link": "https://www.raiplay.it/video/2026/07/Canada---Marocco-0-3-Highlights--Mondiali-di-Calcio-FIFA-2026-b8973e88-44c6-4ba1-b410-1156a8fcaaeb.html",
-        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/07/05/1783208345303_1783196137590_LO%202048x1152.jpg.jpeg",
-        "dominio": "raiplay.it",
         "quando": "1 g fa"
       },
       {
-        "titolo": "Gaza, bimbi e ragazzi giocano a calcio mimando i campioni dei Mondiali 2026",
-        "fonte": "Il Sole 24 ORE",
-        "link": "https://stream24.ilsole24ore.com/video/mondo/gaza-bimbi-e-ragazzi-giocano-calcio-mimando-campioni-mondiali-2026/AIlXLc1D",
-        "img": "https://i2.res.24o.it/stream/assets/img/Lapresse/2026/07/05/large-LP_622361_128.jpg",
-        "dominio": "stream24.ilsole24ore.com",
+        "titolo": "LIVE Ibra su Francia-Paraguay: \"Io avrei preso quattro rossi\". I Bleus bloccati in aereo da una tempesta",
+        "fonte": "La Gazzetta dello Sport",
+        "link": "https://www.gazzetta.it/Calcio/Mondiali/05-07-2026/live-mondiali-2026-cosa-succede-tra-usa-canada-e-messico.shtml",
+        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/07/05/6a4a14c759c2e.jpeg",
+        "dominio": "gazzetta.it",
         "quando": "6 ore fa"
+      },
+      {
+        "titolo": "Haaland schianta il Brasile (doppietta) e lo esclude dal mondiale: è 2 a 1 - Il secondo gol di Haaland (Video)",
+        "fonte": "RaiNews",
+        "link": "https://www.rainews.it/maratona/2026/07/calcio-mondiali-2026-giorno-24-ottavi-di-finale-brasile-norvegia-diretta-streaming-cronaca-highlights-video-live-risultati-d86c57ee-7480-479e-8efd-69bbe41ae82b.html",
+        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/07/05/1783288480272_BBWLA.jpg",
+        "dominio": "rainews.it",
+        "quando": "2 ore fa"
+      },
+      {
+        "titolo": "Scandalo: sospesa la squalifica di Balogun! Il bomber degli Usa in campo col Belgio. Trump: \"Grazie Fifa\"",
+        "fonte": "La Gazzetta dello Sport",
+        "link": "https://www.gazzetta.it/Calcio/Mondiali/05-07-2026/balogun-squalifica-sospesa-usa-belgio.shtml",
+        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/07/05/6a4a89730aa75.r_d.711-435-0.jpeg",
+        "dominio": "gazzetta.it",
+        "quando": "5 ore fa"
+      },
+      {
+        "titolo": "Immenso Infantino sul caso Balogun, il calcio ridotto a barzellettrump",
+        "fonte": "Corriere dello Sport",
+        "link": "https://www.corrieredellosport.it/news/calcio/mondiali-2026/2026/07/05-149704809/immenso_infantino_sul_caso_balogun_il_calcio_ridotto_a_barzellettrump",
+        "img": "https://cdn.corrieredellosport.it/images/2026/07/05/210533364-5fa57b89-6c35-40b4-97d2-60ef4e84b0d4.jpg",
+        "dominio": "corrieredellosport.it",
+        "quando": "2 ore fa"
+      },
+      {
+        "titolo": "Squalificato ma non troppo: l'americano Balogun sarà in campo contro il Belgio",
+        "fonte": "RaiNews",
+        "link": "https://www.rainews.it/articoli/2026/07/squalificato-fifa-americano-balogun-campo-belgio-commissione-disciplinare-trump-campionati-mondo-calcio-2026-usa-canada-messico-7bdacbd1-2dc0-432f-a521-bc67efcbc6d9.html",
+        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/07/05/1783274410609_rainewsacdbfaff.jpg",
+        "dominio": "rainews.it",
+        "quando": "5 ore fa"
+      },
+      {
+        "titolo": "Dove vedere Messico-Inghilterra, Mondiali 2026: Dazn o Rai, orario, tv e streaming",
+        "fonte": "Corriere dello Sport",
+        "link": "https://www.corrieredellosport.it/news/calcio/mondiali-2026/2026/07/05-149683921/dove_vedere_messico-inghilterra_mondiali_2026_dazn_o_rai_orario_tv_e_streaming",
+        "img": "https://cdn.corrieredellosport.it/images/2026/07/05/074723865-4fb1f975-44c8-4dd5-9c27-bc66d9c5e660.jpg",
+        "dominio": "corrieredellosport.it",
+        "quando": "16 ore fa"
       }
     ],
     "en": [
       {
-        "titolo": "Mexico vs England: Azteca Stadium issues shelter-in-place order because of severe weather",
-        "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/articles/clyeegldnmpo",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/2117/live/8c88b0c0-78b8-11f1-a153-7f64e09767e4.jpg",
-        "dominio": "bbc.co.uk",
-        "quando": "just now"
-      },
-      {
-        "titolo": "White House lobbied Fifa to lift Folarin Balogun suspension for World Cup game v Belgium",
+        "titolo": "Mexico v England: storm delays arrival of teams at stadium before World Cup 2026 last 16 tie – live",
         "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/2026/jul/05/folarin-balogun-red-card-suspension-lifted-usmnt-belgium-world-cup",
-        "img": "https://i.guim.co.uk/img/media/101942752f34779c056fcd9f6746b6befac1ac9f/421_0_2500_2000/master/2500.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=830c36167f47e5c0103d37eac6ee685c",
+        "link": "https://www.theguardian.com/football/live/2026/jul/05/mexico-v-england-world-cup-2026-last-16-live",
+        "img": "https://i.guim.co.uk/img/media/8a469781e0a6095df9d556fe73495a77fb3af4ae/80_0_4120_3296/master/4120.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=6f6750991395c9a704299e3dc17753cd",
         "dominio": "theguardian.com",
-        "quando": "4h ago"
+        "quando": "1h ago"
       },
       {
-        "titolo": "World Cup 2026: US striker Folarin Balogun's one-game red card ban suspended by Fifa",
+        "titolo": "World Cup 2026: England v Mexico latest - team news, predictions & weather update",
         "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/articles/cewqq5q8v41o",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/0bf1/live/3ab6d9e0-7898-11f1-9510-1546718f668b.jpg",
+        "link": "https://www.bbc.co.uk/sport/football/live/cze9x72rgwlt",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/72cf/live/bf5f0f10-7879-11f1-a627-714adb4eed6e.jpg",
         "dominio": "bbc.co.uk",
-        "quando": "4h ago"
+        "quando": "7h ago"
       },
       {
         "titolo": "World Cup 2026: FIFA step in to allow banned Folarin Balogun to play USA last-16 tie - a move praised by President Donald Trump",
         "fonte": "Sky Sports",
         "link": "https://www.skysports.com/football/news/12098/13560770/world-cup-2026-fifa-step-in-to-allow-banned-folarin-balogun-to-play-usa-last-16-tie-a-move-praised-by-president-donald-trump",
-        "img": "https://e0.365dm.com/26/07/1600x900/skysports-balogun-world-cup_7287727.jpg?20260702034809",
+        "img": "https://e0.365dm.com/26/07/1600x900/skysports-florin-balogun-usa_7290692.jpg?20260705235615",
         "dominio": "skysports.com",
+        "quando": "just now"
+      },
+      {
+        "titolo": "Haaland’s heroic double stuns Brazil and sends Norway into World Cup quarter-finals",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/2026/jul/05/brazil-norway-world-cup-2026-last-16-match-report",
+        "img": "https://i.guim.co.uk/img/media/788e2966e1cf1410cacce7667320245ec51aff3f/437_67_3216_2572/master/3216.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=cf58f0698e86687561c12c5e0b03dfea",
+        "dominio": "theguardian.com",
+        "quando": "3h ago"
+      },
+      {
+        "titolo": "Mexico v England kick-off time delayed after ‘severe weather’ at World Cup tie",
+        "fonte": "The Independent",
+        "link": "https://www.independent.co.uk/sport/football/mexico-v-england-kick-off-delayed-weather-world-cup-2026-b3009389.html",
+        "img": "https://static.independent.co.uk/2026/07/05/23/2026-07-05T222026Z_678052575_UP1EM751Q20VW_RTRMADP_3_SOCCER-WORLDCUP-MEX-ENG.JPG?trim=60,0,60,0&width=1200&height=800&crop=1200:800",
+        "dominio": "independent.co.uk",
+        "quando": "just now"
+      },
+      {
+        "titolo": "England vs Mexico live: Score and updates from World Cup last-16 match",
+        "fonte": "The Telegraph",
+        "link": "https://www.telegraph.co.uk/football/2026/07/05/england-vs-mexico-live-score-updates-world-cup-last-16/",
+        "img": "https://www.telegraph.co.uk/content/dam/football/2026/07/05/TELEMMGLPICT000494067981_17832873411890_trans_NvBQzQNjv4BqinDJOEI8y2okxgV14Uk2yVoHIsJiVzhdsm49IV8ijrA.jpeg?impolicy=OG-Live",
+        "dominio": "telegraph.co.uk",
+        "quando": "just now"
+      },
+      {
+        "titolo": "England attempt to spoil Mexico’s World Cup party in Azteca cauldron: Live updates",
+        "fonte": "The New York Times",
+        "link": "https://www.nytimes.com/athletic/live-blogs/mexico-vs-england-live-updates-world-cup-2026-score-result/1kXwPh7t8O2X/",
+        "img": "https://cdn-media.theathletic.com/cdn-cgi/image/width=1200,height=630,fit=cover/1kXwPh7t8O2X_uW6D9F1DZa9U_1440x952.jpg",
+        "dominio": "nytimes.com",
         "quando": "1h ago"
       },
       {
-        "titolo": "Brazil vs. Norway LIVE: World Cup 2026 updates as Bruno Guimaraes misses penalty in early drama",
-        "fonte": "ESPN",
-        "link": "https://www.espn.co.uk/football/story/_/id/49278406/brazil-vs-norway-live-world-cup-2026-updates-score-commentary-result",
-        "img": "https://a2.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0617%2Fr1674744_1296x729_16%2D9.jpg",
-        "dominio": "espn.co.uk",
-        "quando": "2h ago"
-      },
-      {
-        "titolo": "Cristiano Ronaldo makes bombshell retirement announcement as Portugal star, 41, confirms this is his last World Cup",
-        "fonte": "The Sun",
-        "link": "https://www.thesun.co.uk/sport/39655789/cristiano-ronaldo-retirement-announcement-portugal-world-cup/",
-        "img": "",
-        "dominio": "thesun.co.uk",
-        "quando": "2h ago"
-      },
-      {
-        "titolo": "BBC pundit brands Paraguay an 'absolute disgrace' after France World Cup win",
-        "fonte": "Metro.co.uk",
-        "link": "https://metro.co.uk/2026/07/05/bbc-pundit-brands-paraguay-absolute-disgrace-france-world-cup-win-29048370/",
-        "img": "https://metro.co.uk/wp-content/uploads/2026/07/SEI_304075459-c95c_1783274398.jpg?quality=90&strip=all&w=1200&h=630&crop=1",
-        "dominio": "metro.co.uk",
-        "quando": "11h ago"
-      },
-      {
-        "titolo": "'Disgusting' Paraguay went 'way too far' against France",
-        "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/videos/c24y2yej0dyo",
-        "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/564e/live/688f53c0-7801-11f1-b976-0b9c15b0ccfc.jpg",
-        "dominio": "bbc.co.uk",
-        "quando": "22h ago"
+        "titolo": "Mexico vs England LIVE: FIFA World Cup 2026 – last 16",
+        "fonte": "Al Jazeera",
+        "link": "https://www.aljazeera.com/sports/liveblog/2026/7/5/mexico-vs-england-live-fifa-world-cup-2026-last-16",
+        "img": "https://www.aljazeera.com/wp-content/uploads/2026/07/2026-07-05T232102Z_157905642_UP1EM751SQHZO_RTRMADP_3_SOCCER-WORLDCUP-MEX-ENG-1783293764.jpg?resize=1776%2C1080",
+        "dominio": "aljazeera.com",
+        "quando": "just now"
       }
     ],
     "es": [
       {
-        "titolo": "Cuadro del Mundial 2026: equipos clasificados a cuartos, cruces y quién se enfrenta a quién en octavos de la C",
-        "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/cuadro-del-mundial-2026-equipos-clasificados-a-cuartos-cruces-y-quien-se-enfrenta-a-quien-en-octavos-de-la-copa-del-mundo-f202607-n/",
-        "img": "",
-        "dominio": "as.com",
-        "quando": "1 d"
-      },
-      {
-        "titolo": "Mundial 2026, en directo hoy, 5 de julio: Trump agradece a la FIFA que levante la suspensión a Balogun",
-        "fonte": "RTVE.es",
-        "link": "https://www.rtve.es/deportes/20260705/mundial-2026-directo-hoy-partidos-resultados-clasificacion-goles-resumen-5-julio/17141466.shtml",
-        "img": "https://img.rtve.es/imagenes/mundial-2026-directo-hoy-partidos-resultados-clasificacion-goles-resumen-5-julio/01783285823864.jpg",
-        "dominio": "rtve.es",
-        "quando": "13 h"
-      },
-      {
-        "titolo": "Brasil - Noruega hoy, en directo: partido de octavos de final del Mundial 2026, resultado y goles en vivo",
+        "titolo": "Brasil 1-2 Noruega: Resumen, resultado y goles del partido | octavos de final del Mundial 2026, en directo",
         "fonte": "Diario AS",
         "link": "https://as.com/futbol/mundial/brasil-noruega-en-directo-octavos-de-final-del-mundial-2026-hoy-en-vivo-f202607-d/",
-        "img": "",
+        "img": "https://img.asmedia.epimg.net/resizer/v2/A2DUZL2VNZLCJAYH3IRCV2CSCY.jpg?auth=b23e565bdbeb52ae9e9e569bbf938288402028214df65a35294951862cd6258e&width=1472&height=828&smart=true",
         "dominio": "as.com",
         "quando": "ahora"
       },
       {
-        "titolo": "Brasil - Noruega en directo, el partido de octavos de final del Mundial en vivo",
-        "fonte": "EL PAÍS",
-        "link": "https://elpais.com/deportes/mundial-futbol/2026-07-05/brasil-noruega-en-directo-el-partido-de-octavos-de-final-del-mundial-en-vivo.html",
-        "img": "",
-        "dominio": "elpais.com",
-        "quando": "2 h"
+        "titolo": "Brasil 1-2 Noruega I Resumen Mundial 2026",
+        "fonte": "MARCA",
+        "link": "https://www.marca.com/futbol/mundial/2026/07/06/brasil-1-2-noruega-i-resumen-mundial-2026-video.html",
+        "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/07/06/cEC2Q1gIjrlcIHg7s.jpeg",
+        "dominio": "marca.com",
+        "quando": "1 h"
       },
       {
-        "titolo": "Brasil- Noruega, en directo hoy en vídeo el partido de octavos de final del Mundial 2026",
+        "titolo": "Erling Haaland ejerce de killer para liquidar a Brasil y ganarse unos cuartos históricos para Noruega",
         "fonte": "RTVE.es",
         "link": "https://www.rtve.es/deportes/20260705/mundial-2026-brasil-noruega-directo-video-resumen-resultado/17139158.shtml",
-        "img": "https://img.rtve.es/imagenes/mundial-2026-brasil-noruega-directo-video-resumen-resultado/01783084697287.jpg",
+        "img": "https://img.rtve.es/imagenes/mundial-2026-brasil-noruega-directo-video-resumen-resultado/01783288591292.jpg",
         "dominio": "rtve.es",
-        "quando": "2 h"
+        "quando": "1 h"
       },
       {
-        "titolo": "La FIFA retira la tarjeta roja al estadounidense Balogun y el delantero podrá jugar el partido de octavos contra Bélgica",
-        "fonte": "EL PAÍS",
-        "link": "https://elpais.com/deportes/mundial-futbol/2026-07-05/la-fifa-retira-la-tarjeta-roja-a-balogun-y-el-delantero-podra-jugar-contra-belgica.html",
-        "img": "",
-        "dominio": "elpais.com",
-        "quando": "2 h"
-      },
-      {
-        "titolo": "La FIFA levanta la sanción a Balogun y Trump se lo agradece públicamente a Infantino en redes sociales",
+        "titolo": "La FIFA rectifica, Trump contento: suspendida la sanción a Balogun, que podrá jugar ante Bélgica",
         "fonte": "El Mundo",
         "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/07/05/6a4a9d18e85eced6768b457a.html",
         "img": "https://e01-phantom-elmundo.uecdn.es/3bca9b1fe73bfec8af43c3d3f342e831/crop/0x0/2899x1933/resize/1200/f/webp/assets/multimedia/imagenes/2026/07/05/17832734953083.jpg",
@@ -6381,12 +6391,36 @@
         "quando": "3 h"
       },
       {
-        "titolo": "Bélgica, \"asombrada\" con la decisión sobre Balogun, estudia \"todas las opciones posibles\"",
-        "fonte": "MARCA",
-        "link": "https://www.marca.com/futbol/mundial/2026/07/05/belgica-asombrada-decision-sobre-balogun-estudia-todas-opciones-posibles.html",
-        "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/07/05/6a4aba32251b4.jpeg",
-        "dominio": "marca.com",
-        "quando": "1 h"
+        "titolo": "El duro comunicado de Bélgica luego de que la FIFA habilitara a la figura de Estados Unidos que había sido expulsada ante Bosnia",
+        "fonte": "Infobae",
+        "link": "https://www.infobae.com/deportes/2026/07/05/el-duro-comunicado-de-belgica-luego-de-que-la-fifa-habilitara-a-la-figura-de-estados-unidos-que-habia-sido-expulsada-ante-bosnia/",
+        "img": "https://www.infobae.com/resizer/v2/R2GDUQZN6JF3PN3DV3TZUM6P3M.JPG?auth=14d09eaba3dfaaff2d7fced2b125df1ea0dcb53da67267d914edf7a00d9c7ec6&smart=true&width=1200&height=630&quality=85",
+        "dominio": "infobae.com",
+        "quando": "2 h"
+      },
+      {
+        "titolo": "La FIFA retira la tarjeta roja al goleador estadounidense Balogun tras una llamada de Trump a Infantino",
+        "fonte": "EL PAÍS",
+        "link": "https://elpais.com/deportes/mundial-futbol/2026-07-05/la-fifa-retira-la-tarjeta-roja-a-balogun-y-el-delantero-podra-jugar-contra-belgica.html",
+        "img": "https://imagenes.elpais.com/resizer/v2/KTCUP6FEPBJRNL3RJILT53AA54.jpg?auth=187b4e0d06e89c7a6d7032232003cf18a4ed735d690352849b484bec30adffcc&width=1200",
+        "dominio": "elpais.com",
+        "quando": "4 h"
+      },
+      {
+        "titolo": "Dónde ver gratis online y en televisión el México - Inglaterra en directo hoy y a qué hora es el partido del Mundial 2026",
+        "fonte": "ABC",
+        "link": "https://www.abc.es/deportes/futbol/mundial/donde-ver-gratis-online-television-mexico-inglaterra-directo-mundial-20260705174304-nt.html",
+        "img": "https://s1.abcstatics.com/abc/www/multimedia/deportes/2026/07/05/kane-bellingham-inglaterra-mundial-kiQC-U30662018959tmE-1200x630@diario_abc.jpg",
+        "dominio": "abc.es",
+        "quando": "3 h"
+      },
+      {
+        "titolo": "México vs Inglaterra en vivo hoy: marcador, goles y alineación de la Selección Mexicana en Mundial 2026",
+        "fonte": "AS México",
+        "link": "https://mexico.as.com/futbol/mundial/mexico-vs-inglaterra-en-vivo-hoy-resultado-goles-y-ultimas-noticias-del-tri-en-copa-del-mundo-2026-f202607-d/",
+        "img": "https://img.asmedia.epimg.net/resizer/v2/JKLXT32RJBEB5KOP3PF5XGSZOA.jpg?auth=841feedea61008aac3661088fc92e563d386c7f2ef354df7bd59fa102a60c20c&width=1472&height=828&focal=1885%2C1550",
+        "dominio": "mexico.as.com",
+        "quando": "ahora"
       }
     ]
   }
