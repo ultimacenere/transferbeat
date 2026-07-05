@@ -1,13 +1,13 @@
 {
-  "aggiornato": "2026-07-05T11:24:13",
+  "aggiornato": "2026-07-05T12:09:23",
   "giorno": "Domingo 5 julio",
   "ticker": [
     "Mercado de fichajes, en directo: rumores, altas y bajas de LaLiga, Premier, Serie A...",
     "Mercado de fichajes, hoy, en directo: última hora de FC Barcelona, Real Madrid y todas las altas y bajas de las grandes ligas",
     "Al Sevilla se le complica un fichaje",
+    "Artem Dovbyk prepara su fichaje",
     "La Juventus de Turín valora cuatro fichajes y dos salidas más",
-    "Acuerdo para el fichaje de Martin Odegaard",
-    "Fichajes Athletic: salida de Aimar Duñabeitia a LaLiga Hypermotion"
+    "Acuerdo para el fichaje de Martin Odegaard"
   ],
   "apertura": {
     "categoria": "Serie A",
@@ -16,7 +16,7 @@
     "link": "https://as.com/futbol/primera/mercado-de-fichajes-en-directo-rumores-altas-y-bajas-de-laliga-premier-serie-a-f202607-d-5/",
     "img": "",
     "dominio": "as.com",
-    "quando": "ahora"
+    "quando": "1 h"
   },
   "secondari": [
     {
@@ -26,7 +26,7 @@
       "link": "https://www.sport.es/es/noticias/mercado-fichajes/mercado-fichajes-hoy-directo-ultima-132136455",
       "img": "https://estaticos-cdn.prensaiberica.es/clip/e43d5fb5-f1a8-4bca-80f4-3f207631e2dd_16-9-discover-aspect-ratio_default_0_x600y225.jpg",
       "dominio": "sport.es",
-      "quando": "3 h"
+      "quando": "1 h"
     },
     {
       "categoria": "La Liga",
@@ -35,7 +35,16 @@
       "link": "https://www.fichajes.com/a641425928633920868-al-sevilla-se-le-complica-un-fichaje",
       "img": "https://assets-es.imgfoot.com/media/cache/1200x675/villarreal-cf-v-deportivo-alaves-la-liga-ea-sports-2.jpg",
       "dominio": "fichajes.com",
-      "quando": "3 h"
+      "quando": "4 h"
+    },
+    {
+      "categoria": "Serie A",
+      "titolo": "Artem Dovbyk prepara su fichaje",
+      "fonte": "Fichajes.com",
+      "link": "https://www.fichajes.com/a1645768700065315361-artem-dovbyk-prepara-su-fichaje",
+      "img": "https://assets-es.imgfoot.com/media/cache/1200x675/dovbyk-2526.jpg",
+      "dominio": "fichajes.com",
+      "quando": "17 h"
     },
     {
       "categoria": "Serie A",
@@ -44,7 +53,7 @@
       "link": "https://www.fichajes.com/a2128371939440231931-la-juventus-de-turin-valora-cuatro-fichajes-y-dos-salidas-mas",
       "img": "https://assets-es.imgfoot.com/media/cache/1200x675/juventus-turin-2526.jpg",
       "dominio": "fichajes.com",
-      "quando": "18 h"
+      "quando": "19 h"
     },
     {
       "categoria": "Premier League",
@@ -63,53 +72,44 @@
       "img": "https://album.mediaset.es/eimg/2026/05/20/aimar-dunabeitia-durante-un-partido-con-el-bilbao-athletic-16-9-aspect-ratio-default-0_da39.jpg",
       "dominio": "eldesmarque.com",
       "quando": "1 d"
-    },
-    {
-      "categoria": "La Liga",
-      "titolo": "Abierto el mercado de fichajes Liga Prime Futsal 2026/27",
-      "fonte": "RFEF",
-      "link": "https://rfef.es/es/noticias/abierto-el-mercado-de-fichajes-liga-prime-futsal-202627",
-      "img": "https://rfef.es/sites/default/files/styles/large/public/diseno_sin_titulo_22.png.webp?itok=XMKaXYLQ",
-      "dominio": "rfef.es",
-      "quando": "1 d"
     }
   ],
   "mondo": [
     {
       "categoria": "Brasil",
-      "titolo": "Bayer 04 Football Academy São Paulo Expands Through New Partnerships with Colégio Humboldt and Rödl",
-      "fonte": "Bayer04.de",
-      "link": "https://www.bayer04.de/es-es/news/bayer04/la-bayer-04-football-academy-sao-paulo-amplia-su-proyecto-con-nuevas-alianzas-junto-al-colegio-humboldt-y-roedl",
-      "img": "https://b04-ep-media-prod.azureedge.net/pickerimages/crop_20260704_JS_CEO_Delegation_Brazil_Tag3_1563_894144_XL.jpg",
-      "dominio": "bayer04.de",
-      "quando": "4 h"
+      "titolo": "🇧🇷 Brazil v Norway: likely line-ups, absentees and chances",
+      "fonte": "OneFootball",
+      "link": "https://onefootball.com/es/noticias/brazil-v-norway-likely-line-ups-absentees-and-chances-43098965",
+      "img": "https://photobooth-api.onefootball.com/api/screenshot/%2Fv2%2Fphotobooth%2Fcms%2Fes%2F43098965%3Fdate=2026-07-05",
+      "dominio": "onefootball.com",
+      "quando": "ahora"
     },
     {
       "categoria": "Arabia Saudí",
-      "titolo": "¿Qué pasa si Al Nassr pierde hoy ante Al-Shabab por la Saudi Pro League?",
-      "fonte": "365Scores",
-      "link": "https://www.365scores.com/es/news/que-pasa-al-nassr-pierde-hoy-al-shabab/",
-      "img": "https://www.365scores.com/es/news/wp-content/uploads/2026/05/ChatGPT-Image-6-may-2026-16_15_51.png",
-      "dominio": "365scores.com",
-      "quando": "9 h"
+      "titolo": "Liverpool sporting director Richard Hughes ‘to leave’ for Saudi Pro League",
+      "fonte": "OneFootball",
+      "link": "https://onefootball.com/es/noticias/liverpool-sporting-director-richard-hughes-to-leave-for-saudi-pro-league-43092048",
+      "img": "https://photobooth-api.onefootball.com/api/screenshot/%2Fv2%2Fphotobooth%2Fcms%2Fes%2F43092048%3Fdate=2026-07-05",
+      "dominio": "onefootball.com",
+      "quando": "3 h"
     },
     {
       "categoria": "MLS",
-      "titolo": "¿Inter Miami querría a Vozinha?",
-      "fonte": "Diario AS",
-      "link": "https://as.com/us/futbol/el-equipo-de-la-mls-que-busca-a-vozinha-f202607-n/",
-      "img": "",
-      "dominio": "as.com",
-      "quando": "11 h"
+      "titolo": "🚨💥 ¡ÚLTIMA HORA! El Inter Miami CF estaría dispuesto a dar un golpe inesperado en el mercado con el posible fichaje de Vozinha. 😱🧤 Según diversos reportes, el experimentado guardameta de Cabo Verde, de 40 años, sería una de las opciones que mane",
+      "fonte": "instagram.com",
+      "link": "https://www.instagram.com/reel/DaYaUEwJGfa/",
+      "img": "https://scontent-ams2-1.cdninstagram.com/v/t51.71878-15/734622952_1836703421027167_3309987671358295425_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=l1jeY8S1OCQQ7kNvwGb3fHR&_nc_oc=AdrLAr5daGxje4givJVv26ylNL7ArkAWsonbbX9CSGUPeP20_w2Bej4LgaMjQdDqmBo&_nc_zt=23&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_gid=oeiADxtBNexB3h3aTu8kcw&_nc_ss=7860f&oh=00_AQDDTHBoOiGTDdibl3OcQ7fGP3dMhSDI_BPSuV7sASfmfw&oe=6A5017C6",
+      "dominio": "instagram.com",
+      "quando": "2 h"
     },
     {
       "categoria": "Selecciones",
-      "titolo": "2026 FIFA World Cup qualification (Serie de TV 2024–2026) ⭐ 6.7 | Deportes",
-      "fonte": "IMDb",
-      "link": "https://www.imdb.com/es/title/tt38222751/?ref_=tt_mlt_i_4",
-      "img": "",
-      "dominio": "imdb.com",
-      "quando": "13 h"
+      "titolo": "Napoli ready to reward McTominay with pay rise despite World Cup disappointment",
+      "fonte": "OneFootball",
+      "link": "https://onefootball.com/es/noticias/napoli-ready-to-reward-mctominay-with-pay-rise-despite-world-cup-disappointment-43098932",
+      "img": "https://photobooth-api.onefootball.com/api/screenshot/%2Fv2%2Fphotobooth%2Fcms%2Fes%2F43098932%3Fdate=2026-07-05",
+      "dominio": "onefootball.com",
+      "quando": "ahora"
     }
   ]
 }
