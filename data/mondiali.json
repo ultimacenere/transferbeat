@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-07-06T18:26:46Z",
+  "aggiornato": "2026-07-06T22:11:56Z",
   "nome": "World Cup 2026",
   "groups": [
     {
@@ -6003,7 +6003,28 @@
             "iso": "es",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              0,
+              1
+            ],
+            "ht": [
+              0,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [],
+          "goals2": [
+            {
+              "name": "Mikel Merino",
+              "minute": "90+1",
+              "pen": false,
+              "og": false
+            }
+          ]
         },
         {
           "round": "Round of 16",
@@ -6273,28 +6294,20 @@
   "news": {
     "it": [
       {
-        "titolo": "Squalifica Balogun ai Mondiali, Trump ammette: \"Ho chiamato Infantino\". News di oggi LIVE",
-        "fonte": "Sky Sport",
-        "link": "https://sport.sky.it/calcio/mondiali/2026/07/06/balogun-squalifica-mondiali-2026-fifa-news-oggi",
-        "img": "https://sport.sky.it/assets/images/f70e229cd0d6f14587a8011922d9b7eddc8c9f06/skysport/it/calcio/mondiali/2026/07/06/balogun-squalifica-mondiali-2026-fifa-news-oggi/trump_getty_infantino.jpg?im=Resize,width=1218",
-        "dominio": "sport.sky.it",
-        "quando": "2 ore fa"
-      },
-      {
-        "titolo": "Quale partita sulla RAI oggi, Mondiali calcio 2026: orario lunedì 6 luglio, canale in chiaro, streaming",
-        "fonte": "OA Sport",
-        "link": "https://www.oasport.it/2026/07/quale-partita-sulla-rai-oggi-mondiali-calcio-2026-orario-6-luglio-canale-in-chiaro-streaming/",
-        "img": "https://www.oasport.it/wp-content/uploads/2026/06/24472993_small.jpg",
-        "dominio": "oasport.it",
+        "titolo": "LIVE Portogallo-Spagna 0-0: destro di Rodri dal limite, deviato in angolo. Entra Leao",
+        "fonte": "La Gazzetta dello Sport",
+        "link": "https://www.gazzetta.it/Calcio/Mondiali/06-07-2026/portogallo-spagna-live-risultato-e-gol-in-diretta-mondiali-2026.shtml",
+        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/07/06/6a4c194c6bd72.jpeg",
+        "dominio": "gazzetta.it",
         "quando": "1 ore fa"
       },
       {
-        "titolo": "Inghilterra ai quarti, ma che battaglia all'Azteca! Al Messico non riesce la rimonta con l'uomo in più",
-        "fonte": "La Gazzetta dello Sport",
-        "link": "https://www.gazzetta.it/Calcio/Mondiali/05-07-2026/messico-inghilterra-live-risultato-gol-diretta-mondiali.shtml",
-        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/07/06/6a4b1e0b99be8.r_d.1581-1003-0.jpeg",
-        "dominio": "gazzetta.it",
-        "quando": "8 ore fa"
+        "titolo": "Messico - Inghilterra (2-3) Mondiali 2026",
+        "fonte": "la Repubblica",
+        "link": "https://www.repubblica.it/sport/dirette/calcio/mondiali-2026/diretta-messico-inghilterra-g2608350/",
+        "img": "https://www.repstatic.it/cless/main/nazionale/2013-v1/img/common/favicon/favicon-1500.png",
+        "dominio": "repubblica.it",
+        "quando": "21 ore fa"
       },
       {
         "titolo": "Mondiali di Calcio 2026 2026 - Messico - Inghilterra 2-3: Highlights - Video",
@@ -6305,46 +6318,54 @@
         "quando": "1 g fa"
       },
       {
-        "titolo": "Mondiali 2026, l'Inghilterra vince sul Messico 3-2 e va a quarti. LIVE",
+        "titolo": "Mondiali 2026, Portogallo-Spagna 0-0 all'intervallo. LIVE",
         "fonte": "Sky TG24",
         "link": "https://tg24.sky.it/sport/2026/07/06/mondiali-2026-parte-editoriale-live",
-        "img": "https://tg24.sky.it/assets/images/f391b0efee7e6b3fe82d46275d6e5d483dfecb3a/skytg24/it/sport/2026/07/06/mondiali-2026-parte-editoriale-live/inghilterra_messico_ansa.JPG?im=Resize,width=1218",
+        "img": "https://tg24.sky.it/assets/images/a9e555eddf117c92aa2feca4f63d6ba01e3803a6/skytg24/it/sport/2026/07/06/mondiali-2026-parte-editoriale-live/portogallo-spagna-mikel-merino-GettyImages-2284948220.jpg?im=Resize,width=1218",
         "dominio": "tg24.sky.it",
-        "quando": "1 ore fa"
+        "quando": "2 ore fa"
       },
       {
-        "titolo": "Mondiali di Calcio 2026 2026 - Brasile - Norvegia 1-2: Highlights - Video",
+        "titolo": "Tutte le volte che Infantino ha provato a compiacere Trump",
+        "fonte": "Il Post",
+        "link": "https://www.ilpost.it/2026/07/06/infantino-adulazione-trump-mondiali/",
+        "img": "https://static-prod.cdnilpost.com/wp-content/uploads/2026/07/06/1783332744-AP25255638499039.jpg",
+        "dominio": "ilpost.it",
+        "quando": "8 ore fa"
+      },
+      {
+        "titolo": "Mondiali di Calcio 2026 2026 - Brasile - Norvegia 1-2: Rigore di Neymar - Video",
         "fonte": "RaiPlay",
-        "link": "https://www.raiplay.it/video/2026/07/Brasile---Norvegia-1-2-Highlights--Mondiali-di-Calcio-FIFA-2026-fea9090b-319f-4e78-9513-d98a4e50826d.html",
-        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/07/05/1783288721466_brasile%20norvegia%2016x9.jpg",
+        "link": "https://www.raiplay.it/video/2026/07/Brasile---Norvegia-1-2-Rigore-di-Neymar--Mondiali-di-Calcio-FIFA-2026-3b911656-2d8a-4850-867f-7aa69b57902d.html",
+        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/07/06/1783291398871_neymar%201-2.jpg",
         "dominio": "raiplay.it",
-        "quando": "1 g fa"
+        "quando": "22 ore fa"
       },
       {
-        "titolo": "Dove vedere Portogallo-Spagna, Mondiali 2026: Dazn o Rai, orario, tv e streaming",
-        "fonte": "Corriere dello Sport",
-        "link": "https://www.corrieredellosport.it/news/calcio/mondiali-2026/2026/07/06-149713846/dove_vedere_portogallo-spagna_mondiali_2026_dazn_o_rai_orario_tv_e_streaming",
-        "img": "https://cdn.corrieredellosport.it/images/2026/07/06/071417499-c6754b11-3832-4a89-af5e-6e95e2ce5bec.jpg",
-        "dominio": "corrieredellosport.it",
-        "quando": "10 ore fa"
+        "titolo": "Messico-Inghilterra 2-3. Brasile ko 2-1 con la Norvegia: decide la doppietta di Haaland",
+        "fonte": "RaiNews",
+        "link": "https://www.rainews.it/maratona/2026/07/calcio-mondiali-2026-giorno-24-ottavi-di-finale-brasile-norvegia-diretta-streaming-cronaca-highlights-video-live-risultati-d86c57ee-7480-479e-8efd-69bbe41ae82b.html",
+        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/07/06/1783302904071_BCZY.jpg",
+        "dominio": "rainews.it",
+        "quando": "16 ore fa"
       },
       {
-        "titolo": "Le partite di oggi ai Mondiali 2026, ottavi di finale: alle 21 Portogallo-Spagna e nella notte Usa-Belgio",
-        "fonte": "Corriere della Sera",
-        "link": "https://www.corriere.it/sport/calcio/mondiali/26_luglio_06/mondiali-2026-partite-oggi-spagna-portogallo-44495725-8dc9-42f1-a05f-4d46f096axlk.shtml",
-        "img": "https://dimages2.corriereobjects.it/files/og_thumbnail/uploads/2026/07/06/6a4b5e0845dd5.jpeg",
-        "dominio": "corriere.it",
-        "quando": "10 ore fa"
+        "titolo": "Mondiali di calcio 2026, Erling Haaland fa fuori il Brasile e ringrazia il lucano Mario Pafundi, Sport therapist al Manchester City e scelto dal bomber vichingo anche per l'avventura mondiale",
+        "fonte": "SassiLive",
+        "link": "https://www.sassilive.it/sport/calcio/mondiali-di-calcio-2026-erling-haaland-fa-fuori-il-brasile-e-ringrazia-il-lucano-mario-pafundi-sport-therapist-al-manchester-city-e-scelto-dal-bomber-vichingo-anche-per-lavventura-mondiale/",
+        "img": "https://www.sassilive.it/wp-content/uploads/pafundi-haaland-2.jpg",
+        "dominio": "sassilive.it",
+        "quando": "2 ore fa"
       }
     ],
     "en": [
       {
-        "titolo": "World Cup 2026: Trump admits lobbying Fifa over Balogun red card; Starmer intervened on England kick-off time – live",
+        "titolo": "Portugal 0-1 Spain: World Cup 2026 last 16 – as it happened",
         "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jul/06/world-cup-2026-england-set-up-norway-quarter-final-after-mexico-thriller-trump-lobbied-for-balogun-red-card-reversal-live",
-        "img": "",
+        "link": "https://www.theguardian.com/football/live/2026/jul/06/portugal-v-spain-world-cup-2026-last-16-live",
+        "img": "https://i.guim.co.uk/img/media/ab743c988659181efdea712b9675c8ab05485083/213_211_2856_2286/master/2856.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=0d720fc7474d167568fb20ad29f9e8ab",
         "dominio": "theguardian.com",
-        "quando": "13h ago"
+        "quando": "3h ago"
       },
       {
         "titolo": "World Cup 2026: Balogun available for USA v Belgium after Spain play Portugal",
@@ -6352,81 +6373,97 @@
         "link": "https://www.bbc.co.uk/sport/football/live/cvg402g8eyqt",
         "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/c276/live/5a13cf90-7948-11f1-b976-0b9c15b0ccfc.jpg",
         "dominio": "bbc.co.uk",
-        "quando": "15h ago"
+        "quando": "7h ago"
       },
       {
-        "titolo": "World Cup 2026: England's Reece James expected to return for Norway quarter-final",
+        "titolo": "World Cup 2026: Portugal vs Spain - Late drama as Mikel Merino wins it for Spain",
         "fonte": "BBC",
-        "link": "https://www.bbc.com/sport/football/articles/cx2xxl6772no",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/6cb9/live/e685e4d0-795d-11f1-b461-8fc790ffbac8.jpg",
+        "link": "https://www.bbc.com/sport/football/videos/c6211egzyzlo",
+        "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/1505/live/4880bcc0-797f-11f1-b976-0b9c15b0ccfc.jpg",
         "dominio": "bbc.com",
         "quando": "just now"
+      },
+      {
+        "titolo": "Powerless Ronaldo a passenger as World Cup dream slips away in defeat by Spain",
+        "fonte": "The Telegraph",
+        "link": "https://www.telegraph.co.uk/football/2026/07/06/portugal-vs-spain-live-score-latest-world-cup-ronaldo-yamal/",
+        "img": "https://www.telegraph.co.uk/content/dam/football/2026/07/06/TELEMMGLPICT000494215534_17833746845780_trans_NvBQzQNjv4Bqx4cfFXfSz-_LVIklXASQB6OGVEN6ZHDJkT2qEs-D9wM.jpeg?impolicy=OG-Live",
+        "dominio": "telegraph.co.uk",
+        "quando": "just now"
+      },
+      {
+        "titolo": "Mexico 2-3 England: World Cup 2026 last 16 updates – as it happened",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/live/2026/jul/05/mexico-v-england-world-cup-2026-last-16-live",
+        "img": "https://i.guim.co.uk/img/media/9cfa8a1eda709545b7d9af61b212cd9963e57c9f/229_0_2307_1846/master/2307.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=2d7f9fab9decc4b56ce725ac02f8a7c4",
+        "dominio": "theguardian.com",
+        "quando": "22h ago"
       },
       {
         "titolo": "Portugal vs Spain LIVE: FIFA World Cup 2026 round of 16",
         "fonte": "Al Jazeera",
         "link": "https://www.aljazeera.com/sports/liveblog/2026/7/6/portugal-vs-spain-live-fifa-world-cup-2026-round-of-16",
-        "img": "https://www.aljazeera.com/wp-content/uploads/2026/07/AFP__20260706__2284919217__v1__HighRes__PortugalVSpainRoundOf16FifaWorldCup2026-1783360215.jpg?resize=1920%2C1440",
+        "img": "https://www.aljazeera.com/wp-content/uploads/2026/07/2026-07-06T205525Z_835695118_UP1EM761M4CK0_RTRMADP_3_SOCCER-WORLDCUP-POR-ESP-1783371428.jpg?resize=1920%2C1440",
         "dominio": "aljazeera.com",
-        "quando": "2h ago"
+        "quando": "3h ago"
       },
       {
-        "titolo": "World Cup 2026 today: Live updates, news as Trump says he spoke to Infantino about 'review' of Balogun red card - July 6",
+        "titolo": "FIFA World Cup 2026 stats: Haaland's 7 outscores Messi, Mbappe, Ronaldo combined; Neymar second after Pele; Bellingham first since Maradona",
         "fonte": "ESPN",
-        "link": "https://www.espn.co.uk/football/story/_/id/49283889/world-cup-2026-today-live-updates-news-england-mexico-jude-bellingham-harry-kane-spain-portugal-cristiano-ronaldo-usa-belgium-folarin-balogun",
+        "link": "https://www.espn.co.uk/football/story/_/id/49281972/fifa-world-cup-2026-stats-erling-haaland-7-lionel-messi-kylian-mbappe-cristiano-ronaldo-6-neymar-second-pele-jude-bellingham-first-diego-maradona",
         "img": "",
         "dominio": "espn.co.uk",
+        "quando": "17h ago"
+      },
+      {
+        "titolo": "World Cup LIVE: Cristiano Ronaldo 'last dance' over as Spain dump Portugal out with late winner",
+        "fonte": "The Mirror",
+        "link": "https://www.mirror.co.uk/sport/football/news/world-cup-2026-live-infantino-37395596",
+        "img": "https://i2-prod.mirror.co.uk/article37396197.ece/ALTERNATES/s1200d/0_GettyImages-2284530302.jpg",
+        "dominio": "mirror.co.uk",
         "quando": "just now"
-      },
-      {
-        "titolo": "World Cup 2026: UEFA hits out at FIFA decision to allow banned Folarin Balogun to play USA last-16 tie",
-        "fonte": "Sky Sports",
-        "link": "https://www.skysports.com/football/news/11095/13560915/world-cup-2026-uefa-hits-out-at-fifa-decision-to-allow-banned-folarin-balogun-to-play-usa-last-16-tie",
-        "img": "https://e0.365dm.com/26/07/1600x900/skysports-balogun-usa_7287725.jpg?20260702023831",
-        "dominio": "skysports.com",
-        "quando": "4h ago"
-      },
-      {
-        "titolo": "Mexico 2-3 England highlights - World Cup 2026",
-        "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/videos/c9w22dqpjw9o",
-        "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/197b/live/1eea5080-78f1-11f1-9510-1546718f668b.jpg",
-        "dominio": "bbc.co.uk",
-        "quando": "14h ago"
-      },
-      {
-        "titolo": "Fears England face more kick-off delay chaos as Miami thunderstorms forecast for World Cup quarter-final vs Norway",
-        "fonte": "The Sun",
-        "link": "https://www.thesun.co.uk/sport/39664980/england-norway-thunderstorms-forecast-world-cup-miami-haaland-delay/",
-        "img": "",
-        "dominio": "thesun.co.uk",
-        "quando": "5h ago"
       }
     ],
     "es": [
       {
-        "titolo": "Portugal - España hoy, en directo: octavos de final del Mundial 2026, última hora en vivo",
+        "titolo": "Cuadro del Mundial 2026: clasificados a cuartos, cruces y quién se enfrenta a quién en octavos de la Copa del",
         "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/portugal-espana-en-directo-ultima-de-los-octavos-del-mundial-2026-hoy-en-vivo-f202607-d/",
-        "img": "",
+        "link": "https://as.com/futbol/mundial/cuadro-del-mundial-2026-clasificados-a-cuartos-cruces-y-quien-se-enfrenta-a-quien-en-octavos-de-la-copa-del-mundo-f202607-n/",
+        "img": "https://img.asmedia.epimg.net/resizer/v2/6IGJG64BNRAMZMGXUOXL2AA7ZQ.jpg?auth=65251ef23bdbcc9061041d898ca15081780942c2b3aeb9e44c4852a3d4149c5c&width=1472&height=828&focal=483%2C276",
         "dominio": "as.com",
-        "quando": "ahora"
+        "quando": "16 h"
       },
       {
-        "titolo": "Portugal - España del Mundial 2026, en directo: última hora, previa y posibles alineaciones de los octavos de final",
+        "titolo": "Cuándo juega España su partido de cuartos de final del Mundial 2026: fecha, hora y rival",
         "fonte": "20Minutos",
-        "link": "https://www.20minutos.es/deportes/futbol/portugal-espana-mundial-2026-directo-ultima-hora-previa-posibles-alineaciones-los-octavos-final_7010906_6.html",
-        "img": "https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2026/07/06/6a4b61b7323792-93609110.png",
+        "link": "https://www.20minutos.es/deportes/futbol/cuando-juega-espana-su-partido-cuartos-final-mundial-2026-fecha-hora-rival_7011342_0.html",
+        "img": "https://imagenes.20minutos.es/files/image_1920_1080/files/fp/uploads/imagenes/2026/07/06/6a4c104132f259-81462643.r_d.1731-250.jpeg",
         "dominio": "20minutos.es",
         "quando": "1 h"
       },
       {
-        "titolo": "Mundial 2026, en directo hoy Portugal - España EN PLAY",
-        "fonte": "RTVE.es",
-        "link": "https://www.rtve.es/play/videos/directo/mundial-2026-partidos-programas/mundial-2026-en-play-06-julio/",
-        "img": "",
-        "dominio": "rtve.es",
+        "titolo": "Portugal - España hoy, en directo: resultado y goles del partido de octavos de final del Mundial 2026, en vivo",
+        "fonte": "Diario AS",
+        "link": "https://as.com/futbol/mundial/portugal-espana-en-directo-ultima-de-los-octavos-del-mundial-2026-hoy-en-vivo-f202607-d/",
+        "img": "https://img.asmedia.epimg.net/resizer/v2/SUT5LD2GHRLVRKHW2PBLNGROGA.jpg?auth=f156f07998ce4719e8438d69fd3968c585b60012c29cdd80c1da246737c047be&width=1472&height=828&smart=true",
+        "dominio": "as.com",
         "quando": "1 h"
+      },
+      {
+        "titolo": "Portugal - España, en directo hoy en vídeo el partido de octavos del Mundial 2026",
+        "fonte": "RTVE.es",
+        "link": "https://www.rtve.es/deportes/20260706/portugal-espana-directo-video-resumen-resultado-mundial-2026/17143316.shtml",
+        "img": "https://img.rtve.es/imagenes/portugal-espana-directo-video-resumen-resultado-mundial-2026/01783371572004.jpg",
+        "dominio": "rtve.es",
+        "quando": "2 h"
+      },
+      {
+        "titolo": "Cristiano Ronaldo se despide de los Mundiales entre lágrimas",
+        "fonte": "MARCA",
+        "link": "https://www.marca.com/futbol/mundial/2026/07/06/cristiano-ronaldo-despide-mundiales-lagrimas.html",
+        "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/07/06/cGsZ61gJ22J1ZlR5t.jpeg",
+        "dominio": "marca.com",
+        "quando": "ahora"
       },
       {
         "titolo": "La injerencia de Trump ante la FIFA provoca un escándalo en el Mundial: el presidente de EE UU admite que llamó a Infantino para que se revisara la tarjeta roja a Balogun",
@@ -6434,39 +6471,23 @@
         "link": "https://elpais.com/deportes/mundial-futbol/2026-07-06/la-injerencia-de-trump-ante-la-fifa-provoca-un-escandalo-en-el-mundial-el-presidente-de-ee-uu-admite-que-llamo-a-infantino-para-que-se-revisara-la-tarjeta-roja-a-balogun.html",
         "img": "",
         "dominio": "elpais.com",
-        "quando": "3 h"
+        "quando": "7 h"
       },
       {
-        "titolo": "Trump admite que pidió al presidente de la FIFA la revisión de la tarjeta roja a Balogun e Infantino afirma que le explicó la \"independencia\" del proceso",
-        "fonte": "El Mundo",
-        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/07/06/6a4bbb24fc6c83176a8b4588.html",
-        "img": "https://e01-phantom-elmundo.uecdn.es/0f0b802c774b4a6c5a60b60be2f92d41/crop/3x17/1020x695/f/webp/assets/multimedia/imagenes/2026/07/06/17833479020748.jpg",
-        "dominio": "elmundo.es",
-        "quando": "1 h"
-      },
-      {
-        "titolo": "Trump admite haber influido en la decisión de la FIFA de levantar la sanción a Balogun: \"Yo fui quien los convenció de hacerlo\"",
-        "fonte": "MARCA",
-        "link": "https://www.marca.com/futbol/mundial/2026/07/06/trump-admite-haber-influido-decision-fifa-levantar-sancion-balogun-convencio-hacerlo.html",
-        "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/07/06/cG71Y1gIyVDthjffP.jpeg",
-        "dominio": "marca.com",
-        "quando": "3 h"
-      },
-      {
-        "titolo": "Brasil - Noruega: partido completo - Mundial 2026 | Ver vídeo",
-        "fonte": "RTVE.es",
-        "link": "https://www.rtve.es/play/videos/copa-mundial-de-la-fifa-2026/brasil-noruega-partido-completo-mundial-2026/17144680/",
-        "img": "https://img.rtve.es/v/17144680/imgbackground/?w=800",
-        "dominio": "rtve.es",
-        "quando": "20 h"
-      },
-      {
-        "titolo": "Brasil 1-2 Noruega: Resumen, resultado y goles del partido | octavos de final del Mundial 2026, en directo",
-        "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/brasil-noruega-en-directo-octavos-de-final-del-mundial-2026-hoy-en-vivo-f202607-d/",
+        "titolo": "La FIFA retira la tarjeta roja al goleador estadounidense Balogun tras una llamada de Trump a Infantino",
+        "fonte": "EL PAÍS",
+        "link": "https://elpais.com/deportes/mundial-futbol/2026-07-05/la-fifa-retira-la-tarjeta-roja-a-balogun-y-el-delantero-podra-jugar-contra-belgica.html",
         "img": "",
-        "dominio": "as.com",
-        "quando": "ahora"
+        "dominio": "elpais.com",
+        "quando": "1 d"
+      },
+      {
+        "titolo": "El Partido Laborista Británico pide a la FIFA aplazar la sanción de Quansah hasta que termine el Mundial",
+        "fonte": "MARCA",
+        "link": "https://www.marca.com/futbol/mundial/2026/07/06/partido-laborista-pide-fifa-aplazar-sancion-quansah-termine-mundial-2026.html",
+        "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/07/06/6a4b21e1f1a65.jpeg",
+        "dominio": "marca.com",
+        "quando": "4 h"
       }
     ]
   }
