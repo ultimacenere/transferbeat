@@ -1,6 +1,6 @@
 {
-  "aggiornato": "2026-07-07T22:26:59",
-  "giorno": "Martes 7 julio",
+  "aggiornato": "2026-07-08T01:17:51",
+  "giorno": "Miercoles 8 julio",
   "squadre": {
     "Inter": {
       "lab": "INT",
@@ -20,7 +20,14 @@
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "6 h"
+            "quando": "9 h"
+          },
+          {
+            "titolo": "El Inter de Milán encarrila un fichaje de 50 M€",
+            "fonte": "Fichajes.com",
+            "link": "https://www.fichajes.com",
+            "affidabilita": 2,
+            "quando": "19 d"
           },
           {
             "titolo": "Dumfries, cuarto fichaje del Real Madrid",
@@ -54,13 +61,6 @@
             "link": "https://www.goal.com",
             "affidabilita": 2,
             "quando": "2 d"
-          },
-          {
-            "titolo": "El Inter ya ha ingresado 30 millones en el mercado de fichajes: se han cerrado las ventas de Dumfries, Akinsanmiro y Esposito",
-            "fonte": "Goal.com",
-            "link": "https://www.goal.com",
-            "affidabilita": 2,
-            "quando": "26 d"
           },
           {
             "titolo": "El Real Madrid hace oficial el fichaje de Dumfries",
@@ -97,7 +97,7 @@
           "img": "https://assets.goal.com/images/v3/blt893eda924fd0d942/stankovic.jpg",
           "dominio": "goal.com",
           "affidabilita": 2,
-          "quando": "6 h"
+          "quando": "9 h"
         },
         {
           "titolo": "El fichaje de Provedel por el Inter será oficial tras los reconocimientos médicos ya programados, con las cifras del acuerdo ya fijadas",
@@ -113,17 +113,17 @@
       "nomi": {
         "rumor": [
           {
-            "giocatore": "Alessandro Bastoni",
-            "direzione": "out",
-            "club": "Real Madrid",
-            "_first": "2026-07-07",
-            "_seen": "2026-07-07",
-            "_strong": ""
-          },
-          {
             "giocatore": "Aleksandar Stankovic",
             "direzione": "in",
             "club": "Club Brugge",
+            "_first": "2026-07-07",
+            "_seen": "2026-07-08",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Alessandro Bastoni",
+            "direzione": "out",
+            "club": "Real Madrid",
             "_first": "2026-07-07",
             "_seen": "2026-07-07",
             "_strong": ""
@@ -161,16 +161,16 @@
             "direzione": "out",
             "club": "Real Madrid",
             "_first": "2026-06-05",
-            "_seen": "2026-07-07",
-            "_strong": "2026-07-07"
+            "_seen": "2026-07-08",
+            "_strong": "2026-07-08"
           },
           {
             "giocatore": "Ivan Provedel",
             "direzione": "in",
             "club": "Lazio",
             "_first": "2026-07-05",
-            "_seen": "2026-07-07",
-            "_strong": "2026-07-07"
+            "_seen": "2026-07-08",
+            "_strong": "2026-07-08"
           }
         ]
       }
@@ -189,25 +189,32 @@
             "quando": "13 d"
           },
           {
+            "titolo": "La Juventus sondea a un nuevo delantero",
+            "fonte": "Fichajes.com",
+            "link": "https://www.fichajes.com",
+            "affidabilita": 2,
+            "quando": "2 h"
+          },
+          {
             "titolo": "Juventus: Massara busca a Kessie, Brahim Díaz, Theo Hernández, Zirkzee y Tomori",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "4 h"
+            "quando": "6 h"
           },
           {
             "titolo": "Hay varios problemas a la vez: el fichaje de Leon Goretzka por la Juventus de Turín corre el riesgo de fracasar",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "7 h"
+            "quando": "10 h"
           },
           {
             "titolo": "Juventus nombra a Massara responsable del área deportiva. Los fichajes más rumoreados son Díaz y Kessié, mientras que Cambiaso y Koopmeiners podrían ser traspasados",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "10 h"
+            "quando": "13 h"
           },
           {
             "titolo": "La Juventus de Turín valora cuatro fichajes y dos salidas más",
@@ -215,24 +222,9 @@
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
             "quando": "3 d"
-          },
-          {
-            "titolo": "Dos fichajes para italianizar la Juventus",
-            "fonte": "Fichajes.com",
-            "link": "https://www.fichajes.com",
-            "affidabilita": 2,
-            "quando": "24 d"
           }
         ],
-        "obj": [
-          {
-            "titolo": "Juventus: Massara quiere a Kessie, Brahim Díaz y Theo Hernández, y vigila a Zirkzee y Tomori",
-            "fonte": "Goal.com",
-            "link": "https://www.goal.com",
-            "affidabilita": 2,
-            "quando": "6 h"
-          }
-        ],
+        "obj": [],
         "conf": [],
         "done": []
       },
@@ -248,20 +240,20 @@
           "quando": "13 d"
         },
         {
+          "titolo": "La Juventus sondea a un nuevo delantero",
+          "fonte": "Fichajes.com",
+          "stato": "rumor",
+          "link": "https://www.fichajes.com/a2038742753528994940-la-juventus-sondea-a-un-nuevo-delantero",
+          "img": "https://assets-es.imgfoot.com/media/cache/1200x675/juventus-turin-2526.jpg",
+          "dominio": "fichajes.com",
+          "affidabilita": 2,
+          "quando": "2 h"
+        },
+        {
           "titolo": "Juventus: Massara busca a Kessie, Brahim Díaz, Theo Hernández, Zirkzee y Tomori",
           "fonte": "Goal.com",
           "stato": "rumor",
           "link": "https://www.goal.com/es/listados/juventus-massara-busca-a-kessie-brahim-diaz-theo-hernandez-zirkzee-y-tomori/blt0da917ad73588ef2",
-          "img": "https://assets.goal.com/images/v3/bltf8449ed63cca5a39/KESSIE.jpg",
-          "dominio": "goal.com",
-          "affidabilita": 2,
-          "quando": "4 h"
-        },
-        {
-          "titolo": "Juventus: Massara quiere a Kessie, Brahim Díaz y Theo Hernández, y vigila a Zirkzee y Tomori",
-          "fonte": "Goal.com",
-          "stato": "obj",
-          "link": "https://www.goal.com/es-mx/listados/juventus-massara-quiere-a-kessie-brahim-diaz-y-theo-hernandez-y-vigila-a-zirkzee-y-tomori/blt0da917ad73588ef2",
           "img": "https://assets.goal.com/images/v3/bltf8449ed63cca5a39/KESSIE.jpg",
           "dominio": "goal.com",
           "affidabilita": 2,
@@ -271,19 +263,11 @@
       "nomi": {
         "rumor": [
           {
-            "giocatore": "Giacomo Faticanti",
-            "direzione": "in",
-            "club": "",
-            "_first": "2026-06-24",
-            "_seen": "2026-07-07",
-            "_strong": ""
-          },
-          {
             "giocatore": "Franck Kessié",
             "direzione": "in",
             "club": "",
             "_first": "2026-07-07",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           },
           {
@@ -291,7 +275,7 @@
             "direzione": "out",
             "club": "",
             "_first": "2026-07-07",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           },
           {
@@ -299,7 +283,7 @@
             "direzione": "out",
             "club": "",
             "_first": "2026-07-07",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           },
           {
@@ -307,13 +291,21 @@
             "direzione": "in",
             "club": "Bayern",
             "_first": "2026-07-07",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           },
           {
             "giocatore": "Dusan Vlahovic",
             "direzione": "out",
             "club": "Barcellona",
+            "_first": "2026-06-24",
+            "_seen": "2026-07-08",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Giacomo Faticanti",
+            "direzione": "in",
+            "club": "",
             "_first": "2026-06-24",
             "_seen": "2026-07-07",
             "_strong": ""
@@ -357,7 +349,7 @@
             "direzione": "in",
             "club": "Real Madrid",
             "_first": "2026-06-08",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           },
           {
@@ -424,14 +416,14 @@
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "2 h"
+            "quando": "5 h"
           },
           {
             "titolo": "El AC Milan vuelve a poner sus ojos en el Real Madrid",
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "1 d"
+            "quando": "2 d"
           },
           {
             "titolo": "El AC Milan planea 8 salidas",
@@ -445,24 +437,24 @@
             "fonte": "Diario liberal e independiente",
             "link": "https://www.elimparcial.es",
             "affidabilita": 1,
-            "quando": "13 h"
+            "quando": "16 h"
           }
         ],
         "obj": [],
         "conf": [
           {
-            "titolo": "Milán, Gila cuesta lo mismo que Tomori: el impacto en el presupuesto",
-            "fonte": "Goal.com",
-            "link": "https://www.goal.com",
-            "affidabilita": 2,
-            "quando": "3 h"
-          },
-          {
             "titolo": "Milán, ya hay acuerdo con la Lazio por Gila:",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "4 h"
+            "quando": "5 h"
+          },
+          {
+            "titolo": "Milán, Gila cuesta lo mismo que Tomori: el impacto en el presupuesto",
+            "fonte": "Goal.com",
+            "link": "https://www.goal.com",
+            "affidabilita": 2,
+            "quando": "6 h"
           }
         ],
         "done": [
@@ -478,14 +470,14 @@
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "4 h"
+            "quando": "7 h"
           },
           {
             "titolo": "¿El nuevo Gianluigi Donnarumma? El PSG confirma el fichaje de un portero de 18 años procedente del AC Milan",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "8 h"
+            "quando": "11 h"
           }
         ]
       },
@@ -515,7 +507,7 @@
           "fonte": "Diario AS",
           "stato": "rumor",
           "link": "https://as.com/futbol/el-milan-rompe-el-mercado-por-amorim-con-un-fichaje-historico-goncalo-ramos-f202606-n/",
-          "img": "",
+          "img": "https://img.asmedia.epimg.net/resizer/v2/I57W2YDT4VF6PPHHRMTPM5UZJY.jpg?auth=a7e3635058977dd22bd313d32e23e31e62762fe8452c3571619a200169f38577&width=1472&height=828&smart=true",
           "dominio": "as.com",
           "affidabilita": 3,
           "quando": "11 d"
@@ -578,7 +570,7 @@
             "direzione": "in",
             "club": "PSG",
             "_first": "2026-06-25",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           },
           {
@@ -596,8 +588,8 @@
             "direzione": "in",
             "club": "Lazio",
             "_first": "2026-07-03",
-            "_seen": "2026-07-07",
-            "_strong": "2026-07-07"
+            "_seen": "2026-07-08",
+            "_strong": "2026-07-08"
           }
         ],
         "done": []
@@ -622,13 +614,6 @@
             "link": "https://www.goal.com",
             "affidabilita": 2,
             "quando": "1 d"
-          },
-          {
-            "titolo": "Una vía de 40 M€ para la vanguardia del Nápoles",
-            "fonte": "Fichajes.com",
-            "link": "https://www.fichajes.com",
-            "affidabilita": 2,
-            "quando": "15 d"
           }
         ],
         "obj": [
@@ -665,14 +650,14 @@
           "quando": "1 d"
         },
         {
-          "titolo": "Una vía de 40 M€ para la vanguardia del Nápoles",
+          "titolo": "El Nápoles estudia un objetivo defensivo",
           "fonte": "Fichajes.com",
-          "stato": "rumor",
-          "link": "https://www.fichajes.com/a4795967892143071962-una-via-de-40-meur-para-la-vanguardia-del-napoles",
+          "stato": "obj",
+          "link": "https://www.fichajes.com/a3604236191938375091-el-napoles-estudia-un-objetivo-defensivo",
           "img": "https://assets-es.imgfoot.com/media/cache/1200x675/epaliveeight220665.jpg",
           "dominio": "fichajes.com",
           "affidabilita": 2,
-          "quando": "15 d"
+          "quando": "22 d"
         }
       ],
       "nomi": {
@@ -706,18 +691,25 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "La Roma se baja del fichaje de Mason Greenwood, en la agenda del Atlético: operación de 74 millones",
+            "fonte": "El Desmarque",
+            "link": "https://www.eldesmarque.com",
+            "affidabilita": 1,
+            "quando": "1 h"
+          },
+          {
             "titolo": "Gasperini: “A partir de la próxima semana entraremos de lleno en el mercado de fichajes”.",
             "fonte": "PLANETA ROMA",
             "link": "https://planetaroma.net",
             "affidabilita": 1,
-            "quando": "1 h"
+            "quando": "4 h"
           },
           {
             "titolo": "Freno en seco: el Atlético de Madrid se aleja del fichaje de Mason Greenwood",
             "fonte": "Esto es Atleti",
             "link": "https://www.estoesatleti.es",
             "affidabilita": 1,
-            "quando": "13 h"
+            "quando": "16 h"
           },
           {
             "titolo": "De cómo el fichaje de un belga por la Roma podría acercar a Angeliño al Dépor",
@@ -739,13 +731,6 @@
             "link": "https://planetaroma.net",
             "affidabilita": 1,
             "quando": "5 d"
-          },
-          {
-            "titolo": "Bryan Zaragoza puede regresar a LALIGA: su fichaje, sobre la mesa",
-            "fonte": "El Desmarque",
-            "link": "https://www.eldesmarque.com",
-            "affidabilita": 1,
-            "quando": "15 d"
           }
         ],
         "obj": [
@@ -770,7 +755,7 @@
             "fonte": "Diario AS",
             "link": "https://as.com",
             "affidabilita": 3,
-            "quando": "7 h"
+            "quando": "10 h"
           }
         ],
         "done": []
@@ -781,10 +766,10 @@
           "fonte": "Diario AS",
           "stato": "conf",
           "link": "https://as.com/futbol/mercado-fichajes/dybala-y-la-roma-llegan-a-un-acuerdo-para-el-futuro-f202607-n/",
-          "img": "https://img.asmedia.epimg.net/resizer/v2/F3HEAB3WSBKNJOB4ALTJU3O4FA.jpg?auth=be4bd968b96007af13bbf59955a89a86a6fb5e6e1f6b665f0b909ad6c55c6a93&width=1472&height=828&focal=1354%2C560",
+          "img": "",
           "dominio": "as.com",
           "affidabilita": 3,
-          "quando": "7 h"
+          "quando": "10 h"
         },
         {
           "titolo": "La Roma destina 100 millones de euros para tres fichajes: Greenwood es el objetivo principal; otros nombres",
@@ -797,12 +782,12 @@
           "quando": "24 d"
         },
         {
-          "titolo": "Gasperini: “A partir de la próxima semana entraremos de lleno en el mercado de fichajes”.",
-          "fonte": "PLANETA ROMA",
+          "titolo": "La Roma se baja del fichaje de Mason Greenwood, en la agenda del Atlético: operación de 74 millones",
+          "fonte": "El Desmarque",
           "stato": "rumor",
-          "link": "https://planetaroma.net/gasperini-a-partir-de-la-proxima-semana-entraremos-de-lleno-en-el-mercado-de-fichajes/",
-          "img": "",
-          "dominio": "planetaroma.net",
+          "link": "https://www.eldesmarque.com/futbol/mercado-de-fichajes/20260707/roma-mason-greenwood-atletico-operacion_18_019655025.html",
+          "img": "https://album.mediaset.es/eimg/2026/07/07/mason-greenwood-jugador-del-olympique-de-marsella-16-9-aspect-ratio-default-0_da39.jpg",
+          "dominio": "eldesmarque.com",
           "affidabilita": 1,
           "quando": "1 h"
         }
@@ -840,7 +825,7 @@
             "direzione": "in",
             "club": "Marseille",
             "_first": "2026-06-11",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           }
         ],
@@ -850,8 +835,8 @@
             "direzione": "in",
             "club": "",
             "_first": "2026-07-07",
-            "_seen": "2026-07-07",
-            "_strong": "2026-07-07"
+            "_seen": "2026-07-08",
+            "_strong": "2026-07-08"
           }
         ],
         "done": []
@@ -862,15 +847,7 @@
       "col": "#5aa9e6",
       "league": "Serie A",
       "colonne": {
-        "rumor": [
-          {
-            "titolo": "La Lazio busca delantero en el Nápoles",
-            "fonte": "Fichajes.com",
-            "link": "https://www.fichajes.com",
-            "affidabilita": 2,
-            "quando": "15 d"
-          }
-        ],
+        "rumor": [],
         "obj": [],
         "conf": [
           {
@@ -893,16 +870,6 @@
           "dominio": "fichajes.com",
           "affidabilita": 2,
           "quando": "4 d"
-        },
-        {
-          "titolo": "La Lazio busca delantero en el Nápoles",
-          "fonte": "Fichajes.com",
-          "stato": "rumor",
-          "link": "https://www.fichajes.com/a3734518014041081831-la-lazio-busca-delantero-en-el-napoles",
-          "img": "https://assets-es.imgfoot.com/media/cache/1200x675/lorenzo-lucca.jpg",
-          "dominio": "fichajes.com",
-          "affidabilita": 2,
-          "quando": "15 d"
         }
       ],
       "nomi": {
@@ -914,8 +881,8 @@
             "direzione": "out",
             "club": "Milan",
             "_first": "2026-07-07",
-            "_seen": "2026-07-07",
-            "_strong": "2026-07-07"
+            "_seen": "2026-07-08",
+            "_strong": "2026-07-08"
           }
         ],
         "done": [
@@ -924,8 +891,8 @@
             "direzione": "out",
             "club": "Inter",
             "_first": "2026-07-05",
-            "_seen": "2026-07-07",
-            "_strong": "2026-07-07"
+            "_seen": "2026-07-08",
+            "_strong": "2026-07-08"
           }
         ]
       }
@@ -965,13 +932,6 @@
             "quando": "19 d"
           },
           {
-            "titolo": "Aceleran el fichaje de Pierre-Emile Hojbjerg",
-            "fonte": "Fichajes.com",
-            "link": "https://www.fichajes.com",
-            "affidabilita": 2,
-            "quando": "21 d"
-          },
-          {
             "titolo": "Inter se acerca a Marco Palestra, Chelsea sigue el fichaje",
             "fonte": "Karlobag.eu",
             "link": "https://karlobag.eu",
@@ -979,7 +939,15 @@
             "quando": "14 d"
           }
         ],
-        "obj": [],
+        "obj": [
+          {
+            "titolo": "Atalanta y Roma se unen al interés por Gustavo Puerta mientras su valor crece en el Mundial",
+            "fonte": "Transfermarkt",
+            "link": "https://www.transfermarkt.es",
+            "affidabilita": 1,
+            "quando": "8 d"
+          }
+        ],
         "conf": [
           {
             "titolo": "Atalanta está cerca de cerrar su primer fichaje: acuerdo con el Cagliari por Gaetano a un bajo coste",
@@ -1000,7 +968,7 @@
             "fonte": "Vietnam.vn",
             "link": "https://www.vietnam.vn",
             "affidabilita": 1,
-            "quando": "1 d"
+            "quando": "2 d"
           }
         ],
         "done": [
@@ -1068,16 +1036,16 @@
             "direzione": "in",
             "club": "Cagliari",
             "_first": "2026-06-27",
-            "_seen": "2026-07-07",
-            "_strong": "2026-07-07"
+            "_seen": "2026-07-08",
+            "_strong": "2026-07-08"
           },
           {
             "giocatore": "Ederson",
             "direzione": "out",
             "club": "Manchester United",
             "_first": "2026-07-05",
-            "_seen": "2026-07-07",
-            "_strong": "2026-07-07"
+            "_seen": "2026-07-08",
+            "_strong": "2026-07-08"
           }
         ],
         "done": []
@@ -1101,7 +1069,7 @@
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "10 h"
+            "quando": "13 h"
           },
           {
             "titolo": "Fiorentina: Paratici está a punto de cerrar el fichaje de Koleosho; estas son las cifras para el Burnley",
@@ -1129,10 +1097,17 @@
             "fonte": "FútbolFantasy",
             "link": "https://www.futbolfantasy.com",
             "affidabilita": 1,
-            "quando": "1 d"
+            "quando": "2 d"
           }
         ],
         "obj": [
+          {
+            "titolo": "La Fiorentina quiere a un atacante de 12 M€",
+            "fonte": "Fichajes.com",
+            "link": "https://www.fichajes.com",
+            "affidabilita": 2,
+            "quando": "2 h"
+          },
           {
             "titolo": "El Sevilla FC rechaza una oferta de la Fiorentina por Oso",
             "fonte": "ABC",
@@ -1147,7 +1122,7 @@
             "fonte": "GaliciaPress",
             "link": "https://www.galiciapress.es",
             "affidabilita": 1,
-            "quando": "11 h"
+            "quando": "14 h"
           }
         ],
         "done": [
@@ -1164,13 +1139,6 @@
             "link": "https://www.goal.com",
             "affidabilita": 2,
             "quando": "5 d"
-          },
-          {
-            "titolo": "Anuncio de la Fiorentina sobre Moise Kean",
-            "fonte": "Fichajes.com",
-            "link": "https://www.fichajes.com",
-            "affidabilita": 2,
-            "quando": "17 d"
           }
         ]
       },
@@ -1180,7 +1148,7 @@
           "fonte": "Diario AS",
           "stato": "rumor",
           "link": "https://as.com/futbol/primera/fede-vinas-y-amatucci-un-doble-frente-para-el-deportivo-f202607-n/",
-          "img": "",
+          "img": "https://img.asmedia.epimg.net/resizer/v2/BAINQWH5CNOWFLN3BCNBVJTEPM.jpg?auth=0145d4cbc3d1ed5fd9dfc8bb880a4082fbd4101c9dbbcdcc643d574d587ca875&width=1472&height=828&smart=true",
           "dominio": "as.com",
           "affidabilita": 3,
           "quando": "3 d"
@@ -1190,20 +1158,20 @@
           "fonte": "Mundo Deportivo",
           "stato": "done",
           "link": "https://www.mundodeportivo.com/futbol/atletico-madrid/20260629/1004200735/fiorentina-confirma-tercer-equipo-interesado-fichar-ruggeri.html",
-          "img": "",
+          "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/files/fp/uploads/2026/04/15/69dfc9cd3797c.r_d.1113-742-0.jpeg",
           "dominio": "mundodeportivo.com",
           "affidabilita": 3,
           "quando": "8 d"
         },
         {
-          "titolo": "Radu Dragusin retorna a la Serie A",
+          "titolo": "La Fiorentina quiere a un atacante de 12 M€",
           "fonte": "Fichajes.com",
-          "stato": "rumor",
-          "link": "https://www.fichajes.com/a3881757910757682694-radu-dragusin-retorna-a-la-serie-a",
-          "img": "https://assets-es.imgfoot.com/media/cache/1200x675/radu-dragusin-2526.jpg",
+          "stato": "obj",
+          "link": "https://www.fichajes.com/a5205303002406896697-la-fiorentina-quiere-a-un-atacante-de-12-meur",
+          "img": "https://assets-es.imgfoot.com/media/cache/1200x675/maxsportsworldthree494930-1920x1080.jpg",
           "dominio": "fichajes.com",
           "affidabilita": 2,
-          "quando": "10 h"
+          "quando": "2 h"
         }
       ],
       "nomi": {
@@ -1213,7 +1181,7 @@
             "direzione": "in",
             "club": "Atlético Madrid",
             "_first": "2026-06-29",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           },
           {
@@ -1221,7 +1189,7 @@
             "direzione": "in",
             "club": "Tottenham",
             "_first": "2026-07-06",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           },
           {
@@ -1229,7 +1197,7 @@
             "direzione": "out",
             "club": "River Plate",
             "_first": "2026-07-03",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           },
           {
@@ -1251,18 +1219,18 @@
         ],
         "obj": [
           {
-            "giocatore": "Oso",
-            "direzione": "in",
-            "club": "Sevilla",
-            "_first": "2026-06-30",
-            "_seen": "2026-07-07",
-            "_strong": ""
-          },
-          {
             "giocatore": "Koleosho",
             "direzione": "in",
             "club": "Burnley",
             "_first": "2026-07-06",
+            "_seen": "2026-07-08",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Oso",
+            "direzione": "in",
+            "club": "Sevilla",
+            "_first": "2026-06-30",
             "_seen": "2026-07-07",
             "_strong": ""
           }
@@ -1273,7 +1241,7 @@
             "direzione": "out",
             "club": "Deportivo de la Coruña",
             "_first": "2026-07-06",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": "2026-07-07"
           }
         ],
@@ -1416,7 +1384,7 @@
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "6 d"
+            "quando": "7 d"
           }
         ]
       },
@@ -1449,7 +1417,7 @@
           "img": "https://assets.goal.com/images/v3/getty-2274187121/crop/MM5DKMBQGQ5DEOBRGU5G433XMU5DAORSGYYQ====/GettyImages-2274187121.jpg",
           "dominio": "goal.com",
           "affidabilita": 2,
-          "quando": "6 d"
+          "quando": "7 d"
         }
       ],
       "nomi": {
@@ -1471,8 +1439,8 @@
             "direzione": "in",
             "club": "Juventus",
             "_first": "2026-07-02",
-            "_seen": "2026-07-07",
-            "_strong": "2026-07-07"
+            "_seen": "2026-07-08",
+            "_strong": "2026-07-08"
           },
           {
             "giocatore": "Meichtry",
@@ -1496,7 +1464,7 @@
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "10 h"
+            "quando": "13 h"
           },
           {
             "titolo": "El Udinese pagaría hasta seis millones de euros por el fichaje de Unai Gómez",
@@ -1517,7 +1485,7 @@
             "fonte": "bolavip.com",
             "link": "https://bolavip.com",
             "affidabilita": 1,
-            "quando": "22 h"
+            "quando": "1 d"
           },
           {
             "titolo": "Udinese cierra los flecos del fichaje de Unai Gómez",
@@ -1531,7 +1499,7 @@
             "fonte": "Superdeporte",
             "link": "https://www.superdeporte.es",
             "affidabilita": 1,
-            "quando": "4 d"
+            "quando": "5 d"
           }
         ],
         "obj": [
@@ -1605,7 +1573,7 @@
           "img": "https://assets.goal.com/images/v3/bltd57283098399238b/GettyImages-2266616216(1).jpg",
           "dominio": "goal.com",
           "affidabilita": 2,
-          "quando": "10 h"
+          "quando": "13 h"
         }
       ],
       "nomi": {
@@ -1653,13 +1621,6 @@
             "link": "https://www.marca.com",
             "affidabilita": 3,
             "quando": "8 d"
-          },
-          {
-            "titolo": "El Torino supera al Cagliari y ficha a Oristanio: los detalles del traspaso; las revisiones médicas se realizarán en los próximos días",
-            "fonte": "Goal.com",
-            "link": "https://www.goal.com",
-            "affidabilita": 2,
-            "quando": "5 d"
           }
         ],
         "obj": [],
@@ -1711,14 +1672,14 @@
           "quando": "4 d"
         },
         {
-          "titolo": "El Torino supera al Cagliari y ficha a Oristanio: los detalles del traspaso; las revisiones médicas se realizarán en los próximos días",
+          "titolo": "El Chelsea confirma el fichaje de Marco Palestra por 47 millones de libras, en lo que supone el primer fichaje de Xabi Alonso como nuevo entrenador",
           "fonte": "Goal.com",
-          "stato": "rumor",
-          "link": "https://www.goal.com/es/listados/el-torino-supera-al-cagliari-y-ficha-a-oristanio-los-detalles-del-traspaso-las-revisiones-medicas-se-realizaran-en-los-proximos-dias/blt151c827e829ce892",
-          "img": "https://assets.goal.com/images/v3/getty-2256874737/crop/MM5DIMBQGA5DEMRVGA5G433XMU5DAORSGA4Q====/GettyImages-2256874737.jpg",
+          "stato": "done",
+          "link": "https://www.goal.com/es/listados/el-chelsea-confirma-el-fichaje-de-marco-palestra-por-47-millones-de-libras-en-lo-que-supone-el-primer-fichaje-de-xabi-alonso-como-nuevo-entrenador/blt221e8c2b37ad80ae",
+          "img": "https://assets.goal.com/images/v3/getty-2249337634/crop/MM5DEMBQGA5DCMJSGU5G433XMU5DAORYGU======/GettyImages-2249337634.jpg",
           "dominio": "goal.com",
           "affidabilita": 2,
-          "quando": "5 d"
+          "quando": "6 d"
         }
       ],
       "nomi": {
@@ -1739,8 +1700,8 @@
             "direzione": "out",
             "club": "Atalanta",
             "_first": "2026-06-27",
-            "_seen": "2026-07-07",
-            "_strong": "2026-07-07"
+            "_seen": "2026-07-08",
+            "_strong": "2026-07-08"
           },
           {
             "giocatore": "Alessandro Romano",
@@ -1759,15 +1720,7 @@
       "col": "#1f4e9b",
       "league": "Serie A",
       "colonne": {
-        "rumor": [
-          {
-            "titolo": "El recién ascendido que sueña con fichar a Morata",
-            "fonte": "La Razón",
-            "link": "https://www.larazon.es",
-            "affidabilita": 1,
-            "quando": "3 d"
-          }
-        ],
+        "rumor": [],
         "obj": [
           {
             "titolo": "Kaiki no acepta la oferta del Como 1907 y el Betis sigue en la pelea por hacerse con su fichaje",
@@ -1788,16 +1741,6 @@
         "done": []
       },
       "feed": [
-        {
-          "titolo": "El recién ascendido que sueña con fichar a Morata",
-          "fonte": "La Razón",
-          "stato": "rumor",
-          "link": "https://www.larazon.es/deportes/laotraliga/recien-ascendido-que-suena-fichar-morata_202607046a4903e0a8768a6aee40faa8.html",
-          "img": "https://fotografias-2.larazon.es/clipping/cmsimages01/2025/10/04/522C8B72-38D8-4CF8-B97B-23AF8BA3F3A0/98.jpg?crop=3072,1728,x0,y160&width=1900&height=1069&optimize=low&format=webply",
-          "dominio": "larazon.es",
-          "affidabilita": 1,
-          "quando": "3 d"
-        },
         {
           "titolo": "Kaiki no acepta la oferta del Como 1907 y el Betis sigue en la pelea por hacerse con su fichaje",
           "fonte": "ABC",
@@ -1899,13 +1842,6 @@
             "link": "https://www.espn.com.ec",
             "affidabilita": 1,
             "quando": "1 d"
-          },
-          {
-            "titolo": "xG + xA por 90 - Estadísticas de Hellas Verona para Serie A 2025/2026",
-            "fonte": "FotMob",
-            "link": "https://www.fotmob.com",
-            "affidabilita": 1,
-            "quando": "9 d"
           }
         ],
         "obj": [],
@@ -1932,16 +1868,6 @@
           "dominio": "espn.com.ec",
           "affidabilita": 1,
           "quando": "1 d"
-        },
-        {
-          "titolo": "xG + xA por 90 - Estadísticas de Hellas Verona para Serie A 2025/2026",
-          "fonte": "FotMob",
-          "stato": "rumor",
-          "link": "https://www.fotmob.com/es/leagues/55/stats/season/27044/players/_expected_goals_and_expected_assists_per_90/team/9876/hellas-veronateamsteamsteamsplayers",
-          "img": "",
-          "dominio": "fotmob.com",
-          "affidabilita": 1,
-          "quando": "9 d"
         }
       ],
       "nomi": {
@@ -2133,7 +2059,7 @@
           "titolo": "Muharemovic, a punto de volver a la Juventus: acuerdo inminente con el Sassuolo, contrato hasta 2031",
           "fonte": "Goal.com",
           "stato": "conf",
-          "link": "https://www.goal.com/es-mx/listados/muharemovic-a-punto-de-volver-a-la-juventus-acuerdo-inminente-con-el-sassuolo-contrato-hasta-2031/bltafc3457517bfa269",
+          "link": "https://www.goal.com/es/listados/muharemovic-a-punto-de-volver-a-la-juventus-acuerdo-inminente-con-el-sassuolo-contrato-hasta-2031/bltafc3457517bfa269",
           "img": "https://assets.goal.com/images/v3/bltaa2c08f97669cc79/muharemovic%20juve.jpg",
           "dominio": "goal.com",
           "affidabilita": 2,
@@ -2405,42 +2331,42 @@
             "fonte": "MARCA",
             "link": "https://www.marca.com",
             "affidabilita": 3,
-            "quando": "1 h"
-          },
-          {
-            "titolo": "Mercado de fichajes, en directo: rumores, altas y bajas de LaLiga, Premier, Serie A...",
-            "fonte": "Diario AS",
-            "link": "https://as.com",
-            "affidabilita": 3,
-            "quando": "2 h"
+            "quando": "3 h"
           },
           {
             "titolo": "El Real Madrid tendrá que pagar 173.000 euros a la RFEF por tres de sus cuatro fichajes",
             "fonte": "Mundo Deportivo",
             "link": "https://www.mundodeportivo.com",
             "affidabilita": 3,
-            "quando": "12 h"
+            "quando": "15 h"
           },
           {
-            "titolo": "El Real Madrid ejerce una cláusula y recompra a Carvajal",
-            "fonte": "Pucela Fichajes",
-            "link": "https://pucelafichajes.com",
+            "titolo": "El Racing de Santander pescará en el Real Madrid",
+            "fonte": "Fichajes.com",
+            "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "4 h"
+            "quando": "2 h"
+          },
+          {
+            "titolo": "245 millones de euros y vuelta a empezar: el Real Madrid vuelve a fichar para las mismas posiciones",
+            "fonte": "SPORT",
+            "link": "https://www.sport.es",
+            "affidabilita": 2,
+            "quando": "14 h"
           },
           {
             "titolo": "108,5 millones de euros en juego. El Real Madrid planifica con inteligencia el mercado de fichajes",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "11 h"
+            "quando": "14 h"
           },
           {
-            "titolo": "El cambio de estrella que ya se plantea el Real Madrid",
-            "fonte": "Fichajes.com",
-            "link": "https://www.fichajes.com",
+            "titolo": "El Arsenal piensa en Raúl Asencio",
+            "fonte": "OkDiario",
+            "link": "https://okdiario.com",
             "affidabilita": 2,
-            "quando": "1 d"
+            "quando": "15 h"
           }
         ],
         "obj": [
@@ -2449,7 +2375,7 @@
             "fonte": "Sports Illustrated",
             "link": "https://www.si.com",
             "affidabilita": 2,
-            "quando": "13 h"
+            "quando": "16 h"
           },
           {
             "titolo": "El padre de Erling Haaland aviva los rumores de su fichaje por el Real Madrid: \"Cualquiera quiere jugar allí\"",
@@ -2471,17 +2397,7 @@
           "img": "https://objetos.estaticos-marca.com/assets/multimedia/imagenes/2026/07/07/17834084022366.jpg",
           "dominio": "marca.com",
           "affidabilita": 3,
-          "quando": "1 h"
-        },
-        {
-          "titolo": "Mercado de fichajes, en directo: rumores, altas y bajas de LaLiga, Premier, Serie A...",
-          "fonte": "Diario AS",
-          "stato": "rumor",
-          "link": "https://as.com/futbol/primera/mercado-de-fichajes-en-directo-rumores-altas-y-bajas-de-laliga-premier-serie-a-f202607-d-7/",
-          "img": "https://img.asmedia.epimg.net/resizer/v2/JQI7B6K7FVBLJGTQLYPGV7IR5E.jpg?auth=6bc29e9f9cd798c6f8157bdb4ae0ef1d84bde4d9ed7e23c5180f3687a3b001df&width=1472&height=828&smart=true",
-          "dominio": "as.com",
-          "affidabilita": 3,
-          "quando": "2 h"
+          "quando": "3 h"
         },
         {
           "titolo": "El Real Madrid tendrá que pagar 173.000 euros a la RFEF por tres de sus cuatro fichajes",
@@ -2491,11 +2407,29 @@
           "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/files/fp/uploads/2026/07/07/6a4cafb64778b.r_d.1500-1000-4000.jpeg",
           "dominio": "mundodeportivo.com",
           "affidabilita": 3,
-          "quando": "12 h"
+          "quando": "15 h"
+        },
+        {
+          "titolo": "El Racing de Santander pescará en el Real Madrid",
+          "fonte": "Fichajes.com",
+          "stato": "rumor",
+          "link": "https://www.fichajes.com/a4473422579996493023-el-racing-de-santander-pescara-en-el-real-madrid",
+          "img": "https://assets-es.imgfoot.com/media/cache/1200x675/fran-gonzalez.jpg",
+          "dominio": "fichajes.com",
+          "affidabilita": 2,
+          "quando": "2 h"
         }
       ],
       "nomi": {
         "rumor": [
+          {
+            "giocatore": "Marc Cucurella",
+            "direzione": "in",
+            "club": "Chelsea",
+            "_first": "2026-06-25",
+            "_seen": "2026-07-08",
+            "_strong": ""
+          },
           {
             "giocatore": "Mastantuono",
             "direzione": "out",
@@ -2509,14 +2443,6 @@
             "direzione": "out",
             "club": "Wolverhampton Wanderers",
             "_first": "2026-06-24",
-            "_seen": "2026-07-07",
-            "_strong": ""
-          },
-          {
-            "giocatore": "Marc Cucurella",
-            "direzione": "in",
-            "club": "Chelsea",
-            "_first": "2026-06-25",
             "_seen": "2026-07-07",
             "_strong": ""
           },
@@ -2663,7 +2589,7 @@
             "direzione": "out",
             "club": "Manchester United",
             "_first": "2026-07-06",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           },
           {
@@ -2706,8 +2632,8 @@
             "direzione": "in",
             "club": "Inter",
             "_first": "2026-07-02",
-            "_seen": "2026-07-07",
-            "_strong": "2026-07-07"
+            "_seen": "2026-07-08",
+            "_strong": "2026-07-08"
           }
         ]
       }
@@ -2719,13 +2645,6 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "Mercado de fichajes de hoy, 7 de julio, en directo | Altas, bajas y última hora del Real Madrid, Barcelona...",
-            "fonte": "MARCA",
-            "link": "https://www.marca.com",
-            "affidabilita": 3,
-            "quando": "1 h"
-          },
-          {
             "titolo": "Mercado de fichajes, en directo: rumores, altas y bajas de LaLiga, Premier, Serie A...",
             "fonte": "Diario AS",
             "link": "https://as.com",
@@ -2733,32 +2652,39 @@
             "quando": "2 h"
           },
           {
+            "titolo": "Mercado de fichajes de hoy, 7 de julio, en directo | Altas, bajas y última hora del Real Madrid, Barcelona...",
+            "fonte": "MARCA",
+            "link": "https://www.marca.com",
+            "affidabilita": 3,
+            "quando": "3 h"
+          },
+          {
             "titolo": "El Barça ficha a dos jugadores del Tenerife",
             "fonte": "Mundo Deportivo",
             "link": "https://www.mundodeportivo.com",
             "affidabilita": 3,
-            "quando": "22 h"
+            "quando": "1 d"
           },
           {
-            "titolo": "El Newcastle anuncia el fichaje del sustituto de Gordon",
-            "fonte": "Mundo Deportivo",
-            "link": "https://www.mundodeportivo.com",
-            "affidabilita": 3,
-            "quando": "2 d"
+            "titolo": "Mercado de fichajes, hoy, en directo: última hora de FC Barcelona, Real Madrid y todas las altas y bajas de las grandes ligas",
+            "fonte": "SPORT",
+            "link": "https://www.sport.es",
+            "affidabilita": 2,
+            "quando": "3 h"
           },
           {
             "titolo": "Últimas noticias de fichajes del FC Barcelona: Cancelo, Julián Álvarez, Romero, Herington y Virgili",
             "fonte": "Sports Illustrated",
             "link": "https://www.si.com",
             "affidabilita": 2,
-            "quando": "5 h"
+            "quando": "8 h"
           },
           {
             "titolo": "El FC Barcelona ultima un fichaje de 10 M€",
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "11 h"
+            "quando": "14 h"
           }
         ],
         "obj": [
@@ -2770,28 +2696,10 @@
             "quando": "1 d"
           }
         ],
-        "conf": [
-          {
-            "titolo": "El Barça, muy cerca de atar el fichaje de Joao Cancelo",
-            "fonte": "SPORT",
-            "link": "https://www.sport.es",
-            "affidabilita": 2,
-            "quando": "14 h"
-          }
-        ],
+        "conf": [],
         "done": []
       },
       "feed": [
-        {
-          "titolo": "Mercado de fichajes de hoy, 7 de julio, en directo | Altas, bajas y última hora del Real Madrid, Barcelona...",
-          "fonte": "MARCA",
-          "stato": "rumor",
-          "link": "https://www.marca.com/futbol/2026/07/07/6a4ca37e6c283cdca802c592-directo.html",
-          "img": "https://objetos.estaticos-marca.com/assets/multimedia/imagenes/2026/07/07/17834084022366.jpg",
-          "dominio": "marca.com",
-          "affidabilita": 3,
-          "quando": "1 h"
-        },
         {
           "titolo": "Mercado de fichajes, en directo: rumores, altas y bajas de LaLiga, Premier, Serie A...",
           "fonte": "Diario AS",
@@ -2803,6 +2711,16 @@
           "quando": "2 h"
         },
         {
+          "titolo": "Mercado de fichajes de hoy, 7 de julio, en directo | Altas, bajas y última hora del Real Madrid, Barcelona...",
+          "fonte": "MARCA",
+          "stato": "rumor",
+          "link": "https://www.marca.com/futbol/2026/07/07/6a4ca37e6c283cdca802c592-directo.html",
+          "img": "https://objetos.estaticos-marca.com/assets/multimedia/imagenes/2026/07/07/17834084022366.jpg",
+          "dominio": "marca.com",
+          "affidabilita": 3,
+          "quando": "3 h"
+        },
+        {
           "titolo": "El Barça ficha a dos jugadores del Tenerife",
           "fonte": "Mundo Deportivo",
           "stato": "rumor",
@@ -2810,7 +2728,7 @@
           "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/files/fp/uploads/2026/07/06/6a4bbaa889017.r_d.604-329-10178.jpeg",
           "dominio": "mundodeportivo.com",
           "affidabilita": 3,
-          "quando": "22 h"
+          "quando": "1 d"
         }
       ],
       "nomi": {
@@ -2888,7 +2806,7 @@
             "direzione": "out",
             "club": "Real Betis",
             "_first": "2026-06-29",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": "2026-07-07"
           }
         ]
@@ -2915,9 +2833,16 @@
             "quando": "2 d"
           },
           {
-            "titolo": "Alemany marca los tiempos: la última hora sobre el fichaje de Nico González por el Atlético",
-            "fonte": "Esto es Atleti",
-            "link": "https://www.estoesatleti.es",
+            "titolo": "La Roma se baja del fichaje de Mason Greenwood, en la agenda del Atlético: operación de 74 millones",
+            "fonte": "El Desmarque",
+            "link": "https://www.eldesmarque.com",
+            "affidabilita": 1,
+            "quando": "1 h"
+          },
+          {
+            "titolo": "Julián Álvarez ya no habla de salir del Atlético de Madrid: \"Se vienen cosas muy importantes\"",
+            "fonte": "El Desmarque",
+            "link": "https://www.eldesmarque.com",
             "affidabilita": 1,
             "quando": "3 h"
           },
@@ -2926,21 +2851,14 @@
             "fonte": "dorsal16.com",
             "link": "https://www.dorsal16.com",
             "affidabilita": 1,
-            "quando": "3 h"
+            "quando": "6 h"
           },
           {
             "titolo": "Gabi vuelve al Atlético de Madrid",
             "fonte": "Superdeporte",
             "link": "https://www.superdeporte.es",
             "affidabilita": 1,
-            "quando": "8 h"
-          },
-          {
-            "titolo": "Así quedaría el posible once de Simeone 26/27 con todos los fichajes que planea el Atlético de Madrid",
-            "fonte": "El Desmarque",
-            "link": "https://www.eldesmarque.com",
-            "affidabilita": 1,
-            "quando": "1 d"
+            "quando": "11 h"
           }
         ],
         "obj": [
@@ -2949,7 +2867,7 @@
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "6 h"
+            "quando": "9 h"
           },
           {
             "titolo": "El Atlético de Madrid quiere cerrar un fichaje en el Deportivo",
@@ -2989,7 +2907,7 @@
           "img": "https://assets.goal.com/images/v3/getty-2284537455/crop/MM5DEMRRGI5DCMRUGQ5G433XMU5DAORRGU3Q====/GettyImages-2284537455.jpg",
           "dominio": "goal.com",
           "affidabilita": 2,
-          "quando": "6 h"
+          "quando": "9 h"
         },
         {
           "titolo": "El Atlético de Madrid cierra el fichaje de Kang-in Lee",
@@ -3009,7 +2927,7 @@
             "direzione": "out",
             "club": "Fiorentina",
             "_first": "2026-06-29",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           },
           {
@@ -3017,7 +2935,15 @@
             "direzione": "in",
             "club": "Marseille",
             "_first": "2026-07-02",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Rubén Vargas",
+            "direzione": "out",
+            "club": "Tottenham",
+            "_first": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           },
           {
@@ -3056,14 +2982,6 @@
             "giocatore": "Mohamed Salah",
             "direzione": "in",
             "club": "Liverpool",
-            "_first": "2026-07-07",
-            "_seen": "2026-07-07",
-            "_strong": ""
-          },
-          {
-            "giocatore": "Rubén Vargas",
-            "direzione": "out",
-            "club": "Tottenham",
             "_first": "2026-07-07",
             "_seen": "2026-07-07",
             "_strong": ""
@@ -3126,7 +3044,7 @@
             "fonte": "Mundo Deportivo",
             "link": "https://www.mundodeportivo.com",
             "affidabilita": 3,
-            "quando": "5 h"
+            "quando": "8 h"
           },
           {
             "titolo": "Los cuatro fichajes del Athletic para el cuerpo técnico de Terzic",
@@ -3147,21 +3065,21 @@
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "ahora"
+            "quando": "3 h"
           },
           {
             "titolo": "Edin Terzic se presenta en el Athletic: \"No he pedido ningún fichaje, la primera respuesta está en Lezama\"",
             "fonte": "Cadena SER",
             "link": "https://cadenaser.com",
             "affidabilita": 2,
-            "quando": "8 h"
+            "quando": "11 h"
           },
           {
             "titolo": "Los nombres propios del Athletic según Edin Terzic: Nico Williams, de Marcos y los posibles fichajes",
             "fonte": "Radio Nervión",
             "link": "https://www.radionervion.com",
             "affidabilita": 1,
-            "quando": "6 h"
+            "quando": "9 h"
           }
         ],
         "obj": [],
@@ -3172,7 +3090,7 @@
             "fonte": "elDiario.es",
             "link": "https://cordopolis.eldiario.es",
             "affidabilita": 1,
-            "quando": "5 h"
+            "quando": "8 h"
           }
         ]
       },
@@ -3185,7 +3103,7 @@
           "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/files/fp/uploads/2026/07/07/6a4d0e89317a5.r_d.1634-791-4274.jpeg",
           "dominio": "mundodeportivo.com",
           "affidabilita": 3,
-          "quando": "5 h"
+          "quando": "8 h"
         },
         {
           "titolo": "Los cuatro fichajes del Athletic para el cuerpo técnico de Terzic",
@@ -3202,7 +3120,7 @@
           "fonte": "Diario AS",
           "stato": "rumor",
           "link": "https://as.com/futbol/primera/canales-y-gerenabarrena-son-los-fichajes-del-athletic-f202606-n/",
-          "img": "",
+          "img": "https://img.asmedia.epimg.net/resizer/v2/UKLOYRDCKFDY5KDEBS52R7UEZI.jpg?auth=2a82fb7d98d9528bf2fbbf5555881bee302ceca07fbc6451cbb6f57853e4dbf7&width=1472&height=828&focal=752%2C394",
           "dominio": "as.com",
           "affidabilita": 3,
           "quando": "13 d"
@@ -3293,7 +3211,7 @@
             "fonte": "Mundo Deportivo",
             "link": "https://www.mundodeportivo.com",
             "affidabilita": 3,
-            "quando": "7 h"
+            "quando": "10 h"
           },
           {
             "titolo": "Kaares, un fichaje de altura para el Villarreal",
@@ -3303,18 +3221,18 @@
             "quando": "3 d"
           },
           {
+            "titolo": "El Villarreal toma ventaja por Mastantuono",
+            "fonte": "SPORT",
+            "link": "https://www.sport.es",
+            "affidabilita": 2,
+            "quando": "15 d"
+          },
+          {
             "titolo": "Villarreal CF",
             "fonte": "Transfermarkt",
             "link": "https://www.transfermarkt.es",
             "affidabilita": 1,
-            "quando": "3 h"
-          },
-          {
-            "titolo": "Ofrecen a Dani Ceballos al Villarreal y el Submarino le responde",
-            "fonte": "El Desmarque",
-            "link": "https://www.eldesmarque.com",
-            "affidabilita": 1,
-            "quando": "7 h"
+            "quando": "6 h"
           },
           {
             "titolo": "El Villarreal CF ficha a la joya del fútbol estonio",
@@ -3344,7 +3262,7 @@
           "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/files/fp/uploads/2026/07/07/6a4cf102cb2ac.r_d.265-278-0.jpeg",
           "dominio": "mundodeportivo.com",
           "affidabilita": 3,
-          "quando": "7 h"
+          "quando": "10 h"
         },
         {
           "titolo": "Kaares, un fichaje de altura para el Villarreal",
@@ -3357,14 +3275,14 @@
           "quando": "3 d"
         },
         {
-          "titolo": "Villarreal CF",
-          "fonte": "Transfermarkt",
+          "titolo": "El Villarreal toma ventaja por Mastantuono",
+          "fonte": "SPORT",
           "stato": "rumor",
-          "link": "https://www.transfermarkt.es/villarreal-cf/transferrekorde/verein/1050/saison_id/2026",
-          "img": "https://tmssl.akamaized.net/images/tm_logo.png",
-          "dominio": "transfermarkt.es",
-          "affidabilita": 1,
-          "quando": "3 h"
+          "link": "https://www.sport.es/es/noticias/real-madrid/villarreal-toma-ventaja-mastantuono-131648695",
+          "img": "https://estaticos-cdn.prensaiberica.es/clip/87ae2bbb-f568-4db2-b367-e8b4c2e7d52f_16-9-discover-aspect-ratio_default_0_x600y225.jpg",
+          "dominio": "sport.es",
+          "affidabilita": 2,
+          "quando": "15 d"
         }
       ],
       "nomi": {
@@ -3418,42 +3336,42 @@
             "fonte": "Estadio Deportivo",
             "link": "https://www.estadiodeportivo.com",
             "affidabilita": 1,
-            "quando": "2 h"
+            "quando": "5 h"
           },
           {
             "titolo": "Haro: \"Con Pellegrini hay un diálogo muy fluido, sobre todo entre Fajardo y él, cada vez que atacamos un posible fichaje en el Betis da su visto bueno\"",
             "fonte": "El Correo de Andalucía",
             "link": "https://www.elcorreoweb.es",
             "affidabilita": 1,
-            "quando": "2 h"
+            "quando": "5 h"
           },
           {
             "titolo": "Mercado de fichajes del Betis, en directo: rumores, altas, bajas y última hora hoy",
             "fonte": "ABC",
             "link": "https://www.abc.es",
             "affidabilita": 1,
-            "quando": "4 h"
+            "quando": "7 h"
           },
           {
-            "titolo": "Novedades impactantes en el mercado de fichajes del Betis: \"No descartamos que pueda ir para largo\"",
-            "fonte": "dorsal16.com",
-            "link": "https://www.dorsal16.com",
+            "titolo": "Ángel Haro habla de los fichajes que han de venir, de Ceballos, Amrabat, Abde, Antony, Isco, Morante...",
+            "fonte": "MundoBetis",
+            "link": "https://mundobetis.com",
             "affidabilita": 1,
-            "quando": "6 h"
+            "quando": "8 h"
           },
           {
             "titolo": "Mensaje de los capitanes del Betis: \"Esperando nuevos compañeros\"",
             "fonte": "El Desmarque",
             "link": "https://www.eldesmarque.com",
             "affidabilita": 1,
-            "quando": "7 h"
+            "quando": "10 h"
           },
           {
             "titolo": "Ofrecen a Dani Ceballos al Villarreal y el Submarino le responde",
             "fonte": "El Desmarque",
             "link": "https://www.eldesmarque.com",
             "affidabilita": 1,
-            "quando": "7 h"
+            "quando": "10 h"
           }
         ],
         "obj": [],
@@ -3487,7 +3405,7 @@
           "img": "https://images.estadiodeportivo.com/imagenes/e1cc15b9-9530-4cfa-a274-01c34f8f3444_1280x720.jpeg",
           "dominio": "estadiodeportivo.com",
           "affidabilita": 1,
-          "quando": "2 h"
+          "quando": "5 h"
         },
         {
           "titolo": "Haro: \"Con Pellegrini hay un diálogo muy fluido, sobre todo entre Fajardo y él, cada vez que atacamos un posible fichaje en el Betis da su visto bueno\"",
@@ -3497,7 +3415,7 @@
           "img": "https://estaticos-cdn.prensaiberica.es/clip/f5616505-52ca-40af-ad1c-7fa925a981c1_16-9-discover-aspect-ratio_default_1484539.jpg",
           "dominio": "elcorreoweb.es",
           "affidabilita": 1,
-          "quando": "2 h"
+          "quando": "5 h"
         }
       ],
       "nomi": {
@@ -3552,7 +3470,7 @@
             "direzione": "in",
             "club": "Barcelona",
             "_first": "2026-06-29",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": "2026-07-07"
           }
         ]
@@ -3569,7 +3487,7 @@
             "fonte": "Marca",
             "link": "https://www.marca.com/futbol/real-sociedad/2026/07/07/matarazzo-renueva-real-sociedad-2028.html",
             "affidabilita": 3,
-            "quando": "11 h"
+            "quando": "14 h"
           },
           {
             "titolo": "El fichaje de Remiro, en pausa",
@@ -3579,32 +3497,32 @@
             "quando": "1 d"
           },
           {
-            "titolo": "Oyarzabal responde muy claro sobre el Barça",
-            "fonte": "Mundo Deportivo",
-            "link": "https://www.mundodeportivo.com",
-            "affidabilita": 3,
-            "quando": "2 d"
-          },
-          {
             "titolo": "¿Qué fichajes hizo Loren Juarros en su ascenso a Primera con la Real Sociedad?",
             "fonte": "Radio Marca Málaga",
             "link": "https://www.merchanendirecto.es",
             "affidabilita": 3,
-            "quando": "2 d"
+            "quando": "3 d"
           },
           {
             "titolo": "La Real Sociedad escoge entrenador hasta 2028",
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "11 h"
+            "quando": "14 h"
           },
           {
             "titolo": "El curioso debate en redes con la decisión de futuro de Mikel Oyarzabal: \"Conformarse es el veneno más peligroso\"",
             "fonte": "El Desmarque",
             "link": "https://www.eldesmarque.com",
             "affidabilita": 1,
-            "quando": "5 h"
+            "quando": "7 h"
+          },
+          {
+            "titolo": "Rino Matarazzo renueva con la Real Sociedad hasta el final de la temporada 2027-2028",
+            "fonte": "kirolakeitb.eus",
+            "link": "https://kirolakeitb.eus",
+            "affidabilita": 1,
+            "quando": "10 h"
           }
         ],
         "obj": [
@@ -3628,7 +3546,7 @@
           "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/07/07/6a4cd4a8aa4a2.jpeg",
           "dominio": "marca.com",
           "affidabilita": 3,
-          "quando": "11 h"
+          "quando": "14 h"
         },
         {
           "titolo": "El fichaje de Remiro, en pausa",
@@ -3641,14 +3559,14 @@
           "quando": "1 d"
         },
         {
-          "titolo": "Oyarzabal responde muy claro sobre el Barça",
-          "fonte": "Mundo Deportivo",
+          "titolo": "¿Qué fichajes hizo Loren Juarros en su ascenso a Primera con la Real Sociedad?",
+          "fonte": "Radio Marca Málaga",
           "stato": "rumor",
-          "link": "https://www.mundodeportivo.com/futbol/mundial/20260705/1004202955/oyarzabal-responde-claro-sobre-barca.html",
-          "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/07/05/6a4a0759f05db.jpeg",
-          "dominio": "mundodeportivo.com",
+          "link": "https://www.merchanendirecto.es/loren-juarros-ascenso-primera-real-socieda/",
+          "img": "https://www.merchanendirecto.es/wp-content/uploads/2026/07/Loren-Juarros-Real-Sociedad_11zon.webp",
+          "dominio": "merchanendirecto.es",
           "affidabilita": 3,
-          "quando": "2 d"
+          "quando": "3 d"
         }
       ],
       "nomi": {
@@ -3697,39 +3615,39 @@
             "quando": "1 d"
           },
           {
-            "titolo": "Las claves de la presión del Sevilla FC que ha convencido a Nianzou para buscar una salida inmediata",
-            "fonte": "Vamos Mi Sevilla",
-            "link": "https://www.vamosmisevillafc.com",
-            "affidabilita": 1,
-            "quando": "2 h"
-          },
-          {
             "titolo": "Mercado de fichajes del Sevilla FC, en directo: rumores, altas, bajas y última hora hoy",
             "fonte": "ABC",
             "link": "https://www.abc.es",
             "affidabilita": 1,
-            "quando": "2 h"
+            "quando": "5 h"
           },
           {
             "titolo": "El Sevilla cierra el fichaje de un canterano del Betis y sigue reforzándose: Santi Negrón se une a Max Español",
             "fonte": "Estadio Deportivo",
             "link": "https://www.estadiodeportivo.com",
             "affidabilita": 1,
-            "quando": "2 h"
+            "quando": "5 h"
           },
           {
             "titolo": "Fichajes del Sevilla FC: Situación límite: Joan Jordán se plantea denunciar al club",
             "fonte": "dorsal16.com",
             "link": "https://www.dorsal16.com",
             "affidabilita": 1,
-            "quando": "6 h"
+            "quando": "9 h"
           },
           {
-            "titolo": "El Málaga sigue con especial atención una operación del Sevilla: un pellizco con tope",
-            "fonte": "El Desmarque",
-            "link": "https://www.eldesmarque.com",
+            "titolo": "El factor clave que ha llevado a Nianzou a buscarse equipo: el Sevilla cruza los dedos",
+            "fonte": "Estadio Deportivo",
+            "link": "https://www.estadiodeportivo.com",
             "affidabilita": 1,
-            "quando": "12 h"
+            "quando": "13 h"
+          },
+          {
+            "titolo": "Jordán, Gattoni y Cardoso, principales ausencias en el último entrenamiento del Sevilla FC",
+            "fonte": "Diario de Sevilla",
+            "link": "https://www.diariodesevilla.es",
+            "affidabilita": 1,
+            "quando": "14 h"
           }
         ],
         "obj": [
@@ -3738,7 +3656,7 @@
             "fonte": "Vamos Mi Sevilla",
             "link": "https://www.vamosmisevillafc.com",
             "affidabilita": 1,
-            "quando": "2 h"
+            "quando": "5 h"
           }
         ],
         "conf": [
@@ -3747,14 +3665,14 @@
             "fonte": "Vamos Mi Sevilla",
             "link": "https://www.vamosmisevillafc.com",
             "affidabilita": 1,
-            "quando": "2 h"
+            "quando": "4 h"
           },
           {
             "titolo": "Fichajes del Sevilla FC: Joselu, cerca de cerrar su regreso a España",
             "fonte": "dorsal16.com",
             "link": "https://www.dorsal16.com",
             "affidabilita": 1,
-            "quando": "3 h"
+            "quando": "6 h"
           }
         ],
         "done": []
@@ -3771,16 +3689,6 @@
           "quando": "1 d"
         },
         {
-          "titolo": "Las claves de la presión del Sevilla FC que ha convencido a Nianzou para buscar una salida inmediata",
-          "fonte": "Vamos Mi Sevilla",
-          "stato": "rumor",
-          "link": "https://www.vamosmisevillafc.com/las-claves-de-la-presion-del-sevilla-fc-que-ha-convencido-a-nianzou-para-buscar-una-salida-inmediata/",
-          "img": "https://www.vamosmisevillafc.com/wp-content/uploads/2026/07/20260707_151911_0000.png",
-          "dominio": "vamosmisevillafc.com",
-          "affidabilita": 1,
-          "quando": "2 h"
-        },
-        {
           "titolo": "La estrategia del Sevilla FC surte efecto y el acuerdo por Adrián Liso con el Real Zaragoza es inminente",
           "fonte": "Vamos Mi Sevilla",
           "stato": "conf",
@@ -3788,23 +3696,41 @@
           "img": "https://www.vamosmisevillafc.com/wp-content/uploads/2026/07/Diseno-sin-titulo_20260707_121707_0000.png",
           "dominio": "vamosmisevillafc.com",
           "affidabilita": 1,
-          "quando": "2 h"
+          "quando": "4 h"
+        },
+        {
+          "titolo": "​El Tottenham inicia contactos con el Sevilla FC por los fichajes de Rubén Vargas y Oso",
+          "fonte": "Vamos Mi Sevilla",
+          "stato": "obj",
+          "link": "https://www.vamosmisevillafc.com/el-tottenham-inicia-contactos-con-el-sevilla-fc-por-los-fichajes-de-ruben-vargas-y-oso/",
+          "img": "https://www.vamosmisevillafc.com/wp-content/uploads/2026/07/Diseno-sin-titulo_20260706_132028_0000-1.png",
+          "dominio": "vamosmisevillafc.com",
+          "affidabilita": 1,
+          "quando": "5 h"
         }
       ],
       "nomi": {
         "rumor": [
           {
-            "giocatore": "Batista Mendy",
-            "direzione": "in",
-            "club": "Real Madrid",
-            "_first": "2026-07-07",
-            "_seen": "2026-07-07",
-            "_strong": ""
-          },
-          {
             "giocatore": "Bilal Nadir",
             "direzione": "in",
             "club": "Marseille",
+            "_first": "2026-07-07",
+            "_seen": "2026-07-08",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Joselu",
+            "direzione": "in",
+            "club": "",
+            "_first": "2026-07-08",
+            "_seen": "2026-07-08",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Batista Mendy",
+            "direzione": "in",
+            "club": "Real Madrid",
             "_first": "2026-07-07",
             "_seen": "2026-07-07",
             "_strong": ""
@@ -3872,7 +3798,7 @@
             "direzione": "out",
             "club": "Fiorentina",
             "_first": "2026-06-30",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           }
         ],
@@ -3882,8 +3808,8 @@
             "direzione": "in",
             "club": "Real Zaragoza",
             "_first": "2026-07-07",
-            "_seen": "2026-07-07",
-            "_strong": "2026-07-07"
+            "_seen": "2026-07-08",
+            "_strong": "2026-07-08"
           }
         ],
         "done": []
@@ -3900,7 +3826,7 @@
             "fonte": "Marca",
             "link": "https://www.marca.com/futbol/valencia/2026/07/07/aliou-dieng-musculo-centro-campo-valencia.html",
             "affidabilita": 3,
-            "quando": "3 h"
+            "quando": "6 h"
           },
           {
             "titolo": "Sato ya está en Valencia: “Es un gran club”",
@@ -3910,32 +3836,32 @@
             "quando": "1 d"
           },
           {
-            "titolo": "Segundo fichaje del día en el Valencia",
-            "fonte": "Fichajes.com",
-            "link": "https://www.fichajes.com",
-            "affidabilita": 2,
-            "quando": "1 h"
+            "titolo": "Colocan a Joel Parra en el Valencia Basket",
+            "fonte": "Superdeporte",
+            "link": "https://www.superdeporte.es",
+            "affidabilita": 1,
+            "quando": "4 h"
           },
           {
             "titolo": "El Valencia ficha una central internacional con Chile",
             "fonte": "Superdeporte",
             "link": "https://www.superdeporte.es",
             "affidabilita": 1,
-            "quando": "9 h"
+            "quando": "12 h"
           },
           {
             "titolo": "La emotiva carta de despedida de Ryonosuke Sato tras su fichaje por el Valencia CF",
             "fonte": "Superdeporte",
             "link": "https://www.superdeporte.es",
             "affidabilita": 1,
-            "quando": "9 h"
+            "quando": "12 h"
           },
           {
             "titolo": "El dinero que ingresará el Valencia CF por el fichaje de Kang In Lee al Atlético de Madrid",
             "fonte": "Superdeporte",
             "link": "https://www.superdeporte.es",
             "affidabilita": 1,
-            "quando": "13 h"
+            "quando": "16 h"
           }
         ],
         "obj": [
@@ -3944,14 +3870,7 @@
             "fonte": "El Desmarque",
             "link": "https://www.eldesmarque.com",
             "affidabilita": 1,
-            "quando": "3 h"
-          },
-          {
-            "titolo": "El Valencia cierra a su lateral derecho, pero va a por otro más",
-            "fonte": "Estadio Deportivo",
-            "link": "https://www.estadiodeportivo.com",
-            "affidabilita": 1,
-            "quando": "1 d"
+            "quando": "5 h"
           }
         ],
         "conf": [
@@ -3976,21 +3895,21 @@
             "fonte": "MARCA",
             "link": "https://www.marca.com",
             "affidabilita": 3,
-            "quando": "1 h"
+            "quando": "4 h"
           },
           {
             "titolo": "Comunicado oficial del Valencia CF sobre Aliou Dieng: \"Anem a per totes!\"",
             "fonte": "Superdeporte",
             "link": "https://www.superdeporte.es",
             "affidabilita": 1,
-            "quando": "1 h"
+            "quando": "4 h"
           },
           {
             "titolo": "El Valencia CF oficializa el fichaje de Sato para las próximas cinco temporadas",
             "fonte": "Levante-EMV",
             "link": "https://www.levante-emv.com",
             "affidabilita": 1,
-            "quando": "10 h"
+            "quando": "13 h"
           }
         ]
       },
@@ -4003,7 +3922,7 @@
           "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/07/07/cIfUA1gJJnxKqksZ2.jpeg",
           "dominio": "marca.com",
           "affidabilita": 3,
-          "quando": "1 h"
+          "quando": "4 h"
         },
         {
           "titolo": "Aliou Dieng, músculo para el centro del campo del Valencia",
@@ -4013,7 +3932,7 @@
           "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/07/07/cIfUA1gJJnxKqksZ2.jpeg",
           "dominio": "marca.com",
           "affidabilita": 3,
-          "quando": "3 h"
+          "quando": "6 h"
         },
         {
           "titolo": "Rynosuke Sato aterriza en Manises para pasar el reconocimiento médico y fichar por el Valencia",
@@ -4090,12 +4009,20 @@
         "conf": [],
         "done": [
           {
-            "giocatore": "Sato",
+            "giocatore": "Aliou Dieng",
+            "direzione": "in",
+            "club": "",
+            "_first": "2026-07-08",
+            "_seen": "2026-07-08",
+            "_strong": "2026-07-08"
+          },
+          {
+            "giocatore": "Ryonosuke Sato",
             "direzione": "in",
             "club": "",
             "_first": "2026-07-07",
-            "_seen": "2026-07-07",
-            "_strong": "2026-07-07"
+            "_seen": "2026-07-08",
+            "_strong": "2026-07-08"
           }
         ]
       }
@@ -4106,13 +4033,6 @@
       "league": "La Liga",
       "colonne": {
         "rumor": [
-          {
-            "titolo": "Y a la espera de Marcos Alonso... el Celta anuncia la renovación de una de sus grandes perlas",
-            "fonte": "Mundo Deportivo",
-            "link": "https://www.mundodeportivo.com",
-            "affidabilita": 3,
-            "quando": "9 h"
-          },
           {
             "titolo": "Celta de Vigo | Mercado de fichajes, plantilla y calendario, en directo",
             "fonte": "Faro de Vigo",
@@ -4125,14 +4045,14 @@
             "fonte": "Faro de Vigo",
             "link": "https://www.farodevigo.es",
             "affidabilita": 1,
-            "quando": "10 h"
+            "quando": "13 h"
           },
           {
             "titolo": "Marco Garcés sufre un revés por el fichaje de Fer López: el Celta lo fía todo a una carta",
             "fonte": "El Desmarque",
             "link": "https://www.eldesmarque.com",
             "affidabilita": 1,
-            "quando": "12 h"
+            "quando": "15 h"
           },
           {
             "titolo": "Sergio Carreira apuesta por un cambio en pleno mercado de fichajes: la posición del Celta",
@@ -4147,6 +4067,13 @@
             "link": "https://www.futbolfantasy.com",
             "affidabilita": 1,
             "quando": "2 d"
+          },
+          {
+            "titolo": "El Celta apuesta por dos fichajes de la casa: a la espera de la decisión de Claudio Giráldez",
+            "fonte": "El Desmarque",
+            "link": "https://www.eldesmarque.com",
+            "affidabilita": 1,
+            "quando": "13 d"
           }
         ],
         "obj": [
@@ -4162,16 +4089,6 @@
         "done": []
       },
       "feed": [
-        {
-          "titolo": "Y a la espera de Marcos Alonso... el Celta anuncia la renovación de una de sus grandes perlas",
-          "fonte": "Mundo Deportivo",
-          "stato": "rumor",
-          "link": "https://www.mundodeportivo.com/futbol/fichajes/20260707/1004203811/espera-marcos-alonso-celta-anuncia-renovacion-grandes-perlas.html",
-          "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/files/fp/uploads/2026/07/07/6a4cd99945b20.r_d.272-340-22059.jpeg",
-          "dominio": "mundodeportivo.com",
-          "affidabilita": 3,
-          "quando": "9 h"
-        },
         {
           "titolo": "Celta de Vigo | Mercado de fichajes, plantilla y calendario, en directo",
           "fonte": "Faro de Vigo",
@@ -4190,7 +4107,17 @@
           "img": "https://estaticos-cdn.prensaiberica.es/clip/f73e2e2c-5576-42de-b407-7372f90c592f_16-9-discover-aspect-ratio_default_0_x341y125.jpg",
           "dominio": "farodevigo.es",
           "affidabilita": 1,
-          "quando": "10 h"
+          "quando": "13 h"
+        },
+        {
+          "titolo": "Marco Garcés sufre un revés por el fichaje de Fer López: el Celta lo fía todo a una carta",
+          "fonte": "El Desmarque",
+          "stato": "rumor",
+          "link": "https://www.eldesmarque.com/futbol/mercado-de-fichajes/20260707/marco-garces-sufre-reves-fichaje-fer-lopez-celta-vigo-fia-todo-carta_18_019644300.html",
+          "img": "https://album.mediaset.es/eimg/2026/07/07/fer-lopez-en-el-atletico-celta-16-9-aspect-ratio-default-1048222_da39.jpg",
+          "dominio": "eldesmarque.com",
+          "affidabilita": 1,
+          "quando": "15 h"
         }
       ],
       "nomi": {
@@ -4200,7 +4127,7 @@
             "direzione": "in",
             "club": "",
             "_first": "2026-07-07",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           },
           {
@@ -4244,7 +4171,7 @@
             "fonte": "Diario AS",
             "link": "https://as.com",
             "affidabilita": 3,
-            "quando": "4 h"
+            "quando": "6 h"
           },
           {
             "titolo": "Beñat San José da el visto bueno a dos fichajes",
@@ -4319,7 +4246,7 @@
           "img": "https://img.asmedia.epimg.net/resizer/v2/DX5Y4M5VXFCRNBBVSOW4UOUEUU.jpg?auth=9e104ff97d9f9e41da33141a02704c9a865ba2600ee0537ed72be9bb5cca5c00&width=1472&height=828&focal=606%2C245",
           "dominio": "as.com",
           "affidabilita": 3,
-          "quando": "4 h"
+          "quando": "6 h"
         },
         {
           "titolo": "Oficial: Pacha Espino abandona el Rayo Vallecano y ya tiene nuevo equipo",
@@ -4504,44 +4431,44 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "El Getafe presenta a sus primeros fichajes",
+            "fonte": "Diario AS",
+            "link": "https://as.com",
+            "affidabilita": 3,
+            "quando": "6 h"
+          },
+          {
             "titolo": "¡Y siguen llegando fichajes al Getafe!: ahora, un central",
             "fonte": "Mundo Deportivo",
             "link": "https://www.mundodeportivo.com",
             "affidabilita": 3,
-            "quando": "7 h"
+            "quando": "10 h"
           },
           {
             "titolo": "Jean-Yves Valou jugará cedido en el Getafe",
             "fonte": "Marca",
             "link": "https://www.marca.com/futbol/getafe/2026/07/07/jean-yves-valou-jugara-cedido-getafe.html",
             "affidabilita": 3,
-            "quando": "8 h"
+            "quando": "11 h"
           },
           {
             "titolo": "El Getafe presenta cuatro fichajes de una tacada: “Nos vamos a dejar el alma”",
             "fonte": "MARCA",
             "link": "https://www.marca.com",
             "affidabilita": 3,
-            "quando": "9 h"
+            "quando": "12 h"
           },
           {
             "titolo": "El Getafe presenta a los cuatro nuevos fichajes que jugaron cedidos la pasada temporada",
             "fonte": "SPORT",
             "link": "https://www.sport.es",
             "affidabilita": 2,
-            "quando": "7 h"
+            "quando": "10 h"
           },
           {
             "titolo": "El Getafe presenta a 4 fichajes de una tacada",
             "fonte": "La Razón",
             "link": "https://www.larazon.es",
-            "affidabilita": 1,
-            "quando": "3 h"
-          },
-          {
-            "titolo": "Última hora: Mercado de Fichajes y rumores del Getafe - Temporada 2026/27 - LaLiga",
-            "fonte": "FútbolFantasy",
-            "link": "https://www.futbolfantasy.com",
             "affidabilita": 1,
             "quando": "6 h"
           }
@@ -4552,6 +4479,16 @@
       },
       "feed": [
         {
+          "titolo": "El Getafe presenta a sus primeros fichajes",
+          "fonte": "Diario AS",
+          "stato": "rumor",
+          "link": "https://as.com/futbol/primera/el-getafe-presenta-a-sus-primeros-fichajes-f202607-n/",
+          "img": "https://img.asmedia.epimg.net/resizer/v2/F3GTAXZOG5OXRHXERIALLNWVZY.jpg?auth=2bd42bdcc35cdb13643b9bbb5c83d852eb5453ea418858b4af2b74aa546a6d34&width=1472&height=828&focal=2314%2C377",
+          "dominio": "as.com",
+          "affidabilita": 3,
+          "quando": "6 h"
+        },
+        {
           "titolo": "¡Y siguen llegando fichajes al Getafe!: ahora, un central",
           "fonte": "Mundo Deportivo",
           "stato": "rumor",
@@ -4559,7 +4496,7 @@
           "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/files/fp/uploads/2026/07/07/6a4cf102cb2ac.r_d.265-278-0.jpeg",
           "dominio": "mundodeportivo.com",
           "affidabilita": 3,
-          "quando": "7 h"
+          "quando": "10 h"
         },
         {
           "titolo": "Jean-Yves Valou jugará cedido en el Getafe",
@@ -4569,17 +4506,7 @@
           "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/07/07/6a4cebe932c8c.jpeg",
           "dominio": "marca.com",
           "affidabilita": 3,
-          "quando": "8 h"
-        },
-        {
-          "titolo": "El Getafe presenta cuatro fichajes de una tacada: “Nos vamos a dejar el alma”",
-          "fonte": "MARCA",
-          "stato": "rumor",
-          "link": "https://www.marca.com/futbol/getafe/2026/07/07/getafe-presenta-cuatro-fichajes-tacada-dejar-alma.html",
-          "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/07/07/cIFsI1gJEw9Z78mWP.jpeg",
-          "dominio": "marca.com",
-          "affidabilita": 3,
-          "quando": "9 h"
+          "quando": "11 h"
         }
       ],
       "nomi": {
@@ -4621,46 +4548,46 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "Mercado de fichajes de hoy, 7 de julio, en directo | Altas, bajas y última hora del Real Madrid, Barcelona...",
+            "fonte": "MARCA",
+            "link": "https://www.marca.com",
+            "affidabilita": 3,
+            "quando": "3 h"
+          },
+          {
             "titolo": "El Espanyol ficha a Quilindschy Hartman: llega cedido por el Burnley",
             "fonte": "MARCA",
             "link": "https://www.marca.com",
             "affidabilita": 3,
-            "quando": "12 h"
-          },
-          {
-            "titolo": "El Espanyol anuncia un nuevo fichaje y se convierte en el jugador más valioso",
-            "fonte": "Món Esport",
-            "link": "https://monesport.cat",
-            "affidabilita": 2,
-            "quando": "9 h"
+            "quando": "15 h"
           },
           {
             "titolo": "Àlex Calatrava, nuevo fichaje del Espanyol: \"Manolo ya me quiso fichar cuando estaba en Badalona\"",
             "fonte": "SPORT",
             "link": "https://www.sport.es",
             "affidabilita": 2,
-            "quando": "9 h"
+            "quando": "12 h"
           },
           {
             "titolo": "Calatrava, nuevo fichaje del Espanyol, sobre la opción de haber llegado la temporada anterior: \"Hubo intéres\"",
             "fonte": "Estadio Deportivo",
             "link": "https://www.estadiodeportivo.com",
             "affidabilita": 1,
-            "quando": "7 h"
+            "quando": "9 h"
           },
           {
             "titolo": "Álex Calatrava explica por qué elige al Espanyol entre Celta y Deportivo: \"Eso me convenció\"",
             "fonte": "El Desmarque",
             "link": "https://www.eldesmarque.com",
             "affidabilita": 1,
-            "quando": "9 h"
+            "quando": "12 h"
           },
           {
             "titolo": "Hartman se convierte en el segundo fichaje del Espanyol",
             "fonte": "La Razón",
             "link": "https://www.larazon.es",
             "affidabilita": 1,
-            "quando": "9 h"
+            "quando": "12 h"
           }
         ],
         "obj": [],
@@ -4671,11 +4598,28 @@
             "fonte": "Mundo Deportivo",
             "link": "https://www.mundodeportivo.com",
             "affidabilita": 3,
-            "quando": "8 h"
+            "quando": "11 h"
+          },
+          {
+            "titolo": "OFICIAL | Quilindschy Hartman es el segundo fichaje del Espanyol: «Siempre doy el 100%»",
+            "fonte": "La Grada",
+            "link": "https://lagrada.org",
+            "affidabilita": 1,
+            "quando": "15 h"
           }
         ]
       },
       "feed": [
+        {
+          "titolo": "Mercado de fichajes de hoy, 7 de julio, en directo | Altas, bajas y última hora del Real Madrid, Barcelona...",
+          "fonte": "MARCA",
+          "stato": "rumor",
+          "link": "https://www.marca.com/futbol/2026/07/07/6a4ca37e6c283cdca802c592-directo.html",
+          "img": "https://objetos.estaticos-marca.com/assets/multimedia/imagenes/2026/07/07/17834084022366.jpg",
+          "dominio": "marca.com",
+          "affidabilita": 3,
+          "quando": "3 h"
+        },
         {
           "titolo": "El Espanyol hace oficial su segundo fichaje: Quilindschy Hartman",
           "fonte": "Mundo Deportivo",
@@ -4684,7 +4628,7 @@
           "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/07/07/6a4cebde4b5cb.jpeg",
           "dominio": "mundodeportivo.com",
           "affidabilita": 3,
-          "quando": "8 h"
+          "quando": "11 h"
         },
         {
           "titolo": "El Espanyol ficha a Quilindschy Hartman: llega cedido por el Burnley",
@@ -4694,17 +4638,7 @@
           "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/07/07/6a4cb3aac7f1c.jpeg",
           "dominio": "marca.com",
           "affidabilita": 3,
-          "quando": "12 h"
-        },
-        {
-          "titolo": "El Espanyol anuncia un nuevo fichaje y se convierte en el jugador más valioso",
-          "fonte": "Món Esport",
-          "stato": "rumor",
-          "link": "https://monesport.cat/es/rcde/el-espanyol-anuncia-un-nuevo-fichaje-y-se-convierte-en-el-jugador-mas-valioso-486454/",
-          "img": "https://monesport.cat/app/uploads/sites/12/2026/07/hmnfeogwoaa0k5f.jpg",
-          "dominio": "monesport.cat",
-          "affidabilita": 2,
-          "quando": "9 h"
+          "quando": "15 h"
         }
       ],
       "nomi": {
@@ -4760,7 +4694,7 @@
             "fonte": "Marca",
             "link": "https://www.marca.com/futbol/mallorca/2026/07/07/arnau-puigmal-recala-mallorca.html",
             "affidabilita": 3,
-            "quando": "4 h"
+            "quando": "7 h"
           },
           {
             "titolo": "El Mallorca, con casi 40 millones y vía libre para fichar",
@@ -4781,21 +4715,21 @@
             "fonte": "Diario de Mallorca",
             "link": "https://www.diariodemallorca.es",
             "affidabilita": 1,
-            "quando": "ahora"
+            "quando": "3 h"
           },
           {
             "titolo": "El Mallorca cierra el fichaje de un extremo cotizado",
             "fonte": "Fondo Segunda",
             "link": "https://fondosegunda.com",
             "affidabilita": 1,
-            "quando": "7 h"
+            "quando": "10 h"
           },
           {
             "titolo": "Fichajes. Lo más destacado del mercado mundial - El Imparcial",
             "fonte": "Diario liberal e independiente",
             "link": "https://www.elimparcial.es",
             "affidabilita": 1,
-            "quando": "13 h"
+            "quando": "16 h"
           }
         ],
         "obj": [],
@@ -4806,21 +4740,21 @@
             "fonte": "Diario AS",
             "link": "https://as.com",
             "affidabilita": 3,
-            "quando": "4 h"
+            "quando": "7 h"
           },
           {
             "titolo": "El Mallorca oficializa el fichaje de Arnau Puigmal, polivalencia y carisma para Luis García",
             "fonte": "Diario de Mallorca",
             "link": "https://www.diariodemallorca.es",
             "affidabilita": 1,
-            "quando": "4 h"
+            "quando": "7 h"
           },
           {
             "titolo": "Ortells confirma el fichaje de Arnau Puigmal y se sincera sobre Demichelis: \"Me decepcionó\"",
             "fonte": "Diario de Mallorca",
             "link": "https://www.diariodemallorca.es",
             "affidabilita": 1,
-            "quando": "5 h"
+            "quando": "8 h"
           },
           {
             "titolo": "Leo Román, fichaje oficial en el Deportivo: precio de la operación y contrato",
@@ -4840,7 +4774,7 @@
           "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/07/07/6a4d24d4c89ba.jpeg",
           "dominio": "marca.com",
           "affidabilita": 3,
-          "quando": "4 h"
+          "quando": "7 h"
         },
         {
           "titolo": "El Mallorca hace oficial el fichaje de Arnau",
@@ -4850,7 +4784,7 @@
           "img": "https://img.asmedia.epimg.net/resizer/v2/KZKISF27OF7YPSV5U4IU7JCE2E.JPG?auth=0839b6729c2e94804a9f1b2f7774222a70d40e43a8f1bdf36cf905df7a977a68&width=1472&height=828&focal=1636%2C352",
           "dominio": "as.com",
           "affidabilita": 3,
-          "quando": "4 h"
+          "quando": "7 h"
         },
         {
           "titolo": "El Mallorca, con casi 40 millones y vía libre para fichar",
@@ -5023,6 +4957,14 @@
       "nomi": {
         "rumor": [
           {
+            "giocatore": "Angeliño",
+            "direzione": "in",
+            "club": "",
+            "_first": "2026-07-08",
+            "_seen": "2026-07-08",
+            "_strong": ""
+          },
+          {
             "giocatore": "Ville Koski",
             "direzione": "in",
             "club": "",
@@ -5065,19 +5007,19 @@
         ],
         "obj": [
           {
+            "giocatore": "Lorenzo Amatucci",
+            "direzione": "in",
+            "club": "Fiorentina",
+            "_first": "2026-07-06",
+            "_seen": "2026-07-08",
+            "_strong": ""
+          },
+          {
             "giocatore": "Gorka Carrera",
             "direzione": "in",
             "club": "Real Sociedad",
             "_first": "2026-06-25",
             "_seen": "2026-07-07",
-            "_strong": ""
-          },
-          {
-            "giocatore": "Lorenzo Amatucci",
-            "direzione": "in",
-            "club": "Fiorentina",
-            "_first": "2026-07-06",
-            "_seen": "2026-07-06",
             "_strong": ""
           }
         ],
@@ -5091,6 +5033,13 @@
       "league": "La Liga",
       "colonne": {
         "rumor": [
+          {
+            "titolo": "Pyshchur, la primera pieza del nuevo Girona",
+            "fonte": "Mundo Deportivo",
+            "link": "https://www.mundodeportivo.com",
+            "affidabilita": 3,
+            "quando": "25 d"
+          },
           {
             "titolo": "Opción a coste 0 para la delantera del FC Barcelona",
             "fonte": "Fichajes.com",
@@ -5125,13 +5074,6 @@
             "link": "https://www.ideal.es",
             "affidabilita": 1,
             "quando": "20 d"
-          },
-          {
-            "titolo": "Witsel no seguirá en el Girona y se ofrece en LaLiga",
-            "fonte": "La Razón",
-            "link": "https://www.larazon.es",
-            "affidabilita": 1,
-            "quando": "25 d"
           }
         ],
         "obj": [],
@@ -5152,8 +5094,18 @@
           "fonte": "Diario AS",
           "stato": "done",
           "link": "https://as.com/futbol/primera/oleksandr-pyshchur-abre-la-veda-f202606-n/",
-          "img": "",
+          "img": "https://img.asmedia.epimg.net/resizer/v2/KWDJWTCPLJHJLNYGKENOWCT53Q.jpg?auth=74ac651d03a890341d25f8d2ec683a6609aa9a2b0db5939629c1a91476b2d4eb&width=1472&height=828&smart=true",
           "dominio": "as.com",
+          "affidabilita": 3,
+          "quando": "25 d"
+        },
+        {
+          "titolo": "Pyshchur, la primera pieza del nuevo Girona",
+          "fonte": "Mundo Deportivo",
+          "stato": "rumor",
+          "link": "https://www.mundodeportivo.com/futbol/girona-fc/20260612/1004194166/pyshchur-primera-pieza-nuevo-girona.html",
+          "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/files/fp/uploads/2026/06/12/6a2bce80786f4.r_d.1679-1138-4000.jpeg",
+          "dominio": "mundodeportivo.com",
           "affidabilita": 3,
           "quando": "25 d"
         },
@@ -5166,16 +5118,6 @@
           "dominio": "fichajes.com",
           "affidabilita": 2,
           "quando": "20 d"
-        },
-        {
-          "titolo": "El Girona anuncia un primer fichaje polémico para el regreso a Primera División",
-          "fonte": "Món Esport",
-          "stato": "rumor",
-          "link": "https://monesport.cat/es/girona-fc/el-girona-anuncia-un-primer-fichaje-polemico-para-el-regreso-a-primera-division-485123/",
-          "img": "https://monesport.cat/app/uploads/sites/12/2026/06/1be2a7d5-e3c0-41ce-aee7-75ca69855471_16-9-discover-aspect-ratio_default_0_x600y225.jpg",
-          "dominio": "monesport.cat",
-          "affidabilita": 2,
-          "quando": "25 d"
         }
       ],
       "nomi": {
@@ -5252,15 +5194,7 @@
             "quando": "18 d"
           }
         ],
-        "obj": [
-          {
-            "titolo": "El Levante se marca un objetivo para la delantera",
-            "fonte": "Fichajes.com",
-            "link": "https://www.fichajes.com",
-            "affidabilita": 2,
-            "quando": "16 d"
-          }
-        ],
+        "obj": [],
         "conf": [],
         "done": [
           {
@@ -5284,16 +5218,6 @@
           "quando": "4 d"
         },
         {
-          "titolo": "El Levante se marca un objetivo para la delantera",
-          "fonte": "Fichajes.com",
-          "stato": "obj",
-          "link": "https://www.fichajes.com/a537733945880986279-el-levante-se-marca-un-objetivo-para-la-delantera",
-          "img": "https://assets-es.imgfoot.com/media/cache/1200x675/luis-castro.jpg",
-          "dominio": "fichajes.com",
-          "affidabilita": 2,
-          "quando": "16 d"
-        },
-        {
           "titolo": "Enzo Bardeli calienta motores en el Levante UD: \"Estoy muy feliz y preparado\"",
           "fonte": "Superdeporte",
           "stato": "rumor",
@@ -5302,6 +5226,16 @@
           "dominio": "superdeporte.es",
           "affidabilita": 1,
           "quando": "3 d"
+        },
+        {
+          "titolo": "Diego Pampín se despide del Levante UD: \"Han sido 2 años inolvidables\"",
+          "fonte": "Superdeporte",
+          "stato": "rumor",
+          "link": "https://www.superdeporte.es/levante-ud/2026/07/03/diego-pampin-despide-levante-ud-132107708.html",
+          "img": "https://estaticos-cdn.prensaiberica.es/clip/42c8c8f9-0112-4f37-9c3b-6c434eea346f_16-9-discover-aspect-ratio_default_0_x600y266.jpg",
+          "dominio": "superdeporte.es",
+          "affidabilita": 1,
+          "quando": "4 d"
         }
       ],
       "nomi": {
@@ -5440,42 +5374,42 @@
             "fonte": "MARCA",
             "link": "https://www.marca.com",
             "affidabilita": 3,
-            "quando": "11 h"
-          },
-          {
-            "titolo": "El Real Oviedo ata a su nuevo goleador: fichaje a coste cero sin riesgo económico",
-            "fonte": "COPE",
-            "link": "https://www.cope.es",
-            "affidabilita": 1,
-            "quando": "6 h"
+            "quando": "13 h"
           },
           {
             "titolo": "La portería del Oviedo, pendiente del mercado",
             "fonte": "Killer Asturias",
             "link": "https://killerasturias.com",
             "affidabilita": 1,
-            "quando": "7 h"
+            "quando": "9 h"
           },
           {
             "titolo": "El Real Oviedo anuncia su sexto fichaje",
             "fonte": "La Razón",
             "link": "https://www.larazon.es",
             "affidabilita": 1,
-            "quando": "8 h"
-          },
-          {
-            "titolo": "Directo | Mercado de fichajes del CD Castellón: El cuadro albinegro anuncia una salida en forma de cesión",
-            "fonte": "El Periódico Mediterráneo",
-            "link": "https://www.elperiodicomediterraneo.com",
-            "affidabilita": 1,
-            "quando": "9 h"
+            "quando": "11 h"
           },
           {
             "titolo": "David Fernández se cubre las espaldas por un peso pesado del Oviedo: hay tres equipos",
             "fonte": "El Desmarque",
             "link": "https://www.eldesmarque.com",
             "affidabilita": 1,
-            "quando": "10 h"
+            "quando": "13 h"
+          },
+          {
+            "titolo": "Víctor Mingo ya es del Oviedo, un fichaje oportunista con el asterisco de la continuidad",
+            "fonte": "El Desmarque",
+            "link": "https://www.eldesmarque.com",
+            "affidabilita": 1,
+            "quando": "13 h"
+          },
+          {
+            "titolo": "El Real Oviedo apuesta por Víctor Mingo, uno de los delanteros destacados de Primera Federación",
+            "fonte": "El Comercio",
+            "link": "https://www.elcomercio.es",
+            "affidabilita": 1,
+            "quando": "14 h"
           }
         ],
         "obj": [
@@ -5499,17 +5433,7 @@
           "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/07/07/6a4cc4c7ed39a.jpeg",
           "dominio": "marca.com",
           "affidabilita": 3,
-          "quando": "11 h"
-        },
-        {
-          "titolo": "El Real Oviedo ata a su nuevo goleador: fichaje a coste cero sin riesgo económico",
-          "fonte": "COPE",
-          "stato": "rumor",
-          "link": "https://www.cope.es/emisoras/asturias/asturias-provincia/deportes-cope-asturias/noticias/real-oviedo-ata-nuevo-goleador-fichaje-coste-cero-riesgo-economico-20260707_3400142.html",
-          "img": "https://www.cope.es/files/og_thumbnail/uploads/2026/07/07/6a4d05916a624.jpeg",
-          "dominio": "cope.es",
-          "affidabilita": 1,
-          "quando": "6 h"
+          "quando": "13 h"
         },
         {
           "titolo": "La portería del Oviedo, pendiente del mercado",
@@ -5519,7 +5443,17 @@
           "img": "https://killerasturias.com/sites/default/files/2025-10/Aar%C3%B3n%20Escandell.JPG",
           "dominio": "killerasturias.com",
           "affidabilita": 1,
-          "quando": "7 h"
+          "quando": "9 h"
+        },
+        {
+          "titolo": "El Real Oviedo anuncia su sexto fichaje",
+          "fonte": "La Razón",
+          "stato": "rumor",
+          "link": "https://www.larazon.es/deportes/laotraliga/real-oviedo-anuncia-sexto-fichaje_202607076a4ce4fac0b5fb431c449787.html",
+          "img": "https://fotografias-2.larazon.es/clipping/cmsimages02/2026/04/05/BC2052EB-1D11-4C40-899A-FFB772D6E826/98.jpg?crop=4473,2517,x0,y233&width=1900&height=1069&optimize=low&format=webply",
+          "dominio": "larazon.es",
+          "affidabilita": 1,
+          "quando": "11 h"
         }
       ],
       "nomi": {
@@ -5575,7 +5509,7 @@
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "7 h"
+            "quando": "10 h"
           },
           {
             "titolo": "El Liverpool suma otros dos nombres a su lista de candidatos para el centro de la defensa",
@@ -5585,18 +5519,11 @@
             "quando": "24 d"
           },
           {
-            "titolo": "El Liverpool podría hacer su próximo fichaje de verano por solo 21 millones de libras",
-            "fonte": "Liverpool FC",
-            "link": "https://www.liverpoolfc.com",
-            "affidabilita": 1,
-            "quando": "4 h"
-          },
-          {
             "titolo": "Dos nuevos fichajes del Liverpool, vistos al arrancar la pretemporada",
             "fonte": "OneFootball",
             "link": "https://onefootball.com",
             "affidabilita": 1,
-            "quando": "7 h"
+            "quando": "10 h"
           },
           {
             "titolo": "Fichajes. Lo más destacado del mercado de la Premier League: City y Tottenham se vuelven locos - El Imparcial",
@@ -5615,7 +5542,15 @@
         ],
         "obj": [],
         "conf": [],
-        "done": []
+        "done": [
+          {
+            "titolo": "El Liverpool hace oficial el fichaje de Víctor Muñoz y Osasuna detalla el dinero que se repartirá con el Real Madrid por su traspaso",
+            "fonte": "La Razón",
+            "link": "https://www.larazon.es",
+            "affidabilita": 1,
+            "quando": "19 d"
+          }
+        ]
       },
       "feed": [
         {
@@ -5626,7 +5561,7 @@
           "img": "https://assets-es.imgfoot.com/media/cache/1200x675/arteta-arsenal-atleti.jpg",
           "dominio": "fichajes.com",
           "affidabilita": 2,
-          "quando": "7 h"
+          "quando": "10 h"
         },
         {
           "titolo": "El Liverpool suma otros dos nombres a su lista de candidatos para el centro de la defensa",
@@ -5639,18 +5574,26 @@
           "quando": "24 d"
         },
         {
-          "titolo": "El Liverpool podría hacer su próximo fichaje de verano por solo 21 millones de libras",
-          "fonte": "Liverpool FC",
+          "titolo": "Dos nuevos fichajes del Liverpool, vistos al arrancar la pretemporada",
+          "fonte": "OneFootball",
           "stato": "rumor",
-          "link": "https://www.liverpoolfc.com/es/news/liverpool-could-make-their-next-summer-signing-just-ps21m",
-          "img": "https://backend.liverpoolfc.com/sites/default/files/styles/lg/public/2026-03/new-media-watch-teamtalk_34f03d7bfe1bd94b5e1e3c54a34667c3.jpg?itok=S6fFdYTz",
-          "dominio": "liverpoolfc.com",
+          "link": "https://onefootball.com/fr/news/dos-nuevos-fichajes-del-liverpool-vistos-al-arrancar-la-pretemporada-43108409",
+          "img": "https://photobooth-api.onefootball.com/api/screenshot/%2Fv2%2Fphotobooth%2Fcms%2Ffr%2F43108409%3Fdate=2026-07-07",
+          "dominio": "onefootball.com",
           "affidabilita": 1,
-          "quando": "4 h"
+          "quando": "10 h"
         }
       ],
       "nomi": {
         "rumor": [
+          {
+            "giocatore": "Alexander Isak",
+            "direzione": "out",
+            "club": "Brighton",
+            "_first": "2026-07-01",
+            "_seen": "2026-07-08",
+            "_strong": ""
+          },
           {
             "giocatore": "Virgil van Dijk",
             "direzione": "out",
@@ -5673,14 +5616,6 @@
             "club": "",
             "_first": "2026-07-07",
             "_seen": "2026-07-07",
-            "_strong": ""
-          },
-          {
-            "giocatore": "Alexander Isak",
-            "direzione": "out",
-            "club": "Brighton",
-            "_first": "2026-07-01",
-            "_seen": "2026-07-06",
             "_strong": ""
           },
           {
@@ -5717,28 +5652,28 @@
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "3 h"
+            "quando": "6 h"
           },
           {
             "titolo": "Una estrella del Arsenal está a punto de marcharse... y Arteta planea tres fichajes espectaculares",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "6 h"
+            "quando": "9 h"
           },
           {
             "titolo": "El fichaje que el Arsenal puede birlar al Liverpool",
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "7 h"
+            "quando": "10 h"
           },
           {
             "titolo": "El Arsenal piensa en Raúl Asencio",
             "fonte": "OkDiario",
             "link": "https://okdiario.com",
             "affidabilita": 2,
-            "quando": "12 h"
+            "quando": "15 h"
           },
           {
             "titolo": "Las cuatro figuras que podrían dejar el Arsenal tras la posible venta de Leandro Trossard",
@@ -5748,7 +5683,7 @@
             "quando": "1 d"
           },
           {
-            "titolo": "Georgia Stanway resuelve el centro del campo del Arsenal, que busca su primer título de la WSL en ocho años. GOAL analiza los mejores fichajes del mercado de verano femenino de 2026",
+            "titolo": "Georgia Stanway resuelve el centro del campo del Arsenal, que busca su primer título de la WSL en ocho años. GOAL analiza los fichajes del mercado de verano femenino de 2026 | Goal.com Espana",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
@@ -5768,7 +5703,7 @@
           "img": "https://assets-es.imgfoot.com/media/cache/1200x675/arsenal-titre.jpg",
           "dominio": "fichajes.com",
           "affidabilita": 2,
-          "quando": "3 h"
+          "quando": "6 h"
         },
         {
           "titolo": "Una estrella del Arsenal está a punto de marcharse... y Arteta planea tres fichajes espectaculares",
@@ -5778,7 +5713,7 @@
           "img": "https://assets.goal.com/images/v3/getty-2278006692/crop/MM5DIMBRGY5DEMRVHE5G433XMU5DIORQ/GettyImages-2278006692.jpg",
           "dominio": "goal.com",
           "affidabilita": 2,
-          "quando": "6 h"
+          "quando": "9 h"
         },
         {
           "titolo": "El fichaje que el Arsenal puede birlar al Liverpool",
@@ -5788,7 +5723,7 @@
           "img": "https://assets-es.imgfoot.com/media/cache/1200x675/arteta-arsenal-atleti.jpg",
           "dominio": "fichajes.com",
           "affidabilita": 2,
-          "quando": "7 h"
+          "quando": "10 h"
         }
       ],
       "nomi": {
@@ -5798,7 +5733,7 @@
             "direzione": "out",
             "club": "",
             "_first": "2026-07-07",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           },
           {
@@ -5848,7 +5783,7 @@
             "direzione": "in",
             "club": "Aston Villa",
             "_first": "2026-06-13",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           },
           {
@@ -5891,7 +5826,7 @@
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "9 h"
+            "quando": "12 h"
           },
           {
             "titolo": "El City vuelve a reventar el mercado con Elliot Anderson, el fichaje más caro de su historia",
@@ -5928,7 +5863,7 @@
             "fonte": "Sports Illustrated",
             "link": "https://www.si.com",
             "affidabilita": 2,
-            "quando": "13 h"
+            "quando": "16 h"
           }
         ],
         "conf": [],
@@ -5938,13 +5873,6 @@
             "fonte": "SPORT",
             "link": "https://www.sport.es",
             "affidabilita": 2,
-            "quando": "5 d"
-          },
-          {
-            "titolo": "El Manchester City confirma su fichaje más importante y al jugador británico más caro de la historia",
-            "fonte": "Gamereactor",
-            "link": "https://www.gamereactor.es",
-            "affidabilita": 1,
             "quando": "5 d"
           },
           {
@@ -5982,7 +5910,7 @@
           "img": "https://assets.goal.com/images/v3/getty-2277544510/crop/MM5DGMZSHA5DCOBXGI5G433XMU5DQMZXHI3DC===/GettyImages-2277544510.jpg",
           "dominio": "goal.com",
           "affidabilita": 2,
-          "quando": "9 h"
+          "quando": "12 h"
         },
         {
           "titolo": "Mercado de fichajes: el Real Madrid intensifica su interés por Haaland; Vinícius Junior, Aurélien Tchouaméni y más",
@@ -5992,24 +5920,24 @@
           "img": "https://images2.minutemediacdn.com/image/upload/c_crop,x_0,y_92,w_5168,h_2907/c_fill,w_1440,ar_1440:810,f_auto,q_auto,g_auto/images/GettyImages/mmsport/sports_illustrated_ftbol/01kwxbnvtvdz8j7cdtsw.jpg",
           "dominio": "si.com",
           "affidabilita": 2,
-          "quando": "13 h"
+          "quando": "16 h"
         }
       ],
       "nomi": {
         "rumor": [
           {
-            "giocatore": "Erling Haaland",
-            "direzione": "out",
-            "club": "Real Madrid",
-            "_first": "2026-07-05",
-            "_seen": "2026-07-07",
-            "_strong": ""
-          },
-          {
             "giocatore": "Nico Gonzalez",
             "direzione": "out",
             "club": "Atletico Madrid",
             "_first": "2026-07-07",
+            "_seen": "2026-07-08",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Erling Haaland",
+            "direzione": "out",
+            "club": "Real Madrid",
+            "_first": "2026-07-05",
             "_seen": "2026-07-07",
             "_strong": ""
           },
@@ -6064,7 +5992,7 @@
             "fonte": "Mundo Deportivo",
             "link": "https://www.mundodeportivo.com",
             "affidabilita": 3,
-            "quando": "9 h"
+            "quando": "12 h"
           },
           {
             "titolo": "Movimiento millonario del Chelsea de Xabi Alonso",
@@ -6078,21 +6006,21 @@
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "ahora"
+            "quando": "3 h"
           },
           {
             "titolo": "El Chelsea lo despidió tras cuatro meses... Rosinier lidera el proyecto parisino",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "11 h"
+            "quando": "13 h"
           },
           {
             "titolo": "Sunderland pierde a estrella de £21,5m; Chelsea cierra fichaje de £43m",
             "fonte": "OneFootball",
             "link": "https://onefootball.com",
             "affidabilita": 1,
-            "quando": "9 h"
+            "quando": "12 h"
           },
           {
             "titolo": "El Real Madrid niega el fichaje de Enzo Fernández del Chelsea: \"No hay intención alguna\"",
@@ -6123,7 +6051,7 @@
           "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/07/07/6a4cdd7eba1b2.jpeg",
           "dominio": "mundodeportivo.com",
           "affidabilita": 3,
-          "quando": "9 h"
+          "quando": "12 h"
         },
         {
           "titolo": "Movimiento millonario del Chelsea de Xabi Alonso",
@@ -6143,7 +6071,7 @@
           "img": "https://assets-es.imgfoot.com/media/cache/1200x675/moises-caicedo-2526.jpg",
           "dominio": "fichajes.com",
           "affidabilita": 2,
-          "quando": "ahora"
+          "quando": "3 h"
         }
       ],
       "nomi": {
@@ -6153,7 +6081,7 @@
             "direzione": "out",
             "club": "Real Madrid",
             "_first": "2026-06-25",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           },
           {
@@ -6221,14 +6149,14 @@
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "1 h"
+            "quando": "3 h"
           },
           {
             "titolo": "El Tottenham arruina los sueños del Manchester United... ¿Cómo responderán los «Diablos Rojos»?",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "10 h"
+            "quando": "13 h"
           },
           {
             "titolo": "El Manchester United deja en suspenso un fichaje de 40 M€",
@@ -6270,7 +6198,7 @@
           "fonte": "Diario AS",
           "stato": "rumor",
           "link": "https://as.com/futbol/primera/el-manchester-united-viene-a-por-tchouameni-f202607-n/",
-          "img": "",
+          "img": "https://img.asmedia.epimg.net/resizer/v2/BHEFBFKDZBJBZKHJRRYMM456DY.jpg?auth=f6ae02a78eda5461fb1d634c5bd9387e6b56d513ee6ab4e2d6d9c05528225bd8&width=1472&height=828&smart=true",
           "dominio": "as.com",
           "affidabilita": 3,
           "quando": "1 d"
@@ -6283,7 +6211,7 @@
           "img": "https://assets.goal.com/images/v3/bltaeb7c810ef73a110/GOAL%20-%20Blank%20WEB%20-%20Facebook%20-%202026-07-07T201627.731.png",
           "dominio": "goal.com",
           "affidabilita": 2,
-          "quando": "1 h"
+          "quando": "3 h"
         },
         {
           "titolo": "El Tottenham arruina los sueños del Manchester United... ¿Cómo responderán los «Diablos Rojos»?",
@@ -6293,7 +6221,7 @@
           "img": "https://assets.goal.com/images/v3/blt4c50295a87f28f2a/crop/MM5DCMBWG45DMMBQHJXG653FHI3DOORQ/What%20is%20really%20going%20on%20with%20Man%20Utd_2_1.jpg",
           "dominio": "goal.com",
           "affidabilita": 2,
-          "quando": "10 h"
+          "quando": "13 h"
         }
       ],
       "nomi": {
@@ -6303,7 +6231,7 @@
             "direzione": "in",
             "club": "Real Madrid",
             "_first": "2026-06-28",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           },
           {
@@ -6325,18 +6253,18 @@
         ],
         "obj": [
           {
-            "giocatore": "Crysencio Summerville",
-            "direzione": "in",
-            "club": "West Ham",
-            "_first": "2026-06-24",
-            "_seen": "2026-07-07",
-            "_strong": ""
-          },
-          {
             "giocatore": "Aurélien Tchouaméni",
             "direzione": "in",
             "club": "Real Madrid",
             "_first": "2026-07-06",
+            "_seen": "2026-07-08",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Crysencio Summerville",
+            "direzione": "in",
+            "club": "West Ham",
+            "_first": "2026-06-24",
             "_seen": "2026-07-07",
             "_strong": ""
           },
@@ -6355,8 +6283,8 @@
             "direzione": "in",
             "club": "Atalanta",
             "_first": "2026-07-05",
-            "_seen": "2026-07-07",
-            "_strong": "2026-07-07"
+            "_seen": "2026-07-08",
+            "_strong": "2026-07-08"
           }
         ],
         "done": []
@@ -6387,7 +6315,7 @@
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "14 h"
+            "quando": "17 h"
           },
           {
             "titolo": "El Tottenham Hotspur bate el récord de traspasos y presenta a su fichaje de 115 millones",
@@ -6424,7 +6352,7 @@
             "fonte": "Vamos Mi Sevilla",
             "link": "https://www.vamosmisevillafc.com",
             "affidabilita": 1,
-            "quando": "2 h"
+            "quando": "5 h"
           }
         ],
         "conf": [],
@@ -6477,7 +6405,7 @@
             "direzione": "in",
             "club": "West Ham",
             "_first": "2026-06-29",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           },
           {
@@ -6485,7 +6413,23 @@
             "direzione": "out",
             "club": "Fiorentina",
             "_first": "2026-07-06",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Rubén Vargas",
+            "direzione": "in",
+            "club": "Atlético Madrid",
+            "_first": "2026-07-07",
+            "_seen": "2026-07-08",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Oso",
+            "direzione": "in",
+            "club": "Sevilla FC",
+            "_first": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           },
           {
@@ -6521,22 +6465,6 @@
             "_strong": ""
           },
           {
-            "giocatore": "Rubén Vargas",
-            "direzione": "in",
-            "club": "Atlético Madrid",
-            "_first": "2026-07-07",
-            "_seen": "2026-07-07",
-            "_strong": ""
-          },
-          {
-            "giocatore": "Oso",
-            "direzione": "in",
-            "club": "Sevilla FC",
-            "_first": "2026-07-07",
-            "_seen": "2026-07-07",
-            "_strong": ""
-          },
-          {
             "giocatore": "Harry Wilson",
             "direzione": "out",
             "club": "Leeds",
@@ -6551,7 +6479,7 @@
             "direzione": "in",
             "club": "Newcastle",
             "_first": "2026-07-02",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": "2026-07-06"
           },
           {
@@ -6599,13 +6527,6 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "¡Locura en el Tottenham invirtiendo 250 millones en fichajes!",
-            "fonte": "MARCA",
-            "link": "https://www.marca.com",
-            "affidabilita": 3,
-            "quando": "1 d"
-          },
-          {
             "titolo": "El Newcastle anuncia el fichaje del sustituto de Gordon",
             "fonte": "Mundo Deportivo",
             "link": "https://www.mundodeportivo.com",
@@ -6624,21 +6545,28 @@
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "5 h"
+            "quando": "8 h"
           },
           {
             "titolo": "El Newcastle escoge al sustituto de Sandro Tonali",
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "12 h"
+            "quando": "15 h"
           },
           {
-            "titolo": "El Tottenham gastó 100 millones de libras en Sandro Tonali, otra señal de que el mercado se ha vuelto loco. GOAL analiza los fichajes más destacados del verano de 2026 | Goal.com Espana",
+            "titolo": "El Newcastle ya busca un recambio para Sandro Tonali",
+            "fonte": "Fichajes.com",
+            "link": "https://www.fichajes.com",
+            "affidabilita": 2,
+            "quando": "1 d"
+          },
+          {
+            "titolo": "Sandro Tonali cierra su fichaje por el Tottenham por 100 millones de libras, y el centrocampista italiano explica la «magia» que le convenció para dejar el Newcastle y marcharse al norte de Londres",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "16 h"
+            "quando": "1 d"
           }
         ],
         "obj": [],
@@ -6654,16 +6582,6 @@
         "done": []
       },
       "feed": [
-        {
-          "titolo": "¡Locura en el Tottenham invirtiendo 250 millones en fichajes!",
-          "fonte": "MARCA",
-          "stato": "rumor",
-          "link": "https://www.marca.com/mx/futbol/premier-league/2026/07/06/6a4b95ccca4741f9028b45a5.html",
-          "img": "https://e01-phantom-marca-mx.uecdn.es/dc966f718ee8e4b1a48343b1b2e36609/resize/1200/f/jpg/mx/assets/multimedia/imagenes/2026/07/06/17833391634740.jpg",
-          "dominio": "marca.com",
-          "affidabilita": 3,
-          "quando": "1 d"
-        },
         {
           "titolo": "El Newcastle anuncia el fichaje del sustituto de Gordon",
           "fonte": "Mundo Deportivo",
@@ -6683,22 +6601,32 @@
           "dominio": "marca.com",
           "affidabilita": 3,
           "quando": "5 d"
+        },
+        {
+          "titolo": "El Newcastle negociará el fichaje de Johan Manzambi, estrella suiza del Mundial, tras la venta de Sandro Tonali",
+          "fonte": "Goal.com",
+          "stato": "rumor",
+          "link": "https://www.goal.com/es/listados/el-newcastle-negociara-el-fichaje-de-johan-manzambi-estrella-suiza-del-mundial-tras-la-venta-de-sandro-tonali/blt0fa9b7ba5091360c",
+          "img": "https://assets.goal.com/images/v3/getty-2283164252/crop/MM5DGNRVGY5DEMBVG45G433XMU5DAORRHEYQ====/GettyImages-2283164252.jpg",
+          "dominio": "goal.com",
+          "affidabilita": 2,
+          "quando": "8 h"
         }
       ],
       "nomi": {
         "rumor": [
           {
-            "giocatore": "Elliot Anderson",
-            "direzione": "in",
-            "club": "Paphos FC",
-            "_first": "2026-07-07",
-            "_seen": "2026-07-07",
-            "_strong": ""
-          },
-          {
             "giocatore": "Johan Manzambi",
             "direzione": "in",
             "club": "",
+            "_first": "2026-07-07",
+            "_seen": "2026-07-08",
+            "_strong": ""
+          },
+          {
+            "giocatore": "Elliot Anderson",
+            "direzione": "in",
+            "club": "Paphos FC",
             "_first": "2026-07-07",
             "_seen": "2026-07-07",
             "_strong": ""
@@ -6718,7 +6646,7 @@
             "direzione": "out",
             "club": "Tottenham",
             "_first": "2026-06-25",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": "2026-07-06"
           },
           {
@@ -6726,7 +6654,7 @@
             "direzione": "out",
             "club": "Arsenal",
             "_first": "2026-06-25",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           }
         ],
@@ -6740,13 +6668,6 @@
       "league": "Premier",
       "colonne": {
         "rumor": [
-          {
-            "titolo": "«Los grandes siempre se han movido»: los rumores sobre el fichaje de Morgan Rogers por el Arsenal molestan al exdelantero del Aston Villa Tony Cascarino",
-            "fonte": "Goal.com",
-            "link": "https://www.goal.com",
-            "affidabilita": 2,
-            "quando": "6 d"
-          },
           {
             "titolo": "Femi Azeez se cuela en la órbita del Aston Villa",
             "fonte": "Fichajes.com",
@@ -6783,6 +6704,13 @@
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
             "quando": "1 d"
+          },
+          {
+            "titolo": "El Arsenal prioriza el fichaje de Morgan Rogers por 100 millones de libras; la estrella del Aston Villa y de Inglaterra quiere jugar en el Emirates",
+            "fonte": "Goal.com",
+            "link": "https://www.goal.com",
+            "affidabilita": 2,
+            "quando": "14 d"
           }
         ],
         "conf": [
@@ -6791,7 +6719,7 @@
             "fonte": "Faro de Vigo",
             "link": "https://www.farodevigo.es",
             "affidabilita": 1,
-            "quando": "7 h"
+            "quando": "10 h"
           }
         ],
         "done": []
@@ -6808,16 +6736,6 @@
           "quando": "1 d"
         },
         {
-          "titolo": "«Los grandes siempre se han movido»: los rumores sobre el fichaje de Morgan Rogers por el Arsenal molestan al exdelantero del Aston Villa Tony Cascarino",
-          "fonte": "Goal.com",
-          "stato": "rumor",
-          "link": "https://www.goal.com/es/listados/los-grandes-siempre-se-han-movido-los-rumores-sobre-el-fichaje-de-morgan-rogers-por-el-arsenal-molestan-al-exdelantero-del-aston-villa-tony-cascarino/blt2031d289f52d8fbd",
-          "img": "https://assets.goal.com/images/v3/blt49b299ae1f5b3896/GOAL%20-%20Blank%20WEB%20-%20Facebook%20-%202026-01-15T132422.355.png",
-          "dominio": "goal.com",
-          "affidabilita": 2,
-          "quando": "6 d"
-        },
-        {
           "titolo": "Femi Azeez se cuela en la órbita del Aston Villa",
           "fonte": "Fichajes.com",
           "stato": "rumor",
@@ -6826,10 +6744,28 @@
           "dominio": "fichajes.com",
           "affidabilita": 2,
           "quando": "10 d"
+        },
+        {
+          "titolo": "El Arsenal prioriza el fichaje de Morgan Rogers por 100 millones de libras; la estrella del Aston Villa y de Inglaterra quiere jugar en el Emirates",
+          "fonte": "Goal.com",
+          "stato": "obj",
+          "link": "https://www.goal.com/es/listados/el-arsenal-prioriza-el-fichaje-de-morgan-rogers-por-100-millones-de-libras-la-estrella-del-aston-villa-y-de-inglaterra-quiere-jugar-en-el-emirates/blta0276d0b128404d4",
+          "img": "https://assets.goal.com/images/v3/getty-2267933677/crop/MM5DEOJZGI5DCNRYGM5G433XMU5DKMJUHI2DO===/GettyImages-2267933677.jpg",
+          "dominio": "goal.com",
+          "affidabilita": 2,
+          "quando": "14 d"
         }
       ],
       "nomi": {
         "rumor": [
+          {
+            "giocatore": "Andrés García",
+            "direzione": "in",
+            "club": "",
+            "_first": "2026-07-08",
+            "_seen": "2026-07-08",
+            "_strong": ""
+          },
           {
             "giocatore": "Ilaix Moriba",
             "direzione": "in",
@@ -6845,7 +6781,7 @@
             "direzione": "out",
             "club": "Arsenal",
             "_first": "2026-06-13",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           }
         ],
@@ -6867,11 +6803,18 @@
             "quando": "30 d"
           },
           {
-            "titolo": "Carlos Baleba sigue siendo una opción: 80 M€",
+            "titolo": "Nuevo pretendiente para Rubén Vargas",
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
             "quando": "1 d"
+          },
+          {
+            "titolo": "Carlos Baleba sigue siendo una opción: 80 M€",
+            "fonte": "Fichajes.com",
+            "link": "https://www.fichajes.com",
+            "affidabilita": 2,
+            "quando": "2 d"
           },
           {
             "titolo": "Nuevo fichaje para el Brighton",
@@ -6893,13 +6836,6 @@
             "link": "https://www.goal.com",
             "affidabilita": 2,
             "quando": "30 d"
-          },
-          {
-            "titolo": "El Brighton pone sus ojos en Rubén Vargas",
-            "fonte": "ABC",
-            "link": "https://www.abc.es",
-            "affidabilita": 1,
-            "quando": "2 d"
           }
         ],
         "obj": [],
@@ -6941,22 +6877,22 @@
           "quando": "30 d"
         },
         {
+          "titolo": "Nuevo pretendiente para Rubén Vargas",
+          "fonte": "Fichajes.com",
+          "stato": "rumor",
+          "link": "https://www.fichajes.com/a5742731004344443971-nuevo-pretendiente-para-ruben-vargas",
+          "img": "https://assets-es.imgfoot.com/media/cache/1200x675/epalivenine154846.jpg",
+          "dominio": "fichajes.com",
+          "affidabilita": 2,
+          "quando": "1 d"
+        },
+        {
           "titolo": "Carlos Baleba sigue siendo una opción: 80 M€",
           "fonte": "Fichajes.com",
           "stato": "rumor",
           "link": "https://www.fichajes.com/a7843241430326547068-carlos-baleba-sigue-siendo-una-opcion-80-meur",
           "img": "https://assets-es.imgfoot.com/media/cache/1200x675/carlos-baleba-2526.jpg",
           "dominio": "fichajes.com",
-          "affidabilita": 2,
-          "quando": "1 d"
-        },
-        {
-          "titolo": "¿Dos fichajes estrella para Estambul? Un gran club turco está a punto de fichar a la estrella del Mundial Leandro Trossard, y podría sumarse un internacional del Bayern",
-          "fonte": "Goal.com",
-          "stato": "conf",
-          "link": "https://www.goal.com/es/listados/dos-fichajes-estrella-para-estambul-un-gran-club-turco-esta-a-punto-de-fichar-a-la-estrella-del-mundial-leandro-trossard-y-podria-sumarse-un-internacional-del-bayern/blt02a9eda73e1f769a",
-          "img": "https://assets.goal.com/images/v3/getty-2282997127/crop/MM5DCOJTGY5DCMBYHE5G433XMU5DGMZQHIZDENY=/GettyImages-2282997127.jpg",
-          "dominio": "goal.com",
           "affidabilita": 2,
           "quando": "2 d"
         }
@@ -6968,7 +6904,7 @@
             "direzione": "in",
             "club": "",
             "_first": "2026-07-05",
-            "_seen": "2026-07-06",
+            "_seen": "2026-07-08",
             "_strong": ""
           },
           {
@@ -6976,7 +6912,7 @@
             "direzione": "in",
             "club": "Liverpool",
             "_first": "2026-07-01",
-            "_seen": "2026-07-06",
+            "_seen": "2026-07-08",
             "_strong": ""
           }
         ],
@@ -7040,7 +6976,7 @@
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "10 h"
+            "quando": "12 h"
           },
           {
             "titolo": "Se desata la pugna por el fichaje de Summerville: otro club de la Premier League muestra su interés",
@@ -7295,7 +7231,7 @@
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "ahora"
+            "quando": "3 h"
           },
           {
             "titolo": "El Brentford cierra un fichaje de 20 M€",
@@ -7335,14 +7271,14 @@
             "fonte": "OneFootball",
             "link": "https://onefootball.com",
             "affidabilita": 1,
-            "quando": "2 h"
+            "quando": "5 h"
           },
           {
             "titolo": "Fichaje confirmado: WSG Tirol firma a Michael Olakigbe.",
             "fonte": "OneFootball",
             "link": "https://onefootball.com",
             "affidabilita": 1,
-            "quando": "19 h"
+            "quando": "22 h"
           },
           {
             "titolo": "Fichaje confirmado: Coventry City firma a Frank Onyeka.",
@@ -7362,7 +7298,7 @@
           "img": "https://assets-es.imgfoot.com/media/cache/1200x675/jaidon-anthony-2223.jpg",
           "dominio": "fichajes.com",
           "affidabilita": 2,
-          "quando": "ahora"
+          "quando": "3 h"
         },
         {
           "titolo": "El Brentford cierra un fichaje de 20 M€",
@@ -7453,7 +7389,7 @@
             "fonte": "OneFootball",
             "link": "https://onefootball.com",
             "affidabilita": 1,
-            "quando": "4 d"
+            "quando": "5 d"
           }
         ]
       },
@@ -7526,7 +7462,15 @@
             "quando": "5 d"
           }
         ],
-        "obj": [],
+        "obj": [
+          {
+            "titolo": "América tiene vía libre si quiere fichaje bomba: Raúl Jiménez se va del Fulham después del Mundial 2026",
+            "fonte": "MARCA",
+            "link": "https://www.marca.com",
+            "affidabilita": 3,
+            "quando": "29 d"
+          }
+        ],
         "conf": [],
         "done": []
       },
@@ -7540,6 +7484,16 @@
           "dominio": "mundodeportivo.com",
           "affidabilita": 3,
           "quando": "26 d"
+        },
+        {
+          "titolo": "América tiene vía libre si quiere fichaje bomba: Raúl Jiménez se va del Fulham después del Mundial 2026",
+          "fonte": "MARCA",
+          "stato": "obj",
+          "link": "https://www.marca.com/mx/futbol/liga-mx/2026/06/08/6a26e46f268e3e85108b456f.html",
+          "img": "https://e01-phantom-marca-mx.uecdn.es/5c692479db38a6c57861697095f2930f/resize/1200/f/jpg/mx/assets/multimedia/imagenes/2026/06/08/17809336433784.jpg",
+          "dominio": "marca.com",
+          "affidabilita": 3,
+          "quando": "29 d"
         },
         {
           "titolo": "Wolverhampton Wanderers U18 - calificación del equipo, goles por partido, tiros al arco y otras estadísticas",
@@ -7570,7 +7524,7 @@
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "10 h"
+            "quando": "13 h"
           },
           {
             "titolo": "El Chelsea cierra una venta",
@@ -7598,7 +7552,7 @@
             "fonte": "Zamin.uz",
             "link": "https://zamin.uz",
             "affidabilita": 1,
-            "quando": "10 h"
+            "quando": "13 h"
           }
         ],
         "obj": [],
@@ -7629,7 +7583,7 @@
           "img": "https://assets.goal.com/images/v3/getty-2283109571/crop/MM5DENRYHA5DCNJRGI5G433XMU5DCMRXHIZTI===/GettyImages-2283109571.jpg",
           "dominio": "goal.com",
           "affidabilita": 2,
-          "quando": "10 h"
+          "quando": "13 h"
         },
         {
           "titolo": "El Chelsea confirma una venta",
@@ -7688,7 +7642,7 @@
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "2 d"
+            "quando": "3 d"
           },
           {
             "titolo": "Locura en la Premier: 'No' a 140 millones por Elliot Anderson",
@@ -7702,7 +7656,7 @@
             "fonte": "redamazonica.org",
             "link": "https://redamazonica.org",
             "affidabilita": 1,
-            "quando": "2 d"
+            "quando": "3 d"
           },
           {
             "titolo": "Los 10 fichajes más caros en la historia del Manchester City tras la llegada de Elliot Anderson",
@@ -7779,7 +7733,7 @@
           "img": "https://assets.goal.com/images/v3/getty-2273090495/crop/MM5DENZUHA5DCNJUGY5G433XMU5DAORRGQZQ====/GettyImages-2273090495.jpg",
           "dominio": "goal.com",
           "affidabilita": 2,
-          "quando": "2 d"
+          "quando": "3 d"
         },
         {
           "titolo": "Locura en la Premier: 'No' a 140 millones por Elliot Anderson",
@@ -7827,17 +7781,24 @@
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "3 h"
+            "quando": "6 h"
           },
           {
-            "titolo": "Los dorsales libres en el Leeds para Wilson, Charles y otros fichajes",
+            "titolo": "El Manchester United planea fichar a un titular del Leeds United",
+            "fonte": "Goal.com",
+            "link": "https://www.goal.com",
+            "affidabilita": 2,
+            "quando": "27 d"
+          },
+          {
+            "titolo": "Leeds: situación de los fichajes de Wilson, Charles, Darlow y más",
             "fonte": "OneFootball",
             "link": "https://onefootball.com",
             "affidabilita": 1,
-            "quando": "3 d"
+            "quando": "2 d"
           },
           {
-            "titolo": "Dorsales libres en Leeds para Harry Wilson, Shea Charles y otros fichajes",
+            "titolo": "Los dorsales libres en el Leeds para Wilson, Charles y otros fichajes",
             "fonte": "OneFootball",
             "link": "https://onefootball.com",
             "affidabilita": 1,
@@ -7872,7 +7833,7 @@
           "img": "https://assets-es.imgfoot.com/media/cache/1200x675/arsenal-titre.jpg",
           "dominio": "fichajes.com",
           "affidabilita": 2,
-          "quando": "3 h"
+          "quando": "6 h"
         },
         {
           "titolo": "Se desata la pugna por el fichaje de Summerville: otro club de la Premier League muestra su interés",
@@ -7885,14 +7846,14 @@
           "quando": "4 d"
         },
         {
-          "titolo": "Los dorsales libres en el Leeds para Wilson, Charles y otros fichajes",
-          "fonte": "OneFootball",
+          "titolo": "El Manchester United planea fichar a un titular del Leeds United",
+          "fonte": "Goal.com",
           "stato": "rumor",
-          "link": "https://onefootball.com/en/news/los-dorsales-libres-en-el-leeds-para-wilson-charles-y-otros-fichajes-43096031",
-          "img": "https://photobooth-api.onefootball.com/api/screenshot/%2Fv2%2Fphotobooth%2Fcms%2Fen%2F43096031%3Fdate=2026-07-07",
-          "dominio": "onefootball.com",
-          "affidabilita": 1,
-          "quando": "3 d"
+          "link": "https://www.goal.com/es/listados/el-manchester-united-planea-fichar-a-un-titular-del-leeds-united/bltc152d09dab4a91a5",
+          "img": "https://assets.goal.com/images/v3/getty-2274308043/crop/MM5DCNZUGQ5DSOBRHJXG653FHIYTANRZHIYTKNY=/GettyImages-2274308043.jpg",
+          "dominio": "goal.com",
+          "affidabilita": 2,
+          "quando": "27 d"
         }
       ],
       "nomi": {
@@ -7938,21 +7899,21 @@
             "fonte": "MARCA",
             "link": "https://www.marca.com",
             "affidabilita": 3,
-            "quando": "12 h"
+            "quando": "15 h"
           },
           {
             "titolo": "Fichaje de 17 M€ para el Brentford",
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "ahora"
+            "quando": "3 h"
           },
           {
             "titolo": "Quilindschy Hartman aterriza en la Liga",
             "fonte": "Fichajes.com",
             "link": "https://www.fichajes.com",
             "affidabilita": 2,
-            "quando": "12 h"
+            "quando": "15 h"
           },
           {
             "titolo": "Fiorentina: Paratici está a punto de cerrar el fichaje de Koleosho; estas son las cifras para el Burnley",
@@ -7960,6 +7921,13 @@
             "link": "https://www.goal.com",
             "affidabilita": 2,
             "quando": "1 d"
+          },
+          {
+            "titolo": "El Brentford cierra un fichaje de 20 M€",
+            "fonte": "Fichajes.com",
+            "link": "https://www.fichajes.com",
+            "affidabilita": 2,
+            "quando": "2 d"
           },
           {
             "titolo": "Burnley FC Women (W)",
@@ -7977,14 +7945,14 @@
             "fonte": "OneFootball",
             "link": "https://onefootball.com",
             "affidabilita": 1,
-            "quando": "2 h"
+            "quando": "5 h"
           },
           {
             "titolo": "El Espanyol oficializa el fichaje de Quilindschy Hartman",
             "fonte": "Pericos.es",
             "link": "https://pericos.es",
             "affidabilita": 1,
-            "quando": "12 h"
+            "quando": "15 h"
           },
           {
             "titolo": "Fichaje confirmado: Tottenham Hotspur firma a Martin Dubravka.",
@@ -8004,7 +7972,7 @@
           "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/07/07/6a4cb3aac7f1c.jpeg",
           "dominio": "marca.com",
           "affidabilita": 3,
-          "quando": "12 h"
+          "quando": "15 h"
         },
         {
           "titolo": "Fichaje de 17 M€ para el Brentford",
@@ -8014,7 +7982,7 @@
           "img": "https://assets-es.imgfoot.com/media/cache/1200x675/jaidon-anthony-2223.jpg",
           "dominio": "fichajes.com",
           "affidabilita": 2,
-          "quando": "ahora"
+          "quando": "3 h"
         },
         {
           "titolo": "Quilindschy Hartman aterriza en la Liga",
@@ -8024,7 +7992,7 @@
           "img": "https://assets-es.imgfoot.com/media/cache/1200x675/quilindschy-hartman-2526.jpg",
           "dominio": "fichajes.com",
           "affidabilita": 2,
-          "quando": "12 h"
+          "quando": "15 h"
         }
       ],
       "nomi": {
@@ -8035,7 +8003,7 @@
             "direzione": "out",
             "club": "Fiorentina",
             "_first": "2026-07-06",
-            "_seen": "2026-07-07",
+            "_seen": "2026-07-08",
             "_strong": ""
           }
         ],
