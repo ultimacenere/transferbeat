@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-07-07T10:16:02Z",
+  "aggiornato": "2026-07-08T08:55:41Z",
   "nome": "World Cup 2026",
   "groups": [
     {
@@ -6114,7 +6114,53 @@
             "iso": "eg",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              3,
+              2
+            ],
+            "ht": [
+              0,
+              1
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Cristian Romero",
+              "minute": "79",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Lionel Messi",
+              "minute": "83",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Enzo Fernández",
+              "minute": "90+2",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": [
+            {
+              "name": "Yasser Ibrahim",
+              "minute": "15",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Mostafa Zico",
+              "minute": "67",
+              "pen": false,
+              "og": false
+            }
+          ]
         },
         {
           "round": "Round of 16",
@@ -6136,7 +6182,25 @@
             "iso": "co",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              0,
+              0
+            ],
+            "ht": [
+              0,
+              0
+            ],
+            "et": [
+              0,
+              0
+            ],
+            "p": [
+              4,
+              3
+            ]
+          },
+          "played": true
         }
       ]
     },
@@ -6172,18 +6236,18 @@
           "utc": "2026-07-10T19:00:00Z",
           "ground": "Los Angeles (Inglewood)",
           "team1": {
-            "en": "W93",
-            "it": "W93",
-            "es": "W93",
-            "iso": "",
-            "ph": true
+            "en": "Spain",
+            "it": "Spagna",
+            "es": "España",
+            "iso": "es",
+            "ph": false
           },
           "team2": {
-            "en": "W94",
-            "it": "W94",
-            "es": "W94",
-            "iso": "",
-            "ph": true
+            "en": "Belgium",
+            "it": "Belgio",
+            "es": "Bélgica",
+            "iso": "be",
+            "ph": false
           },
           "played": false
         },
@@ -6340,86 +6404,118 @@
   "news": {
     "it": [
       {
-        "titolo": "Mondiali di Calcio 2026 2026 - Portogallo - Spagna 0-1: Highlights - Video",
+        "titolo": "Mondiali di Calcio 2026 2026 - Argentina - Egitto 3-2: Highlights - Video",
         "fonte": "RaiPlay",
-        "link": "https://www.raiplay.it/video/2026/07/Portogallo---Spagna-0-1-Highlights--Mondiali-di-Calcio-FIFA-2026-b0bc85e8-ab82-4be7-8097-380035c7b12a.html",
-        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/07/06/1783374916088_RAINETPORTALE_20260706234024627_f1a1c464069d6397dc7ab38ef3f9504a%201.jpg",
+        "link": "https://www.raiplay.it/video/2026/07/Argentina---Egitto-3-2-Highlights--Mondiali-di-Calcio-FIFA-2026-b4e7e244-a329-4f08-b61d-aec8ec0e0052.html",
+        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/07/07/1783447860025_argentina%20egitto%202048x1152.jpg",
         "dominio": "raiplay.it",
         "quando": "1 g fa"
       },
       {
-        "titolo": "Mondiali 2026, Messico - Inghilterra 2-3, la sintesi della partita",
+        "titolo": "Mondiali 2026. Svizzera-Colombia, ai rigori la maxi parata decisiva di Kobel",
         "fonte": "RaiNews",
-        "link": "https://www.rainews.it/video/2026/07/mondiali-di-calcio-fifa-2026-messico-inghilterra-2-3-highlights-8ff401cd-d75a-42d2-978d-2c889da7479d.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/07/06/1783307735848_BCBC.jpg",
+        "link": "https://www.rainews.it/video/2026/07/calcio-mondiali-2026-ottavi-finale-svizzera-colombia-rigore-4-kobel-hernandez-video-23334e44-688b-4c03-aff7-d37950c4981b.html",
+        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/07/08/1783464850386_.png",
         "dominio": "rainews.it",
+        "quando": "10 ore fa"
+      },
+      {
+        "titolo": "Mondiali di Calcio 2026 2026 - Svizzera - Colombia 4-3 (dcr): Highlights - Video",
+        "fonte": "RaiPlay",
+        "link": "https://www.raiplay.it/video/2026/07/Svizzera---Colombia-4-3-dcr-Highlights--Mondiali-di-Calcio-FIFA-2026-2b94aec6-7df4-4888-9486-3e3d37419e4a.html",
+        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/07/08/1783465105554_SvizzeraColombia4852.jpg",
+        "dominio": "raiplay.it",
         "quando": "1 g fa"
       },
       {
-        "titolo": "Stati Uniti-Belgio 1-4: i Diavoli Rossi calano il poker e volano ai quarti. Portogallo-Spagna 0-1 - Mondiali 2026. Stati Uniti-Belgio 1-4, la sintesi della partita (Video)",
-        "fonte": "RaiNews",
-        "link": "https://www.rainews.it/maratona/2026/07/calcio-mondiali-2026-ottavi-di-finale-portogallo-spagna-stati-uniti-belgio-diretta-streaming-cronaca-highlights-video-live-risultati-75258ad4-0d54-49a0-b94a-31a1e966a121.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/07/07/1783392494469_.jpg",
-        "dominio": "rainews.it",
-        "quando": "6 ore fa"
+        "titolo": "Mondiali 2026, non ci resta che tifare per la Svizzera?",
+        "fonte": "QuiComo",
+        "link": "https://www.quicomo.it/sport/calcio/mondiali-2026-tifo-svizzera.html",
+        "img": "",
+        "dominio": "quicomo.it",
+        "quando": "1 ore fa"
       },
       {
-        "titolo": "Un Mondiale mai visto. E un governo del calcio mai così prono: il Gran Disastro americano",
-        "fonte": "La Gazzetta dello Sport",
-        "link": "https://www.gazzetta.it/Calcio/Mondiali/07-07-2026/mondiali-balogun-e-gerarchie-ribaltate-il-gran-disastro-americano.shtml",
-        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/07/07/6a4c759cd1cd7.jpeg",
-        "dominio": "gazzetta.it",
-        "quando": "6 ore fa"
-      },
-      {
-        "titolo": "Tardelli durissimo sui calciatori e il caso Balogun: \"Solo Maradona si schierò contro la Fifa, noi tutti vigliacchi. E anche oggi...\"",
-        "fonte": "Corriere dello Sport",
-        "link": "https://www.corrieredellosport.it/news/calcio/mondiali-2026/2026/07/07-149742580/tardelli_durissimo_sui_calciatori_e_il_caso_balogun_solo_maradona_si_schier_contro_la_fifa_noi_tutti_vigliacchi_e_anche_o",
-        "img": "https://cdn.corrieredellosport.it/images/2026/07/07/093138276-d3517bd5-1290-4f7d-a0ef-e7c891713c82.jpg",
-        "dominio": "corrieredellosport.it",
+        "titolo": "“Norvegia minacciata da un virus”, mezza squadra ko e panico per Haaland: cos’è la nuova emergenza ai Mondiali 2026",
+        "fonte": "Libero",
+        "link": "https://www.libero.it/magazine/news/mondiali-norvegia-minacciata-da-virus-mezza-squadra-ko-panico-per-haaland-214160",
+        "img": "https://wips.plug.it/cips/libero.it/magazine/cms/2026/07/erling-haaland.jpg",
+        "dominio": "libero.it",
         "quando": "poco fa"
       },
       {
-        "titolo": "Balogun un caso, Trump: 'Ho chiamato Infantino, non era fallo'",
-        "fonte": "ANSA",
-        "link": "https://www.ansa.it/sito/notizie/sport/calcio/speciali/mondiale-calcio-2026/2026/07/06/bufera-sul-caso-balogun-la-fifa-rigetta-il-ricorso-inammissibile-del-belgio_8a0fc96d-6f92-41b0-aebe-efe4c4e9e9f7.html",
-        "img": "https://www.ansa.it/webimages/img_1280x720/2025/12/6/3e9b0ece7f7569350de0abc008f46bd4.jpg",
-        "dominio": "ansa.it",
-        "quando": "14 ore fa"
+        "titolo": "Mondiali 2026, le squadre con i maggiori ricavi dagli sponsor tecnici",
+        "fonte": "Sky TG24",
+        "link": "https://tg24.sky.it/economia/2026/07/08/squadre-mondiali-2026-ricavi-sponsor-brand",
+        "img": "https://tg24.sky.it/assets/images/f88c5a5b3354d85624c6bc01fbc190ac058618a9/skytg24/it/economia/2026/07/08/squadre-mondiali-2026-ricavi-sponsor-brand/trionda_ipa.jpg?im=Resize,width=1218",
+        "dominio": "tg24.sky.it",
+        "quando": "3 ore fa"
       },
       {
-        "titolo": "Calendario Mondiali calcio 2026 in tv: orari partite di oggi (7 luglio), canali, streaming",
-        "fonte": "OA Sport",
-        "link": "https://www.oasport.it/2026/07/calendario-mondiali-calcio-2026-in-tv-orari-partite-di-oggi-7-luglio-canali-streaming/",
-        "img": "https://www.oasport.it/wp-content/uploads/2026/07/24571554_small-e1783360619923.jpg",
-        "dominio": "oasport.it",
-        "quando": "7 ore fa"
+        "titolo": "Ecco i quarti Mondiali, si parte giovedì con Francia-Marocco: programma e orari delle partite",
+        "fonte": "La Gazzetta dello Sport",
+        "link": "https://www.gazzetta.it/Calcio/Mondiali/08-07-2026/quarti-mondiali-si-parte-con-francia-marocco-programma-e-orari.shtml",
+        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/07/07/6a4d731730750.r_d.1488-755-0.jpeg",
+        "dominio": "gazzetta.it",
+        "quando": "9 ore fa"
       },
       {
-        "titolo": "Mondiali 2026, calendario e partite di oggi: Argentina-Egitto e Svizzera-Colombia",
-        "fonte": "Sky Sport",
-        "link": "https://sport.sky.it/calcio/mondiali/2026/07/07/mondiali-2026-partite-oggi-7-luglio",
-        "img": "https://sport.sky.it/assets/images/bd7116d1537e569cb14d041a3d7ea6581114a459/skysport/it/calcio/mondiali/partite/2026/sedicesimi/argentina-capo-verde/live/content/ansa_argentina_esultanza.jfif?im=Resize,width=1218",
-        "dominio": "sport.sky.it",
+        "titolo": "Tabellone Mondiali Fifa 2026: tutti i risultati dei quarti e gli accoppiamenti delle semifinali",
+        "fonte": "Corriere della Sera",
+        "link": "https://www.corriere.it/sport/calcio/mondiali/26_luglio_08/mondiali-quarti-squadre-calendario-tabellone-orari-3456b45c-e4ea-4f10-ad11-46d86d653xlk.shtml",
+        "img": "https://dimages2.corriereobjects.it/files/og_thumbnail/uploads/2026/07/08/6a4d78b5e3f4c.jpeg",
+        "dominio": "corriere.it",
         "quando": "3 ore fa"
       }
     ],
     "en": [
       {
-        "titolo": "USA 1-4 Belgium: Romelu Lukaku scores as co-hosts exit World Cup",
-        "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/live/c24y8ded80vt",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/11eb/live/16dbe950-79ad-11f1-b09b-459fdc8efd5a.jpg",
-        "dominio": "bbc.co.uk",
-        "quando": "7h ago"
+        "titolo": "Argentina 3-2 Egypt: World Cup 2026 last 16 –as it happened",
+        "fonte": "The Guardian",
+        "link": "https://www.theguardian.com/football/live/2026/jul/07/argentina-v-egypt-world-cup-2026-last-16-live",
+        "img": "https://i.guim.co.uk/img/media/3f58c2567ed50ac74e231fb5049f37a2c6bb8b8a/320_61_3748_2998/master/3748.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=83b5982a94418312644ce8d839f83dac",
+        "dominio": "theguardian.com",
+        "quando": "16h ago"
       },
       {
-        "titolo": "World Cup 2026: USA bounced out by Belgium after Balogun furore; backlash against Fifa builds – live",
+        "titolo": "World Cup news latest: Messi in tears after Argentina complete World Cup comeback - as Switzerland win shootout",
+        "fonte": "Sky News",
+        "link": "https://news.sky.com/story/world-cup-live-england-argentina-messi-latest-13535760",
+        "img": "",
+        "dominio": "news.sky.com",
+        "quando": "1h ago"
+      },
+      {
+        "titolo": "World Cup 2026: Argentina 3-2 Egypt - Lionel Messi and holders come from two down as Enzo Fernandez wins classic",
+        "fonte": "Sky Sports",
+        "link": "https://www.skysports.com/football/news/11095/13560515/world-cup-2026-argentina-3-2-egypt-lionel-messi-and-holders-come-from-two-down-as-enzo-fernandez-wins-classic",
+        "img": "https://e0.365dm.com/26/07/1600x900/skysports-enzo-fernandez-argentina_7292361.jpg?20260707192004",
+        "dominio": "skysports.com",
+        "quando": "1h ago"
+      },
+      {
+        "titolo": "Switzerland beat Colombia on penalties: World Cup 2026 last 16 – as it happened",
         "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jul/07/world-cup-2026-usa-bounced-out-by-belgium-after-balogun-furore-backlash-against-fifa-builds-argentina-egypt-colombia-switzerlandlive",
-        "img": "https://i.guim.co.uk/img/media/684f400f103cfb04f2c0bff6e57a5a99565d2055/742_402_2830_2265/master/2830.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=5ce0b1ddc1fa25b5ce11ab76524a4af2",
+        "link": "https://www.theguardian.com/football/live/2026/jul/07/switzerland-v-colombia-world-cup-2026-last-16-live",
+        "img": "https://i.guim.co.uk/img/media/06d725232e62c6984f985529373a27bce0663e46/583_92_4283_3429/master/4283.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=1e241cc51d90ddf2d714c0d956f49f45",
         "dominio": "theguardian.com",
-        "quando": "3h ago"
+        "quando": "12h ago"
+      },
+      {
+        "titolo": "Switzerland vs Colombia LIVE: FIFA World Cup last 16 score, penalties, commentary & updates",
+        "fonte": "BBC",
+        "link": "https://www.bbc.co.uk/sport/football/live/cx2vrg8gzr1t",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/69b6/live/5207ffd0-7a59-11f1-bee8-53ce494e1abc.jpg",
+        "dominio": "bbc.co.uk",
+        "quando": "9h ago"
+      },
+      {
+        "titolo": "World Cup 2026: Switzerland vs Colombia - full penalty shootout",
+        "fonte": "BBC",
+        "link": "https://www.bbc.com/sport/football/videos/cn0vn94je8qo",
+        "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/f256/live/c4a01a10-7a5d-11f1-b976-0b9c15b0ccfc.jpg",
+        "dominio": "bbc.com",
+        "quando": "8h ago"
       },
       {
         "titolo": "'Overturn this' - Belgium mock US President Donald Trump and FIFA after USA World Cup exit",
@@ -6427,113 +6523,81 @@
         "link": "https://www.skysports.com/football/news/33694/13561192/overturn-this-belgium-mock-usa-after-world-cup-exit",
         "img": "https://e0.365dm.com/26/07/1600x900/skysports-romelu-lukaku-belgium_7291816.jpg?20260707101242",
         "dominio": "skysports.com",
-        "quando": "1h ago"
+        "quando": "13h ago"
       },
       {
-        "titolo": "World Cup 2026 today: Live updates, news as Belgium thrash United States, Spain edge Portugal - July 7",
-        "fonte": "ESPN",
-        "link": "https://www.espn.co.uk/football/story/_/id/49293590/world-cup-2026-today-blog-07-07-2026-live-updates-news-fixtures-schedule-results-portugal-spain-belgium-united-states",
-        "img": "https://a4.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0707%2Fr1685735_1296x729_16%2D9.jpg",
-        "dominio": "espn.co.uk",
-        "quando": "3h ago"
-      },
-      {
-        "titolo": "Argentina XI vs Egypt: Predicted lineup, confirmed team news, and injury latest for World Cup 2026",
-        "fonte": "London Evening Standard",
-        "link": "https://www.standard.co.uk/sport/football/argentina-xi-vs-egypt-predicted-lineup-confirmed-team-news-injury-latest-world-cup-2026-b1288959.html",
-        "img": "https://static.standard.co.uk/2026/07/07/09/2284368646..?width=1200&auto=webp&quality=75",
-        "dominio": "standard.co.uk",
-        "quando": "1h ago"
-      },
-      {
-        "titolo": "'Overturn this' - Belgium taunt US and say Trump move fired them up",
+        "titolo": "World Cup 2026: Balogun available for USA v Belgium after Spain play Portugal",
         "fonte": "BBC",
-        "link": "https://www.bbc.com/sport/football/articles/c4gyj50450go",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/565d/live/36866a60-79bb-11f1-8257-1765759c449e.jpg",
-        "dominio": "bbc.com",
-        "quando": "4h ago"
-      },
-      {
-        "titolo": "Cristiano Ronaldo was indulged at this World Cup and Portugal paid the price - The Athletic",
-        "fonte": "The New York Times",
-        "link": "https://www.nytimes.com/athletic/7426995/2026/07/06/cristiano-ronaldo-portugal-world-cup-martinez/",
-        "img": "https://static01.nyt.com/athletic/uploads/wp/2026/07/06221051/GettyImages-2284975491-scaled.jpg?width=1200&height=630&fit=cover",
-        "dominio": "nytimes.com",
-        "quando": "5h ago"
-      },
-      {
-        "titolo": "Trump favour backfires as US exit World Cup in humiliating fashion",
-        "fonte": "The Telegraph",
-        "link": "https://www.telegraph.co.uk/football/2026/07/07/world-cup-belgium-win-usa-trump-favour-backfires/",
-        "img": "https://www.telegraph.co.uk/content/dam/football/2026/07/07/TELEMMGLPICT000494242798_17834099311390_trans_NvBQzQNjv4Bq2kWbTUtSGZqKvV2DrRS0xC-lklk38CoLubnEHKwAfpo.jpeg?impolicy=OG-Standard",
-        "dominio": "telegraph.co.uk",
-        "quando": "7h ago"
+        "link": "https://www.bbc.co.uk/sport/football/live/cvg402g8eyqt",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/c276/live/5a13cf90-7948-11f1-b976-0b9c15b0ccfc.jpg",
+        "dominio": "bbc.co.uk",
+        "quando": "2d ago"
       }
     ],
     "es": [
       {
-        "titolo": "La prensa portuguesa, durísima tras la eliminación: «Se echó una siesta y verá el Mundial en casa»",
-        "fonte": "El Debate",
-        "link": "https://www.eldebate.com/deportes/mundial-futbol-2026/20260707/prensa-portuguesa-durisima-eliminacion-echo-siesta-vera-mundial-casa_436744.html",
-        "img": "https://www.eldebate.com/files/article_social/uploads/2026/07/07/6a4c28efe88fa.png",
-        "dominio": "eldebate.com",
-        "quando": "11 h"
-      },
-      {
-        "titolo": "Por qué cuesta tanto despedirse de Cristiano Ronaldo",
-        "fonte": "El Mundo",
-        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/07/06/6a4c1bbee85ece680f8b45c5.html",
-        "img": "https://e01-phantom-elmundo.uecdn.es/dfac4d7cabe8c68615133bbfcd2f6621/resize/1200/f/webp/assets/multimedia/imagenes/2026/07/06/17833724493836.jpg",
-        "dominio": "elmundo.es",
-        "quando": "12 h"
-      },
-      {
-        "titolo": "España en el Mundial 2026, en directo: última hora de la Selección Española hoy 7 de junio | Pedri, Lamine Yam",
-        "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/espana-en-el-mundial-2026-en-directo-ultima-hora-de-la-seleccion-espanola-hoy-7-de-junio-pedri-lamine-yamal-mikel-merino-f202607-d/",
+        "titolo": "Mundial 2026, últimas noticias en directo | El Mundial vive su primer día sin partidos, ya con los cuartos de final definidos",
+        "fonte": "EL PAÍS",
+        "link": "https://elpais.com/deportes/mundial-futbol/2026-07-08/resumen-y-ultimas-noticias-de-la-copa-mundial-de-futbol.html",
         "img": "",
-        "dominio": "as.com",
-        "quando": "2 h"
+        "dominio": "elpais.com",
+        "quando": "1 h"
       },
       {
-        "titolo": "¿Cómo quedó Estados Unidos - Bélgica? Cronología, goles y marcador de USA en el Mundial 2026",
-        "fonte": "Diario AS",
-        "link": "https://as.com/us/futbol/mundial/estados-unidos-belgica-en-vivo-hoy-resultado-goles-y-ultimas-noticias-de-usa-en-mundial-2026-en-directo-f202607-d/",
-        "img": "https://img.asmedia.epimg.net/resizer/v2/CJWSIKLCHBIRDGUQB2U7GQTNDU.jpg?auth=38efea967201b2598eb4b44f7eb46093cd881d9df309b4de10260d099cbae677&width=1472&height=828&smart=true",
-        "dominio": "as.com",
-        "quando": "6 h"
+        "titolo": "Agenda del Mundial 2026: jornada previa a los partidos de cuartos de final",
+        "fonte": "Cadena SER",
+        "link": "https://cadenaser.com/nacional/2026/07/08/agenda-del-mundial-2026-jornada-previa-a-los-partidos-de-cuartos-de-final-cadena-ser/",
+        "img": "https://cadenaser.com/resizer/v2/DDC2IEFZ6ZAORJRKAEEIOQGYC4.jpg?auth=a35593911219b3b1faf39b8026ddaa39ee9b8e9e6b6925063cf425f23c7115db&quality=70&width=1200&height=675&smart=true",
+        "dominio": "cadenaser.com",
+        "quando": "1 h"
       },
       {
-        "titolo": "Ni con los favores de Trump y la FIFA: EEUU, eliminada en octavos por una gran Bélgica",
-        "fonte": "El Mundo",
-        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/07/07/6a4c8417fdddffea108b4572.html",
-        "img": "https://e01-phantom-elmundo.uecdn.es/f3434107abb16fb9bce018d41c08855a/resize/1200/f/webp/assets/multimedia/imagenes/2026/07/07/17833997250648.jpg",
-        "dominio": "elmundo.es",
-        "quando": "5 h"
-      },
-      {
-        "titolo": "La estrella de Bélgica, próximo rival de España en el Mundial 2026: \"Será un partido muy duro\"",
-        "fonte": "heraldo.es",
-        "link": "https://www.heraldo.es/noticias/deportes/futbol/2026/07/07/estrella-belgica-proximo-rival-espana-mundial-2026-sera-un-partido-muy-duro-2035207.html",
-        "img": "https://imagenes.heraldo.es/files/image_1920_1080/uploads/imagenes/2026/07/07/6a4cc675ea2604-73602851.jpeg",
-        "dominio": "heraldo.es",
-        "quando": "ahora"
-      },
-      {
-        "titolo": "Así queda el cuadro de cuartos y octavos del Mundial: cruces, calendario y selecciones clasificadas",
+        "titolo": "Así está el cuadro de cuartos del Mundial: cruces, calendario y selecciones clasificadas",
         "fonte": "MARCA",
         "link": "https://www.marca.com/futbol/mundial/2026/07/06/cuadro-cuartos-octavos-mundial-directo-cruces-calendario-selecciones-clasificadas.html",
         "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/files/fp/uploads/2026/06/23/cuadrofinal.jpg.r_d.1307-818-0.jpeg",
         "dominio": "marca.com",
-        "quando": "ahora"
+        "quando": "1 d"
       },
       {
-        "titolo": "Cuadro del Mundial 2026: equipos clasificados a cuartos, cruces y quién se enfrenta a quién en octavos de la C",
+        "titolo": "Cuadro del Mundial 2026: equipos clasificados a cuartos, cruces y quién se enfrenta a quién en octavos de la Copa del Mundo",
         "fonte": "Diario AS",
         "link": "https://as.com/futbol/mundial/cuadro-del-mundial-2026-equipos-clasificados-a-cuartos-cruces-y-quien-se-enfrenta-a-quien-en-octavos-de-la-copa-del-mundo-f202607-n-2/",
         "img": "",
         "dominio": "as.com",
-        "quando": "4 h"
+        "quando": "14 h"
+      },
+      {
+        "titolo": "Mundial 2026: calendario y horarios de todos los partidos de cuartos de final que van a emitir RTVE y DAZN",
+        "fonte": "elDiario.es",
+        "link": "https://www.eldiario.es/vertele/noticias/mundial-2026-calendario-horarios-partidos-cuartos-final-emitir-rtve-dazn-vt-espana-belgica-argentina-francia-marruecos-inglaterra_1_13364110.html",
+        "img": "https://static.eldiario.es/clip/5883ec52-4a47-4b10-a545-789b39b944b3_facebook-vertele-watermarked-aspect-ratio-1200-675_default_0.jpg",
+        "dominio": "eldiario.es",
+        "quando": "ahora"
+      },
+      {
+        "titolo": "Argentina 3-2 Egipto: Resumen, resultado y goles del partido | octavos de final del Mundial 2026, en directo",
+        "fonte": "Diario AS",
+        "link": "https://as.com/futbol/mundial/argentina-egipto-en-directo-octavos-de-final-del-mundial-2026-en-vivo-hoy-f202607-d/",
+        "img": "",
+        "dominio": "as.com",
+        "quando": "12 h"
+      },
+      {
+        "titolo": "Argentina - Egipto: resumen, goles y resultado del partido del Mundial 2026",
+        "fonte": "SPORT",
+        "link": "https://www.sport.es/es/noticias/mundial-futbol/argentina-egipto-directo-partido-octavos-132218051",
+        "img": "https://estaticos-cdn.prensaiberica.es/clip/ec1e1846-82b6-42ce-acab-4a33c8b23a45_16-9-discover-aspect-ratio_default_0_x1000y507.jpg",
+        "dominio": "sport.es",
+        "quando": "14 h"
+      },
+      {
+        "titolo": "Argentina - Egipto | Mundial 2026: resultado y resumen del partido de fútbol de hoy",
+        "fonte": "La Vanguardia",
+        "link": "https://www.lavanguardia.com/deportes/futbol/20260707/11586840/argentina-egipto-en-directo-sigue-ultima-hora-partido-octavos-final-copa-mundo-2026.html",
+        "img": "https://www.lavanguardia.com/files/og_thumbnail/uploads/2026/07/07/6a4d4847873c2.jpeg",
+        "dominio": "lavanguardia.com",
+        "quando": "13 h"
       }
     ]
   }
