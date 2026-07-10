@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-07-09T21:56:30Z",
+  "aggiornato": "2026-07-10T00:01:12Z",
   "nome": "World Cup 2026",
   "groups": [
     {
@@ -6227,7 +6227,34 @@
             "iso": "ma",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              2,
+              0
+            ],
+            "ht": [
+              0,
+              0
+            ],
+            "et": null,
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Kylian Mbappé",
+              "minute": "60",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Ousmane Dembélé",
+              "minute": "66",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": []
         },
         {
           "round": "Quarter-final",
@@ -6404,14 +6431,6 @@
   "news": {
     "it": [
       {
-        "titolo": "Mondiali 2026, Francia-Marocco in diretta: 2-0, gioiello di Mbappé, poi Dembelé raddoppia",
-        "fonte": "Corriere della Sera",
-        "link": "https://www.corriere.it/sport/calcio/mondiali/diretta-live/26_luglio_09/mondiali-2026-partite-oggi-risultato-diretta-francia-marocco.shtml",
-        "img": "https://dimages2.corriereobjects.it/files/og_thumbnail/uploads/2026/07/09/6a50129d1e506.jpeg",
-        "dominio": "corriere.it",
-        "quando": "poco fa"
-      },
-      {
         "titolo": "Partite, date e orari: ecco il tabellone dei quarti del Mondiale di calcio 2026. Sfide e incroci nel percorso verso la finale",
         "fonte": "Quotidiano Nazionale",
         "link": "https://www.quotidiano.net/mondiali/mondiali-2026-tabellone-quarti-finale-fd2ec722",
@@ -6420,20 +6439,44 @@
         "quando": "1 g fa"
       },
       {
-        "titolo": "Il programma dei quarti di finale ai Mondiali di calcio",
-        "fonte": "Il Post",
-        "link": "https://www.ilpost.it/2026/07/08/quarti-finale-mondiali-programma-orari-tv/",
-        "img": "https://static-prod.cdnilpost.com/wp-content/uploads/2026/07/07/1783465157-Mbappe.jpg",
-        "dominio": "ilpost.it",
+        "titolo": "Mondiali 2026, le partite di oggi in diretta: clamorosa rimonta dell'Argentina, da 0-2 a 3-2 al 92' con l'Egitto. Messi sbaglia un rigore, poi è decisivo e scoppia in lacrime. Svizzera ai quarti: Colombia sconfitta ai rigori",
+        "fonte": "Corriere della Sera",
+        "link": "https://www.corriere.it/sport/calcio/mondiali/diretta-live/26_luglio_07/mondiali-2026-partite-oggi-risultato-diretta-argentina-egitto-colombia.shtml",
+        "img": "https://dimages2.corriereobjects.it/files/og_thumbnail/uploads/2026/07/07/6a4d3f1f32b7e.jpeg",
+        "dominio": "corriere.it",
         "quando": "1 g fa"
       },
       {
-        "titolo": "Yakin Murat: chi è l'allenatore della Svizzera, rivelazione ai Mondiali 2026. A caccia dell'impresa con l'Argentina di Messi",
-        "fonte": "Il Messaggero",
-        "link": "https://www.ilmessaggero.it/sport/calcio/yakin_murat_ct_svizzera_chi_e_mondiali-9641432.html",
-        "img": "https://statics.cedscdn.it/photos/MED_HIGH/2026/07/09/9641432_09122325_onecms_1sap907mnlt6kfpbo24.jpg",
-        "dominio": "ilmessaggero.it",
+        "titolo": "Mondiali 2026, la classifica marcatori in diretta",
+        "fonte": "Il Fatto Quotidiano",
+        "link": "https://www.ilfattoquotidiano.it/2026/07/09/mondiali-2026-classifica-marcatori-diretta/8416941/",
+        "img": "https://st.ilfattoquotidiano.it/wp-content/uploads/2026/06/17/messi-lacrime-1200x630.jpg",
+        "dominio": "ilfattoquotidiano.it",
+        "quando": "2 ore fa"
+      },
+      {
+        "titolo": "Ai Mondiali 2026 iniziano i quarti di finale: pronostici dell'Intelligenza Artificiale (che va coi piedi di piombo)",
+        "fonte": "Style Magazine",
+        "link": "https://style.corriere.it/attualita/sport/mondiali-2026-quarti-di-finale-per-chi-tifa-lintelligenza-artificiale-previsioni-pronostici-ed-errori/",
+        "img": "https://images2-wpc.corriereobjects.it/qH3yMkNCKU3K9lZRfzD02syYcWA=/fit-in/1280x630/style.corriere.it/assets/uploads/2026/07/mondiali-2026-previsioni-e-pronostici-dellAI-francia-1280x630.jpg",
+        "dominio": "style.corriere.it",
+        "quando": "19 ore fa"
+      },
+      {
+        "titolo": "LIVE Mondiale: in Paraguay bruciato un manichino raffigurante Mbappé",
+        "fonte": "La Gazzetta dello Sport",
+        "link": "https://www.gazzetta.it/Calcio/Mondiali/09-07-2026/live-mondiali-2026-cosa-succede-tra-usa-canada-e-messico.shtml",
+        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/07/09/6a50029c003ab.r_d.449-237-0.jpeg",
+        "dominio": "gazzetta.it",
         "quando": "3 ore fa"
+      },
+      {
+        "titolo": "Mondiali di Calcio FIFA 2026: l'intelligenza artificiale di Lenovo offre ai tifosi la \"vista dell'arbitro\", che avvicina gli spettatori al campo",
+        "fonte": "ANSA",
+        "link": "https://www.ansa.it/sito/notizie/economia/business_wire/2026/07/09/mondiali-di-calcio-fifa-2026-lintelligenza-artificiale-di-lenovo-offre-ai-tifosi-la-vista_3cff52b1-7970-4495-97b3-e06d32cfee92.html",
+        "img": "https://www.ansa.it",
+        "dominio": "ansa.it",
+        "quando": "8 ore fa"
       },
       {
         "titolo": "Justin Bieber ai Mondiali 2026: ecco chi canterà alla finale con lui",
@@ -6441,89 +6484,57 @@
         "link": "https://www.corrieredellosport.it/news/calcio/mondiali-2026/2026/07/09-149778243/justin_bieber_ai_mondiali_2026_ecco_chi_canter_alla_finale_con_lui",
         "img": "https://cdn.corrieredellosport.it/images/2026/07/09/100647935-7939f3f3-cd88-4b4c-be69-439b481b158c.jpg",
         "dominio": "corrieredellosport.it",
-        "quando": "11 ore fa"
+        "quando": "13 ore fa"
       },
       {
-        "titolo": "Quattro tempi, recuperi infiniti, tanti gol nel recupero e… Balogun: l’America ha cambiato il calcio",
-        "fonte": "Sportmediaset",
-        "link": "https://www.sportmediaset.mediaset.it/speciale/mondiali-2026/mondiali-2026-rivoluzione-calcio-regolamento-time-out-trump_114138295-202602k.shtml",
-        "img": "https://img-api.cloud.mediaset.net/api/images/kn/v1/image_main/1200/675/114137632?r=4",
-        "dominio": "sportmediaset.mediaset.it",
-        "quando": "2 g fa"
-      },
-      {
-        "titolo": "Una nuova primavera",
-        "fonte": "Il Tascabile",
-        "link": "https://www.iltascabile.com/linguaggi/nuova-primavera/",
-        "img": "https://www.iltascabile.com/wp-content/uploads/2026/07/Una-nuova-primavera.jpg",
-        "dominio": "iltascabile.com",
-        "quando": "16 ore fa"
-      },
-      {
-        "titolo": "CR7 da record, le doppiette di Messi e Mbappé e non solo Coppa del Mondo FIFA",
-        "fonte": "DAZN",
-        "link": "https://www.dazn.com/it-IT/home/ArticleId:9lcgkgoosjas078vqj4sgn78/9lcgkgoosjas078vqj4sgn78",
-        "img": "",
-        "dominio": "dazn.com",
-        "quando": "1 g fa"
+        "titolo": "Quale partita sulla RAI oggi, Mondiali calcio 2026: orario giovedì 9 giugno, canale, streaming",
+        "fonte": "OA Sport",
+        "link": "https://www.oasport.it/2026/07/quale-partita-sulla-rai-oggi-mondiali-calcio-2026-orario-9-giugno-canale-in-chiaro-streaming/",
+        "img": "https://www.oasport.it/wp-content/uploads/2026/07/Gillette-Stadium-e1783575595533.jpg",
+        "dominio": "oasport.it",
+        "quando": "3 ore fa"
       }
     ],
     "en": [
       {
-        "titolo": "World Cup quarter-final (and beyond) predictions: will anyone derail France’s title bid?",
-        "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/2026/jul/09/world-cup-2026-quarter-final-predictions-france-spain-argentina-england-messi-mbappe-haaland",
-        "img": "https://i.guim.co.uk/img/media/44bef7e028d7d03d6b01c73fd468316ef41fed24/0_0_2500_2000/master/2500.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=616162fcdda9ea61f86c11146b2d311b",
-        "dominio": "theguardian.com",
-        "quando": "8h ago"
-      },
-      {
-        "titolo": "World Cup 2026: US confirm Christian Pulisic leg fracture in defeat to Belgium",
+        "titolo": "World Cup 2026: England defender Marc Guehi fitness worry with hamstring injury",
         "fonte": "BBC",
-        "link": "https://www.bbc.com/sport/football/articles/cq613v53emlo",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/7e3e/live/3aea09b0-7bcb-11f1-b543-9988255dfa81.jpg",
-        "dominio": "bbc.com",
-        "quando": "2h ago"
+        "link": "https://www.bbc.co.uk/sport/football/articles/c3eyqdwq392o",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/1f8e/live/c5a06860-7be4-11f1-9e76-bb53cc291deb.jpg",
+        "dominio": "bbc.co.uk",
+        "quando": "1h ago"
       },
       {
-        "titolo": "Fantasy FIFA World Cup 2026: Clean sheet + goalscorer odds",
-        "fonte": "fantasyfootballscout.co.uk",
-        "link": "https://www.fantasyfootballscout.co.uk/2026/07/09/fantasy-fifa-world-cup-2026-clean-sheet-goalscorer-odds/",
-        "img": "https://cdn.fantasyfootballscout.co.uk/wp-content/uploads/2026/06/france-v-senegal-team-news-cherki-a-sub-kounde-fit-to-start.jpg",
-        "dominio": "fantasyfootballscout.co.uk",
-        "quando": "4h ago"
+        "titolo": "World Cup 2026: EU lawmakers call for formal investigation into Folarin Balogun 'scandal' - Paper Talk",
+        "fonte": "Sky Sports",
+        "link": "https://www.skysports.com/football/transfer-paper-talk/12709/13562130/x-paper-talk",
+        "img": "https://e0.365dm.com/25/03/1600x900/skysports-paper-talk-brand-refresh_6852897.jpg?20250311094415",
+        "dominio": "skysports.com",
+        "quando": "1h ago"
       },
       {
-        "titolo": "France v Morocco: World Cup 2026 quarter-final – live",
+        "titolo": "France v Morocco: World Cup 2026 quarter-final – as it happened",
         "fonte": "The Guardian",
         "link": "https://www.theguardian.com/football/live/2026/jul/09/france-v-morocco-world-cup-2026-quarter-final-live",
         "img": "https://i.guim.co.uk/img/media/c97fdc7537f0f06fbd798489c9c23c8255b9bb55/321_0_2575_2060/master/2575.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=ff664bcd719d0fe4aa492cfa814d9033",
         "dominio": "theguardian.com",
+        "quando": "4h ago"
+      },
+      {
+        "titolo": "France 2-0 Morocco Highlights - World Cup 2026 - 9 July 2026",
+        "fonte": "BBC",
+        "link": "https://www.bbc.co.uk/sport/football/videos/crm0ry2nemmo",
+        "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/d3f8/live/f7c5b270-7be2-11f1-9510-1546718f668b.jpg",
+        "dominio": "bbc.co.uk",
         "quando": "1h ago"
       },
       {
-        "titolo": "France vs Morocco LIVE: FIFA World Cup 2026 quarterfinal",
-        "fonte": "Al Jazeera",
-        "link": "https://www.aljazeera.com/sports/liveblog/2026/7/9/live-france-vs-morocco-fifa-world-cup-2026-quarterfinal",
-        "img": "https://www.aljazeera.com/wp-content/uploads/2026/07/AFP__20260709__B9RU9NP__v1__HighRes__FblWc2026Match97FraMar-1783623117_6cbbf0-1783623196.jpg?resize=1200%2C630&quality=80",
-        "dominio": "aljazeera.com",
+        "titolo": "The Muslim manosphere and Achraf Hakimi",
+        "fonte": "Politico",
+        "link": "https://www.politico.com/live-updates/2026/07/09/world-cup-2026/achraf-hakimi-charge-france-fifa-world-cup-2026-00992271",
+        "img": "",
+        "dominio": "politico.com",
         "quando": "2h ago"
-      },
-      {
-        "titolo": "France vs Morocco live: Score and latest 2026 World Cup quarter-final updates",
-        "fonte": "The Telegraph",
-        "link": "https://www.telegraph.co.uk/football/2026/07/09/france-vs-morocco-live-score-2026-world-cup-quarter-final/",
-        "img": "https://www.telegraph.co.uk/content/dam/football/2026/07/09/TELEMMGLPICT000494625425_17836326397430_trans_NvBQzQNjv4Bqe8exRwkrG0gUQzS_A7vs-P4Xpit_DMGvdp2n7FDd82k.jpeg?impolicy=OG-Live",
-        "dominio": "telegraph.co.uk",
-        "quando": "just now"
-      },
-      {
-        "titolo": "World Cup 2026: Norway's Erling Haaland says pressure is all on England before quarter-final",
-        "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/articles/cj3gd8rg628o",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/85d6/live/3db2fd70-7bba-11f1-bada-857505afa282.jpg",
-        "dominio": "bbc.co.uk",
-        "quando": "3h ago"
       },
       {
         "titolo": "Rice and Ødegaard put club union on hold in decisive duel between England and Norway",
@@ -6531,7 +6542,23 @@
         "link": "https://www.theguardian.com/football/2026/jul/09/declan-rice-martin-odegaard-arsenal-norway-england-world-cup-2026",
         "img": "https://i.guim.co.uk/img/media/e3c311c3a0f9f30d6e9804e2e86a55e3c1c86248/386_0_3023_2418/master/3023.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=bc0c56657b224e9830c6b993f5b064bd",
         "dominio": "theguardian.com",
-        "quando": "just now"
+        "quando": "2h ago"
+      },
+      {
+        "titolo": "Norway vs. England at World Cup 2026: TV channel, how to watch in UK, kick-off time, live stream, referee, line-ups",
+        "fonte": "ESPN",
+        "link": "https://www.espn.co.uk/football/story/_/id/49314271/norway-vs-england-fifa-world-cup-2026-tv-channel-how-watch-kickoff-live-stream-injury-predicted-lineups",
+        "img": "",
+        "dominio": "espn.co.uk",
+        "quando": "9h ago"
+      },
+      {
+        "titolo": "Why the United States is obsessed with Erling Haaland",
+        "fonte": "The Telegraph",
+        "link": "https://www.telegraph.co.uk/football/2026/07/09/erling-haaland-conquered-us-unlike-anyone-else-world-cup/",
+        "img": "https://www.telegraph.co.uk/content/dam/football/2026/07/09/TELEMMGLPICT000493258510_17835854708920_trans_NvBQzQNjv4BqB-wzIyJLqvYk0q6AIlmFH4vGsL8QXaZH-S8LlgTrNyE.jpeg?impolicy=OG-Standard",
+        "dominio": "telegraph.co.uk",
+        "quando": "15h ago"
       }
     ],
     "es": [
@@ -6539,31 +6566,31 @@
         "titolo": "Cuadro del Mundial 2026: clasificados, cruces y quién se enfrenta a quién en cuartos de la Copa del Mundo",
         "fonte": "Diario AS",
         "link": "https://as.com/futbol/mundial/cuadro-del-mundial-2026-clasificados-cruces-y-quien-se-enfrenta-a-quien-en-cuartos-de-la-copa-del-mundo-f202607-n/",
-        "img": "",
+        "img": "https://img.asmedia.epimg.net/resizer/v2/E6POAC3AHZHL5MUDJAJ6PWOWWI.jpg?auth=b8973572e12963be09667400d5d13d978da090f603f98c96185258d017d1d9a4&width=1472&height=828&focal=535%2C172",
         "dominio": "as.com",
-        "quando": "13 h"
+        "quando": "15 h"
       },
       {
-        "titolo": "Resumen de la jornada del 7 de julio del Mundial 2026: Argentina y Suiza se enfrentarán este domingo en cuartos de final tras vencer a Egipto y Colombia, respectivamente",
+        "titolo": "La batalla de los inmigrantes",
         "fonte": "EL PAÍS",
-        "link": "https://elpais.com/deportes/mundial-futbol/2026-07-07/resumen-y-ultimas-noticias-de-la-copa-mundial-de-futbol.html",
-        "img": "",
+        "link": "https://elpais.com/deportes/mundial-futbol/2026-07-09/la-batalla-de-los-inmigrantes.html",
+        "img": "https://imagenes.elpais.com/resizer/v2/KNR5AUUIVFIOVGCY2CI46U6R6I.jpg?auth=8df7a4642a4b0d9b586184982994123a05600755c57ff14dad4712b420741d79&width=1200",
         "dominio": "elpais.com",
-        "quando": "1 d"
+        "quando": "ahora"
       },
       {
-        "titolo": "Quien piense que España puede ganar el Mundial...",
+        "titolo": "El ataque de risa de Luis de la Fuente y la frase para recordar: \"Lo que es malo para el panal, es malo para la abeja\"",
         "fonte": "El Mundo",
-        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/07/09/6a4f88abfdddff6d0d8b459a.html",
-        "img": "https://e01-phantom-elmundo.uecdn.es/2beeba374f26268434e067c26f8d3eb6/resize/1200/f/webp/assets/multimedia/imagenes/2026/07/09/17835972717775.jpg",
+        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/07/10/6a5028c4e4d4d870718b45ac.html",
+        "img": "https://e01-phantom-elmundo.uecdn.es/99885961a4d33e2e1a6db3dbcced6abb/crop/241x160/2305x1536/resize/1200/f/webp/assets/multimedia/imagenes/2026/07/10/17836380492221.jpg",
         "dominio": "elmundo.es",
-        "quando": "1 h"
+        "quando": "ahora"
       },
       {
-        "titolo": "VIDEO y análisis revela si chilena de Raúl Jiménez ante Inglaterra iba a gol... Y sí, duele",
+        "titolo": "Piero Hincapié rompe silencio y revela lo sucedido con Santi Giménez en el México vs Ecuador del Mundial 2026",
         "fonte": "MARCA",
-        "link": "https://www.marca.com/mx/futbol/seleccion-mx/2026/07/09/6a50107aca4741b4098b45a4.html",
-        "img": "https://e01-phantom-marca-mx.uecdn.es/93c9ff179955bbe52b628719a8c45e92/resize/1200/f/jpg/mx/assets/multimedia/imagenes/2026/07/09/17836319322874.jpg",
+        "link": "https://www.marca.com/mx/futbol/mundial/2026/07/10/6a50333422601dcd7b8b458f.html",
+        "img": "https://e01-phantom-marca-mx.uecdn.es/415491d74f882c97ae1c9857d518d82f/resize/1200/f/jpg/mx/assets/multimedia/imagenes/2026/07/10/17836386548066.jpg",
         "dominio": "marca.com",
         "quando": "ahora"
       },
@@ -6571,33 +6598,33 @@
         "titolo": "Francia - Marruecos hoy, en directo: partido de cuartos de final del Mundial 2026, resultado en vivo",
         "fonte": "Diario AS",
         "link": "https://as.com/futbol/mundial/francia-marruecos-en-directo-cuartos-de-final-del-mundial-2026-hoy-en-vivo-f202607-d/",
-        "img": "",
+        "img": "https://img.asmedia.epimg.net/resizer/v2/UV7JXRAASBL6JCEXLKD5ZGMTQU.jpg?auth=94938d34ca47550e89a18e2964eeae8ba416f7cd1f23bb3a06f78507b33e3ffd&width=1472&height=828&smart=true",
         "dominio": "as.com",
-        "quando": "ahora"
-      },
-      {
-        "titolo": "Francia - Marruecos: Mundial 2026, en directo | Bono detiene el penalti de Mbappé",
-        "fonte": "EL PAÍS",
-        "link": "https://elpais.com/deportes/mundial-futbol/2026-07-09/francia-marruecos-en-directo-el-partido-de-los-cuartos-del-mundial-en-vivo.html",
-        "img": "",
-        "dominio": "elpais.com",
-        "quando": "1 h"
+        "quando": "2 h"
       },
       {
         "titolo": "Francia - Marruecos, en directo hoy en vídeo el partido de cuartos de final del Mundial 2026",
         "fonte": "RTVE.es",
         "link": "https://www.rtve.es/deportes/20260709/francia-marruecos-video-resumen-resultado-mundial-2026/17146193.shtml",
-        "img": "https://img.rtve.es/imagenes/francia-marruecos-video-resumen-resultado-mundial-2026/01783414684438.jpg",
+        "img": "https://img.rtve.es/imagenes/francia-marruecos-video-resumen-resultado-mundial-2026/01783635682438.jpg",
         "dominio": "rtve.es",
-        "quando": "ahora"
+        "quando": "2 h"
       },
       {
-        "titolo": "Los jugadores nacidos en España que juegan con Marruecos",
-        "fonte": "El Debate",
-        "link": "https://www.eldebate.com/deportes/mundial-futbol-2026/20260709/jugadores-nacidos-espana-juegan-marruecos-cns_437867.html",
-        "img": "https://www.eldebate.com/files/article_social/files/fp/uploads/2026/07/09/6a4f86d784622.r_d.804-359-6250.jpeg",
-        "dominio": "eldebate.com",
-        "quando": "6 h"
+        "titolo": "Francia es una galaxia muy, muy lejana para Marruecos y ya espera a España o Bélgica en semifinales",
+        "fonte": "El Mundo",
+        "link": "https://www.elmundo.es/deportes/futbol/mundial-de-futbol/2026/07/10/6a4ff520e85ece50228b4573.html",
+        "img": "https://e01-phantom-elmundo.uecdn.es/4a59caf66d4d6685b973f9683ddc027e/crop/67x83/2996x2037/resize/1200/f/webp/assets/multimedia/imagenes/2026/07/09/17836343528040.jpg",
+        "dominio": "elmundo.es",
+        "quando": "1 h"
+      },
+      {
+        "titolo": "Mundial 2026: ¿qué partidos se juegan hoy, 9 de julio? Horarios y enfrentamientos",
+        "fonte": "CNN en Español",
+        "link": "https://cnnespanol.cnn.com/2026/07/09/deportes/mundial-2026-partidos-9-julio-horarios-orix",
+        "img": "",
+        "dominio": "cnnespanol.cnn.com",
+        "quando": "10 h"
       }
     ]
   }
