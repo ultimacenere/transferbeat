@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-07-11T23:38:20Z",
+  "aggiornato": "2026-07-12T07:15:19Z",
   "nome": "World Cup 2026",
   "groups": [
     {
@@ -6332,7 +6332,44 @@
             "iso": "gb-eng",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              1,
+              1
+            ],
+            "ht": [
+              1,
+              1
+            ],
+            "et": [
+              1,
+              2
+            ],
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Andreas Schjelderup",
+              "minute": "36",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": [
+            {
+              "name": "Jude Bellingham",
+              "minute": "45+2",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Jude Bellingham",
+              "minute": "93",
+              "pen": false,
+              "og": false
+            }
+          ]
         },
         {
           "round": "Quarter-final",
@@ -6354,7 +6391,50 @@
             "iso": "ch",
             "ph": false
           },
-          "played": false
+          "score": {
+            "ft": [
+              1,
+              1
+            ],
+            "ht": [
+              1,
+              0
+            ],
+            "et": [
+              3,
+              1
+            ],
+            "p": null
+          },
+          "played": true,
+          "goals1": [
+            {
+              "name": "Alexis Mac Allister",
+              "minute": "10",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Julián Álvarez",
+              "minute": "112",
+              "pen": false,
+              "og": false
+            },
+            {
+              "name": "Lautaro Martínez",
+              "minute": "120+1",
+              "pen": false,
+              "og": false
+            }
+          ],
+          "goals2": [
+            {
+              "name": "Dan Ndoye",
+              "minute": "67",
+              "pen": false,
+              "og": false
+            }
+          ]
         }
       ]
     },
@@ -6465,118 +6545,118 @@
   "news": {
     "it": [
       {
+        "titolo": "Mondiali 2026. L'Argentina è in semifinale: 3-1 alla Svizzera. Sarà di nuovo sfida con l'Inghilterra - L'Argentina festeggia cantando \"La cumbia de los trapos\"",
+        "fonte": "RaiNews",
+        "link": "https://www.rainews.it/maratona/2026/07/calcio-mondiali-2026-quarti-di-finale-francia-marocco-spagna-belgio-norvegia-inghilterra-argentina-svizzera-diretta-streaming-cronaca-highlights-video-live-risultati-c06c8807-4207-41ba-8f3f-83ba1827e3f1.html",
+        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/07/12/1783828904432_BXQG.jpg",
+        "dominio": "rainews.it",
+        "quando": "2 ore fa"
+      },
+      {
         "titolo": "Mondiali 2026, le partite di oggi in diretta: clamorosa rimonta dell'Argentina, da 0-2 a 3-2 al 92' con l'Egitto. Messi sbaglia un rigore, poi è decisivo e scoppia in lacrime. Svizzera ai quarti: Colombia sconfitta ai rigori",
         "fonte": "Corriere della Sera",
         "link": "https://www.corriere.it/sport/calcio/mondiali/diretta-live/26_luglio_07/mondiali-2026-partite-oggi-risultato-diretta-argentina-egitto-colombia.shtml",
         "img": "https://dimages2.corriereobjects.it/files/og_thumbnail/uploads/2026/07/07/6a4d3f1f32b7e.jpeg",
         "dominio": "corriere.it",
-        "quando": "3 g fa"
+        "quando": "4 g fa"
       },
       {
-        "titolo": "Mondiali di Calcio 2026 2026 - Norvegia - Inghilterra 1-1: Gol annullato a Heggem - Video",
+        "titolo": "Mondiali di Calcio 2026 2026 - Norvegia - Inghilterra 1-2 (dts): Highlights - Video",
         "fonte": "RaiPlay",
-        "link": "https://www.raiplay.it/video/2026/07/Norvegia---Inghilterra-1-1-Gol-annullato-a-Heggem--Mondiali-di-Calcio-FIFA-2026-fd9f9414-0ba9-4f93-a273-c6130c51a1da.html",
-        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/07/12/1783812356045_000_B9XH6V9.jpg",
+        "link": "https://www.raiplay.it/video/2026/07/Norvegia---Inghilterra-1-2-Highlights--Mondiali-di-Calcio-FIFA-2026-41490669-ec02-4ea5-b53a-e6dc4e4929e9.html",
+        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/07/12/1783829607752_1783813755217_LO%202048x1152.jpg",
         "dominio": "raiplay.it",
+        "quando": "1 g fa"
+      },
+      {
+        "titolo": "Mondiali 2026, Norvegia e Svizzera ko. In semifinale Inghilterra e Argentina",
+        "fonte": "Sky TG24",
+        "link": "https://tg24.sky.it/sport/2026/07/12/mondiali-2026-semifinali",
+        "img": "https://tg24.sky.it/assets/images/fc1d19a13de49fe6c65b04bd8dc7a6b29572f109/skytg24/it/sport/2026/07/12/mondiali-2026-semifinali/GettyImages-2285139938.jpg?im=Resize,width=1218",
+        "dominio": "tg24.sky.it",
+        "quando": "3 ore fa"
+      },
+      {
+        "titolo": "Stasera niente Mondiali di calcio sulla RAI: orari semifinali, canali, streaming",
+        "fonte": "OA Sport",
+        "link": "https://www.oasport.it/2026/07/stasera-niente-mondiali-di-calcio-sulla-rai-orari-semifinali-canali-streaming/",
+        "img": "",
+        "dominio": "oasport.it",
         "quando": "1 ore fa"
       },
       {
-        "titolo": "Jayden Adams è morto a 25 anni: aveva giocato al Mondiale 2026 con il Sudafrica",
+        "titolo": "Morto Jayden Adams, trequartista del Sudafrica al Mondiale. La stampa locale: \"Si è tolto la vita\"",
+        "fonte": "La Gazzetta dello Sport",
+        "link": "https://www.gazzetta.it/Calcio/Mondiali/11-07-2026/jayden-adams-morto-sudafrica-mondiali.shtml",
+        "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/07/11/6a523f6d7d8e4.r_d.1532-546-0.jpeg",
+        "dominio": "gazzetta.it",
+        "quando": "15 ore fa"
+      },
+      {
+        "titolo": "Sudafrica, è morto il centrocampista Jayden Adams: aveva 25 anni",
         "fonte": "Sky Sport",
         "link": "https://sport.sky.it/calcio/mondiali/2026/07/11/jayden-adams-morto-sudafrica",
         "img": "https://sport.sky.it/assets/images/2965ca705c37cb5ed4a7cbdd13a5b6727ac01831/skysport/it/calcio/mondiali/2026/07/11/jayden-adams-morto-sudafrica/adams_morto.jpg?im=Resize,width=1218",
         "dominio": "sport.sky.it",
-        "quando": "3 ore fa"
+        "quando": "11 ore fa"
       },
       {
-        "titolo": "Quale partita sulla RAI oggi, Mondiali calcio 2026: orari sabato 11 luglio, canale, streaming",
-        "fonte": "OA Sport",
-        "link": "https://www.oasport.it/2026/07/quale-partita-sulla-rai-oggi-mondiali-calcio-2026-orario-11-luglio-canale-in-chiaro-streaming/",
-        "img": "https://www.oasport.it/wp-content/uploads/2026/07/24084221_small-e1783745211531.jpg",
-        "dominio": "oasport.it",
-        "quando": "3 ore fa"
-      },
-      {
-        "titolo": "Mondiali 2026. Francia ai quarti: Paraguay battuto 1-0, Mbappé su rigore - Francia ai quarti: decide Mbappé su rigore",
-        "fonte": "RaiNews",
-        "link": "https://www.rainews.it/maratona/2026/07/calcio-mondiali-2026-giorno-23-ottavi-di-finale-canada-marocco-paraguay-francia-diretta-streaming-cronaca-highlights-video-live-risultati-b49392b0-0704-4a24-b360-20affc63ae31.html",
-        "img": "https://www.rainews.it/cropgd/1200x630/dl/img/2026/07/05/1783205519806_BADAN.jpg",
-        "dominio": "rainews.it",
-        "quando": "7 g fa"
-      },
-      {
-        "titolo": "Mondiali di Calcio 2026 2036 - Spagna - Belgio 2-1: Highlights - Video",
-        "fonte": "RaiPlay",
-        "link": "https://www.raiplay.it/video/2026/07/Spagna---Belgio-2-1-Highlights--Mondiali-di-Calcio-FIFA-2026-ba573d3e-0a12-4dde-8d2a-63717a234d52.html",
-        "img": "https://www.raiplay.it/cropgd/1200x600/dl/img/2026/07/10/1783719197654_24593872_large%201.jpg",
-        "dominio": "raiplay.it",
-        "quando": "1 g fa"
-      },
-      {
-        "titolo": "Spagna - Belgio ai Mondiali calcio 2026 oggi: Risultato in diretta LIVE · Partite 10 luglio | Aggiornamenti in tempo reale",
-        "fonte": "olympics.com",
-        "link": "https://www.olympics.com/it/notizie/spagna-belgio-mondiali-2026-oggi-risultato-live-10-luglio",
-        "img": "",
-        "dominio": "olympics.com",
-        "quando": "1 g fa"
-      },
-      {
-        "titolo": "Mondiali 2026, Spagna-Belgio 2-1: le Furie Rosse volano in semifinale",
-        "fonte": "Sky TG24",
-        "link": "https://tg24.sky.it/sport/2026/07/10/mondiali-2026-spagna-belgio-2-1",
-        "img": "https://tg24.sky.it/assets/images/c4e3566cdaa61466b5cf565cbf3b98f6a6e3997d/skytg24/it/sport/2026/07/10/mondiali-2026-spagna-belgio-2-1/spagna_belgio_ansa.JPG?im=Resize,width=1218",
-        "dominio": "tg24.sky.it",
-        "quando": "1 g fa"
+        "titolo": "Choc Sudafrica, muore a 25 anni Adams: aveva giocato ai mondiali",
+        "fonte": "ANSA",
+        "link": "https://www.ansa.it/sito/notizie/sport/calcio/speciali/mondiale-calcio-2026/2026/07/11/mondiali-morto-il-giocatore-del-sudafrica-adams-aveva-25-anni_8229d13c-6c5f-40cb-89f4-e85132929266.html",
+        "img": "https://www.ansa.it/webimages/img_1280x720/2026/7/11/422e28ead848b3b3480d321bc00c5d08.jpg",
+        "dominio": "ansa.it",
+        "quando": "17 ore fa"
       }
     ],
     "en": [
       {
-        "titolo": "Norway vs. England LIVE: World Cup 2026 updates as quarterfinal hangs in the balance",
-        "fonte": "ESPN",
-        "link": "https://www.espn.co.uk/football/story/_/id/49329032/norway-england-live-world-cup-2026-latest-updates-commentary-score-result",
-        "img": "",
-        "dominio": "espn.co.uk",
-        "quando": "2h ago"
-      },
-      {
-        "titolo": "World Cup 2026: Norway v England buildup; Kane’s round of golf with Trump – as it happened",
+        "titolo": "World Cup 2026: England edge Norway in quarter-final – in pictures",
         "fonte": "The Guardian",
-        "link": "https://www.theguardian.com/football/live/2026/jul/11/world-cup-2026-spain-v-belgium-reaction-norway-v-england-quarter-final-buildup-and-more-live",
-        "img": "https://i.guim.co.uk/img/media/1509a3fb93900b20d297b89e2e5a743c5568b50b/438_0_4496_3599/master/4496.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=ed9f663c0e5ece541edc27fe172f8c3c",
+        "link": "https://www.theguardian.com/football/gallery/2026/jul/11/world-cup-2026-norway-v-england-in-pictures",
+        "img": "https://i.guim.co.uk/img/media/c604320f05e2cbe2ee67a110884f42375424fbf7/148_45_2356_1885/master/2356.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=75c7abea04ae035e03c4b0bc8f0b0526",
         "dominio": "theguardian.com",
-        "quando": "16h ago"
+        "quando": "8h ago"
       },
       {
-        "titolo": "FIFA World Cup 2026 - Quarter-Finals: Norway v England – Post-Match Reaction",
+        "titolo": "World Cup 2026: England to face Argentina in semi-finals - will Three Lions reach the final?",
         "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/iplayer/episode/l0058ktv/fifa-world-cup-2026-quarterfinals-norway-v-england-postmatch-reaction",
-        "img": "",
+        "link": "https://www.bbc.co.uk/sport/football/live/c621jnp2p63t",
+        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/69d9/live/1ee88520-7dba-11f1-beca-2b6190c460aa.jpg",
         "dominio": "bbc.co.uk",
-        "quando": "just now"
+        "quando": "3h ago"
       },
       {
-        "titolo": "World Cup 2026: Should Argentina take Lionel Messi off penalties?",
-        "fonte": "BBC",
-        "link": "https://www.bbc.co.uk/sport/football/articles/c6214y2dlgno",
-        "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/ba55/live/87d35590-7d17-11f1-b61e-1b6852ddc42f.jpg",
-        "dominio": "bbc.co.uk",
-        "quando": "12h ago"
+        "titolo": "World Cup 2026: Jude Bellingham England's hero again as Three Lions beat Norway to reach semi-finals",
+        "fonte": "Sky Sports",
+        "link": "https://www.skysports.com/football/news/12016/13562664/world-cup-2026-jude-bellingham-englands-hero-again-as-three-lions-beat-norway-to-reach-semi-finals",
+        "img": "https://e0.365dm.com/26/07/1600x900/skysports-jude-bellingham-england_7295608.jpg?20260712004715",
+        "dominio": "skysports.com",
+        "quando": "6h ago"
       },
       {
-        "titolo": "Argentina v Switzerland: World Cup 2026 quarter-final – live",
+        "titolo": "Argentina 3-1 Switzerland (aet): World Cup 2026 quarter-final – as it happened",
         "fonte": "The Guardian",
         "link": "https://www.theguardian.com/football/live/2026/jul/11/argentina-v-switzerland-world-cup-2026-quarter-final-live",
-        "img": "https://i.guim.co.uk/img/media/425192d41c30180776df7a28b5b93f3e4ea07938/289_148_4256_3405/master/4256.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=a97929d9fb83531b438a922d08ea56b3",
+        "img": "https://i.guim.co.uk/img/media/0248194bae84f580bd6470bffdda72439e285599/35_0_6161_4932/master/6161.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&enable=upscale&s=1c4ba2d717746fbb6fc3ad0ac41d65e2",
         "dominio": "theguardian.com",
-        "quando": "just now"
+        "quando": "6h ago"
       },
       {
-        "titolo": "Argentina vs Switzerland LIVE: FIFA World Cup 2026",
-        "fonte": "Al Jazeera",
-        "link": "https://www.aljazeera.com/sports/liveblog/2026/7/11/argentina-vs-switzerland-live-fifa-world-cup-2026",
-        "img": "https://www.aljazeera.com/wp-content/uploads/2026/07/2026-07-07T171645Z_499953775_UP1EM771BZWPZ_RTRMADP_3_SOCCER-WORLDCUP-ARG-EGY-1783811704.jpg?resize=1920%2C1440",
-        "dominio": "aljazeera.com",
-        "quando": "just now"
+        "titolo": "FIFA World Cup 2026 Highlights: Argentina v Switzerland Highlights",
+        "fonte": "BBC",
+        "link": "https://www.bbc.co.uk/iplayer/episode/m002z8r2/fifa-world-cup-2026-fifa-world-cup-2026-highlights-argentina-v-switzerland-highlights",
+        "img": "",
+        "dominio": "bbc.co.uk",
+        "quando": "1h ago"
+      },
+      {
+        "titolo": "World Cup 2026: Argentina 3-1 Switzerland (AET): Julian Alvarez scores stunner to set up blockbuster semi-final vs England",
+        "fonte": "Sky Sports",
+        "link": "https://www.skysports.com/football/news/11095/13561909/world-cup-2026-argentina-xx-switzerland",
+        "img": "https://e0.365dm.com/26/07/1600x900/skysports-julian-alvarez-argentina_7295649.jpg?20260712045203",
+        "dominio": "skysports.com",
+        "quando": "3h ago"
       },
       {
         "titolo": "Jayden Adams: South Africa 2026 World Cup midfielder dies aged 25",
@@ -6584,7 +6664,7 @@
         "link": "https://www.skysports.com/football/news/11095/13562559/jayden-adams-south-africa-2026-world-cup-midfielder-dies-aged-25",
         "img": "https://e0.365dm.com/26/07/1600x900/skysports-jayden-adams_7295281.jpg?20260711161648",
         "dominio": "skysports.com",
-        "quando": "7h ago"
+        "quando": "15h ago"
       },
       {
         "titolo": "World Cup 2026 star dies aged 25 as tributes pour in",
@@ -6592,73 +6672,73 @@
         "link": "https://www.thesun.co.uk/sport/39724925/south-africa-world-cup-star-dies-jayden-adams/",
         "img": "",
         "dominio": "thesun.co.uk",
-        "quando": "11h ago"
+        "quando": "18h ago"
       }
     ],
     "es": [
       {
-        "titolo": "Noruega - Inglaterra, en directo: cuartos de final del Mundial 2026, hoy en vivo",
+        "titolo": "Cuadro del Mundial 2026: clasificados a semifinales, cruces y quién se enfrenta a quién en cuartos de la Copa",
         "fonte": "Diario AS",
-        "link": "https://as.com/futbol/mundial/noruega-inglaterra-hoy-en-directo-cuartos-de-final-del-mundial-2026-f202607-d/",
+        "link": "https://as.com/futbol/mundial/cuadro-del-mundial-2026-clasificados-a-semifinales-cruces-y-quien-se-enfrenta-a-quien-en-cuartos-de-la-copa-del-mundo-f202607-n/",
         "img": "",
         "dominio": "as.com",
-        "quando": "1 h"
+        "quando": "3 h"
       },
       {
-        "titolo": "Noruega - Inglaterra, el partido de cuartos de final del Mundial 2026 en directo | Bellingham adelanta a Inglaterra en la prórroga",
-        "fonte": "EL PAÍS",
-        "link": "https://elpais.com/deportes/mundial-futbol/2026-07-11/noruega-inglaterra-en-directo-el-partido-de-cuartos-de-final-del-mundial-en-vivo.html",
-        "img": "",
-        "dominio": "elpais.com",
-        "quando": "ahora"
-      },
-      {
-        "titolo": "Conmoción en el fútbol sudafricano: muere Jayden Adams a los 25 años, solo unas semanas después de jugar el Mundial 2026",
+        "titolo": "Así está el cuadro y así serán los cruces del Mundial 2026: primera semifinal definida",
         "fonte": "20Minutos",
-        "link": "https://www.20minutos.es/deportes/futbol/conmocion-futbol-sudafricano-muere-jayden-adams-semanas-despues-jugar-mundial-2026_7013511_0.html",
-        "img": "https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2026/07/11/6a524e7be1dff9-40294460.jpeg",
+        "link": "https://www.20minutos.es/deportes/futbol/asi-esta-cuadro-cruces-mundial-2026-inglaterra-avanza-semis-sufrimiento-espera-argentina-suiza-7007268-0_7007268_0.html",
+        "img": "https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2026/07/12/6a530aad8c92e4-39594109.png",
         "dominio": "20minutos.es",
-        "quando": "9 h"
+        "quando": "7 h"
       },
       {
-        "titolo": "Conmoción en el fútbol: falleció un jugador que disputó el Mundial 2026 para Sudáfrica",
-        "fonte": "Infobae",
-        "link": "https://www.infobae.com/deportes/2026/07/11/conmocion-en-el-futbol-fallecio-un-jugador-que-disputo-el-mundial-2026-para-sudafrica/",
-        "img": "https://www.infobae.com/resizer/v2/XPT4VBJUDREEBGCYBVR6S4YIME.jpg?auth=8535266b107b9ce3883ffc5460773374527123771ece0b852e3409e569117f7b&smart=true&width=1200&height=630&quality=85",
-        "dominio": "infobae.com",
-        "quando": "6 h"
-      },
-      {
-        "titolo": "La triste imagen en plena celebración de Sudáfrica de Jayden Adams, el jugador que se suicidó tras el Mundial",
-        "fonte": "El Debate",
-        "link": "https://www.eldebate.com/deportes/mundial-futbol-2026/20260711/triste-imagen-plena-celebracion-sudafrica-jayden-adams-jugador-suicido-mundial_438679.html",
-        "img": "https://www.eldebate.com/files/article_social/files/fp/uploads/2026/07/11/6a5294f23532a.r_d.224-203-10147.png",
-        "dominio": "eldebate.com",
-        "quando": "4 h"
-      },
-      {
-        "titolo": "A qué hora es el Argentina - Suiza: horario y dónde ver hoy en TV el partido de cuartos de final del Mundial con Messi",
-        "fonte": "MARCA",
-        "link": "https://www.marca.com/futbol/mundial/2026/07/10/argentina-suiza-horario-y-donde-ver-hoy-en-tv-el-partido-de-cuartos-de-final-del-mundial-2026.html",
-        "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/07/09/6a4f9d1802b0b.jpeg",
-        "dominio": "marca.com",
-        "quando": "4 h"
-      },
-      {
-        "titolo": "Argentina – Suiza, en directo: previa y última hora de los cuartos de final Mundial 2026 en vivo, hoy",
+        "titolo": "Argentina 3 - Suiza 1: resumen, resultado y goles del partido",
         "fonte": "Diario AS",
         "link": "https://as.com/futbol/mundial/argentina-suiza-en-directo-previa-y-ultima-hora-de-los-cuartos-de-final-mundial-2026-en-vivo-hoy-f202607-d/",
         "img": "",
         "dominio": "as.com",
-        "quando": "1 h"
+        "quando": "2 h"
       },
       {
-        "titolo": "Argentina - Suiza del Mundial 2026, en directo: goles, marcador y última hora de los cuartos de final",
-        "fonte": "20Minutos",
-        "link": "https://www.20minutos.es/deportes/futbol/argentina-suiza-mundial-2026-directo-goles-marcador-ultima-hora-los-cuartos-final_7013559_6.html",
-        "img": "https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2026/07/11/6a52446207d5b4-15797796.png",
-        "dominio": "20minutos.es",
-        "quando": "1 h"
+        "titolo": "Argentina 3-1 Suiza: resumen, resultado y goles del partido de cuartos de final del Mundial 2026",
+        "fonte": "Cadena SER",
+        "link": "https://cadenaser.com/nacional/2026/07/12/argentina-3-1-suiza-resumen-resultado-y-goles-del-partido-de-cuartos-de-final-del-mundial-2026-cadena-ser/",
+        "img": "https://cadenaser.com/resizer/v2/5ZEAK6O3EVEALEN2XT63PJJEJ4.jpg?auth=98ada88a2b5521319d5403ff89e747851adcc768e6375dde6c4f09fa172ffdcc&quality=70&width=1200&height=675&smart=true",
+        "dominio": "cadenaser.com",
+        "quando": "3 h"
+      },
+      {
+        "titolo": "Argentina 3-1 Suiza | Resumen Mundial 2026",
+        "fonte": "MARCA",
+        "link": "https://www.marca.com/futbol/mundial/2026/07/12/argentina-3-1-suiza-resumen-mundial-2026-video.html",
+        "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/07/12/cVrRU1gKnGxroBBau.jpeg",
+        "dominio": "marca.com",
+        "quando": "3 h"
+      },
+      {
+        "titolo": "Bellingham hunde a la armada vikinga noruega y mete a Inglaterra en semifinales del Mundial",
+        "fonte": "RTVE.es",
+        "link": "https://www.rtve.es/deportes/20260711/mundial-2026-noruega-inglaterra-directo-resumen-resultado/17147717.shtml",
+        "img": "https://img.rtve.es/imagenes/mundial-2026-noruega-inglaterra-directo-resumen-resultado/01783812586563.jpg",
+        "dominio": "rtve.es",
+        "quando": "11 h"
+      },
+      {
+        "titolo": "Así te hemos contado la victoria de Inglaterra ante Noruega en los cuartos de final del Mundial 2026",
+        "fonte": "EL PAÍS",
+        "link": "https://elpais.com/deportes/mundial-futbol/2026-07-11/noruega-inglaterra-en-directo-el-partido-de-cuartos-de-final-del-mundial-en-vivo.html",
+        "img": "",
+        "dominio": "elpais.com",
+        "quando": "6 h"
+      },
+      {
+        "titolo": "Mundial 2026, en directo: noticias de la Copa del Mundo y última hora de las selecciones, hoy 11 de julio",
+        "fonte": "Diario AS",
+        "link": "https://as.com/futbol/mundial/mundial-2026-en-directo-noticias-de-la-copa-del-mundo-y-ultima-hora-de-las-selecciones-hoy-11-de-julio-f202607-d/",
+        "img": "",
+        "dominio": "as.com",
+        "quando": "ahora"
       }
     ]
   }
