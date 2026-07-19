@@ -1,13 +1,13 @@
 {
-  "aggiornato": "2026-07-19T01:06:48",
+  "aggiornato": "2026-07-19T09:15:09",
   "giorno": "Domingo 19 julio",
   "ticker": [
     "Mercado de fichajes, en directo: rumores, altas y bajas de LaLiga, Premier, Serie A...",
+    "Mercado de fichajes, hoy, en directo: última hora de FC Barcelona, Real Madrid y todas las altas y bajas de las grandes ligas",
     "Nico Williams causa furor en la Premier League",
+    "Mercado de fichajes de hoy, sábado 18 de julio, en directo | Altas, bajas y última hora del Real Madrid, Barcelona...",
     "El Chelsea de Xabi Alonso rompe el mercado con el fichaje de Morgan Rogers: las cifras del acuerdo",
-    "Mercado de fichajes: lo que pide el Manchester United por Fernandes; Gyokeres, Vinícius Júnior y más",
-    "Fichajes: Crack elige al Real Madrid, salida en el Barcelona y golpe a Julián Álvarez",
-    "Phil Foden es el fichaje"
+    "Mercado de fichajes: lo que pide el Manchester United por Fernandes; Gyokeres, Vinícius Júnior y más"
   ],
   "apertura": {
     "categoria": "Serie A",
@@ -16,9 +16,18 @@
     "link": "https://as.com/futbol/primera/mercado-de-fichajes-en-directo-rumores-altas-y-bajas-de-laliga-premier-serie-a-f202607-d-17/",
     "img": "https://img.asmedia.epimg.net/resizer/v2/675URTTWMVA67D34EFIPXUSVMY.jpg?auth=32e7179ec082b53455d97e89ee08181785ded6b690b09ed895a18eaaf6b30619&width=1472&height=828&focal=1869%2C573",
     "dominio": "as.com",
-    "quando": "1 h"
+    "quando": "ahora"
   },
   "secondari": [
+    {
+      "categoria": "La Liga",
+      "titolo": "Mercado de fichajes, hoy, en directo: última hora de FC Barcelona, Real Madrid y todas las altas y bajas de las grandes ligas",
+      "fonte": "SPORT",
+      "link": "https://www.sport.es/es/noticias/mercado-fichajes/mercado-fichajes-hoy-directo-ultima-132595010",
+      "img": "https://estaticos-cdn.prensaiberica.es/clip/008e5f97-dcfd-4b93-a39c-0f20b7086333_16-9-discover-aspect-ratio_default_1472460.jpg",
+      "dominio": "sport.es",
+      "quando": "1 h"
+    },
     {
       "categoria": "Premier League",
       "titolo": "Nico Williams causa furor en la Premier League",
@@ -26,7 +35,16 @@
       "link": "https://www.fichajes.com/a862308510583163021-nico-williams-causa-furor-en-la-premier-league",
       "img": "https://assets-es.imgfoot.com/media/cache/1200x675/nico-williams-2526-4.jpg",
       "dominio": "fichajes.com",
-      "quando": "1 h"
+      "quando": "10 h"
+    },
+    {
+      "categoria": "La Liga",
+      "titolo": "Mercado de fichajes de hoy, sábado 18 de julio, en directo | Altas, bajas y última hora del Real Madrid, Barcelona...",
+      "fonte": "MARCA",
+      "link": "https://www.marca.com/futbol/mercado-fichajes/2026/07/18/6a5b28b66c283cdca8b45e4d-directo.html",
+      "img": "https://objetos.estaticos-marca.com/assets/multimedia/imagenes/2026/07/18/17843595499220.jpg",
+      "dominio": "marca.com",
+      "quando": "11 h"
     },
     {
       "categoria": "Premier League",
@@ -35,7 +53,7 @@
       "link": "https://www.estadiodeportivo.com/futbol/premier-league/chelsea-xabi-alonso-rompe-mercado-con-fichaje-morgan-rogers-las-cifras-del-acuerdo-20260718-542646.html",
       "img": "https://images.estadiodeportivo.com/imagenes/0f3dbb2b-7952-4a4b-83f2-182c8ee36617_1280x720.jpeg",
       "dominio": "estadiodeportivo.com",
-      "quando": "4 h"
+      "quando": "12 h"
     },
     {
       "categoria": "Premier League",
@@ -44,33 +62,15 @@
       "link": "https://www.si.com/es-us/futbol/mercado-de-fichajes-lo-que-pide-el-manchester-united-por-fernandes-gyokeres-vinicius-junior-y-mas",
       "img": "https://images2.minutemediacdn.com/image/upload/c_crop,x_0,y_0,w_5526,h_3108/c_fill,w_1440,ar_1440:810,f_auto,q_auto,g_auto/images/GettyImages/mmsport/sports_illustrated_ftbol/01kxsqkd00wyk1p04vzg.jpg",
       "dominio": "si.com",
-      "quando": "13 h"
+      "quando": "22 h"
     },
     {
-      "categoria": "Premier League",
-      "titolo": "Fichajes: Crack elige al Real Madrid, salida en el Barcelona y golpe a Julián Álvarez",
-      "fonte": "www.laprensa.hn",
-      "link": "https://www.laprensa.hn/fotogalerias/deportes/mercado-fichajes-crack-elige-real-madrid-olise-barcelona-salida-julian-alvarez-atletico-psg-CC31440398",
-      "img": "https://www.laprensa.hn/binrepository/1201x901/0c0/1200d630/none/11004/POYS/mercado-de-fichajes_15040840_20260717172649.jpg",
-      "dominio": "laprensa.hn",
-      "quando": "1 d"
-    },
-    {
-      "categoria": "Serie A",
-      "titolo": "Phil Foden es el fichaje",
+      "categoria": "La Liga",
+      "titolo": "Pierre-Emerick Aubameyang vuelve a La Liga",
       "fonte": "Fichajes.com",
-      "link": "https://www.fichajes.com/a4270823427785627924-phil-foden-es-el-fichaje",
-      "img": "https://assets-es.imgfoot.com/media/cache/1200x675/maxpaimagesfour325283.jpg",
+      "link": "https://www.fichajes.com/a7219293761137717013-pierre-emerick-aubameyang-vuelve-a-la-liga",
+      "img": "https://assets-es.imgfoot.com/media/cache/1200x675/epaliveeight683051.jpg",
       "dominio": "fichajes.com",
-      "quando": "1 d"
-    },
-    {
-      "categoria": "Premier League",
-      "titolo": "El nombre que suena para el Atlético: un goleador de la Premier League bajo el radar",
-      "fonte": "Esto es Atleti",
-      "link": "https://www.estoesatleti.es/articulo/fichajes/atletico-madrid-delantero-premier-objetivo/20260717140000040037.html",
-      "img": "https://www.estoesatleti.es/media/estoesatleti/images/2026/07/17/2026071711135119834.png",
-      "dominio": "estoesatleti.es",
       "quando": "1 d"
     }
   ],
@@ -80,18 +80,18 @@
       "titolo": "Comparing Vinicius Junior’s Brazil stats with Neymar’s at the age of 26",
       "fonte": "OneFootball",
       "link": "https://onefootball.com/es/noticias/comparing-vinicius-juniors-brazil-stats-with-neymars-at-the-age-of-26-43153915",
-      "img": "https://photobooth-api.onefootball.com/api/screenshot/%2Fv2%2Fphotobooth%2Fcms%2Fes%2F43153915%3Fdate=2026-07-18",
+      "img": "https://photobooth-api.onefootball.com/api/screenshot/%2Fv2%2Fphotobooth%2Fcms%2Fes%2F43153915%3Fdate=2026-07-19",
       "dominio": "onefootball.com",
-      "quando": "15 h"
+      "quando": "23 h"
     },
     {
       "categoria": "Arabia Saudí",
-      "titolo": "0-0. El Girona empata con el Al-Qadsiah en su primer test de la pretemporada",
-      "fonte": "Infobae",
-      "link": "https://www.infobae.com/espana/agencias/2026/07/18/0-0-el-girona-empata-con-el-al-qadsiah-en-su-primer-test-de-la-pretemporada/",
-      "img": "https://www.infobae.com/assets/images/logos/fallback-promo-image-1200x630.png",
-      "dominio": "infobae.com",
-      "quando": "5 h"
+      "titolo": "Nuevo pretendiente para Franck Kessié",
+      "fonte": "Fichajes.com",
+      "link": "https://www.fichajes.com/a8693233355314369487-nuevo-pretendiente-para-franck-kessie",
+      "img": "https://assets-es.imgfoot.com/media/cache/1200x675/kessie-civ.jpg",
+      "dominio": "fichajes.com",
+      "quando": "1 h"
     },
     {
       "categoria": "MLS",
@@ -100,16 +100,16 @@
       "link": "https://www.infobae.com/tecno/2026/07/18/messi-en-ranking-de-regateadores-de-ea-sports-fc-asi-esta-valorado-en-plena-copa-del-mundo/",
       "img": "https://www.infobae.com/resizer/v2/JY3I4SSGURBSDODBVISB4MJHZQ.jpg?auth=00072c16f935711c26dc15991a76819d747499b0f2e621c4605c759612cc08e7&smart=true&width=1200&height=630&quality=85",
       "dominio": "infobae.com",
-      "quando": "22 h"
+      "quando": "1 d"
     },
     {
       "categoria": "Selecciones",
-      "titolo": "Samu to watch 2026 World Cup final at Spain's invitation",
-      "fonte": "OneFootball",
-      "link": "https://onefootball.com/es/noticias/samu-to-watch-2026-world-cup-final-at-spains-invitation-43155801",
-      "img": "https://photobooth-api.onefootball.com/api/screenshot/%2Fv2%2Fphotobooth%2Fcms%2Fes%2F43155801%3Fdate=2026-07-18",
-      "dominio": "onefootball.com",
-      "quando": "4 h"
+      "titolo": "Alicante Natives at the World Cup Final: The New 'Manolo el del Bombo' and a Popular Mayor",
+      "fonte": "Todo Alicante",
+      "link": "https://www.todoalicante.es/english/alicante-natives-world-final-20260719060720-nt.html",
+      "img": "https://s1.ppllstatics.com/todoalicante/www/multimedia/deportes/2026/07/17/alicantinos-final-mundial-kseE--1200x840@TodoAlicante-TodoAlicante.jpg",
+      "dominio": "todoalicante.es",
+      "quando": "ahora"
     }
   ]
 }
