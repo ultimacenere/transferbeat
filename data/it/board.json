@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-08-20T10:46:50",
+  "aggiornato": "2026-08-20T12:01:08",
   "giorno": "Giovedi 20 agosto",
   "squadre": {
     "Inter": {
@@ -9,25 +9,25 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "Calciomercato, le news di oggi LIVE",
+            "fonte": "Sky Sport",
+            "link": "https://sport.sky.it",
+            "affidabilita": 3,
+            "quando": "1 ore fa"
+          },
+          {
             "titolo": "Ricomincia il campionato: come giocherebbero oggi le 20 squadre di serie A",
             "fonte": "Corriere dello Sport",
             "link": "https://www.corrieredellosport.it",
             "affidabilita": 2,
-            "quando": "1 ore fa"
+            "quando": "2 ore fa"
           },
           {
             "titolo": "Inter, è il giorno di Curtis Jones: l'inglese atteso a Milano",
             "fonte": "Sportmediaset",
             "link": "https://www.sportmediaset.mediaset.it",
             "affidabilita": 2,
-            "quando": "2 ore fa"
-          },
-          {
-            "titolo": "Bandiera del Liverpool, esempio di duttilità: chi è Curtis Jones, il prossimo colpo dell'Inter",
-            "fonte": "eurosport.it",
-            "link": "https://www.eurosport.it",
-            "affidabilita": 2,
-            "quando": "13 ore fa"
+            "quando": "3 ore fa"
           },
           {
             "titolo": "Esposito, Buchanan e pure... Gabigol! L'Inter e il tesoretto delle rivendite: quanto possono valere",
@@ -37,18 +37,18 @@
             "quando": "1 g fa"
           },
           {
-            "titolo": "Calciomercato LIVE: Como su Ricci del Milan. Inter, Asllani e Massolin richiesti dal Monza. Vardy in Brasile?",
-            "fonte": "Calciomercato",
-            "link": "https://www.calciomercato.com",
-            "affidabilita": 1,
-            "quando": "2 ore fa"
-          },
-          {
             "titolo": "Calciomercato LIVE: tutte le notizie sul mercato in tempo reale",
             "fonte": "Diretta",
             "link": "https://www.diretta.it",
             "affidabilita": 1,
             "quando": "3 g fa"
+          },
+          {
+            "titolo": "Calciomercato, le notizie di venerdì 14 agosto: Frattesi, l'affare tra Inter e Lazio si sblocca; Juventus, Lucumì a un passo; Milan, Leao sempre in bilico. Immobile si ritira",
+            "fonte": "Corriere della Sera",
+            "link": "https://www.corriere.it",
+            "affidabilita": 1,
+            "quando": "5 g fa"
           }
         ],
         "obj": [
@@ -57,24 +57,39 @@
             "fonte": "Sky Sport",
             "link": "https://sport.sky.it",
             "affidabilita": 3,
-            "quando": "1 ore fa"
-          },
-          {
-            "titolo": "Mercato Inter, offerta clamorosa per Lautaro Martinez: tifosi increduli e arrabbiati",
-            "fonte": "Sportal.it",
-            "link": "https://www.sportal.it",
-            "affidabilita": 2,
-            "quando": "13 ore fa"
+            "quando": "2 ore fa"
           }
         ],
-        "conf": [],
+        "conf": [
+          {
+            "titolo": "Dieng e Sutalo vicini alla Lazio, Aston Villa su Tomori. Milan-Como, accordo per Ricci",
+            "fonte": "eurosport.it",
+            "link": "https://www.eurosport.it",
+            "affidabilita": 2,
+            "quando": "poco fa"
+          }
+        ],
         "done": [
+          {
+            "titolo": "Inter-Curtis Jones, è fatta con il Liverpool: il centrocampista è atteso a Milano",
+            "fonte": "Sky Sport",
+            "link": "https://sport.sky.it",
+            "affidabilita": 3,
+            "quando": "21 ore fa"
+          },
+          {
+            "titolo": "Spence all'Inter, dopo le visite e la firma manca solo l'ufficialità: video e news",
+            "fonte": "Sky Sport",
+            "link": "https://sport.sky.it",
+            "affidabilita": 3,
+            "quando": "5 g fa"
+          },
           {
             "titolo": "Inter, è fatta per Jones: cifre e dettagli, il centrocampista del Liverpool arriva a Milano nelle prossime ore",
             "fonte": "Calciomercato",
             "link": "https://www.calciomercato.com",
             "affidabilita": 1,
-            "quando": "11 ore fa"
+            "quando": "12 ore fa"
           },
           {
             "titolo": "Calciomercato: Spence all'Inter, Frattesi-Lazio è fatta, Badiashile va al Napoli",
@@ -87,6 +102,16 @@
       },
       "feed": [
         {
+          "titolo": "Calciomercato, le news di oggi LIVE",
+          "fonte": "Sky Sport",
+          "stato": "rumor",
+          "link": "https://sport.sky.it/calciomercato/2026/08/20/calciomercato-news-trattative-oggi-20-agosto",
+          "img": "https://sport.sky.it/assets/images/23a41ab4522dc050399493c3ad7d1b11fe89577d/skysport/it/calcio/calciomercato/2026/08/01/calciomercato-news-trattative-oggi-1-agosto/calciomercato_liveblog_new_2026.jpg?im=Resize,width=1218",
+          "dominio": "sport.sky.it",
+          "affidabilita": 3,
+          "quando": "1 ore fa"
+        },
+        {
           "titolo": "Lautaro, nessuna offerta da parte del Barcellona: per l'Inter è incedibile",
           "fonte": "Sky Sport",
           "stato": "obj",
@@ -94,27 +119,17 @@
           "img": "https://sport.sky.it/assets/images/9735d53cd3b0b7ac1c6106b11196c6c2b08e7e08/skysport/it/calcio/calciomercato/2026/08/19/inter-lautaro-martinez-barcellona-calciomercato-news/lautaro_inter_getty.jpg?im=Resize,width=1218",
           "dominio": "sport.sky.it",
           "affidabilita": 3,
-          "quando": "1 ore fa"
-        },
-        {
-          "titolo": "Ricomincia il campionato: come giocherebbero oggi le 20 squadre di serie A",
-          "fonte": "Corriere dello Sport",
-          "stato": "rumor",
-          "link": "https://www.corrieredellosport.it/foto/calcio/calcio-mercato/2026/08/20-150661646/ricomincia_il_campionato_come_giocherebbero_oggi_le_20_squadre_di_serie_a",
-          "img": "https://cdn.corrieredellosport.it/images/2026/08/20/072004981-60273379-ac63-4738-a6b2-f244c4effa19.jpg",
-          "dominio": "corrieredellosport.it",
-          "affidabilita": 2,
-          "quando": "1 ore fa"
-        },
-        {
-          "titolo": "Inter, è il giorno di Curtis Jones: l'inglese atteso a Milano",
-          "fonte": "Sportmediaset",
-          "stato": "rumor",
-          "link": "https://www.sportmediaset.mediaset.it/mercato/inter/inter-e-il-giorno-di-curtis-jones-l-inglese-atteso-a-milano_115646145-202602k.shtml",
-          "img": "https://img-api.cloud.mediaset.net/api/images/kn/v1/image_main/1200/675/115646131?r=6",
-          "dominio": "sportmediaset.mediaset.it",
-          "affidabilita": 2,
           "quando": "2 ore fa"
+        },
+        {
+          "titolo": "Inter-Curtis Jones, è fatta con il Liverpool: il centrocampista è atteso a Milano",
+          "fonte": "Sky Sport",
+          "stato": "done",
+          "link": "https://sport.sky.it/calciomercato/2026/08/19/inter-jones-calciomercato-news",
+          "img": "https://sport.sky.it/assets/images/1770fe05ef2a3775b987be8e0e3d6e6004eed6e6/skysport/it/calcio/calciomercato/2026/08/19/inter-jones-calciomercato-news/curtis_jones_ipa.jpg?im=Resize,width=1218",
+          "dominio": "sport.sky.it",
+          "affidabilita": 3,
+          "quando": "21 ore fa"
         }
       ],
       "nomi": {
@@ -135,26 +150,19 @@
             "fonte": "Sky Sport",
             "link": "https://sport.sky.it",
             "affidabilita": 3,
-            "quando": "10 ore fa"
+            "quando": "12 ore fa"
           },
           {
-            "titolo": "Juve, Tomori possibile idea per la difesa. Piace anche Fofana del Milan",
-            "fonte": "Sky Sport",
-            "link": "https://sport.sky.it",
-            "affidabilita": 3,
-            "quando": "2 g fa"
+            "titolo": "Calciomercato diretta: Inter, fatta per Jones. Il Napoli attende Gabriel Jesus, Zirkzee la Juve: le trattative di oggi LIVE",
+            "fonte": "Corriere dello Sport",
+            "link": "https://www.corrieredellosport.it",
+            "affidabilita": 2,
+            "quando": "poco fa"
           },
           {
             "titolo": "Calciomercato Juve, Di Gregorio chiave per Emerson? I nomi e le alternative per il terzino sinistro",
             "fonte": "Tuttosport",
             "link": "https://www.tuttosport.com",
-            "affidabilita": 2,
-            "quando": "1 ore fa"
-          },
-          {
-            "titolo": "Obbligo Juve: bisogna vendere! Koopmeiners, Miretti, Arthur... Carnevali ha un piano",
-            "fonte": "Corriere dello Sport",
-            "link": "https://www.corrieredellosport.it",
             "affidabilita": 2,
             "quando": "2 ore fa"
           },
@@ -163,17 +171,17 @@
             "fonte": "eurosport.it",
             "link": "https://www.eurosport.it",
             "affidabilita": 2,
-            "quando": "19 ore fa"
-          }
-        ],
-        "obj": [
+            "quando": "20 ore fa"
+          },
           {
-            "titolo": "Calciomercato Milan, la Juve sonda Fofana e Tomori. Shopping allo Sporting: Amorim ne vuole due ma...",
+            "titolo": "Calciomercato Juve, Massara e l'asse col Milan: Tomori e Fofana sul piatto",
             "fonte": "Tuttosport",
             "link": "https://www.tuttosport.com",
             "affidabilita": 2,
-            "quando": "poco fa"
-          },
+            "quando": "22 ore fa"
+          }
+        ],
+        "obj": [
           {
             "titolo": "Juve, oltre a Zirkzee e Sorloth spunta Retegui. Kessié aspetta i bianconeri",
             "fonte": "Sportmediaset",
@@ -182,25 +190,32 @@
             "quando": "1 ore fa"
           },
           {
+            "titolo": "Calciomercato Milan, la Juve sonda Fofana e Tomori. Shopping allo Sporting: Amorim ne vuole due ma...",
+            "fonte": "Tuttosport",
+            "link": "https://www.tuttosport.com",
+            "affidabilita": 2,
+            "quando": "1 ore fa"
+          },
+          {
             "titolo": "Juve, da David a Koopmeiners: 43 milioni da scaricare per puntare a Kessie e Zirzkee",
             "fonte": "La Gazzetta dello Sport",
             "link": "https://www.gazzetta.it",
             "affidabilita": 2,
-            "quando": "20 ore fa"
+            "quando": "22 ore fa"
           },
           {
             "titolo": "Calciomercato Juventus, assalto alla punta: spunta Retegui",
             "fonte": "Fantacalcio",
             "link": "https://www.fantacalcio.it",
             "affidabilita": 1,
-            "quando": "3 ore fa"
+            "quando": "4 ore fa"
           },
           {
             "titolo": "Le notizie del 19 agosto 2026 di calciomercato: Inter, fatta per Curtis Jones. La Juve vuole anche Audero, Sutalo ad un passo dalla Lazio. Como e Parma si contendono Diego Carlos",
             "fonte": "Corriere della Sera",
             "link": "https://www.corriere.it",
             "affidabilita": 1,
-            "quando": "13 ore fa"
+            "quando": "14 ore fa"
           },
           {
             "titolo": "Juventus, altri tre colpi di mercato: nel mirino Tomori, Kessie e Zirkzee",
@@ -217,7 +232,7 @@
             "fonte": "Corriere dello Sport",
             "link": "https://www.corrieredellosport.it",
             "affidabilita": 2,
-            "quando": "11 ore fa"
+            "quando": "12 ore fa"
           }
         ]
       },
@@ -230,27 +245,27 @@
           "img": "https://sport.sky.it/assets/images/23a41ab4522dc050399493c3ad7d1b11fe89577d/skysport/it/calcio/calciomercato/2026/08/01/calciomercato-news-trattative-oggi-1-agosto/calciomercato_liveblog_new_2026.jpg?im=Resize,width=1218",
           "dominio": "sport.sky.it",
           "affidabilita": 3,
-          "quando": "10 ore fa"
+          "quando": "12 ore fa"
         },
         {
-          "titolo": "Juve, Tomori possibile idea per la difesa. Piace anche Fofana del Milan",
-          "fonte": "Sky Sport",
+          "titolo": "Calciomercato diretta: Inter, fatta per Jones. Il Napoli attende Gabriel Jesus, Zirkzee la Juve: le trattative di oggi LIVE",
+          "fonte": "Corriere dello Sport",
           "stato": "rumor",
-          "link": "https://sport.sky.it/calciomercato/2026/08/17/juve-tomori-fofana-calciomercato-news",
-          "img": "https://sport.sky.it/assets/images/bf6b4b55c2c0517fd0a201ee5491451af4cb3a35/skysport/it/calcio/serie-a/2026/08/04/milan-inter-probabili-formazioni-foto/tomori_milan_ipa.jpg?im=Resize,width=1218",
-          "dominio": "sport.sky.it",
-          "affidabilita": 3,
-          "quando": "2 g fa"
-        },
-        {
-          "titolo": "Calciomercato Milan, la Juve sonda Fofana e Tomori. Shopping allo Sporting: Amorim ne vuole due ma...",
-          "fonte": "Tuttosport",
-          "stato": "obj",
-          "link": "https://www.tuttosport.com/news/calcio/calciomercato/2026/08/20-150659664/calciomercato_milan_la_juve_sonda_fofana_e_tomori_shopping_allo_sporting_amorim_ne_vuole_due_ma_",
-          "img": "https://cdn.tuttosport.com/images/2026/08/20/081901781-414520ae-9331-4f48-bde4-95bb3f265fce.jpg",
-          "dominio": "tuttosport.com",
+          "link": "https://www.corrieredellosport.it/news/calcio/calcio-mercato/2026/08/20-150663705/calciomercato_diretta_inter_fatta_per_jones_il_napoli_attende_gabriel_jesus_zirkzee_la_juve_le_trattative_di_oggi_live",
+          "img": "https://cdn.corrieredellosport.it/images/2026/08/20/084814118-f1d89df8-3e41-43b3-9cc4-b6b4c384c182.jpg",
+          "dominio": "corrieredellosport.it",
           "affidabilita": 2,
           "quando": "poco fa"
+        },
+        {
+          "titolo": "Juve, oltre a Zirkzee e Sorloth spunta Retegui. Kessié aspetta i bianconeri",
+          "fonte": "Sportmediaset",
+          "stato": "obj",
+          "link": "https://www.sportmediaset.mediaset.it/mercato/juventus/juve-oltre-a-zirkzee-e-sorloth-spunta-retegui-kessie-aspetta-i-bianconeri_115646149-202602k.shtml",
+          "img": "https://img-api.cloud.mediaset.net/api/images/kn/v1/image_main/1200/675/115646332?r=15",
+          "dominio": "sportmediaset.mediaset.it",
+          "affidabilita": 2,
+          "quando": "1 ore fa"
         }
       ],
       "nomi": {
@@ -267,46 +282,46 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "Ricomincia il campionato: come giocherebbero oggi le 20 squadre di serie A",
+            "fonte": "Corriere dello Sport",
+            "link": "https://www.corrieredellosport.it",
+            "affidabilita": 2,
+            "quando": "2 ore fa"
+          },
+          {
             "titolo": "Mercato: Aston Villa su Tomori. Colpo da 70 milioni per l'Arsenal. Circati è del Benfica",
             "fonte": "La Gazzetta dello Sport",
             "link": "https://www.gazzetta.it",
             "affidabilita": 2,
-            "quando": "12 ore fa"
+            "quando": "13 ore fa"
           },
           {
             "titolo": "Calciomercato, Raimondi: \"Leao, c'è una possibile svolta\"",
             "fonte": "Sportmediaset",
             "link": "https://www.sportmediaset.mediaset.it",
             "affidabilita": 2,
-            "quando": "20 ore fa"
-          },
-          {
-            "titolo": "Milan, 150 milioni per tornare in Champions: i conti del mercato e come si finanzia",
-            "fonte": "La Gazzetta dello Sport",
-            "link": "https://www.gazzetta.it",
-            "affidabilita": 2,
-            "quando": "1 g fa"
+            "quando": "21 ore fa"
           },
           {
             "titolo": "Musmarra: \"Oggi è girata la voce di un clamoroso scambio tra Inter e Milan\"",
             "fonte": "FC Inter 1908",
             "link": "https://www.fcinter1908.it",
             "affidabilita": 1,
-            "quando": "3 ore fa"
+            "quando": "2 ore fa"
           },
           {
-            "titolo": "Calciomercato Serie A, le ultime: Ricci vede il Como? Allegri potenzia la difesa",
-            "fonte": "Toro News",
-            "link": "https://www.toronews.net",
+            "titolo": "Storie di Calciomercato: Il capolavoro di Rizzoli, come il Milan si prese Juan Alberto Schiaffino",
+            "fonte": "Milan Night | Sempre all'attacco",
+            "link": "https://www.milannight.com",
             "affidabilita": 1,
-            "quando": "1 g fa"
+            "quando": "2 ore fa"
           },
           {
-            "titolo": "Calciomercato, Milan e Juventus tra le più attive il 17 agosto",
-            "fonte": "Diretta",
-            "link": "https://www.diretta.it",
+            "titolo": "Calciomercato Milan, Arsenal apre al prestito di Nwaneri: le ultime",
+            "fonte": "Milan Vibes",
+            "link": "https://milanvibes.it",
             "affidabilita": 1,
-            "quando": "2 g fa"
+            "quando": "21 ore fa"
           }
         ],
         "obj": [
@@ -315,7 +330,7 @@
             "fonte": "La Gazzetta dello Sport",
             "link": "https://www.gazzetta.it",
             "affidabilita": 2,
-            "quando": "3 ore fa"
+            "quando": "4 ore fa"
           },
           {
             "titolo": "Mercato Milan, offerta di livello per Rafa Leao: l’attaccante ci pensa",
@@ -323,13 +338,6 @@
             "link": "https://www.sportal.it",
             "affidabilita": 2,
             "quando": "1 g fa"
-          },
-          {
-            "titolo": "Calciomercato Milan, ieri incontro per il futuro di Leao: le richieste",
-            "fonte": "Milan Vibes",
-            "link": "https://milanvibes.it",
-            "affidabilita": 1,
-            "quando": "3 ore fa"
           }
         ],
         "conf": [
@@ -338,27 +346,40 @@
             "fonte": "eurosport.it",
             "link": "https://www.eurosport.it",
             "affidabilita": 2,
-            "quando": "1 g fa"
+            "quando": "poco fa"
           }
         ],
         "done": [
-          {
-            "titolo": "Calciomercato: Lazio vicina a Sutalo, ufficiale Favasuli al Napoli. La Roma stringe per Fofana, Kessie vuole la Juve",
-            "fonte": "Corriere dello Sport",
-            "link": "https://www.corrieredellosport.it",
-            "affidabilita": 2,
-            "quando": "11 ore fa"
-          },
           {
             "titolo": "Ufficiale, Diego Moreira al Milan: cifre e dettagli del super affare con lo Strasburgo",
             "fonte": "eurosport.it",
             "link": "https://www.eurosport.it",
             "affidabilita": 2,
-            "quando": "12 ore fa"
+            "quando": "13 ore fa"
           }
         ]
       },
       "feed": [
+        {
+          "titolo": "Dieng e Sutalo vicini alla Lazio, Aston Villa su Tomori. Milan-Como, accordo per Ricci",
+          "fonte": "eurosport.it",
+          "stato": "conf",
+          "link": "https://www.eurosport.it/calcio/calciomercato/2026-2027/la-juve-su-carlos-augusto.-favasuli-ufficiale-al-napoli_lci50028666/liveevent.shtml",
+          "img": "https://i.eurosport.com/2025/11/23/image-ae31d48d-e1a0-4951-81a9-bf48e71115ce.jpeg",
+          "dominio": "eurosport.it",
+          "affidabilita": 2,
+          "quando": "poco fa"
+        },
+        {
+          "titolo": "Ricomincia il campionato: come giocherebbero oggi le 20 squadre di serie A",
+          "fonte": "Corriere dello Sport",
+          "stato": "rumor",
+          "link": "https://www.corrieredellosport.it/foto/calcio/calcio-mercato/2026/08/20-150661646/ricomincia_il_campionato_come_giocherebbero_oggi_le_20_squadre_di_serie_a",
+          "img": "https://cdn.corrieredellosport.it/images/2026/08/20/072004981-60273379-ac63-4738-a6b2-f244c4effa19.jpg",
+          "dominio": "corrieredellosport.it",
+          "affidabilita": 2,
+          "quando": "2 ore fa"
+        },
         {
           "titolo": "Sei ore di meeting per vendere Leao: il Milan fissa il prezzo, Mendes cerca l’offerta",
           "fonte": "La Gazzetta dello Sport",
@@ -367,27 +388,7 @@
           "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2023/04/12/643eb13c31444.jpeg",
           "dominio": "gazzetta.it",
           "affidabilita": 2,
-          "quando": "3 ore fa"
-        },
-        {
-          "titolo": "Calciomercato: Lazio vicina a Sutalo, ufficiale Favasuli al Napoli. La Roma stringe per Fofana, Kessie vuole la Juve",
-          "fonte": "Corriere dello Sport",
-          "stato": "done",
-          "link": "https://www.corrieredellosport.it/news/calcio/calcio-mercato/2026/08/19-150647015/calciomercato_diretta_la_roma_stringe_per_fofana_kessie_vuole_la_juve_live",
-          "img": "https://cdn.corrieredellosport.it/images/2026/08/19/082442490-8f4503e0-ddaf-4c8c-bed6-78eab9d69052.jpg",
-          "dominio": "corrieredellosport.it",
-          "affidabilita": 2,
-          "quando": "11 ore fa"
-        },
-        {
-          "titolo": "Mercato: Aston Villa su Tomori. Colpo da 70 milioni per l'Arsenal. Circati è del Benfica",
-          "fonte": "La Gazzetta dello Sport",
-          "stato": "rumor",
-          "link": "https://www.gazzetta.it/Calciomercato/19-08-2026/notizie-calciomercato-il-live-di-oggi-19-agosto.shtml",
-          "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/08/19/6a861180c57f9.r_d.2244-603-0.jpeg",
-          "dominio": "gazzetta.it",
-          "affidabilita": 2,
-          "quando": "12 ore fa"
+          "quando": "4 ore fa"
         }
       ],
       "nomi": {
@@ -411,6 +412,13 @@
             "quando": "1 g fa"
           },
           {
+            "titolo": "Calciomercato diretta: Inter, fatta per Jones. Il Napoli attende Gabriel Jesus, Zirkzee la Juve: le trattative di oggi LIVE",
+            "fonte": "Corriere dello Sport",
+            "link": "https://www.corrieredellosport.it",
+            "affidabilita": 2,
+            "quando": "poco fa"
+          },
+          {
             "titolo": "Calciomercato, il Napoli prepara il colpo in attacco",
             "fonte": "SNAI sportnews",
             "link": "https://sportnews.snai.it",
@@ -425,25 +433,18 @@
             "quando": "3 g fa"
           },
           {
-            "titolo": "Calciomercato Napoli, oggi arriva Badiashile. Gabriel Jesus, segnali di cessione",
-            "fonte": "Corriere dello Sport",
-            "link": "https://www.corrieredellosport.it",
-            "affidabilita": 2,
-            "quando": "3 g fa"
-          },
-          {
             "titolo": "Calciomercato Serie A 2026/2027: acquisti e cessioni, trasferimenti ufficiali e probabili formazioni tipo",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 1,
-            "quando": "5 ore fa"
+            "quando": "7 ore fa"
           },
           {
             "titolo": "Calciomercato Napoli, il Chelsea disposto a cedere Jackson: l'Arsenal 'spara alto' per Gabriel Jesus",
             "fonte": "NapoliToday",
             "link": "https://www.napolitoday.it",
             "affidabilita": 1,
-            "quando": "12 ore fa"
+            "quando": "13 ore fa"
           }
         ],
         "obj": [
@@ -452,14 +453,7 @@
             "fonte": "eurosport.it",
             "link": "https://www.eurosport.it",
             "affidabilita": 2,
-            "quando": "23 ore fa"
-          },
-          {
-            "titolo": "Offerta del Como per Kean. Napoli, ecco Badiashile: calciomercato, le trattative di oggi",
-            "fonte": "Corriere dello Sport",
-            "link": "https://www.corrieredellosport.it",
-            "affidabilita": 2,
-            "quando": "2 g fa"
+            "quando": "1 g fa"
           }
         ],
         "conf": [
@@ -472,6 +466,13 @@
           }
         ],
         "done": [
+          {
+            "titolo": "Il Napoli affonda i colpi: Favasuli ora è fatta, Badiashile quasi, per Jesus serve tempo",
+            "fonte": "La Gazzetta dello Sport",
+            "link": "https://www.gazzetta.it",
+            "affidabilita": 2,
+            "quando": "3 g fa"
+          },
           {
             "titolo": "Calciomercato Napoli: ufficiale Favasuli. Adl su X: \"Benevenuto Costantino\"",
             "fonte": "Ottopagine",
@@ -493,22 +494,22 @@
           "quando": "1 g fa"
         },
         {
+          "titolo": "Calciomercato diretta: Inter, fatta per Jones. Il Napoli attende Gabriel Jesus, Zirkzee la Juve: le trattative di oggi LIVE",
+          "fonte": "Corriere dello Sport",
+          "stato": "rumor",
+          "link": "https://www.corrieredellosport.it/news/calcio/calcio-mercato/2026/08/20-150663705/calciomercato_diretta_inter_fatta_per_jones_il_napoli_attende_gabriel_jesus_zirkzee_la_juve_le_trattative_di_oggi_live",
+          "img": "https://cdn.corrieredellosport.it/images/2026/08/20/084814118-f1d89df8-3e41-43b3-9cc4-b6b4c384c182.jpg",
+          "dominio": "corrieredellosport.it",
+          "affidabilita": 2,
+          "quando": "poco fa"
+        },
+        {
           "titolo": "🗞️ La Juve sfoltisce: fuori Arthur e Di Gregorio! Al Napoli di Allegri serve una punta",
           "fonte": "eurosport.it",
           "stato": "obj",
           "link": "https://www.eurosport.it/calcio/calciomercato/2026-2027/la-juventus-sfoltisce-fuori-arthur-e-di-gregorio-al-napoli-di-allegri-serve-una-punta-non-solo-gabriel-jesus-sondaggi-per-zirkzee-e-jackson_sto23329323/story.shtml",
           "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg)/origin-imgresizer.eurosport.com/2026/08/19/image-9f700d08-0346-484a-b8a3-f3dff1bbc15e-85-2560-1440.png",
           "dominio": "eurosport.it",
-          "affidabilita": 2,
-          "quando": "23 ore fa"
-        },
-        {
-          "titolo": "Napoli, Badiashile a Villa Stuart per le visite mediche: ecco il colpo in difesa del Napoli",
-          "fonte": "Corriere dello Sport",
-          "stato": "conf",
-          "link": "https://www.corrieredellosport.it/foto/calcio/calcio-mercato/napoli/2026/08/19-150645728/napoli_badiashile_a_villa_stuart_per_le_visite_mediche_ecco_il_colpo_in_difesa_del_napoli",
-          "img": "https://cdn.corrieredellosport.it/images/2026/08/19/082125784-21481ba9-3219-4616-825a-7d04011405ef.jpg",
-          "dominio": "corrieredellosport.it",
           "affidabilita": 2,
           "quando": "1 g fa"
         }
@@ -527,46 +528,46 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "Calciomercato Roma, Mora è arrivato in Italia: il VIDEO",
-            "fonte": "Sky Sport",
-            "link": "https://sport.sky.it",
-            "affidabilita": 3,
-            "quando": "1 g fa"
-          },
-          {
             "titolo": "La Roma deve aspettare per Fofana e può essere una buona notizia. E se parte Soulé...",
             "fonte": "Corriere dello Sport",
             "link": "https://www.corrieredellosport.it",
             "affidabilita": 2,
-            "quando": "3 ore fa"
-          },
-          {
-            "titolo": "Rodrigo Mora è il talento che Gasperini voleva: il ritratto dell'acquisto giallorosso",
-            "fonte": "eurosport.it",
-            "link": "https://www.eurosport.it",
-            "affidabilita": 2,
-            "quando": "23 ore fa"
-          },
-          {
-            "titolo": "Roma, tutte le opzioni tattiche di Gasperini con la carta Mora",
-            "fonte": "La Gazzetta dello Sport",
-            "link": "https://www.gazzetta.it",
-            "affidabilita": 2,
-            "quando": "2 g fa"
+            "quando": "4 ore fa"
           },
           {
             "titolo": "Calciomercato Roma, solo uscite: Koné resta e gli incassi languono. Cosa succede con l'Uefa?",
             "fonte": "RomaToday",
             "link": "https://www.romatoday.it",
             "affidabilita": 1,
-            "quando": "poco fa"
+            "quando": "1 ore fa"
           },
           {
-            "titolo": "Mora, quattro giorni per convincere Gasperini. E Soulé rischia il posto con la Fiorentina",
-            "fonte": "Forzaroma.info",
-            "link": "https://www.forzaroma.info",
+            "titolo": "Milan interessato a Alessio Cacciamani del Torino, sfida alla Roma: Alphadjo Cissè nell'affare?",
+            "fonte": "Calciomercato",
+            "link": "https://www.calciomercato.com",
             "affidabilita": 1,
             "quando": "1 ore fa"
+          },
+          {
+            "titolo": "La Roma prepara il colpo grosso",
+            "fonte": "LaRoma24",
+            "link": "https://laroma24.it",
+            "affidabilita": 1,
+            "quando": "4 ore fa"
+          },
+          {
+            "titolo": "Calciomercato Roma, Soulè sempre più vicino alla permanenza",
+            "fonte": "Pagine Romaniste",
+            "link": "https://pagineromaniste.com",
+            "affidabilita": 1,
+            "quando": "21 ore fa"
+          },
+          {
+            "titolo": "Calciomercato Roma: i dettagli dell'affare Mora. I giallorossi acquistano il 100% del portoghese per 25+2 milioni, al Porto il 50% sulla rivendita",
+            "fonte": "LaRoma24",
+            "link": "https://laroma24.it",
+            "affidabilita": 1,
+            "quando": "1 g fa"
           }
         ],
         "obj": [
@@ -575,44 +576,52 @@
             "fonte": "Sportal.it",
             "link": "https://www.sportal.it",
             "affidabilita": 2,
-            "quando": "1 ore fa"
+            "quando": "2 ore fa"
           },
           {
-            "titolo": "Mercato Roma, Gasperini pronto a rigenerare un quasi campione: si tratta",
-            "fonte": "Sportal.it",
-            "link": "https://www.sportal.it",
-            "affidabilita": 2,
-            "quando": "1 g fa"
+            "titolo": "Calciomercato Roma: non si molla la pista Cacciamani. Pronta una nuova offerta da 15 milioni. Il Torino ne chiede 20",
+            "fonte": "LaRoma24",
+            "link": "https://laroma24.it",
+            "affidabilita": 1,
+            "quando": "poco fa"
+          },
+          {
+            "titolo": "Mercato Roma, Fortini al Torino riaccende la pista Cacciamani. Udogie in stand by",
+            "fonte": "Forzaroma.info",
+            "link": "https://www.forzaroma.info",
+            "affidabilita": 1,
+            "quando": "15 ore fa"
           }
         ],
-        "conf": [],
+        "conf": [
+          {
+            "titolo": "Lazio, accordo raggiunto per Dieng: l'attaccante è atteso in serata a Roma",
+            "fonte": "Gianluca Di Marzio",
+            "link": "https://www.gianlucadimarzio.com",
+            "affidabilita": 3,
+            "quando": "18 ore fa"
+          }
+        ],
         "done": [
           {
             "titolo": "Calciomercato: Lazio vicina a Sutalo, ufficiale Favasuli al Napoli. La Roma stringe per Fofana, Kessie vuole la Juve",
             "fonte": "Corriere dello Sport",
             "link": "https://www.corrieredellosport.it",
             "affidabilita": 2,
-            "quando": "11 ore fa"
-          },
-          {
-            "titolo": "Roma, Mora è ufficiale: \"Io e Dybala gran coppia. Gasp? Penso che gli piacerò\"",
-            "fonte": "Sportmediaset",
-            "link": "https://www.sportmediaset.mediaset.it",
-            "affidabilita": 2,
-            "quando": "16 ore fa"
+            "quando": "12 ore fa"
           }
         ]
       },
       "feed": [
         {
-          "titolo": "Calciomercato Roma, Mora è arrivato in Italia: il VIDEO",
-          "fonte": "Sky Sport",
-          "stato": "rumor",
-          "link": "https://sport.sky.it/calciomercato/video/2026/08/18/calciomercato-roma-mora-arrivo-news-1118467",
-          "img": "https://sport.sky.it/assets/images/6d0012db0b05c278d1666803e2c77481b0bec230/skysport/it/calcio/calciomercato/video/2026/08/18/1118467_1787070484881_thumb_494.0000001_1787070634432.jpg?im=Resize,width=1218",
-          "dominio": "sport.sky.it",
+          "titolo": "Lazio, accordo raggiunto per Dieng: l'attaccante è atteso in serata a Roma",
+          "fonte": "Gianluca Di Marzio",
+          "stato": "conf",
+          "link": "https://www.gianlucadimarzio.com/calciomercato/lazio-accordo-raggiunto-dieng-news-calciomercato-496085",
+          "img": "https://net-storage-auto.tcccdn.com/storage/gianlucadimarzio.com/img_notizie/thumb3/b2/b21ba2e9a68848a00590bcb2cc88ef23-69650-442o0o1217o775z0982.jpeg",
+          "dominio": "gianlucadimarzio.com",
           "affidabilita": 3,
-          "quando": "1 g fa"
+          "quando": "18 ore fa"
         },
         {
           "titolo": "Mercato Milan, scambio spettacolare con la Roma: trattativa in corso",
@@ -622,7 +631,7 @@
           "img": "https://www.sportal.it/wp-content/uploads/2026/08/gasperini_amorim.webp",
           "dominio": "sportal.it",
           "affidabilita": 2,
-          "quando": "1 ore fa"
+          "quando": "2 ore fa"
         },
         {
           "titolo": "La Roma deve aspettare per Fofana e può essere una buona notizia. E se parte Soulé...",
@@ -632,7 +641,7 @@
           "img": "https://cdn.corrieredellosport.it/images/2026/08/19/203627104-02e4ba27-9ef6-4a06-9805-2eb24dd172df.jpg",
           "dominio": "corrieredellosport.it",
           "affidabilita": 2,
-          "quando": "3 ore fa"
+          "quando": "4 ore fa"
         }
       ],
       "nomi": {
@@ -653,57 +662,89 @@
             "fonte": "Sky Sport",
             "link": "https://sport.sky.it",
             "affidabilita": 3,
-            "quando": "10 ore fa"
-          },
-          {
-            "titolo": "Lazio ai dettagli con Sutalo, arriverà in prestito",
-            "fonte": "Sky Sport",
-            "link": "https://sport.sky.it",
-            "affidabilita": 3,
-            "quando": "23 ore fa"
+            "quando": "11 ore fa"
           },
           {
             "titolo": "Mercato: Aston Villa su Tomori. Colpo da 70 milioni per l'Arsenal. Circati è del Benfica",
             "fonte": "La Gazzetta dello Sport",
             "link": "https://www.gazzetta.it",
             "affidabilita": 2,
-            "quando": "12 ore fa"
-          },
-          {
-            "titolo": "Chi è Bamba Dieng, il nuovo attaccante della Lazio: Lotito pesca tra gli svincolati",
-            "fonte": "Corriere dello Sport",
-            "link": "https://www.corrieredellosport.it",
-            "affidabilita": 2,
-            "quando": "15 ore fa"
+            "quando": "13 ore fa"
           },
           {
             "titolo": "Calciomercato: la Lazio chiude per Sutalo, Roma su Fofana. Il Napoli accoglie Badiashile",
             "fonte": "Quotidiano Sportivo",
             "link": "https://sport.quotidiano.net",
             "affidabilita": 2,
-            "quando": "20 ore fa"
+            "quando": "21 ore fa"
           },
           {
-            "titolo": "Calciomercato diretta oggi, Rodrigo Mora alla Roma, la Lazio spinge per Icardi: trattative e ultime news",
-            "fonte": "Corriere dello Sport",
-            "link": "https://www.corrieredellosport.it",
-            "affidabilita": 2,
-            "quando": "1 g fa"
-          }
-        ],
-        "obj": [
+            "titolo": "Icardi sogno Lazio, Pinamonti via dal Sassuolo, Lucca ed Esposito cercano squadra, il Como non molla Kean: è il calciomercato degli attaccanti in Serie A",
+            "fonte": "Goal.com",
+            "link": "https://www.goal.com",
+            "affidabilita": 1,
+            "quando": "2 ore fa"
+          },
           {
-            "titolo": "Taylor lascia la Lazio? Lotito fissa il prezzo per il centrocampista",
+            "titolo": "Le notizie di calciomercato del 19 agosto 2026: la Lazio prende Bamba Dieng. Ricci dal Milan al Como",
+            "fonte": "Fanpage",
+            "link": "https://www.fanpage.it",
+            "affidabilita": 1,
+            "quando": "12 ore fa"
+          },
+          {
+            "titolo": "Lotito pesca dagli svincolati: c'è Bamba Dieng per l'attacco della Lazio",
             "fonte": "RomaToday",
             "link": "https://www.romatoday.it",
             "affidabilita": 1,
             "quando": "19 ore fa"
           }
         ],
+        "obj": [
+          {
+            "titolo": "Sfumati Icardi e Pinamonti, la Lazio punta Bamba Dieng: l'ombra del ginocchio sul nuovo colpo",
+            "fonte": "RomaToday",
+            "link": "https://www.romatoday.it",
+            "affidabilita": 1,
+            "quando": "poco fa"
+          },
+          {
+            "titolo": "Taylor lascia la Lazio? Lotito fissa il prezzo per il centrocampista",
+            "fonte": "RomaToday",
+            "link": "https://www.romatoday.it",
+            "affidabilita": 1,
+            "quando": "21 ore fa"
+          }
+        ],
         "conf": [],
-        "done": []
+        "done": [
+          {
+            "titolo": "Lazio, è fatta per Josip Sutalo dall'Ajax",
+            "fonte": "Sky Sport",
+            "link": "https://sport.sky.it",
+            "affidabilita": 3,
+            "quando": "poco fa"
+          },
+          {
+            "titolo": "Calciomercato: Lazio vicina a Sutalo, ufficiale Favasuli al Napoli. La Roma stringe per Fofana, Kessie vuole la Juve",
+            "fonte": "Corriere dello Sport",
+            "link": "https://www.corrieredellosport.it",
+            "affidabilita": 2,
+            "quando": "12 ore fa"
+          }
+        ]
       },
       "feed": [
+        {
+          "titolo": "Lazio, è fatta per Josip Sutalo dall'Ajax",
+          "fonte": "Sky Sport",
+          "stato": "done",
+          "link": "https://sport.sky.it/calciomercato/2026/08/20/lazio-sutalo-calciomercato-news",
+          "img": "https://sport.sky.it/assets/images/5ac1b53df56151a0a3737e30895697166a4b48db/skysport/it/calcio/calciomercato/2026/08/20/lazio-sutalo-calciomercato-news/sutalo_ajax_ipa.jpg?im=Resize,width=1218",
+          "dominio": "sport.sky.it",
+          "affidabilita": 3,
+          "quando": "poco fa"
+        },
         {
           "titolo": "Calciomercato Lazio, Bamba Dieng è arrivato in Italia",
           "fonte": "Sky Sport",
@@ -712,25 +753,15 @@
           "img": "https://sport.sky.it/assets/images/4fd3bf5384e7a27f95986a2a840275fa79cb4750/skysport/it/calcio/calciomercato/video/2026/08/20/1118700_1787177534881_thumb_494.0000001_1787177632827.jpg?im=Resize,width=1218",
           "dominio": "sport.sky.it",
           "affidabilita": 3,
-          "quando": "10 ore fa"
+          "quando": "11 ore fa"
         },
         {
-          "titolo": "Lazio ai dettagli con Sutalo, arriverà in prestito",
-          "fonte": "Sky Sport",
-          "stato": "rumor",
-          "link": "https://sport.sky.it/calciomercato/2026/08/19/lazio-sutalo-calciomercato-news",
-          "img": "https://sport.sky.it/assets/images/7da6d8805ed3899b40f9fc9f542491f1d1b638e8/skysport/it/calcio/calciomercato/2026/08/19/lazio-sutalo-calciomercato-news/sutalo_ajax_ipa.jpg?im=Resize,width=1218",
-          "dominio": "sport.sky.it",
-          "affidabilita": 3,
-          "quando": "23 ore fa"
-        },
-        {
-          "titolo": "Mercato: Aston Villa su Tomori. Colpo da 70 milioni per l'Arsenal. Circati è del Benfica",
-          "fonte": "La Gazzetta dello Sport",
-          "stato": "rumor",
-          "link": "https://www.gazzetta.it/Calciomercato/19-08-2026/notizie-calciomercato-il-live-di-oggi-19-agosto.shtml",
-          "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/08/19/6a861180c57f9.r_d.2244-603-0.jpeg",
-          "dominio": "gazzetta.it",
+          "titolo": "Calciomercato: Lazio vicina a Sutalo, ufficiale Favasuli al Napoli. La Roma stringe per Fofana, Kessie vuole la Juve",
+          "fonte": "Corriere dello Sport",
+          "stato": "done",
+          "link": "https://www.corrieredellosport.it/news/calcio/calcio-mercato/2026/08/19-150647015/calciomercato_diretta_la_roma_stringe_per_fofana_kessie_vuole_la_juve_live",
+          "img": "https://cdn.corrieredellosport.it/images/2026/08/19/082442490-8f4503e0-ddaf-4c8c-bed6-78eab9d69052.jpg",
+          "dominio": "corrieredellosport.it",
           "affidabilita": 2,
           "quando": "12 ore fa"
         }
@@ -753,14 +784,28 @@
             "fonte": "Sky Sport",
             "link": "https://sport.sky.it",
             "affidabilita": 3,
-            "quando": "18 ore fa"
+            "quando": "19 ore fa"
+          },
+          {
+            "titolo": "Calciomercato Atalanta : tra cessioni e l'idea Nivo Gonzalez",
+            "fonte": "Oggi Sport Notizie",
+            "link": "https://www.oggisportnotizie.it",
+            "affidabilita": 2,
+            "quando": "poco fa"
+          },
+          {
+            "titolo": "Serie A: ecco tutte le formazioni tipo, gli acquisti e le cessioni delle 20 squadre",
+            "fonte": "La Gazzetta dello Sport",
+            "link": "https://www.gazzetta.it",
+            "affidabilita": 2,
+            "quando": "poco fa"
           },
           {
             "titolo": "Atalanta, è il colpo che fa impazzire il mercato: a Bergamo arriva il nuovo Scamacca",
-            "fonte": "sprintesport.it",
+            "fonte": "Sprint e Sport",
             "link": "https://www.sprintesport.it",
             "affidabilita": 2,
-            "quando": "19 ore fa"
+            "quando": "20 ore fa"
           },
           {
             "titolo": "Mercato Atalanta, tentativo per lo juventino scontento: Sarri ci crede",
@@ -775,20 +820,6 @@
             "link": "https://www.corrieredellosport.it",
             "affidabilita": 2,
             "quando": "1 g fa"
-          },
-          {
-            "titolo": "Sarri \"non lo conosceva\" ma Kristensen ha \"scelto l'Atalanta per lui\"",
-            "fonte": "Sportmediaset",
-            "link": "https://www.sportmediaset.mediaset.it",
-            "affidabilita": 2,
-            "quando": "2 g fa"
-          },
-          {
-            "titolo": "Atalanta-Hapoel partita delicatissima “in corso d’opera”. L’ansia da mercato e la fiducia che non può mancare",
-            "fonte": "L'Eco di Bergamo",
-            "link": "https://www.ecodibergamo.it",
-            "affidabilita": 1,
-            "quando": "4 ore fa"
           }
         ],
         "obj": [
@@ -801,15 +832,7 @@
           }
         ],
         "conf": [],
-        "done": [
-          {
-            "titolo": "Ora è davvero ufficiale, l’Atalanta saluta Djimsiti: “Un grazie non basta”",
-            "fonte": "BergamoNews",
-            "link": "https://www.bergamonews.it",
-            "affidabilita": 1,
-            "quando": "2 g fa"
-          }
-        ]
+        "done": []
       },
       "feed": [
         {
@@ -820,27 +843,27 @@
           "img": "https://sport.sky.it/assets/images/6f0d232a28c64e93529c6d9fb5ccef4b1ec82b9f/skysport/it/calcio/conference-league/2026/08/19/atalanta-ederson-intervista-video/ederson_intv.jpg?im=Resize,width=1218",
           "dominio": "sport.sky.it",
           "affidabilita": 3,
-          "quando": "18 ore fa"
-        },
-        {
-          "titolo": "Atalanta, è il colpo che fa impazzire il mercato: a Bergamo arriva il nuovo Scamacca",
-          "fonte": "sprintesport.it",
-          "stato": "rumor",
-          "link": "https://www.sprintesport.it/nazionali/2026/08/19/news/atalanta-e-il-colpo-che-fa-impazzire-il-mercato-a-bergamo-arriva-il-nuovo-scamacca-758134/",
-          "img": "https://www.sprintesport.it/resizer/600/315/true/2026_08_18/MVP_DELLA_SETTIMANA_%281%29_copia-1787070380920.jpg--samuele_chiesa.jpg?1787070381188",
-          "dominio": "sprintesport.it",
-          "affidabilita": 2,
           "quando": "19 ore fa"
         },
         {
-          "titolo": "Nico Gonzalez, la mossa Juve per stanare l’Atletico. La pista Atalanta e cosa può succedere col Milan",
-          "fonte": "Tuttosport",
-          "stato": "obj",
-          "link": "https://www.tuttosport.com/news/calcio/calciomercato/2026/08/19-150644202/nico_gonzalez_la_mossa_juve_per_stanare_latletico_la_pista_atalanta_e_cosa_pu_succedere_col_milan",
-          "img": "https://cdn.tuttosport.com/images/2026/08/19/074912615-c4667202-af80-4530-8f0d-21ac4987501e.jpg",
-          "dominio": "tuttosport.com",
+          "titolo": "Calciomercato Atalanta : tra cessioni e l'idea Nivo Gonzalez",
+          "fonte": "Oggi Sport Notizie",
+          "stato": "rumor",
+          "link": "https://www.oggisportnotizie.it/2026/08/calciomercato-atalanta-19-ago-2026/",
+          "img": "",
+          "dominio": "oggisportnotizie.it",
           "affidabilita": 2,
-          "quando": "1 g fa"
+          "quando": "poco fa"
+        },
+        {
+          "titolo": "Serie A: ecco tutte le formazioni tipo, gli acquisti e le cessioni delle 20 squadre",
+          "fonte": "La Gazzetta dello Sport",
+          "stato": "rumor",
+          "link": "https://www.gazzetta.it/calcio/fantanews/storie/20-08-2026/calciomercato-serie-a-2026-27-acquisti-e-cessioni-per-orientarsi-al-fantacalcio/atalanta.shtml",
+          "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/08/20/6a86ca1551322.jpeg",
+          "dominio": "gazzetta.it",
+          "affidabilita": 2,
+          "quando": "poco fa"
         }
       ],
       "nomi": {
@@ -861,42 +884,42 @@
             "fonte": "Sky Sport",
             "link": "https://sport.sky.it",
             "affidabilita": 3,
-            "quando": "poco fa"
+            "quando": "1 ore fa"
           },
           {
             "titolo": "Fagioli può finire in Premier: la Fiorentina si cautela con Torreira",
             "fonte": "Sportmediaset",
             "link": "https://www.sportmediaset.mediaset.it",
             "affidabilita": 2,
-            "quando": "22 ore fa"
+            "quando": "23 ore fa"
           },
           {
             "titolo": "La Fiorentina saluta Dodò: a un passo l'approdo al Nottingham Forest",
             "fonte": "Sportmediaset",
             "link": "https://www.sportmediaset.mediaset.it",
             "affidabilita": 2,
-            "quando": "22 ore fa"
+            "quando": "23 ore fa"
           },
           {
             "titolo": "L'impegno viola della famiglia Commisso dopo Rocco: altri 100 milioni nella Fiorentina",
             "fonte": "La Gazzetta dello Sport",
             "link": "https://www.gazzetta.it",
             "affidabilita": 2,
-            "quando": "22 ore fa"
-          },
-          {
-            "titolo": "Calciomercato Como: rilancio per Kean, le ultime",
-            "fonte": "Fantacalcio",
-            "link": "https://www.fantacalcio.it",
-            "affidabilita": 1,
-            "quando": "2 ore fa"
+            "quando": "23 ore fa"
           },
           {
             "titolo": "Fiorentina su Lucas Torreira, due club su Nicolò Fagioli",
             "fonte": "Calciomercato",
             "link": "https://www.calciomercato.com",
             "affidabilita": 1,
-            "quando": "22 ore fa"
+            "quando": "23 ore fa"
+          },
+          {
+            "titolo": "AS Roma, Soulé per far cassa: l'argentino resta fra i sacrificabili di Gasperini",
+            "fonte": "RomaToday",
+            "link": "https://www.romatoday.it",
+            "affidabilita": 1,
+            "quando": "1 g fa"
           }
         ],
         "obj": [
@@ -905,7 +928,14 @@
             "fonte": "Sky Sport",
             "link": "https://sport.sky.it",
             "affidabilita": 3,
-            "quando": "20 ore fa"
+            "quando": "21 ore fa"
+          },
+          {
+            "titolo": "Torreira vuole tornare alla Fiorentina, ma il club blocca: c'è abbondanza in quel ruolo",
+            "fonte": "Gianluca Di Marzio",
+            "link": "https://www.gianlucadimarzio.com",
+            "affidabilita": 3,
+            "quando": "1 g fa"
           },
           {
             "titolo": "La Fiorentina piomba su Soulé: contatti in corso con la Roma",
@@ -913,6 +943,13 @@
             "link": "https://www.corrieredellosport.it",
             "affidabilita": 2,
             "quando": "2 g fa"
+          },
+          {
+            "titolo": "Il Como insiste su Kean: seconda offerta in arrivo, la Fiorentina non arretra su cifre e tempistiche. Le ultime",
+            "fonte": "Calciomercato",
+            "link": "https://www.calciomercato.com",
+            "affidabilita": 1,
+            "quando": "1 ore fa"
           }
         ],
         "conf": [
@@ -921,7 +958,7 @@
             "fonte": "Toro.it",
             "link": "https://www.toro.it",
             "affidabilita": 1,
-            "quando": "14 ore fa"
+            "quando": "15 ore fa"
           }
         ],
         "done": []
@@ -935,7 +972,7 @@
           "img": "https://sport.sky.it/assets/images/23a41ab4522dc050399493c3ad7d1b11fe89577d/skysport/it/calcio/calciomercato/2026/08/01/calciomercato-news-trattative-oggi-1-agosto/calciomercato_liveblog_new_2026.jpg?im=Resize,width=1218",
           "dominio": "sport.sky.it",
           "affidabilita": 3,
-          "quando": "poco fa"
+          "quando": "1 ore fa"
         },
         {
           "titolo": "Fiorentina, obiettivo Poku per l'attacco: contatti con il Bayer Leverkusen",
@@ -945,17 +982,17 @@
           "img": "https://sport.sky.it/assets/images/2a6907e44c96fa9010d0f777f5919fe1c6cedea8/skysport/it/calcio/calciomercato/2026/08/19/fiorentina-poku-calciomercato-news/poku_leverkusen_ipa.jpg?im=Resize,width=1218",
           "dominio": "sport.sky.it",
           "affidabilita": 3,
-          "quando": "20 ore fa"
+          "quando": "21 ore fa"
         },
         {
-          "titolo": "Fagioli può finire in Premier: la Fiorentina si cautela con Torreira",
-          "fonte": "Sportmediaset",
-          "stato": "rumor",
-          "link": "https://www.sportmediaset.mediaset.it/mercato/fagioli-puo-finire-in-premier-la-fiorentina-si-cautela-con-torreira_115626653-202602k.shtml",
-          "img": "https://img-api.cloud.mediaset.net/api/images/cu/v2/-/1200/675/aHR0cHM6Ly93d3cuc3BvcnRtZWRpYXNldC5tZWRpYXNldC5pdC9hc3NldHMvbWlzYy9zcG9ydG1lZGlhc2V0LWJhY2tncm91bmQucG5n?r=-1",
-          "dominio": "sportmediaset.mediaset.it",
-          "affidabilita": 2,
-          "quando": "22 ore fa"
+          "titolo": "Torreira vuole tornare alla Fiorentina, ma il club blocca: c'è abbondanza in quel ruolo",
+          "fonte": "Gianluca Di Marzio",
+          "stato": "obj",
+          "link": "https://www.gianlucadimarzio.com/calciomercato/torreira-fiorentina-496054",
+          "img": "https://net-storage-auto.tcccdn.com/storage/gianlucadimarzio.com/img_notizie/thumb3/9f/9ff853b7496462d7a932db5bac3b63d3-68977-666o0o1696o1029z0d3f.jpeg",
+          "dominio": "gianlucadimarzio.com",
+          "affidabilita": 3,
+          "quando": "1 g fa"
         }
       ],
       "nomi": {
@@ -976,28 +1013,28 @@
             "fonte": "1000 Cuori Rossoblu",
             "link": "https://www.1000cuorirossoblu.it",
             "affidabilita": 1,
-            "quando": "2 ore fa"
+            "quando": "3 ore fa"
           },
           {
             "titolo": "Calciomercato Serie A 2026/2027: acquisti e cessioni, trasferimenti ufficiali e probabili formazioni tipo",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 1,
-            "quando": "5 ore fa"
+            "quando": "7 ore fa"
           },
           {
             "titolo": "Bologna, ecco i rating sul nuovo EA FC 27: un nuovo acquisto sale sul podio, ma il valore di molti singoli si abbassa",
             "fonte": "1000 Cuori Rossoblu",
             "link": "https://www.1000cuorirossoblu.it",
             "affidabilita": 1,
-            "quando": "16 ore fa"
+            "quando": "18 ore fa"
           },
           {
             "titolo": "Calciomercato Bologna, l’ossatura è cambiata: i numeri da colmare e la sfida di Tedesco",
             "fonte": "1000 Cuori Rossoblu",
             "link": "https://www.1000cuorirossoblu.it",
             "affidabilita": 1,
-            "quando": "19 ore fa"
+            "quando": "20 ore fa"
           },
           {
             "titolo": "Calciomercato Bologna: alla ricerca del difensore",
@@ -1027,14 +1064,14 @@
             "fonte": "1000 Cuori Rossoblu",
             "link": "https://www.1000cuorirossoblu.it",
             "affidabilita": 1,
-            "quando": "9 ore fa"
+            "quando": "11 ore fa"
           },
           {
             "titolo": "Calciomercato Bologna, l’ex obiettivo Dieng verso la Lazio",
             "fonte": "1000 Cuori Rossoblu",
             "link": "https://www.1000cuorirossoblu.it",
             "affidabilita": 1,
-            "quando": "13 ore fa"
+            "quando": "14 ore fa"
           },
           {
             "titolo": "Calciomercato Bologna, la priorità è il difensore centrale: ecco i nomi sul tavolo",
@@ -1084,7 +1121,7 @@
           "img": "https://www.1000cuorirossoblu.it/wp-content/uploads/2026/08/Calciomercato-sfondo-2026-5.png",
           "dominio": "1000cuorirossoblu.it",
           "affidabilita": 1,
-          "quando": "2 ore fa"
+          "quando": "3 ore fa"
         }
       ],
       "nomi": {
@@ -1105,42 +1142,42 @@
             "fonte": "Toro News",
             "link": "https://www.toronews.net",
             "affidabilita": 1,
-            "quando": "4 ore fa"
+            "quando": "5 ore fa"
           },
           {
             "titolo": "Calciomercato Serie A 2026/2027: acquisti e cessioni, trasferimenti ufficiali e probabili formazioni tipo",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 1,
-            "quando": "5 ore fa"
+            "quando": "7 ore fa"
           },
           {
             "titolo": "Calciomercato Serie A, le ultime: Vanja, scambio con Musso? Curtis Jones all'Inter",
             "fonte": "Toro News",
             "link": "https://www.toronews.net",
             "affidabilita": 1,
-            "quando": "12 ore fa"
+            "quando": "13 ore fa"
           },
           {
             "titolo": "Calciomercato Torino, tutto fatto per Fortini",
             "fonte": "Toro News",
             "link": "https://www.toronews.net",
             "affidabilita": 1,
-            "quando": "13 ore fa"
+            "quando": "14 ore fa"
           },
           {
             "titolo": "Le vostre lettere: \"Il calciomercato mai finisce\"",
             "fonte": "Toro News",
             "link": "https://www.toronews.net",
             "affidabilita": 1,
-            "quando": "14 ore fa"
+            "quando": "15 ore fa"
           },
           {
-            "titolo": "Calciomercato Torino, Adams piace in Italia e all’estero",
+            "titolo": "Calciomercato Torino, Dembelé e Dalla Vecchia verso il Lecce",
             "fonte": "Toro.it",
             "link": "https://www.toro.it",
             "affidabilita": 1,
-            "quando": "17 ore fa"
+            "quando": "16 ore fa"
           }
         ],
         "obj": [
@@ -1149,20 +1186,31 @@
             "fonte": "Toro.it",
             "link": "https://www.toro.it",
             "affidabilita": 1,
-            "quando": "4 ore fa"
-          },
-          {
-            "titolo": "Calciomercato Torino: “Idea Sebastiano Esposito, si punta al prestito”",
-            "fonte": "Toro News",
-            "link": "https://www.toronews.net",
-            "affidabilita": 1,
-            "quando": "2 g fa"
+            "quando": "6 ore fa"
           }
         ],
         "conf": [],
-        "done": []
+        "done": [
+          {
+            "titolo": "Torino, Fortini è in città: visite mediche e poi la firma",
+            "fonte": "Toro.it",
+            "link": "https://www.toro.it",
+            "affidabilita": 1,
+            "quando": "poco fa"
+          }
+        ]
       },
       "feed": [
+        {
+          "titolo": "Torino, Fortini è in città: visite mediche e poi la firma",
+          "fonte": "Toro.it",
+          "stato": "done",
+          "link": "https://www.toro.it/calciomercato/torino-fortini-e-in-citta-visite-mediche-e-poi-la-firma/1435303/",
+          "img": "https://www.toro.it/wp-content/uploads/2025/12/Cairo_Petrachi.jpg",
+          "dominio": "toro.it",
+          "affidabilita": 1,
+          "quando": "poco fa"
+        },
         {
           "titolo": "Torino, lista lunga negli esuberi: da Balcot a Di Marco, il punto",
           "fonte": "Toro News",
@@ -1171,7 +1219,7 @@
           "img": "",
           "dominio": "toronews.net",
           "affidabilita": 1,
-          "quando": "4 ore fa"
+          "quando": "5 ore fa"
         },
         {
           "titolo": "Njie, il Torino aspetta l’offerta giusta: Salisburgo e Crystal Palace in pressing",
@@ -1181,17 +1229,7 @@
           "img": "https://www.toro.it/wp-content/uploads/2026/08/0NC5829.jpg",
           "dominio": "toro.it",
           "affidabilita": 1,
-          "quando": "4 ore fa"
-        },
-        {
-          "titolo": "Calciomercato Serie A 2026/2027: acquisti e cessioni, trasferimenti ufficiali e probabili formazioni tipo",
-          "fonte": "Goal.com",
-          "stato": "rumor",
-          "link": "https://www.goal.com/it/liste/calciomercato-serie-a-2026-2027-acquisti-e-cessioni-trasferimenti-ufficiali-e-probabili-formazioni-tipo/bltf076d7afa9eb1393",
-          "img": "https://assets.goal.com/images/v3/blt16455d63c473619b/ACQUISTI_CESSIONI_HD.jpg",
-          "dominio": "goal.com",
-          "affidabilita": 1,
-          "quando": "5 ore fa"
+          "quando": "6 ore fa"
         }
       ],
       "nomi": {
@@ -1270,14 +1308,14 @@
             "fonte": "Messaggero Veneto",
             "link": "https://www.messaggeroveneto.it",
             "affidabilita": 1,
-            "quando": "3 ore fa"
+            "quando": "5 ore fa"
           },
           {
             "titolo": "Calciomercato Serie A 2026/2027: acquisti e cessioni, trasferimenti ufficiali e probabili formazioni tipo",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 1,
-            "quando": "5 ore fa"
+            "quando": "7 ore fa"
           },
           {
             "titolo": "Gazzetta dello sport: Udinese all’attacco. E’ caccia al vice Davis",
@@ -1377,7 +1415,7 @@
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 1,
-            "quando": "5 ore fa"
+            "quando": "7 ore fa"
           },
           {
             "titolo": "Cagliari, il punto a due settimane dal gong finale del mercato",
@@ -1488,11 +1526,11 @@
             "quando": "16 g fa"
           },
           {
-            "titolo": "Icardi sogno Lazio, Pinamonti via dal Sassuolo, Lucca ed Esposito cercano squadra, il Como non molla Kean: è il calciomercato degli attaccanti in Serie A",
+            "titolo": "Il mercato da Champions del Como non si ferma: Zirkzee alternativa a Kean per l'attacco, sfida alla Juventus per Lucumi",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 1,
-            "quando": "1 ore fa"
+            "quando": "23 g fa"
           },
           {
             "titolo": "Mercato Como, gli aggiornamenti su Chalobah, Couto e Kean",
@@ -1524,7 +1562,7 @@
             "fonte": "CiaoComo",
             "link": "https://www.ciaocomo.it",
             "affidabilita": 1,
-            "quando": "13 ore fa"
+            "quando": "15 ore fa"
           }
         ],
         "done": [
@@ -1611,13 +1649,6 @@
             "quando": "11 g fa"
           },
           {
-            "titolo": "LECCE – In arrivo Geubbels, primo ingaggio della sessione estiva di calciomercato",
-            "fonte": "SalentoSport",
-            "link": "https://www.salentosport.net",
-            "affidabilita": 2,
-            "quando": "20 g fa"
-          },
-          {
             "titolo": "Lecce, giallo Banda: è irrintracciabile dopo il matrimonio in Zambia",
             "fonte": "eurosport.it",
             "link": "https://www.eurosport.it",
@@ -1629,7 +1660,14 @@
             "fonte": "Leccezionale Salento",
             "link": "https://leccezionale.it",
             "affidabilita": 1,
-            "quando": "20 ore fa"
+            "quando": "22 ore fa"
+          },
+          {
+            "titolo": "Calciomercato Torino, Dembelè verso il Lecce",
+            "fonte": "Toro News",
+            "link": "https://www.toronews.net",
+            "affidabilita": 1,
+            "quando": "2 g fa"
           },
           {
             "titolo": "Ingegneria, questioni legali e poco mercato: da adesso per il Lecce parla il campo",
@@ -1709,7 +1747,7 @@
             "fonte": "La Gazzetta dello Sport",
             "link": "https://www.gazzetta.it",
             "affidabilita": 2,
-            "quando": "poco fa"
+            "quando": "2 ore fa"
           },
           {
             "titolo": "Valigie in mano per Suslov. Belghali tra Marsiglia e Roma",
@@ -1730,7 +1768,7 @@
             "fonte": "La Nuova Venezia",
             "link": "https://www.nuovavenezia.it",
             "affidabilita": 1,
-            "quando": "23 ore fa"
+            "quando": "1 g fa"
           },
           {
             "titolo": "Calciomercato Serie B, La Gazzetta dello Sport: «Verona, arriva Lella. La Juve Stabia rivoluziona il centrocampo",
@@ -1746,7 +1784,7 @@
             "fonte": "Calcio Hellas",
             "link": "https://www.calciohellas.it",
             "affidabilita": 2,
-            "quando": "17 ore fa"
+            "quando": "18 ore fa"
           },
           {
             "titolo": "Nunzio Lella è un nuovo centrocampista del Verona",
@@ -1785,7 +1823,7 @@
             "fonte": "Calciomercato",
             "link": "https://www.calciomercato.com",
             "affidabilita": 1,
-            "quando": "23 ore fa"
+            "quando": "1 g fa"
           },
           {
             "titolo": "CALCIOMERCATO | Ufficiale: il centrocampista Nunzio Lella al Verona",
@@ -1815,7 +1853,7 @@
           "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/08/19/6a860ecce7d2d.jpeg",
           "dominio": "gazzetta.it",
           "affidabilita": 2,
-          "quando": "poco fa"
+          "quando": "2 ore fa"
         },
         {
           "titolo": "Incontro Sassuolo-Verona per Belghali (e Iannoni)",
@@ -1825,7 +1863,7 @@
           "img": "",
           "dominio": "calciohellas.it",
           "affidabilita": 2,
-          "quando": "17 ore fa"
+          "quando": "18 ore fa"
         }
       ],
       "nomi": {
@@ -1853,14 +1891,14 @@
             "fonte": "eurosport.it",
             "link": "https://www.eurosport.it",
             "affidabilita": 2,
-            "quando": "17 ore fa"
+            "quando": "18 ore fa"
           },
           {
             "titolo": "Cuesta: «Il mercato aperto fa parte del nostro mestiere»",
             "fonte": "SportParma",
             "link": "https://sportparma.com",
             "affidabilita": 2,
-            "quando": "17 ore fa"
+            "quando": "19 ore fa"
           },
           {
             "titolo": "Circati al Benfica, tutto fatto: affare da 20 milioni",
@@ -1914,7 +1952,7 @@
             "fonte": "Calciomercato",
             "link": "https://www.calciomercato.com",
             "affidabilita": 1,
-            "quando": "14 ore fa"
+            "quando": "15 ore fa"
           }
         ]
       },
@@ -1937,7 +1975,7 @@
           "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg):focal(161x62:163x60)/origin-imgresizer.eurosport.com/2026/08/19/image-42a45b25-1fea-4b9e-8760-e7551ae4dc19-85-2560-1440.jpeg",
           "dominio": "eurosport.it",
           "affidabilita": 2,
-          "quando": "17 ore fa"
+          "quando": "18 ore fa"
         },
         {
           "titolo": "Cuesta: «Il mercato aperto fa parte del nostro mestiere»",
@@ -1947,7 +1985,7 @@
           "img": "https://sportparma.com/wp-content/uploads/2026/08/amichevole-Parma-Iraklis-Salonicco-02.08.2026__Carlos-Cuesta-in-conferenza-stampa-1000x600.jpg",
           "dominio": "sportparma.com",
           "affidabilita": 2,
-          "quando": "17 ore fa"
+          "quando": "19 ore fa"
         }
       ],
       "nomi": {
@@ -1964,16 +2002,16 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "Sassuolo, ecco Leysen: chiuso l’arrivo del difensore",
+            "fonte": "Gianluca Di Marzio",
+            "link": "https://www.gianlucadimarzio.com",
+            "affidabilita": 3,
+            "quando": "2 g fa"
+          },
+          {
             "titolo": "Calciomercato Sassuolo: Pinamonti e Thorstvedt chiedono la cessione, in difesa è vicino Leysen",
             "fonte": "Sassuolo Oggi",
             "link": "https://www.sassuolooggi.it",
-            "affidabilita": 2,
-            "quando": "1 g fa"
-          },
-          {
-            "titolo": "Sassuolo, Aquilani: \"Pinamonti e Thorstvedt hanno chiesto di essere ceduti\"",
-            "fonte": "Sportmediaset",
-            "link": "https://www.sportmediaset.mediaset.it",
             "affidabilita": 2,
             "quando": "2 g fa"
           },
@@ -1982,28 +2020,28 @@
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 1,
-            "quando": "1 ore fa"
+            "quando": "poco fa"
           },
           {
             "titolo": "Calciomercato LIVE: Como su Ricci del Milan. Inter, Asllani e Massolin richiesti dal Monza. Vardy in Brasile?",
             "fonte": "Calciomercato",
             "link": "https://www.calciomercato.com",
             "affidabilita": 1,
-            "quando": "2 ore fa"
+            "quando": "3 ore fa"
           },
           {
             "titolo": "Calciomercato Serie A 2026/2027: acquisti e cessioni, trasferimenti ufficiali e probabili formazioni tipo",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 1,
-            "quando": "5 ore fa"
+            "quando": "7 ore fa"
           },
           {
             "titolo": "Assalto a Pinamonti: Lotito stringe per il nuovo bomber della Lazio",
             "fonte": "RomaToday",
             "link": "https://www.romatoday.it",
             "affidabilita": 1,
-            "quando": "19 ore fa"
+            "quando": "20 ore fa"
           }
         ],
         "obj": [
@@ -2012,7 +2050,7 @@
             "fonte": "Gianluca Di Marzio",
             "link": "https://www.gianlucadimarzio.com",
             "affidabilita": 3,
-            "quando": "19 ore fa"
+            "quando": "20 ore fa"
           },
           {
             "titolo": "Il Sassuolo può chiudere per Leysen: contatti avanzati. A destra si lavora per uno tra Belghali e Barbieri",
@@ -2050,7 +2088,7 @@
           "img": "https://net-storage-auto.tcccdn.com/storage/gianlucadimarzio.com/img_notizie/thumb3/ed/ed8f9ecb0bdeb32f1eaed3d1cd7609ae-33066-oooz0000.jpeg",
           "dominio": "gianlucadimarzio.com",
           "affidabilita": 3,
-          "quando": "19 ore fa"
+          "quando": "20 ore fa"
         },
         {
           "titolo": "Sassuolo, chiuso l'arrivo di Leysen: domani le visite mediche",
@@ -2063,10 +2101,10 @@
           "quando": "1 g fa"
         },
         {
-          "titolo": "Il Sassuolo può chiudere per Leysen: contatti avanzati. A destra si lavora per uno tra Belghali e Barbieri",
+          "titolo": "Sassuolo, ecco Leysen: chiuso l’arrivo del difensore",
           "fonte": "Gianluca Di Marzio",
-          "stato": "obj",
-          "link": "https://www.gianlucadimarzio.com/calciomercato/sassuolo-chiudere-leysen-contatti-avanzati-destra-lavora-belghali-barbieri-495970",
+          "stato": "rumor",
+          "link": "https://www.gianlucadimarzio.com/calciomercato/sassuolo-leysen-calciomercato-news-496009",
           "img": "https://net-storage-auto.tcccdn.com/storage/gianlucadimarzio.com/img_notizie/thumb3/e9/e981741d96783beb2e7c44eb99a5d0fa-11772-oooz0000.jpeg",
           "dominio": "gianlucadimarzio.com",
           "affidabilita": 3,
@@ -2088,10 +2126,10 @@
         "rumor": [
           {
             "titolo": "Atalanta, è il colpo che fa impazzire il mercato: a Bergamo arriva il nuovo Scamacca",
-            "fonte": "sprintesport.it",
+            "fonte": "Sprint e Sport",
             "link": "https://www.sprintesport.it",
             "affidabilita": 2,
-            "quando": "19 ore fa"
+            "quando": "20 ore fa"
           },
           {
             "titolo": "Calciomercato Serie B: Elia va alla Cremonese, Pittarello vicino al Pisa",
@@ -2126,7 +2164,7 @@
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 1,
-            "quando": "5 ore fa"
+            "quando": "7 ore fa"
           }
         ],
         "obj": [],
@@ -2136,13 +2174,13 @@
       "feed": [
         {
           "titolo": "Atalanta, è il colpo che fa impazzire il mercato: a Bergamo arriva il nuovo Scamacca",
-          "fonte": "sprintesport.it",
+          "fonte": "Sprint e Sport",
           "stato": "rumor",
           "link": "https://www.sprintesport.it/nazionali/2026/08/19/news/atalanta-e-il-colpo-che-fa-impazzire-il-mercato-a-bergamo-arriva-il-nuovo-scamacca-758134/",
           "img": "https://www.sprintesport.it/resizer/600/315/true/2026_08_18/MVP_DELLA_SETTIMANA_%281%29_copia-1787070380920.jpg--samuele_chiesa.jpg?1787070381188",
           "dominio": "sprintesport.it",
           "affidabilita": 2,
-          "quando": "19 ore fa"
+          "quando": "20 ore fa"
         },
         {
           "titolo": "Calciomercato Serie B: Elia va alla Cremonese, Pittarello vicino al Pisa",
@@ -2186,18 +2224,25 @@
             "quando": "22 g fa"
           },
           {
+            "titolo": "Pisa, porte scorrevoli sul fronte mercato: saluta Tourè, entrano Petagna, Correia e Confente",
+            "fonte": "Radio Bruno",
+            "link": "https://www.radiobruno.it",
+            "affidabilita": 1,
+            "quando": "1 ore fa"
+          },
+          {
             "titolo": "Pisa SC, in arrivo gli ultimi tasselli dal mercato: dopo Petagna, chiusi anche Correia e Confente",
             "fonte": "PisaToday",
             "link": "https://www.pisatoday.it",
             "affidabilita": 1,
-            "quando": "2 ore fa"
+            "quando": "3 ore fa"
           },
           {
             "titolo": "Calciomercato Pisa SC : Aebischer Passa All'Union Berlino -",
             "fonte": "Il Pisa Siamo Noi",
             "link": "https://www.ilpisasiamonoi.it",
             "affidabilita": 1,
-            "quando": "18 ore fa"
+            "quando": "19 ore fa"
           },
           {
             "titolo": "Pisa SC, si sblocca il mercato degli attaccanti: in arrivo Petagna, al Monza va Tourè",
@@ -2212,24 +2257,9 @@
             "link": "https://www.sestaporta.news",
             "affidabilita": 1,
             "quando": "3 g fa"
-          },
-          {
-            "titolo": "Calciomercato Pisa SC : Sapola Va In Prestito Allo Spezia -",
-            "fonte": "Il Pisa Siamo Noi",
-            "link": "https://www.ilpisasiamonoi.it",
-            "affidabilita": 1,
-            "quando": "3 g fa"
           }
         ],
-        "obj": [
-          {
-            "titolo": "Calciomercato Pisa, giornata di blitz in casa nerazzurra, ma c'è sempre stallo per Pittarello. Tourè è già a Monza. Ora la società punta anche a cedere gli altri esuberi",
-            "fonte": "SestaPorta.News Pisa",
-            "link": "https://www.sestaporta.news",
-            "affidabilita": 1,
-            "quando": "10 ore fa"
-          }
-        ],
+        "obj": [],
         "conf": [
           {
             "titolo": "Calciomercato Pisa, in chiusura Correia e Confente a titolo definitivo dalla Juve Stabia. Le cifre. Petagna a Bologna per le visite",
@@ -2248,11 +2278,11 @@
         ],
         "done": [
           {
-            "titolo": "Calciomercato Pisa. Ufficiale, Michel Aebischer passa all’Union Berlino",
+            "titolo": "Calciomercato Pisa. Ufficiale, Petagna è nerazzurro a titolo definitivo",
             "fonte": "SestaPorta.News Pisa",
             "link": "https://www.sestaporta.news",
             "affidabilita": 1,
-            "quando": "23 ore fa"
+            "quando": "poco fa"
           }
         ]
       },
@@ -2268,24 +2298,24 @@
           "quando": "22 g fa"
         },
         {
-          "titolo": "Pisa SC, in arrivo gli ultimi tasselli dal mercato: dopo Petagna, chiusi anche Correia e Confente",
-          "fonte": "PisaToday",
-          "stato": "rumor",
-          "link": "https://www.pisatoday.it/sport/calcio/calciomercato-acquisti-petagna-correia-confente-pisa-sporting-club.html",
-          "img": "",
-          "dominio": "pisatoday.it",
-          "affidabilita": 1,
-          "quando": "2 ore fa"
-        },
-        {
-          "titolo": "Calciomercato Pisa, giornata di blitz in casa nerazzurra, ma c'è sempre stallo per Pittarello. Tourè è già a Monza. Ora la società punta anche a cedere gli altri esuberi",
+          "titolo": "Calciomercato Pisa. Ufficiale, Petagna è nerazzurro a titolo definitivo",
           "fonte": "SestaPorta.News Pisa",
-          "stato": "obj",
-          "link": "https://www.sestaporta.news/in-primo-piano/calciomercato-pisa-giornata-di-blitz-in-casa-nerazzurra-ma-ce-sempre-stallo-per-pittarello-toure-e-gia-a-monza-ora-la-societa-punta-anche-a-cedere-gli-altri-esuberi/",
-          "img": "https://www.sestaporta.news/wp-content/uploads/2026/08/Gabbanini_Corrado_Morgex.jpg",
+          "stato": "done",
+          "link": "https://www.sestaporta.news/in-primo-piano/calciomercato-pisa-ufficiale-petagna-e-nerazzurro-a-titolo-definitivo/",
+          "img": "https://www.sestaporta.news/wp-content/uploads/2026/08/0e0d73b3-a0fc-4083-8607-98b7dc27a1f9.jpeg",
           "dominio": "sestaporta.news",
           "affidabilita": 1,
-          "quando": "10 ore fa"
+          "quando": "poco fa"
+        },
+        {
+          "titolo": "Pisa, porte scorrevoli sul fronte mercato: saluta Tourè, entrano Petagna, Correia e Confente",
+          "fonte": "Radio Bruno",
+          "stato": "rumor",
+          "link": "https://www.radiobruno.it/pisa-porte-scorrevoli-sul-fronte-mercato-saluta-toure-entrano-petagna-correia-e-confente/",
+          "img": "https://www.radiobruno.it/wp-content/uploads/2026/08/Screenshot_20260820_105056_WhatsApp.jpg",
+          "dominio": "radiobruno.it",
+          "affidabilita": 1,
+          "quando": "1 ore fa"
         }
       ],
       "nomi": {
@@ -2337,11 +2367,11 @@
             "quando": "14 g fa"
           },
           {
-            "titolo": "Calciomercato Serie A 2026/2027: acquisti e cessioni, trasferimenti ufficiali e probabili formazioni tipo",
-            "fonte": "Goal.com",
-            "link": "https://www.goal.com",
+            "titolo": "Milan, Cardinale si è mosso per Endrick: no del Real Madrid al prestito",
+            "fonte": "Calciomercato",
+            "link": "https://www.calciomercato.com",
             "affidabilita": 1,
-            "quando": "5 ore fa"
+            "quando": "2 g fa"
           }
         ],
         "obj": [
@@ -2350,7 +2380,7 @@
             "fonte": "Calciomercato",
             "link": "https://www.calciomercato.com",
             "affidabilita": 1,
-            "quando": "15 ore fa"
+            "quando": "16 ore fa"
           },
           {
             "titolo": "Modric: \"Non ho mai pensato di non rinnovare: il Milan è sul livello del Real Madrid. Qui si deve vincere, non puntare al quarto posto\"",
@@ -2499,7 +2529,7 @@
             "fonte": "eurosport.it",
             "link": "https://www.eurosport.it",
             "affidabilita": 2,
-            "quando": "17 ore fa"
+            "quando": "18 ore fa"
           },
           {
             "titolo": "Nico Gonzalez, Juve chiara con l'Atletico Madrid: la richiesta è una. Marsiglia a Torino per...",
@@ -2600,7 +2630,7 @@
           "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg):focal(161x62:163x60)/origin-imgresizer.eurosport.com/2026/08/19/image-42a45b25-1fea-4b9e-8760-e7551ae4dc19-85-2560-1440.jpeg",
           "dominio": "eurosport.it",
           "affidabilita": 2,
-          "quando": "17 ore fa"
+          "quando": "18 ore fa"
         }
       ],
       "nomi": {
@@ -3006,6 +3036,13 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "2026 giornata-5 real-madrid-rayo-vallecano preview",
+            "fonte": "Sky Sport",
+            "link": "https://sport.sky.it",
+            "affidabilita": 3,
+            "quando": "14 g fa"
+          },
+          {
             "titolo": "Calciomercato – Nusa non si muove, la Roma resta senza esterno",
             "fonte": "Sport24h",
             "link": "https://www.sport24h.it",
@@ -3031,13 +3068,6 @@
         "conf": [],
         "done": [
           {
-            "titolo": "Roma, ufficiale la cessione di Kumbulla al Rayo Vallecano: i dettagli",
-            "fonte": "Corriere dello Sport",
-            "link": "https://www.corrieredellosport.it",
-            "affidabilita": 2,
-            "quando": "13 g fa"
-          },
-          {
             "titolo": "Chelsea, è fatta per Pep Chavarria: è la cessione più remunerativa di sempre per il Rayo Vallecano",
             "fonte": "Sportmediaset",
             "link": "https://www.sportmediaset.mediaset.it",
@@ -3055,6 +3085,16 @@
       },
       "feed": [
         {
+          "titolo": "2026 giornata-5 real-madrid-rayo-vallecano preview",
+          "fonte": "Sky Sport",
+          "stato": "rumor",
+          "link": "https://sport.sky.it/calcio/liga/partite/2026/giornata-5/real-madrid-rayo-vallecano",
+          "img": "https://sport.sky.it/assets/images/fe3002a460d9904efad96e7882361f17a7cc77c2/skysport/configurations/skysport_condivisione.jpg?im=Resize,width=1218",
+          "dominio": "sport.sky.it",
+          "affidabilita": 3,
+          "quando": "14 g fa"
+        },
+        {
           "titolo": "Calciomercato – Nusa non si muove, la Roma resta senza esterno",
           "fonte": "Sport24h",
           "stato": "rumor",
@@ -3063,16 +3103,6 @@
           "dominio": "sport24h.it",
           "affidabilita": 2,
           "quando": "12 g fa"
-        },
-        {
-          "titolo": "Roma, ufficiale la cessione di Kumbulla al Rayo Vallecano: i dettagli",
-          "fonte": "Corriere dello Sport",
-          "stato": "done",
-          "link": "https://www.corrieredellosport.it/news/calcio/calcio-mercato/roma/2026/08/07-150401053/roma_ufficiale_la_cessione_di_kumbulla_al_rayo_vallecano_i_dettagli",
-          "img": "https://cdn.corrieredellosport.it/images/2026/08/07/174322159-fc0a174a-4e83-4c88-8eee-b381417d3db5.jpeg",
-          "dominio": "corrieredellosport.it",
-          "affidabilita": 2,
-          "quando": "13 g fa"
         },
         {
           "titolo": "Mercato AS ROMA | MERCATO ROMA Kumbulla, fatta col Rayo Vallecano",
@@ -3229,7 +3259,7 @@
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 1,
-            "quando": "10 ore fa"
+            "quando": "11 ore fa"
           },
           {
             "titolo": "Anteprima di Liga: Espanyol-Real Madrid, tutto quello che c'è da sapere",
@@ -3252,7 +3282,7 @@
           "img": "https://assets.goal.com/images/v3/bKJ579FbGUXB1ohQ-SEjG_DESKTOP/image.jpg",
           "dominio": "goal.com",
           "affidabilita": 1,
-          "quando": "10 ore fa"
+          "quando": "11 ore fa"
         },
         {
           "titolo": "Anteprima di Liga: Espanyol-Real Madrid, tutto quello che c'è da sapere",
@@ -3555,10 +3585,18 @@
             "fonte": "Toro News",
             "link": "https://www.toronews.net",
             "affidabilita": 1,
-            "quando": "2 g fa"
+            "quando": "3 g fa"
           }
         ],
-        "conf": [],
+        "conf": [
+          {
+            "titolo": "CALCIOMERCATO LIVE – ROMA, Ponce torna all’Elche: accordo fino a giugno 2027",
+            "fonte": "Laziochannel.it",
+            "link": "https://www.laziochannel.it",
+            "affidabilita": 1,
+            "quando": "3 g fa"
+          }
+        ],
         "done": []
       },
       "feed": [
@@ -3570,7 +3608,17 @@
           "img": "https://static.toronews.net/2026/07/GettyImages-2287205279_risultato-218aa4f6b9e5-1920x1280.jpg",
           "dominio": "toronews.net",
           "affidabilita": 1,
-          "quando": "2 g fa"
+          "quando": "3 g fa"
+        },
+        {
+          "titolo": "CALCIOMERCATO LIVE – ROMA, Ponce torna all’Elche: accordo fino a giugno 2027",
+          "fonte": "Laziochannel.it",
+          "stato": "conf",
+          "link": "https://www.laziochannel.it/2026/08/calciomercato-live-roma-ponce-torna-allelche-accordo-fino-a-giugno-2027/",
+          "img": "https://www.laziochannel.it/wp-content/uploads/2026/08/svcm-cover-358839-calciomercato-live-roma-ponce-torna-allelche-accordo-fino-a-giugno-2027.jpg",
+          "dominio": "laziochannel.it",
+          "affidabilita": 1,
+          "quando": "3 g fa"
         }
       ],
       "nomi": {
@@ -3676,7 +3724,7 @@
             "fonte": "eurosport.it",
             "link": "https://www.eurosport.it",
             "affidabilita": 2,
-            "quando": "13 ore fa"
+            "quando": "14 ore fa"
           },
           {
             "titolo": "La fascia della discordia, infortuni in serie e un mercato che non va: Liverpool, un'estate di guai",
@@ -3693,7 +3741,7 @@
             "fonte": "eurosport.it",
             "link": "https://www.eurosport.it",
             "affidabilita": 2,
-            "quando": "19 ore fa"
+            "quando": "7 ore fa"
           }
         ],
         "done": [
@@ -3702,7 +3750,7 @@
             "fonte": "La Gazzetta dello Sport",
             "link": "https://www.gazzetta.it",
             "affidabilita": 2,
-            "quando": "3 ore fa"
+            "quando": "4 ore fa"
           }
         ]
       },
@@ -3715,17 +3763,7 @@
           "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/08/19/6a860da693836.r_d.954-222-0.jpeg",
           "dominio": "gazzetta.it",
           "affidabilita": 2,
-          "quando": "3 ore fa"
-        },
-        {
-          "titolo": "Bandiera del Liverpool, esempio di duttilità: chi è Curtis Jones, il prossimo colpo dell'Inter",
-          "fonte": "eurosport.it",
-          "stato": "rumor",
-          "link": "https://www.eurosport.it/calcio/calciomercato/2026-2027/bandiera-del-liverpool-esempio-di-duttilita-chi-e-curtis-jones-il-prossimo-colpo-dellinter.-caratteristiche-tecniche-carriera-curiosita_sto23329509/story.shtml",
-          "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg):focal(168x82:170x80)/origin-imgresizer.eurosport.com/2026/08/19/image-8f02d973-c7f2-4dc7-8bf1-701ede9e0797-85-2560-1440.jpeg",
-          "dominio": "eurosport.it",
-          "affidabilita": 2,
-          "quando": "13 ore fa"
+          "quando": "4 ore fa"
         },
         {
           "titolo": "Curtis Jones all'Inter: accordo raggiunto! Al Liverpool andranno 35 milioni di euro tra parte fissa e bonus",
@@ -3735,7 +3773,17 @@
           "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg)/origin-imgresizer.eurosport.com/2026/08/19/image-74cbe290-f7af-4667-af08-9e1fe14df3bb-85-2560-1440.jpeg",
           "dominio": "eurosport.it",
           "affidabilita": 2,
-          "quando": "19 ore fa"
+          "quando": "7 ore fa"
+        },
+        {
+          "titolo": "Bandiera del Liverpool, esempio di duttilità: chi è Curtis Jones, il prossimo colpo dell'Inter",
+          "fonte": "eurosport.it",
+          "stato": "rumor",
+          "link": "https://www.eurosport.it/calcio/calciomercato/2026-2027/bandiera-del-liverpool-esempio-di-duttilita-chi-e-curtis-jones-il-prossimo-colpo-dellinter.-caratteristiche-tecniche-carriera-curiosita_sto23329509/story.shtml",
+          "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg):focal(168x82:170x80)/origin-imgresizer.eurosport.com/2026/08/19/image-8f02d973-c7f2-4dc7-8bf1-701ede9e0797-85-2560-1440.jpeg",
+          "dominio": "eurosport.it",
+          "affidabilita": 2,
+          "quando": "14 ore fa"
         }
       ],
       "nomi": {
@@ -3763,26 +3811,19 @@
             "fonte": "Sportmediaset",
             "link": "https://www.sportmediaset.mediaset.it",
             "affidabilita": 2,
-            "quando": "17 ore fa"
+            "quando": "19 ore fa"
           },
           {
             "titolo": "Arsenal, pronti 100 milioni per Yildiz! La Juve cosa fa: accetta o resiste?",
             "fonte": "eurosport.it",
             "link": "https://www.eurosport.it",
             "affidabilita": 2,
-            "quando": "19 ore fa"
+            "quando": "20 ore fa"
           },
           {
             "titolo": "Yildiz, l'Arsenal e l'ansia dei tifosi Juve: cosa c'è di vero",
             "fonte": "Tuttosport",
             "link": "https://www.tuttosport.com",
-            "affidabilita": 2,
-            "quando": "23 ore fa"
-          },
-          {
-            "titolo": "Calciomercato: Álvarez, Arteta e il Barcellona",
-            "fonte": "Oggi Sport Notizie",
-            "link": "https://www.oggisportnotizie.it",
             "affidabilita": 2,
             "quando": "1 g fa"
           },
@@ -3792,6 +3833,13 @@
             "link": "https://www.sportmediaset.mediaset.it",
             "affidabilita": 2,
             "quando": "3 g fa"
+          },
+          {
+            "titolo": "Calciomercato Napoli, il Chelsea disposto a cedere Jackson: l'Arsenal 'spara alto' per Gabriel Jesus",
+            "fonte": "NapoliToday",
+            "link": "https://www.napolitoday.it",
+            "affidabilita": 1,
+            "quando": "13 ore fa"
           }
         ],
         "obj": [
@@ -3800,7 +3848,14 @@
             "fonte": "Corriere dello Sport",
             "link": "https://www.corrieredellosport.it",
             "affidabilita": 2,
-            "quando": "1 ore fa"
+            "quando": "3 ore fa"
+          },
+          {
+            "titolo": "Juventus attenta: l'Arsenal mette Yildiz nel mirino",
+            "fonte": "eurosport.it",
+            "link": "https://www.eurosport.it",
+            "affidabilita": 2,
+            "quando": "11 g fa"
           }
         ],
         "conf": [],
@@ -3825,7 +3880,7 @@
           "img": "https://cdn.corrieredellosport.it/images/2026/08/20/062806592-369c4dff-aa9e-41a0-9525-947d177b2bf6.jpg",
           "dominio": "corrieredellosport.it",
           "affidabilita": 2,
-          "quando": "1 ore fa"
+          "quando": "3 ore fa"
         },
         {
           "titolo": "Arsenal, colpo milionario per Arteta: arriva Konsa, le cifre",
@@ -3835,7 +3890,7 @@
           "img": "https://img-api.cloud.mediaset.net/api/images/cu/v2/-/1200/675/aHR0cHM6Ly93d3cuc3BvcnRtZWRpYXNldC5tZWRpYXNldC5pdC9hc3NldHMvbWlzYy9zcG9ydG1lZGlhc2V0LWJhY2tncm91bmQucG5n?r=-1",
           "dominio": "sportmediaset.mediaset.it",
           "affidabilita": 2,
-          "quando": "17 ore fa"
+          "quando": "19 ore fa"
         }
       ],
       "nomi": {
@@ -3856,7 +3911,7 @@
             "fonte": "eurosport.it",
             "link": "https://www.eurosport.it",
             "affidabilita": 2,
-            "quando": "16 ore fa"
+            "quando": "17 ore fa"
           },
           {
             "titolo": "Rodri al Barcellona! Il capitano della Spagna lascia il Man City per 75 milioni",
@@ -3877,14 +3932,14 @@
             "fonte": "Tuttosport",
             "link": "https://www.tuttosport.com",
             "affidabilita": 2,
-            "quando": "1 g fa"
+            "quando": "2 g fa"
           },
           {
             "titolo": "Manchester City su Koné: la Roma chiede 55 milioni",
             "fonte": "Pagine Romaniste",
             "link": "https://pagineromaniste.com",
             "affidabilita": 1,
-            "quando": "12 ore fa"
+            "quando": "14 ore fa"
           }
         ],
         "obj": [
@@ -3893,21 +3948,21 @@
             "fonte": "Diretta",
             "link": "https://www.diretta.it",
             "affidabilita": 1,
-            "quando": "11 ore fa"
+            "quando": "1 ore fa"
           },
           {
             "titolo": "Calciomercato Roma, dall'Inghilterra: Koné nel mirino del Manchester City",
             "fonte": "LaRoma24",
             "link": "https://laroma24.it",
             "affidabilita": 1,
-            "quando": "12 ore fa"
+            "quando": "14 ore fa"
           },
           {
             "titolo": "Calciomercato Roma LIVE: pressing su Fofana. Il Manchester City vuole Koné",
             "fonte": "Forzaroma.info",
             "link": "https://www.forzaroma.info",
             "affidabilita": 1,
-            "quando": "13 ore fa"
+            "quando": "14 ore fa"
           }
         ],
         "conf": [
@@ -3932,7 +3987,7 @@
             "fonte": "Calciomercato",
             "link": "https://www.calciomercato.com",
             "affidabilita": 1,
-            "quando": "17 ore fa"
+            "quando": "18 ore fa"
           },
           {
             "titolo": "Barcellona, ufficiale il colpo Rodri: le cifre",
@@ -3962,7 +4017,7 @@
           "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg):focal(198x86:200x84)/origin-imgresizer.eurosport.com/2026/08/19/image-655c59e9-5f4b-4c5a-80ce-d2398129d053-85-2560-1440.jpeg",
           "dominio": "eurosport.it",
           "affidabilita": 2,
-          "quando": "16 ore fa"
+          "quando": "17 ore fa"
         },
         {
           "titolo": "Rodri al Barcellona! Il capitano della Spagna lascia il Man City per 75 milioni",
@@ -4008,6 +4063,13 @@
             "link": "https://www.tuttosport.com",
             "affidabilita": 2,
             "quando": "17 g fa"
+          },
+          {
+            "titolo": "Il Chelsea ha una rosa da 40 giocatori, di nuovo, e così un gruppo è costretto ad allenarsi lontano dalla prima squadra",
+            "fonte": "Rivista Undici",
+            "link": "https://www.rivistaundici.com",
+            "affidabilita": 1,
+            "quando": "poco fa"
           },
           {
             "titolo": "Il Chelsea ha 46 giocatori in rosa e dovrà svendere mezza squadra entro la fine del calciomercato",
@@ -4111,6 +4173,13 @@
             "quando": "5 g fa"
           },
           {
+            "titolo": "Lo United prepara il colpaccio: vicino un acquisto da 75 milioni di euro",
+            "fonte": "Sportmediaset",
+            "link": "https://www.sportmediaset.mediaset.it",
+            "affidabilita": 2,
+            "quando": "1 g fa"
+          },
+          {
             "titolo": "Calciomercato notizie",
             "fonte": "eurosport.it",
             "link": "https://www.eurosport.it",
@@ -4122,48 +4191,33 @@
             "fonte": "Tuttosport",
             "link": "https://www.tuttosport.com",
             "affidabilita": 2,
-            "quando": "1 g fa"
+            "quando": "2 g fa"
           },
           {
-            "titolo": "Juve, avanti tutta con Zirkzee: c'è l'ok del Manchester United. David in uscita",
-            "fonte": "La Gazzetta dello Sport",
-            "link": "https://www.gazzetta.it",
+            "titolo": "Milan, si ferma Leao: non convocato per la sfida con il Manchester United",
+            "fonte": "Corriere dello Sport",
+            "link": "https://www.corrieredellosport.it",
             "affidabilita": 2,
-            "quando": "14 g fa"
-          },
-          {
-            "titolo": "Roma più serena su Manu Koné, il Manchester United vira su Carlos Baleba del Brighton: offerti 75 milioni di euro",
-            "fonte": "Calciomercato",
-            "link": "https://www.calciomercato.com",
-            "affidabilita": 1,
-            "quando": "22 ore fa"
+            "quando": "5 g fa"
           }
         ],
         "obj": [
-          {
-            "titolo": "Barcellona, Gavi rifiuta offerta del Manchester United: vuole restare blaugrana",
-            "fonte": "Sportmediaset",
-            "link": "https://www.sportmediaset.mediaset.it",
-            "affidabilita": 2,
-            "quando": "1 g fa"
-          },
           {
             "titolo": "Assalto dello United a Koné, sta per arrivare l’offerta: per la Roma vale 50 milioni",
             "fonte": "Corriere dello Sport",
             "link": "https://www.corrieredellosport.it",
             "affidabilita": 2,
             "quando": "1 g fa"
-          }
-        ],
-        "conf": [
+          },
           {
-            "titolo": "Calciomercato Roma, Konè più lontano dallo United: Red Devils in chiusura per Baleba del Brighton",
-            "fonte": "LaRoma24",
-            "link": "https://laroma24.it",
-            "affidabilita": 1,
-            "quando": "23 ore fa"
+            "titolo": "Juventus, si scalda la pista Zirkzee: ora il Manchester United apre al prestito",
+            "fonte": "Sportmediaset",
+            "link": "https://www.sportmediaset.mediaset.it",
+            "affidabilita": 2,
+            "quando": "14 g fa"
           }
         ],
+        "conf": [],
         "done": []
       },
       "feed": [
@@ -4188,11 +4242,11 @@
           "quando": "5 g fa"
         },
         {
-          "titolo": "Barcellona, Gavi rifiuta offerta del Manchester United: vuole restare blaugrana",
+          "titolo": "Lo United prepara il colpaccio: vicino un acquisto da 75 milioni di euro",
           "fonte": "Sportmediaset",
-          "stato": "obj",
-          "link": "https://www.sportmediaset.mediaset.it/mercato/barcellona-gavi-rifiuta-offerta-del-manchester-united-vuole-restare-blaugrana_115622064-202602k.shtml",
-          "img": "https://img-api.cloud.mediaset.net/api/images/kn/v1/image_main/1200/675/115622233?r=5",
+          "stato": "rumor",
+          "link": "https://www.sportmediaset.mediaset.it/mercato/lo-united-prepara-il-colpaccio-vicino-un-acquisto-da-75-milioni-di-euro_115626612-202602k.shtml",
+          "img": "https://img-api.cloud.mediaset.net/api/images/cu/v2/-/1200/675/aHR0cHM6Ly93d3cuc3BvcnRtZWRpYXNldC5tZWRpYXNldC5pdC9hc3NldHMvbWlzYy9zcG9ydG1lZGlhc2V0LWJhY2tncm91bmQucG5n?r=-1",
           "dominio": "sportmediaset.mediaset.it",
           "affidabilita": 2,
           "quando": "1 g fa"
@@ -4266,6 +4320,13 @@
             "quando": "1 g fa"
           },
           {
+            "titolo": "Vicario per forza: perché la Juve ha preso il portiere che non convinceva Spalletti",
+            "fonte": "La Gazzetta dello Sport",
+            "link": "https://www.gazzetta.it",
+            "affidabilita": 2,
+            "quando": "2 g fa"
+          },
+          {
             "titolo": "Inter, è fatta per Spence: i dettagli dell'affare con il Tottenham",
             "fonte": "Corriere dello Sport",
             "link": "https://www.corrieredellosport.it",
@@ -4296,14 +4357,14 @@
           "quando": "1 g fa"
         },
         {
-          "titolo": "Juventus in chiusura per Vicario, il Tottenham apre al prestito: i dettagli",
-          "fonte": "eurosport.it",
-          "stato": "conf",
-          "link": "https://www.eurosport.it/calcio/calciomercato/2026-2027/la-juventus-ha-scelto-il-suo-portiere-ed-e-in-chiusura-per-guglielmo-vicario-il-tottenham-hotspur-apre-al-prestito-i-dettagli-dellaffare_sto23328773/story.shtml",
-          "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg):focal(192x41:194x39)/origin-imgresizer.eurosport.com/2026/06/16/image-6447a131-80b1-4744-ab81-53aa75398d1d-85-2560-1440.jpeg",
-          "dominio": "eurosport.it",
+          "titolo": "Vicario per forza: perché la Juve ha preso il portiere che non convinceva Spalletti",
+          "fonte": "La Gazzetta dello Sport",
+          "stato": "done",
+          "link": "https://www.gazzetta.it/Calcio/Calciomercato/Juventus/17-08-2026/vicario-juventus-scelta-di-calciomercato.shtml",
+          "img": "https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/04/29/69f1d3fcbc926.r_d.1065-261-0.jpeg",
+          "dominio": "gazzetta.it",
           "affidabilita": 2,
-          "quando": "3 g fa"
+          "quando": "2 g fa"
         }
       ],
       "nomi": {
@@ -4395,7 +4456,7 @@
             "fonte": "Sky Sport",
             "link": "https://sport.sky.it",
             "affidabilita": 3,
-            "quando": "22 ore fa"
+            "quando": "23 ore fa"
           },
           {
             "titolo": "Zion Suzuki e Matteo Ruggeri sono due nuovi giocatori dell’Aston Villa",
@@ -4416,14 +4477,14 @@
             "fonte": "La Gazzetta dello Sport",
             "link": "https://www.gazzetta.it",
             "affidabilita": 2,
-            "quando": "12 ore fa"
+            "quando": "13 ore fa"
           },
           {
             "titolo": "L'Aston Villa fa la spesa: ufficializzati Ruggeri dall'Atletico e Suzuki dal Parma",
             "fonte": "eurosport.it",
             "link": "https://www.eurosport.it",
             "affidabilita": 2,
-            "quando": "17 ore fa"
+            "quando": "18 ore fa"
           },
           {
             "titolo": "Calciomercato Juventus, retroscena Dibu Martinez: costi e infortunio, i motivi del no",
@@ -4442,21 +4503,22 @@
             "quando": "3 g fa"
           }
         ],
-        "conf": [],
+        "conf": [
+          {
+            "titolo": "Dieng e Sutalo vicini alla Lazio, Aston Villa su Tomori. Milan-Como, accordo per Ricci",
+            "fonte": "eurosport.it",
+            "link": "https://www.eurosport.it",
+            "affidabilita": 2,
+            "quando": "poco fa"
+          }
+        ],
         "done": [
           {
             "titolo": "Aston Villa, è ufficiale l'acquisto di Zion Suzuki dal Parma",
             "fonte": "Sportmediaset",
             "link": "https://www.sportmediaset.mediaset.it",
             "affidabilita": 2,
-            "quando": "23 ore fa"
-          },
-          {
-            "titolo": "Ufficiale, Matteo Ruggeri è dell’Aston Villa: indosserà la maglia numero 13",
-            "fonte": "BergamoNews",
-            "link": "https://www.bergamonews.it",
-            "affidabilita": 1,
-            "quando": "20 ore fa"
+            "quando": "1 g fa"
           },
           {
             "titolo": "Le notizie del 16 agosto 2026 del calciomercato: la Juve riapre la trattativa per Dibu Martinez, e intanto arriva Lucumi. Suzuki dal Parma all'Aston Villa, è fatta. Il portiere Perri vicino al Torino",
@@ -4476,7 +4538,7 @@
           "img": "https://sport.sky.it/assets/images/14d5c696197b893026f49dd26114d28a5e32d393/skysport/it/calcio/calciomercato/video/2026/08/19/1118551_1787135652116_thumb_494.0000001_1787136400197.jpg?im=Resize,width=1218",
           "dominio": "sport.sky.it",
           "affidabilita": 3,
-          "quando": "22 ore fa"
+          "quando": "23 ore fa"
         },
         {
           "titolo": "Zion Suzuki e Matteo Ruggeri sono due nuovi giocatori dell’Aston Villa",
@@ -4524,14 +4586,14 @@
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 1,
-            "quando": "6 ore fa"
+            "quando": "8 ore fa"
           },
           {
             "titolo": "Come comprare i biglietti del Brighton per il 2026/27: prezzi, partite e altro",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 1,
-            "quando": "7 ore fa"
+            "quando": "8 ore fa"
           },
           {
             "titolo": "Brighton più forte e più avanti, Bologna sconfitto 1-0 in Inghilterra nell'ultimo test precampionato: decide Hinshelwood",
@@ -4578,7 +4640,7 @@
           "img": "https://assets.goal.com/images/v3/isAVhW8PZmc8TGy-HtQvG_DESKTOP/image.jpg",
           "dominio": "goal.com",
           "affidabilita": 1,
-          "quando": "6 ore fa"
+          "quando": "8 ore fa"
         },
         {
           "titolo": "Come comprare i biglietti del Brighton per il 2026/27: prezzi, partite e altro",
@@ -4588,7 +4650,7 @@
           "img": "https://assets.goal.com/images/v3/blt5657e6a1c96896f6/Brighton_and_Hove_stadium_.png",
           "dominio": "goal.com",
           "affidabilita": 1,
-          "quando": "7 ore fa"
+          "quando": "8 ore fa"
         }
       ],
       "nomi": {
@@ -4684,6 +4746,13 @@
             "quando": "8 g fa"
           },
           {
+            "titolo": "Lecce, il Crystal Palace sfida il Milan per Tiago Gabriel",
+            "fonte": "Sportmediaset",
+            "link": "https://www.sportmediaset.mediaset.it",
+            "affidabilita": 2,
+            "quando": "poco fa"
+          },
+          {
             "titolo": "La telenovela portieri: Perri chiude una pratica che durava da mesi",
             "fonte": "Toro News",
             "link": "https://www.toronews.net",
@@ -4736,22 +4805,22 @@
           "quando": "8 g fa"
         },
         {
+          "titolo": "Lecce, il Crystal Palace sfida il Milan per Tiago Gabriel",
+          "fonte": "Sportmediaset",
+          "stato": "rumor",
+          "link": "https://www.sportmediaset.mediaset.it/mercato/lecce-crystal-palace-forte-su-tiago-gabriel_115649808-202602k.shtml",
+          "img": "https://img-api.cloud.mediaset.net/api/images/cu/v2/-/1200/675/aHR0cHM6Ly93d3cuc3BvcnRtZWRpYXNldC5tZWRpYXNldC5pdC9hc3NldHMvbWlzYy9zcG9ydG1lZGlhc2V0LWJhY2tncm91bmQucG5n?r=-1",
+          "dominio": "sportmediaset.mediaset.it",
+          "affidabilita": 2,
+          "quando": "poco fa"
+        },
+        {
           "titolo": "Dal trasferimento sfumato all'Inter a una nuova meta: \"Khalaili ha l'accordo con il Crystal Palace\"",
           "fonte": "Corriere dello Sport",
           "stato": "conf",
           "link": "https://www.corrieredellosport.it/news/calcio/calcio-mercato/2026/08/10-150458811/dal_trasferimento_sfumato_all_inter_a_una_nuova_meta_khalaili_ha_l_accordo_con_il_crystal_palace",
           "img": "https://cdn.corrieredellosport.it/images/2026/08/10/115849561-84f16534-37a6-4a78-9a0c-81adedfa2676.jpg",
           "dominio": "corrieredellosport.it",
-          "affidabilita": 2,
-          "quando": "10 g fa"
-        },
-        {
-          "titolo": "Khalaili, dall'Inter alla Premier: accordo col Crystal Palace",
-          "fonte": "Sportmediaset",
-          "stato": "conf",
-          "link": "https://www.sportmediaset.mediaset.it/mercato/khalaili-dall-inter-alla-premier-accordo-col-crystal-palace_115314010-202602k.shtml",
-          "img": "https://img-api.cloud.mediaset.net/api/images/kn/v1/image_main/1200/675/115318001?r=14",
-          "dominio": "sportmediaset.mediaset.it",
           "affidabilita": 2,
           "quando": "10 g fa"
         }
@@ -4940,7 +5009,7 @@
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 1,
-            "quando": "21 ore fa"
+            "quando": "23 ore fa"
           }
         ],
         "obj": [],
@@ -4956,7 +5025,7 @@
           "img": "https://assets.goal.com/images/v3/blt517c9139f816b978/Craven%20Cottage%20Fulham%20FC%20-%20Getty%20Images.png",
           "dominio": "goal.com",
           "affidabilita": 1,
-          "quando": "21 ore fa"
+          "quando": "23 ore fa"
         }
       ],
       "nomi": {
@@ -4977,7 +5046,7 @@
             "fonte": "eurosport.it",
             "link": "https://www.eurosport.it",
             "affidabilita": 2,
-            "quando": "13 ore fa"
+            "quando": "14 ore fa"
           }
         ],
         "obj": [],
@@ -4987,7 +5056,7 @@
             "fonte": "eurosport.it",
             "link": "https://www.eurosport.it",
             "affidabilita": 2,
-            "quando": "19 ore fa"
+            "quando": "21 ore fa"
           }
         ],
         "done": []
@@ -5001,7 +5070,7 @@
           "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg):focal(168x82:170x80)/origin-imgresizer.eurosport.com/2026/08/19/image-8f02d973-c7f2-4dc7-8bf1-701ede9e0797-85-2560-1440.jpeg",
           "dominio": "eurosport.it",
           "affidabilita": 2,
-          "quando": "13 ore fa"
+          "quando": "14 ore fa"
         },
         {
           "titolo": "Curtis Jones all'Inter: accordo raggiunto! Al Liverpool andranno 35 milioni di euro tra parte fissa e bonus",
@@ -5011,7 +5080,7 @@
           "img": "https://imgresizer.eurosport.com/unsafe/2400x1260/filters:format(jpeg)/origin-imgresizer.eurosport.com/2026/08/19/image-74cbe290-f7af-4667-af08-9e1fe14df3bb-85-2560-1440.jpeg",
           "dominio": "eurosport.it",
           "affidabilita": 2,
-          "quando": "19 ore fa"
+          "quando": "21 ore fa"
         }
       ],
       "nomi": {
@@ -5028,7 +5097,7 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "Chi ha speso di più finora sul mercato: solo due big davanti alla Juve",
+            "titolo": "Chi ha speso di più finora sul mercato: solo due big davanti alla Juve. Milan in top 10",
             "fonte": "Sky Sport",
             "link": "https://sport.sky.it",
             "affidabilita": 3,
@@ -5056,7 +5125,7 @@
       },
       "feed": [
         {
-          "titolo": "Chi ha speso di più finora sul mercato: solo due big davanti alla Juve",
+          "titolo": "Chi ha speso di più finora sul mercato: solo due big davanti alla Juve. Milan in top 10",
           "fonte": "Sky Sport",
           "stato": "rumor",
           "link": "https://sport.sky.it/calciomercato/calciomercato-2026-squadre-acquisti-spese-sessione-estiva-classifica",
@@ -5111,14 +5180,14 @@
             "fonte": "Sportmediaset",
             "link": "https://www.sportmediaset.mediaset.it",
             "affidabilita": 2,
-            "quando": "22 ore fa"
+            "quando": "23 ore fa"
           },
           {
             "titolo": "Perché Dodô può lasciare la Fiorentina: da titolarissimo a sacrificabile, c’è il Nottingham Forest",
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 1,
-            "quando": "11 ore fa"
+            "quando": "13 ore fa"
           },
           {
             "titolo": "Milan, Amorim decide il nuovo progetto: Fofana verso l’addio, si scalda l’asse con la Juventus -",
@@ -5158,7 +5227,7 @@
           "img": "https://img-api.cloud.mediaset.net/api/images/cu/v2/-/1200/675/aHR0cHM6Ly93d3cuc3BvcnRtZWRpYXNldC5tZWRpYXNldC5pdC9hc3NldHMvbWlzYy9zcG9ydG1lZGlhc2V0LWJhY2tncm91bmQucG5n?r=-1",
           "dominio": "sportmediaset.mediaset.it",
           "affidabilita": 2,
-          "quando": "22 ore fa"
+          "quando": "23 ore fa"
         },
         {
           "titolo": "Perché Dodô può lasciare la Fiorentina: da titolarissimo a sacrificabile, c’è il Nottingham Forest",
@@ -5168,7 +5237,7 @@
           "img": "https://assets.goal.com/images/v3/blt3715c92b8db2f0ec/GettyImages-2277157245(1).jpg",
           "dominio": "goal.com",
           "affidabilita": 1,
-          "quando": "11 ore fa"
+          "quando": "13 ore fa"
         }
       ],
       "nomi": {
@@ -5226,7 +5295,7 @@
             "fonte": "Toro News",
             "link": "https://www.toronews.net",
             "affidabilita": 1,
-            "quando": "18 ore fa"
+            "quando": "19 ore fa"
           },
           {
             "titolo": "Calciomercato Torino: “Per Njie il Crystal Palace arriva a 20 milioni”",
@@ -5277,7 +5346,7 @@
           "img": "https://static.toronews.net/2026/08/GettyImages-2288748300-1-abc115d0ac3f-1920x1280.jpg",
           "dominio": "toronews.net",
           "affidabilita": 1,
-          "quando": "18 ore fa"
+          "quando": "19 ore fa"
         },
         {
           "titolo": "Calciomercato Torino: “Per Njie il Crystal Palace arriva a 20 milioni”",
@@ -5325,7 +5394,7 @@
             "fonte": "Calciomercato",
             "link": "https://www.calciomercato.com",
             "affidabilita": 1,
-            "quando": "21 ore fa"
+            "quando": "22 ore fa"
           }
         ],
         "obj": [],
@@ -5351,7 +5420,7 @@
           "img": "https://assets.calciomercato.com/images/v3/yX9Iwq2uLGCTLbU24c3sT_DESKTOP/image.jpg",
           "dominio": "calciomercato.com",
           "affidabilita": 1,
-          "quando": "21 ore fa"
+          "quando": "22 ore fa"
         }
       ],
       "nomi": {
