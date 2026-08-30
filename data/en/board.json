@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-08-30T20:07:45",
+  "aggiornato": "2026-08-30T22:57:35",
   "giorno": "Sunday 30 August",
   "squadre": {
     "Inter": {
@@ -13,7 +13,7 @@
             "fonte": "BBC Sport",
             "link": "https://www.bbc.co.uk/sport/football/articles/ckg8x1wwgn8o?at_medium=RSS&at_campaign=rss",
             "affidabilita": 3,
-            "quando": "20h ago"
+            "quando": "23h ago"
           },
           {
             "titolo": "Inter complete £30m deal for Liverpool's Jones",
@@ -30,25 +30,25 @@
             "quando": "10d ago"
           },
           {
-            "titolo": "Serie A Liveblog: Napoli-Como, Cagliari-Inter, Lazio-Genoa",
+            "titolo": "Djed Spence transfer news: Tottenham defender completes £30m Inter Milan move",
+            "fonte": "Sky Sports",
+            "link": "https://www.skysports.com",
+            "affidabilita": 3,
+            "quando": "15d ago"
+          },
+          {
+            "titolo": "Serie A | Cagliari 0-1 Inter: Calhanoglu decisive in Sardinia",
             "fonte": "Football Italia",
-            "link": "https://football-italia.net/serie-a-napoli-como-cagliari-inter-lazio-genoa/",
+            "link": "https://football-italia.net/serie-a-cagliari-0-1-inter-calhanoglu-decisive/",
             "affidabilita": 2,
             "quando": "just now"
           },
           {
-            "titolo": "Juventus final Sarr details for €33m with Tottenham, also interested in Bakola",
+            "titolo": "Serie A Liveblog: Napoli-Como, Cagliari-Inter, Lazio-Genoa",
             "fonte": "Football Italia",
-            "link": "https://football-italia.net/juventus-final-sarr-details-tottenham-bakola/",
+            "link": "https://football-italia.net/serie-a-napoli-como-cagliari-inter-lazio-genoa/",
             "affidabilita": 2,
-            "quando": "3h ago"
-          },
-          {
-            "titolo": "Liverpool star accused of 'white lie' as he tries to force through summer transfer",
-            "fonte": "The Mirror",
-            "link": "https://www.mirror.co.uk",
-            "affidabilita": 2,
-            "quando": "13d ago"
+            "quando": "2h ago"
           }
         ],
         "obj": [
@@ -61,13 +61,6 @@
           }
         ],
         "conf": [
-          {
-            "titolo": "Inter Milan close to agreeing deal to sign Curtis Jones from Liverpool as talks revived",
-            "fonte": "The Mirror",
-            "link": "https://www.mirror.co.uk",
-            "affidabilita": 2,
-            "quando": "11d ago"
-          },
           {
             "titolo": "Tottenham 'reach Djed Spence transfer agreement' with Inter",
             "fonte": "Football London",
@@ -82,7 +75,7 @@
             "fonte": "Football Italia",
             "link": "https://football-italia.net/serie-a-official-line-ups-cagliari-vs-inter/",
             "affidabilita": 2,
-            "quando": "just now"
+            "quando": "3h ago"
           }
         ]
       },
@@ -95,7 +88,7 @@
           "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/81d5/live/bea6b8d0-a3ed-11f1-a291-b542ee92de7c.png",
           "dominio": "bbc.co.uk",
           "affidabilita": 3,
-          "quando": "20h ago"
+          "quando": "23h ago"
         },
         {
           "titolo": "Inter complete £30m deal for Liverpool's Jones",
@@ -150,7 +143,14 @@
             "fonte": "Football Italia",
             "link": "https://football-italia.net/juventus-final-sarr-details-tottenham-bakola/",
             "affidabilita": 2,
-            "quando": "3h ago"
+            "quando": "5h ago"
+          },
+          {
+            "titolo": "Arsenal sent new transfer update over £85m football 'phenomenon'",
+            "fonte": "London Evening Standard",
+            "link": "https://www.standard.co.uk",
+            "affidabilita": 2,
+            "quando": "6d ago"
           },
           {
             "titolo": "Juventus issue warning to Arsenal over Kenan Yildiz transfer",
@@ -160,26 +160,36 @@
             "quando": "8d ago"
           },
           {
-            "titolo": "Lazio eyeing potential deal for out-of-favour Juventus winger Zhegrova",
-            "fonte": "Football Italia",
-            "link": "https://football-italia.net",
-            "affidabilita": 1,
-            "quando": "2d ago"
+            "titolo": "Emi Martinez's Juventus transfer collapses despite Aston Villa signing £30million replacement for Argentine",
+            "fonte": "The Sun",
+            "link": "https://www.thesun.co.uk",
+            "affidabilita": 2,
+            "quando": "13d ago"
           }
         ],
         "obj": [],
-        "conf": [
+        "conf": [],
+        "done": [
           {
-            "titolo": "Juventus confirm Guglielmo Vicario transfer details in cut-price Tottenham agreement",
-            "fonte": "Football London",
-            "link": "https://www.football.london",
-            "affidabilita": 1,
-            "quando": "12d ago"
+            "titolo": "'I felt the club's desire to have me here' - Di Gregorio joins Cherries on loan",
+            "fonte": "BBC",
+            "link": "https://www.bbc.com",
+            "affidabilita": 3,
+            "quando": "5d ago"
           }
-        ],
-        "done": []
+        ]
       },
       "feed": [
+        {
+          "titolo": "'I felt the club's desire to have me here' - Di Gregorio joins Cherries on loan",
+          "fonte": "BBC",
+          "stato": "done",
+          "link": "https://www.bbc.com/sport/football/articles/cqlw3wypl30o",
+          "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/a929/live/b760a540-a078-11f1-bf10-9547e884d7b7.jpg",
+          "dominio": "bbc.com",
+          "affidabilita": 3,
+          "quando": "5d ago"
+        },
         {
           "titolo": "Guglielmo Vicario transfer news: Juventus agree deal to sign Spurs goalkeeper on loan as Emi Martinez alternative",
           "fonte": "Sky Sports",
@@ -199,16 +209,6 @@
           "dominio": "theguardian.com",
           "affidabilita": 3,
           "quando": "13d ago"
-        },
-        {
-          "titolo": "Juventus final Sarr details for €33m with Tottenham, also interested in Bakola",
-          "fonte": "Football Italia",
-          "stato": "rumor",
-          "link": "https://football-italia.net/juventus-final-sarr-details-tottenham-bakola/",
-          "img": "https://icdn.football-italia.net/wp-content/uploads/2026/08/Pape-Matar-Sarr-close-up.jpg",
-          "dominio": "football-italia.net",
-          "affidabilita": 2,
-          "quando": "3h ago"
         }
       ],
       "nomi": {
@@ -239,32 +239,32 @@
             "quando": "5d ago"
           },
           {
-            "titolo": "Curtis Jones transfer news: Inter Milan agree £30m deal for Liverpool midfielder",
-            "fonte": "BBC",
-            "link": "https://www.bbc.com",
-            "affidabilita": 3,
-            "quando": "11d ago"
+            "titolo": "Fabregas reveals Como ‘learned’ from Milan games, hails ‘underrated’ new signing",
+            "fonte": "Football Italia",
+            "link": "https://football-italia.net/fabregas-como-learn-milan-games-underrated/",
+            "affidabilita": 2,
+            "quando": "1h ago"
+          },
+          {
+            "titolo": "Video: Hutchinson arrives for Milan transfer from Nottingham Forest",
+            "fonte": "Football Italia",
+            "link": "https://football-italia.net/video-hutchinson-arrives-milan-transfer-forest/",
+            "affidabilita": 2,
+            "quando": "2h ago"
           },
           {
             "titolo": "Bahoya rejection of Hull City gives Milan and Roma hope",
             "fonte": "Football Italia",
             "link": "https://football-italia.net/bahoya-rejection-hull-city-milan-roma-hope/",
             "affidabilita": 2,
-            "quando": "3h ago"
+            "quando": "6h ago"
           },
           {
             "titolo": "Yoro and Balde on Milan’s radar after selling Leao to Galatasaray",
             "fonte": "Football Italia",
             "link": "https://football-italia.net/yoro-and-balde-on-milans-radar-after-leao/",
             "affidabilita": 2,
-            "quando": "4h ago"
-          },
-          {
-            "titolo": "Rafael Leão free to leave AC Milan amid Galatasaray, Aston Villa links - Ruben Amorim",
-            "fonte": "ESPN",
-            "link": "https://www.espn.co.uk",
-            "affidabilita": 2,
-            "quando": "2d ago"
+            "quando": "7h ago"
           }
         ],
         "obj": [
@@ -273,24 +273,25 @@
             "fonte": "Metro.co.uk",
             "link": "https://metro.co.uk",
             "affidabilita": 2,
+            "quando": "11h ago"
+          }
+        ],
+        "conf": [
+          {
+            "titolo": "Nottingham Forest 'reach agreement' with AC Milan as winger set for Serie A move",
+            "fonte": "Nottingham Post",
+            "link": "https://www.nottinghampost.com",
+            "affidabilita": 1,
             "quando": "8h ago"
           }
         ],
-        "conf": [],
         "done": [
           {
             "titolo": "Transfer news 2026: live updates, rumours & done deals",
             "fonte": "BeSoccer Livescore",
             "link": "https://www.besoccer.com",
             "affidabilita": 1,
-            "quando": "6h ago"
-          },
-          {
-            "titolo": "Done Deal: Gimenez ready for FC Porto in €20m Milan agreement",
-            "fonte": "Football Italia",
-            "link": "https://football-italia.net",
-            "affidabilita": 1,
-            "quando": "19h ago"
+            "quando": "8h ago"
           },
           {
             "titolo": "Every Premier League transfer confirmed in the summer of 2026",
@@ -323,14 +324,14 @@
           "quando": "5d ago"
         },
         {
-          "titolo": "Curtis Jones transfer news: Inter Milan agree £30m deal for Liverpool midfielder",
-          "fonte": "BBC",
+          "titolo": "Fabregas reveals Como ‘learned’ from Milan games, hails ‘underrated’ new signing",
+          "fonte": "Football Italia",
           "stato": "rumor",
-          "link": "https://www.bbc.com/sport/football/articles/clye43vge5jo",
-          "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/3d51/live/eeaadb30-9bd5-11f1-bd98-ed4222d45acc.jpg",
-          "dominio": "bbc.com",
-          "affidabilita": 3,
-          "quando": "11d ago"
+          "link": "https://football-italia.net/fabregas-como-learn-milan-games-underrated/",
+          "img": "https://icdn.football-italia.net/wp-content/uploads/2026/08/Cesc-Fabregas-shout.jpg",
+          "dominio": "football-italia.net",
+          "affidabilita": 2,
+          "quando": "1h ago"
         }
       ],
       "nomi": {
@@ -351,7 +352,7 @@
             "fonte": "BBC Sport",
             "link": "https://www.bbc.co.uk/sport/football/articles/ckg8x1wwgn8o?at_medium=RSS&at_campaign=rss",
             "affidabilita": 3,
-            "quando": "20h ago"
+            "quando": "23h ago"
           },
           {
             "titolo": "Football transfer rumours: Rafael Leão to Aston Villa? Harvey Elliott to Napoli or Lazio?",
@@ -361,32 +362,32 @@
             "quando": "2d ago"
           },
           {
+            "titolo": "Allegri outlines Napoli and McTominay’s problems against Como",
+            "fonte": "Football Italia",
+            "link": "https://football-italia.net/allegri-napoli-mctominay-problems-como/",
+            "affidabilita": 2,
+            "quando": "1h ago"
+          },
+          {
             "titolo": "Serie A Liveblog: Napoli-Como, Cagliari-Inter, Lazio-Genoa",
             "fonte": "Football Italia",
             "link": "https://football-italia.net/serie-a-napoli-como-cagliari-inter-lazio-genoa/",
             "affidabilita": 2,
-            "quando": "just now"
+            "quando": "2h ago"
+          },
+          {
+            "titolo": "Serie A | Napoli 1-2 Como: Fabregas earns big victory at the Maradona",
+            "fonte": "Football Italia",
+            "link": "https://football-italia.net/serie-a-napoli-1-2-como-fabregas-earns-victory/",
+            "affidabilita": 2,
+            "quando": "2h ago"
           },
           {
             "titolo": "Allegri explains surprising Napoli changes with Como and Conte difference",
             "fonte": "Football Italia",
             "link": "https://football-italia.net/allegri-explains-surprise-napoli-changes-como/",
             "affidabilita": 2,
-            "quando": "1h ago"
-          },
-          {
-            "titolo": "Napoli set to miss out on Gabriel Jesus as Barcelona agree terms with Arsenal",
-            "fonte": "Football Italia",
-            "link": "https://football-italia.net/napoli-lose-gabriel-jesus-to-barcelona/",
-            "affidabilita": 2,
             "quando": "4h ago"
-          },
-          {
-            "titolo": "Napoli transfer delayed: Why Jesper Lindstrøm’s Schalke move is currently on hold",
-            "fonte": "Yahoo Sports",
-            "link": "https://sports.yahoo.com",
-            "affidabilita": 1,
-            "quando": "27d ago"
           }
         ],
         "obj": [],
@@ -397,7 +398,7 @@
             "fonte": "Football Italia",
             "link": "https://football-italia.net/serie-a-official-line-ups-napoli-vs-como-wk2/",
             "affidabilita": 2,
-            "quando": "2h ago"
+            "quando": "5h ago"
           }
         ]
       },
@@ -410,7 +411,7 @@
           "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/81d5/live/bea6b8d0-a3ed-11f1-a291-b542ee92de7c.png",
           "dominio": "bbc.co.uk",
           "affidabilita": 3,
-          "quando": "20h ago"
+          "quando": "23h ago"
         },
         {
           "titolo": "Football transfer rumours: Rafael Leão to Aston Villa? Harvey Elliott to Napoli or Lazio?",
@@ -423,14 +424,14 @@
           "quando": "2d ago"
         },
         {
-          "titolo": "Serie A Liveblog: Napoli-Como, Cagliari-Inter, Lazio-Genoa",
+          "titolo": "Allegri outlines Napoli and McTominay’s problems against Como",
           "fonte": "Football Italia",
           "stato": "rumor",
-          "link": "https://football-italia.net/serie-a-napoli-como-cagliari-inter-lazio-genoa/",
-          "img": "https://icdn.football-italia.net/wp-content/uploads/2025/08/Serie-A-Liveblog.jpg",
+          "link": "https://football-italia.net/allegri-napoli-mctominay-problems-como/",
+          "img": "https://icdn.football-italia.net/wp-content/uploads/2026/08/allegri-glance.jpg",
           "dominio": "football-italia.net",
           "affidabilita": 2,
-          "quando": "just now"
+          "quando": "1h ago"
         }
       ],
       "nomi": {
@@ -451,35 +452,21 @@
             "fonte": "Football Italia",
             "link": "https://football-italia.net/bahoya-rejection-hull-city-milan-roma-hope/",
             "affidabilita": 2,
-            "quando": "3h ago"
-          },
-          {
-            "titolo": "Video: De Roon arrives to complete Roma transfer",
-            "fonte": "Football Italia",
-            "link": "https://football-italia.net/video-de-roon-arrives-to-complete-roma-move/",
-            "affidabilita": 2,
-            "quando": "5h ago"
-          },
-          {
-            "titolo": "Gasperini: ‘De Roon lets Roma spend in other areas, not heard anything about Soule’",
-            "fonte": "Football Italia",
-            "link": "https://football-italia.net/gasperini-de-roon-lets-roma-spend-other-areas/",
-            "affidabilita": 2,
             "quando": "6h ago"
           },
           {
-            "titolo": "Fulham approach Roma for Soule in final week of summer transfer window",
+            "titolo": "Video: De Roon arrives to complete Roma transfer",
             "fonte": "Football Italia",
             "link": "https://football-italia.net",
             "affidabilita": 1,
             "quando": "8h ago"
           },
           {
-            "titolo": "Hull City closing in on loan deal for Roma starlet Robinio Vaz",
-            "fonte": "Hull Live",
-            "link": "https://www.hulldailymail.co.uk",
+            "titolo": "Fulham approach Roma for Soule in final week of summer transfer window",
+            "fonte": "Football Italia",
+            "link": "https://football-italia.net",
             "affidabilita": 1,
-            "quando": "3d ago"
+            "quando": "11h ago"
           },
           {
             "titolo": "How A Football Transfer Is Put Together Parma Vs Roma (WraVthiLGn)",
@@ -487,15 +474,36 @@
             "link": "https://mshale.com",
             "affidabilita": 1,
             "quando": "3d ago"
+          },
+          {
+            "titolo": "Gabriel Martinelli already has perfect transfer destination after rejecting Galatasaray move",
+            "fonte": "talkSPORT",
+            "link": "https://talksport.com",
+            "affidabilita": 1,
+            "quando": "12d ago"
+          },
+          {
+            "titolo": "Rodrigo Mora’s transfer to Roma at final stages",
+            "fonte": "Get Italian Football News",
+            "link": "https://www.getfootballnewsitaly.com",
+            "affidabilita": 1,
+            "quando": "20d ago"
           }
         ],
         "obj": [
+          {
+            "titolo": "Roma send Robinio Vaz to Hull City, El Aynoaui to Leipzig and make offers for two wingers",
+            "fonte": "Football Italia",
+            "link": "https://football-italia.net/roma-robino-vaz-hull-city-el-aynoaui-leipzig/",
+            "affidabilita": 2,
+            "quando": "2h ago"
+          },
           {
             "titolo": "Roma drop El Aynaoui and Vaz, make new Luiz Henrique bid after problems",
             "fonte": "Football Italia",
             "link": "https://football-italia.net/roma-drop-el-aynaoui-vaz-new-luiz-henrique/",
             "affidabilita": 2,
-            "quando": "2h ago"
+            "quando": "5h ago"
           },
           {
             "titolo": "Roma target £52m Chelsea star after missing out on Alejandro Garnacho transfer",
@@ -517,6 +525,16 @@
       },
       "feed": [
         {
+          "titolo": "Roma send Robinio Vaz to Hull City, El Aynoaui to Leipzig and make offers for two wingers",
+          "fonte": "Football Italia",
+          "stato": "obj",
+          "link": "https://football-italia.net/roma-robino-vaz-hull-city-el-aynoaui-leipzig/",
+          "img": "https://icdn.football-italia.net/wp-content/uploads/2026/03/Robinio-Vaz-celebrate.jpg",
+          "dominio": "football-italia.net",
+          "affidabilita": 2,
+          "quando": "2h ago"
+        },
+        {
           "titolo": "Roma drop El Aynaoui and Vaz, make new Luiz Henrique bid after problems",
           "fonte": "Football Italia",
           "stato": "obj",
@@ -524,7 +542,7 @@
           "img": "https://icdn.football-italia.net/wp-content/uploads/2025/11/Roma-celebrate-Midtjylland.jpg",
           "dominio": "football-italia.net",
           "affidabilita": 2,
-          "quando": "2h ago"
+          "quando": "5h ago"
         },
         {
           "titolo": "Bahoya rejection of Hull City gives Milan and Roma hope",
@@ -534,17 +552,7 @@
           "img": "https://icdn.football-italia.net/wp-content/uploads/2026/08/Jean-Bahoya.jpg",
           "dominio": "football-italia.net",
           "affidabilita": 2,
-          "quando": "3h ago"
-        },
-        {
-          "titolo": "Video: De Roon arrives to complete Roma transfer",
-          "fonte": "Football Italia",
-          "stato": "rumor",
-          "link": "https://football-italia.net/video-de-roon-arrives-to-complete-roma-move/",
-          "img": "https://icdn.football-italia.net/wp-content/uploads/2026/03/Marten-De-Roon-family.jpg",
-          "dominio": "football-italia.net",
-          "affidabilita": 2,
-          "quando": "5h ago"
+          "quando": "6h ago"
         }
       ],
       "nomi": {
@@ -568,11 +576,18 @@
             "quando": "2d ago"
           },
           {
+            "titolo": "Serie A | Lazio 1-0 Genoa: Frattesi the hero once again",
+            "fonte": "Football Italia",
+            "link": "https://football-italia.net/serie-a-lazio-1-0-genoa-frattesi-hero-again/",
+            "affidabilita": 2,
+            "quando": "just now"
+          },
+          {
             "titolo": "Serie A Liveblog: Napoli-Como, Cagliari-Inter, Lazio-Genoa",
             "fonte": "Football Italia",
             "link": "https://football-italia.net/serie-a-napoli-como-cagliari-inter-lazio-genoa/",
             "affidabilita": 2,
-            "quando": "just now"
+            "quando": "2h ago"
           }
         ],
         "obj": [
@@ -581,7 +596,7 @@
             "fonte": "Football Italia",
             "link": "https://football-italia.net/nottingham-forest-dodo-offer-gudmundsson-lazio/",
             "affidabilita": 2,
-            "quando": "1h ago"
+            "quando": "4h ago"
           }
         ],
         "conf": [],
@@ -591,7 +606,7 @@
             "fonte": "Football Italia",
             "link": "https://football-italia.net/lazio-hutchinson-leicester-city-dia-ratkov-out/",
             "affidabilita": 2,
-            "quando": "3h ago"
+            "quando": "6h ago"
           },
           {
             "titolo": "Official: Lazio sign Pinamonti in permanent transfer from Sassuolo",
@@ -614,6 +629,16 @@
           "quando": "2d ago"
         },
         {
+          "titolo": "Serie A | Lazio 1-0 Genoa: Frattesi the hero once again",
+          "fonte": "Football Italia",
+          "stato": "rumor",
+          "link": "https://football-italia.net/serie-a-lazio-1-0-genoa-frattesi-hero-again/",
+          "img": "https://icdn.football-italia.net/wp-content/uploads/2026/08/Davide-Frattesi-celebrate-genoa.jpg",
+          "dominio": "football-italia.net",
+          "affidabilita": 2,
+          "quando": "just now"
+        },
+        {
           "titolo": "Serie A Liveblog: Napoli-Como, Cagliari-Inter, Lazio-Genoa",
           "fonte": "Football Italia",
           "stato": "rumor",
@@ -621,17 +646,7 @@
           "img": "https://icdn.football-italia.net/wp-content/uploads/2025/08/Serie-A-Liveblog.jpg",
           "dominio": "football-italia.net",
           "affidabilita": 2,
-          "quando": "just now"
-        },
-        {
-          "titolo": "Nottingham Forest ready for new Dodo offer as Gudmundsson pushes for Lazio",
-          "fonte": "Football Italia",
-          "stato": "obj",
-          "link": "https://football-italia.net/nottingham-forest-dodo-offer-gudmundsson-lazio/",
-          "img": "https://icdn.football-italia.net/wp-content/uploads/2026/03/Dodo-celebrate.jpg",
-          "dominio": "football-italia.net",
-          "affidabilita": 2,
-          "quando": "1h ago"
+          "quando": "2h ago"
         }
       ],
       "nomi": {
@@ -657,16 +672,9 @@
           {
             "titolo": "Palestra left out of Chelsea squad again following €60m transfer from Atalanta",
             "fonte": "Football Italia",
-            "link": "https://football-italia.net/palestra-left-out-of-chelsea-squad-again/",
-            "affidabilita": 2,
-            "quando": "5h ago"
-          },
-          {
-            "titolo": "Tedesco confirms Rowe is out of Bologna squad amid €40m Atalanta speculation",
-            "fonte": "Football Italia",
-            "link": "https://football-italia.net/tedesco-confirms-rowe-is-out-of-bologna-squad/",
-            "affidabilita": 2,
-            "quando": "6h ago"
+            "link": "https://football-italia.net",
+            "affidabilita": 1,
+            "quando": "8h ago"
           }
         ],
         "obj": [
@@ -707,18 +715,18 @@
           "link": "https://football-italia.net/palestra-left-out-of-chelsea-squad-again/",
           "img": "https://icdn.football-italia.net/wp-content/uploads/2026/08/Marco-Palestra-Chelsea.jpg",
           "dominio": "football-italia.net",
-          "affidabilita": 2,
-          "quando": "5h ago"
+          "affidabilita": 1,
+          "quando": "8h ago"
         },
         {
-          "titolo": "Tedesco confirms Rowe is out of Bologna squad amid €40m Atalanta speculation",
-          "fonte": "Football Italia",
-          "stato": "rumor",
-          "link": "https://football-italia.net/tedesco-confirms-rowe-is-out-of-bologna-squad/",
-          "img": "https://icdn.football-italia.net/wp-content/uploads/2026/02/Jonathan-Rowe-frustrated.jpg",
-          "dominio": "football-italia.net",
-          "affidabilita": 2,
-          "quando": "6h ago"
+          "titolo": "Chelsea reach agreement for £40m Honest Ahanor transfer from Atalanta - The Athletic",
+          "fonte": "The New York Times",
+          "stato": "conf",
+          "link": "https://www.nytimes.com/athletic/7540823/2026/08/27/chelsea-transfers-honest-ahanor/",
+          "img": "https://static01.nyt.com/athletic/uploads/wp/2026/08/26133058/GettyImages-2245314098-1-scaled-e1787765494912.jpg?width=1200&height=630&fit=cover",
+          "dominio": "nytimes.com",
+          "affidabilita": 1,
+          "quando": "1d ago"
         }
       ],
       "nomi": {
@@ -753,7 +761,7 @@
             "fonte": "Get Italian Football News",
             "link": "https://www.getfootballnewsitaly.com",
             "affidabilita": 1,
-            "quando": "3d ago"
+            "quando": "4d ago"
           },
           {
             "titolo": "Lazio transfer news: Southampton eye Ratkov as Fiorentina could enter Icardi race",
@@ -779,7 +787,7 @@
             "fonte": "Football Italia",
             "link": "https://football-italia.net/official-excited-njie-fiorentina-from-torino/",
             "affidabilita": 2,
-            "quando": "1h ago"
+            "quando": "4h ago"
           }
         ]
       },
@@ -802,7 +810,7 @@
           "img": "https://icdn.football-italia.net/wp-content/uploads/2026/08/Screenshot-2026-08-30-183550.jpg",
           "dominio": "football-italia.net",
           "affidabilita": 2,
-          "quando": "1h ago"
+          "quando": "4h ago"
         },
         {
           "titolo": "Kean back in training as Fiorentina and Como work on bonuses of €40m transfer",
@@ -829,45 +837,118 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "Tedesco confirms Rowe is out of Bologna squad amid €40m Atalanta speculation",
-            "fonte": "Football Italia",
-            "link": "https://football-italia.net/tedesco-confirms-rowe-is-out-of-bologna-squad/",
+            "titolo": "Nottingham Forest agree £35m transfer for Bologna winger Dan Ndoye",
+            "fonte": "The Sun",
+            "link": "https://www.thesun.co.uk",
             "affidabilita": 2,
-            "quando": "6h ago"
+            "quando": "398d ago"
+          },
+          {
+            "titolo": "Sassuolo ready to win Bowie transfer battle with Cagliari, Bologna and Celtic",
+            "fonte": "Football Italia",
+            "link": "https://football-italia.net",
+            "affidabilita": 1,
+            "quando": "34d ago"
+          },
+          {
+            "titolo": "Jhon Lucumi transfer: Bologna chief confirms Sunderland promise",
+            "fonte": "Football Place",
+            "link": "https://footballplace.co.uk",
+            "affidabilita": 1,
+            "quando": "40d ago"
+          },
+          {
+            "titolo": "Aston Villa monitoring Bologna winger Jonathan Rowe amid growing transfer interest",
+            "fonte": "Football Place",
+            "link": "https://footballplace.co.uk",
+            "affidabilita": 1,
+            "quando": "42d ago"
+          },
+          {
+            "titolo": "Ipswich Town transfer rumour - Blues star linked with shock Serie A switch",
+            "fonte": "East Anglian Daily Times",
+            "link": "https://www.eadt.co.uk",
+            "affidabilita": 1,
+            "quando": "69d ago"
+          },
+          {
+            "titolo": "Ferguson: Agent confirms Scotland star’s transfer priorities",
+            "fonte": "Football Italia",
+            "link": "https://football-italia.net",
+            "affidabilita": 1,
+            "quando": "111d ago"
           }
         ],
-        "obj": [],
-        "conf": [],
-        "done": [
+        "obj": [
           {
-            "titolo": "Official: Theate returns to Bologna in potential €15m deal with Eintracht Frankfurt",
-            "fonte": "Football Italia",
-            "link": "https://football-italia.net/official-theate-returns-to-bologna/",
+            "titolo": "Chelsea target winger once sold because of 'bar fight' with teammate",
+            "fonte": "Metro.co.uk",
+            "link": "https://metro.co.uk",
             "affidabilita": 2,
-            "quando": "7h ago"
+            "quando": "48d ago"
+          },
+          {
+            "titolo": "Arsenal update on Riccardo Calafiori talks as Bologna transfer chief goes public",
+            "fonte": "London Evening Standard",
+            "link": "https://www.standard.co.uk",
+            "affidabilita": 2,
+            "quando": "772d ago"
+          },
+          {
+            "titolo": "Bologna CEO opens the door to Juventus transfer target Jhon Lucumí leaving this summer",
+            "fonte": "blackwhitereadallover.com",
+            "link": "https://www.blackwhitereadallover.com",
+            "affidabilita": 1,
+            "quando": "40d ago"
+          },
+          {
+            "titolo": "Three Aberdeen transfer headlines as Bologna plot move for former midfield star",
+            "fonte": "Aberdeen Live",
+            "link": "https://www.aberdeenlive.news",
+            "affidabilita": 1,
+            "quando": "55d ago"
+          },
+          {
+            "titolo": "Juventus learn Lucumi price tag from Bologna during Holm and Joao Mario talks",
+            "fonte": "Football Italia",
+            "link": "https://football-italia.net",
+            "affidabilita": 1,
+            "quando": "70d ago"
           }
-        ]
+        ],
+        "conf": [],
+        "done": []
       },
       "feed": [
         {
-          "titolo": "Tedesco confirms Rowe is out of Bologna squad amid €40m Atalanta speculation",
-          "fonte": "Football Italia",
-          "stato": "rumor",
-          "link": "https://football-italia.net/tedesco-confirms-rowe-is-out-of-bologna-squad/",
-          "img": "https://icdn.football-italia.net/wp-content/uploads/2026/02/Jonathan-Rowe-frustrated.jpg",
-          "dominio": "football-italia.net",
+          "titolo": "Chelsea target winger once sold because of 'bar fight' with teammate",
+          "fonte": "Metro.co.uk",
+          "stato": "obj",
+          "link": "https://metro.co.uk/2026/07/13/chelsea-target-winger-sold-bar-fight-teammate-29123498/",
+          "img": "https://metro.co.uk/wp-content/uploads/2026/07/GettyImages-2275673388_1783941005.jpg?quality=90&strip=all&w=1200&h=630&crop=1",
+          "dominio": "metro.co.uk",
           "affidabilita": 2,
-          "quando": "6h ago"
+          "quando": "48d ago"
         },
         {
-          "titolo": "Official: Theate returns to Bologna in potential €15m deal with Eintracht Frankfurt",
-          "fonte": "Football Italia",
-          "stato": "done",
-          "link": "https://football-italia.net/official-theate-returns-to-bologna/",
-          "img": "https://icdn.football-italia.net/wp-content/uploads/2026/08/MIKI4287-scaled-1.webp",
-          "dominio": "football-italia.net",
+          "titolo": "Nottingham Forest agree £35m transfer for Bologna winger Dan Ndoye",
+          "fonte": "The Sun",
+          "stato": "rumor",
+          "link": "https://www.thesun.co.uk/sport/36050746/dan-ndoye-nottingham-forest-transfer-grealish-garnacho-napoli/",
+          "img": "",
+          "dominio": "thesun.co.uk",
           "affidabilita": 2,
-          "quando": "7h ago"
+          "quando": "398d ago"
+        },
+        {
+          "titolo": "Arsenal update on Riccardo Calafiori talks as Bologna transfer chief goes public",
+          "fonte": "London Evening Standard",
+          "stato": "obj",
+          "link": "https://www.standard.co.uk/sport/football/calafiori-arsenal-fc-transfer-talks-bologna-b1171830.html",
+          "img": "https://static.standard.co.uk/2024/07/11/5/33/GettyImages-2097198802.jpg?width=1200&auto=webp&quality=75",
+          "dominio": "standard.co.uk",
+          "affidabilita": 2,
+          "quando": "772d ago"
         }
       ],
       "nomi": {
@@ -899,7 +980,7 @@
             "fonte": "Football Italia",
             "link": "https://football-italia.net/official-excited-njie-fiorentina-from-torino/",
             "affidabilita": 2,
-            "quando": "1h ago"
+            "quando": "4h ago"
           }
         ]
       },
@@ -912,7 +993,7 @@
           "img": "https://icdn.football-italia.net/wp-content/uploads/2026/08/Screenshot-2026-08-30-183550.jpg",
           "dominio": "football-italia.net",
           "affidabilita": 2,
-          "quando": "1h ago"
+          "quando": "4h ago"
         },
         {
           "titolo": "Torino growing anxious over Lucas Perri transfer as Leeds United delay continues",
@@ -939,11 +1020,18 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "Serie A | Lazio 1-0 Genoa: Frattesi the hero once again",
+            "fonte": "Football Italia",
+            "link": "https://football-italia.net/serie-a-lazio-1-0-genoa-frattesi-hero-again/",
+            "affidabilita": 2,
+            "quando": "just now"
+          },
+          {
             "titolo": "Serie A Liveblog: Napoli-Como, Cagliari-Inter, Lazio-Genoa",
             "fonte": "Football Italia",
             "link": "https://football-italia.net/serie-a-napoli-como-cagliari-inter-lazio-genoa/",
             "affidabilita": 2,
-            "quando": "just now"
+            "quando": "2h ago"
           },
           {
             "titolo": "Transfer: Latif Ouedraogo Heads to Romania",
@@ -959,6 +1047,16 @@
       },
       "feed": [
         {
+          "titolo": "Serie A | Lazio 1-0 Genoa: Frattesi the hero once again",
+          "fonte": "Football Italia",
+          "stato": "rumor",
+          "link": "https://football-italia.net/serie-a-lazio-1-0-genoa-frattesi-hero-again/",
+          "img": "https://icdn.football-italia.net/wp-content/uploads/2026/08/Davide-Frattesi-celebrate-genoa.jpg",
+          "dominio": "football-italia.net",
+          "affidabilita": 2,
+          "quando": "just now"
+        },
+        {
           "titolo": "Serie A Liveblog: Napoli-Como, Cagliari-Inter, Lazio-Genoa",
           "fonte": "Football Italia",
           "stato": "rumor",
@@ -966,7 +1064,7 @@
           "img": "https://icdn.football-italia.net/wp-content/uploads/2025/08/Serie-A-Liveblog.jpg",
           "dominio": "football-italia.net",
           "affidabilita": 2,
-          "quando": "just now"
+          "quando": "2h ago"
         },
         {
           "titolo": "Transfer: Latif Ouedraogo Heads to Romania",
@@ -1048,11 +1146,18 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "Serie A | Cagliari 0-1 Inter: Calhanoglu decisive in Sardinia",
+            "fonte": "Football Italia",
+            "link": "https://football-italia.net/serie-a-cagliari-0-1-inter-calhanoglu-decisive/",
+            "affidabilita": 2,
+            "quando": "just now"
+          },
+          {
             "titolo": "Serie A Liveblog: Napoli-Como, Cagliari-Inter, Lazio-Genoa",
             "fonte": "Football Italia",
             "link": "https://football-italia.net/serie-a-napoli-como-cagliari-inter-lazio-genoa/",
             "affidabilita": 2,
-            "quando": "just now"
+            "quando": "2h ago"
           }
         ],
         "obj": [],
@@ -1063,11 +1168,21 @@
             "fonte": "Football Italia",
             "link": "https://football-italia.net/serie-a-official-line-ups-cagliari-vs-inter/",
             "affidabilita": 2,
-            "quando": "just now"
+            "quando": "3h ago"
           }
         ]
       },
       "feed": [
+        {
+          "titolo": "Serie A | Cagliari 0-1 Inter: Calhanoglu decisive in Sardinia",
+          "fonte": "Football Italia",
+          "stato": "rumor",
+          "link": "https://football-italia.net/serie-a-cagliari-0-1-inter-calhanoglu-decisive/",
+          "img": "https://icdn.football-italia.net/wp-content/uploads/2026/08/Hakan-Calhanoglu-smile.jpg",
+          "dominio": "football-italia.net",
+          "affidabilita": 2,
+          "quando": "just now"
+        },
         {
           "titolo": "Serie A Liveblog: Napoli-Como, Cagliari-Inter, Lazio-Genoa",
           "fonte": "Football Italia",
@@ -1076,7 +1191,7 @@
           "img": "https://icdn.football-italia.net/wp-content/uploads/2025/08/Serie-A-Liveblog.jpg",
           "dominio": "football-italia.net",
           "affidabilita": 2,
-          "quando": "just now"
+          "quando": "2h ago"
         },
         {
           "titolo": "Serie A official line-ups: Cagliari vs. Inter",
@@ -1086,7 +1201,7 @@
           "img": "https://icdn.football-italia.net/wp-content/uploads/2026/05/Lautaro-Martinez-wave.jpg",
           "dominio": "football-italia.net",
           "affidabilita": 2,
-          "quando": "just now"
+          "quando": "3h ago"
         }
       ],
       "nomi": {
@@ -1103,32 +1218,46 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "Allegri outlines Napoli and McTominay’s problems against Como",
+            "fonte": "Football Italia",
+            "link": "https://football-italia.net/allegri-napoli-mctominay-problems-como/",
+            "affidabilita": 2,
+            "quando": "1h ago"
+          },
+          {
+            "titolo": "Fabregas reveals Como ‘learned’ from Milan games, hails ‘underrated’ new signing",
+            "fonte": "Football Italia",
+            "link": "https://football-italia.net/fabregas-como-learn-milan-games-underrated/",
+            "affidabilita": 2,
+            "quando": "1h ago"
+          },
+          {
             "titolo": "Serie A Liveblog: Napoli-Como, Cagliari-Inter, Lazio-Genoa",
             "fonte": "Football Italia",
             "link": "https://football-italia.net/serie-a-napoli-como-cagliari-inter-lazio-genoa/",
             "affidabilita": 2,
-            "quando": "just now"
+            "quando": "2h ago"
+          },
+          {
+            "titolo": "Serie A | Napoli 1-2 Como: Fabregas earns big victory at the Maradona",
+            "fonte": "Football Italia",
+            "link": "https://football-italia.net/serie-a-napoli-1-2-como-fabregas-earns-victory/",
+            "affidabilita": 2,
+            "quando": "2h ago"
           },
           {
             "titolo": "Allegri explains surprising Napoli changes with Como and Conte difference",
             "fonte": "Football Italia",
             "link": "https://football-italia.net/allegri-explains-surprise-napoli-changes-como/",
             "affidabilita": 2,
-            "quando": "1h ago"
+            "quando": "4h ago"
           },
           {
             "titolo": "Fabregas: ‘Como gradually rebuilding for next level, play with intelligence’",
             "fonte": "Football Italia",
             "link": "https://football-italia.net/fabregas-como-gradually-rebuilding-next-level/",
             "affidabilita": 2,
-            "quando": "1h ago"
-          },
-          {
-            "titolo": "Como, Chelsea agree €30+6m Trevoh Chalobah transfer — reports",
-            "fonte": "We Ain't Got No History",
-            "link": "https://weaintgotnohistory.sbnation.com",
-            "affidabilita": 1,
-            "quando": "27d ago"
+            "quando": "4h ago"
           }
         ],
         "obj": [],
@@ -1139,18 +1268,38 @@
             "fonte": "Football Italia",
             "link": "https://football-italia.net/serie-a-official-line-ups-napoli-vs-como-wk2/",
             "affidabilita": 2,
-            "quando": "2h ago"
+            "quando": "5h ago"
           },
           {
             "titolo": "Tommaso Fumagalli joins Inter Under-23 on a permanent transfer",
             "fonte": "Como 1907",
             "link": "https://comofootball.com",
             "affidabilita": 1,
-            "quando": "4d ago"
+            "quando": "5d ago"
           }
         ]
       },
       "feed": [
+        {
+          "titolo": "Allegri outlines Napoli and McTominay’s problems against Como",
+          "fonte": "Football Italia",
+          "stato": "rumor",
+          "link": "https://football-italia.net/allegri-napoli-mctominay-problems-como/",
+          "img": "https://icdn.football-italia.net/wp-content/uploads/2026/08/allegri-glance.jpg",
+          "dominio": "football-italia.net",
+          "affidabilita": 2,
+          "quando": "1h ago"
+        },
+        {
+          "titolo": "Fabregas reveals Como ‘learned’ from Milan games, hails ‘underrated’ new signing",
+          "fonte": "Football Italia",
+          "stato": "rumor",
+          "link": "https://football-italia.net/fabregas-como-learn-milan-games-underrated/",
+          "img": "https://icdn.football-italia.net/wp-content/uploads/2026/08/Cesc-Fabregas-shout.jpg",
+          "dominio": "football-italia.net",
+          "affidabilita": 2,
+          "quando": "1h ago"
+        },
         {
           "titolo": "Serie A Liveblog: Napoli-Como, Cagliari-Inter, Lazio-Genoa",
           "fonte": "Football Italia",
@@ -1159,27 +1308,7 @@
           "img": "https://icdn.football-italia.net/wp-content/uploads/2025/08/Serie-A-Liveblog.jpg",
           "dominio": "football-italia.net",
           "affidabilita": 2,
-          "quando": "just now"
-        },
-        {
-          "titolo": "Allegri explains surprising Napoli changes with Como and Conte difference",
-          "fonte": "Football Italia",
-          "stato": "rumor",
-          "link": "https://football-italia.net/allegri-explains-surprise-napoli-changes-como/",
-          "img": "https://icdn.football-italia.net/wp-content/uploads/2026/08/Max-Allegri-wave.jpg",
-          "dominio": "football-italia.net",
-          "affidabilita": 2,
-          "quando": "1h ago"
-        },
-        {
-          "titolo": "Fabregas: ‘Como gradually rebuilding for next level, play with intelligence’",
-          "fonte": "Football Italia",
-          "stato": "rumor",
-          "link": "https://football-italia.net/fabregas-como-gradually-rebuilding-next-level/",
-          "img": "https://icdn.football-italia.net/wp-content/uploads/2026/04/Cesc-Fabregas-hmm-1.jpg",
-          "dominio": "football-italia.net",
-          "affidabilita": 2,
-          "quando": "1h ago"
+          "quando": "2h ago"
         }
       ],
       "nomi": {
@@ -1268,27 +1397,120 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "Kieron Bowie makes loan switch to Serie A side Sassuolo",
+            "titolo": "'Sassuolo agree £10m fee for Bowie' - gossip",
             "fonte": "BBC",
             "link": "https://www.bbc.com",
             "affidabilita": 3,
-            "quando": "30d ago"
+            "quando": "31d ago"
+          },
+          {
+            "titolo": "Armel Bella-Kotchap: Southampton sell defender to Hellas Verona",
+            "fonte": "BBC",
+            "link": "https://www.bbc.com",
+            "affidabilita": 3,
+            "quando": "209d ago"
+          },
+          {
+            "titolo": "Transfer roundup: Leeds close on £18m deal for Milan striker Noah Okafor",
+            "fonte": "The Guardian",
+            "link": "https://www.theguardian.com",
+            "affidabilita": 3,
+            "quando": "376d ago"
+          },
+          {
+            "titolo": "Bowie asking price revealed by Serie A side exit route emerges for title winning teammate",
+            "fonte": "The Scotsman",
+            "link": "https://www.scotsman.com",
+            "affidabilita": 1,
+            "quando": "53d ago"
+          },
+          {
+            "titolo": "Who are the 15 most profitable Scottish Premiership stars in history? Including £7m Kieron Bowie transfer",
+            "fonte": "The Scotsman",
+            "link": "https://www.scotsman.com",
+            "affidabilita": 1,
+            "quando": "212d ago"
+          },
+          {
+            "titolo": "Verona could return for Roma’s Baldanzi during January transfer window",
+            "fonte": "Football Italia",
+            "link": "https://football-italia.net",
+            "affidabilita": 1,
+            "quando": "290d ago"
           }
         ],
-        "obj": [],
-        "conf": [],
-        "done": []
+        "obj": [
+          {
+            "titolo": "'Sassuolo and Bologna in Bowie transfer talks' - gossip",
+            "fonte": "BBC",
+            "link": "https://www.bbc.com",
+            "affidabilita": 3,
+            "quando": "56d ago"
+          }
+        ],
+        "conf": [
+          {
+            "titolo": "Kieron Bowie transfer latest: Hibernian striker set for Verona medical",
+            "fonte": "BBC",
+            "link": "https://www.bbc.com",
+            "affidabilita": 3,
+            "quando": "213d ago"
+          },
+          {
+            "titolo": "Sassuolo agreement for Bowie in €10m deal, Mulattieri to Verona",
+            "fonte": "Football Italia",
+            "link": "https://football-italia.net",
+            "affidabilita": 1,
+            "quando": "33d ago"
+          }
+        ],
+        "done": [
+          {
+            "titolo": "Kieron Bowie: Hibernian bank record transfer fee as Scotland striker joins Hellas Verona",
+            "fonte": "BBC",
+            "link": "https://www.bbc.com",
+            "affidabilita": 3,
+            "quando": "212d ago"
+          },
+          {
+            "titolo": "Official: Giovane joins Napoli from Verona in €20m deal",
+            "fonte": "Football Italia",
+            "link": "https://football-italia.net",
+            "affidabilita": 1,
+            "quando": "218d ago"
+          }
+        ]
       },
       "feed": [
         {
-          "titolo": "Kieron Bowie makes loan switch to Serie A side Sassuolo",
+          "titolo": "'Sassuolo agree £10m fee for Bowie' - gossip",
           "fonte": "BBC",
           "stato": "rumor",
-          "link": "https://www.bbc.com/sport/football/articles/cy8ejv6j5wwo",
-          "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/809a/live/b732ea70-8d30-11f1-b3b6-29b7cb5033ec.jpg",
+          "link": "https://www.bbc.com/sport/football/articles/cx2548lxkrno",
+          "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/0ec5/live/12974490-8ca2-11f1-a7ab-8b30adf0800a.png",
           "dominio": "bbc.com",
           "affidabilita": 3,
-          "quando": "30d ago"
+          "quando": "31d ago"
+        },
+        {
+          "titolo": "'Sassuolo and Bologna in Bowie transfer talks' - gossip",
+          "fonte": "BBC",
+          "stato": "obj",
+          "link": "https://www.bbc.com/sport/football/articles/c1ly222d9djo",
+          "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/1bc0/live/8a469a50-7847-11f1-9510-1546718f668b.png",
+          "dominio": "bbc.com",
+          "affidabilita": 3,
+          "quando": "56d ago"
+        },
+        {
+          "titolo": "Armel Bella-Kotchap: Southampton sell defender to Hellas Verona",
+          "fonte": "BBC",
+          "stato": "rumor",
+          "link": "https://www.bbc.com/sport/football/articles/cgez4lrgqg2o",
+          "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/37a8/live/a387a490-0052-11f1-a306-eb22ad67553c.jpg",
+          "dominio": "bbc.com",
+          "affidabilita": 3,
+          "quando": "209d ago"
         }
       ],
       "nomi": {
@@ -1497,7 +1719,15 @@
             "quando": "95d ago"
           }
         ],
-        "obj": [],
+        "obj": [
+          {
+            "titolo": "Jamie Vardy rejects late offer from Robin van Persie star to join Serie A team",
+            "fonte": "talkSPORT",
+            "link": "https://talksport.com",
+            "affidabilita": 1,
+            "quando": "363d ago"
+          }
+        ],
         "conf": [],
         "done": [
           {
@@ -1562,11 +1792,11 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "Jamie Vardy’s incredible 14-year record finally broken as non-league star who went on strike seals £1.5million transfer",
-            "fonte": "The Sun",
-            "link": "https://www.thesun.co.uk",
-            "affidabilita": 2,
-            "quando": "4h ago"
+            "titolo": "Bayer Leverkusen’s fullback search remains intriguing",
+            "fonte": "Get German Football News",
+            "link": "https://www.getfootballnewsgermany.com",
+            "affidabilita": 1,
+            "quando": "29d ago"
           }
         ],
         "obj": [],
@@ -1575,14 +1805,14 @@
       },
       "feed": [
         {
-          "titolo": "Jamie Vardy’s incredible 14-year record finally broken as non-league star who went on strike seals £1.5million transfer",
-          "fonte": "The Sun",
+          "titolo": "Bayer Leverkusen’s fullback search remains intriguing",
+          "fonte": "Get German Football News",
           "stato": "rumor",
-          "link": "https://www.thesun.co.uk/sport/40220090/jamie-vardy-record-broken-abdulmalik-1-5m-djurgardens/",
-          "img": "",
-          "dominio": "thesun.co.uk",
-          "affidabilita": 2,
-          "quando": "4h ago"
+          "link": "https://www.getfootballnewsgermany.com/2026/bayer-leverkusen-full-back/",
+          "img": "https://www.getfootballnewsgermany.com/assets/pisa-sc-v-ssc-napoli-serie-a-1024x684.jpg",
+          "dominio": "getfootballnewsgermany.com",
+          "affidabilita": 1,
+          "quando": "29d ago"
         }
       ],
       "nomi": {
@@ -1599,11 +1829,11 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "Transfer Centre LIVE! Football transfer news, updates and rumours",
+            "titolo": "Misa Rodriguez: Arsenal sign Real Madrid goalkeeper on a free transfer",
             "fonte": "Sky Sports",
             "link": "https://www.skysports.com",
             "affidabilita": 3,
-            "quando": "7h ago"
+            "quando": "3d ago"
           },
           {
             "titolo": "‘He doubted’: Mourinho says Real Madrid did not want Rodri after hesitation over move",
@@ -1624,6 +1854,13 @@
             "fonte": "Transfermarkt",
             "link": "https://www.transfermarkt.com",
             "affidabilita": 1,
+            "quando": "1h ago"
+          },
+          {
+            "titolo": "Follow all the weekend's action with Flashscore's LIVE Football Tracker!",
+            "fonte": "Flashscore.com",
+            "link": "https://www.flashscore.com",
+            "affidabilita": 1,
             "quando": "2h ago"
           },
           {
@@ -1631,14 +1868,7 @@
             "fonte": "Liverpool Echo",
             "link": "https://www.liverpoolecho.co.uk",
             "affidabilita": 1,
-            "quando": "4h ago"
-          },
-          {
-            "titolo": "Endrick reaches decision on joining Arsenal from Real Madrid as approach made",
-            "fonte": "Football365",
-            "link": "https://www.football365.com",
-            "affidabilita": 1,
-            "quando": "2d ago"
+            "quando": "7h ago"
           }
         ],
         "obj": [
@@ -1662,29 +1892,12 @@
             "link": "https://www.thesun.co.uk",
             "affidabilita": 2,
             "quando": "2d ago"
-          },
-          {
-            "titolo": "Arsenal hold Endrick talks to test Jose Mourinho’s resolve over Real Madrid wonderkid",
-            "fonte": "talkSPORT",
-            "link": "https://talksport.com",
-            "affidabilita": 1,
-            "quando": "2d ago"
           }
         ],
         "conf": [],
         "done": []
       },
       "feed": [
-        {
-          "titolo": "Transfer Centre LIVE! Football transfer news, updates and rumours",
-          "fonte": "Sky Sports",
-          "stato": "rumor",
-          "link": "https://www.skysports.com/football/live-blog/11661/12476234/transfer-centre-live-football-transfer-news-updates-and-rumours",
-          "img": "https://e0.365dm.com/26/08/1600x900/skysports-alvarez-barcola-enzo-fernandez_7334314.jpg?20260829090154",
-          "dominio": "skysports.com",
-          "affidabilita": 3,
-          "quando": "7h ago"
-        },
         {
           "titolo": "Arsenal transfer news: Gunners hold talks for Real Madrid and Brazil forward Endrick - Paper Talk",
           "fonte": "Sky Sports",
@@ -1694,6 +1907,16 @@
           "dominio": "skysports.com",
           "affidabilita": 3,
           "quando": "1d ago"
+        },
+        {
+          "titolo": "Misa Rodriguez: Arsenal sign Real Madrid goalkeeper on a free transfer",
+          "fonte": "Sky Sports",
+          "stato": "rumor",
+          "link": "https://www.skysports.com/football/news/37009/13565873/misa-rodriguez-arsenal-sign-real-madrid-goalkeeper-on-a-free-transfer",
+          "img": "https://e0.365dm.com/26/07/1600x900/skysports-misa-rodriguez_7303986.jpg?20260722100510",
+          "dominio": "skysports.com",
+          "affidabilita": 3,
+          "quando": "3d ago"
         },
         {
           "titolo": "‘He doubted’: Mourinho says Real Madrid did not want Rodri after hesitation over move",
@@ -1734,32 +1957,32 @@
             "quando": "3d ago"
           },
           {
-            "titolo": "'0% chance' - Atletico hit back at Barca over Alvarez transfer row",
-            "fonte": "BBC",
-            "link": "https://www.bbc.com",
-            "affidabilita": 3,
-            "quando": "4d ago"
-          },
-          {
-            "titolo": "Napoli set to miss out on Gabriel Jesus as Barcelona agree terms with Arsenal",
-            "fonte": "Football Italia",
-            "link": "https://football-italia.net/napoli-lose-gabriel-jesus-to-barcelona/",
-            "affidabilita": 2,
-            "quando": "4h ago"
-          },
-          {
             "titolo": "Barcelona agree shock deal to sign Arsenal star before transfer deadline",
             "fonte": "Metro.co.uk",
             "link": "https://metro.co.uk",
             "affidabilita": 2,
-            "quando": "5h ago"
+            "quando": "8h ago"
+          },
+          {
+            "titolo": "Arsenal’s Gabriel Jesus closing in on €10m Barcelona move - The Athletic",
+            "fonte": "The New York Times",
+            "link": "https://www.nytimes.com",
+            "affidabilita": 1,
+            "quando": "3h ago"
           },
           {
             "titolo": "Shafaq News..Arsenal forward Gabriel Jesus emerges on Barcelona radar",
             "fonte": "شفق نيوز",
             "link": "https://shafaq.com",
             "affidabilita": 1,
-            "quando": "4h ago"
+            "quando": "7h ago"
+          },
+          {
+            "titolo": "Alvarez returns to Atletico training amid Barcelona, Arsenal transfer links",
+            "fonte": "Al Jazeera",
+            "link": "https://www.aljazeera.com",
+            "affidabilita": 1,
+            "quando": "7h ago"
           }
         ],
         "obj": [
@@ -1775,7 +1998,7 @@
             "fonte": "Goal.com",
             "link": "https://www.goal.com",
             "affidabilita": 2,
-            "quando": "4h ago"
+            "quando": "2h ago"
           },
           {
             "titolo": "Transfer rumors, news: Man City expected to send offer for Fernández",
@@ -1791,28 +2014,28 @@
             "fonte": "BBC Sport",
             "link": "https://www.bbc.co.uk/sport/football/articles/c9qr79jr1qqo?at_medium=RSS&at_campaign=rss",
             "affidabilita": 3,
-            "quando": "2h ago"
+            "quando": "4h ago"
           },
           {
             "titolo": "Arsenal agree £55.7m club-record Gabriel Martinelli sale to Al Hilal with deal also agreed in principle with Barcelona for Gabriel Jesus",
             "fonte": "Sky Sports",
             "link": "https://www.skysports.com",
             "affidabilita": 3,
-            "quando": "2h ago"
+            "quando": "5h ago"
           },
           {
             "titolo": "Transfer latest: Jesus close to leaving Arsenal for Barcelona, Villa in Harwood-Bellis talks",
             "fonte": "The Telegraph",
             "link": "https://www.telegraph.co.uk",
             "affidabilita": 2,
-            "quando": "2h ago"
+            "quando": "4h ago"
           },
           {
             "titolo": "Arsenal strike Gabriel Jesus transfer agreement with Barcelona as fee revealed",
             "fonte": "The Mirror",
             "link": "https://www.mirror.co.uk",
             "affidabilita": 2,
-            "quando": "4h ago"
+            "quando": "6h ago"
           }
         ],
         "done": [
@@ -1834,7 +2057,7 @@
           "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/46bd/live/0cb9e950-a477-11f1-bed8-470734b5b662.jpg",
           "dominio": "bbc.co.uk",
           "affidabilita": 3,
-          "quando": "2h ago"
+          "quando": "4h ago"
         },
         {
           "titolo": "Arsenal agree £55.7m club-record Gabriel Martinelli sale to Al Hilal with deal also agreed in principle with Barcelona for Gabriel Jesus",
@@ -1844,7 +2067,7 @@
           "img": "https://e0.365dm.com/26/08/1600x900/skysports-gabriel-martinelli_7329148.jpg?20260823144928",
           "dominio": "skysports.com",
           "affidabilita": 3,
-          "quando": "2h ago"
+          "quando": "5h ago"
         },
         {
           "titolo": "Atlético Madrid chief insists Julián Alvarez will ‘never, ever’ be sold to Barcelona",
@@ -1871,13 +2094,6 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "Transfer Centre LIVE! Football transfer news, updates and rumours",
-            "fonte": "Sky Sports",
-            "link": "https://www.skysports.com",
-            "affidabilita": 3,
-            "quando": "7h ago"
-          },
-          {
             "titolo": "Atlético Madrid chief insists Julián Alvarez will ‘never, ever’ be sold to Barcelona",
             "fonte": "The Guardian",
             "link": "https://www.theguardian.com",
@@ -1899,11 +2115,18 @@
             "quando": "3d ago"
           },
           {
+            "titolo": "Julián Álvarez walks alone at Atlético in transfer saga with no end – and no winners | Sid Lowe",
+            "fonte": "The Guardian",
+            "link": "https://www.theguardian.com",
+            "affidabilita": 3,
+            "quando": "6d ago"
+          },
+          {
             "titolo": "Julian Alvarez makes Atletico Madrid decision after Arsenal transfer call with Mikel Arteta",
             "fonte": "The Mirror",
             "link": "https://www.mirror.co.uk",
             "affidabilita": 2,
-            "quando": "4h ago"
+            "quando": "7h ago"
           },
           {
             "titolo": "Atlético Madrid's Julián Álvarez won't play vs. Sevilla amid transfer links",
@@ -1915,18 +2138,11 @@
         ],
         "obj": [
           {
-            "titolo": "Transfer rumors, news: Man United offered Atleti striker Sørloth",
-            "fonte": "ESPN",
-            "link": "https://www.espn.co.uk",
-            "affidabilita": 2,
-            "quando": "22h ago"
-          },
-          {
             "titolo": "Atletico Madrid players make Julian Alvarez feelings clear after Arsenal transfer target's decision",
             "fonte": "Football London",
             "link": "https://www.football.london",
             "affidabilita": 1,
-            "quando": "4h ago"
+            "quando": "6h ago"
           }
         ],
         "conf": [],
@@ -1936,21 +2152,11 @@
             "fonte": "Sky Sports",
             "link": "https://www.skysports.com",
             "affidabilita": 3,
-            "quando": "1d ago"
+            "quando": "2d ago"
           }
         ]
       },
       "feed": [
-        {
-          "titolo": "Transfer Centre LIVE! Football transfer news, updates and rumours",
-          "fonte": "Sky Sports",
-          "stato": "rumor",
-          "link": "https://www.skysports.com/football/live-blog/11661/12476234/transfer-centre-live-football-transfer-news-updates-and-rumours",
-          "img": "https://e0.365dm.com/26/08/1600x900/skysports-alvarez-barcola-enzo-fernandez_7334314.jpg?20260829090154",
-          "dominio": "skysports.com",
-          "affidabilita": 3,
-          "quando": "7h ago"
-        },
         {
           "titolo": "Julian Alvarez transfer news: Atletico Madrid set deadline for striker to decide whether he stays or joins Arsenal",
           "fonte": "Sky Sports",
@@ -1959,7 +2165,7 @@
           "img": "https://e0.365dm.com/26/05/1600x900/skysports-julian-alvarez-atletico-madrid_7261294.jpg?20260529191506",
           "dominio": "skysports.com",
           "affidabilita": 3,
-          "quando": "1d ago"
+          "quando": "2d ago"
         },
         {
           "titolo": "Atlético Madrid chief insists Julián Alvarez will ‘never, ever’ be sold to Barcelona",
@@ -1968,6 +2174,16 @@
           "link": "https://www.theguardian.com/football/2026/aug/27/atletico-madrid-julian-alvarez-barcelona-transfer-news",
           "img": "https://i.guim.co.uk/img/media/234248c0f71a91b7496861acc9a8158836cf6be8/334_0_5833_4667/master/5833.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=51ed4b32a23b5888d080070b1def5c3b",
           "dominio": "theguardian.com",
+          "affidabilita": 3,
+          "quando": "2d ago"
+        },
+        {
+          "titolo": "Arsenal transfer rumours: Gabriel Jesus, Atletico Madrid",
+          "fonte": "BBC",
+          "stato": "rumor",
+          "link": "https://www.bbc.co.uk/sport/football/articles/crl6n53425ko",
+          "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/c043/live/ecb3f520-0913-11ef-82e8-cd354766a224.png",
+          "dominio": "bbc.co.uk",
           "affidabilita": 3,
           "quando": "2d ago"
         }
@@ -2232,7 +2448,7 @@
             "fonte": "Hull Live",
             "link": "https://www.hulldailymail.co.uk",
             "affidabilita": 1,
-            "quando": "7d ago"
+            "quando": "8d ago"
           },
           {
             "titolo": "Real Betis receive transfer offer from the Premier League",
@@ -2278,7 +2494,7 @@
           "fonte": "The Mirror",
           "stato": "rumor",
           "link": "https://www.mirror.co.uk/sport/football/transfer-news/man-utd-transfer-antony-betis-37565945",
-          "img": "https://i2-prod.mirror.co.uk/article37565934.ece/ALTERNATES/s1200d/0_GettyImages-2190081461.jpg",
+          "img": "",
           "dominio": "mirror.co.uk",
           "affidabilita": 2,
           "quando": "12d ago"
@@ -2316,14 +2532,7 @@
             "fonte": "FC Barcelona",
             "link": "https://www.fcbarcelona.com",
             "affidabilita": 1,
-            "quando": "21h ago"
-          },
-          {
-            "titolo": "Tottenham want La Liga signing in final days of transfer window but Sarr says no to move",
-            "fonte": "Football365",
-            "link": "https://www.football365.com",
-            "affidabilita": 1,
-            "quando": "2d ago"
+            "quando": "1d ago"
           },
           {
             "titolo": "Real Sociedad icon looks back on failed Real Madrid transfer move: ‘It was a serious option’",
@@ -2338,6 +2547,13 @@
             "link": "https://www.flashscore.com",
             "affidabilita": 1,
             "quando": "12d ago"
+          },
+          {
+            "titolo": "Marseille’s Nayef Aguerd rejects Real Sociedad transfer",
+            "fonte": "Get French Football News",
+            "link": "https://www.getfootballnewsfrance.com",
+            "affidabilita": 1,
+            "quando": "17d ago"
           }
         ],
         "obj": [],
@@ -2373,7 +2589,7 @@
           "img": "https://www.fcbarcelona.com/fcbarcelona/photo/2026/08/28/49f96df8-1a7d-4537-86e9-c1765af11a5b/3200X2000-comiat-Hector.jpg",
           "dominio": "fcbarcelona.com",
           "affidabilita": 1,
-          "quando": "21h ago"
+          "quando": "1d ago"
         }
       ],
       "nomi": {
@@ -2544,7 +2760,7 @@
             "fonte": "Yahoo Sports",
             "link": "https://sports.yahoo.com",
             "affidabilita": 1,
-            "quando": "6d ago"
+            "quando": "7d ago"
           },
           {
             "titolo": "Man United 'reach transfer agreement with medical booked' as announcement imminent",
@@ -2585,7 +2801,7 @@
           "img": "https://s.yimg.com/lo/mysterio/api/7e059459e1e1796f7ac3f5fbeb6c681f205fe8cdc39abb94b1a171e928339233/lightyear_networkapi/resizefill_w1200%3Bquality_80%3Bformat_webp/https%3A%2F%2Fmedia.zenfs.com%2Fen%2Fget_spanish_football_news_articles_403%2Ff1d3c65755a6118cfe79c2acc7bbefbd.jpg",
           "dominio": "sports.yahoo.com",
           "affidabilita": 1,
-          "quando": "6d ago"
+          "quando": "7d ago"
         }
       ],
       "nomi": {
@@ -2775,18 +2991,18 @@
             "quando": "1094d ago"
           },
           {
-            "titolo": "Man Utd immediately have to fork over money after Mason Greenwood transfer move",
-            "fonte": "The Mirror",
-            "link": "https://www.mirror.co.uk",
-            "affidabilita": 2,
-            "quando": "46d ago"
-          },
-          {
             "titolo": "Julian Alvarez makes decision over Arsenal, Chelsea and Man Utd transfer",
             "fonte": "Metro.co.uk",
             "link": "https://metro.co.uk",
             "affidabilita": 2,
             "quando": "193d ago"
+          },
+          {
+            "titolo": "Mason Greenwood 'makes permanent transfer decision' as Getafe face competition for him",
+            "fonte": "The Mirror",
+            "link": "https://www.mirror.co.uk",
+            "affidabilita": 2,
+            "quando": "1050d ago"
           },
           {
             "titolo": "Irankunda on verge of record deal with club that made Ronaldo",
@@ -2803,15 +3019,7 @@
             "quando": "122d ago"
           }
         ],
-        "obj": [
-          {
-            "titolo": "Premier League club plot move for Marcus Rashford if Barcelona transfer collapses",
-            "fonte": "Metro.co.uk",
-            "link": "https://metro.co.uk",
-            "affidabilita": 2,
-            "quando": "124d ago"
-          }
-        ],
+        "obj": [],
         "conf": [
           {
             "titolo": "Xabi Alonso handed Chelsea transfer boost as £116m agreement reached",
@@ -2853,14 +3061,14 @@
           "quando": "1094d ago"
         },
         {
-          "titolo": "Man Utd immediately have to fork over money after Mason Greenwood transfer move",
-          "fonte": "The Mirror",
+          "titolo": "Julian Alvarez makes decision over Arsenal, Chelsea and Man Utd transfer",
+          "fonte": "Metro.co.uk",
           "stato": "rumor",
-          "link": "https://www.mirror.co.uk/sport/football/news/man-utd-mason-greenwood-transfer-37433955",
-          "img": "https://i2-prod.mirror.co.uk/article37433954.ece/ALTERNATES/s1200d/1_FBL-FRA-LIGUE1-PSG-MARSEILLE.jpg",
-          "dominio": "mirror.co.uk",
+          "link": "https://metro.co.uk/2026/02/18/julian-alvarez-makes-decision-arsenal-chelsea-man-utd-transfer-26967646/",
+          "img": "https://metro.co.uk/wp-content/uploads/2026/02/GettyImages-2190126031_1771424886.jpg?quality=90&strip=all&w=1200&h=630&crop=1",
+          "dominio": "metro.co.uk",
           "affidabilita": 2,
-          "quando": "46d ago"
+          "quando": "193d ago"
         }
       ],
       "nomi": {
@@ -2875,29 +3083,29 @@
       "col": "#1f63b8",
       "league": "La Liga",
       "colonne": {
-        "rumor": [],
+        "rumor": [
+          {
+            "titolo": "Socceroos teen breaks Aussie record with $33m Premier League move",
+            "fonte": "Nine.com.au",
+            "link": "https://www.nine.com.au",
+            "affidabilita": 1,
+            "quando": "28d ago"
+          }
+        ],
         "obj": [],
         "conf": [],
-        "done": [
-          {
-            "titolo": "Official: Bayern Munich loans out Bryan Zaragoza to Espanyol",
-            "fonte": "Bavarian Football Works",
-            "link": "https://www.bavarianfootballworks.com",
-            "affidabilita": 1,
-            "quando": "3d ago"
-          }
-        ]
+        "done": []
       },
       "feed": [
         {
-          "titolo": "Official: Bayern Munich loans out Bryan Zaragoza to Espanyol",
-          "fonte": "Bavarian Football Works",
-          "stato": "done",
-          "link": "https://www.bavarianfootballworks.com/bayern-munich-transfer-news-rumors/247267/official-bayern-munich-loans-out-bryan-zaragoza-to-espanyol",
-          "img": "https://platform.bavarianfootballworks.com/wp-content/uploads/sites/24/chorus/uploads/chorus_asset/file/26073639/2163797717.jpg?quality=90&strip=all&crop=0%2C9.9470684039088%2C100%2C78.534031413613&w=1200",
-          "dominio": "bavarianfootballworks.com",
+          "titolo": "Socceroos teen breaks Aussie record with $33m Premier League move",
+          "fonte": "Nine.com.au",
+          "stato": "rumor",
+          "link": "https://www.nine.com.au/sport/football/lucas-herrington-transfer-fee-news-hull-city-premier-league-signing-colorado-rapics-australian-record-socceroos-20260803-p60ksp.html",
+          "img": "https://static.ffx.io/images/$zoom_1.105%2C$multiply_1%2C$ratio_1.777778%2C$width_1059%2C$x_1%2C$y_92/t_crop_custom/c_scale%2Cw_1200%2Cq_88%2Cf_auto/f3d1878daf022cf49c47a9d5e872fdb15b6ea64e107845ef1153a7c58ed1b7df",
+          "dominio": "nine.com.au",
           "affidabilita": 1,
-          "quando": "3d ago"
+          "quando": "28d ago"
         }
       ],
       "nomi": {
@@ -3162,13 +3370,6 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "Levante UD agrees to the transfer of Kareem Tunde to West Bromwich Albion",
-            "fonte": "Levante UD",
-            "link": "https://www.levanteud.com",
-            "affidabilita": 1,
-            "quando": "3d ago"
-          },
-          {
             "titolo": "Levante UD adds Yanis Musuayi to their forward line",
             "fonte": "Levante UD",
             "link": "https://www.levanteud.com",
@@ -3198,16 +3399,6 @@
       },
       "feed": [
         {
-          "titolo": "Levante UD agrees to the transfer of Kareem Tunde to West Bromwich Albion",
-          "fonte": "Levante UD",
-          "stato": "rumor",
-          "link": "https://www.levanteud.com/en/news/el-levante-ud-acuerda-el-traspaso-de-kareem-tunde-al-west-bromwich-albion",
-          "img": "https://statics-maker.llt-services.com/lev/images/2026/08/27/large/38ac740a-34bb-40a3-8166-32da20503370-616.jpg",
-          "dominio": "levanteud.com",
-          "affidabilita": 1,
-          "quando": "3d ago"
-        },
-        {
           "titolo": "​Levante UD and CD Numancia reach an agreement for the transfer of Aitor Fernández",
           "fonte": "Levante UD",
           "stato": "conf",
@@ -3226,6 +3417,16 @@
           "dominio": "levanteud.com",
           "affidabilita": 1,
           "quando": "28d ago"
+        },
+        {
+          "titolo": "Socceroo’s ‘dream’ EPL mystery move; snubbed Aussie’s future confirmed — Transfer Whispers",
+          "fonte": "Fox Sports",
+          "stato": "done",
+          "link": "https://www.foxsports.com.au/football/football-2026-chelsea-hit-with-19m-fine-and-suspended-transfer-ban-socceroos-teen-lucas-herrington-on-verge-of-epl-move-mathew-ryan-resigns-with-levante-for-202627-season/news-story/32c49ad25f36d38c27e68f6929527463",
+          "img": "https://content.api.news/v3/images/bin/254c5aae706994a51f1bfa7ca146d757",
+          "dominio": "foxsports.com.au",
+          "affidabilita": 1,
+          "quando": "29d ago"
         }
       ],
       "nomi": {
@@ -3241,6 +3442,13 @@
       "league": "La Liga",
       "colonne": {
         "rumor": [
+          {
+            "titolo": "Houston Dynamo FC transfer forward Ezequiel Ponce to Elche CF in Spain’s La Liga",
+            "fonte": "Houston Dynamo FC",
+            "link": "https://www.houstondynamofc.com",
+            "affidabilita": 1,
+            "quando": "16d ago"
+          },
           {
             "titolo": "Socceroos teen breaks Aussie record with $33m Premier League move",
             "fonte": "Nine.com.au",
@@ -3262,6 +3470,16 @@
         "done": []
       },
       "feed": [
+        {
+          "titolo": "Houston Dynamo FC transfer forward Ezequiel Ponce to Elche CF in Spain’s La Liga",
+          "fonte": "Houston Dynamo FC",
+          "stato": "rumor",
+          "link": "https://www.houstondynamofc.com/news/houston-dynamo-fc-transfer-forward-ezequiel-ponce-to-elche-cf-in-spain-s-la-liga",
+          "img": "https://images.mlssoccer.com/image/private/t_editorial_landscape_3_4_desktop/mls-hou/arygf3sjj9pqtlrui6k2.jpg",
+          "dominio": "houstondynamofc.com",
+          "affidabilita": 1,
+          "quando": "16d ago"
+        },
         {
           "titolo": "Brighton receive first Facundo Buonanotte offer as Elche make move",
           "fonte": "Football Place",
@@ -3358,27 +3576,6 @@
             "quando": "3h ago"
           },
           {
-            "titolo": "Transfer Centre LIVE! Football transfer news, updates and rumours",
-            "fonte": "Sky Sports",
-            "link": "https://www.skysports.com",
-            "affidabilita": 3,
-            "quando": "7h ago"
-          },
-          {
-            "titolo": "Why Liverpool aren't getting the best out of Isak",
-            "fonte": "BBC Sport",
-            "link": "https://www.bbc.co.uk/sport/football/videos/cx2zwrwg5d4o?at_medium=RSS&at_campaign=rss",
-            "affidabilita": 3,
-            "quando": "19h ago"
-          },
-          {
-            "titolo": "Iraola awaits first win as Liverpool rescue late draw against Forest",
-            "fonte": "BBC Sport",
-            "link": "https://www.bbc.co.uk/sport/football/videos/cx2zw96094xo?at_medium=RSS&at_campaign=rss",
-            "affidabilita": 3,
-            "quando": "22h ago"
-          },
-          {
             "titolo": "Liverpool: Cody Gakpo 'chooses next club' as Tottenham learn new transfer decision",
             "fonte": "London Evening Standard",
             "link": "https://www.standard.co.uk",
@@ -3386,11 +3583,25 @@
             "quando": "1h ago"
           },
           {
-            "titolo": "Jeremie Frimpong exposes Liverpool fear and a major transfer oversight",
-            "fonte": "The Independent",
-            "link": "https://www.independent.co.uk",
+            "titolo": "Rumour ranking: Assessing the top 20 transfer window whispers",
+            "fonte": "Football365",
+            "link": "https://www.football365.com",
             "affidabilita": 1,
-            "quando": "4h ago"
+            "quando": "2h ago"
+          },
+          {
+            "titolo": "Liverpool's £85m Man City transfer is peculiar - and there's only one way it makes sense",
+            "fonte": "Liverpool Echo",
+            "link": "https://www.liverpoolecho.co.uk",
+            "affidabilita": 1,
+            "quando": "8h ago"
+          },
+          {
+            "titolo": "Virgil van Dijk reacts to £123m Bradley Barcola Liverpool transfer and makes Cody Gakpo exit plea",
+            "fonte": "Liverpool Echo",
+            "link": "https://www.liverpoolecho.co.uk",
+            "affidabilita": 1,
+            "quando": "10h ago"
           }
         ],
         "obj": [
@@ -3400,6 +3611,20 @@
             "link": "https://www.theguardian.com/football/2026/aug/27/liverpool-bradley-barcola-psg-transfer-window",
             "affidabilita": 3,
             "quando": "3d ago"
+          },
+          {
+            "titolo": "Liverpool 'accelerate Ismaila Sarr transfer' and get crucial green light after £50m bid",
+            "fonte": "Liverpool FC",
+            "link": "https://www.liverpoolfc.com",
+            "affidabilita": 1,
+            "quando": "5h ago"
+          },
+          {
+            "titolo": "Liverpool prepare new offer for Ismaila Sarr as Crystal Palace talks intensify",
+            "fonte": "Liverpool FC",
+            "link": "https://www.liverpoolfc.com",
+            "affidabilita": 1,
+            "quando": "8h ago"
           },
           {
             "titolo": "Liverpool transfer news - winger target heads elsewhere but Reds offered midfielder opportunity",
@@ -3429,7 +3654,7 @@
             "fonte": "Liverpool Echo",
             "link": "https://www.liverpoolecho.co.uk",
             "affidabilita": 1,
-            "quando": "13h ago"
+            "quando": "16h ago"
           },
           {
             "titolo": "Bradley Barcola set for Liverpool medical as £123m transfer from PSG edges closer",
@@ -3445,7 +3670,7 @@
             "fonte": "TNT Sports",
             "link": "https://www.tntsports.co.uk",
             "affidabilita": 1,
-            "quando": "7h ago"
+            "quando": "4h ago"
           }
         ]
       },
@@ -3461,24 +3686,24 @@
           "quando": "3h ago"
         },
         {
-          "titolo": "Transfer Centre LIVE! Football transfer news, updates and rumours",
-          "fonte": "Sky Sports",
-          "stato": "rumor",
-          "link": "https://www.skysports.com/football/live-blog/11661/12476234/transfer-centre-live-football-transfer-news-updates-and-rumours",
-          "img": "https://e0.365dm.com/26/08/1600x900/skysports-alvarez-barcola-enzo-fernandez_7334314.jpg?20260829090154",
-          "dominio": "skysports.com",
+          "titolo": "Bradley Barcola due for medical as Liverpool finalise £123m deal for winger",
+          "fonte": "The Guardian",
+          "stato": "conf",
+          "link": "https://www.theguardian.com/football/2026/aug/29/liverpool-finalise-deal-bradley-barcola-psg-medical-premier-league",
+          "img": "https://i.guim.co.uk/img/media/3ecbddcaee0cfad57abd0433e7dcf501cfdac343/522_0_4414_3531/master/4414.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=143d9a657d35e8fc3fd15862471224ee",
+          "dominio": "theguardian.com",
           "affidabilita": 3,
-          "quando": "7h ago"
+          "quando": "1d ago"
         },
         {
-          "titolo": "Why Liverpool aren't getting the best out of Isak",
-          "fonte": "BBC Sport",
-          "stato": "rumor",
-          "link": "https://www.bbc.co.uk/sport/football/videos/cx2zwrwg5d4o?at_medium=RSS&at_campaign=rss",
-          "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/aac0/live/03e305b0-a3f9-11f1-a291-b542ee92de7c.jpg",
-          "dominio": "bbc.co.uk",
+          "titolo": "Liverpool agree £120m deal for Bradley Barcola after breakthrough talks with PSG",
+          "fonte": "The Guardian",
+          "stato": "obj",
+          "link": "https://www.theguardian.com/football/2026/aug/27/liverpool-bradley-barcola-psg-transfer-window",
+          "img": "https://i.guim.co.uk/img/media/25c2d92c643bf45905d3aaf577e1e965b3f645bb/486_267_2370_1896/master/2370.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=cc82c6b94062454df93ca6728b760617",
+          "dominio": "theguardian.com",
           "affidabilita": 3,
-          "quando": "19h ago"
+          "quando": "3d ago"
         }
       ],
       "nomi": {
@@ -3495,18 +3720,11 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "Marcus Rashford has already issued verdict on Arsenal transfer",
-            "fonte": "London Evening Standard",
-            "link": "https://www.standard.co.uk",
+            "titolo": "Transfer news LIVE: Arsenal agree THREE deals, Barcola to Liverpool update, Rashford latest",
+            "fonte": "The Mirror",
+            "link": "https://www.mirror.co.uk",
             "affidabilita": 2,
             "quando": "just now"
-          },
-          {
-            "titolo": "Arsenal handed huge Alvarez boost after another major transfer twist",
-            "fonte": "London Evening Standard",
-            "link": "https://www.standard.co.uk",
-            "affidabilita": 2,
-            "quando": "1h ago"
           },
           {
             "titolo": "Arsenal confirm new striker signing as squad number revealed",
@@ -3516,34 +3734,41 @@
             "quando": "1h ago"
           },
           {
-            "titolo": "Napoli set to miss out on Gabriel Jesus as Barcelona agree terms with Arsenal",
-            "fonte": "Football Italia",
-            "link": "https://football-italia.net/napoli-lose-gabriel-jesus-to-barcelona/",
-            "affidabilita": 2,
-            "quando": "4h ago"
+            "titolo": "Transfer news LIVE: Arsenal striker to join Barcelona and Gakpo chooses City",
+            "fonte": "The Independent",
+            "link": "https://www.independent.co.uk",
+            "affidabilita": 1,
+            "quando": "just now"
+          },
+          {
+            "titolo": "Rumour ranking: Assessing the top 20 transfer window whispers",
+            "fonte": "Football365",
+            "link": "https://www.football365.com",
+            "affidabilita": 1,
+            "quando": "2h ago"
+          },
+          {
+            "titolo": "Arsenal agree transfer deal after Khvicha Kvaratskhelia comparisons",
+            "fonte": "Football London",
+            "link": "https://www.football.london",
+            "affidabilita": 1,
+            "quando": "1d ago"
+          },
+          {
+            "titolo": "Transfer news LIVE: Alvarez to miss Atletico game before Arsenal deadline",
+            "fonte": "The Independent",
+            "link": "https://www.independent.co.uk",
+            "affidabilita": 1,
+            "quando": "1d ago"
           }
         ],
         "obj": [
           {
-            "titolo": "Arsenal transfer news: Gunners hold talks for Real Madrid and Brazil forward Endrick - Paper Talk",
-            "fonte": "Sky Sports",
-            "link": "https://www.skysports.com",
-            "affidabilita": 3,
-            "quando": "1d ago"
-          },
-          {
-            "titolo": "Arsenal confident of double transfer amid Gabriel Jesus talks",
+            "titolo": "Transfer news LIVE: Arsenal triple deal, Alvarez twist; Liverpool open Barcola talks",
             "fonte": "London Evening Standard",
             "link": "https://www.standard.co.uk",
             "affidabilita": 2,
-            "quando": "1h ago"
-          },
-          {
-            "titolo": "Julian Alvarez to Arsenal transfer twist after Mikel Arteta talks",
-            "fonte": "London Evening Standard",
-            "link": "https://www.standard.co.uk",
-            "affidabilita": 2,
-            "quando": "2h ago"
+            "quando": "4d ago"
           }
         ],
         "conf": [
@@ -3552,17 +3777,17 @@
             "fonte": "BBC Sport",
             "link": "https://www.bbc.co.uk/sport/football/articles/c9qr79jr1qqo?at_medium=RSS&at_campaign=rss",
             "affidabilita": 3,
-            "quando": "2h ago"
+            "quando": "4h ago"
           },
           {
             "titolo": "Arsenal agree £55.7m club-record Gabriel Martinelli sale to Al Hilal with deal also agreed in principle with Barcelona for Gabriel Jesus",
             "fonte": "Sky Sports",
             "link": "https://www.skysports.com",
             "affidabilita": 3,
-            "quando": "2h ago"
+            "quando": "5h ago"
           },
           {
-            "titolo": "Arsenal transfer imminent as defender 'confirms' move after medical",
+            "titolo": "Transfer news LIVE: Arsenal Alvarez talks, Martinelli medical; Barcola to Liverpool",
             "fonte": "London Evening Standard",
             "link": "https://www.standard.co.uk",
             "affidabilita": 2,
@@ -3573,21 +3798,14 @@
             "fonte": "The Telegraph",
             "link": "https://www.telegraph.co.uk",
             "affidabilita": 2,
-            "quando": "2h ago"
+            "quando": "5h ago"
           },
           {
-            "titolo": "Mbaye 'set for medical' before Arsenal clash as deal agreed for Liverpool target",
+            "titolo": "Transfer news LIVE: Secret Arsenal bid; Barcola medical, Chelsea deals",
             "fonte": "London Evening Standard",
             "link": "https://www.standard.co.uk",
             "affidabilita": 2,
-            "quando": "2h ago"
-          },
-          {
-            "titolo": "Gabriel Martinelli transfer agreement reached as Arsenal finally smash record",
-            "fonte": "Football London",
-            "link": "https://www.football.london",
-            "affidabilita": 1,
-            "quando": "3h ago"
+            "quando": "1d ago"
           }
         ],
         "done": [
@@ -3596,7 +3814,7 @@
             "fonte": "TNT Sports",
             "link": "https://www.tntsports.co.uk",
             "affidabilita": 1,
-            "quando": "5h ago"
+            "quando": "4h ago"
           }
         ]
       },
@@ -3609,7 +3827,7 @@
           "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/46bd/live/0cb9e950-a477-11f1-bed8-470734b5b662.jpg",
           "dominio": "bbc.co.uk",
           "affidabilita": 3,
-          "quando": "2h ago"
+          "quando": "4h ago"
         },
         {
           "titolo": "Arsenal agree £55.7m club-record Gabriel Martinelli sale to Al Hilal with deal also agreed in principle with Barcelona for Gabriel Jesus",
@@ -3619,17 +3837,17 @@
           "img": "https://e0.365dm.com/26/08/1600x900/skysports-gabriel-martinelli_7329148.jpg?20260823144928",
           "dominio": "skysports.com",
           "affidabilita": 3,
-          "quando": "2h ago"
+          "quando": "5h ago"
         },
         {
-          "titolo": "Arsenal transfer news: Gunners hold talks for Real Madrid and Brazil forward Endrick - Paper Talk",
-          "fonte": "Sky Sports",
-          "stato": "obj",
-          "link": "https://www.skysports.com/football/news/11095/13578352/arsenal-transfer-news-gunners-hold-talks-for-real-madrid-and-brazil-forward-endrick-paper-talk",
-          "img": "https://e0.365dm.com/26/08/1600x900/skysports-paper-talk-football_7317647.jpg?20260809160824",
-          "dominio": "skysports.com",
-          "affidabilita": 3,
-          "quando": "1d ago"
+          "titolo": "Transfer news LIVE: Arsenal agree THREE deals, Barcola to Liverpool update, Rashford latest",
+          "fonte": "The Mirror",
+          "stato": "rumor",
+          "link": "https://www.mirror.co.uk/sport/football/news/transfer-news-live-barcola-alvarez-37607768",
+          "img": "https://i2-prod.mirror.co.uk/article37607872.ece/ALTERNATES/s1200d/0_Untitled-1.jpg",
+          "dominio": "mirror.co.uk",
+          "affidabilita": 2,
+          "quando": "just now"
         }
       ],
       "nomi": {
@@ -3650,7 +3868,7 @@
             "fonte": "Sky Sports",
             "link": "https://www.skysports.com",
             "affidabilita": 3,
-            "quando": "3h ago"
+            "quando": "6h ago"
           },
           {
             "titolo": "Enzo Fernandez transfer news: Manchester City confident of signing Chelsea midfielder - Paper Talk",
@@ -3678,7 +3896,14 @@
             "fonte": "BBC",
             "link": "https://www.bbc.co.uk",
             "affidabilita": 3,
-            "quando": "5d ago"
+            "quando": "6d ago"
+          },
+          {
+            "titolo": "Chelsea could U-turn on Enzo Fernandez Man City transfer as Xabi Alonso speaks out",
+            "fonte": "Daily Express",
+            "link": "https://www.express.co.uk",
+            "affidabilita": 1,
+            "quando": "1h ago"
           }
         ],
         "obj": [
@@ -3687,7 +3912,7 @@
             "fonte": "BBC",
             "link": "https://www.bbc.co.uk",
             "affidabilita": 3,
-            "quando": "22h ago"
+            "quando": "1d ago"
           },
           {
             "titolo": "Manchester City target Iliman Ndiaye but Everton value forward at £80m",
@@ -3708,14 +3933,7 @@
             "fonte": "The Telegraph",
             "link": "https://www.telegraph.co.uk",
             "affidabilita": 2,
-            "quando": "7h ago"
-          },
-          {
-            "titolo": "Transfer rumors, news: Man City expected to send offer for Fernández",
-            "fonte": "ESPN",
-            "link": "https://www.espn.co.uk",
-            "affidabilita": 2,
-            "quando": "3d ago"
+            "quando": "10h ago"
           },
           {
             "titolo": "Man City transfer state of play - Enzo Fernandez crunch talks, at least four deals",
@@ -3732,7 +3950,7 @@
             "fonte": "TNT Sports",
             "link": "https://www.tntsports.co.uk",
             "affidabilita": 1,
-            "quando": "5h ago"
+            "quando": "7h ago"
           }
         ]
       },
@@ -3745,7 +3963,7 @@
           "img": "https://e0.365dm.com/26/02/1600x900/skysports-transfer-ins-outs_7152975.jpg?20260202081247",
           "dominio": "skysports.com",
           "affidabilita": 3,
-          "quando": "3h ago"
+          "quando": "6h ago"
         },
         {
           "titolo": "Cody Gakpo transfer news: Manchester City open talks with Liverpool",
@@ -3755,7 +3973,7 @@
           "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/8e0d/live/2683a700-a3e0-11f1-ada8-4d531f05da8c.jpg",
           "dominio": "bbc.co.uk",
           "affidabilita": 3,
-          "quando": "22h ago"
+          "quando": "1d ago"
         },
         {
           "titolo": "Manchester City target Iliman Ndiaye but Everton value forward at £80m",
@@ -3782,46 +4000,46 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "Chelsea maintain perfect start in seven-goal Brighton thriller",
+            "fonte": "BBC Sport",
+            "link": "https://www.bbc.co.uk/sport/football/videos/c7v4e23z7gvo?at_medium=RSS&at_campaign=rss",
+            "affidabilita": 3,
+            "quando": "1h ago"
+          },
+          {
             "titolo": "Tech trouble leaves Chelsea game ref without comms",
             "fonte": "BBC Sport",
             "link": "https://www.bbc.co.uk/sport/football/articles/c5yl4lzp9gzo?at_medium=RSS&at_campaign=rss",
             "affidabilita": 3,
-            "quando": "just now"
+            "quando": "3h ago"
           },
           {
             "titolo": "Emi Martinez transfer news: Chelsea complete signing of Argentina international goalkeeper from Aston Villa",
             "fonte": "Sky Sports",
             "link": "https://www.skysports.com",
             "affidabilita": 3,
-            "quando": "just now"
+            "quando": "3h ago"
           },
           {
             "titolo": "Why Chelsea need more than a new goalkeeper to be title challengers",
             "fonte": "BBC Sport",
             "link": "https://www.bbc.co.uk/sport/football/articles/cwyzpez3x3go?at_medium=RSS&at_campaign=rss",
             "affidabilita": 3,
-            "quando": "just now"
+            "quando": "3h ago"
           },
           {
             "titolo": "Chelsea had the 'quality to punish us' - Hurzeler",
             "fonte": "BBC Sport",
             "link": "https://www.bbc.co.uk/sport/football/videos/c0lrgrzjnpxo?at_medium=RSS&at_campaign=rss",
             "affidabilita": 3,
-            "quando": "1h ago"
+            "quando": "4h ago"
           },
           {
             "titolo": "Joao Pedro and debutant Yalcouye star - Chelsea v Brighton player ratings",
             "fonte": "BBC Sport",
             "link": "https://www.bbc.co.uk/sport/football/articles/cdx5z7zk54po?at_medium=RSS&at_campaign=rss",
             "affidabilita": 3,
-            "quando": "3h ago"
-          },
-          {
-            "titolo": "Emiliano Martínez finally gets his Villa exit with £7.5m move to Chelsea",
-            "fonte": "The Guardian",
-            "link": "https://www.theguardian.com",
-            "affidabilita": 3,
-            "quando": "8h ago"
+            "quando": "5h ago"
           }
         ],
         "obj": [
@@ -3831,15 +4049,22 @@
             "link": "https://www.theguardian.com/football/2026/aug/26/chelsea-emiliano-martinez-aston-villa-goalkeeper",
             "affidabilita": 3,
             "quando": "3d ago"
+          },
+          {
+            "titolo": "Liverpool are overpaying for Bradley Barcola - but joining the Reds offers flying Frenchman the chance to become a global superstar: GOAL grades the biggest deals of the 2026 summer transfer windowl",
+            "fonte": "Goal.com",
+            "link": "https://www.goal.com",
+            "affidabilita": 2,
+            "quando": "2h ago"
           }
         ],
         "conf": [
           {
-            "titolo": "Chelsea make Gittens decision as two more deals agreed before deadline",
+            "titolo": "Chelsea close in on Honest Ahanor transfer as medical booked after £40m deal agreed",
             "fonte": "London Evening Standard",
             "link": "https://www.standard.co.uk",
             "affidabilita": 2,
-            "quando": "1h ago"
+            "quando": "3h ago"
           }
         ],
         "done": [
@@ -3848,14 +4073,14 @@
             "fonte": "Chelsea Football Club",
             "link": "https://www.chelseafc.com",
             "affidabilita": 1,
-            "quando": "10h ago"
+            "quando": "13h ago"
           },
           {
             "titolo": "Gallery: Emi Martinez is a Blue! | News | Official Site",
             "fonte": "Chelsea Football Club",
             "link": "https://www.chelseafc.com",
             "affidabilita": 1,
-            "quando": "10h ago"
+            "quando": "13h ago"
           },
           {
             "titolo": "Nicolas Jackson departs Chelsea on permanent transfer | News | Official Site",
@@ -3875,6 +4100,16 @@
       },
       "feed": [
         {
+          "titolo": "Chelsea maintain perfect start in seven-goal Brighton thriller",
+          "fonte": "BBC Sport",
+          "stato": "rumor",
+          "link": "https://www.bbc.co.uk/sport/football/videos/c7v4e23z7gvo?at_medium=RSS&at_campaign=rss",
+          "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/2cd0/live/03f6ccd0-a49e-11f1-b109-879e35c24276.jpg",
+          "dominio": "bbc.co.uk",
+          "affidabilita": 3,
+          "quando": "1h ago"
+        },
+        {
           "titolo": "Tech trouble leaves Chelsea game ref without comms",
           "fonte": "BBC Sport",
           "stato": "rumor",
@@ -3882,7 +4117,7 @@
           "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/a7a0/live/82903640-a489-11f1-8395-fb1eae51ae18.jpg",
           "dominio": "bbc.co.uk",
           "affidabilita": 3,
-          "quando": "just now"
+          "quando": "3h ago"
         },
         {
           "titolo": "Emi Martinez transfer news: Chelsea complete signing of Argentina international goalkeeper from Aston Villa",
@@ -3892,17 +4127,7 @@
           "img": "https://e0.365dm.com/26/08/1600x900/skysports-emiliano-martinez_7335481.jpg?20260830115012",
           "dominio": "skysports.com",
           "affidabilita": 3,
-          "quando": "just now"
-        },
-        {
-          "titolo": "Why Chelsea need more than a new goalkeeper to be title challengers",
-          "fonte": "BBC Sport",
-          "stato": "rumor",
-          "link": "https://www.bbc.co.uk/sport/football/articles/cwyzpez3x3go?at_medium=RSS&at_campaign=rss",
-          "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/7c36/live/afabb460-a484-11f1-bed8-470734b5b662.jpg",
-          "dominio": "bbc.co.uk",
-          "affidabilita": 3,
-          "quando": "just now"
+          "quando": "3h ago"
         }
       ],
       "nomi": {
@@ -3919,30 +4144,30 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "Manchester United transfer latest: Gary Neville claims the Red Devils must buy a centre-back and left-back before the transfer window closes",
+            "titolo": "Transfer news: Summer transfer window 2026 - Premier League deals, ins and outs",
             "fonte": "Sky Sports",
             "link": "https://www.skysports.com",
             "affidabilita": 3,
             "quando": "3h ago"
           },
           {
-            "titolo": "Man Utd right to be cautious in transfer market after years of profligacy",
-            "fonte": "The Telegraph",
-            "link": "https://www.telegraph.co.uk",
-            "affidabilita": 2,
-            "quando": "10h ago"
+            "titolo": "Manchester United transfer latest: Gary Neville claims the Red Devils must buy a centre-back and left-back before the transfer window closes",
+            "fonte": "Sky Sports",
+            "link": "https://www.skysports.com",
+            "affidabilita": 3,
+            "quando": "6h ago"
+          },
+          {
+            "titolo": "Man Utd to unveil new signing today as Michael Carrick provides exciting update",
+            "fonte": "Daily Express",
+            "link": "https://www.express.co.uk",
+            "affidabilita": 1,
+            "quando": "8h ago"
           }
         ],
         "obj": [
           {
             "titolo": "Bruno Fernandes responds to £133m transfer offer to leave Manchester United",
-            "fonte": "Metro.co.uk",
-            "link": "https://metro.co.uk",
-            "affidabilita": 2,
-            "quando": "8h ago"
-          },
-          {
-            "titolo": "Arsenal warned £65m target is 'waiting' for Manchester United transfer",
             "fonte": "Metro.co.uk",
             "link": "https://metro.co.uk",
             "affidabilita": 2,
@@ -3979,31 +4204,41 @@
             "quando": "1d ago"
           },
           {
-            "titolo": "Transfer news LIVE: Arsenal triple agreement, Sarr to Liverpool back on, Man Utd unveiling",
-            "fonte": "Daily Express",
-            "link": "https://www.express.co.uk",
-            "affidabilita": 1,
-            "quando": "1h ago"
-          },
-          {
             "titolo": "Man United transfer news LIVE: Marcus Rashford latest, Arsenal agreement, Amad bid",
             "fonte": "Manchester Evening News",
             "link": "https://www.manchestereveningnews.co.uk",
             "affidabilita": 1,
-            "quando": "1h ago"
+            "quando": "2h ago"
           }
         ],
         "done": [
+          {
+            "titolo": "Man Utd Transfer News Today: Victor Osimhen is 'waiting' as exit announced",
+            "fonte": "footballtransfers.com",
+            "link": "https://www.footballtransfers.com",
+            "affidabilita": 1,
+            "quando": "1h ago"
+          },
           {
             "titolo": "Summer transfer window 2026: Every Premier League done deal",
             "fonte": "TNT Sports",
             "link": "https://www.tntsports.co.uk",
             "affidabilita": 1,
-            "quando": "5h ago"
+            "quando": "4h ago"
           }
         ]
       },
       "feed": [
+        {
+          "titolo": "Transfer news: Summer transfer window 2026 - Premier League deals, ins and outs",
+          "fonte": "Sky Sports",
+          "stato": "rumor",
+          "link": "https://www.skysports.com/transfer/news/12691/13546618/transfer-news-summer-transfer-window-2026-premier-league-deals-ins-and-outs",
+          "img": "https://e0.365dm.com/26/02/1600x900/skysports-transfer-ins-outs_7152975.jpg?20260202081247",
+          "dominio": "skysports.com",
+          "affidabilita": 3,
+          "quando": "3h ago"
+        },
         {
           "titolo": "Manchester United transfer latest: Gary Neville claims the Red Devils must buy a centre-back and left-back before the transfer window closes",
           "fonte": "Sky Sports",
@@ -4012,7 +4247,7 @@
           "img": "https://e0.365dm.com/26/08/1600x900/skysports-premier-league-manchester-united_7324694.jpg?20260830154929",
           "dominio": "skysports.com",
           "affidabilita": 3,
-          "quando": "3h ago"
+          "quando": "6h ago"
         },
         {
           "titolo": "Man Utd deal agreed with left-back transfer in the works before deadline day",
@@ -4023,16 +4258,6 @@
           "dominio": "standard.co.uk",
           "affidabilita": 2,
           "quando": "just now"
-        },
-        {
-          "titolo": "Transfer news LIVE: Arsenal Alvarez talks, Martinelli medical; Barcola to Liverpool",
-          "fonte": "London Evening Standard",
-          "stato": "conf",
-          "link": "https://www.standard.co.uk/sport/football/transfer-news-live-arsenal-fc-chelsea-man-utd-liverpool-alvarez-barcola-gakpo-b1284294.html",
-          "img": "https://static.standard.co.uk/2026/08/30/7/03/FotoJet-(1).jpeg?width=1200&auto=webp&quality=75",
-          "dominio": "standard.co.uk",
-          "affidabilita": 2,
-          "quando": "1h ago"
         }
       ],
       "nomi": {
@@ -4053,42 +4278,42 @@
             "fonte": "Sky Sports",
             "link": "https://www.skysports.com",
             "affidabilita": 3,
-            "quando": "7h ago"
+            "quando": "9h ago"
           },
           {
             "titolo": "Tottenham make Ndiaye move with Richarlison set for Everton",
             "fonte": "BBC Sport",
             "link": "https://www.bbc.co.uk/sport/football/articles/crl631pgxj7o?at_medium=RSS&at_campaign=rss",
             "affidabilita": 3,
-            "quando": "7h ago"
+            "quando": "10h ago"
+          },
+          {
+            "titolo": "Tottenham reject Danso loan move to Sunderland",
+            "fonte": "BBC",
+            "link": "https://www.bbc.co.uk",
+            "affidabilita": 3,
+            "quando": "1d ago"
           },
           {
             "titolo": "Juventus final Sarr details for €33m with Tottenham, also interested in Bakola",
             "fonte": "Football Italia",
             "link": "https://football-italia.net/juventus-final-sarr-details-tottenham-bakola/",
             "affidabilita": 2,
-            "quando": "3h ago"
+            "quando": "5h ago"
           },
           {
             "titolo": "Tottenham to seal Iliman Ndiaye transfer after Cody Gakpo snub with Richarlison moving to Everton",
             "fonte": "The Mirror",
             "link": "https://www.mirror.co.uk",
             "affidabilita": 2,
-            "quando": "5h ago"
-          },
-          {
-            "titolo": "Roberto De Zerbi confirms THREE Spurs stars have asked to leave before deadline day",
-            "fonte": "The Mirror",
-            "link": "https://www.mirror.co.uk",
-            "affidabilita": 2,
-            "quando": "11h ago"
+            "quando": "8h ago"
           },
           {
             "titolo": "Richarlison aims subtle dig after Roberto De Zerbi claim and Tottenham transfer decision",
             "fonte": "Football London",
             "link": "https://www.football.london",
             "affidabilita": 1,
-            "quando": "1h ago"
+            "quando": "4h ago"
           }
         ],
         "obj": [
@@ -4097,7 +4322,7 @@
             "fonte": "BBC",
             "link": "https://www.bbc.com",
             "affidabilita": 3,
-            "quando": "9h ago"
+            "quando": "11h ago"
           },
           {
             "titolo": "De Zerbi wants one more signing for Tottenham before transfer deadline",
@@ -4111,7 +4336,7 @@
             "fonte": "The Telegraph",
             "link": "https://www.telegraph.co.uk",
             "affidabilita": 2,
-            "quando": "7h ago"
+            "quando": "10h ago"
           }
         ],
         "conf": [
@@ -4120,6 +4345,13 @@
             "fonte": "Sky Sports",
             "link": "https://www.skysports.com",
             "affidabilita": 3,
+            "quando": "7h ago"
+          },
+          {
+            "titolo": "Tottenham reach agreement to sign Iliman Ndiaye, sell Richarlison back to Everton",
+            "fonte": "The New York Times",
+            "link": "https://www.nytimes.com",
+            "affidabilita": 1,
             "quando": "5h ago"
           },
           {
@@ -4127,21 +4359,14 @@
             "fonte": "Football London",
             "link": "https://www.football.london",
             "affidabilita": 1,
-            "quando": "5h ago"
-          },
-          {
-            "titolo": "Tottenham reach agreement to sign Iliman Ndiaye with Richarlison heading back to Everton",
-            "fonte": "The New York Times",
-            "link": "https://www.nytimes.com",
-            "affidabilita": 1,
-            "quando": "7h ago"
+            "quando": "8h ago"
           },
           {
             "titolo": "Tottenham reach stunning agreement for star who instigated 2023 FA Cup shock",
             "fonte": "talkSPORT",
             "link": "https://talksport.com",
             "affidabilita": 1,
-            "quando": "8h ago"
+            "quando": "10h ago"
           }
         ],
         "done": []
@@ -4155,7 +4380,7 @@
           "img": "https://e0.365dm.com/26/08/1600x900/skysports-iliman-ndiaye-richarlison_7335450.jpg?20260830103520",
           "dominio": "skysports.com",
           "affidabilita": 3,
-          "quando": "5h ago"
+          "quando": "7h ago"
         },
         {
           "titolo": "Transfer Centre LIVE! Football transfer news, updates and rumours",
@@ -4165,7 +4390,7 @@
           "img": "https://e0.365dm.com/26/08/1600x900/skysports-alvarez-barcola-enzo-fernandez_7334314.jpg?20260829090154",
           "dominio": "skysports.com",
           "affidabilita": 3,
-          "quando": "7h ago"
+          "quando": "9h ago"
         },
         {
           "titolo": "Tottenham make Ndiaye move with Richarlison set for Everton",
@@ -4175,7 +4400,7 @@
           "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/c386/live/8c089d30-a45b-11f1-a291-b542ee92de7c.png",
           "dominio": "bbc.co.uk",
           "affidabilita": 3,
-          "quando": "7h ago"
+          "quando": "10h ago"
         }
       ],
       "nomi": {
@@ -4199,25 +4424,11 @@
             "quando": "3h ago"
           },
           {
-            "titolo": "Transfer Centre LIVE! Football transfer news, updates and rumours",
-            "fonte": "Sky Sports",
-            "link": "https://www.skysports.com",
-            "affidabilita": 3,
-            "quando": "7h ago"
-          },
-          {
             "titolo": "Newcastle United",
             "fonte": "BBC",
             "link": "https://www.bbc.co.uk",
             "affidabilita": 3,
-            "quando": "16h ago"
-          },
-          {
-            "titolo": "How new signing Gonzalez can be Newcastle's 'quarterback'",
-            "fonte": "BBC Sport",
-            "link": "https://www.bbc.co.uk/sport/football/videos/cde0k31731xo?at_medium=RSS&at_campaign=rss",
-            "affidabilita": 3,
-            "quando": "19h ago"
+            "quando": "18h ago"
           },
           {
             "titolo": "Newcastle United news: Fan's view on transfers and Premier League",
@@ -4227,11 +4438,25 @@
             "quando": "9d ago"
           },
           {
+            "titolo": "Rumour ranking: Assessing the top 20 transfer window whispers",
+            "fonte": "Football365",
+            "link": "https://www.football365.com",
+            "affidabilita": 1,
+            "quando": "2h ago"
+          },
+          {
             "titolo": "Bad news for Newcastle as Liverpool make contact for £60m striker",
             "fonte": "Football365",
             "link": "https://www.football365.com",
             "affidabilita": 1,
-            "quando": "8h ago"
+            "quando": "10h ago"
+          },
+          {
+            "titolo": "Sandro Tonali has Newcastle United fans all saying the same thing after Tottenham nightmare",
+            "fonte": "Chronicle Live",
+            "link": "https://www.chroniclelive.co.uk",
+            "affidabilita": 1,
+            "quando": "14h ago"
           }
         ],
         "obj": [
@@ -4249,7 +4474,7 @@
             "fonte": "Get French Football News",
             "link": "https://www.getfootballnewsfrance.com",
             "affidabilita": 1,
-            "quando": "9h ago"
+            "quando": "12h ago"
           }
         ],
         "done": [
@@ -4265,7 +4490,7 @@
             "fonte": "TNT Sports",
             "link": "https://www.tntsports.co.uk",
             "affidabilita": 1,
-            "quando": "5h ago"
+            "quando": "4h ago"
           }
         ]
       },
@@ -4281,16 +4506,6 @@
           "quando": "3h ago"
         },
         {
-          "titolo": "Transfer Centre LIVE! Football transfer news, updates and rumours",
-          "fonte": "Sky Sports",
-          "stato": "rumor",
-          "link": "https://www.skysports.com/football/live-blog/11661/12476234/transfer-centre-live-football-transfer-news-updates-and-rumours",
-          "img": "https://e0.365dm.com/26/08/1600x900/skysports-alvarez-barcola-enzo-fernandez_7334314.jpg?20260829090154",
-          "dominio": "skysports.com",
-          "affidabilita": 3,
-          "quando": "7h ago"
-        },
-        {
           "titolo": "Newcastle United",
           "fonte": "BBC",
           "stato": "rumor",
@@ -4298,7 +4513,17 @@
           "img": "https://ichef.bbci.co.uk/ace/standard/480/cpsprodpb/34d5/live/a43ba510-df52-11f0-aae2-2191c0e48a3b.png",
           "dominio": "bbc.co.uk",
           "affidabilita": 3,
-          "quando": "16h ago"
+          "quando": "18h ago"
+        },
+        {
+          "titolo": "Newcastle transfer news: Nico Gonzalez signs from Man City for £52m",
+          "fonte": "BBC",
+          "stato": "done",
+          "link": "https://www.bbc.com/sport/football/articles/cx2zlnpnk4zo",
+          "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/a4e9/live/c63e0d70-a17f-11f1-9619-edac4fa7937f.jpg",
+          "dominio": "bbc.com",
+          "affidabilita": 3,
+          "quando": "4d ago"
         }
       ],
       "nomi": {
@@ -4315,18 +4540,32 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "Transfer news: Summer transfer window 2026 - Premier League deals, ins and outs",
+            "fonte": "Sky Sports",
+            "link": "https://www.skysports.com",
+            "affidabilita": 3,
+            "quando": "3h ago"
+          },
+          {
             "titolo": "Transfer roundup: Ollie Watkins completes move to Al-Hilal from Aston Villa",
             "fonte": "The Guardian",
             "link": "https://www.theguardian.com",
             "affidabilita": 3,
-            "quando": "just now"
+            "quando": "3h ago"
           },
           {
             "titolo": "Ollie Watkins completes £51m move to Saudi side Al-Hilal from Aston Villa",
             "fonte": "BBC",
+            "link": "https://www.bbc.com",
+            "affidabilita": 3,
+            "quando": "4h ago"
+          },
+          {
+            "titolo": "Villa and Chelsea transfers: Why the clubs keep doing business",
+            "fonte": "BBC",
             "link": "https://www.bbc.co.uk",
             "affidabilita": 3,
-            "quando": "1h ago"
+            "quando": "12h ago"
           },
           {
             "titolo": "Aston Villa sign Jackson and close on Mbaye as Emery clears air with departing Watkins",
@@ -4341,27 +4580,13 @@
             "link": "https://www.theguardian.com",
             "affidabilita": 3,
             "quando": "2d ago"
-          },
-          {
-            "titolo": "Aston Villa’s squad is crumbling while Spurs splash out. Are the financial rules fair?",
-            "fonte": "The Guardian",
-            "link": "https://www.theguardian.com/football/2026/aug/28/aston-villa-spurs-are-football-financial-rules-fair-transfers",
-            "affidabilita": 3,
-            "quando": "2d ago"
-          },
-          {
-            "titolo": "Chelsea agree £7.5m deal to sign Emiliano Martínez from Aston Villa",
-            "fonte": "The Guardian",
-            "link": "https://www.theguardian.com/football/2026/aug/27/chelsea-agree-deal-sign-emiliano-martinez-aston-villa-enzo-fernandez",
-            "affidabilita": 3,
-            "quando": "2d ago"
           }
         ],
         "obj": [
           {
             "titolo": "Football transfer rumours: Palace to hijack Aston Villa move for Joel Ordóñez?",
             "fonte": "The Guardian",
-            "link": "https://www.theguardian.com",
+            "link": "https://www.theguardian.com/football/2026/aug/27/football-transfer-rumour-mill-crystal-palace-hijack-aston-villa-move-joel-ordonez",
             "affidabilita": 3,
             "quando": "3d ago"
           },
@@ -4371,23 +4596,9 @@
             "link": "https://www.theguardian.com/football/2026/aug/26/chelsea-emiliano-martinez-aston-villa-goalkeeper",
             "affidabilita": 3,
             "quando": "3d ago"
-          },
-          {
-            "titolo": "Aston Villa transfer news: Club in talks with Club Brugge for defender Joel Ordonez",
-            "fonte": "BBC",
-            "link": "https://www.bbc.co.uk",
-            "affidabilita": 3,
-            "quando": "5d ago"
           }
         ],
         "conf": [
-          {
-            "titolo": "Ibrahim Mbaye transfer news: Aston Villa reach verbal agreement to sign PSG and Senegal forward",
-            "fonte": "Sky Sports",
-            "link": "https://www.skysports.com",
-            "affidabilita": 3,
-            "quando": "1d ago"
-          },
           {
             "titolo": "Mbaye 'set for medical' before Arsenal clash as deal agreed for Liverpool target",
             "fonte": "London Evening Standard",
@@ -4400,7 +4611,7 @@
             "fonte": "The New York Times",
             "link": "https://www.nytimes.com",
             "affidabilita": 1,
-            "quando": "1h ago"
+            "quando": "4h ago"
           }
         ],
         "done": [
@@ -4409,11 +4620,28 @@
             "fonte": "Sky Sports",
             "link": "https://www.skysports.com",
             "affidabilita": 3,
-            "quando": "just now"
+            "quando": "3h ago"
+          },
+          {
+            "titolo": "Summer transfer window 2026: Every Premier League done deal",
+            "fonte": "TNT Sports",
+            "link": "https://www.tntsports.co.uk",
+            "affidabilita": 1,
+            "quando": "4h ago"
           }
         ]
       },
       "feed": [
+        {
+          "titolo": "Transfer news: Summer transfer window 2026 - Premier League deals, ins and outs",
+          "fonte": "Sky Sports",
+          "stato": "rumor",
+          "link": "https://www.skysports.com/transfer/news/12691/13546618/transfer-news-summer-transfer-window-2026-premier-league-deals-ins-and-outs",
+          "img": "https://e0.365dm.com/26/02/1600x900/skysports-transfer-ins-outs_7152975.jpg?20260202081247",
+          "dominio": "skysports.com",
+          "affidabilita": 3,
+          "quando": "3h ago"
+        },
         {
           "titolo": "Aston Villa transfer news: Ollie Watkins joins Al Hilal as deal agreed for Taylor Harwood-Bellis",
           "fonte": "Sky Sports",
@@ -4422,7 +4650,7 @@
           "img": "https://e0.365dm.com/26/04/1600x900/skysports-ollie-watkins-aston-villa_7222096.jpg?20260830182050",
           "dominio": "skysports.com",
           "affidabilita": 3,
-          "quando": "just now"
+          "quando": "3h ago"
         },
         {
           "titolo": "Transfer roundup: Ollie Watkins completes move to Al-Hilal from Aston Villa",
@@ -4432,17 +4660,7 @@
           "img": "https://i.guim.co.uk/img/media/9875b878c7968ebee7277b14a0e5dabe42447744/1148_601_1929_1543/master/1929.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=a559787d2127af1bc4325836f93e5439",
           "dominio": "theguardian.com",
           "affidabilita": 3,
-          "quando": "just now"
-        },
-        {
-          "titolo": "Ollie Watkins completes £51m move to Saudi side Al-Hilal from Aston Villa",
-          "fonte": "BBC",
-          "stato": "rumor",
-          "link": "https://www.bbc.co.uk/sport/football/articles/c70le5gllyeo",
-          "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/454d/live/9bb600a0-a493-11f1-8395-fb1eae51ae18.jpg",
-          "dominio": "bbc.co.uk",
-          "affidabilita": 3,
-          "quando": "1h ago"
+          "quando": "3h ago"
         }
       ],
       "nomi": {
@@ -4459,18 +4677,32 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "Chelsea maintain perfect start in seven-goal Brighton thriller",
+            "fonte": "BBC Sport",
+            "link": "https://www.bbc.co.uk/sport/football/videos/c7v4e23z7gvo?at_medium=RSS&at_campaign=rss",
+            "affidabilita": 3,
+            "quando": "2h ago"
+          },
+          {
             "titolo": "Alonso praises Joao Pedro's 'desire' after seven-goal Brighton thriller",
             "fonte": "BBC Sport",
             "link": "https://www.bbc.co.uk/sport/football/videos/cpq09095xjzo?at_medium=RSS&at_campaign=rss",
             "affidabilita": 3,
-            "quando": "1h ago"
+            "quando": "4h ago"
           },
           {
             "titolo": "Joao Pedro and debutant Yalcouye star - Chelsea v Brighton player ratings",
             "fonte": "BBC Sport",
             "link": "https://www.bbc.co.uk/sport/football/articles/cdx5z7zk54po?at_medium=RSS&at_campaign=rss",
             "affidabilita": 3,
-            "quando": "3h ago"
+            "quando": "5h ago"
+          },
+          {
+            "titolo": "Man Utd transfer news: Club agree £70m fee for Brighton's Carlos Baleba",
+            "fonte": "BBC",
+            "link": "https://www.bbc.com",
+            "affidabilita": 3,
+            "quando": "9d ago"
           },
           {
             "titolo": "Brighton transfer rumours: Evan Ferguson, Genoa",
@@ -4480,25 +4712,11 @@
             "quando": "16d ago"
           },
           {
-            "titolo": "Brighton chief sends message to Man Utd over Carlos Baleba transfer",
-            "fonte": "Metro.co.uk",
-            "link": "https://metro.co.uk",
-            "affidabilita": 2,
-            "quando": "10d ago"
-          },
-          {
-            "titolo": "'The club of my dreams' - Man Utd sign Baleba as midfield rebuild continues",
-            "fonte": "TNT Sports",
-            "link": "https://www.tntsports.co.uk",
-            "affidabilita": 1,
-            "quando": "5d ago"
-          },
-          {
-            "titolo": "Brighton's potential £190m triple transfer plan emerges - Liverpool and Man U update",
-            "fonte": "SussexWorld",
-            "link": "https://www.sussexexpress.co.uk",
-            "affidabilita": 1,
-            "quando": "5d ago"
+            "titolo": "Leicester sign Brighton teenager Howell on loan",
+            "fonte": "BBC",
+            "link": "https://www.bbc.com",
+            "affidabilita": 3,
+            "quando": "17d ago"
           }
         ],
         "obj": [
@@ -4513,18 +4731,11 @@
         "conf": [],
         "done": [
           {
-            "titolo": "Brighton transfer news: Canada striker Promise David signs on loan from Royale Union Saint-Gilloise",
-            "fonte": "BBC",
-            "link": "https://www.bbc.com",
-            "affidabilita": 3,
-            "quando": "12d ago"
-          },
-          {
             "titolo": "Premier League 2026 summer transfers: All confirmed ins, outs for every club",
             "fonte": "ESPN",
             "link": "https://www.espn.com",
             "affidabilita": 2,
-            "quando": "11h ago"
+            "quando": "2h ago"
           },
           {
             "titolo": "Brighton transfer news: Harry Howell reacts as new club and contract confirmed",
@@ -4537,6 +4748,16 @@
       },
       "feed": [
         {
+          "titolo": "Chelsea maintain perfect start in seven-goal Brighton thriller",
+          "fonte": "BBC Sport",
+          "stato": "rumor",
+          "link": "https://www.bbc.co.uk/sport/football/videos/c7v4e23z7gvo?at_medium=RSS&at_campaign=rss",
+          "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/2cd0/live/03f6ccd0-a49e-11f1-b109-879e35c24276.jpg",
+          "dominio": "bbc.co.uk",
+          "affidabilita": 3,
+          "quando": "2h ago"
+        },
+        {
           "titolo": "Alonso praises Joao Pedro's 'desire' after seven-goal Brighton thriller",
           "fonte": "BBC Sport",
           "stato": "rumor",
@@ -4544,27 +4765,17 @@
           "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/065e/live/ace419d0-a48d-11f1-a291-b542ee92de7c.jpg",
           "dominio": "bbc.co.uk",
           "affidabilita": 3,
-          "quando": "1h ago"
+          "quando": "4h ago"
         },
         {
           "titolo": "Joao Pedro and debutant Yalcouye star - Chelsea v Brighton player ratings",
           "fonte": "BBC Sport",
           "stato": "rumor",
           "link": "https://www.bbc.co.uk/sport/football/articles/cdx5z7zk54po?at_medium=RSS&at_campaign=rss",
-          "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/6e9a/live/2215c980-a478-11f1-bed8-470734b5b662.jpg",
+          "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/3521/live/54fa4410-a4a6-11f1-b109-879e35c24276.jpg",
           "dominio": "bbc.co.uk",
           "affidabilita": 3,
-          "quando": "3h ago"
-        },
-        {
-          "titolo": "Brighton transfer news: Canada striker Promise David signs on loan from Royale Union Saint-Gilloise",
-          "fonte": "BBC",
-          "stato": "done",
-          "link": "https://www.bbc.com/sport/football/articles/c30450z6pmmo",
-          "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/6019/live/2d88af90-9b44-11f1-bd52-f9704e8e5c82.jpg",
-          "dominio": "bbc.com",
-          "affidabilita": 3,
-          "quando": "12d ago"
+          "quando": "5h ago"
         }
       ],
       "nomi": {
@@ -4585,28 +4796,28 @@
             "fonte": "Sky Sports",
             "link": "https://www.skysports.com",
             "affidabilita": 3,
-            "quando": "3h ago"
+            "quando": "6h ago"
           },
           {
             "titolo": "West Ham transfer rumours: Jean-Clair Todibo set to join Ligue 1 side",
             "fonte": "LiveScore",
             "link": "https://www.livescore.com",
             "affidabilita": 1,
-            "quando": "7h ago"
+            "quando": "10h ago"
           },
           {
             "titolo": "Soungoutou Magassa on verge of West Ham exit",
             "fonte": "Yahoo Sports",
             "link": "https://sports.yahoo.com",
             "affidabilita": 1,
-            "quando": "9h ago"
+            "quando": "12h ago"
           },
           {
             "titolo": "What West Ham United have approved for Soungoutou Magassa exit as transfer now close",
             "fonte": "Yahoo Sports",
             "link": "https://sports.yahoo.com",
             "affidabilita": 1,
-            "quando": "10h ago"
+            "quando": "13h ago"
           },
           {
             "titolo": "“Harry Redknapp was right. Agents have had West Ham’s pants down over the years. The club have only acted when weakness is exposed” Tony Gale on where the Hammers have fallen short in the transfer window",
@@ -4653,14 +4864,14 @@
             "fonte": "BBC",
             "link": "https://www.bbc.co.uk",
             "affidabilita": 3,
-            "quando": "3d ago"
+            "quando": "4d ago"
           },
           {
             "titolo": "Premier League 2026 summer transfers: All confirmed ins, outs for every club",
             "fonte": "ESPN",
             "link": "https://www.espn.co.uk",
             "affidabilita": 2,
-            "quando": "5h ago"
+            "quando": "8h ago"
           }
         ]
       },
@@ -4673,7 +4884,7 @@
           "img": "https://e0.365dm.com/26/02/1600x900/skysports-transfer-ins-outs_7152975.jpg?20260202081247",
           "dominio": "skysports.com",
           "affidabilita": 3,
-          "quando": "3h ago"
+          "quando": "6h ago"
         },
         {
           "titolo": "Brentford transfer news: West Ham's El Hadji Malick Diouf joins Bees in £40m deal",
@@ -4683,7 +4894,7 @@
           "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/d07a/live/0a481a60-a2d4-11f1-941c-8741c1a72471.jpg",
           "dominio": "bbc.co.uk",
           "affidabilita": 3,
-          "quando": "3d ago"
+          "quando": "4d ago"
         },
         {
           "titolo": "Football transfer rumours: Vardy to West Ham? Madrid move for Zubimendi?",
@@ -4710,13 +4921,6 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "Transfer news: Summer transfer window 2026 - Premier League deals, ins and outs",
-            "fonte": "Sky Sports",
-            "link": "https://www.skysports.com",
-            "affidabilita": 3,
-            "quando": "3h ago"
-          },
-          {
             "titolo": "Crystal Palace transfers, latest news, rumours and gossip: Live updates, goals and highlights",
             "fonte": "Sky Sports",
             "link": "https://www.skysports.com",
@@ -4724,32 +4928,39 @@
             "quando": "2d ago"
           },
           {
-            "titolo": "Arsenal star's brother agrees transfer to Premier League rivals",
-            "fonte": "Metro.co.uk",
-            "link": "https://metro.co.uk",
-            "affidabilita": 2,
-            "quando": "7h ago"
+            "titolo": "Jean-Philippe Mateta: What does future hold after Crystal Palace contract claim?",
+            "fonte": "BBC",
+            "link": "https://www.bbc.co.uk",
+            "affidabilita": 3,
+            "quando": "6d ago"
           },
           {
-            "titolo": "Ismaila Sarr to Liverpool transfer twist as Crystal Palace confirm key decision",
-            "fonte": "London Evening Standard",
-            "link": "https://www.standard.co.uk",
-            "affidabilita": 2,
-            "quando": "7h ago"
+            "titolo": "Celtic plot £6m transfer swoop for in-demand Crystal Palace star as European deadline could fast-track deal",
+            "fonte": "GlasgowWorld",
+            "link": "https://www.glasgowworld.com",
+            "affidabilita": 1,
+            "quando": "2h ago"
+          },
+          {
+            "titolo": "Rumour ranking: Assessing the top 20 transfer window whispers",
+            "fonte": "Football365",
+            "link": "https://www.football365.com",
+            "affidabilita": 1,
+            "quando": "2h ago"
           },
           {
             "titolo": "Crystal Palace star Justin Devenny emerges as Celtic £6million transfer option",
             "fonte": "The Herald",
             "link": "https://www.heraldscotland.com",
             "affidabilita": 1,
-            "quando": "3h ago"
+            "quando": "5h ago"
           },
           {
             "titolo": "Marseille’s Quinten Timber agrees to Crystal Palace move",
             "fonte": "Get French Football News",
             "link": "https://www.getfootballnewsfrance.com",
             "affidabilita": 1,
-            "quando": "8h ago"
+            "quando": "11h ago"
           }
         ],
         "obj": [
@@ -4761,11 +4972,11 @@
             "quando": "1d ago"
           },
           {
-            "titolo": "Football transfer rumours: Palace to hijack Aston Villa move for Joel Ordóñez?",
-            "fonte": "The Guardian",
-            "link": "https://www.theguardian.com",
+            "titolo": "Crystal Palace transfer news: Eagles prepare audacious £50m bid to lure Jarrod Bowen back to Premier League - Paper Talk",
+            "fonte": "Sky Sports",
+            "link": "https://www.skysports.com",
             "affidabilita": 3,
-            "quando": "3d ago"
+            "quando": "6d ago"
           },
           {
             "titolo": "Liverpool step up Ismaila Sarr transfer talks with Senegal international believing time is right to quit Crystal Palace",
@@ -4789,21 +5000,11 @@
             "fonte": "TNT Sports",
             "link": "https://www.tntsports.co.uk",
             "affidabilita": 1,
-            "quando": "5h ago"
+            "quando": "4h ago"
           }
         ]
       },
       "feed": [
-        {
-          "titolo": "Transfer news: Summer transfer window 2026 - Premier League deals, ins and outs",
-          "fonte": "Sky Sports",
-          "stato": "rumor",
-          "link": "https://www.skysports.com/transfer/news/12691/13546618/transfer-news-summer-transfer-window-2026-premier-league-deals-ins-and-outs",
-          "img": "https://e0.365dm.com/26/02/1600x900/skysports-transfer-ins-outs_7152975.jpg?20260202081247",
-          "dominio": "skysports.com",
-          "affidabilita": 3,
-          "quando": "3h ago"
-        },
         {
           "titolo": "Liverpool transfer news: Reds continue talks with Crystal Palace to sign Ismaila Sarr - Paper Talk | Football News",
           "fonte": "Sky Sports",
@@ -4823,6 +5024,16 @@
           "dominio": "skysports.com",
           "affidabilita": 3,
           "quando": "2d ago"
+        },
+        {
+          "titolo": "Crystal Palace transfer news: Axel Disasi signs on loan from Chelsea",
+          "fonte": "BBC",
+          "stato": "done",
+          "link": "https://www.bbc.com/sport/football/articles/cg7k8jp5m9xo",
+          "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/04ef/live/b4ef64d0-a141-11f1-9311-09d4e1fc9016.jpg",
+          "dominio": "bbc.com",
+          "affidabilita": 3,
+          "quando": "4d ago"
         }
       ],
       "nomi": {
@@ -4837,22 +5048,7 @@
       "col": "#b50e12",
       "league": "Premier",
       "colonne": {
-        "rumor": [
-          {
-            "titolo": "'Confidence' and 'desire' - why Bournemouth's Scott is in demand",
-            "fonte": "BBC Sport",
-            "link": "https://www.bbc.co.uk/sport/football/videos/c4gj2ze0eyxo?at_medium=RSS&at_campaign=rss",
-            "affidabilita": 3,
-            "quando": "19h ago"
-          },
-          {
-            "titolo": "Tarkowski strikes late to rescue point for Everton at Bournemouth",
-            "fonte": "BBC Sport",
-            "link": "https://www.bbc.co.uk/sport/football/videos/c70lenegd1qo?at_medium=RSS&at_campaign=rss",
-            "affidabilita": 3,
-            "quando": "22h ago"
-          }
-        ],
+        "rumor": [],
         "obj": [],
         "conf": [],
         "done": [
@@ -4874,26 +5070,6 @@
       },
       "feed": [
         {
-          "titolo": "'Confidence' and 'desire' - why Bournemouth's Scott is in demand",
-          "fonte": "BBC Sport",
-          "stato": "rumor",
-          "link": "https://www.bbc.co.uk/sport/football/videos/c4gj2ze0eyxo?at_medium=RSS&at_campaign=rss",
-          "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/7bab/live/d74f4010-a3fb-11f1-a291-b542ee92de7c.jpg",
-          "dominio": "bbc.co.uk",
-          "affidabilita": 3,
-          "quando": "19h ago"
-        },
-        {
-          "titolo": "Tarkowski strikes late to rescue point for Everton at Bournemouth",
-          "fonte": "BBC Sport",
-          "stato": "rumor",
-          "link": "https://www.bbc.co.uk/sport/football/videos/c70lenegd1qo?at_medium=RSS&at_campaign=rss",
-          "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/b3d2/live/6ee93770-a3d7-11f1-b109-879e35c24276.jpg",
-          "dominio": "bbc.co.uk",
-          "affidabilita": 3,
-          "quando": "22h ago"
-        },
-        {
           "titolo": "Bournemouth transfers: Portugal defender Antonio Silva joins Cherries",
           "fonte": "BBC",
           "stato": "done",
@@ -4902,6 +5078,16 @@
           "dominio": "bbc.com",
           "affidabilita": 3,
           "quando": "29d ago"
+        },
+        {
+          "titolo": "Official: Juventus confirm Di Gregorio to Bournemouth and transfer fee",
+          "fonte": "Football Italia",
+          "stato": "done",
+          "link": "https://football-italia.net/official-bournemouth-di-gregorio-juventus-fee/",
+          "img": "https://icdn.football-italia.net/wp-content/uploads/2026/08/Screenshot-2026-08-25-121537.jpg",
+          "dominio": "football-italia.net",
+          "affidabilita": 1,
+          "quando": "5d ago"
         }
       ],
       "nomi": {
@@ -4918,11 +5104,18 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "Calvert-Lewin rescues point for Leeds against Brentford",
+            "fonte": "BBC Sport",
+            "link": "https://www.bbc.co.uk/sport/football/videos/cn0jx60ekk0o?at_medium=RSS&at_campaign=rss",
+            "affidabilita": 3,
+            "quando": "2h ago"
+          },
+          {
             "titolo": "Brentford transfers, latest news, rumours and gossip: Live updates, goals and highlights",
             "fonte": "Sky Sports",
             "link": "https://www.skysports.com",
             "affidabilita": 3,
-            "quando": "17h ago"
+            "quando": "20h ago"
           },
           {
             "titolo": "Jordan Henderson transfer news: Chelsea confirm signing of midfielder following Brentford exit",
@@ -4967,6 +5160,16 @@
       },
       "feed": [
         {
+          "titolo": "Calvert-Lewin rescues point for Leeds against Brentford",
+          "fonte": "BBC Sport",
+          "stato": "rumor",
+          "link": "https://www.bbc.co.uk/sport/football/videos/cn0jx60ekk0o?at_medium=RSS&at_campaign=rss",
+          "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/2fc5/live/0d060db0-a49c-11f1-a291-b542ee92de7c.jpg",
+          "dominio": "bbc.co.uk",
+          "affidabilita": 3,
+          "quando": "2h ago"
+        },
+        {
           "titolo": "Brentford transfers, latest news, rumours and gossip: Live updates, goals and highlights",
           "fonte": "Sky Sports",
           "stato": "rumor",
@@ -4974,7 +5177,7 @@
           "img": "https://e0.365dm.com/26/08/1600x900/skysports-brentford-club-blog_7326692.jpg?20260820165049",
           "dominio": "skysports.com",
           "affidabilita": 3,
-          "quando": "17h ago"
+          "quando": "20h ago"
         },
         {
           "titolo": "Jordan Henderson transfer news: Chelsea confirm signing of midfielder following Brentford exit",
@@ -4985,16 +5188,6 @@
           "dominio": "skysports.com",
           "affidabilita": 3,
           "quando": "26d ago"
-        },
-        {
-          "titolo": "Brenford transfer news: Mamadou Sangare joins for club record fee",
-          "fonte": "BBC",
-          "stato": "done",
-          "link": "https://www.bbc.com/sport/football/articles/cn8n43nzyvmo",
-          "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/0acf/live/05b9ff80-8dc7-11f1-99b6-11db6bdc35da.jpg",
-          "dominio": "bbc.com",
-          "affidabilita": 3,
-          "quando": "29d ago"
         }
       ],
       "nomi": {
@@ -5015,7 +5208,7 @@
             "fonte": "BBC Sport",
             "link": "https://www.bbc.co.uk/sport/football/videos/cwyzdzqj997o?at_medium=RSS&at_campaign=rss",
             "affidabilita": 3,
-            "quando": "2h ago"
+            "quando": "5h ago"
           },
           {
             "titolo": "Fulham transfers, latest news, rumours and gossip: Live updates, goals and highlights",
@@ -5046,11 +5239,11 @@
             "quando": "27d ago"
           },
           {
-            "titolo": "Chelsea told they must upgrade 'weak point' before transfer deadline",
-            "fonte": "Metro.co.uk",
-            "link": "https://metro.co.uk",
+            "titolo": "Chelsea send clear transfer hint with squad decision against Fulham",
+            "fonte": "London Evening Standard",
+            "link": "https://www.standard.co.uk",
             "affidabilita": 2,
-            "quando": "5d ago"
+            "quando": "6d ago"
           }
         ],
         "obj": [
@@ -5082,7 +5275,7 @@
           "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/0c8c/live/e07d14f0-a487-11f1-a291-b542ee92de7c.jpg",
           "dominio": "bbc.co.uk",
           "affidabilita": 3,
-          "quando": "2h ago"
+          "quando": "5h ago"
         },
         {
           "titolo": "Fulham transfers, latest news, rumours and gossip: Live updates, goals and highlights",
@@ -5217,21 +5410,14 @@
             "fonte": "BBC Sport",
             "link": "https://www.bbc.co.uk/sport/football/articles/crl631pgxj7o?at_medium=RSS&at_campaign=rss",
             "affidabilita": 3,
-            "quando": "7h ago"
+            "quando": "10h ago"
           },
           {
             "titolo": "Everton call off Armstrong sale after fan backlash",
             "fonte": "BBC Sport",
             "link": "https://www.bbc.co.uk/sport/football/articles/c0lrge3dwklo?at_medium=RSS&at_campaign=rss",
             "affidabilita": 3,
-            "quando": "9h ago"
-          },
-          {
-            "titolo": "Tarkowski strikes late to rescue point for Everton at Bournemouth",
-            "fonte": "BBC Sport",
-            "link": "https://www.bbc.co.uk/sport/football/videos/c70lenegd1qo?at_medium=RSS&at_campaign=rss",
-            "affidabilita": 3,
-            "quando": "22h ago"
+            "quando": "12h ago"
           },
           {
             "titolo": "David Moyes insists 'quite a few' more signings are needed at Everton",
@@ -5252,7 +5438,14 @@
             "fonte": "The Telegraph",
             "link": "https://www.telegraph.co.uk",
             "affidabilita": 2,
-            "quando": "9h ago"
+            "quando": "12h ago"
+          },
+          {
+            "titolo": "If Everton opt to sell Harrison Armstrong, it will be an act of vandalism",
+            "fonte": "The Telegraph",
+            "link": "https://www.telegraph.co.uk",
+            "affidabilita": 2,
+            "quando": "1d ago"
           }
         ],
         "obj": [
@@ -5268,7 +5461,7 @@
             "fonte": "The Telegraph",
             "link": "https://www.telegraph.co.uk",
             "affidabilita": 2,
-            "quando": "7h ago"
+            "quando": "10h ago"
           },
           {
             "titolo": "Inside Sunderland’s shock bid to hijack Everton’s Jack Grealish transfer",
@@ -5280,13 +5473,6 @@
         ],
         "conf": [],
         "done": [
-          {
-            "titolo": "Arsenal deal confirmed after £75m Bruno Guimaraes transfer is agreed",
-            "fonte": "London Evening Standard",
-            "link": "https://www.standard.co.uk",
-            "affidabilita": 2,
-            "quando": "25d ago"
-          },
           {
             "titolo": "Jack Grealish sent fresh Everton transfer message as major Man City decision confirmed",
             "fonte": "Liverpool Echo",
@@ -5305,7 +5491,7 @@
           "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/c386/live/8c089d30-a45b-11f1-a291-b542ee92de7c.png",
           "dominio": "bbc.co.uk",
           "affidabilita": 3,
-          "quando": "7h ago"
+          "quando": "10h ago"
         },
         {
           "titolo": "Everton call off Armstrong sale after fan backlash",
@@ -5315,17 +5501,17 @@
           "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/8023/live/d0699fe0-a453-11f1-94c9-7de5456f4d18.jpg",
           "dominio": "bbc.co.uk",
           "affidabilita": 3,
-          "quando": "9h ago"
+          "quando": "12h ago"
         },
         {
-          "titolo": "Tarkowski strikes late to rescue point for Everton at Bournemouth",
-          "fonte": "BBC Sport",
-          "stato": "rumor",
-          "link": "https://www.bbc.co.uk/sport/football/videos/c70lenegd1qo?at_medium=RSS&at_campaign=rss",
-          "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/b3d2/live/6ee93770-a3d7-11f1-b109-879e35c24276.jpg",
-          "dominio": "bbc.co.uk",
+          "titolo": "Manchester City target Iliman Ndiaye but Everton value forward at £80m",
+          "fonte": "The Guardian",
+          "stato": "obj",
+          "link": "https://www.theguardian.com/football/2026/aug/27/enzo-maresca-manchester-city-more-captains-enzo-fernandez-chelsea",
+          "img": "https://i.guim.co.uk/img/media/588806aeb556dd4d226a2c76272bceb21e93201e/252_186_3417_2733/master/3417.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=57da5128c5a113103feadd9c346b293e",
+          "dominio": "theguardian.com",
           "affidabilita": 3,
-          "quando": "22h ago"
+          "quando": "2d ago"
         }
       ],
       "nomi": {
@@ -5346,21 +5532,14 @@
             "fonte": "Sky Sports",
             "link": "https://www.skysports.com",
             "affidabilita": 3,
-            "quando": "3h ago"
+            "quando": "6h ago"
           },
           {
             "titolo": "Harrison Armstrong: Everton call off transfer to Nottingham Forest after fan backlash",
             "fonte": "BBC",
-            "link": "https://www.bbc.co.uk",
-            "affidabilita": 3,
-            "quando": "9h ago"
-          },
-          {
-            "titolo": "Daniel Munoz: Nottingham Forest agree deal to sign Crystal Palace defender",
-            "fonte": "BBC",
             "link": "https://www.bbc.com",
             "affidabilita": 3,
-            "quando": "1d ago"
+            "quando": "12h ago"
           },
           {
             "titolo": "Nottingham Forest transfer rumours: Daniel Munoz, Igor Jesus",
@@ -5377,11 +5556,18 @@
             "quando": "3d ago"
           },
           {
-            "titolo": "Why Nottingham Forest have broken their transfer record for Liam Delap",
-            "fonte": "The Telegraph",
-            "link": "https://www.telegraph.co.uk",
+            "titolo": "Video: Hutchinson arrives for Milan transfer from Nottingham Forest",
+            "fonte": "Football Italia",
+            "link": "https://football-italia.net/video-hutchinson-arrives-milan-transfer-forest/",
             "affidabilita": 2,
-            "quando": "4d ago"
+            "quando": "2h ago"
+          },
+          {
+            "titolo": "Nottingham Forest 'want' Liverpool star as new transfer claims made",
+            "fonte": "Nottingham Post",
+            "link": "https://www.nottinghampost.com",
+            "affidabilita": 1,
+            "quando": "2h ago"
           }
         ],
         "obj": [
@@ -5390,7 +5576,7 @@
             "fonte": "Football Italia",
             "link": "https://football-italia.net/nottingham-forest-dodo-offer-gudmundsson-lazio/",
             "affidabilita": 2,
-            "quando": "1h ago"
+            "quando": "4h ago"
           },
           {
             "titolo": "Forest make £40m bid for £5m-rated Armstrong – why astonishing deal could work",
@@ -5405,23 +5591,16 @@
             "link": "https://inews.co.uk",
             "affidabilita": 1,
             "quando": "1d ago"
-          },
-          {
-            "titolo": "Nottingham Forest transfer latest - £22m bid being considered, midfielder 'talks', Hutchinson eyed",
-            "fonte": "Nottingham Post",
-            "link": "https://www.nottinghampost.com",
-            "affidabilita": 1,
-            "quando": "2d ago"
           }
         ],
         "conf": [],
         "done": [
           {
-            "titolo": "Liam Delap departs for Nottingham Forest | News | Official Site",
-            "fonte": "Chelsea Football Club",
-            "link": "https://www.chelseafc.com",
+            "titolo": "Nottingham Forest confirm transfer as highly-rated defender joins Championship pace-setters",
+            "fonte": "Nottingham Post",
+            "link": "https://www.nottinghampost.com",
             "affidabilita": 1,
-            "quando": "3d ago"
+            "quando": "7h ago"
           }
         ]
       },
@@ -5434,27 +5613,27 @@
           "img": "https://e0.365dm.com/26/02/1600x900/skysports-transfer-ins-outs_7152975.jpg?20260202081247",
           "dominio": "skysports.com",
           "affidabilita": 3,
-          "quando": "3h ago"
+          "quando": "6h ago"
         },
         {
           "titolo": "Harrison Armstrong: Everton call off transfer to Nottingham Forest after fan backlash",
           "fonte": "BBC",
           "stato": "rumor",
-          "link": "https://www.bbc.co.uk/sport/football/articles/c0lrge3dwklo",
+          "link": "https://www.bbc.com/sport/football/articles/c0lrge3dwklo",
           "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/8023/live/d0699fe0-a453-11f1-94c9-7de5456f4d18.jpg",
-          "dominio": "bbc.co.uk",
-          "affidabilita": 3,
-          "quando": "9h ago"
-        },
-        {
-          "titolo": "Daniel Munoz: Nottingham Forest agree deal to sign Crystal Palace defender",
-          "fonte": "BBC",
-          "stato": "rumor",
-          "link": "https://www.bbc.com/sport/football/articles/c39m0vmgxrgo",
-          "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/ae33/live/39c7f900-a3b9-11f1-b13c-0d78069132fa.jpg",
           "dominio": "bbc.com",
           "affidabilita": 3,
-          "quando": "1d ago"
+          "quando": "12h ago"
+        },
+        {
+          "titolo": "Nottingham Forest transfer rumours: Daniel Munoz, Igor Jesus",
+          "fonte": "BBC",
+          "stato": "rumor",
+          "link": "https://www.bbc.co.uk/sport/football/articles/ckgv06xx45ko",
+          "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/c043/live/ecb3f520-0913-11ef-82e8-cd354766a224.png",
+          "dominio": "bbc.co.uk",
+          "affidabilita": 3,
+          "quando": "2d ago"
         }
       ],
       "nomi": {
@@ -5471,32 +5650,39 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "Calvert-Lewin rescues point for Leeds against Brentford",
+            "fonte": "BBC Sport",
+            "link": "https://www.bbc.co.uk/sport/football/videos/cn0jx60ekk0o?at_medium=RSS&at_campaign=rss",
+            "affidabilita": 3,
+            "quando": "2h ago"
+          },
+          {
             "titolo": "'A hard but precious point' - Farke praises Leeds character",
             "fonte": "BBC Sport",
             "link": "https://www.bbc.co.uk/sport/football/videos/cx2zvzpdyjdo?at_medium=RSS&at_campaign=rss",
             "affidabilita": 3,
-            "quando": "1h ago"
+            "quando": "4h ago"
           },
           {
             "titolo": "'Never underestimate Daniel'- Andrews hails Farke after Leeds comeback",
             "fonte": "BBC Sport",
             "link": "https://www.bbc.co.uk/sport/football/videos/cy9zqzd0vvzo?at_medium=RSS&at_campaign=rss",
             "affidabilita": 3,
-            "quando": "1h ago"
-          },
-          {
-            "titolo": "Transfer Centre LIVE! Football transfer news, updates and rumours",
-            "fonte": "Sky Sports",
-            "link": "https://www.skysports.com",
-            "affidabilita": 3,
-            "quando": "7h ago"
+            "quando": "4h ago"
           },
           {
             "titolo": "Leeds United transfer news, rumours and gossip: Live updates and latest on deals, signings, loans and contracts",
             "fonte": "Sky Sports",
             "link": "https://www.skysports.com",
             "affidabilita": 3,
-            "quando": "8h ago"
+            "quando": "11h ago"
+          },
+          {
+            "titolo": "Transfer Centre LIVE! Football transfer news, updates and rumours",
+            "fonte": "Sky Sports",
+            "link": "https://www.skysports.com",
+            "affidabilita": 3,
+            "quando": "2d ago"
           },
           {
             "titolo": "Sam Byram: Middlesbrough sign former Leeds United full-back",
@@ -5504,16 +5690,16 @@
             "link": "https://www.bbc.com",
             "affidabilita": 3,
             "quando": "6d ago"
-          },
-          {
-            "titolo": "Why Leeds United fans have reason to get further excited as 'ambitious' transfer possible",
-            "fonte": "Yahoo Sports",
-            "link": "https://sports.yahoo.com",
-            "affidabilita": 1,
-            "quando": "1d ago"
           }
         ],
         "obj": [
+          {
+            "titolo": "Leeds United transfer news: James Trafford completes move for club-record £40m deal from Man City",
+            "fonte": "Sky Sports",
+            "link": "https://www.skysports.com",
+            "affidabilita": 3,
+            "quando": "24d ago"
+          },
           {
             "titolo": "Leeds United 'assessing' transfer move for ex Rangers star as Frank Lampard prepares swoop over ace",
             "fonte": "GlasgowWorld",
@@ -5529,21 +5715,21 @@
             "fonte": "BBC",
             "link": "https://www.bbc.com",
             "affidabilita": 3,
-            "quando": "21h ago"
-          },
-          {
-            "titolo": "Leeds United's Daniel Farke gives transfer update after Joe Rodon news confirmed",
-            "fonte": "Wales Online",
-            "link": "https://www.walesonline.co.uk",
-            "affidabilita": 1,
-            "quando": "1h ago"
+            "quando": "1d ago"
           },
           {
             "titolo": "Summer transfer window 2026: Every Premier League done deal",
             "fonte": "TNT Sports",
             "link": "https://www.tntsports.co.uk",
             "affidabilita": 1,
-            "quando": "5h ago"
+            "quando": "4h ago"
+          },
+          {
+            "titolo": "Leeds United's Daniel Farke gives transfer update after Joe Rodon news confirmed",
+            "fonte": "Wales Online",
+            "link": "https://www.walesonline.co.uk",
+            "affidabilita": 1,
+            "quando": "4h ago"
           },
           {
             "titolo": "All Yorkshire's summer 2026 transfer window done deals so far",
@@ -5563,6 +5749,16 @@
       },
       "feed": [
         {
+          "titolo": "Calvert-Lewin rescues point for Leeds against Brentford",
+          "fonte": "BBC Sport",
+          "stato": "rumor",
+          "link": "https://www.bbc.co.uk/sport/football/videos/cn0jx60ekk0o?at_medium=RSS&at_campaign=rss",
+          "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/2fc5/live/0d060db0-a49c-11f1-a291-b542ee92de7c.jpg",
+          "dominio": "bbc.co.uk",
+          "affidabilita": 3,
+          "quando": "2h ago"
+        },
+        {
           "titolo": "'A hard but precious point' - Farke praises Leeds character",
           "fonte": "BBC Sport",
           "stato": "rumor",
@@ -5570,7 +5766,7 @@
           "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/9d19/live/11e42d30-a488-11f1-aed2-8d6da8d75094.jpg",
           "dominio": "bbc.co.uk",
           "affidabilita": 3,
-          "quando": "1h ago"
+          "quando": "4h ago"
         },
         {
           "titolo": "'Never underestimate Daniel'- Andrews hails Farke after Leeds comeback",
@@ -5580,17 +5776,7 @@
           "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/2b49/live/a56e2550-a489-11f1-a291-b542ee92de7c.jpg",
           "dominio": "bbc.co.uk",
           "affidabilita": 3,
-          "quando": "1h ago"
-        },
-        {
-          "titolo": "Transfer Centre LIVE! Football transfer news, updates and rumours",
-          "fonte": "Sky Sports",
-          "stato": "rumor",
-          "link": "https://www.skysports.com/football/live-blog/11661/12476234/transfer-centre-live-football-transfer-news-updates-and-rumours",
-          "img": "https://e0.365dm.com/26/08/1600x900/skysports-alvarez-barcola-enzo-fernandez_7334314.jpg?20260829090154",
-          "dominio": "skysports.com",
-          "affidabilita": 3,
-          "quando": "7h ago"
+          "quando": "4h ago"
         }
       ],
       "nomi": {
@@ -5606,13 +5792,6 @@
       "league": "Premier",
       "colonne": {
         "rumor": [
-          {
-            "titolo": "Michael Mellon: Stevenage sign Burnley striker for undisclosed fee",
-            "fonte": "BBC",
-            "link": "https://www.bbc.com",
-            "affidabilita": 3,
-            "quando": "12d ago"
-          },
           {
             "titolo": "Ben Amos: Burnley sign veteran goalkeeper on one-year deal",
             "fonte": "BBC",
@@ -5633,13 +5812,6 @@
             "link": "https://www.burnleyexpress.net",
             "affidabilita": 1,
             "quando": "3d ago"
-          },
-          {
-            "titolo": "Marcel Regula and Lesley Ugochukwu: Burnley transfer latest from Nicky Hayen",
-            "fonte": "Burnley Express",
-            "link": "https://www.burnleyexpress.net",
-            "affidabilita": 1,
-            "quando": "9d ago"
           }
         ],
         "obj": [],
@@ -5655,16 +5827,6 @@
         "done": []
       },
       "feed": [
-        {
-          "titolo": "Michael Mellon: Stevenage sign Burnley striker for undisclosed fee",
-          "fonte": "BBC",
-          "stato": "rumor",
-          "link": "https://www.bbc.com/sport/football/articles/cx2kzrlzrgwo",
-          "img": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/4316/live/c16339b0-9b3a-11f1-b109-879e35c24276.jpg",
-          "dominio": "bbc.com",
-          "affidabilita": 3,
-          "quando": "12d ago"
-        },
         {
           "titolo": "Ben Amos: Burnley sign veteran goalkeeper on one-year deal",
           "fonte": "BBC",
@@ -5684,6 +5846,16 @@
           "dominio": "burnleyexpress.net",
           "affidabilita": 1,
           "quando": "2d ago"
+        },
+        {
+          "titolo": "Nicky Hayen provides Burnley transfer update and Zian Flemming latest",
+          "fonte": "Burnley Express",
+          "stato": "rumor",
+          "link": "https://www.burnleyexpress.net/sport/football/burnley-fc/nicky-hayen-burnley-transfer-update-zian-flemming-8944725",
+          "img": "https://www.burnleyexpress.net/jpim-static/image/2026/08/27/8/12/wfxp-26-08-2026-bradford-burnley-hayen-full-time-2-nw.jpeg?width=1200&auto=webp&quality=75&trim=0,0,0,0&crop=",
+          "dominio": "burnleyexpress.net",
+          "affidabilita": 1,
+          "quando": "3d ago"
         }
       ],
       "nomi": {
@@ -5700,18 +5872,32 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "Isidor strike hands Sunderland first win of season",
+            "fonte": "BBC Sport",
+            "link": "https://www.bbc.co.uk/sport/football/videos/cy9zq3zx7veo?at_medium=RSS&at_campaign=rss",
+            "affidabilita": 3,
+            "quando": "2h ago"
+          },
+          {
             "titolo": "'A new chapter to write' - Le Bris on Sunderland victory",
             "fonte": "BBC Sport",
             "link": "https://www.bbc.co.uk/sport/football/videos/cvgyxy18d03o?at_medium=RSS&at_campaign=rss",
             "affidabilita": 3,
-            "quando": "1h ago"
+            "quando": "4h ago"
           },
           {
             "titolo": "Sunderland transfer news, rumours and gossip: Live updates and latest on deals, signings, loans and contracts",
             "fonte": "Sky Sports",
             "link": "https://www.skysports.com",
             "affidabilita": 3,
-            "quando": "21h ago"
+            "quando": "2d ago"
+          },
+          {
+            "titolo": "Jack Grealish transfer latest: Sunderland exploring potential late deal for Manchester City winger",
+            "fonte": "Sky Sports",
+            "link": "https://www.skysports.com",
+            "affidabilita": 3,
+            "quando": "4d ago"
           },
           {
             "titolo": "Sunderland agree £25.6m transfer fee for left-back Dayann Methalie",
@@ -5721,25 +5907,11 @@
             "quando": "15d ago"
           },
           {
-            "titolo": "Sunderland close in on £26m Eliezer Mayenda replacement as Jack Grealish update given",
-            "fonte": "Chronicle Live",
-            "link": "https://www.chroniclelive.co.uk",
-            "affidabilita": 1,
-            "quando": "3d ago"
-          },
-          {
-            "titolo": "Sunderland AFC give star 'really unique' and emotional send-off after £21.5m transfer",
-            "fonte": "Chronicle Live",
-            "link": "https://www.chroniclelive.co.uk",
-            "affidabilita": 1,
-            "quando": "14d ago"
-          },
-          {
-            "titolo": "Sunderland 'eye' bargain deal for World Cup forward and 'enter race' for £50m defender",
-            "fonte": "Chronicle Live",
-            "link": "https://www.chroniclelive.co.uk",
-            "affidabilita": 1,
-            "quando": "17d ago"
+            "titolo": "Sunderland news: Black Cats 'have to be really precise' in transfer window - Le Bris",
+            "fonte": "BBC",
+            "link": "https://www.bbc.com",
+            "affidabilita": 3,
+            "quando": "20d ago"
           }
         ],
         "obj": [
@@ -5748,14 +5920,21 @@
             "fonte": "The Guardian",
             "link": "https://www.theguardian.com/football/2026/aug/26/forest-in-talks-with-celta-vigo-over-javi-rueda-as-axel-disasi-joins-palace-on-loan",
             "affidabilita": 3,
-            "quando": "3d ago"
+            "quando": "4d ago"
           },
           {
-            "titolo": "Sunderland target 'on the verge of £21.4m' transfer as manager urges club to sanction deal",
-            "fonte": "Chronicle Live",
-            "link": "https://www.chroniclelive.co.uk",
+            "titolo": "Jack Grealish offered Sunderland loan transfer with Man City future in doubt as Black Cats pursue two major deals",
+            "fonte": "The Sun",
+            "link": "https://www.thesun.co.uk",
+            "affidabilita": 2,
+            "quando": "4d ago"
+          },
+          {
+            "titolo": "Sunderland’s £80m transfer plans – and their next two targets",
+            "fonte": "The i Paper",
+            "link": "https://inews.co.uk",
             "affidabilita": 1,
-            "quando": "24d ago"
+            "quando": "13d ago"
           }
         ],
         "conf": [
@@ -5771,6 +5950,16 @@
       },
       "feed": [
         {
+          "titolo": "Isidor strike hands Sunderland first win of season",
+          "fonte": "BBC Sport",
+          "stato": "rumor",
+          "link": "https://www.bbc.co.uk/sport/football/videos/cy9zq3zx7veo?at_medium=RSS&at_campaign=rss",
+          "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/b94e/live/38a4f690-a49a-11f1-b109-879e35c24276.jpg",
+          "dominio": "bbc.co.uk",
+          "affidabilita": 3,
+          "quando": "2h ago"
+        },
+        {
           "titolo": "'A new chapter to write' - Le Bris on Sunderland victory",
           "fonte": "BBC Sport",
           "stato": "rumor",
@@ -5778,27 +5967,17 @@
           "img": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/06ee/live/ef5ef000-a488-11f1-b109-879e35c24276.jpg",
           "dominio": "bbc.co.uk",
           "affidabilita": 3,
-          "quando": "1h ago"
+          "quando": "4h ago"
         },
         {
           "titolo": "Sunderland transfer news, rumours and gossip: Live updates and latest on deals, signings, loans and contracts",
           "fonte": "Sky Sports",
           "stato": "rumor",
-          "link": "https://www.skysports.com/football/live-blog/11695/13375102/sunderland-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
+          "link": "https://www.skysports.com/football/live-blog/33809/13375102/sunderland-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
           "img": "https://e0.365dm.com/26/08/1600x900/skysports-sunderland-club-blog_7326707.jpg?20260820165538",
           "dominio": "skysports.com",
           "affidabilita": 3,
-          "quando": "21h ago"
-        },
-        {
-          "titolo": "Sunderland weigh up Jack Grealish loan with Marseille’s Igor Paixão also a target",
-          "fonte": "The Guardian",
-          "stato": "obj",
-          "link": "https://www.theguardian.com/football/2026/aug/26/forest-in-talks-with-celta-vigo-over-javi-rueda-as-axel-disasi-joins-palace-on-loan",
-          "img": "https://i.guim.co.uk/img/media/0e4dc09541593125202f94509c1568a448c0c56b/245_0_2607_2085/master/2607.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=305f8f50cb0a86be91bbf8c24d88e74b",
-          "dominio": "theguardian.com",
-          "affidabilita": 3,
-          "quando": "3d ago"
+          "quando": "2d ago"
         }
       ],
       "nomi": {
