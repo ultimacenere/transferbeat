@@ -1,5 +1,5 @@
 # TransferBeat — KB di RIPARTENZA
-*Come essere operativi al 100% su QUALSIASI computer, e come funziona tutto. Aggiornata: 2026-06-05.*
+*Come essere operativi al 100% su QUALSIASI computer, e come funziona tutto. Aggiornata: 2026-09-02.*
 
 ## 0. La verità fondamentale
 **Il sito NON dipende da nessun computer.** Fonte di verità: GitHub (`ultimacenere/transferbeat`).
@@ -58,9 +58,11 @@ Il computer serve solo per: modifiche al codice, articoli scritti da Claude, pus
   (08/12/20 italiane). Chiamano l'API GitHub con il token (header Authorization: Bearer <github_token>).
 - **Register.it**: DNS del dominio (A record apex → 216.198.79.1, www CNAME Vercel).
 - **Groq console** (console.groq.com): chiave API, limiti per modello.
-- **Token GitHub**: fine-grained, SCADE il 2026-09-02 → rigenerare con permessi: Actions, Contents, Workflows (tutti Read+write).
+- **Token GitHub**: fine-grained, rigenerato il 2026-09-02, SENZA scadenza. Permessi: Actions, Contents, Workflows (tutti Read+write).
   Servono per: lanciare i cron, push automatico (scripts/pubblica.sh), modificare i file workflow. Aggiornarlo nei 2 job cron-job.org
-  e in github_token.txt.
+  e in github_token.txt. ATTENZIONE: "Regenerate" cambia il VALORE del token e revoca il vecchio all'istante (la voce nella lista resta
+  la stessa, quindi sembra invariato): dopo ogni rigenerazione i 2 job cron-job.org restano fermi finché non incolli il nuovo valore
+  nell'header `Authorization: Bearer <token>`. Verifica: TEST RUN sul job deve rispondere HTTP 204.
 
 ## 5. Runbook guasti rapidi
 - **Ultim'ora ferma**: cron-job.org → cronologia job; GitHub Actions → "Ultim'ora TransferBeat".
