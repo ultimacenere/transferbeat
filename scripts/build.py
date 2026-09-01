@@ -216,6 +216,12 @@ def _gate_state(g, st, batch_low):
 def extract_movements_global(titles):
     """Estrazione GLOBALE dei movimenti: da TUTTI i titoli, con provenienza/destinazione
     ESPLICITE (da -> a). Nessuna attribuzione per-squadra qui: la fa assign_movements."""
+    # Mercato europeo chiuso il 2026-09-02: lo schema {giocatore, da, a} non ha
+    # controparte nel calcio giocato (un gol non ha un "da"). Su titoli di campionato
+    # questa estrazione o torna vuota o allucina trasferimenti, che merge_nomi
+    # persisterebbe per 3 giorni. Riattivabile con SCOUT_OFF=0 alla riapertura.
+    if os.environ.get("SCOUT_OFF", "1") == "1":
+        return []
     if not LLM_KEY or not titles:
         return []
     import time as _t
