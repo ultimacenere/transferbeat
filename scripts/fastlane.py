@@ -15,7 +15,7 @@ import brain
 UA = {"User-Agent": "Mozilla/5.0 (compatible; TransferBeatBot/1.0)"}
 LLM_KEY = os.environ.get("GROQ_API_KEY", "")
 LLM_URL = "https://api.groq.com/openai/v1/chat/completions"
-LLM_MODEL = os.environ.get("LLM_MODEL", "llama-3.1-8b-instant")  # lavoro pesante: modello piccolo, secchio 500k/giorno
+LLM_MODEL = os.environ.get("FAST_MODEL", os.environ.get("LLM_MODEL", "groq/compound-mini"))  # lavoro pesante: 70k token/min
 MAX_AGE_H = 12; MAX_ITEMS = 50; MAX_NEW_PER_RUN = 25
 
 def load(p, d=None):
