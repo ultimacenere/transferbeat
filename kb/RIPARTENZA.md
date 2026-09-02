@@ -184,9 +184,7 @@ passare da un deploy, quindi un cambio di schema sarebbe in produzione prima del
   ma lo script non la legge mai. Non c'è modo di forzare una riduzione voluta.
 - **`guard.py` — crash su Windows**: usa `subprocess.run(text=True)` senza `encoding`, quindi con
   locale italiano decodifica in cp1252 e muore su un byte non mappabile. Colpisce `carica-modifiche.bat`.
-- **`brain.is_coach()` — falsi positivi gravi**: confronta il solo cognome contro una lista che contiene
-  "simeone" e "italiano", quindi **Giovanni Simeone e Vincenzo Italiano risultano allenatori** e
-  verrebbero cancellati in silenzio da tabellini, board e articoli. Da svuotare o ribaltare.
+- ~~`brain.is_coach()` falsi positivi~~ corretto il 2026-09-03: controllo contro le rose correnti.
 - **`rosters.py` — perdita silenziosa di leghe**: ogni competizione è dentro un try/except che fa
   continue, quindi una chiamata fallita fa sparire un'intera lega senza segnalarlo; con `_is_fresh(5)`
   il buco resta congelato 5 giorni. Gli snapshot storici oscillano fra 165 e 36 club per questo motivo.
@@ -199,7 +197,7 @@ passare da un deploy, quindi un cambio di schema sarebbe in produzione prima del
   congela all'ultima versione buona.
 - **`mondo_home` non è per lingua**: `fetch(m["search"])` usa la stessa stringa per it/en/es, quindi
   con locale italiano tornano fonti inglesi. Si corregge solo toccando `build.py`.
-- **sitemap**: `mondiali.html` e `fonti.html` non compaiono fra i 554 URL.
+- ~~sitemap: mondiali.html e fonti.html non compaiono~~ corretto il 2026-09-03 (558 URL).
 
 ## 6. Cosa NON è nel repo (backup su Drive, file privato)
 - `groq_key.txt` (chiave Groq)
@@ -268,48 +266,28 @@ pubblicabile. Punto di ritorno dell'intera riconversione: tag **`pre-riconversio
 | B | Raccolta riorientata: `kw` di `teams.json`, feed di `sources.json`, `mondo_home` sulle coppe | `89114cb` |
 | C | Tassonomia bivalente sui quattro slot esistenti | `ce4df47` + fix `3053b78` |
 | E | Ultim'ora a lotti, modello affidabile, carta editoriale bivalente, campo `transfer` ridefinito | `d73f622` |
+| Sentinella | `scripts/freshness.py`, ultimo step di `update.yml` SENZA `\|\| echo`: fallisce se board/home hanno più di 6 ore, meno di 80 voci, meno di 30 squadre con voci, feed sotto 40, colonne assenti, o se `competizioni.json` ha più di 26 ore. Soglie via `FRESH_*` | `ad3e846` (2026-09-03) |
+| D residua | `brain.is_coach`: i giocatori delle rose correnti non sono mai allenatori (Giovanni Simeone → giocatore); un cognome ambiguo da solo (Simeone, Conte) non è allenatore; nomi completi da allenatore restano tali | `ad3e846` |
+| F | Etichette front-end riscritte in it/en/es: board (`sub`, `tags` Voce/Ufficiale/Fatto, `stages` Voce→Anteprima→Ufficiale→Fatto, `sections`, `globalTitle`, "Come leggiamo le notizie" con la scala di concretezza), home (`hdLive`/`liveToday` "Campionati Live", `ART_I18N`, `footR` ogni 2 ore), fonti (lead), meta description di home, board e fonti. Verificato `?lang=en` e `?lang=es`: nessun `undefined` | `ad3e846` |
+| G | `scripts/competizioni.py` (football-data, 6 competizioni SA/CL/PL/PD/BL1/FL1: classifica, giornata corrente −1..+2, marcatori, fasi a eliminazione; 404 sulla classifica di una coppa non iniziata gestito; pausa 6,5 s per il limite 10 req/min → ~2 min) + `campionati.html` (schede Classifica/Giornata/Marcatori, zone colorate per competizione, it/en/es, `?c=CODICE`). Step in `update.yml` con `\|\| echo` (la sentinella copre l'invecchiamento) | `ad3e846` |
+| H | "Campionati" nei menu di home, board, Mondiale e nel `topbar()` degli articoli (chiave `campionati` in ENTRAMBI i dizionari `UI`); sitemap con campionati, mondiali, fonti e `/fanta/` (558 URL); pagine articolo rigenerate | `ad3e846` |
 
 Misure dopo la fase B/C, sulla board reale: colonna anteprima da 42 a 78 voci, default "rumor" dal
 65% al 51%, ANSA Calcio e Corriere dello Sport entrati come fonti dirette (26 e 31 titoli).
 
 ### PENDING (in ordine consigliato)
-1. **Fase F — etichette del front-end.** È la cosa che oggi stona di più: il sito mostra ancora
-   "affare concluso", "trattativa", "obiettivo", "Mercato Live · oggi", "Come leggiamo il mercato"
-   mentre classifica risultati e formazioni. Tocca **solo testi**, rischio basso. Punti esatti:
-   `board.html:158-175` (blocco `STRINGS`: `sub`, `tags`, `stages`, `heat`, `sections`, `globalTitle`,
-   `howtoTitle`, `howtoBody`), `index.html:147` (`hdLive`), `index.html:177-179`
-   (`liveToday`, `mini`, `worldSub`, `footR`), `index.html:201-203` (`ART_I18N.sub`),
-   più i `<meta name="description">` di `index.html:20`, `board.html:20`, `fonti.html:9`.
-   Ricorda: **ogni stringa esiste in it/en/es** e le lookup del front-end sono senza fallback
-   (una chiave dimenticata stampa `undefined`). Verifica: aprire ogni pagina con `?lang=en` e
-   `?lang=es` e cercare `undefined` nel DOM.
-2. **Fase D residua — `brain.is_coach()`.** Confronta il solo cognome contro una lista che contiene
-   "simeone" e "italiano": **Giovanni Simeone e Vincenzo Italiano risultano allenatori** e verrebbero
-   cancellati in silenzio da tabellini, board e articoli. Da svuotare (lista conservata in commento)
-   o ribaltare in etichetta di ruolo.
-3. **Fase G — il contenuto nuovo.** `scripts/competizioni.py` su football-data (classifiche,
-   calendario, risultati, marcatori: tutti dati deterministici, niente LLM, niente invenzioni) e
-   pagina `campionati.html` clonando il pattern di `mondiali.html`. È qui che il sito diventa
-   davvero un sito di campionati.
-4. **`scripts/freshness.py` — la sentinella che manca.** Ultimo step di `update.yml`, **senza**
-   `|| echo`: fallisce se `aggiornato` supera le 6 ore, se una lingua scende sotto una soglia di
-   voci, o se una collezione attesa è vuota. È la lezione delle 6 settimane di strato AI morto a
-   workflow verde. Senza questo, la prossima rottura silenziosa non la scopre nessuno.
-5. **Fase H — SEO.** `mondiali.html` e `fonti.html` non compaiono fra i 554 URL della sitemap;
-   `campionati.html` va aggiunta a `topbar()` di `render_articles.py:131` (serve una chiave
-   `UI[lang]["campionati"]` in **entrambe** le copie del dizionario, `render_articles.py:14-27` e
-   `articles.py:44-53`), altrimenti 429 pagine articolo puntano solo alla board di mercato.
-6. **Fase I — archivio Mondiale** (rimuovere dalla nav principale, banner "Edizione conclusa" in
+1. **Fase I — archivio Mondiale** (rimuovere dalla nav principale, banner "Edizione conclusa" in
    it/en/es, togliere lo step da `update.yml`, **tenere l'URL e il canonical**) e smontaggio
-   dell'affare-metro, da fare in **un solo commit** con il back-end.
-7. **Fase J — bilancio mercato.** Decisione presa: **solo dalle notizie ufficiali già classificate**,
-   non dal diff fra le rose. Motivo: gli snapshot riflettono le **ri-registrazioni delle liste**, non
-   i trasferimenti (tutti i 31 movimenti dell'Inter risultavano nella stessa finestra 26-31 agosto,
-   con Pavard e Asllani fra gli "acquisti" e mezza Primavera fra le "cessioni"), e il tier gratuito
-   non marca i prestiti. Sorgente giusta: lo storico di `data/it/board.json`, oltre 770 versioni dal
-   2026-06-03 con le notizie già classificate e le fonti.
-8. **Fase K — palinsesto editoriale.** Le tre pianificate (12:00, 16:00, 20:00) funzionano e
-   producono articoli ogni giorno, ma sono ancora tarate sul mercato. Vedi `kb/PIANIFICATE.md`.
+   dell'affare-metro nella vista "Nomi" della board, da fare in **un solo commit** con il back-end.
+2. **Fase J — bilancio mercato.** Decisione presa: **solo dalle notizie ufficiali già classificate**,
+   non dal diff fra le rose (gli snapshot riflettono le ri-registrazioni delle liste, non i trasferimenti).
+   Sorgente: lo storico di `data/it/board.json`, oltre 770 versioni dal 2026-06-03.
+3. **Fase K — palinsesto editoriale.** Le tre pianificate (12:00, 16:00, 20:00) producono articoli ogni
+   giorno ma sono ancora tarate sul mercato (etichette LUNCH BREAK / FOCUS MERCATO / RECAP). Vedi `kb/PIANIFICATE.md`.
+4. **Campionati, evoluzioni**: barra news dedicata come nel Mondiale; link alla board per squadra dalla
+   classifica; Champions: quando parte la league phase (metà settembre) la classifica compare da sola.
+5. **Freschezza: notifica.** Il fallimento della sentinella colora di rosso il workflow e GitHub manda una
+   mail al proprietario del repo: verificare che arrivi davvero al primo rosso.
 
 ### Punti aperti minori
 - **`guard.py`**: i due difetti elencati in §5 non sono stati corretti perché il classificatore dei
