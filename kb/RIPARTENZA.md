@@ -1,5 +1,5 @@
 # TransferBeat — KB di RIPARTENZA
-*Come essere operativi al 100% su QUALSIASI computer, e come funziona tutto. Aggiornata: 2026-09-02.*
+*Come essere operativi al 100% su QUALSIASI computer, e come funziona tutto. Aggiornata: 2026-09-03.*
 
 > **Stato attuale del sito: CAMPIONATI E COPPE.** Il mercato estivo europeo ha chiuso il 2026-09-02.
 > La macchina del calciomercato **non è stata cancellata, è sospesa**: vocabolari, prompt, feed e
@@ -46,13 +46,49 @@ Lo strato AI del sito è rimasto morto per sei settimane senza che nulla lo segn
 
 | Script | Variabile | Default attuale | Note |
 |---|---|---|---|
-| `build.py` | `SCOUT_MODEL` | `groq/compound-mini` | 70k token/min |
-| `fastlane.py` | `FAST_MODEL` | `groq/compound-mini` | 70k token/min |
+| `build.py` | `SCOUT_MODEL` | `qwen/qwen3.8-27b` | scout comunque sospeso, vedi §7 |
+| `fastlane.py` | `FAST_MODEL` | `qwen/qwen3.8-27b` | classificazione a lotti, vedi §1bis |
 | `articles.py` | `ARTICLE_MODEL` | `openai/gpt-oss-120b` | fallback `gpt-oss-20b`, poi `compound-mini` |
+
+**NON usare i modelli `groq/compound-*`**: sono wrapper che instradano verso altri modelli e ne
+ereditano le quote. Dichiarano 70.000 token/minuto liberi nelle proprie intestazioni e poi
+rispondono 429 citando `llama-3.3-70b-versatile`, che come modello diretto non esiste più.
+Misurato il 2026-09-02 su lotti reali: `qwen/qwen3.8-27b` 3 giri su 3 con tutte le voci in 0,9s;
+`openai/gpt-oss-20b` 2 su 3 (fallisce la validazione JSON stretta su testi con emoji);
+`groq/compound-mini` tre 429 in 90 secondi.
 
 Verificati col JSON mode che il codice richiede: `qwen/qwen3.6-27b` emette blocchi think e rompe il
 parsing, `groq/compound` ignora il JSON mode. **Prima di cambiare modello, testare sempre con
 response_format json_object.** Elenco aggiornato: `GET https://api.groq.com/openai/v1/models`.
+
+### 1bis. Ultim'ora: classificazione A LOTTI (dal 2026-09-02)
+Il tetto Groq che conta è **8.000 token al MINUTO**, non al giorno (le richieste sono 1.000/giorno e
+non sono mai il vincolo). La parte fissa del prompt di classificazione — carta editoriale, glossario,
+regole, esempi — pesa **~850 token**, cioè l'**87% di ogni chiamata**.
+
+Fino al 2026-09-02 `fastlane.py` faceva **una chiamata per notizia**: ~864 token a notizia, ~21.600
+per un giro da 25, tre volte oltre il tetto. Le prime ~9 passavano, le altre prendevano 429 e
+ricadevano **in silenzio** sulle regole (sintomo visibile: titoli con le emoji originali e nessun
+campo estratto). Misura reale prima del fix: 2 messaggi classificati su 6.
+
+Ora `main()` è diviso in **raccolta → lotti → elaborazione** (`MAX_CANDIDATI=36`, `LOTTO=12`):
+`brain.classify_batch_messages()` costruisce un prompt unico per 12 messaggi numerati e
+`fastlane.llm_process_batch()` lo invia. Da 24.437 a 2.102 token per 25 notizie, **11,6 volte in meno**.
+Misura dopo il fix, su 18 messaggi veri: **18 su 18 classificati, 0% di titoli con emoji**.
+
+Accorgimenti che servono davvero, non toglierli:
+- **allineamento per NUMERO** (campo `n` in ogni oggetto), non per posizione: i modelli saltano e
+  riordinano voci. Ne è stato osservato uno che restituiva 5 oggetti per 6 messaggi.
+- **retry con attesa sui 429** ed **estrazione tollerante** del JSON (primo blocco `{...}` nel testo).
+- **gli esempi few-shot DEVONO contenere il campo `titolo`**: senza, il modello lo omette imitandoli e
+  il titolo resta il testo grezzo con le emoji. È stato il 100% dei casi finché non è stato aggiunto.
+- ripiego sul testo ripulito se il titolo torna comunque vuoto.
+
+Il campo **`transfer` ha cambiato SIGNIFICATO ma non nome**: da "è un trasferimento?" a "è una
+notizia di calcio pubblicabile?". Con il vecchio significato, a mercato chiuso, scartava 17 messaggi
+su 18 e svuotava l'ultim'ora. Nome del campo, schema di `data/ultimora.json` e gate in `fastlane.py`
+sono rimasti identici **di proposito**: il front-end legge il branch `live` ogni 60 secondi senza
+passare da un deploy, quindi un cambio di schema sarebbe in produzione prima dell'HTML nuovo.
 
 ## 2. Nuovo computer: checklist (20 minuti)
 1. Installa **Git for Windows** (git-scm.com, opzioni default) e **Python 3.12+**.
@@ -93,6 +129,12 @@ response_format json_object.** Elenco aggiornato: `GET https://api.groq.com/open
 - **Limite MAX_PATH (260 caratteri)**: su Windows `os.listdir` e `glob` vedono i file ma `open()`
   fallisce con FileNotFoundError se il percorso completo supera i 260 caratteri. Capita con le cartelle
   di lavoro temporanee lunghe. Rimedio: usare una cartella di lavoro dal nome corto.
+- **Prima di riscrivere un file di configurazione, estrai dal CODICE tutte le chiavi che legge.**
+  Il 2026-09-02 la riscrittura di `rules/keywords.*.json` ha perso `affidabilita`,
+  `_default_affidabilita` e `_nota_affidabilita` perché erano state ispezionate solo le due chiavi
+  che interessavano. Risultato: `KeyError: 'affidabilita'` a `build.py:82` e build fallito.
+  Controllo che va rifatto ogni volta: `grep -rn 'kw\[' scripts/*.py` per l'elenco reale delle
+  chiavi lette, e verifica che ci siano tutte in tutti i file prima di pubblicare.
 - **Console Windows**: `py script.py` che stampa accenti muore con UnicodeEncodeError (cp1252).
   Anteporre `PYTHONIOENCODING=utf-8`.
 
@@ -137,7 +179,7 @@ response_format json_object.** Elenco aggiornato: `GET https://api.groq.com/open
 - **Push impossibile / repo locale incasinato**: il repo locale è sacrificabile! Se serve:
   ri-clonare da zero (la verità è su GitHub) e rimettere i 3 file segreti.
 
-### Difetti noti, non ancora corretti (2026-09-02)
+### Difetti noti, non ancora corretti (verificati il 2026-09-03)
 - **`guard.py` — via di fuga inesistente**: il messaggio dice di sbloccare con una variabile TB_FORCE
   ma lo script non la legge mai. Non c'è modo di forzare una riduzione voluta.
 - **`guard.py` — crash su Windows**: usa `subprocess.run(text=True)` senza `encoding`, quindi con
@@ -213,3 +255,81 @@ di ogni altra cosa: è il guasto che si ripete.
   2026-06-03, ognuna con le notizie già classificate e con le fonti. È la sorgente giusta per un
   bilancio del mercato, molto più affidabile del diff fra le rose (che riflette le ri-registrazioni
   delle liste, non i trasferimenti).
+
+## 8. RICONVERSIONE A CAMPIONATI: stato e PENDING
+Piano a 27 passi, sequenza **additiva prima e distruttiva dopo**: ogni passo deve lasciare il sito
+pubblicabile. Punto di ritorno dell'intera riconversione: tag **`pre-riconversione`** (sha `dfc45f8`).
+
+### Fatto e verificato in produzione
+| Fase | Cosa | Commit |
+|---|---|---|
+| A | Modelli Groq dismessi sostituiti (strato AI morto dal 20/07) | `dfc45f8` |
+| A | Scout `da→a` sospeso con `SCOUT_OFF=1`, baseline rose congelata in `data/rosters/2026-08-31.json` | `5e7143a` |
+| B | Raccolta riorientata: `kw` di `teams.json`, feed di `sources.json`, `mondo_home` sulle coppe | `89114cb` |
+| C | Tassonomia bivalente sui quattro slot esistenti | `ce4df47` + fix `3053b78` |
+| E | Ultim'ora a lotti, modello affidabile, carta editoriale bivalente, campo `transfer` ridefinito | `d73f622` |
+
+Misure dopo la fase B/C, sulla board reale: colonna anteprima da 42 a 78 voci, default "rumor" dal
+65% al 51%, ANSA Calcio e Corriere dello Sport entrati come fonti dirette (26 e 31 titoli).
+
+### PENDING (in ordine consigliato)
+1. **Fase F — etichette del front-end.** È la cosa che oggi stona di più: il sito mostra ancora
+   "affare concluso", "trattativa", "obiettivo", "Mercato Live · oggi", "Come leggiamo il mercato"
+   mentre classifica risultati e formazioni. Tocca **solo testi**, rischio basso. Punti esatti:
+   `board.html:158-175` (blocco `STRINGS`: `sub`, `tags`, `stages`, `heat`, `sections`, `globalTitle`,
+   `howtoTitle`, `howtoBody`), `index.html:147` (`hdLive`), `index.html:177-179`
+   (`liveToday`, `mini`, `worldSub`, `footR`), `index.html:201-203` (`ART_I18N.sub`),
+   più i `<meta name="description">` di `index.html:20`, `board.html:20`, `fonti.html:9`.
+   Ricorda: **ogni stringa esiste in it/en/es** e le lookup del front-end sono senza fallback
+   (una chiave dimenticata stampa `undefined`). Verifica: aprire ogni pagina con `?lang=en` e
+   `?lang=es` e cercare `undefined` nel DOM.
+2. **Fase D residua — `brain.is_coach()`.** Confronta il solo cognome contro una lista che contiene
+   "simeone" e "italiano": **Giovanni Simeone e Vincenzo Italiano risultano allenatori** e verrebbero
+   cancellati in silenzio da tabellini, board e articoli. Da svuotare (lista conservata in commento)
+   o ribaltare in etichetta di ruolo.
+3. **Fase G — il contenuto nuovo.** `scripts/competizioni.py` su football-data (classifiche,
+   calendario, risultati, marcatori: tutti dati deterministici, niente LLM, niente invenzioni) e
+   pagina `campionati.html` clonando il pattern di `mondiali.html`. È qui che il sito diventa
+   davvero un sito di campionati.
+4. **`scripts/freshness.py` — la sentinella che manca.** Ultimo step di `update.yml`, **senza**
+   `|| echo`: fallisce se `aggiornato` supera le 6 ore, se una lingua scende sotto una soglia di
+   voci, o se una collezione attesa è vuota. È la lezione delle 6 settimane di strato AI morto a
+   workflow verde. Senza questo, la prossima rottura silenziosa non la scopre nessuno.
+5. **Fase H — SEO.** `mondiali.html` e `fonti.html` non compaiono fra i 554 URL della sitemap;
+   `campionati.html` va aggiunta a `topbar()` di `render_articles.py:131` (serve una chiave
+   `UI[lang]["campionati"]` in **entrambe** le copie del dizionario, `render_articles.py:14-27` e
+   `articles.py:44-53`), altrimenti 429 pagine articolo puntano solo alla board di mercato.
+6. **Fase I — archivio Mondiale** (rimuovere dalla nav principale, banner "Edizione conclusa" in
+   it/en/es, togliere lo step da `update.yml`, **tenere l'URL e il canonical**) e smontaggio
+   dell'affare-metro, da fare in **un solo commit** con il back-end.
+7. **Fase J — bilancio mercato.** Decisione presa: **solo dalle notizie ufficiali già classificate**,
+   non dal diff fra le rose. Motivo: gli snapshot riflettono le **ri-registrazioni delle liste**, non
+   i trasferimenti (tutti i 31 movimenti dell'Inter risultavano nella stessa finestra 26-31 agosto,
+   con Pavard e Asllani fra gli "acquisti" e mezza Primavera fra le "cessioni"), e il tier gratuito
+   non marca i prestiti. Sorgente giusta: lo storico di `data/it/board.json`, oltre 770 versioni dal
+   2026-06-03 con le notizie già classificate e le fonti.
+8. **Fase K — palinsesto editoriale.** Le tre pianificate (12:00, 16:00, 20:00) funzionano e
+   producono articoli ogni giorno, ma sono ancora tarate sul mercato. Vedi `kb/PIANIFICATE.md`.
+
+### Punti aperti minori
+- **`guard.py`**: i due difetti elencati in §5 non sono stati corretti perché il classificatore dei
+  permessi ha bloccato la modifica (è uno script di sicurezza). Serve un via libera esplicito.
+- **18 movimenti residui** in `board.json`: estratti da un build partito alle 23:54 del 2026-09-01,
+  **un minuto prima** che venisse pubblicato lo spegnimento dello scout. Sono trasferimenti veri del
+  deadline day, non allucinazioni. Decadono da soli entro 60 giorni (`merge_nomi`). Il committente
+  non ha ancora deciso se lasciarli, azzerarli o congelarli per la sezione bilancio.
+- **Messaggi con più trasferimenti insieme** ("Ufficiali: Ndiaye al City, Sanchez al Como, ..."):
+  lo schema a un record per messaggio ne estrae uno solo e a volte sbaglia l'abbinamento del club.
+- **`.gitignore`**: non copre i file di lavoro nella root (`__probe_*`, `__trash/`, `.bak_*`, `*.tmp`,
+  `.tb_tmp_index*`). Con `git add -A` in `update.yml` rischiano di finire pubblicati.
+- **`mondo_home` non è per lingua** (vedi §5): con locale italiano tornano fonti inglesi.
+
+### Decisioni del committente (2026-09-02), da non riaprire senza motivo
+1. I 429 articoli di mercato già pubblicati **restano come sono**, nessuna deindicizzazione.
+2. Bilancio mercato **solo da notizie ufficiali**. Lo scraping di Sky Sport non serve: Sky è già la
+   seconda fonte del sito via Google News (51 titoli), non ha un feed RSS calcio (404) e il suo
+   `sport.xml` ha date in italiano che feedparser non legge (→ tutti gli item scartati da `build.py`).
+3. **Niente probabili formazioni** come funzione di sistema: il tier gratuito di football-data non
+   espone le lineup, sarebbero invenzioni. Al massimo una probabile editoriale per il big match,
+   etichettata come tale e mai come dato strutturato.
+4. La macchina del mercato **non si cancella**: si riattiva a gennaio e a giugno, vedi §7.
