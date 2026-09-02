@@ -1,5 +1,4 @@
 {
-  "_nota": "Rule-based classification. The four slots are a CONCRETENESS scale valid both for matchday football and for the tail of the transfer window: done=what happened, conf=official act, obj=imminent/preview, rumor=analysis (default). First group with a substring match wins. WARNING: the four key names are a contract with build.py:544-546 and board.html:274; renaming them breaks the build with KeyError.",
   "categorie_ordine": [
     "done",
     "conf",
@@ -123,5 +122,30 @@
       "weighing",
       "eye"
     ]
-  }
+  },
+  "affidabilita": {
+    "3": [
+      "fabrizio romano",
+      "sky sports",
+      "the athletic",
+      "bbc",
+      "guardian",
+      "official",
+      "l'equipe",
+      "david ornstein",
+      "ornstein"
+    ],
+    "2": [
+      "mirror",
+      "the sun",
+      "daily mail",
+      "telegraph",
+      "standard",
+      "espn",
+      "goal",
+      "metro"
+    ]
+  },
+  "_default_affidabilita": 1,
+  "_nota": "Rule-based classification. The four slots are a CONCRETENESS scale valid both for matchday football and for the tail of the transfer window: done=what happened, conf=official act, obj=imminent/preview, rumor=analysis (default). First group with a substring match wins. WARNING: the four key names are a contract with build.py:544-546 and board.html:274; renaming them breaks the build with KeyError."
 }

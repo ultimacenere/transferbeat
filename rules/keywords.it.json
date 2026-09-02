@@ -152,5 +152,41 @@
       "segue",
       "piace"
     ]
-  }
+  },
+  "_nota_affidabilita": "Affidabilita 1-3 in base alla testata (match sul nome della fonte, minuscolo, contains).",
+  "affidabilita": {
+    "3": [
+      "fabrizio romano",
+      "di marzio",
+      "gianluca di marzio",
+      "sky sport",
+      "sky",
+      "the athletic",
+      "l'equipe",
+      "l'équipe",
+      "comunicato",
+      "official",
+      "ufficiale",
+      "matteo moretto",
+      "nicolo schira",
+      "nicolò schira",
+      "rudy galetti"
+    ],
+    "2": [
+      "gazzetta",
+      "corriere dello sport",
+      "tuttosport",
+      "marca",
+      "as",
+      "mundo deportivo",
+      "sport",
+      "calciomercato.com",
+      "tuttomercatoweb",
+      "tmw",
+      "football italia",
+      "bild",
+      "kicker"
+    ]
+  },
+  "_default_affidabilita": 1
 }
