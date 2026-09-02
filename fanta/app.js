@@ -89,14 +89,14 @@ async function renderVoti(){
 /* ---------- regole di lega: form condiviso (creazione e modifica) ---------- */
 const BONUS_KEYS = [['gol', 'Gol', 3], ['assist', 'Assist', 1], ['rig_sbagliato', 'Rigore sbagliato', -3], ['rig_parato', 'Rigore parato', 3],
   ['gol_subito', 'Gol subito (portiere)', -1], ['autogol', 'Autogol', -2], ['amm', 'Ammonizione', -0.5], ['esp', 'Espulsione', -1], ['porta_inviolata', 'Porta inviolata (portiere)', 0]];
-const DEFAULT_SETTINGS = { type: 'classic', phase: 'asta', credits: 500, max_teams: 8, slots: { P: 3, D: 8, C: 8, A: 6 }, timer: 20, max_subs: 3,
+const DEFAULT_SETTINGS = { type: 'classic', phase: 'asta', credits: 500, max_teams: 8, slots: { P: 3, D: 8, C: 8, A: 6 }, timer: 20, max_subs: 3, bench_size: 7,
   goal_base: 66, goal_step: 6, mod_difesa: true, mod_centrocampo: false, mod_attacco: false, bonus_casa: 0, bonus_trasferta: 0,
   bonus: Object.fromEntries(BONUS_KEYS.map(k => [k[0], k[2]])) };
 function settingsFormHtml(s, px){
   s = Object.assign({}, DEFAULT_SETTINGS, s || {}); const sl = Object.assign({}, DEFAULT_SETTINGS.slots, s.slots || {}); const bn = Object.assign({}, DEFAULT_SETTINGS.bonus, s.bonus || {});
   const num = (id, label, v, step) => '<div><label>'+label+'</label><input id="'+px+'_'+id+'" type="number" step="'+(step || 1)+'" value="'+v+'"></div>';
   const chk = (id, label, v) => '<div class="chk"><input type="checkbox" id="'+px+'_'+id+'" '+(v ? 'checked' : '')+'><label for="'+px+'_'+id+'" style="margin:0">'+label+'</label></div>';
-  return '<fieldset><legend>Lega</legend><div class="settings-grid">' + num('credits', 'Crediti', s.credits) + num('max_teams', 'Squadre max', s.max_teams) + num('timer', 'Timer asta (s)', s.timer) + num('max_subs', 'Sostituzioni max', s.max_subs) + '</div></fieldset>' +
+  return '<fieldset><legend>Lega</legend><div class="settings-grid">' + num('credits', 'Crediti', s.credits) + num('max_teams', 'Squadre max', s.max_teams) + num('timer', 'Timer asta (s)', s.timer) + num('max_subs', 'Sostituzioni max', s.max_subs) + num('bench_size', 'Panchinari', s.bench_size) + '</div></fieldset>' +
     '<fieldset><legend>Rose</legend><div class="settings-grid">' + num('P', 'Portieri', sl.P) + num('D', 'Difensori', sl.D) + num('C', 'Centrocampisti', sl.C) + num('A', 'Attaccanti', sl.A) + '</div></fieldset>' +
     '<fieldset><legend>Gol e scontri</legend><div class="settings-grid">' + num('goal_base', 'Primo gol a', s.goal_base, 0.5) + num('goal_step', 'Un gol ogni', s.goal_step, 0.5) + num('bonus_casa', 'Fattore casa', s.bonus_casa, 0.5) + num('bonus_trasferta', 'Fattore trasferta', s.bonus_trasferta, 0.5) + '</div></fieldset>' +
     '<fieldset><legend>Modificatori</legend><div class="settings-grid">' + chk('mod_difesa', 'Difesa', s.mod_difesa) + chk('mod_centrocampo', 'Centrocampo', s.mod_centrocampo) + chk('mod_attacco', 'Attacco', s.mod_attacco) + '</div>' +
@@ -106,7 +106,7 @@ function settingsFormHtml(s, px){
 function readSettingsForm(px, base){
   const g = id => $('#' + px + '_' + id); const n = (id, d) => { const v = parseFloat(g(id).value); return isNaN(v) ? d : v; };
   const s = Object.assign({}, DEFAULT_SETTINGS, base || {});
-  s.credits = n('credits', 500); s.max_teams = n('max_teams', 8); s.timer = n('timer', 20); s.max_subs = n('max_subs', 3);
+  s.credits = n('credits', 500); s.max_teams = n('max_teams', 8); s.timer = n('timer', 20); s.max_subs = n('max_subs', 3); s.bench_size = n('bench_size', 7);
   s.slots = { P: n('P', 3), D: n('D', 8), C: n('C', 8), A: n('A', 6) };
   s.goal_base = n('goal_base', 66); s.goal_step = n('goal_step', 6); s.bonus_casa = n('bonus_casa', 0); s.bonus_trasferta = n('bonus_trasferta', 0);
   s.mod_difesa = g('mod_difesa').checked; s.mod_centrocampo = g('mod_centrocampo').checked; s.mod_attacco = g('mod_attacco').checked;
@@ -216,7 +216,7 @@ function renderRules(){
   const view = '<div class="card"><h2>Regole in vigore <span class="pill '+(phase() === 'asta' ? '' : 'live')+'">'+(phase() === 'asta' ? 'fase asta' : 'campionato')+'</span></h2><table><tbody>' +
     '<tr><td>Crediti</td><td>'+s.credits+'</td><td>Squadre max</td><td>'+s.max_teams+'</td></tr>' +
     '<tr><td>Rose</td><td colspan="3">'+ROLES.map(r => r+' '+sl[r]).join(' · ')+'</td></tr>' +
-    '<tr><td>Sostituzioni</td><td>'+s.max_subs+'</td><td>Timer asta</td><td>'+s.timer+' s</td></tr>' +
+    '<tr><td>Sostituzioni</td><td>'+s.max_subs+'</td><td>Panchinari</td><td>'+s.bench_size+'</td></tr><tr><td>Timer asta</td><td colspan="3">'+s.timer+' s</td></tr>' +
     '<tr><td>Gol</td><td colspan="3">primo a '+s.goal_base+', poi uno ogni '+s.goal_step+' punti</td></tr>' +
     '<tr><td>Fattore casa / trasferta</td><td colspan="3">'+s.bonus_casa+' / '+s.bonus_trasferta+'</td></tr>' +
     '<tr><td>Modificatori</td><td colspan="3">'+[s.mod_difesa && 'difesa', s.mod_centrocampo && 'centrocampo', s.mod_attacco && 'attacco'].filter(Boolean).join(', ') + (s.mod_difesa || s.mod_centrocampo || s.mod_attacco ? '' : 'nessuno')+'</td></tr>' +
@@ -345,11 +345,10 @@ async function loadSeasonData(){
 }
 function myPlayers(){ return L.rosters.filter(r => r.user_id === user.id).map(r => playersById[r.player_id]).filter(Boolean); }
 function wantOf(module){ const p = module.split('-').map(Number); return { P: 1, D: p[0], C: p[1], A: p[2] }; }
-function benchNormalize(cur, mine){
+function benchNormalize(cur, mine, bmax){
   const st = new Set(cur.starters), ids = new Set(mine.map(p => p.id));
   cur.starters = cur.starters.filter(id => ids.has(id));
-  cur.bench = cur.bench.filter(id => ids.has(id) && !st.has(id));
-  mine.filter(p => !st.has(p.id) && !cur.bench.includes(p.id)).sort((a, b) => ROLES.indexOf(a.role) - ROLES.indexOf(b.role) || b.price - a.price).forEach(p => cur.bench.push(p.id));
+  cur.bench = cur.bench.filter(id => ids.has(id) && !st.has(id)).slice(0, bmax || 7);
 }
 function moveBench(cur, id, dir){ const i = cur.bench.indexOf(id), j = i + dir; if (i < 0 || j < 0 || j >= cur.bench.length) return; [cur.bench[i], cur.bench[j]] = [cur.bench[j], cur.bench[i]]; }
 function shortName(n){ const parts = (n || '').split(' '); return parts.length > 1 ? parts.slice(1).join(' ') : n; }
@@ -368,47 +367,51 @@ function pitchHtml(cur){
 }
 
 async function renderLineup(){
-  const box = $('#tab-schiera'), md = S.md, mine = myPlayers();
+  const box = $('#tab-schiera'), md = S.md, mine = myPlayers(), bmax = L.league.settings.bench_size || 7;
   const [{ data: lu }, { data: all }] = await Promise.all([
     sb.from('lineups').select('*').eq('league_id', L.league.id).eq('user_id', user.id).eq('matchday', md).maybeSingle(),
     sb.from('lineups').select('user_id, module, starters, submitted_at').eq('league_id', L.league.id).eq('matchday', md)
   ]);
-  if (!S.lineup || S.lineup.md !== md) S.lineup = { md, module: lu ? lu.module : '4-3-3', starters: lu ? lu.starters.slice() : [], bench: lu ? lu.bench.slice() : [] };
-  const cur = S.lineup; benchNormalize(cur, mine);
+  if (!S.lineup || S.lineup.md !== md) S.lineup = { md, module: lu ? lu.module : '4-3-3', starters: lu ? lu.starters.slice() : [], bench: lu ? lu.bench.slice(0, bmax) : [] };
+  const cur = S.lineup; benchNormalize(cur, mine, bmax);
   const want = wantOf(cur.module), info = mdInfo(md), open = mdOpen(md);
   const count = r => cur.starters.filter(id => (playersById[id] || {}).role === r).length;
   const head = '<div class="row"><div><label>Giornata</label><select id="luMd">' + Array.from({ length: 38 }, (_, i) => i + 1).map(n => '<option value="'+n+'" '+(n === md ? 'selected' : '')+'>Giornata '+n+(mdOpen(n) ? '' : ' (chiusa)')+'</option>').join('') + '</select></div>' +
     '<div><label>Modulo</label><select id="luMod">' + MODULES.map(m => '<option '+(m === cur.module ? 'selected' : '')+'>'+m+'</option>').join('') + '</select></div>' +
-    '<div><label>&nbsp;</label><button id="luSave" '+(open ? '' : 'disabled')+'>Salva formazione</button></div></div>' +
-    '<p class="muted" style="margin:8px 0">Deadline: '+fmtDate(info.starts_at)+' · '+(open ? 'formazioni aperte' : 'giornata iniziata, formazioni chiuse')+(lu ? ' · salvata il '+fmtDate(lu.submitted_at) : ' · nessuna formazione salvata')+' · in campo '+cur.starters.length+'/11</p>';
-  const roster = '<div class="card"><h2>La tua rosa <span class="muted">clicca per schierare</span></h2><div class="roster">' + ROLES.map(r => {
+    '<div><label>&nbsp;</label><span class="row"><button id="luSave" '+(open ? '' : 'disabled')+'>Salva formazione</button><button id="luClear" class="sec">Svuota</button></span></div></div>' +
+    '<p class="muted" style="margin:8px 0">Deadline: '+fmtDate(info.starts_at)+' · '+(open ? 'formazioni aperte' : 'giornata iniziata, formazioni chiuse')+(lu ? ' · salvata il '+fmtDate(lu.submitted_at) : ' · nessuna formazione salvata')+' · in campo '+cur.starters.length+'/11 · panchina '+cur.bench.length+'/'+bmax+'</p>';
+  const benchStrip = '<div class="bench"><div class="bt">Panchina <span class="muted">(ordine di ingresso)</span></div><div class="brow">' + Array.from({ length: bmax }, (_, i) => { const p = cur.bench[i] ? playersById[cur.bench[i]] : null;
+    return p ? '<div class="slot '+p.role+'" data-bout="'+p.id+'" title="Togli dalla panchina"><div class="shirt">'+(i + 1)+'</div><span class="nm">'+esc(shortName(p.name))+'</span><span class="tm">'+p.role+' · '+esc(p.team)+'</span><span class="mv"><button class="small sec" data-bl="'+p.id+'">◀</button><button class="small sec" data-br="'+p.id+'">▶</button></span></div>'
+             : '<div class="slot empty"><div class="shirt">'+(i + 1)+'</div><span class="nm">&nbsp;</span></div>'; }).join('') + '</div></div>';
+  const roster = '<div class="card"><h2>La tua rosa <span class="muted">clicca: prima in campo, poi in panchina</span></h2><div class="roster">' + ROLES.map(r => {
     const list = mine.filter(p => p.role === r).sort((a, b) => b.price - a.price);
     return '<h3>'+ROLE_NAME[r]+' <span class="pill">'+count(r)+'/'+want[r]+'</span></h3>' + list.map(p => {
       const on = cur.starters.includes(p.id), bi = cur.bench.indexOf(p.id);
-      return '<div class="pl'+(on ? ' on' : '')+'" data-in="'+p.id+'">'+roleTag(r)+'<span class="who">'+esc(p.name)+' <span class="muted">'+esc(p.team)+'</span></span>' +
-        (on ? '<span class="muted">in campo</span>' : '<span class="muted">panch. '+(bi + 1)+'</span><span class="arrows"><button class="small sec" data-bup="'+p.id+'">▲</button> <button class="small sec" data-bdown="'+p.id+'">▼</button></span>') + '</div>'; }).join('');
+      return '<div class="pl'+(on || bi >= 0 ? ' on' : '')+'" data-in="'+p.id+'">'+roleTag(r)+'<span class="who">'+esc(p.name)+' <span class="muted">'+esc(p.team)+'</span></span><span class="muted">'+(on ? 'in campo' : (bi >= 0 ? 'panchina '+(bi + 1) : ''))+'</span></div>'; }).join('');
   }).join('') + '</div></div>';
   const others = '<div class="card" style="margin-top:14px"><h2>Formazioni giornata '+md+'</h2><ul class="list">' + L.members.map(m => { const l2 = (all || []).find(x => x.user_id === m.user_id);
-    return '<li><span>'+esc(m.team_name)+'</span><span class="muted" style="text-align:right">'+(l2 ? (open ? 'inviata ('+l2.module+')' : l2.module+': '+l2.starters.map(id => shortName((playersById[id] || {}).name || '#'+id)).join(', ')) : 'non inviata')+'</span></li>'; }).join('') +
-    '</ul>' + (open ? '<p class="muted">I titolari degli altri si vedono dopo la deadline.</p>' : '') + '</div>';
-  box.innerHTML = head + '<div class="grid3"><div>' + pitchHtml(cur) + '<p class="muted" style="margin-top:8px">Panchina nell\'ordine della lista a destra: in caso di senza voto entra il primo dello stesso ruolo, fino a '+(L.league.settings.max_subs || 3)+' cambi. Clicca un giocatore in campo per toglierlo.</p></div><div>' + roster + '</div></div>' + others;
-  $('#luMd').onchange = e => { S.md = +e.target.value; S.lineup = null; renderLineup(); };
+    return '<li><span>'+esc(m.team_name)+'</span><span class="muted">'+(l2 ? 'inviata ('+l2.module+')' : 'non inviata')+'</span></li>'; }).join('') + '</ul><p class="muted">Il dettaglio è nella scheda Risultati.</p></div>';
+  box.innerHTML = head + '<div class="grid3"><div>' + pitchHtml(cur) + benchStrip + '<p class="muted" style="margin-top:8px">In caso di senza voto entra il primo panchinaro dello stesso ruolo, fino a '+(L.league.settings.max_subs || 3)+' cambi. Clicca un giocatore in campo o in panchina per toglierlo.</p></div><div>' + roster + '</div></div>' + others;
+  const redraw = () => renderLineup();
+  $('#luMd').onchange = e => { S.md = +e.target.value; S.lineup = null; redraw(); };
   $('#luMod').onchange = e => { cur.module = e.target.value; const w = wantOf(cur.module), cnt = { P: 0, D: 0, C: 0, A: 0 };
-    cur.starters = cur.starters.filter(id => { const r = (playersById[id] || {}).role; cnt[r]++; return cnt[r] <= w[r]; }); renderLineup(); };
-  $$('[data-in]', box).forEach(el => el.onclick = e => {
-    if (e.target.closest('button')) return;
-    const p = playersById[+el.dataset.in]; if (!p || cur.starters.includes(p.id)) return;
-    if (count(p.role) >= want[p.role]) return msg('Posti '+ROLE_NAME[p.role].toLowerCase()+' già pieni per il modulo '+cur.module+': togli qualcuno dal campo o cambia modulo', 'err');
-    cur.starters.push(p.id); renderLineup();
+    cur.starters = cur.starters.filter(id => { const r = (playersById[id] || {}).role; cnt[r]++; return cnt[r] <= w[r]; }); redraw(); };
+  $('#luClear').onclick = () => { cur.starters = []; cur.bench = []; redraw(); };
+  $$('[data-in]', box).forEach(el => el.onclick = () => {
+    const p = playersById[+el.dataset.in]; if (!p || cur.starters.includes(p.id) || cur.bench.includes(p.id)) return;
+    if (count(p.role) < want[p.role]) { cur.starters.push(p.id); return redraw(); }
+    if (cur.bench.length < bmax) { cur.bench.push(p.id); return redraw(); }
+    msg('Campo pieno per il ruolo '+p.role+' e panchina completa ('+bmax+')', 'err');
   });
-  $$('[data-out]', box).forEach(el => el.onclick = () => { cur.starters = cur.starters.filter(x => x !== +el.dataset.out); renderLineup(); });
-  $$('[data-bup]', box).forEach(b => b.onclick = () => { moveBench(cur, +b.dataset.bup, -1); renderLineup(); });
-  $$('[data-bdown]', box).forEach(b => b.onclick = () => { moveBench(cur, +b.dataset.bdown, 1); renderLineup(); });
+  $$('[data-out]', box).forEach(el => el.onclick = () => { cur.starters = cur.starters.filter(x => x !== +el.dataset.out); redraw(); });
+  $$('[data-bout]', box).forEach(el => el.onclick = e => { if (e.target.closest('button')) return; cur.bench = cur.bench.filter(x => x !== +el.dataset.bout); redraw(); });
+  $$('[data-bl]', box).forEach(b => b.onclick = e => { e.stopPropagation(); moveBench(cur, +b.dataset.bl, -1); redraw(); });
+  $$('[data-br]', box).forEach(b => b.onclick = e => { e.stopPropagation(); moveBench(cur, +b.dataset.br, 1); redraw(); });
   $('#luSave').onclick = async () => {
     if (cur.starters.length !== 11) return msg('Servono 11 titolari, ne hai '+cur.starters.length, 'err');
     const { error } = await sb.rpc('save_lineup', { p_league: L.league.id, p_matchday: md, p_module: cur.module, p_starters: cur.starters, p_bench: cur.bench });
     if (error) return err(error);
-    msg('Formazione salvata per la giornata '+md, 'ok'); renderLineup();
+    msg('Formazione salvata per la giornata '+md, 'ok'); redraw();
   };
 }
 
@@ -456,30 +459,44 @@ const EMOJI_LABEL = { gol: 'gol', assist: 'assist', amm: 'ammonizione', esp: 'es
 function emojis(b){ return Object.entries(b || {}).filter(([k, v]) => EMOJI[k] && v).map(([k, v]) => '<span title="'+EMOJI_LABEL[k]+(v > 1 ? ' ×'+v : '')+'">'+EMOJI[k].repeat(Math.min(v, 3))+'</span>').join(''); }
 function f1(x){ return x == null ? '–' : Number(x).toFixed(1); }
 function teamSheet(r, name){
-  const d = (r && r.detail) || {}, pl = d.players || [], extras = d.extras || [];
+  const d = (r && r.detail) || {}, pl = d.players || [], bench = d.bench || [], extras = d.extras || [];
   if (!r || d.lineup === false) return '<div><h3>'+esc(name)+'</h3><div class="muted">Formazione non inviata</div><table><tbody><tr class="grand"><td>Totale</td><td></td><td></td><td>0.0</td></tr></tbody></table></div>';
   const legacyMod = !extras.length && d.mod_difesa ? [{ label: 'Modificatore difesa', v: d.mod_difesa }] : extras;
-  const rows = pl.map(p => { const x = playersById[p.player_id] || { name: '#'+p.player_id }, sub = p.sub ? (playersById[p.sub] || { name: '#'+p.sub }) : null;
-    return '<tr><td>'+roleTag(p.role)+'</td><td>'+(sub ? '<span class="muted" style="text-decoration:line-through">'+esc(shortName(x.name))+'</span> 🔁 '+esc(shortName(sub.name)) : esc(shortName(x.name)))+' <span class="em">'+emojis(p.bonus)+'</span></td><td>'+(p.voto == null ? 's.v.' : f1(p.voto))+'</td><td><b>'+f1(p.fv)+'</b></td></tr>'; }).join('');
+  const nm = id => shortName((playersById[id] || { name: '#'+id }).name);
+  const rows = pl.map(p => '<tr><td>'+roleTag(p.role)+'</td><td>'+(p.sub ? '<span class="muted" style="text-decoration:line-through">'+esc(nm(p.player_id))+'</span> 🔁 '+esc(nm(p.sub)) : esc(nm(p.player_id)))+' <span class="em">'+emojis(p.bonus)+'</span></td><td>'+(p.voto == null ? 's.v.' : f1(p.voto))+'</td><td><b>'+f1(p.fv)+'</b></td></tr>').join('');
+  const brows = bench.map((p, i) => '<tr class="'+(p.used ? '' : 'ex')+'"><td><span class="pill">'+(i + 1)+'</span></td><td>'+roleTag(p.role)+' '+esc(nm(p.player_id))+(p.used ? ' 🔁' : '')+' <span class="em">'+emojis(p.bonus)+'</span></td><td>'+(p.voto == null ? 's.v.' : f1(p.voto))+'</td><td>'+(p.fv == null ? '–' : f1(p.fv))+'</td></tr>').join('');
   const base = d.base != null ? d.base : pl.reduce((a, p) => a + (+p.fv || 0), 0);
   return '<div><h3>'+esc(name)+'</h3><table><thead><tr><th></th><th>Giocatore</th><th>V</th><th>FV</th></tr></thead><tbody>' + rows +
     '<tr class="tot"><td></td><td>Totale parziale</td><td></td><td>'+f1(base)+'</td></tr>' +
     legacyMod.map(e => '<tr class="ex"><td></td><td>'+esc(e.label)+'</td><td></td><td>'+(e.v > 0 ? '+' : '')+f1(e.v)+'</td></tr>').join('') +
-    '<tr class="grand"><td></td><td>Totale</td><td></td><td>'+f1(r.total)+'</td></tr></tbody></table></div>';
+    '<tr class="grand"><td></td><td>Totale</td><td></td><td>'+f1(r.total)+'</td></tr>' +
+    (brows ? '<tr><td colspan="4" class="muted" style="padding-top:10px"><b>Panchina</b></td></tr>' + brows : '') + '</tbody></table></div>';
 }
-function renderResults(){
+function lineupSheet(lu, name){
+  if (!lu) return '<div><h3>'+esc(name)+'</h3><div class="muted">Formazione non ancora schierata</div></div>';
+  const nm = id => { const p = playersById[id] || { name: '#'+id, role: 'C', team: '' }; return '<tr><td>'+roleTag(p.role)+'</td><td>'+esc(shortName(p.name))+' <span class="muted">'+esc(p.team)+'</span></td></tr>'; };
+  return '<div><h3>'+esc(name)+' <span class="muted">'+lu.module+' · inviata '+fmtDate(lu.submitted_at)+'</span></h3><table><tbody>' + lu.starters.map(nm).join('') +
+    '<tr><td colspan="2" class="muted" style="padding-top:10px"><b>Panchina</b></td></tr>' + lu.bench.map(nm).join('') + '</tbody></table></div>';
+}
+async function renderResults(){
   const box = $('#tab-risultati');
-  const mds = [...new Set(S.results.map(r => r.matchday))].sort((a, b) => b - a);
-  if (!mds.length) { box.innerHTML = '<div class="msg">Nessuna giornata calcolata finora.</div>'; return; }
+  const withRes = new Set(S.results.map(r => r.matchday)), cur = nextMatchday();
+  const mds = [...new Set([...withRes, ...S.fixtures.map(f => f.matchday).filter(n => n <= cur)])].sort((a, b) => b - a);
+  if (!mds.length) { box.innerHTML = '<div class="msg">Nessuna giornata in calendario o calcolata finora.</div>'; return; }
   if (!S.rmd || !mds.includes(S.rmd)) S.rmd = mds[0];
-  const res = uid => S.results.find(r => r.matchday === S.rmd && r.user_id === uid);
-  const fxs = S.fixtures.filter(f => f.matchday === S.rmd);
-  let html = '<div class="row" style="max-width:320px"><select id="rsMd">' + mds.map(n => '<option value="'+n+'" '+(n === S.rmd ? 'selected' : '')+'>Giornata '+n+'</option>').join('') + '</select></div>';
+  const md = S.rmd, computed = withRes.has(md), fxs = S.fixtures.filter(f => f.matchday === md);
+  const res = uid => S.results.find(r => r.matchday === md && r.user_id === uid);
+  let lus = [];
+  if (!computed) { const { data } = await sb.from('lineups').select('user_id, module, starters, bench, submitted_at').eq('league_id', L.league.id).eq('matchday', md); lus = data || []; }
+  const lu = uid => lus.find(x => x.user_id === uid);
+  let html = '<div class="row" style="max-width:360px"><select id="rsMd">' + mds.map(n => '<option value="'+n+'" '+(n === md ? 'selected' : '')+'>Giornata '+n+(withRes.has(n) ? '' : (mdOpen(n) ? ' (da giocare)' : ' (in corso)'))+'</option>').join('') + '</select></div>';
+  if (!computed) html += '<p class="muted" style="margin:8px 0">Giornata non ancora calcolata: formazioni schierate finora. Deadline '+fmtDate(mdInfo(md).starts_at)+'.</p>';
   if (fxs.length) html += fxs.map(f => { const h = res(f.home_id), a = f.away_id ? res(f.away_id) : null;
-    return '<div class="match"><div class="score"><div class="t r">'+esc(memberName(f.home_id))+'</div><div class="g">'+(f.home_goals != null ? f.home_goals : '-')+' - '+(f.away_id ? (f.away_goals != null ? f.away_goals : '-') : '')+'</div><div class="t">'+(f.away_id ? esc(memberName(f.away_id)) : '<span class="muted">riposo</span>')+'</div>' +
-      '<div class="fp" style="text-align:right">'+f1(h && h.total)+' fantapunti</div><div></div><div class="fp">'+(a ? f1(a.total)+' fantapunti' : '')+'</div></div>' +
-      '<div class="sides">'+teamSheet(h, memberName(f.home_id))+(f.away_id ? teamSheet(a, memberName(f.away_id)) : '')+'</div></div>'; }).join('');
-  else html += '<p class="muted">Nessuna partita in calendario per questa giornata: punteggi per squadra.</p><div class="grid">' + L.members.map(m => '<div class="card">'+teamSheet(res(m.user_id), m.team_name)+'</div>').join('') + '</div>';
+    return '<div class="match"><div class="score"><div class="t r">'+esc(memberName(f.home_id))+'</div><div class="g">'+(computed ? (f.home_goals != null ? f.home_goals : '-')+' - '+(f.away_id ? (f.away_goals != null ? f.away_goals : '-') : '') : 'vs')+'</div><div class="t">'+(f.away_id ? esc(memberName(f.away_id)) : '<span class="muted">riposo</span>')+'</div>' +
+      (computed ? '<div class="fp" style="text-align:right">'+f1(h && h.total)+' fantapunti</div><div></div><div class="fp">'+(a ? f1(a.total)+' fantapunti' : '')+'</div>' : '') + '</div>' +
+      '<div class="sides">' + (computed ? teamSheet(h, memberName(f.home_id)) + (f.away_id ? teamSheet(a, memberName(f.away_id)) : '')
+                                       : lineupSheet(lu(f.home_id), memberName(f.home_id)) + (f.away_id ? lineupSheet(lu(f.away_id), memberName(f.away_id)) : '')) + '</div></div>'; }).join('');
+  else html += '<p class="muted">Nessuna partita in calendario per questa giornata.</p><div class="grid">' + L.members.map(m => '<div class="card">'+(computed ? teamSheet(res(m.user_id), m.team_name) : lineupSheet(lu(m.user_id), m.team_name))+'</div>').join('') + '</div>';
   box.innerHTML = html;
   $('#rsMd').onchange = e => { S.rmd = +e.target.value; renderResults(); };
 }

@@ -104,3 +104,11 @@ footer{border-top:1px solid var(--line);padding:16px 0;font-size:12px;color:var(
 .settings-grid .chk{display:flex;align-items:center;gap:6px;margin-top:22px;font-size:13px}
 fieldset{border:1px solid var(--line);border-radius:8px;padding:8px 12px 12px;margin-top:10px}
 legend{font-size:12px;font-weight:700;color:var(--muted);padding:0 6px}
+/* ---- panchina sotto il campo ---- */
+.bench{background:#1f6b45;border-radius:0 0 12px 12px;margin-top:-6px;padding:10px 8px 8px;border:2px solid #d9f2e3;border-top:0}
+.bench .bt{color:#d9f2e3;font-size:12px;font-weight:700;margin-bottom:6px}
+.bench .brow{display:flex;gap:4px;overflow-x:auto;padding-bottom:4px}
+.bench .slot{flex:0 0 74px}
+.bench .slot .shirt{width:34px;height:34px;line-height:34px;font-size:12px}
+.bench .slot .mv{display:block;margin-top:3px}
+.bench .slot .mv button{padding:1px 5px;font-size:10px;margin:0 1px}
