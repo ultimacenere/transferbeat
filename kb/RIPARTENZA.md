@@ -13,6 +13,8 @@ innescati da cron-job.org **e da una pianificazione interna a `update.yml`** (ri
 cron-job.org si ferma, l'aggiornamento dati parte comunque). **A PC spento il sito continua ad
 aggiornarsi da solo.** Il computer serve solo per: modifiche al codice, articoli scritti da Claude, push.
 
+> **FantaTB (fantacalcio, online su /fanta/ dal 2026-09-02): KB dedicata in `kb/FANTATB.md`.** Supabase + API-Football, script `scripts/fanta_*.py`, workflow `fanta.yml`.
+
 ## 1. Architettura in 60 secondi
 - **Feed 1 (testate, ogni 2 ore 06-22 UTC)**: `update.yml` → `scripts/build.py` interroga Google News
   (query = `teams.json["kw"][lang]` + `squadra["search"]`, es. "notizie calcio Inter Milan") più i feed
