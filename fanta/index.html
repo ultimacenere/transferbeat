@@ -61,18 +61,7 @@
           <h2>Crea una lega</h2>
           <label>Nome lega</label><input id="clName" placeholder="es. Lega degli amici">
           <label>Nome della tua squadra</label><input id="clTeam" placeholder="es. Real Pierluigi">
-          <div class="row">
-            <div><label>Crediti</label><input id="clCredits" type="number" value="500"></div>
-            <div><label>Squadre max</label><input id="clMax" type="number" value="8"></div>
-          </div>
-          <div class="row">
-            <div><label>P</label><input id="clP" type="number" value="3"></div>
-            <div><label>D</label><input id="clD" type="number" value="8"></div>
-            <div><label>C</label><input id="clC" type="number" value="8"></div>
-            <div><label>A</label><input id="clA" type="number" value="6"></div>
-          </div>
-          <label>Timer asta (secondi per rilancio)</label><input id="clTimer" type="number" value="20">
-          <label><input type="checkbox" id="clModDif" checked> Modificatore difesa</label>
+          <div id="clForm"></div>
           <div class="row" style="margin-top:12px"><button id="btnCreate">Crea lega</button></div>
         </div>
         <div class="card" style="margin-top:14px">
@@ -90,22 +79,14 @@
     <a data-view="home" class="muted">← Le mie leghe</a>
     <h1 id="lgName"></h1>
     <p class="lead" id="lgSub"></p>
-    <div class="tabs">
-      <a data-tab="asta" class="on">Asta</a>
-      <a data-tab="formazione">Formazione</a>
-      <a data-tab="rose">Rose</a>
-      <a data-tab="calendario">Calendario</a>
-      <a data-tab="classifica">Classifica</a>
-      <a data-tab="membri">Partecipanti</a>
-      <a data-tab="regole">Regole</a>
-    </div>
-    <div id="tab-asta"></div>
-    <div id="tab-formazione" class="hidden"></div>
-    <div id="tab-rose" class="hidden"></div>
-    <div id="tab-calendario" class="hidden"></div>
+    <div class="tabs" id="lgTabs"></div>
+    <div id="tab-asta" class="hidden"></div>
+    <div id="tab-schiera" class="hidden"></div>
     <div id="tab-classifica" class="hidden"></div>
-    <div id="tab-membri" class="hidden"></div>
+    <div id="tab-calendario" class="hidden"></div>
+    <div id="tab-risultati" class="hidden"></div>
     <div id="tab-regole" class="hidden"></div>
+    <div id="tab-membri" class="hidden"></div>
   </section>
 
   <!-- LISTONE -->
@@ -133,7 +114,7 @@
       <p>1. Crea una lega e condividi il codice invito con gli amici. 2. Fate l'asta live: l'admin chiama un giocatore, tutti rilanciano dal telefono, il timer si riavvia a ogni offerta. 3. Ogni giornata schierate la formazione; i punteggi arrivano con il voto FantaTB.</p>
       <h2>Voto FantaTB</h2>
       <p>Voto base = rating statistico della partita meno 0,8, arrotondato al mezzo punto, tra 4 e 8,5. Senza voto sotto i 15 minuti. Bonus e malus di default: gol +3, assist +1, rigore sbagliato −3, rigore parato +3, gol subito (portiere) −1, autogol −2, ammonizione −0,5, espulsione −1. L'admin di lega può modificarli e correggere singoli voti.</p>
-      <h2>Regole d'asta</h2>
+      <h2>Regole di lega</h2><p>L'admin imposta crediti, rose, sostituzioni, soglie gol, pesi di bonus e malus, porta inviolata, fattore casa e trasferta, modificatori difesa, centrocampo e attacco. Tutto modificabile anche dopo la creazione.</p><h2>Regole d'asta</h2>
       <p>Rose Classic 3 P, 8 D, 8 C, 6 A (modificabili). Ogni offerta deve lasciare almeno 1 credito per ogni slot ancora vuoto. Solo l'admin apre e chiude le aste; l'aggiudicazione salva subito il giocatore nella rosa e scala i crediti.</p>
     </div>
   </section>

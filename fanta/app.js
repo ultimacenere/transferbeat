@@ -20,13 +20,13 @@ function show(view){
   $$('main > section').forEach(s => s.classList.add('hidden'));
   const el = $('#view-' + view); if (el) el.classList.remove('hidden');
   $$('nav a').forEach(a => a.classList.toggle('on', a.dataset.view === view));
-  if (view === 'home') loadLeagues();
+  if (view === 'home') { if (!$('#clForm').innerHTML) $('#clForm').innerHTML = settingsFormHtml(null, 'cl'); loadLeagues(); }
   if (view === 'listone') renderListone();
   if (view === 'voti') loadVoti();
 }
 document.addEventListener('click', e => {
   const a = e.target.closest('[data-view]'); if (a){ e.preventDefault(); if (!user && a.dataset.view !== 'listone' && a.dataset.view !== 'voti' && a.dataset.view !== 'regole') return show('auth'); show(a.dataset.view); }
-  const t = e.target.closest('[data-tab]'); if (t){ e.preventDefault(); $$('.tabs a').forEach(x => x.classList.toggle('on', x === t)); ['asta','formazione','rose','calendario','classifica','membri','regole'].forEach(k => $('#tab-'+k).classList.toggle('hidden', k !== t.dataset.tab)); }
+  const t = e.target.closest('[data-tab]'); if (t){ e.preventDefault(); renderTabs(t.dataset.tab); }
 });
 
 /* ---------- auth ---------- */
@@ -86,6 +86,34 @@ async function renderVoti(){
       return '<tr><td>'+roleTag(p.role)+'</td><td>'+esc(p.name)+'</td><td>'+esc(p.team)+'</td><td>'+r.minutes+'</td><td>'+(r.voto == null ? 's.v.' : Number(r.voto).toFixed(1))+'</td><td class="muted">'+esc(bon(r.bonus))+'</td><td><b>'+(r.fantavoto == null ? '–' : Number(r.fantavoto).toFixed(1))+'</b></td></tr>'; }).join('') + '</tbody></table>';
 }
 
+/* ---------- regole di lega: form condiviso (creazione e modifica) ---------- */
+const BONUS_KEYS = [['gol', 'Gol', 3], ['assist', 'Assist', 1], ['rig_sbagliato', 'Rigore sbagliato', -3], ['rig_parato', 'Rigore parato', 3],
+  ['gol_subito', 'Gol subito (portiere)', -1], ['autogol', 'Autogol', -2], ['amm', 'Ammonizione', -0.5], ['esp', 'Espulsione', -1], ['porta_inviolata', 'Porta inviolata (portiere)', 0]];
+const DEFAULT_SETTINGS = { type: 'classic', phase: 'asta', credits: 500, max_teams: 8, slots: { P: 3, D: 8, C: 8, A: 6 }, timer: 20, max_subs: 3,
+  goal_base: 66, goal_step: 6, mod_difesa: true, mod_centrocampo: false, mod_attacco: false, bonus_casa: 0, bonus_trasferta: 0,
+  bonus: Object.fromEntries(BONUS_KEYS.map(k => [k[0], k[2]])) };
+function settingsFormHtml(s, px){
+  s = Object.assign({}, DEFAULT_SETTINGS, s || {}); const sl = Object.assign({}, DEFAULT_SETTINGS.slots, s.slots || {}); const bn = Object.assign({}, DEFAULT_SETTINGS.bonus, s.bonus || {});
+  const num = (id, label, v, step) => '<div><label>'+label+'</label><input id="'+px+'_'+id+'" type="number" step="'+(step || 1)+'" value="'+v+'"></div>';
+  const chk = (id, label, v) => '<div class="chk"><input type="checkbox" id="'+px+'_'+id+'" '+(v ? 'checked' : '')+'><label for="'+px+'_'+id+'" style="margin:0">'+label+'</label></div>';
+  return '<fieldset><legend>Lega</legend><div class="settings-grid">' + num('credits', 'Crediti', s.credits) + num('max_teams', 'Squadre max', s.max_teams) + num('timer', 'Timer asta (s)', s.timer) + num('max_subs', 'Sostituzioni max', s.max_subs) + '</div></fieldset>' +
+    '<fieldset><legend>Rose</legend><div class="settings-grid">' + num('P', 'Portieri', sl.P) + num('D', 'Difensori', sl.D) + num('C', 'Centrocampisti', sl.C) + num('A', 'Attaccanti', sl.A) + '</div></fieldset>' +
+    '<fieldset><legend>Gol e scontri</legend><div class="settings-grid">' + num('goal_base', 'Primo gol a', s.goal_base, 0.5) + num('goal_step', 'Un gol ogni', s.goal_step, 0.5) + num('bonus_casa', 'Fattore casa', s.bonus_casa, 0.5) + num('bonus_trasferta', 'Fattore trasferta', s.bonus_trasferta, 0.5) + '</div></fieldset>' +
+    '<fieldset><legend>Modificatori</legend><div class="settings-grid">' + chk('mod_difesa', 'Difesa', s.mod_difesa) + chk('mod_centrocampo', 'Centrocampo', s.mod_centrocampo) + chk('mod_attacco', 'Attacco', s.mod_attacco) + '</div>' +
+    '<p class="muted" style="margin-top:6px">Difesa: media di portiere e 3 migliori difensori (almeno 4 schierati), da +1 a +6. Attacco: media voto degli attaccanti (almeno 2), stessa scala. Centrocampo: confronto tra le medie dei centrocampisti delle due squadre, da +1 a +6 a chi ha la media più alta.</p></fieldset>' +
+    '<fieldset><legend>Bonus e malus</legend><div class="settings-grid">' + BONUS_KEYS.map(k => num('b_' + k[0], k[1], bn[k[0]], 0.5)).join('') + '</div></fieldset>';
+}
+function readSettingsForm(px, base){
+  const g = id => $('#' + px + '_' + id); const n = (id, d) => { const v = parseFloat(g(id).value); return isNaN(v) ? d : v; };
+  const s = Object.assign({}, DEFAULT_SETTINGS, base || {});
+  s.credits = n('credits', 500); s.max_teams = n('max_teams', 8); s.timer = n('timer', 20); s.max_subs = n('max_subs', 3);
+  s.slots = { P: n('P', 3), D: n('D', 8), C: n('C', 8), A: n('A', 6) };
+  s.goal_base = n('goal_base', 66); s.goal_step = n('goal_step', 6); s.bonus_casa = n('bonus_casa', 0); s.bonus_trasferta = n('bonus_trasferta', 0);
+  s.mod_difesa = g('mod_difesa').checked; s.mod_centrocampo = g('mod_centrocampo').checked; s.mod_attacco = g('mod_attacco').checked;
+  s.bonus = Object.fromEntries(BONUS_KEYS.map(k => [k[0], n('b_' + k[0], k[2])]));
+  return s;
+}
+
 /* ---------- home: leghe ---------- */
 async function loadLeagues(){
   const { data, error } = await sb.from('league_members').select('league_id, team_name, role, credits, leagues(id,name,invite_code,settings)').eq('user_id', user.id);
@@ -98,10 +126,7 @@ async function loadLeagues(){
 $('#btnCreate').onclick = async () => {
   const name = $('#clName').value.trim(), team = $('#clTeam').value.trim();
   if (!name || !team) return msg('Servono nome lega e nome squadra', 'err');
-  const settings = { type: 'classic', credits: +$('#clCredits').value || 500, max_teams: +$('#clMax').value || 8,
-    slots: { P: +$('#clP').value || 3, D: +$('#clD').value || 8, C: +$('#clC').value || 8, A: +$('#clA').value || 6 },
-    timer: +$('#clTimer').value || 20, mod_difesa: $('#clModDif').checked,
-    bonus: { gol: 3, assist: 1, rig_sbagliato: -3, rig_parato: 3, gol_subito: -1, autogol: -2, amm: -0.5, esp: -1 } };
+  const settings = readSettingsForm('cl', {});
   const { data, error } = await sb.rpc('create_league', { p_name: name, p_team: team, p_settings: settings });
   if (error) return err(error);
   msg('Lega creata', 'ok'); openLeague(data);
@@ -137,7 +162,7 @@ async function openLeague(id){
   $('#lgName').textContent = league.name;
   $('#lgSub').innerHTML = esc(L.me.team_name)+' · '+members.length+'/'+(league.settings.max_teams || 20)+' squadre · codice invito <span class="code">'+esc(league.invite_code)+'</span>';
   await refreshLeagueData();
-  renderRules(); renderAuction(); subscribe(); loadSeasonData();
+  renderTabs(); renderRules(); renderAuction(); subscribe(); loadSeasonData();
 }
 async function refreshLeagueData(){
   const [{ data: rosters }, { data: auction }, { data: members }, { data: bids }] = await Promise.all([
@@ -154,14 +179,22 @@ function memberName(uid){ const m = L.members.find(x => x.user_id === uid); retu
 function slotsOf(){ return L.league.settings.slots || { P: 3, D: 8, C: 8, A: 6 }; }
 function slotsLeft(uid, role){ return slotsOf()[role] - L.rosters.filter(r => r.user_id === uid && (playersById[r.player_id] || {}).role === role).length; }
 
-function renderMembers(){
-  $('#tab-membri').innerHTML = '<table><thead><tr><th>#</th><th>Squadra</th><th>Utente</th><th></th><th>Crediti</th><th>Rosa</th></tr></thead><tbody>' +
-    L.members.map(m => '<tr class="'+(m.user_id === user.id ? 'me' : '')+'"><td>'+(m.call_order || '')+'</td><td><b>'+esc(m.team_name)+'</b></td><td>'+esc(m.profiles && m.profiles.username)+'</td><td>'+(m.role === 'admin' ? '<span class="pill">admin</span>' : '')+'</td><td>'+m.credits+'</td><td>'+L.rosters.filter(r => r.user_id === m.user_id).length+'</td></tr>').join('') + '</tbody></table>';
+/* ---------- lega: schede, partecipanti e rose, regole ---------- */
+function phase(){ return (L.league.settings && L.league.settings.phase) || 'asta'; }
+function renderTabs(active){
+  const tabs = [];
+  if (phase() === 'asta') tabs.push(['asta', 'Asta']);
+  tabs.push(['schiera', 'Schiera'], ['classifica', 'Classifica'], ['calendario', 'Calendario'], ['risultati', 'Risultati'], ['regole', 'Regole'], ['membri', 'Partecipanti']);
+  if (!active || !tabs.some(t => t[0] === active)) active = tabs[0][0];
+  $('#lgTabs').innerHTML = tabs.map(t => '<a data-tab="'+t[0]+'" class="'+(t[0] === active ? 'on' : '')+'">'+t[1]+'</a>').join('');
+  $$('#view-league [id^=tab-]').forEach(el => el.classList.toggle('hidden', el.id !== 'tab-' + active));
 }
-function renderRosters(){
+function renderMembers(){
   const byUser = {}; L.rosters.forEach(r => (byUser[r.user_id] = byUser[r.user_id] || []).push(r));
   const slots = slotsOf();
-  $('#tab-rose').innerHTML = '<div class="grid">' + L.members.map(m => {
+  const table = '<table><thead><tr><th>#</th><th>Squadra</th><th>Utente</th><th></th><th>Crediti</th><th>Rosa</th></tr></thead><tbody>' +
+    L.members.map(m => '<tr class="'+(m.user_id === user.id ? 'me' : '')+'"><td>'+(m.call_order || '')+'</td><td><b>'+esc(m.team_name)+'</b></td><td>'+esc(m.profiles && m.profiles.username)+'</td><td>'+(m.role === 'admin' ? '<span class="pill">admin</span>' : '')+'</td><td>'+m.credits+'</td><td>'+(byUser[m.user_id] || []).length+'</td></tr>').join('') + '</tbody></table>';
+  const cards = '<h3 style="margin-top:18px">Rose</h3><div class="grid">' + L.members.map(m => {
     const rs = (byUser[m.user_id] || []).map(r => Object.assign({}, r, { p: playersById[r.player_id] || { name: '#'+r.player_id, role: 'C', team: '' } }))
       .sort((a, b) => ROLES.indexOf(a.p.role) - ROLES.indexOf(b.p.role) || b.price - a.price);
     const head = ROLES.map(r => r+' '+rs.filter(x => x.p.role === r).length+'/'+slots[r]).join(' · ');
@@ -170,23 +203,37 @@ function renderRosters(){
     return '<div class="card'+(m.user_id === user.id ? ' hi' : '')+'"><h2>'+esc(m.team_name)+' <span class="muted">crediti '+m.credits+' · '+head+'</span></h2>' +
       (rs.length ? '<table><tbody>'+rows+'</tbody></table>' : '<div class="muted">Rosa vuota</div>') + '</div>';
   }).join('') + '</div>';
+  $('#tab-membri').innerHTML = table + cards;
   $$('[data-release]').forEach(b => b.onclick = async () => {
     if (!confirm('Rimuovere il giocatore dalla rosa e rimborsare i crediti?')) return;
     const { error } = await sb.rpc('release_player', { p_league: L.league.id, p_player: +b.dataset.release });
     if (error) err(error); else refreshLeagueData();
   });
-  renderMembers();
 }
+function renderRosters(){ renderMembers(); }
 function renderRules(){
-  const s = L.league.settings || {}, bon = s.bonus || {}, slots = s.slots || {};
-  $('#tab-regole').innerHTML = '<div class="card"><h2>Regole della lega</h2><table><tbody>' +
-    '<tr><td>Modalità</td><td>'+(s.type === 'mantra' ? 'Mantra' : 'Classic')+'</td></tr>' +
-    '<tr><td>Crediti iniziali</td><td>'+(s.credits || 500)+'</td></tr>' +
-    '<tr><td>Rose</td><td>'+ROLES.map(r => r+' '+(slots[r] || '')).join(' · ')+'</td></tr>' +
-    '<tr><td>Timer asta</td><td>'+(s.timer || 20)+' s</td></tr>' +
-    '<tr><td>Modificatore difesa</td><td>'+(s.mod_difesa ? 'sì' : 'no')+'</td></tr>' +
-    '<tr><td>Bonus/malus</td><td>'+Object.entries(bon).map(([k, v]) => k.replace('_', ' ')+' '+(v > 0 ? '+' : '')+v).join(' · ')+'</td></tr>' +
-    '</tbody></table>' + (L.isAdmin ? '<p class="muted" style="margin-top:8px">La modifica delle regole dopo la creazione arriva in fase 2.</p>' : '') + '</div>';
+  const s = Object.assign({}, DEFAULT_SETTINGS, L.league.settings || {}), bn = Object.assign({}, DEFAULT_SETTINGS.bonus, s.bonus || {}), sl = Object.assign({}, DEFAULT_SETTINGS.slots, s.slots || {});
+  const view = '<div class="card"><h2>Regole in vigore <span class="pill '+(phase() === 'asta' ? '' : 'live')+'">'+(phase() === 'asta' ? 'fase asta' : 'campionato')+'</span></h2><table><tbody>' +
+    '<tr><td>Crediti</td><td>'+s.credits+'</td><td>Squadre max</td><td>'+s.max_teams+'</td></tr>' +
+    '<tr><td>Rose</td><td colspan="3">'+ROLES.map(r => r+' '+sl[r]).join(' · ')+'</td></tr>' +
+    '<tr><td>Sostituzioni</td><td>'+s.max_subs+'</td><td>Timer asta</td><td>'+s.timer+' s</td></tr>' +
+    '<tr><td>Gol</td><td colspan="3">primo a '+s.goal_base+', poi uno ogni '+s.goal_step+' punti</td></tr>' +
+    '<tr><td>Fattore casa / trasferta</td><td colspan="3">'+s.bonus_casa+' / '+s.bonus_trasferta+'</td></tr>' +
+    '<tr><td>Modificatori</td><td colspan="3">'+[s.mod_difesa && 'difesa', s.mod_centrocampo && 'centrocampo', s.mod_attacco && 'attacco'].filter(Boolean).join(', ') + (s.mod_difesa || s.mod_centrocampo || s.mod_attacco ? '' : 'nessuno')+'</td></tr>' +
+    '<tr><td>Bonus e malus</td><td colspan="3">'+BONUS_KEYS.map(k => k[1].toLowerCase()+' '+(bn[k[0]] > 0 ? '+' : '')+bn[k[0]]).join(' · ')+'</td></tr>' +
+    '</tbody></table></div>';
+  if (!L.isAdmin) { $('#tab-regole').innerHTML = view; return; }
+  $('#tab-regole').innerHTML = view + '<div class="card" style="margin-top:14px"><h2>Modifica regole (admin)</h2>' + settingsFormHtml(s, 'rg') +
+    '<div class="row" style="margin-top:12px"><button id="rgSave">Salva regole</button><button id="rgPhase" class="sec">'+(phase() === 'asta' ? 'Chiudi l\'asta e inizia il campionato' : 'Riapri l\'asta')+'</button></div>' +
+    '<p class="muted" style="margin-top:6px">Le regole di calcolo si applicano alle giornate calcolate da ora in poi: per le precedenti usa "Ricalcola" nel calendario.</p></div>';
+  const save = async (extra) => {
+    const ns = Object.assign(readSettingsForm('rg', L.league.settings), extra || {});
+    const { error } = await sb.rpc('update_league_settings', { p_league: L.league.id, p_settings: ns });
+    if (error) return err(error);
+    L.league.settings = ns; msg('Regole salvate', 'ok'); renderRules(); renderTabs($('.tabs a.on') && $('.tabs a.on').dataset.tab); renderMembers();
+  };
+  $('#rgSave').onclick = () => save();
+  $('#rgPhase').onclick = () => save({ phase: phase() === 'asta' ? 'campionato' : 'asta' });
 }
 
 /* ---------- asta live ---------- */
@@ -278,10 +325,10 @@ function subscribe(){
   clearInterval(window.__fantaPoll); window.__fantaPoll = setInterval(() => { if (L && !document.hidden) onChange(); }, 7000); // rete di sicurezza se il realtime salta
 }
 
-/* ---------- stagione: giornate e formazioni ---------- */
+/* ---------- schiera: campo visivo ---------- */
 const SEASON = CFG.SEASON || 2026;
 const MODULES = ['3-4-3', '3-5-2', '4-3-3', '4-4-2', '4-5-1', '5-3-2', '5-4-1'];
-let matchdays = [], S = { fixtures: [], results: [], lineup: null, md: null };
+let matchdays = [], S = { fixtures: [], results: [], lineup: null, md: null, rmd: null };
 async function loadMatchdays(){ const { data } = await sb.from('matchdays').select('number,starts_at,ends_at,status').eq('season', SEASON).order('number'); matchdays = data || []; }
 function mdInfo(n){ return matchdays.find(m => m.number === n) || { number: n }; }
 function mdOpen(n){ const m = mdInfo(n); return !m.starts_at || new Date(m.starts_at) > new Date(); }
@@ -294,51 +341,67 @@ async function loadSeasonData(){
   ]);
   S.fixtures = fixtures || []; S.results = results || [];
   if (!S.md) S.md = nextMatchday();
-  renderLineup(); renderCalendar(); renderStandings();
+  renderLineup(); renderCalendar(); renderStandings(); renderResults();
 }
 function myPlayers(){ return L.rosters.filter(r => r.user_id === user.id).map(r => playersById[r.player_id]).filter(Boolean); }
 function wantOf(module){ const p = module.split('-').map(Number); return { P: 1, D: p[0], C: p[1], A: p[2] }; }
 function benchNormalize(cur, mine){
   const st = new Set(cur.starters), ids = new Set(mine.map(p => p.id));
+  cur.starters = cur.starters.filter(id => ids.has(id));
   cur.bench = cur.bench.filter(id => ids.has(id) && !st.has(id));
   mine.filter(p => !st.has(p.id) && !cur.bench.includes(p.id)).sort((a, b) => ROLES.indexOf(a.role) - ROLES.indexOf(b.role) || b.price - a.price).forEach(p => cur.bench.push(p.id));
 }
 function moveBench(cur, id, dir){ const i = cur.bench.indexOf(id), j = i + dir; if (i < 0 || j < 0 || j >= cur.bench.length) return; [cur.bench[i], cur.bench[j]] = [cur.bench[j], cur.bench[i]]; }
-function lineupHtml(cur, mine, md, lu){
-  const want = wantOf(cur.module), info = mdInfo(md), open = mdOpen(md);
-  let html = '<div class="row"><div><label>Giornata</label><select id="luMd">' + Array.from({ length: 38 }, (_, i) => i + 1).map(n => '<option value="'+n+'" '+(n === md ? 'selected' : '')+'>Giornata '+n+(mdOpen(n) ? '' : ' (chiusa)')+'</option>').join('') + '</select></div>' +
-    '<div><label>Modulo</label><select id="luMod">' + MODULES.map(m => '<option '+(m === cur.module ? 'selected' : '')+'>'+m+'</option>').join('') + '</select></div></div>' +
-    '<p class="muted" style="margin:8px 0">Deadline: '+fmtDate(info.starts_at)+' · '+(open ? 'formazioni aperte' : 'giornata iniziata, formazioni chiuse')+(lu ? ' · salvata il '+fmtDate(lu.submitted_at) : ' · nessuna formazione salvata')+'</p>';
-  if (!mine.length) html += '<div class="msg">La tua rosa è vuota: prima l\'asta.</div>';
-  html += ROLES.map(r => {
-    const list = mine.filter(p => p.role === r).sort((a, b) => b.price - a.price);
-    const n = cur.starters.filter(id => (playersById[id] || {}).role === r).length;
-    return '<h3>'+ROLE_NAME[r]+' <span class="pill">'+n+'/'+want[r]+'</span></h3><table><tbody>' + list.map(p => {
-      const on = cur.starters.includes(p.id), bi = cur.bench.indexOf(p.id);
-      return '<tr><td style="width:30px"><input type="checkbox" data-st="'+p.id+'" '+(on ? 'checked' : '')+' '+(!on && n >= want[r] ? 'disabled' : '')+'></td><td>'+esc(p.name)+' <span class="muted">'+esc(p.team)+'</span></td><td class="muted">'+(on ? 'titolare' : 'panchina '+(bi + 1))+'</td>' +
-        (on ? '<td></td>' : '<td><button class="small sec" data-bup="'+p.id+'">▲</button> <button class="small sec" data-bdown="'+p.id+'">▼</button></td>') + '</tr>'; }).join('') + '</tbody></table>';
-  }).join('');
-  html += '<div class="row" style="margin-top:14px"><button id="luSave" '+(open ? '' : 'disabled')+'>Salva formazione</button></div>';
-  return html;
+function shortName(n){ const parts = (n || '').split(' '); return parts.length > 1 ? parts.slice(1).join(' ') : n; }
+function pitchHtml(cur){
+  const want = wantOf(cur.module);
+  return '<div class="pitch">' + ['A', 'C', 'D', 'P'].map(r => {
+    const ids = cur.starters.filter(id => (playersById[id] || {}).role === r);
+    const slots = [];
+    for (let i = 0; i < want[r]; i++) {
+      const p = ids[i] ? playersById[ids[i]] : null;
+      slots.push(p ? '<div class="slot '+r+'" data-out="'+p.id+'" title="Togli dal campo"><div class="shirt">'+r+'</div><span class="nm">'+esc(shortName(p.name))+'</span><span class="tm">'+esc(p.team)+'</span></div>'
+                   : '<div class="slot '+r+' empty"><div class="shirt">'+r+'</div><span class="nm">&nbsp;</span></div>');
+    }
+    return '<div class="prow">'+slots.join('')+'</div>';
+  }).join('') + '</div>';
 }
 
 async function renderLineup(){
-  const box = $('#tab-formazione'), md = S.md, mine = myPlayers();
+  const box = $('#tab-schiera'), md = S.md, mine = myPlayers();
   const [{ data: lu }, { data: all }] = await Promise.all([
     sb.from('lineups').select('*').eq('league_id', L.league.id).eq('user_id', user.id).eq('matchday', md).maybeSingle(),
     sb.from('lineups').select('user_id, module, starters, submitted_at').eq('league_id', L.league.id).eq('matchday', md)
   ]);
-  if (!S.lineup || S.lineup.md !== md) { S.lineup = { md, module: lu ? lu.module : '4-3-3', starters: lu ? lu.starters.slice() : [], bench: lu ? lu.bench.slice() : [] }; }
+  if (!S.lineup || S.lineup.md !== md) S.lineup = { md, module: lu ? lu.module : '4-3-3', starters: lu ? lu.starters.slice() : [], bench: lu ? lu.bench.slice() : [] };
   const cur = S.lineup; benchNormalize(cur, mine);
-  const open = mdOpen(md);
-  const others = '<div class="card" style="margin-top:14px"><h2>Formazioni giornata '+md+'</h2>' + L.members.map(m => { const l2 = (all || []).find(x => x.user_id === m.user_id);
-    return '<div class="list"><li><span>'+esc(m.team_name)+'</span><span class="muted">'+(l2 ? (open ? 'inviata ('+l2.module+')' : l2.module+': '+l2.starters.map(id => (playersById[id] || {}).name || '#'+id).join(', ')) : 'non inviata')+'</span></li></div>'; }).join('') +
-    (open ? '<p class="muted">I titolari degli altri si vedono dopo la deadline.</p>' : '') + '</div>';
-  box.innerHTML = '<div class="grid3"><div>' + lineupHtml(cur, mine, md, lu) + '</div><div><div class="card"><h2>Come funziona</h2><p class="muted">Scegli il modulo e spunta 11 titolari. Gli altri vanno in panchina nell\'ordine mostrato: in caso di senza voto entra il primo panchinaro dello stesso ruolo, fino a '+(L.league.settings.max_subs || 3)+' sostituzioni. Si salva fino all\'inizio della giornata.</p></div>' + others + '</div></div>';
+  const want = wantOf(cur.module), info = mdInfo(md), open = mdOpen(md);
+  const count = r => cur.starters.filter(id => (playersById[id] || {}).role === r).length;
+  const head = '<div class="row"><div><label>Giornata</label><select id="luMd">' + Array.from({ length: 38 }, (_, i) => i + 1).map(n => '<option value="'+n+'" '+(n === md ? 'selected' : '')+'>Giornata '+n+(mdOpen(n) ? '' : ' (chiusa)')+'</option>').join('') + '</select></div>' +
+    '<div><label>Modulo</label><select id="luMod">' + MODULES.map(m => '<option '+(m === cur.module ? 'selected' : '')+'>'+m+'</option>').join('') + '</select></div>' +
+    '<div><label>&nbsp;</label><button id="luSave" '+(open ? '' : 'disabled')+'>Salva formazione</button></div></div>' +
+    '<p class="muted" style="margin:8px 0">Deadline: '+fmtDate(info.starts_at)+' · '+(open ? 'formazioni aperte' : 'giornata iniziata, formazioni chiuse')+(lu ? ' · salvata il '+fmtDate(lu.submitted_at) : ' · nessuna formazione salvata')+' · in campo '+cur.starters.length+'/11</p>';
+  const roster = '<div class="card"><h2>La tua rosa <span class="muted">clicca per schierare</span></h2><div class="roster">' + ROLES.map(r => {
+    const list = mine.filter(p => p.role === r).sort((a, b) => b.price - a.price);
+    return '<h3>'+ROLE_NAME[r]+' <span class="pill">'+count(r)+'/'+want[r]+'</span></h3>' + list.map(p => {
+      const on = cur.starters.includes(p.id), bi = cur.bench.indexOf(p.id);
+      return '<div class="pl'+(on ? ' on' : '')+'" data-in="'+p.id+'">'+roleTag(r)+'<span class="who">'+esc(p.name)+' <span class="muted">'+esc(p.team)+'</span></span>' +
+        (on ? '<span class="muted">in campo</span>' : '<span class="muted">panch. '+(bi + 1)+'</span><span class="arrows"><button class="small sec" data-bup="'+p.id+'">▲</button> <button class="small sec" data-bdown="'+p.id+'">▼</button></span>') + '</div>'; }).join('');
+  }).join('') + '</div></div>';
+  const others = '<div class="card" style="margin-top:14px"><h2>Formazioni giornata '+md+'</h2><ul class="list">' + L.members.map(m => { const l2 = (all || []).find(x => x.user_id === m.user_id);
+    return '<li><span>'+esc(m.team_name)+'</span><span class="muted" style="text-align:right">'+(l2 ? (open ? 'inviata ('+l2.module+')' : l2.module+': '+l2.starters.map(id => shortName((playersById[id] || {}).name || '#'+id)).join(', ')) : 'non inviata')+'</span></li>'; }).join('') +
+    '</ul>' + (open ? '<p class="muted">I titolari degli altri si vedono dopo la deadline.</p>' : '') + '</div>';
+  box.innerHTML = head + '<div class="grid3"><div>' + pitchHtml(cur) + '<p class="muted" style="margin-top:8px">Panchina nell\'ordine della lista a destra: in caso di senza voto entra il primo dello stesso ruolo, fino a '+(L.league.settings.max_subs || 3)+' cambi. Clicca un giocatore in campo per toglierlo.</p></div><div>' + roster + '</div></div>' + others;
   $('#luMd').onchange = e => { S.md = +e.target.value; S.lineup = null; renderLineup(); };
-  $('#luMod').onchange = e => { cur.module = e.target.value; const want = wantOf(cur.module), cnt = { P: 0, D: 0, C: 0, A: 0 };
-    cur.starters = cur.starters.filter(id => { const r = (playersById[id] || {}).role; cnt[r]++; return cnt[r] <= want[r]; }); renderLineup(); };
-  $$('[data-st]', box).forEach(c => c.onchange = () => { const id = +c.dataset.st; if (c.checked) cur.starters.push(id); else cur.starters = cur.starters.filter(x => x !== id); renderLineup(); });
+  $('#luMod').onchange = e => { cur.module = e.target.value; const w = wantOf(cur.module), cnt = { P: 0, D: 0, C: 0, A: 0 };
+    cur.starters = cur.starters.filter(id => { const r = (playersById[id] || {}).role; cnt[r]++; return cnt[r] <= w[r]; }); renderLineup(); };
+  $$('[data-in]', box).forEach(el => el.onclick = e => {
+    if (e.target.closest('button')) return;
+    const p = playersById[+el.dataset.in]; if (!p || cur.starters.includes(p.id)) return;
+    if (count(p.role) >= want[p.role]) return msg('Posti '+ROLE_NAME[p.role].toLowerCase()+' già pieni per il modulo '+cur.module+': togli qualcuno dal campo o cambia modulo', 'err');
+    cur.starters.push(p.id); renderLineup();
+  });
+  $$('[data-out]', box).forEach(el => el.onclick = () => { cur.starters = cur.starters.filter(x => x !== +el.dataset.out); renderLineup(); });
   $$('[data-bup]', box).forEach(b => b.onclick = () => { moveBench(cur, +b.dataset.bup, -1); renderLineup(); });
   $$('[data-bdown]', box).forEach(b => b.onclick = () => { moveBench(cur, +b.dataset.bdown, 1); renderLineup(); });
   $('#luSave').onclick = async () => {
@@ -373,7 +436,7 @@ function renderCalendar(){
   });
 }
 
-/* ---------- classifica e dettaglio giornata ---------- */
+/* ---------- classifica ---------- */
 function renderStandings(){
   const t = {}; L.members.forEach(m => t[m.user_id] = { name: m.team_name, pts: 0, g: 0, v: 0, n: 0, p: 0, gf: 0, gs: 0, fp: 0 });
   S.fixtures.filter(f => f.home_goals != null && f.away_id).forEach(f => {
@@ -384,19 +447,41 @@ function renderStandings(){
   const rows = Object.values(t).sort((x, y) => y.pts - x.pts || y.fp - x.fp);
   $('#tab-classifica').innerHTML = '<table><thead><tr><th>#</th><th>Squadra</th><th>Pt</th><th>G</th><th>V</th><th>N</th><th>P</th><th>GF</th><th>GS</th><th>Fantapunti</th></tr></thead><tbody>' +
     rows.map((r, i) => '<tr><td>'+(i + 1)+'</td><td><b>'+esc(r.name)+'</b></td><td><b>'+r.pts+'</b></td><td>'+r.g+'</td><td>'+r.v+'</td><td>'+r.n+'</td><td>'+r.p+'</td><td>'+r.gf+'</td><td>'+r.gs+'</td><td>'+r.fp.toFixed(1)+'</td></tr>').join('') + '</tbody></table>' +
-    (S.results.length ? renderResultsDetail() : '<p class="muted" style="margin-top:8px">La classifica si popola quando l\'admin calcola le giornate.</p>');
+    (S.results.length ? '' : '<p class="muted" style="margin-top:8px">La classifica si popola quando l\'admin calcola le giornate.</p>');
 }
-function renderResultsDetail(){
-  const md = Math.max.apply(null, S.results.map(r => r.matchday));
-  const rs = S.results.filter(r => r.matchday === md).sort((a, b) => b.total - a.total);
-  return '<h3>Ultima giornata calcolata: '+md+'</h3><div class="grid">' + rs.map(r => {
-    const d = r.detail || {}, pl = d.players || [];
-    return '<div class="card"><h2>'+esc(memberName(r.user_id))+' <span class="muted">'+Number(r.total).toFixed(1)+' · '+r.goals+' gol</span></h2>' +
-      (d.lineup === false ? '<div class="muted">Formazione non inviata</div>' : '<table><tbody>' + pl.map(p => {
-        const x = playersById[p.player_id] || { name: '#'+p.player_id }, sub = p.sub ? (playersById[p.sub] || { name: '#'+p.sub }) : null;
-        return '<tr><td>'+roleTag(p.role)+'</td><td>'+esc(x.name)+(sub ? ' → '+esc(sub.name) : '')+'</td><td>'+(p.voto == null ? 's.v.' : Number(p.voto).toFixed(1))+'</td><td><b>'+Number(p.fv).toFixed(1)+'</b></td></tr>'; }).join('') +
-        (d.mod_difesa ? '<tr><td></td><td>Modificatore difesa</td><td></td><td><b>+'+d.mod_difesa+'</b></td></tr>' : '') + '</tbody></table>') + '</div>';
-  }).join('') + '</div>';
+
+/* ---------- risultati ---------- */
+const EMOJI = { gol: '⚽', assist: '👟', amm: '🟨', esp: '🟥', gol_subito: '🥅', autogol: '🙈', rig_sbagliato: '❌', rig_parato: '🧤' };
+const EMOJI_LABEL = { gol: 'gol', assist: 'assist', amm: 'ammonizione', esp: 'espulsione', gol_subito: 'gol subito', autogol: 'autogol', rig_sbagliato: 'rigore sbagliato', rig_parato: 'rigore parato' };
+function emojis(b){ return Object.entries(b || {}).filter(([k, v]) => EMOJI[k] && v).map(([k, v]) => '<span title="'+EMOJI_LABEL[k]+(v > 1 ? ' ×'+v : '')+'">'+EMOJI[k].repeat(Math.min(v, 3))+'</span>').join(''); }
+function f1(x){ return x == null ? '–' : Number(x).toFixed(1); }
+function teamSheet(r, name){
+  const d = (r && r.detail) || {}, pl = d.players || [], extras = d.extras || [];
+  if (!r || d.lineup === false) return '<div><h3>'+esc(name)+'</h3><div class="muted">Formazione non inviata</div><table><tbody><tr class="grand"><td>Totale</td><td></td><td></td><td>0.0</td></tr></tbody></table></div>';
+  const legacyMod = !extras.length && d.mod_difesa ? [{ label: 'Modificatore difesa', v: d.mod_difesa }] : extras;
+  const rows = pl.map(p => { const x = playersById[p.player_id] || { name: '#'+p.player_id }, sub = p.sub ? (playersById[p.sub] || { name: '#'+p.sub }) : null;
+    return '<tr><td>'+roleTag(p.role)+'</td><td>'+(sub ? '<span class="muted" style="text-decoration:line-through">'+esc(shortName(x.name))+'</span> 🔁 '+esc(shortName(sub.name)) : esc(shortName(x.name)))+' <span class="em">'+emojis(p.bonus)+'</span></td><td>'+(p.voto == null ? 's.v.' : f1(p.voto))+'</td><td><b>'+f1(p.fv)+'</b></td></tr>'; }).join('');
+  const base = d.base != null ? d.base : pl.reduce((a, p) => a + (+p.fv || 0), 0);
+  return '<div><h3>'+esc(name)+'</h3><table><thead><tr><th></th><th>Giocatore</th><th>V</th><th>FV</th></tr></thead><tbody>' + rows +
+    '<tr class="tot"><td></td><td>Totale parziale</td><td></td><td>'+f1(base)+'</td></tr>' +
+    legacyMod.map(e => '<tr class="ex"><td></td><td>'+esc(e.label)+'</td><td></td><td>'+(e.v > 0 ? '+' : '')+f1(e.v)+'</td></tr>').join('') +
+    '<tr class="grand"><td></td><td>Totale</td><td></td><td>'+f1(r.total)+'</td></tr></tbody></table></div>';
+}
+function renderResults(){
+  const box = $('#tab-risultati');
+  const mds = [...new Set(S.results.map(r => r.matchday))].sort((a, b) => b - a);
+  if (!mds.length) { box.innerHTML = '<div class="msg">Nessuna giornata calcolata finora.</div>'; return; }
+  if (!S.rmd || !mds.includes(S.rmd)) S.rmd = mds[0];
+  const res = uid => S.results.find(r => r.matchday === S.rmd && r.user_id === uid);
+  const fxs = S.fixtures.filter(f => f.matchday === S.rmd);
+  let html = '<div class="row" style="max-width:320px"><select id="rsMd">' + mds.map(n => '<option value="'+n+'" '+(n === S.rmd ? 'selected' : '')+'>Giornata '+n+'</option>').join('') + '</select></div>';
+  if (fxs.length) html += fxs.map(f => { const h = res(f.home_id), a = f.away_id ? res(f.away_id) : null;
+    return '<div class="match"><div class="score"><div class="t r">'+esc(memberName(f.home_id))+'</div><div class="g">'+(f.home_goals != null ? f.home_goals : '-')+' - '+(f.away_id ? (f.away_goals != null ? f.away_goals : '-') : '')+'</div><div class="t">'+(f.away_id ? esc(memberName(f.away_id)) : '<span class="muted">riposo</span>')+'</div>' +
+      '<div class="fp" style="text-align:right">'+f1(h && h.total)+' fantapunti</div><div></div><div class="fp">'+(a ? f1(a.total)+' fantapunti' : '')+'</div></div>' +
+      '<div class="sides">'+teamSheet(h, memberName(f.home_id))+(f.away_id ? teamSheet(a, memberName(f.away_id)) : '')+'</div></div>'; }).join('');
+  else html += '<p class="muted">Nessuna partita in calendario per questa giornata: punteggi per squadra.</p><div class="grid">' + L.members.map(m => '<div class="card">'+teamSheet(res(m.user_id), m.team_name)+'</div>').join('') + '</div>';
+  box.innerHTML = html;
+  $('#rsMd').onchange = e => { S.rmd = +e.target.value; renderResults(); };
 }
 
 /* ---------- avvio ---------- */
