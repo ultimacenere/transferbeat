@@ -1,5 +1,5 @@
 # FantaTB — KB operativa
-*Sezione fantacalcio di TransferBeat. Aggiornata: 2026-09-02 (fine giornata). Leggere PRIMA di toccare qualsiasi cosa in `fanta/` o `scripts/fanta_*.py`.*
+*Sezione fantacalcio di TransferBeat. Aggiornata: 2026-09-03. Leggere PRIMA di toccare qualsiasi cosa in `fanta/` o `scripts/fanta_*.py`.*
 
 > **Stato: ONLINE su https://transferbeat.com/fanta/** dal 2026-09-02 sera. Serie A 2026-27, regole Classic.
 > Pubblico ridotto (lega dell'utente + amici) per la stagione di test; monetizzazione da valutare dopo.
@@ -71,8 +71,8 @@ slot del ruolo libero, deve restare 1 credito per ogni altro slot vuoto; il time
 `save_lineup(league, matchday, module, starters, bench)` (membro: 11 titolari coerenti col modulo, tutti in rosa, panchina ≤ bench_size,
 prima di `matchdays.starts_at`) · `generate_calendar(league, start, gironi)` (admin: Berger, riposo con squadre dispari, cancella risultati) ·
 `compute_matchday(league, matchday)` (admin o service role) · `compute_all_leagues(matchday)` (solo service role, usata dal cron) ·
-helper `fv_full(league, season, matchday, player) → voto, fantavoto, bonus, minutes` (con override e pesi di lega), `mod_table`, `goals_of`,
-`is_member`, `is_admin`, `slots_left`. (Esiste ancora la vecchia `fv_of` a 2 output della fase 2: inutilizzata, innocua.)
+helper `fv_of(league, season, matchday, player) → voto, fantavoto, bonus, minutes` (con override e pesi di lega; ridefinita con 4 output
+dal fix-006 dopo `drop function`), `mod_table`, `goals_of`, `is_member`, `is_admin`, `slots_left`.
 
 **RLS in sintesi**: righe di lega visibili solo ai membri (`is_member`); regole e calendario scrivibili solo dall'admin; players,
 matchdays, player_ratings, player_status leggibili da tutti; formazioni scrivibili solo via RPC (policy di insert/update rimosse).
@@ -82,7 +82,7 @@ matchdays, player_ratings, player_status leggibili da tutti; formazioni scrivibi
 1. L'utente apre SQL Editor su Supabase, **svuota l'editor (Ctrl+A, Canc) o apre "New query"**: mai accodare blocchi ai precedenti
    (il 2026-09-02 l'editor era arrivato a 737 righe e rieseguiva vecchie definizioni → errore 42P13 su fv_of).
 2. Incolla il blocco, Run, atteso "Success. No rows returned". Se errore, incollarlo in chat.
-3. Le funzioni con parametri OUT non si possono ridefinire con `create or replace`: o `drop function` prima, o nome nuovo (→ `fv_full`).
+3. Le funzioni con parametri OUT non si possono ridefinire con `create or replace`: serve `drop function ... cascade` prima (fatto per `fv_of` nel fix-006).
 4. Ogni nuovo blocco va salvato come `fanta/supabase/fix-00N-*.sql` E accodato a `schema.sql`.
 
 **Vincoli noti dello schema**: `league_fixtures.home_id/away_id` e `results.user_id` referenziano `auth.users` senza cascade →
@@ -97,7 +97,7 @@ Default (`DEFAULT_SETTINGS` in app.js, stessi default nelle funzioni SQL): `type
 Tutto impostabile alla creazione e modificabile dall'admin nella scheda Regole (form condiviso `settingsFormHtml/readSettingsForm`).
 La **fase**: in `asta` la scheda Asta è visibile; "Chiudi l'asta e inizia il campionato" la nasconde (riapribile).
 
-`compute_matchday` per ogni squadra: fantavoto dei titolari (`fv_full`: voto + Σ bonus×peso di lega, con `rating_overrides`);
+`compute_matchday` per ogni squadra: fantavoto dei titolari (`fv_of`: voto + Σ bonus×peso di lega, con `rating_overrides`);
 **senza voto → entra il primo panchinaro dello stesso ruolo nell'ordine di panchina**, fino a `max_subs`; s.v. senza sostituto vale 0;
 **porta inviolata** (+peso se il portiere ha ≥60' e 0 gol subiti); **modificatore difesa** (media di portiere + 3 migliori difensori,
 solo con ≥4 difensori schierati, tabella ≥6→+1, 6.25→+2, 6.5→+3, 6.75→+4, 7→+5, 7.25→+6); **modificatore attacco** (media voto
@@ -112,7 +112,7 @@ e in `league_fixtures`. Le regole valgono dai calcoli successivi: per il passato
 Fonte API-Football `fixtures/players` (rating, minuti, gol, assist, cartellini, rigori, gol subiti) + `fixtures/events` (autogol).
 - **s.v.** se minuti < 15. **Voto base** = rating − 0,8 arrotondato al mezzo punto, tra 4 e 8,5; senza rating ma ≥15' → 6.
 - Bonus/malus registrati per giocatore in `player_ratings.bonus` (gol, assist, rig_sbagliato, rig_parato (portieri), gol_subito (portieri),
-  autogol, amm, esp); il fantavoto in tabella usa i pesi di default, quello di lega viene ricalcolato da `fv_full` con i pesi della lega.
+  autogol, amm, esp); il fantavoto in tabella usa i pesi di default, quello di lega viene ricalcolato da `fv_of` con i pesi della lega.
 - Verificato sulla giornata 2: media voto 6,06, scala 5–7,5, 289 con voto su 483 righe. Non coincidono con i voti dei giornali: è detto
   nel footer e nella pagina "Come funziona".
 - `fanta_voti.py [giornata]`: senza argomento prende l'ultima giornata con partite finite; sincronizza le date di TUTTE le giornate in
