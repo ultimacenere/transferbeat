@@ -40,6 +40,13 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python scripts/fanta_voti.py ${{ github.event.inputs.matchday }}
+      - name: Indice titolarità
+        if: ${{ github.event.inputs.task != 'listone' }}
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python scripts/fanta_titolari.py || echo "titolari skip"
       - name: Commit dati
         run: |
           git config user.name "TransferBeat Bot"

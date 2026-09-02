@@ -112,3 +112,8 @@ legend{font-size:12px;font-weight:700;color:var(--muted);padding:0 6px}
 .bench .slot .shirt{width:34px;height:34px;line-height:34px;font-size:12px}
 .bench .slot .mv{display:block;margin-top:3px}
 .bench .slot .mv button{padding:1px 5px;font-size:10px;margin:0 1px}
+.prob{display:inline-block;font-size:11px;font-weight:700;padding:1px 6px;border-radius:10px;margin-left:2px}
+.prob.ok{background:#e6f6ee;color:#0b5d36}.prob.mid{background:#fff3d6;color:#8a5a00}.prob.low{background:#fdecea;color:#8a1f16}
+.prob{display:inline-block;font-size:11px;font-weight:700;padding:1px 6px;border-radius:10px;margin-left:2px;white-space:nowrap}
+.prob.ok{background:#e6f6ee;color:#0b5d36}.prob.mid{background:#fff3d6;color:#8a5a00}.prob.low{background:#fdecea;color:#8a1f16}
+.inj{color:var(--red);font-size:12px;font-weight:700;white-space:nowrap}

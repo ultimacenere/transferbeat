@@ -351,6 +351,13 @@ function benchNormalize(cur, mine, bmax){
   cur.bench = cur.bench.filter(id => ids.has(id) && !st.has(id)).slice(0, bmax || 7);
 }
 function moveBench(cur, id, dir){ const i = cur.bench.indexOf(id), j = i + dir; if (i < 0 || j < 0 || j >= cur.bench.length) return; [cur.bench[i], cur.bench[j]] = [cur.bench[j], cur.bench[i]]; }
+function statusTag(x){
+  if (!x) return '';
+  const c = x.prob >= 70 ? 'ok' : (x.prob >= 40 ? 'mid' : 'low');
+  const inj = x.injury ? '<span class="inj" title="'+esc(x.reason || x.injury)+'">✚ '+esc(x.injury.replace('infortunio: ', ''))+(x.back_at ? ' · rientro ~'+Math.max(1, Math.ceil((new Date(x.back_at) - Date.now()) / 6048e5))+' sett.' : '')+'</span> ' : '';
+  return inj + '<span class="prob '+c+'" title="'+esc(x.reason || '')+'">'+x.prob+'%</span>';
+}
+function injCross(x){ return x && x.injury ? '<span class="inj" title="'+esc(x.reason || x.injury)+'">✚</span> ' : ''; }
 function shortName(n){ const parts = (n || '').split(' '); return parts.length > 1 ? parts.slice(1).join(' ') : n; }
 function pitchHtml(cur){
   const want = wantOf(cur.module);
@@ -366,12 +373,18 @@ function pitchHtml(cur){
   }).join('') + '</div>';
 }
 
-async function renderLineup(){
+async function renderLineup(force){
   const box = $('#tab-schiera'), md = S.md, mine = myPlayers(), bmax = L.league.settings.bench_size || 7;
-  const [{ data: lu }, { data: all }] = await Promise.all([
-    sb.from('lineups').select('*').eq('league_id', L.league.id).eq('user_id', user.id).eq('matchday', md).maybeSingle(),
-    sb.from('lineups').select('user_id, module, starters, submitted_at').eq('league_id', L.league.id).eq('matchday', md)
-  ]);
+  if (force || !S.luData || S.luData.md !== md) {
+    const [{ data: lu }, { data: all }, { data: st }] = await Promise.all([
+      sb.from('lineups').select('*').eq('league_id', L.league.id).eq('user_id', user.id).eq('matchday', md).maybeSingle(),
+      sb.from('lineups').select('user_id, module, starters, submitted_at').eq('league_id', L.league.id).eq('matchday', md),
+      sb.from('player_status').select('player_id, prob, reason, injury, back_at').eq('season', SEASON).eq('matchday', md)
+    ]);
+    S.luData = { md, lu, all, prob: Object.fromEntries((st || []).map(x => [x.player_id, x])) };
+  }
+  const { lu, all, prob } = S.luData;
+  const rs = $('.roster', box), keepScroll = rs ? rs.scrollTop : 0, keepY = window.scrollY;
   if (!S.lineup || S.lineup.md !== md) S.lineup = { md, module: lu ? lu.module : '4-3-3', starters: lu ? lu.starters.slice() : [], bench: lu ? lu.bench.slice(0, bmax) : [] };
   const cur = S.lineup; benchNormalize(cur, mine, bmax);
   const want = wantOf(cur.module), info = mdInfo(md), open = mdOpen(md);
@@ -383,17 +396,18 @@ async function renderLineup(){
   const benchStrip = '<div class="bench"><div class="bt">Panchina <span class="muted">(ordine di ingresso)</span></div><div class="brow">' + Array.from({ length: bmax }, (_, i) => { const p = cur.bench[i] ? playersById[cur.bench[i]] : null;
     return p ? '<div class="slot '+p.role+'" data-bout="'+p.id+'" title="Togli dalla panchina"><div class="shirt">'+(i + 1)+'</div><span class="nm">'+esc(shortName(p.name))+'</span><span class="tm">'+p.role+' · '+esc(p.team)+'</span><span class="mv"><button class="small sec" data-bl="'+p.id+'">◀</button><button class="small sec" data-br="'+p.id+'">▶</button></span></div>'
              : '<div class="slot empty"><div class="shirt">'+(i + 1)+'</div><span class="nm">&nbsp;</span></div>'; }).join('') + '</div></div>';
-  const roster = '<div class="card"><h2>La tua rosa <span class="muted">clicca: prima in campo, poi in panchina</span></h2><div class="roster">' + ROLES.map(r => {
+  const roster = '<div class="card"><h2>La tua rosa <span class="muted">clicca: prima in campo, poi in panchina · % = probabilità di giocare titolare</span></h2><div class="roster">' + ROLES.map(r => {
     const list = mine.filter(p => p.role === r).sort((a, b) => b.price - a.price);
     return '<h3>'+ROLE_NAME[r]+' <span class="pill">'+count(r)+'/'+want[r]+'</span></h3>' + list.map(p => {
       const on = cur.starters.includes(p.id), bi = cur.bench.indexOf(p.id);
-      return '<div class="pl'+(on || bi >= 0 ? ' on' : '')+'" data-in="'+p.id+'">'+roleTag(r)+'<span class="who">'+esc(p.name)+' <span class="muted">'+esc(p.team)+'</span></span><span class="muted">'+(on ? 'in campo' : (bi >= 0 ? 'panchina '+(bi + 1) : ''))+'</span></div>'; }).join('');
+      return '<div class="pl'+(on || bi >= 0 ? ' on' : '')+'" data-in="'+p.id+'">'+roleTag(r)+'<span class="who">'+esc(p.name)+' '+statusTag(prob[p.id])+' <span class="muted">'+esc(p.team)+'</span></span><span class="muted">'+(on ? 'in campo' : (bi >= 0 ? 'panchina '+(bi + 1) : ''))+'</span></div>'; }).join('');
   }).join('') + '</div></div>';
   const others = '<div class="card" style="margin-top:14px"><h2>Formazioni giornata '+md+'</h2><ul class="list">' + L.members.map(m => { const l2 = (all || []).find(x => x.user_id === m.user_id);
     return '<li><span>'+esc(m.team_name)+'</span><span class="muted">'+(l2 ? 'inviata ('+l2.module+')' : 'non inviata')+'</span></li>'; }).join('') + '</ul><p class="muted">Il dettaglio è nella scheda Risultati.</p></div>';
   box.innerHTML = head + '<div class="grid3"><div>' + pitchHtml(cur) + benchStrip + '<p class="muted" style="margin-top:8px">In caso di senza voto entra il primo panchinaro dello stesso ruolo, fino a '+(L.league.settings.max_subs || 3)+' cambi. Clicca un giocatore in campo o in panchina per toglierlo.</p></div><div>' + roster + '</div></div>' + others;
+  const rs2 = $('.roster', box); if (rs2) rs2.scrollTop = keepScroll; window.scrollTo(0, keepY);
   const redraw = () => renderLineup();
-  $('#luMd').onchange = e => { S.md = +e.target.value; S.lineup = null; redraw(); };
+  $('#luMd').onchange = e => { S.md = +e.target.value; S.lineup = null; renderLineup(true); };
   $('#luMod').onchange = e => { cur.module = e.target.value; const w = wantOf(cur.module), cnt = { P: 0, D: 0, C: 0, A: 0 };
     cur.starters = cur.starters.filter(id => { const r = (playersById[id] || {}).role; cnt[r]++; return cnt[r] <= w[r]; }); redraw(); };
   $('#luClear').onclick = () => { cur.starters = []; cur.bench = []; redraw(); };
@@ -411,7 +425,7 @@ async function renderLineup(){
     if (cur.starters.length !== 11) return msg('Servono 11 titolari, ne hai '+cur.starters.length, 'err');
     const { error } = await sb.rpc('save_lineup', { p_league: L.league.id, p_matchday: md, p_module: cur.module, p_starters: cur.starters, p_bench: cur.bench });
     if (error) return err(error);
-    msg('Formazione salvata per la giornata '+md, 'ok'); redraw();
+    msg('Formazione salvata per la giornata '+md, 'ok'); renderLineup(true);
   };
 }
 
@@ -468,7 +482,7 @@ function teamSheet(r, name, opts){
   opts = opts || sheetOpts([r]);
   const d = (r && r.detail) || {}, pl = d.players || [], bench = d.bench || [], extras = d.extras || [];
   const missing = !r || d.lineup === false;
-  const nm = id => shortName((playersById[id] || { name: '#'+id }).name);
+  const nm = id => injCross((S.rstatus || {})[id]) + shortName((playersById[id] || { name: '#'+id }).name);
   const empty = '<tr><td>&nbsp;</td><td class="muted">–</td><td></td><td></td></tr>';
   let rows = pl.map(p => '<tr><td>'+roleTag(p.role)+'</td><td>'+(p.sub ? '<span class="muted" style="text-decoration:line-through">'+esc(nm(p.player_id))+'</span> 🔁 '+esc(nm(p.sub)) : esc(nm(p.player_id)))+' <span class="em">'+emojis(p.bonus)+'</span></td><td>'+(p.voto == null ? 's.v.' : f1(p.voto))+'</td><td><b>'+f1(p.fv)+'</b></td></tr>').join('');
   for (let i = pl.length; i < 11; i++) rows += empty;
@@ -485,7 +499,7 @@ function teamSheet(r, name, opts){
 }
 function lineupSheet(lu, name){
   if (!lu) return '<div><h3>'+esc(name)+'</h3><div class="muted">Formazione non ancora schierata</div></div>';
-  const nm = id => { const p = playersById[id] || { name: '#'+id, role: 'C', team: '' }; return '<tr><td>'+roleTag(p.role)+'</td><td>'+esc(shortName(p.name))+' <span class="muted">'+esc(p.team)+'</span></td></tr>'; };
+  const nm = id => { const p = playersById[id] || { name: '#'+id, role: 'C', team: '' }; return '<tr><td>'+roleTag(p.role)+'</td><td>'+injCross((S.rstatus || {})[id])+esc(shortName(p.name))+' <span class="muted">'+esc(p.team)+'</span></td></tr>'; };
   return '<div><h3>'+esc(name)+' <span class="muted">'+lu.module+' · inviata '+fmtDate(lu.submitted_at)+'</span></h3><table><tbody>' + lu.starters.map(nm).join('') +
     '<tr><td colspan="2" class="muted" style="padding-top:10px"><b>Panchina</b></td></tr>' + lu.bench.map(nm).join('') + '</tbody></table></div>';
 }
@@ -497,6 +511,8 @@ async function renderResults(){
   if (!S.rmd || !mds.includes(S.rmd)) S.rmd = mds[0];
   const md = S.rmd, computed = withRes.has(md), fxs = S.fixtures.filter(f => f.matchday === md);
   const res = uid => S.results.find(r => r.matchday === md && r.user_id === uid);
+  const { data: stRows } = await sb.from('player_status').select('player_id, injury, reason').eq('season', SEASON).eq('matchday', md).not('injury', 'is', null);
+  S.rstatus = Object.fromEntries((stRows || []).map(x => [x.player_id, x]));
   let lus = [];
   if (!computed) { const { data } = await sb.from('lineups').select('user_id, module, starters, bench, submitted_at').eq('league_id', L.league.id).eq('matchday', md); lus = data || []; }
   const lu = uid => lus.find(x => x.user_id === uid);
