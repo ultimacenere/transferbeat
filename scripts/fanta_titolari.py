@@ -30,20 +30,31 @@ def main():
     unavailable = {}   # pid -> (injury, back_at)
     try:
         now = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S")
+        since = (datetime.datetime.utcnow() - datetime.timedelta(days=10)).strftime("%Y-%m-%dT%H:%M:%S")
+        recent_past = set()   # infortuni segnalati sull'ultima giornata: validi solo se /sidelined conferma che dura ancora
         for it in af_get("/injuries", league=LEAGUE_ID, season=SEASON):
-            if (it.get("fixture", {}).get("date") or "") < now:
+            d = it.get("fixture", {}).get("date") or ""
+            if d < since:
                 continue
             pid = it["player"]["id"]; txt = ((it["player"].get("type") or "") + " " + (it["player"].get("reason") or "")).lower()
+            if pid in unavailable and d < now:
+                continue
             unavailable[pid] = ("squalifica" if "suspend" in txt else "infortunio: " + ita(it["player"].get("reason")), None)
+            if d < now:
+                recent_past.add(pid)
+            else:
+                recent_past.discard(pid)
         for pid in list(unavailable):
-            if unavailable[pid][0] == "squalifica":
+            if unavailable[pid][0] == "squalifica" and pid not in recent_past:
                 continue
             try:
                 ends = [e.get("end") for e in af_get("/sidelined", player=pid) if e.get("end") and e["end"] >= today.isoformat()]
-                if ends:
-                    unavailable[pid] = (unavailable[pid][0], min(ends))
             except Exception:
-                pass
+                ends = []
+            if ends:
+                unavailable[pid] = (unavailable[pid][0], min(ends))
+            elif pid in recent_past:
+                del unavailable[pid]   # segnalato solo in passato e senza conferma: lo considero recuperato
             time.sleep(0.25)
     except Exception as e:
         print("injuries non disponibili:", e)
@@ -56,8 +67,10 @@ def main():
             reason = injury + (" · rientro ~%d sett." % weeks if weeks else "")
         elif last and m.get(last) and m[last][1]:
             prob = 0; injury = "squalifica"; reason = "squalifica: espulso nell'ultima giornata"
-        elif not recent or not m:
+        elif not recent:
             prob = 40; reason = "nessun dato recente"
+        elif not m:
+            prob = 20; reason = "mai convocato nelle ultime giornate"
         else:
             starts = sum(1 for n in recent if m.get(n, (0, 0))[0] >= 60)
             subs = sum(1 for n in recent if 1 <= m.get(n, (0, 0))[0] < 60)
