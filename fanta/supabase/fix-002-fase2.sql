@@ -97,7 +97,7 @@ returns jsonb language plpgsql security definer set search_path = public as $$
 declare l leagues%rowtype; s jsonb; max_subs integer; goal_base numeric; goal_step numeric; mod_def boolean;
   m record; lu lineups%rowtype; has_lu boolean; tot numeric; det jsonb; pid integer; orig integer; subid integer; r text;
   v numeric; fv numeric; subs integer; used integer[]; bp integer; bv numeric; bfv numeric; def_v numeric[]; gk_v numeric;
-  avgd numeric; modv numeric; goals integer; teams integer := 0; fx record; hg integer; ag integer; h_tot numeric; a_tot numeric;
+  avgd numeric; modv numeric; n_goals integer; teams integer := 0; fx record; hg integer; ag integer; h_tot numeric; a_tot numeric;
 begin
   if not (is_admin(p_league) or coalesce(current_setting('request.jwt.claims', true)::jsonb->>'role', '') = 'service_role') then
     raise exception 'solo l''admin'; end if;
@@ -136,9 +136,9 @@ begin
         tot := tot + modv;
       end if;
     end if;
-    goals := case when tot >= goal_base then 1 + floor((tot - goal_base) / goal_step)::int else 0 end;
+    n_goals := case when tot >= goal_base then 1 + floor((tot - goal_base) / goal_step)::int else 0 end;
     insert into results(league_id, user_id, matchday, total, goals, points, detail)
-      values (p_league, m.user_id, p_matchday, tot, goals, 0,
+      values (p_league, m.user_id, p_matchday, tot, n_goals, 0,
               jsonb_build_object('players', det, 'subs', subs, 'mod_difesa', modv, 'lineup', has_lu))
       on conflict (league_id, user_id, matchday) do update
         set total = excluded.total, goals = excluded.goals, points = 0, detail = excluded.detail;
