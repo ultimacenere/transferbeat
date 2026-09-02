@@ -13,15 +13,15 @@ STATE_LABEL = {
 STATE_COLOR = {"rumor": "#d98700", "obj": "#d98700", "conf": "#7b46c9", "done": "#0a9d57"}
 UI = {
   "it": {"by": "Redazione TransferBeat", "sources": "Fonti", "updated": "Aggiornato il", "home": "Home",
-         "board": "Board live", "back": "← Tutti gli articoli", "status": "Stato", "list": "Articoli di mercato",
+         "board": "Board live", "campionati": "Campionati", "back": "← Tutti gli articoli", "status": "Stato", "list": "Articoli",
          "disc": "TransferBeat aggrega notizie di mercato citando le fonti originali. Notizia in aggiornamento.",
          "via": "via", "smentita": "SMENTITA"},
   "en": {"by": "TransferBeat Newsroom", "sources": "Sources", "updated": "Updated on", "home": "Home",
-         "board": "Live board", "back": "← All articles", "status": "Status", "list": "Transfer articles",
+         "board": "Live board", "campionati": "Leagues", "back": "← All articles", "status": "Status", "list": "Articles",
          "disc": "TransferBeat aggregates transfer news citing the original sources. Developing story.",
          "via": "via", "smentita": "DENIED"},
   "es": {"by": "Redaccion TransferBeat", "sources": "Fuentes", "updated": "Actualizado el", "home": "Inicio",
-         "board": "Board en vivo", "back": "← Todos los articulos", "status": "Estado", "list": "Articulos de mercado",
+         "board": "Board en vivo", "campionati": "Ligas", "back": "← Todos los articulos", "status": "Estado", "list": "Articulos",
          "disc": "TransferBeat agrega noticias de mercado citando las fuentes originales. Noticia en desarrollo.",
          "via": "via", "smentita": "DESMENTIDO"},
 }
@@ -130,7 +130,8 @@ def head(title, desc, canon, alts, lang, og_img=""):
 
 def topbar(lang, alts, site):
     nav = ('<a href="' + site + '/?lang=' + lang + '">' + UI[lang]["home"] + '</a>'
-           '<a href="' + site + '/board.html?lang=' + lang + '">' + UI[lang]["board"] + '</a>')
+           '<a href="' + site + '/board.html?lang=' + lang + '">' + UI[lang]["board"] + '</a>'
+           '<a href="' + site + '/campionati.html?lang=' + lang + '">' + UI[lang]["campionati"] + '</a>')
     langs = "".join('<a class="' + ("on" if l == lang else "") + '" href="' + esc(alts[l]) + '">' + l.upper() + '</a>' for l in LANGS)
     return ('<div class="wrap"><div class="top"><a class="brand" href="' + site + '/?lang=' + lang + '">Transfer<b>Beat</b></a>'
             '<div><span class="nav">' + nav + '</span> <span class="langsw">' + langs + '</span></div></div></div>')
@@ -252,7 +253,7 @@ def render_all(arts, site, pages_dir, data_dir):
     os.makedirs(os.path.join(data_dir, "articles"), exist_ok=True)
     json.dump(idx, open(os.path.join(data_dir, "articles", "index.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     # sitemap
-    urls = [site + "/", site + "/board.html"]
+    urls = [site + "/", site + "/board.html", site + "/campionati.html", site + "/mondiali.html", site + "/fonti.html", site + "/fanta/"]
     for lang in LANGS:
         urls.append(site + "/articoli/" + lang + "/")
         for a in arts:

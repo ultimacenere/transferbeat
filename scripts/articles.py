@@ -42,13 +42,13 @@ STATE_LABEL = {
 }
 UI = {
   "it": {"by": "Redazione TransferBeat", "sources": "Fonti", "updated": "Aggiornato il",
-         "home": "Home", "board": "Board live", "disc": "TransferBeat aggrega notizie di mercato citando le fonti originali. Notizia in aggiornamento.",
+         "home": "Home", "board": "Board live", "campionati": "Campionati", "disc": "TransferBeat aggrega notizie di mercato citando le fonti originali. Notizia in aggiornamento.",
          "back": "Tutti gli articoli", "status": "Stato"},
   "en": {"by": "TransferBeat Newsroom", "sources": "Sources", "updated": "Updated on",
-         "home": "Home", "board": "Live board", "disc": "TransferBeat aggregates transfer news citing the original sources. Developing story.",
+         "home": "Home", "board": "Live board", "campionati": "Leagues", "disc": "TransferBeat aggregates transfer news citing the original sources. Developing story.",
          "back": "All articles", "status": "Status"},
   "es": {"by": "Redaccion TransferBeat", "sources": "Fuentes", "updated": "Actualizado el",
-         "home": "Inicio", "board": "Board en vivo", "disc": "TransferBeat agrega noticias de mercado citando las fuentes originales. Noticia en desarrollo.",
+         "home": "Inicio", "board": "Board en vivo", "campionati": "Ligas", "disc": "TransferBeat agrega noticias de mercado citando las fuentes originales. Noticia en desarrollo.",
          "back": "Todos los articulos", "status": "Estado"},
 }
 TITLE_SITE = "TransferBeat"

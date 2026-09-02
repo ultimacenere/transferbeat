@@ -192,12 +192,36 @@ COACHES = {"slot","gasperini","sarri","allegri","conte","mourinho","ancelotti","
            "thiago motta","fonseca","xavi","flick","luis enrique","xabi alonso","zidane",
            "de rossi","gilardino","nesta","gattuso","jaissle","postecoglou","maresca"}
 
+_PLAYERS = None
+def _players():
+    """Cognomi e nomi completi dei giocatori delle rose correnti (data/rosters.json), senza accenti.
+    Serve a non scambiare per allenatori i giocatori che portano un cognome da allenatore
+    (Giovanni Simeone, Vincenzo Italiano)."""
+    global _PLAYERS
+    if _PLAYERS is None:
+        import unicodedata, os as _os, json as _json
+        full, sur = set(), set()
+        try:
+            d = _json.load(open(_os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))), "data", "rosters.json"), encoding="utf-8"))
+            for names in (d.get("rose") or {}).values():
+                for nm in names:
+                    n = unicodedata.normalize("NFKD", nm).encode("ascii", "ignore").decode("ascii").lower().strip()
+                    full.add(n); sur.add(n.split()[-1] if n.split() else n)
+        except Exception:
+            pass
+        _PLAYERS = (full, sur)
+    return _PLAYERS
+
 def is_coach(name):
-    import re as _re
-    n = _re.sub(r"[^a-z ]", "", (name or "").lower()).strip()
+    import re as _re, unicodedata as _ud
+    n = _ud.normalize("NFKD", name or "").encode("ascii", "ignore").decode("ascii").lower()
+    n = _re.sub(r"[^a-z ]", "", n).strip()
     if not n:
         return False
-    if n in COACHES:
-        return True
-    last = n.split()[-1] if n.split() else ""
-    return last in COACHES
+    full, sur = _players()
+    if n in full:                     # nome completo di un giocatore in rosa: mai allenatore
+        return False
+    parts = n.split(); last = parts[-1]
+    if len(parts) == 1 and last in COACHES and last in sur:
+        return False                  # solo cognome, e un giocatore in rosa lo porta (Simeone): ambiguo -> non allenatore
+    return n in COACHES or last in COACHES

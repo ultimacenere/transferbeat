@@ -38,6 +38,11 @@ jobs:
       - name: Genera sezione Mondiale
         run: python scripts/mondiali.py || echo "mondiali skip"
 
+      - name: Campionati e coppe (football-data)
+        env:
+          FOOTBALL_DATA_KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
+        run: python scripts/competizioni.py || echo "competizioni skip (la sentinella segnala se i dati invecchiano)"
+
 
       - name: Commit dei dati e degli articoli
         run: |
@@ -52,3 +57,6 @@ jobs:
             echo "Push respinto, ritento ($i)..."; sleep $(( (RANDOM % 6) + 3 ))
           done
           echo "ERRORE: push fallito dopo 5 tentativi"; exit 1
+
+      - name: Sentinella freschezza dati (fallisce se i dati sono vecchi o vuoti)
+        run: python scripts/freshness.py

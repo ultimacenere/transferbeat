@@ -98,7 +98,7 @@ tbody tr:nth-child(-n+2) td.pos{color:var(--accent);font-weight:800}
   <div id="view"></div>
 </div>
 <div class="foot"><div class="wrap" id="foot"></div></div>
-<nav class="tb-sitelinks" aria-label="Sezioni" style="border-top:1px solid #e2e6ea;margin-top:8px;padding:16px 18px;font-size:12px;display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center"><a href="https://transferbeat.com/" style="color:#67727e">Home</a><a href="https://transferbeat.com/articoli/it/" style="color:#67727e">Articoli</a><a href="https://transferbeat.com/articoli/en/" style="color:#67727e">Articles (EN)</a><a href="https://transferbeat.com/articoli/es/" style="color:#67727e">Artículos (ES)</a><a href="https://transferbeat.com/board.html" style="color:#67727e">Live board</a><a href="https://transferbeat.com/mondiali.html" style="color:#67727e">Mondiale 2026</a><a href="https://transferbeat.com/fonti.html" style="color:#67727e">Fonti</a><a href="https://transferbeat.com/fanta/" style="color:#67727e">FantaTB</a></nav>
+<nav class="tb-sitelinks" aria-label="Sezioni" style="border-top:1px solid #e2e6ea;margin-top:8px;padding:16px 18px;font-size:12px;display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center"><a href="https://transferbeat.com/" style="color:#67727e">Home</a><a href="https://transferbeat.com/articoli/it/" style="color:#67727e">Articoli</a><a href="https://transferbeat.com/articoli/en/" style="color:#67727e">Articles (EN)</a><a href="https://transferbeat.com/articoli/es/" style="color:#67727e">Artículos (ES)</a><a href="https://transferbeat.com/board.html" style="color:#67727e">Live board</a><a href="https://transferbeat.com/campionati.html" style="color:#67727e">Campionati</a><a href="https://transferbeat.com/mondiali.html" style="color:#67727e">Mondiale 2026</a><a href="https://transferbeat.com/fonti.html" style="color:#67727e">Fonti</a><a href="https://transferbeat.com/fanta/" style="color:#67727e">FantaTB</a></nav>
 
 <script>
 const STR={
@@ -133,6 +133,7 @@ function applyStatic(){
     `<a class="home" href="index.html?lang=${lang}">${T.home}</a>
      <a href="board.html?lang=${lang}">${T.live}</a>
      <a href="articoli/${lang}/">${T.art}</a>
+     <a href="campionati.html?lang=${lang}">${lang==="it"?"Campionati":lang==="es"?"Ligas":"Leagues"}</a>
      <a href="mondiali.html?lang=${lang}" style="color:var(--blue);font-weight:700">${T.mond}</a>`;
   const ls=document.getElementById('langsw');
   ls.innerHTML=['it','en','es'].map(l=>`<a class="${l===lang?'on':''}" data-l="${l}">${l.toUpperCase()}</a>`).join('');

@@ -17,7 +17,7 @@
 <link rel="alternate" hreflang="es" href="./index.html?lang=es">
 <link rel="alternate" hreflang="x-default" href="./index.html">
 <link rel="canonical" href="https://transferbeat.com/">
-<meta name="description" content="TransferBeat: il giornale del calcio mondiale. Calciomercato live, ultim'ora, articoli e la sezione speciale sul Mondiale 2026, in italiano, inglese e spagnolo.">
+<meta name="description" content="TransferBeat: il giornale del calcio mondiale. Serie A e coppe live, classifiche e risultati, ultim'ora, articoli e FantaTB, il fantacalcio gratuito. In italiano, inglese e spagnolo.">
 <meta property="og:type" content="website"><meta property="og:site_name" content="TransferBeat"><meta property="og:title" content="TransferBeat — Il giornale del calcio mondiale"><meta property="og:description" content="Calciomercato live, ultim'ora, articoli e Mondiale 2026."><meta property="og:url" content="https://transferbeat.com/"><meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"TransferBeat","alternateName":"TransferBeat — Il giornale del calcio mondiale","url":"https://transferbeat.com/","inLanguage":["it","en","es"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"TransferBeat","url":"https://transferbeat.com/"}</script>
@@ -127,6 +127,7 @@
     <a href="index.html" class="on" id="navHome">Home</a>
     <a href="board.html" class="live" id="navLive"><span class="liveDot"></span>Live</a>
     <a href="articoli/it/" id="navArticoli">Articoli</a>
+    <a href="campionati.html" id="navCampionati" style="font-weight:700">Campionati</a>
     <a href="mondiali.html" id="navMondiale" style="color:var(--accent2);font-weight:700">Mondiale</a>
     <a href="fanta/" id="navFanta" style="color:var(--accent);font-weight:700">FantaTB</a>
     <a id="navSA">Serie A</a><a id="navPL">Premier</a><a id="navLL">La Liga</a>
@@ -145,7 +146,7 @@
       <div class="mini" id="liveFeed"><div style="color:var(--muted);font-size:12px;padding:6px 0">—</div></div>
     </div>
     <div class="box live">
-      <div class="hd"><span class="liveDot"></span><span id="hdLive">Mercato Live · oggi</span></div>
+      <div class="hd"><span class="liveDot"></span><span id="hdLive">Campionati Live · oggi</span></div>
       <div class="mini" id="miniBoard"></div>
       <a href="board.html" class="cta" id="ctaBoard">Apri la board completa →</a>
     </div>
@@ -170,14 +171,14 @@
   </div>
 </div>
 <footer><div class="wrap row"><div id="footL"></div><div id="footR"></div></div></footer>
-<nav class="tb-sitelinks" aria-label="Sezioni" style="border-top:1px solid #e2e6ea;margin-top:8px;padding:16px 18px;font-size:12px;display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center"><a href="https://transferbeat.com/" style="color:#67727e">Home</a><a href="https://transferbeat.com/articoli/it/" style="color:#67727e">Articoli</a><a href="https://transferbeat.com/articoli/en/" style="color:#67727e">Articles (EN)</a><a href="https://transferbeat.com/articoli/es/" style="color:#67727e">Artículos (ES)</a><a href="https://transferbeat.com/board.html" style="color:#67727e">Live board</a><a href="https://transferbeat.com/mondiali.html" style="color:#67727e">Mondiale 2026</a><a href="https://transferbeat.com/fonti.html" style="color:#67727e">Fonti</a><a href="https://transferbeat.com/fanta/" style="color:#67727e">FantaTB</a></nav>
+<nav class="tb-sitelinks" aria-label="Sezioni" style="border-top:1px solid #e2e6ea;margin-top:8px;padding:16px 18px;font-size:12px;display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center"><a href="https://transferbeat.com/" style="color:#67727e">Home</a><a href="https://transferbeat.com/articoli/it/" style="color:#67727e">Articoli</a><a href="https://transferbeat.com/articoli/en/" style="color:#67727e">Articles (EN)</a><a href="https://transferbeat.com/articoli/es/" style="color:#67727e">Artículos (ES)</a><a href="https://transferbeat.com/board.html" style="color:#67727e">Live board</a><a href="https://transferbeat.com/campionati.html" style="color:#67727e">Campionati</a><a href="https://transferbeat.com/mondiali.html" style="color:#67727e">Mondiale 2026</a><a href="https://transferbeat.com/fonti.html" style="color:#67727e">Fonti</a><a href="https://transferbeat.com/fanta/" style="color:#67727e">FantaTB</a></nav>
 
 
 <script>
 const STRINGS={
- it:{home:'Home',live:'Live',breaking:'ULTIM’ORA',tagline:'Il giornale del calcio mondiale',edition:'Edizione delle',featured:'IN PRIMO PIANO',liveToday:'Mercato Live · oggi',openBoard:'Apri la board completa →',top:'🔥 Le più rilevanti',worldH:'Dal mondo',worldSub:'Le notizie di calcio da tutti i continenti, oltre il mercato',footL:'TransferBeat — Il giornale del calcio mondiale',footR:'Aggiornamenti automatici 3×/giorno · 08:00 · 12:00 · 20:00',source:'Fonte',updatedAt:'aggiornato alle',champ:'Champions',nat:'Nazionali',world:'Mondo',err:'<b>Dati non caricati.</b> Apri il sito tramite un server (o GitHub/Vercel), non con doppio clic. In locale: <code>python -m http.server</code>',mini:{done:'Fatta',conf:'Conf.',obj:'Obiett.',rumor:'Rumor'}},
- en:{home:'Home',live:'Live',breaking:'BREAKING',tagline:'The home of world football',edition:'Edition of',featured:'FEATURED',liveToday:'Transfer Live · today',openBoard:'Open full board →',top:'🔥 Most relevant',worldH:'Around the world',worldSub:'Football news from every continent, beyond the transfer market',footL:'TransferBeat — The home of world football',footR:'Auto-updates 3×/day · 08:00 · 12:00 · 20:00',source:'Source',updatedAt:'updated at',champ:'Champions',nat:'National teams',world:'World',err:'<b>Data not loaded.</b> Open the site via a server (or GitHub/Vercel), not by double-clicking. Locally: <code>python -m http.server</code>',mini:{done:'Done',conf:'Agreed',obj:'Target',rumor:'Rumour'}},
- es:{home:'Inicio',live:'En vivo',breaking:'ÚLTIMA HORA',tagline:'El diario del fútbol mundial',edition:'Edición de las',featured:'DESTACADO',liveToday:'Mercado en vivo · hoy',openBoard:'Abrir la board completa →',top:'🔥 Lo más relevante',worldH:'Desde el mundo',worldSub:'Noticias de fútbol de todos los continentes, más allá del mercado',footL:'TransferBeat — El diario del fútbol mundial',footR:'Actualización automática 3×/día · 08:00 · 12:00 · 20:00',source:'Fuente',updatedAt:'actualizado a las',champ:'Champions',nat:'Selecciones',world:'Mundo',err:'<b>Datos no cargados.</b> Abre el sitio con un servidor (o GitHub/Vercel), no con doble clic. En local: <code>python -m http.server</code>',mini:{done:'Cerrado',conf:'Acuerdo',obj:'Objetivo',rumor:'Rumor'}}
+ it:{home:'Home',live:'Live',breaking:'ULTIM’ORA',tagline:'Il giornale del calcio mondiale',edition:'Edizione delle',featured:'IN PRIMO PIANO',liveToday:'Campionati Live · oggi',openBoard:'Apri la board completa →',top:'🔥 Le più rilevanti',worldH:'Dal mondo',worldSub:'Le notizie di calcio da tutti i continenti, oltre il mercato',footL:'TransferBeat — Il giornale del calcio mondiale',footR:'Aggiornamenti automatici ogni 2 ore · ultim’ora in tempo reale',source:'Fonte',updatedAt:'aggiornato alle',champ:'Champions',nat:'Nazionali',world:'Mondo',err:'<b>Dati non caricati.</b> Apri il sito tramite un server (o GitHub/Vercel), non con doppio clic. In locale: <code>python -m http.server</code>',mini:{done:'Fatta',conf:'Conf.',obj:'Obiett.',rumor:'Rumor'}},
+ en:{home:'Home',live:'Live',breaking:'BREAKING',tagline:'The home of world football',edition:'Edition of',featured:'FEATURED',liveToday:'Leagues Live · today',openBoard:'Open full board →',top:'🔥 Most relevant',worldH:'Around the world',worldSub:'Football news from every continent, beyond the transfer market',footL:'TransferBeat — The home of world football',footR:'Auto-updates every 2 hours · breaking news in real time',source:'Source',updatedAt:'updated at',champ:'Champions',nat:'National teams',world:'World',err:'<b>Data not loaded.</b> Open the site via a server (or GitHub/Vercel), not by double-clicking. Locally: <code>python -m http.server</code>',mini:{done:'Done',conf:'Agreed',obj:'Target',rumor:'Rumour'}},
+ es:{home:'Inicio',live:'En vivo',breaking:'ÚLTIMA HORA',tagline:'El diario del fútbol mundial',edition:'Edición de las',featured:'DESTACADO',liveToday:'Ligas en vivo · hoy',openBoard:'Abrir la board completa →',top:'🔥 Lo más relevante',worldH:'Desde el mundo',worldSub:'Noticias de fútbol de todos los continentes, más allá del mercado',footL:'TransferBeat — El diario del fútbol mundial',footR:'Actualización automática 3×/día · 08:00 · 12:00 · 20:00',source:'Fuente',updatedAt:'actualizado a las',champ:'Champions',nat:'Selecciones',world:'Mundo',err:'<b>Datos no cargados.</b> Abre el sitio con un servidor (o GitHub/Vercel), no con doble clic. En local: <code>python -m http.server</code>',mini:{done:'Cerrado',conf:'Acuerdo',obj:'Objetivo',rumor:'Rumor'}}
 };
 const PARAMS=new URLSearchParams(location.search);
 let lang=(PARAMS.get('lang')||localStorage.getItem('tb_lang')||'it').toLowerCase();
@@ -197,10 +198,10 @@ const ART_FMT={
 };
 const NAVART_I18N={it:'Articoli',en:'Articles',es:'Art\u00edculos'};
 const MOND_I18N={it:'Mondiale',en:'World Cup',es:'Mundial'};
-(function(){const na=document.getElementById('navArticoli');if(na){na.textContent=NAVART_I18N[lang];na.href='articoli/'+lang+'/';}const nm=document.getElementById('navMondiale');if(nm){nm.textContent=MOND_I18N[lang];nm.href='mondiali.html?lang='+lang;}})();
+(function(){const nc=document.getElementById('navCampionati');if(nc){nc.textContent={it:'Campionati',en:'Leagues',es:'Ligas'}[lang];nc.href='campionati.html?lang='+lang;}const na=document.getElementById('navArticoli');if(na){na.textContent=NAVART_I18N[lang];na.href='articoli/'+lang+'/';}const nm=document.getElementById('navMondiale');if(nm){nm.textContent=MOND_I18N[lang];nm.href='mondiali.html?lang='+lang;}})();
 let ART={}, ARTLIST=[];
-const ART_I18N={it:{h:'📝 Articoli TransferBeat',s:'Le nostre analisi delle trattative, aggiornate di continuo'},
-                en:{h:'📝 TransferBeat Articles',s:'Our take on the deals, continuously updated'},
+const ART_I18N={it:{h:'📝 Articoli TransferBeat',s:'Le nostre analisi su campionati e coppe, aggiornate di continuo'},
+                en:{h:'📝 TransferBeat Articles',s:'Our take on leagues and cups, continuously updated'},
                 es:{h:'📝 Artículos TransferBeat',s:'Nuestro análisis de las operaciones, al día'}};
 function artUrl(slug){return 'articoli/'+lang+'/'+slug+'.html';}
 function loadArticles(){
