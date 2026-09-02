@@ -104,15 +104,14 @@ Ruoli Classic dalla posizione API (Goalkeeper→P, Defender→D, Midfielder→C,
 vuoti (`role_mantra`), da assegnare a mano in fase 4.
 
 ## 11. Stato lavori (aggiornare)
-- 2026-09-02: fase 1 e fase 2 COMPLETE e testate sul progetto Supabase reale `transferbeat-fantatb`
-  (ref gtmvoxowayecsalfuobc). Schema eseguito nell'SQL Editor: `schema.sql` + `fix-001` + `fix-002` + `fix-003`
-  (le correzioni sono già integrate in `schema.sql` per installazioni nuove).
-  Test automatici superati: creazione lega, inviti, asta con controlli crediti/slot, aggiudicazione, rilascio;
-  calendario con riposo, formazioni validate, calcolo con sostituzione, modificatore difesa, gol, punti scontri.
-- Chiavi: `supabase_keys.txt` presente in locale (cartella principale e worktree). `fanta/config.js` collegato.
-- 2026-09-02 sera: chiave API-Football attiva. Listone reale caricato (651 giocatori, 20 squadre) e voti delle
-  giornate 1 e 2 in `player_ratings` (script lanciati in locale). Pagine pubbliche Listone e Voti verificate nel browser.
-- MANCANO: i 3 secret su GitHub Actions
-  (APIFOOTBALL_KEY, SUPABASE_URL, SUPABASE_SERVICE_KEY); merge della PR #1 su main per pubblicare `/fanta/`.
-- Prossimi passi: fase 3 = primo listone reale + prima giornata di voti dal cron; poi modifica regole
-  post-creazione, correzione voti dall'interfaccia admin, link FantaTB nel menu del sito.
+- 2026-09-02 notte: fasi 1-3 COMPLETE e verificate dall'utente sulla lega test (8 squadre: Picchio + 7 bot
+  bot1..7@fantatb.test / fantatb-botN). SQL eseguito nell'editor: schema + fix-001..007 (tutti già integrati in
+  `schema.sql`). ATTENZIONE: ogni blocco SQL va incollato in un editor VUOTO, non accodato ai precedenti.
+- Funzioni: asta live; Schiera con campo visivo, panchina a slot, svuota, % titolarità e croce infortuni;
+  Calendario; Risultati partita per partita (V/FV, emoji, panchina, subtotali allineati, giornata in corso);
+  Classifica; Regole complete modificabili (modificatori D/C/A, casa/trasferta, bonus/malus, porta inviolata,
+  soglie gol, sostituzioni, panchinari, fase asta/campionato); listone reale e voti giornate 1-2;
+  indice titolarità (`fanta_titolari.py`, tabella `player_status`).
+- MANCANO: i 3 secret su GitHub Actions; merge PR #1 per pubblicare `/fanta/`; link nel menu del sito;
+  correzione voti dall'interfaccia admin; probabili formazioni dalle notizie (LLM) per affinare la %;
+  opzione "formazioni nascoste fino alla deadline"; Mantra; pulizia bot prima dell'asta vera.
