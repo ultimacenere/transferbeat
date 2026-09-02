@@ -458,19 +458,30 @@ const EMOJI = { gol: '⚽', assist: '👟', amm: '🟨', esp: '🟥', gol_subito
 const EMOJI_LABEL = { gol: 'gol', assist: 'assist', amm: 'ammonizione', esp: 'espulsione', gol_subito: 'gol subito', autogol: 'autogol', rig_sbagliato: 'rigore sbagliato', rig_parato: 'rigore parato' };
 function emojis(b){ return Object.entries(b || {}).filter(([k, v]) => EMOJI[k] && v).map(([k, v]) => '<span title="'+EMOJI_LABEL[k]+(v > 1 ? ' ×'+v : '')+'">'+EMOJI[k].repeat(Math.min(v, 3))+'</span>').join(''); }
 function f1(x){ return x == null ? '–' : Number(x).toFixed(1); }
-function teamSheet(r, name){
+function sheetOpts(list){
+  // unione ordinata delle voci extra e lunghezza massima della panchina, per allineare le colonne di una partita
+  const labels = [], seen = new Set(); let benchN = 0;
+  list.filter(Boolean).forEach(r => { const d = r.detail || {}; (d.extras || []).forEach(e => { if (!seen.has(e.label)) { seen.add(e.label); labels.push(e.label); } }); benchN = Math.max(benchN, (d.bench || []).length); });
+  return { labels, benchN };
+}
+function teamSheet(r, name, opts){
+  opts = opts || sheetOpts([r]);
   const d = (r && r.detail) || {}, pl = d.players || [], bench = d.bench || [], extras = d.extras || [];
-  if (!r || d.lineup === false) return '<div><h3>'+esc(name)+'</h3><div class="muted">Formazione non inviata</div><table><tbody><tr class="grand"><td>Totale</td><td></td><td></td><td>0.0</td></tr></tbody></table></div>';
-  const legacyMod = !extras.length && d.mod_difesa ? [{ label: 'Modificatore difesa', v: d.mod_difesa }] : extras;
+  const missing = !r || d.lineup === false;
   const nm = id => shortName((playersById[id] || { name: '#'+id }).name);
-  const rows = pl.map(p => '<tr><td>'+roleTag(p.role)+'</td><td>'+(p.sub ? '<span class="muted" style="text-decoration:line-through">'+esc(nm(p.player_id))+'</span> 🔁 '+esc(nm(p.sub)) : esc(nm(p.player_id)))+' <span class="em">'+emojis(p.bonus)+'</span></td><td>'+(p.voto == null ? 's.v.' : f1(p.voto))+'</td><td><b>'+f1(p.fv)+'</b></td></tr>').join('');
-  const brows = bench.map((p, i) => '<tr class="'+(p.used ? '' : 'ex')+'"><td><span class="pill">'+(i + 1)+'</span></td><td>'+roleTag(p.role)+' '+esc(nm(p.player_id))+(p.used ? ' 🔁' : '')+' <span class="em">'+emojis(p.bonus)+'</span></td><td>'+(p.voto == null ? 's.v.' : f1(p.voto))+'</td><td>'+(p.fv == null ? '–' : f1(p.fv))+'</td></tr>').join('');
+  const empty = '<tr><td>&nbsp;</td><td class="muted">–</td><td></td><td></td></tr>';
+  let rows = pl.map(p => '<tr><td>'+roleTag(p.role)+'</td><td>'+(p.sub ? '<span class="muted" style="text-decoration:line-through">'+esc(nm(p.player_id))+'</span> 🔁 '+esc(nm(p.sub)) : esc(nm(p.player_id)))+' <span class="em">'+emojis(p.bonus)+'</span></td><td>'+(p.voto == null ? 's.v.' : f1(p.voto))+'</td><td><b>'+f1(p.fv)+'</b></td></tr>').join('');
+  for (let i = pl.length; i < 11; i++) rows += empty;
+  const labels = opts.labels.length ? opts.labels : (!extras.length && d.mod_difesa ? ['Modificatore difesa'] : []);
+  const exRows = labels.map(lb => { const e = extras.find(x => x.label === lb) || (lb === 'Modificatore difesa' && d.mod_difesa ? { v: d.mod_difesa } : { v: 0 });
+    return '<tr class="ex"><td></td><td>'+esc(lb)+'</td><td></td><td>'+(e.v > 0 ? '+' : '')+f1(e.v)+'</td></tr>'; }).join('');
+  let brows = bench.map((p, i) => '<tr class="'+(p.used ? '' : 'ex')+'"><td><span class="pill">'+(i + 1)+'</span></td><td>'+roleTag(p.role)+' '+esc(nm(p.player_id))+(p.used ? ' 🔁' : '')+' <span class="em">'+emojis(p.bonus)+'</span></td><td>'+(p.voto == null ? 's.v.' : f1(p.voto))+'</td><td>'+(p.fv == null ? '–' : f1(p.fv))+'</td></tr>').join('');
+  for (let i = bench.length; i < opts.benchN; i++) brows += empty;
   const base = d.base != null ? d.base : pl.reduce((a, p) => a + (+p.fv || 0), 0);
-  return '<div><h3>'+esc(name)+'</h3><table><thead><tr><th></th><th>Giocatore</th><th>V</th><th>FV</th></tr></thead><tbody>' + rows +
-    '<tr class="tot"><td></td><td>Totale parziale</td><td></td><td>'+f1(base)+'</td></tr>' +
-    legacyMod.map(e => '<tr class="ex"><td></td><td>'+esc(e.label)+'</td><td></td><td>'+(e.v > 0 ? '+' : '')+f1(e.v)+'</td></tr>').join('') +
-    '<tr class="grand"><td></td><td>Totale</td><td></td><td>'+f1(r.total)+'</td></tr>' +
-    (brows ? '<tr><td colspan="4" class="muted" style="padding-top:10px"><b>Panchina</b></td></tr>' + brows : '') + '</tbody></table></div>';
+  return '<div><h3>'+esc(name)+(missing ? ' <span class="pill">formazione non inviata</span>' : '')+'</h3><table><thead><tr><th></th><th>Giocatore</th><th>V</th><th>FV</th></tr></thead><tbody>' + rows +
+    '<tr class="tot"><td></td><td>Totale parziale</td><td></td><td>'+f1(missing ? 0 : base)+'</td></tr>' + exRows +
+    '<tr class="grand"><td></td><td>Totale</td><td></td><td>'+f1(r ? r.total : 0)+'</td></tr>' +
+    (opts.benchN ? '<tr><td colspan="4" class="muted" style="padding-top:10px"><b>Panchina</b></td></tr>' + brows : '') + '</tbody></table></div>';
 }
 function lineupSheet(lu, name){
   if (!lu) return '<div><h3>'+esc(name)+'</h3><div class="muted">Formazione non ancora schierata</div></div>';
@@ -494,7 +505,7 @@ async function renderResults(){
   if (fxs.length) html += fxs.map(f => { const h = res(f.home_id), a = f.away_id ? res(f.away_id) : null;
     return '<div class="match"><div class="score"><div class="t r">'+esc(memberName(f.home_id))+'</div><div class="g">'+(computed ? (f.home_goals != null ? f.home_goals : '-')+' - '+(f.away_id ? (f.away_goals != null ? f.away_goals : '-') : '') : 'vs')+'</div><div class="t">'+(f.away_id ? esc(memberName(f.away_id)) : '<span class="muted">riposo</span>')+'</div>' +
       (computed ? '<div class="fp" style="text-align:right">'+f1(h && h.total)+' fantapunti</div><div></div><div class="fp">'+(a ? f1(a.total)+' fantapunti' : '')+'</div>' : '') + '</div>' +
-      '<div class="sides">' + (computed ? teamSheet(h, memberName(f.home_id)) + (f.away_id ? teamSheet(a, memberName(f.away_id)) : '')
+      '<div class="sides">' + (computed ? teamSheet(h, memberName(f.home_id), sheetOpts([h, a])) + (f.away_id ? teamSheet(a, memberName(f.away_id), sheetOpts([h, a])) : '')
                                        : lineupSheet(lu(f.home_id), memberName(f.home_id)) + (f.away_id ? lineupSheet(lu(f.away_id), memberName(f.away_id)) : '')) + '</div></div>'; }).join('');
   else html += '<p class="muted">Nessuna partita in calendario per questa giornata.</p><div class="grid">' + L.members.map(m => '<div class="card">'+(computed ? teamSheet(res(m.user_id), m.team_name) : lineupSheet(lu(m.user_id), m.team_name))+'</div>').join('') + '</div>';
   box.innerHTML = html;
