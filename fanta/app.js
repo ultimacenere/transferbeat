@@ -217,18 +217,22 @@ function renderAuction(){
       '<div class="search" id="auList" style="margin-top:8px"></div><label>Base d\'asta</label><div class="row"><input id="auStart" type="number" value="1" min="1"><button id="auOpen" '+(live ? 'disabled' : '')+'>Apri asta</button></div><div class="muted" id="auPick" style="margin-top:6px">Nessun giocatore selezionato</div></div>';
   }
   html += '</div></div>';
-  box.innerHTML = html;
+  box.innerHTML = html; lastSig = auctionSig();
   $$('[data-bid]', box).forEach(b => b.onclick = () => bid(b.dataset.bid === 'custom' ? +$('#auCustom').value : +b.dataset.bid));
   const c = $('#auClose'); if (c) c.onclick = closeAuction;
   if (L.isAdmin) setupPicker(live);
   startTimer();
 }
-let picked = null;
+let picked = null, picker = { q: '', role: '' }, lastSig = '';
+function auctionSig(){ return JSON.stringify([L.auction, L.rosters.length, L.members.map(m => m.credits), L.bids.length && L.bids[0].amount]); }
 function setupPicker(live){
   const list = $('#auList'), inp = $('#auSearch'), sel = $('#auRole');
+  inp.value = picker.q; sel.value = picker.role;
+  if (picked) $('#auPick').innerHTML = 'Selezionato: <b>'+esc(picked.name)+'</b> ('+esc(picked.team)+')';
   const taken = new Set(L.rosters.map(r => r.player_id));
   const draw = () => {
-    const q = (inp.value || '').toLowerCase(), r = sel.value;
+    picker.q = inp.value || ''; picker.role = sel.value;
+    const q = picker.q.toLowerCase(), r = picker.role;
     const rows = players.filter(p => p.active && !taken.has(p.id) && (!r || p.role === r) && (!q || p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q))).slice(0, 60);
     list.innerHTML = rows.map(p => '<div data-pick="'+p.id+'">'+roleTag(p.role)+' '+esc(p.name)+' <span class="muted">'+esc(p.team)+'</span><span class="price">'+p.price+'</span></div>').join('') || '<div class="muted">Nessun risultato</div>';
     $$('[data-pick]', list).forEach(d => d.onclick = () => { picked = playersById[+d.dataset.pick]; $('#auPick').innerHTML = 'Selezionato: <b>'+esc(picked.name)+'</b> ('+picked.team+')'; $('#auStart').value = Math.max(1, picked.price); });
@@ -264,7 +268,7 @@ function startTimer(){
 }
 function subscribe(){
   if (channel) sb.removeChannel(channel);
-  const f = 'league_id=eq.' + L.league.id, onChange = async () => { await refreshLeagueData(); renderAuction(); };
+  const f = 'league_id=eq.' + L.league.id, onChange = async () => { await refreshLeagueData(); if (auctionSig() !== lastSig) renderAuction(); };
   channel = sb.channel('lega-' + L.league.id)
     .on('postgres_changes', { event: '*', schema: 'public', table: 'auctions', filter: f }, onChange)
     .on('postgres_changes', { event: '*', schema: 'public', table: 'rosters', filter: f }, onChange)
