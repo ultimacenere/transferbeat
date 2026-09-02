@@ -41,7 +41,7 @@ FEED_ENRICH = int(os.environ.get("FEED_ENRICH", "3"))
 UA = {"User-Agent": "Mozilla/5.0 (compatible; TransferBeatBot/1.0)"}
 LLM_KEY = os.environ.get("GROQ_API_KEY", "")
 LLM_URL = "https://api.groq.com/openai/v1/chat/completions"
-LLM_MODEL = os.environ.get("SCOUT_MODEL", os.environ.get("LLM_MODEL", "groq/compound-mini"))  # estrazione: 70k token/min, JSON mode ok
+LLM_MODEL = os.environ.get("SCOUT_MODEL", os.environ.get("LLM_MODEL", "qwen/qwen3.8-27b"))  # vedi kb §1: compound-* eredita quote di modelli terzi e va in 429
 GIORNI = {
   "it": ["Lunedi","Martedi","Mercoledi","Giovedi","Venerdi","Sabato","Domenica"],
   "en": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],

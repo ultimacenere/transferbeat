@@ -9,17 +9,19 @@ Tenuto COMPATTO di proposito per non sforare i limiti di token.
 
 # --- Carta editoriale: definizioni di stato e regole di coerenza ---
 CHARTER = (
-    "Sei l'analista di TransferBeat, sito di calciomercato di Serie A, La Liga e Premier League. "
+    "Sei l'analista di TransferBeat, sito di calcio su Serie A, La Liga e Premier League: "
+    "campionati, coppe europee e mercato. "
     "Lavori SOLO su questi tre campionati: se nessun club delle tre leghe e' coinvolto, 'squadra' resta vuota.\n"
-    "STATI (dal piu' debole al piu' forte). In caso di DUBBIO scegli SEMPRE lo stato piu' BASSO:\n"
-    "- rumor (DEFAULT): voce, idea, interesse anche concreto, sondaggio, 'piace', 'seguito', 'possibile trattativa', 'sogno', 'tentativo', 'pista', 'ci pensa', 'spinge per'.\n"
-    "- obj: trattativa REALMENTE avviata con contatti diretti o OFFERTA gia' presentata: 'incontro con l'agente', 'pressing', 'sempre piu' vicino', 'affondo'.\n"
-    "- conf: accordo RAGGIUNTO esplicito: 'accordo trovato', 'intesa totale', 'fumata bianca', 'ha detto si', 'manca solo la firma'. Un interesse o una trattativa NON bastano per 'conf'.\n"
-    "- done: SOLO ufficialita' esplicita: 'ufficiale', comunicato del club, 'ha firmato', visite mediche FATTE, 'here we go', annuncio. Senza queste parole NON e' done.\n"
+    "STATI: scala di CONCRETEZZA, valida sia per il calcio giocato sia per il mercato.\n"
+    "In caso di DUBBIO scegli SEMPRE lo stato piu' BASSO:\n"
+    "- rumor (DEFAULT): commento o voce. Calcio giocato: analisi, opinione, dichiarazione, classifica, pagelle, moviola, indiscrezione su un infortunio. Mercato: idea, interesse anche concreto, sondaggio, 'piace', 'seguito', 'possibile trattativa', 'sogno', 'tentativo', 'pista', 'ci pensa', 'spinge per'.\n"
+    "- obj: qualcosa di IMMINENTE o gia' in corso. Calcio giocato: vigilia, probabili formazioni, convocati, presentazione, conferenza stampa, orario e dove vedere. Mercato: trattativa REALMENTE avviata con contatti diretti o OFFERTA gia' presentata: 'incontro con l'agente', 'pressing', 'sempre piu' vicino', 'affondo'.\n"
+    "- conf: ATTO UFFICIALE di un club o di una lega. Calcio giocato: formazioni ufficiali, comunicato, squalifica, rinvio, sorteggio, esonero, nuovo allenatore. Mercato: accordo RAGGIUNTO esplicito: 'accordo trovato', 'intesa totale', 'fumata bianca', 'ha detto si', 'manca solo la firma'. Un interesse o una trattativa NON bastano per 'conf'.\n"
+    "- done: FATTO AVVENUTO, non piu' modificabile. Calcio giocato: risultato, tabellino, gol, doppietta, espulsione, eliminazione, qualificazione, fine partita. Mercato: SOLO ufficialita' esplicita: 'ufficiale', comunicato del club, 'ha firmato', visite mediche FATTE, 'here we go', annuncio.\n"
     "REGOLA: classifica per cio' che la notizia dice ORA; NON gonfiare lo stato. Un interesse o una possibile trattativa resta 'rumor'.\n"
-    "SMENTITA: metti smentita=true solo se la notizia ANNULLA/NEGA un affare gia' dato ('salta tutto', 'naufragata', 'nessun accordo', 'resta').\n"
-    "ANTI-INVENZIONE: usa SOLO cio' che e' scritto nel testo. Non inventare cifre, date, dichiarazioni o club non citati.\n"
-    "Distingui sempre PROVENIENZA e DESTINAZIONE: direzione 'out' se lascia la 'squadra', 'in' se la raggiunge."
+    "SMENTITA: metti smentita=true solo se la notizia ANNULLA/NEGA qualcosa gia' dato ('salta tutto', 'naufragata', 'nessun accordo', 'resta', 'partita rinviata').\n"
+    "ANTI-INVENZIONE: usa SOLO cio' che e' scritto nel testo. Non inventare cifre, date, dichiarazioni, risultati o club non citati.\n"
+    "Nei trasferimenti distingui sempre PROVENIENZA e DESTINAZIONE: direzione 'out' se lascia la 'squadra', 'in' se la raggiunge. Per le notizie di campionato i campi giocatore/direzione/club restano vuoti se non pertinenti."
 )
 
 # --- Glossario: alias squadre e gergo di mercato ---
@@ -46,15 +48,23 @@ def glossary_block():
 # --- Few-shot: esempi guida per la CLASSIFICAZIONE (compatti) ---
 # Ogni esempio: (messaggio, json_atteso)
 CLASSIFY_EXAMPLES = [
+    ("Cagliari-Inter 1-2, decide Lautaro nel recupero",
+     '{"transfer":true,"titolo":"Cagliari-Inter 1-2, decide Lautaro nel recupero","stato":"done","giocatore":"","squadra":"Inter","direzione":"in","club":"","smentita":false}'),
     ("Vlahovic lascia la Juventus, intesa totale col Milan",
-     '{"transfer":true,"stato":"conf","giocatore":"Dusan Vlahovic","squadra":"Juventus","direzione":"out","club":"Milan","smentita":false}'),
+     '{"transfer":true,"titolo":"Vlahovic verso il Milan, intesa totale con la Juventus","stato":"conf","giocatore":"Dusan Vlahovic","squadra":"Juventus","direzione":"out","club":"Milan","smentita":false}'),
+    ("Probabili formazioni Milan-Roma: Leao dal primo minuto, Dybala in panchina",
+     '{"transfer":true,"titolo":"Probabili formazioni Milan-Roma: Leao titolare, Dybala in panchina","stato":"obj","giocatore":"","squadra":"Milan","direzione":"in","club":"","smentita":false}'),
+    ("Formazioni ufficiali Napoli-Como: Lukaku guida l attacco",
+     '{"transfer":true,"titolo":"Formazioni ufficiali Napoli-Como: Lukaku in attacco","stato":"conf","giocatore":"","squadra":"Napoli","direzione":"in","club":"","smentita":false}'),
+    ("Inter, Bastoni out per infortunio: salta il derby",
+     '{"transfer":true,"titolo":"Inter, Bastoni out per infortunio: salta il derby","stato":"rumor","giocatore":"","squadra":"Inter","direzione":"in","club":"","smentita":false}'),
     ("L\'Inter pensa a Tonali per rinforzare il centrocampo",
-     '{"transfer":true,"stato":"rumor","giocatore":"Sandro Tonali","squadra":"Inter","direzione":"in","club":"","smentita":false}'),
+     '{"transfer":true,"titolo":"L Inter pensa a Tonali per il centrocampo","stato":"rumor","giocatore":"Sandro Tonali","squadra":"Inter","direzione":"in","club":"","smentita":false}'),
     ("Here we go! Leao al Real Madrid, contratto depositato",
-     '{"transfer":true,"stato":"done","giocatore":"Rafael Leao","squadra":"Real Madrid","direzione":"in","club":"Milan","smentita":false}'),
+     '{"transfer":true,"titolo":"Ufficiale: Leao al Real Madrid","stato":"done","giocatore":"Rafael Leao","squadra":"Real Madrid","direzione":"in","club":"Milan","smentita":false}'),
     ("Salta tutto: niente Napoli per Osimhen, trattativa naufragata",
-     '{"transfer":true,"stato":"conf","giocatore":"Victor Osimhen","squadra":"Napoli","direzione":"out","club":"","smentita":true}'),
-    ("De Laurentiis in conferenza: \'Il mondo e\' pieno di giocatori\'",
+     '{"transfer":true,"titolo":"Salta la trattativa tra Napoli e Osimhen","stato":"conf","giocatore":"Victor Osimhen","squadra":"Napoli","direzione":"out","club":"","smentita":true}'),
+    ("Scarica la nostra app e vinci il fantacalcio! Codice promo TB2026",
      '{"transfer":false}'),
 ]
 
@@ -63,7 +73,7 @@ def classify_system(langname="italiano"):
     return (
         CHARTER + "\n" + glossary_block() + "\n"
         "Classifica il messaggio dell'utente. Rispondi SOLO con JSON valido, campi:\n"
-        "- transfer: true solo se riguarda trasferimento/trattativa/rinnovo/voce su un calciatore; false per gossip, partite, opinioni.\n"
+        "- transfer: true se il messaggio e' una notizia di calcio PUBBLICABILE (risultato, tabellino, formazioni, infortunio, squalifica, sorteggio, esonero, dichiarazione tecnica, trasferimento o trattativa); false SOLO per cio' che non e' pubblicabile: pubblicita', scommesse, sondaggi, quiz, meme, saluti, contenuti non calcistici.\n"
         "- titolo: titolo conciso e neutro (max 100 caratteri) in " + langname + ", senza emoji/hashtag/virgolette.\n"
         "- stato: done|conf|obj|rumor secondo le definizioni sopra.\n"
         "- squadra: il club di Serie A/La Liga/Premier coinvolto (vuoto se nessuno).\n"
@@ -72,6 +82,27 @@ def classify_system(langname="italiano"):
         "- club: l'altra squadra coinvolta (vuoto se non citata).\n"
         "- smentita: true se annulla un affare gia' dato; false altrimenti."
     )
+
+def classify_batch_messages(testi, langname="italiano", n_examples=4):
+    """Come classify_messages ma per PIU' messaggi in UNA sola chiamata.
+    La parte fissa (carta editoriale + glossario + regole + esempi) pesa ~850 token:
+    rispedirla per ogni singola notizia sfonda il tetto di 8000 token/minuto di Groq,
+    le notizie oltre la nona prendono 429 e ricadono in silenzio sulle regole.
+    In lotto il costo per notizia crolla di oltre dieci volte."""
+    NL = chr(10)
+    sistema = (classify_system(langname) + NL + NL +
+        "LOTTO: l'utente invia PIU' messaggi numerati. Rispondi SOLO con JSON valido nella forma" + NL +
+        '{"items":[{...},{...}]} con ESATTAMENTE un oggetto per messaggio ricevuto, nello STESSO' + NL +
+        "ORDINE e con gli stessi campi descritti sopra. Nessun commento, nessun testo fuori dal JSON." + NL +
+        'Ogni oggetto DEVE includere anche il campo "n" con il numero del messaggio a cui si riferisce.')
+    msgs = [{"role": "system", "content": sistema}]
+    for ex_in, ex_out in CLASSIFY_EXAMPLES[:n_examples]:
+        msgs.append({"role": "user", "content": "1. " + ex_in})
+        msgs.append({"role": "assistant", "content": '{"items":[{"n":1,' + ex_out[1:] + ']}'})
+    corpo = NL.join(str(i + 1) + ". " + (x or "").replace(NL, " ")[:400]
+                    for i, x in enumerate(testi))
+    msgs.append({"role": "user", "content": corpo})
+    return msgs
 
 def classify_messages(text, langname="italiano", n_examples=3):
     """Costruisce l'array di messaggi (system + few-shot + user) per la classificazione."""
