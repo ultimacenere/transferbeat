@@ -54,14 +54,14 @@ $('#btnSignup').onclick = async () => {
 
 /* ---------- listone ---------- */
 async function loadPlayers(){
-  const { data, error } = await sb.from('players').select('id,name,team,role,price,active').eq('active', true).order('price', { ascending: false }).limit(2000);
+  const { data, error } = await sb.from('players').select('id,name,team,role,price,active').order('price', { ascending: false }).limit(2000);
   if (error) return err(error);
   players = data || []; playersById = {}; players.forEach(p => playersById[p.id] = p);
 }
 function roleTag(r){ return '<span class="role '+r+'">'+r+'</span>'; }
 function renderListone(){
   const q = ($('#lsSearch').value || '').toLowerCase(); const r = $('#lsRole').value;
-  const rows = players.filter(p => (!r || p.role === r) && (!q || p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q))).slice(0, 400);
+  const rows = players.filter(p => p.active && (!r || p.role === r) && (!q || p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q))).slice(0, 400);
   $('#lsTable').innerHTML = players.length ? '<table><thead><tr><th>R</th><th>Giocatore</th><th>Squadra</th><th>Quot.</th></tr></thead><tbody>' +
     rows.map(p => '<tr><td>'+roleTag(p.role)+'</td><td>'+esc(p.name)+'</td><td>'+esc(p.team)+'</td><td><b>'+p.price+'</b></td></tr>').join('') + '</tbody></table>'
     : '<div class="msg">Listone non ancora caricato. Arriva con il primo aggiornamento dei dati.</div>';
@@ -70,10 +70,10 @@ $('#lsSearch').oninput = renderListone; $('#lsRole').onchange = renderListone;
 
 /* ---------- voti ---------- */
 async function loadVoti(){
-  const { data: days } = await sb.from('matchdays').select('number,status').eq('season', CFG.SEASON || 2026).order('number', { ascending: false });
+  const { data: days } = await sb.from('matchdays').select('number,status').eq('season', CFG.SEASON || 2026).in('status', ['live', 'finished', 'rated']).order('number', { ascending: false });
   const sel = $('#vtDay');
   if (!days || !days.length){ sel.innerHTML = ''; $('#vtTable').innerHTML = '<div class="msg">Nessuna giornata calcolata finora.</div>'; return; }
-  sel.innerHTML = days.map(d => '<option value="'+d.number+'">Giornata '+d.number+(d.status === 'rated' ? '' : ' (parziale)')+'</option>').join('');
+  sel.innerHTML = days.map(d => '<option value="'+d.number+'">Giornata '+d.number+(d.status === 'live' ? ' (in corso)' : '')+'</option>').join('');
   sel.onchange = renderVoti; renderVoti();
 }
 async function renderVoti(){
@@ -221,7 +221,7 @@ function setupPicker(live){
   const taken = new Set(L.rosters.map(r => r.player_id));
   const draw = () => {
     const q = (inp.value || '').toLowerCase(), r = sel.value;
-    const rows = players.filter(p => !taken.has(p.id) && (!r || p.role === r) && (!q || p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q))).slice(0, 60);
+    const rows = players.filter(p => p.active && !taken.has(p.id) && (!r || p.role === r) && (!q || p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q))).slice(0, 60);
     list.innerHTML = rows.map(p => '<div data-pick="'+p.id+'">'+roleTag(p.role)+' '+esc(p.name)+' <span class="muted">'+esc(p.team)+'</span><span class="price">'+p.price+'</span></div>').join('') || '<div class="muted">Nessun risultato</div>';
     $$('[data-pick]', list).forEach(d => d.onclick = () => { picked = playersById[+d.dataset.pick]; $('#auPick').innerHTML = 'Selezionato: <b>'+esc(picked.name)+'</b> ('+picked.team+')'; $('#auStart').value = Math.max(1, picked.price); });
   };
