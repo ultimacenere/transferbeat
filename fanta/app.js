@@ -115,13 +115,21 @@ $('#btnJoin').onclick = async () => {
 };
 
 /* ---------- lega ---------- */
-const MEMBER_SEL = 'user_id, team_name, role, credits, call_order, profiles(username)';
+const MEMBER_SEL = 'user_id, team_name, role, credits, call_order';
+async function attachProfiles(members){
+  if (!members || !members.length) return members;
+  const { data } = await sb.from('profiles').select('id, username').in('id', members.map(m => m.user_id));
+  const by = {}; (data || []).forEach(p => by[p.id] = p);
+  members.forEach(m => m.profiles = by[m.user_id] || { username: '' });
+  return members;
+}
 async function openLeague(id){
   const [{ data: league, error: e1 }, { data: members, error: e2 }] = await Promise.all([
     sb.from('leagues').select('*').eq('id', id).single(),
     sb.from('league_members').select(MEMBER_SEL).eq('league_id', id).order('call_order')
   ]);
   if (e1 || e2) return err(e1 || e2);
+  await attachProfiles(members);
   L = { league, members, rosters: [], auction: null, bids: [] };
   L.me = members.find(m => m.user_id === user.id); L.isAdmin = !!(L.me && L.me.role === 'admin');
   location.hash = 'lega/' + id;
@@ -139,7 +147,7 @@ async function refreshLeagueData(){
     sb.from('auction_bids').select('user_id, amount, player_id, created_at').eq('league_id', L.league.id).order('id', { ascending: false }).limit(10)
   ]);
   L.rosters = rosters || []; L.auction = auction; L.bids = bids || [];
-  if (members) { L.members = members; L.me = members.find(m => m.user_id === user.id); }
+  if (members) { await attachProfiles(members); L.members = members; L.me = members.find(m => m.user_id === user.id); }
   renderRosters();
 }
 function memberName(uid){ const m = L.members.find(x => x.user_id === uid); return m ? m.team_name : '?'; }
