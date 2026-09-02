@@ -153,7 +153,7 @@ function renderClassifica(c){
   }).join('');
 }
 function scoreHtml(m){
-  const st=T.stat[m.status]!==undefined?T.stat[m.status]:m.status;
+  const st=T.stat[m.status]!==undefined?T.stat[m.status]:'';
   if(m.ft)return `<span class="r ${m.status==='IN_PLAY'||m.status==='PAUSED'?'live':''}">${m.ft[0]}-${m.ft[1]}${st?' '+st:''}</span>`;
   return `<span class="r vs">${st||T.vs}</span>`;
 }

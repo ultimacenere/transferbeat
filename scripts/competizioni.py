@@ -56,9 +56,14 @@ def conv_standings(j):
     season = j.get("season") or {}
     return out, season.get("currentMatchday"), (j.get("competition") or {}).get("emblem", "")
 
+STATI = {"SCHEDULED", "TIMED", "IN_PLAY", "PAUSED", "FINISHED", "POSTPONED", "SUSPENDED", "CANCELLED", "AWARDED"}
+
 def conv_match(m):
     sc = m.get("score") or {}; ft = sc.get("fullTime") or {}; ht = sc.get("halfTime") or {}
-    return {"id": m.get("id"), "utc": m.get("utcDate", ""), "status": m.get("status", ""), "matchday": m.get("matchday"),
+    status = m.get("status") or "SCHEDULED"
+    if status not in STATI:          # football-data a volte mette una data nel campo status: la tratto come "in programma"
+        status = "SCHEDULED"
+    return {"id": m.get("id"), "utc": m.get("utcDate", ""), "status": status, "matchday": m.get("matchday"),
             "stage": m.get("stage", ""), "group": m.get("group") or "",
             "home": team(m.get("homeTeam") or {}), "away": team(m.get("awayTeam") or {}),
             "ft": [ft.get("home"), ft.get("away")] if ft.get("home") is not None else None,
