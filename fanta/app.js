@@ -26,7 +26,7 @@ function show(view){
 }
 document.addEventListener('click', e => {
   const a = e.target.closest('[data-view]'); if (a){ e.preventDefault(); if (!user && a.dataset.view !== 'listone' && a.dataset.view !== 'voti' && a.dataset.view !== 'regole') return show('auth'); show(a.dataset.view); }
-  const t = e.target.closest('[data-tab]'); if (t){ e.preventDefault(); $$('.tabs a').forEach(x => x.classList.toggle('on', x === t)); ['asta','rose','membri','regole'].forEach(k => $('#tab-'+k).classList.toggle('hidden', k !== t.dataset.tab)); }
+  const t = e.target.closest('[data-tab]'); if (t){ e.preventDefault(); $$('.tabs a').forEach(x => x.classList.toggle('on', x === t)); ['asta','formazione','rose','calendario','classifica','membri','regole'].forEach(k => $('#tab-'+k).classList.toggle('hidden', k !== t.dataset.tab)); }
 });
 
 /* ---------- auth ---------- */
@@ -129,7 +129,7 @@ async function openLeague(id){
   $('#lgName').textContent = league.name;
   $('#lgSub').innerHTML = esc(L.me.team_name)+' · '+members.length+'/'+(league.settings.max_teams || 20)+' squadre · codice invito <span class="code">'+esc(league.invite_code)+'</span>';
   await refreshLeagueData();
-  renderRules(); renderAuction(); subscribe();
+  renderRules(); renderAuction(); subscribe(); loadSeasonData();
 }
 async function refreshLeagueData(){
   const [{ data: rosters }, { data: auction }, { data: members }, { data: bids }] = await Promise.all([
@@ -266,11 +266,132 @@ function subscribe(){
   clearInterval(window.__fantaPoll); window.__fantaPoll = setInterval(() => { if (L && !document.hidden) onChange(); }, 7000); // rete di sicurezza se il realtime salta
 }
 
+/* ---------- stagione: giornate e formazioni ---------- */
+const SEASON = CFG.SEASON || 2026;
+const MODULES = ['3-4-3', '3-5-2', '4-3-3', '4-4-2', '4-5-1', '5-3-2', '5-4-1'];
+let matchdays = [], S = { fixtures: [], results: [], lineup: null, md: null };
+async function loadMatchdays(){ const { data } = await sb.from('matchdays').select('number,starts_at,ends_at,status').eq('season', SEASON).order('number'); matchdays = data || []; }
+function mdInfo(n){ return matchdays.find(m => m.number === n) || { number: n }; }
+function mdOpen(n){ const m = mdInfo(n); return !m.starts_at || new Date(m.starts_at) > new Date(); }
+function nextMatchday(){ for (let n = 1; n <= 38; n++) if (mdOpen(n)) return n; return 38; }
+function fmtDate(d){ return d ? new Date(d).toLocaleString('it-IT', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : 'da definire'; }
+async function loadSeasonData(){
+  const [{ data: fixtures }, { data: results }] = await Promise.all([
+    sb.from('league_fixtures').select('*').eq('league_id', L.league.id).order('round'),
+    sb.from('results').select('user_id, matchday, total, goals, points, detail').eq('league_id', L.league.id)
+  ]);
+  S.fixtures = fixtures || []; S.results = results || [];
+  if (!S.md) S.md = nextMatchday();
+  renderLineup(); renderCalendar(); renderStandings();
+}
+function myPlayers(){ return L.rosters.filter(r => r.user_id === user.id).map(r => playersById[r.player_id]).filter(Boolean); }
+function wantOf(module){ const p = module.split('-').map(Number); return { P: 1, D: p[0], C: p[1], A: p[2] }; }
+function benchNormalize(cur, mine){
+  const st = new Set(cur.starters), ids = new Set(mine.map(p => p.id));
+  cur.bench = cur.bench.filter(id => ids.has(id) && !st.has(id));
+  mine.filter(p => !st.has(p.id) && !cur.bench.includes(p.id)).sort((a, b) => ROLES.indexOf(a.role) - ROLES.indexOf(b.role) || b.price - a.price).forEach(p => cur.bench.push(p.id));
+}
+function moveBench(cur, id, dir){ const i = cur.bench.indexOf(id), j = i + dir; if (i < 0 || j < 0 || j >= cur.bench.length) return; [cur.bench[i], cur.bench[j]] = [cur.bench[j], cur.bench[i]]; }
+function lineupHtml(cur, mine, md, lu){
+  const want = wantOf(cur.module), info = mdInfo(md), open = mdOpen(md);
+  let html = '<div class="row"><div><label>Giornata</label><select id="luMd">' + Array.from({ length: 38 }, (_, i) => i + 1).map(n => '<option value="'+n+'" '+(n === md ? 'selected' : '')+'>Giornata '+n+(mdOpen(n) ? '' : ' (chiusa)')+'</option>').join('') + '</select></div>' +
+    '<div><label>Modulo</label><select id="luMod">' + MODULES.map(m => '<option '+(m === cur.module ? 'selected' : '')+'>'+m+'</option>').join('') + '</select></div></div>' +
+    '<p class="muted" style="margin:8px 0">Deadline: '+fmtDate(info.starts_at)+' · '+(open ? 'formazioni aperte' : 'giornata iniziata, formazioni chiuse')+(lu ? ' · salvata il '+fmtDate(lu.submitted_at) : ' · nessuna formazione salvata')+'</p>';
+  if (!mine.length) html += '<div class="msg">La tua rosa è vuota: prima l\'asta.</div>';
+  html += ROLES.map(r => {
+    const list = mine.filter(p => p.role === r).sort((a, b) => b.price - a.price);
+    const n = cur.starters.filter(id => (playersById[id] || {}).role === r).length;
+    return '<h3>'+ROLE_NAME[r]+' <span class="pill">'+n+'/'+want[r]+'</span></h3><table><tbody>' + list.map(p => {
+      const on = cur.starters.includes(p.id), bi = cur.bench.indexOf(p.id);
+      return '<tr><td style="width:30px"><input type="checkbox" data-st="'+p.id+'" '+(on ? 'checked' : '')+' '+(!on && n >= want[r] ? 'disabled' : '')+'></td><td>'+esc(p.name)+' <span class="muted">'+esc(p.team)+'</span></td><td class="muted">'+(on ? 'titolare' : 'panchina '+(bi + 1))+'</td>' +
+        (on ? '<td></td>' : '<td><button class="small sec" data-bup="'+p.id+'">▲</button> <button class="small sec" data-bdown="'+p.id+'">▼</button></td>') + '</tr>'; }).join('') + '</tbody></table>';
+  }).join('');
+  html += '<div class="row" style="margin-top:14px"><button id="luSave" '+(open ? '' : 'disabled')+'>Salva formazione</button></div>';
+  return html;
+}
+
+async function renderLineup(){
+  const box = $('#tab-formazione'), md = S.md, mine = myPlayers();
+  const [{ data: lu }, { data: all }] = await Promise.all([
+    sb.from('lineups').select('*').eq('league_id', L.league.id).eq('user_id', user.id).eq('matchday', md).maybeSingle(),
+    sb.from('lineups').select('user_id, module, starters, submitted_at').eq('league_id', L.league.id).eq('matchday', md)
+  ]);
+  if (!S.lineup || S.lineup.md !== md) { S.lineup = { md, module: lu ? lu.module : '4-3-3', starters: lu ? lu.starters.slice() : [], bench: lu ? lu.bench.slice() : [] }; }
+  const cur = S.lineup; benchNormalize(cur, mine);
+  const open = mdOpen(md);
+  const others = '<div class="card" style="margin-top:14px"><h2>Formazioni giornata '+md+'</h2>' + L.members.map(m => { const l2 = (all || []).find(x => x.user_id === m.user_id);
+    return '<div class="list"><li><span>'+esc(m.team_name)+'</span><span class="muted">'+(l2 ? (open ? 'inviata ('+l2.module+')' : l2.module+': '+l2.starters.map(id => (playersById[id] || {}).name || '#'+id).join(', ')) : 'non inviata')+'</span></li></div>'; }).join('') +
+    (open ? '<p class="muted">I titolari degli altri si vedono dopo la deadline.</p>' : '') + '</div>';
+  box.innerHTML = '<div class="grid3"><div>' + lineupHtml(cur, mine, md, lu) + '</div><div><div class="card"><h2>Come funziona</h2><p class="muted">Scegli il modulo e spunta 11 titolari. Gli altri vanno in panchina nell\'ordine mostrato: in caso di senza voto entra il primo panchinaro dello stesso ruolo, fino a '+(L.league.settings.max_subs || 3)+' sostituzioni. Si salva fino all\'inizio della giornata.</p></div>' + others + '</div></div>';
+  $('#luMd').onchange = e => { S.md = +e.target.value; S.lineup = null; renderLineup(); };
+  $('#luMod').onchange = e => { cur.module = e.target.value; const want = wantOf(cur.module), cnt = { P: 0, D: 0, C: 0, A: 0 };
+    cur.starters = cur.starters.filter(id => { const r = (playersById[id] || {}).role; cnt[r]++; return cnt[r] <= want[r]; }); renderLineup(); };
+  $$('[data-st]', box).forEach(c => c.onchange = () => { const id = +c.dataset.st; if (c.checked) cur.starters.push(id); else cur.starters = cur.starters.filter(x => x !== id); renderLineup(); });
+  $$('[data-bup]', box).forEach(b => b.onclick = () => { moveBench(cur, +b.dataset.bup, -1); renderLineup(); });
+  $$('[data-bdown]', box).forEach(b => b.onclick = () => { moveBench(cur, +b.dataset.bdown, 1); renderLineup(); });
+  $('#luSave').onclick = async () => {
+    if (cur.starters.length !== 11) return msg('Servono 11 titolari, ne hai '+cur.starters.length, 'err');
+    const { error } = await sb.rpc('save_lineup', { p_league: L.league.id, p_matchday: md, p_module: cur.module, p_starters: cur.starters, p_bench: cur.bench });
+    if (error) return err(error);
+    msg('Formazione salvata per la giornata '+md, 'ok'); renderLineup();
+  };
+}
+
+/* ---------- calendario ---------- */
+function renderCalendar(){
+  const box = $('#tab-calendario'); let html = '';
+  if (L.isAdmin) html += '<div class="card" style="margin-bottom:14px"><h2>Genera calendario</h2><div class="row"><div><label>Prima giornata di Serie A</label><input id="calStart" type="number" value="'+nextMatchday()+'" min="1" max="38"></div><div><label>Gironi (2 = andata e ritorno)</label><input id="calG" type="number" value="2" min="1" max="6"></div><div><label>&nbsp;</label><button id="calGen">Genera</button></div></div><p class="muted">Girone all\'italiana tra le squadre iscritte. Rigenerare cancella calendario e risultati. Con squadre dispari una riposa a turno.</p></div>';
+  if (!S.fixtures.length) html += '<div class="msg">Calendario non ancora generato.</div>';
+  const rounds = {}; S.fixtures.forEach(f => (rounds[f.round] = rounds[f.round] || []).push(f));
+  html += Object.keys(rounds).sort((a, b) => a - b).map(r => {
+    const fs = rounds[r], md = fs[0].matchday, done = fs.some(f => f.home_goals != null);
+    return '<h3>Turno '+r+' · giornata '+md+' di Serie A '+(L.isAdmin ? '<button class="small sec" data-calc="'+md+'">'+(done ? 'Ricalcola' : 'Calcola')+'</button>' : '')+'</h3><table><tbody>' + fs.map(f => f.away_id
+      ? '<tr><td style="text-align:right;width:40%">'+esc(memberName(f.home_id))+'</td><td style="text-align:center"><b>'+(f.home_goals != null ? f.home_goals+' - '+f.away_goals : 'vs')+'</b>'+(f.home_points != null ? '<div class="muted">'+Number(f.home_points).toFixed(1)+' · '+Number(f.away_points).toFixed(1)+'</div>' : '')+'</td><td style="width:40%">'+esc(memberName(f.away_id))+'</td></tr>'
+      : '<tr><td style="text-align:right;width:40%">'+esc(memberName(f.home_id))+'</td><td style="text-align:center" class="muted">riposa'+(f.home_points != null ? ' · '+Number(f.home_points).toFixed(1) : '')+'</td><td></td></tr>').join('') + '</tbody></table>';
+  }).join('');
+  box.innerHTML = html;
+  const g = $('#calGen'); if (g) g.onclick = async () => {
+    if (S.fixtures.length && !confirm('Rigenerare il calendario? Calendario e risultati attuali verranno cancellati.')) return;
+    const { data, error } = await sb.rpc('generate_calendar', { p_league: L.league.id, p_start: +$('#calStart').value, p_gironi: +$('#calG').value });
+    if (error) return err(error); msg('Calendario generato: '+data+' partite', 'ok'); loadSeasonData();
+  };
+  $$('[data-calc]', box).forEach(b => b.onclick = async () => {
+    const { data, error } = await sb.rpc('compute_matchday', { p_league: L.league.id, p_matchday: +b.dataset.calc });
+    if (error) return err(error); msg('Giornata '+b.dataset.calc+' calcolata per '+data.teams+' squadre', 'ok'); loadSeasonData();
+  });
+}
+
+/* ---------- classifica e dettaglio giornata ---------- */
+function renderStandings(){
+  const t = {}; L.members.forEach(m => t[m.user_id] = { name: m.team_name, pts: 0, g: 0, v: 0, n: 0, p: 0, gf: 0, gs: 0, fp: 0 });
+  S.fixtures.filter(f => f.home_goals != null && f.away_id).forEach(f => {
+    const h = t[f.home_id], a = t[f.away_id]; if (!h || !a) return;
+    h.g++; a.g++; h.gf += f.home_goals; h.gs += f.away_goals; a.gf += f.away_goals; a.gs += f.home_goals; h.fp += +f.home_points; a.fp += +f.away_points;
+    if (f.home_goals > f.away_goals) { h.v++; a.p++; h.pts += 3; } else if (f.home_goals < f.away_goals) { a.v++; h.p++; a.pts += 3; } else { h.n++; a.n++; h.pts++; a.pts++; }
+  });
+  const rows = Object.values(t).sort((x, y) => y.pts - x.pts || y.fp - x.fp);
+  $('#tab-classifica').innerHTML = '<table><thead><tr><th>#</th><th>Squadra</th><th>Pt</th><th>G</th><th>V</th><th>N</th><th>P</th><th>GF</th><th>GS</th><th>Fantapunti</th></tr></thead><tbody>' +
+    rows.map((r, i) => '<tr><td>'+(i + 1)+'</td><td><b>'+esc(r.name)+'</b></td><td><b>'+r.pts+'</b></td><td>'+r.g+'</td><td>'+r.v+'</td><td>'+r.n+'</td><td>'+r.p+'</td><td>'+r.gf+'</td><td>'+r.gs+'</td><td>'+r.fp.toFixed(1)+'</td></tr>').join('') + '</tbody></table>' +
+    (S.results.length ? renderResultsDetail() : '<p class="muted" style="margin-top:8px">La classifica si popola quando l\'admin calcola le giornate.</p>');
+}
+function renderResultsDetail(){
+  const md = Math.max.apply(null, S.results.map(r => r.matchday));
+  const rs = S.results.filter(r => r.matchday === md).sort((a, b) => b.total - a.total);
+  return '<h3>Ultima giornata calcolata: '+md+'</h3><div class="grid">' + rs.map(r => {
+    const d = r.detail || {}, pl = d.players || [];
+    return '<div class="card"><h2>'+esc(memberName(r.user_id))+' <span class="muted">'+Number(r.total).toFixed(1)+' · '+r.goals+' gol</span></h2>' +
+      (d.lineup === false ? '<div class="muted">Formazione non inviata</div>' : '<table><tbody>' + pl.map(p => {
+        const x = playersById[p.player_id] || { name: '#'+p.player_id }, sub = p.sub ? (playersById[p.sub] || { name: '#'+p.sub }) : null;
+        return '<tr><td>'+roleTag(p.role)+'</td><td>'+esc(x.name)+(sub ? ' → '+esc(sub.name) : '')+'</td><td>'+(p.voto == null ? 's.v.' : Number(p.voto).toFixed(1))+'</td><td><b>'+Number(p.fv).toFixed(1)+'</b></td></tr>'; }).join('') +
+        (d.mod_difesa ? '<tr><td></td><td>Modificatore difesa</td><td></td><td><b>+'+d.mod_difesa+'</b></td></tr>' : '') + '</tbody></table>') + '</div>';
+  }).join('') + '</div>';
+}
+
 /* ---------- avvio ---------- */
 async function init(){
   if (!CFG.SUPABASE_URL || CFG.SUPABASE_URL.includes('INSERISCI')) { msg('FantaTB non è ancora configurato (fanta/config.js).', 'err'); show('regole'); return; }
   sb = window.supabase.createClient(CFG.SUPABASE_URL, CFG.SUPABASE_ANON_KEY);
-  await loadPlayers();
+  await Promise.all([loadPlayers(), loadMatchdays()]);
   await initAuth();
   const m = location.hash.match(/^#lega\/([0-9a-f-]{36})$/);
   if (m && user) openLeague(m[1]);

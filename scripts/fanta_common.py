@@ -88,3 +88,14 @@ def role_of(position):
 
 def calls():
     return _calls
+
+def sb_rpc(fn, args):
+    """Chiama una funzione RPC con la service key."""
+    url, key = supabase_conf()
+    if not (url and key):
+        return None
+    h = {"apikey": key, "Authorization": "Bearer " + key, "Content-Type": "application/json"}
+    r = requests.post(url + "/rest/v1/rpc/" + fn, headers=h, data=json.dumps(args), timeout=120)
+    if r.status_code >= 300:
+        raise RuntimeError("RPC %s: %s %s" % (fn, r.status_code, r.text[:300]))
+    return r.json() if r.text else None

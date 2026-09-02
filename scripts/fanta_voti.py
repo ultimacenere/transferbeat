@@ -23,17 +23,32 @@ def voto_base(rating, minutes):
 def round_of(n):
     return "Regular Season - %d" % n
 
-def pick_matchday():
-    fx = af_get("/fixtures", league=LEAGUE_ID, season=SEASON)
+def sync_matchdays(allfx):
+    """Date di inizio/fine di tutte le giornate -> tabella matchdays (senza toccare lo status)."""
+    by = {}
+    for f in allfx:
+        r = f["league"]["round"]
+        if not r.startswith("Regular Season"):
+            continue
+        n = int(r.split("-")[-1]); d = f["fixture"]["date"]
+        lo, hi = by.get(n, (d, d)); by[n] = (min(lo, d), max(hi, d))
+    rows = [{"season": SEASON, "number": n, "starts_at": lo, "ends_at": hi} for n, (lo, hi) in sorted(by.items())]
+    if rows:
+        sb_upsert("matchdays", rows, on_conflict="season,number")
+    return rows
+
+def pick_matchday(allfx):
     done = {}
-    for f in fx:
+    for f in allfx:
         r = f["league"]["round"]; st = f["fixture"]["status"]["short"]
         done.setdefault(r, []).append(st in ("FT", "AET", "PEN"))
     nums = [int(r.split("-")[-1]) for r, v in done.items() if r.startswith("Regular Season") and any(v)]
     return max(nums) if nums else 1
 
 def main():
-    md = int(sys.argv[1]) if len(sys.argv) > 1 else pick_matchday()
+    allfx = af_get("/fixtures", league=LEAGUE_ID, season=SEASON)
+    sync_matchdays(allfx)
+    md = int(sys.argv[1]) if len(sys.argv) > 1 else pick_matchday(allfx)
     fixtures = af_get("/fixtures", league=LEAGUE_ID, season=SEASON, round=round_of(md))
     print("giornata %d: %d partite" % (md, len(fixtures)))
     rows, finished, starts, ends = [], 0, None, None
@@ -82,6 +97,8 @@ def main():
         sb_upsert("matchdays", [{"season": SEASON, "number": md, "starts_at": starts, "ends_at": ends, "status": status}],
                   on_conflict="season,number")
         print("upsert ok")
+        if status == "rated":
+            print("leghe calcolate:", sb_rpc("compute_all_leagues", {"p_matchday": md}))
 
 if __name__ == "__main__":
     main()
