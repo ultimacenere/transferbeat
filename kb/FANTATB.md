@@ -42,12 +42,8 @@ I voti editoriali NON sono in vendita self-service con chiave API e listino. Esi
   diretta va negoziata con loro, oppure passa da FCO.
 - **FantaMaster, FantaLab, Kickest**: voti **statistici** propri (algoritmi su dati Opta o simili), non redazionali.
 
-Strategia FantaTB a due binari:
-1. **Voto FantaTB statistico** (API-Football: rating + eventi) come base sempre disponibile, con override manuale dell'admin.
-2. **Trattativa con Atlanticmoon** per licenza voti redazionali (Fantacalcio.it / Corriere / Tuttosport) via API:
-   da avviare subito, il costo deciderà se e quando accenderla. Se l'accordo copre anche motore e listone,
-   valutare se comprare l'intero FaaS invece di costruire (build vs buy).
-Va detto chiaramente agli utenti quale fonte alimenta i voti.
+**DECISIONE 2026-09-02: voto statistico puro.** Niente trattative per ora; una redazione FantaTB
+(base statistica + ritocco umano) resta un'opzione di medio periodo. Vedi §9 per la formula.
 
 ## 5. Mantra: attenzione
 API-Football dà solo 4 ruoli (Por, Dif, Cen, Att). I ruoli Mantra (Dd, Ds, Dc, E, M, C, W, T, A, Pc) vanno
@@ -77,3 +73,32 @@ RLS: ogni riga di lega visibile solo ai membri; scrittura regole solo all'admin.
 2. Attivare **API-Football** piano Pro (dashboard.api-football.com) e salvare la chiave in `apifootball_key.txt` (gitignorato).
 3. Aggiungere le due chiavi come secret su GitHub Actions.
 Fatto questo, Claude scrive schema, frontend e cron.
+
+## 9. Voto FantaTB: formula (trasparente, ritoccabile)
+Fonte: API-Football, endpoint `fixtures/players` (rating, minuti, gol, assist, cartellini, rigori,
+gol subiti/parate per i portieri) e `fixtures/events` (autogol). Script: `scripts/fanta_voti.py`.
+- **Senza voto (s.v.)** se minuti < 15. Il giocatore non entra nel calcolo (sostituzione automatica dalla panchina).
+- **Voto base** = rating API-Football − 0,8, arrotondato al mezzo punto, limitato tra 4 e 8,5.
+  (Il rating medio di un titolare è ~6,8: la traslazione lo porta sul 6 italiano.) Se il rating manca ma
+  i minuti sono ≥ 15: voto 6.
+- **Bonus/malus di default** (Classic, override nelle regole di lega): gol +3 · assist +1 · rigore
+  sbagliato −3 · rigore parato +3 · gol subito (portiere) −1 · autogol −2 · ammonizione −0,5 · espulsione −1.
+  Il rigore segnato è già un gol. Il "gol vittoria/pareggio" è opzionale e spento di default.
+- **Fantavoto** = voto base + bonus − malus.
+- Il rating grezzo, i minuti e gli eventi restano salvati in `player_ratings.raw` per ricalcoli futuri.
+
+## 10. Quotazioni FantaTB: formula
+Script: `scripts/fanta_players.py`. Per ogni giocatore delle 20 rose Serie A (endpoint `players/squads`),
+statistiche della stagione precedente (`players?league=135&season=2025`) e, se assenti, della corrente.
+- base per ruolo: P 1 · D 1 · C 1 · A 2
+- + presenze/38 × (P 8 · D 10 · C 12 · A 14)
+- + gol × (P 0 · D 3 · C 2 · A 1,2) + assist × (D 1 · C 1 · A 0,8)
+- + (rating medio − 6,5) × 10 se rating > 6,5 (con almeno 10 presenze)
+- portieri: + clean sheet stimati (presenze × 0,3 se gol subiti/presenza < 1)
+- limite 1..60, arrotondato all'intero. Ritoccabile a mano nella tabella `players.price`.
+Ruoli Classic dalla posizione API (Goalkeeper→P, Defender→D, Midfielder→C, Attacker→A); ruoli Mantra
+vuoti (`role_mantra`), da assegnare a mano in fase 4.
+
+## 11. Stato lavori (aggiornare)
+- 2026-09-02: piano, schema SQL (`fanta/supabase/schema.sql`), script listone e voti, workflow
+  `fanta.yml`, frontend `fanta/` (login, leghe, inviti, asta live). In attesa delle chiavi (§8).

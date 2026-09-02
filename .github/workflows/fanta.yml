@@ -1,0 +1,50 @@
+name: FantaTB voti e listone
+
+# Voti: sabato/domenica/lunedì sera e martedì mattina (UTC), per coprire anticipi, posticipi e infrasettimanali.
+on:
+  schedule:
+    - cron: "30 21 * * 6,0,1,2,3,4"
+    - cron: "0 7 * * 1,2,5"
+  workflow_dispatch:
+    inputs:
+      task:
+        description: "voti | listone"
+        default: "voti"
+      matchday:
+        description: "numero giornata (vuoto = automatico)"
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Listone
+        if: ${{ github.event.inputs.task == 'listone' }}
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python scripts/fanta_players.py
+      - name: Voti
+        if: ${{ github.event.inputs.task != 'listone' }}
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python scripts/fanta_voti.py ${{ github.event.inputs.matchday }}
+      - name: Commit dati
+        run: |
+          git config user.name "TransferBeat Bot"
+          git config user.email "bot@transferbeat.com"
+          git add data/fanta
+          git diff --cached --quiet || git commit -m "FantaTB dati $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git pull --rebase origin main || true
+          git push || echo "push fallito"
