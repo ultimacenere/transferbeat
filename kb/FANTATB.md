@@ -100,5 +100,13 @@ Ruoli Classic dalla posizione API (Goalkeeper→P, Defender→D, Midfielder→C,
 vuoti (`role_mantra`), da assegnare a mano in fase 4.
 
 ## 11. Stato lavori (aggiornare)
-- 2026-09-02: piano, schema SQL (`fanta/supabase/schema.sql`), script listone e voti, workflow
-  `fanta.yml`, frontend `fanta/` (login, leghe, inviti, asta live). In attesa delle chiavi (§8).
+- 2026-09-02: fase 1 e fase 2 COMPLETE e testate sul progetto Supabase reale `transferbeat-fantatb`
+  (ref gtmvoxowayecsalfuobc). Schema eseguito nell'SQL Editor: `schema.sql` + `fix-001` + `fix-002` + `fix-003`
+  (le correzioni sono già integrate in `schema.sql` per installazioni nuove).
+  Test automatici superati: creazione lega, inviti, asta con controlli crediti/slot, aggiudicazione, rilascio;
+  calendario con riposo, formazioni validate, calcolo con sostituzione, modificatore difesa, gol, punti scontri.
+- Chiavi: `supabase_keys.txt` presente in locale (cartella principale e worktree). `fanta/config.js` collegato.
+- MANCANO: chiave API-Football (`apifootball_key.txt`) per listone e voti reali; i 3 secret su GitHub Actions
+  (APIFOOTBALL_KEY, SUPABASE_URL, SUPABASE_SERVICE_KEY); merge della PR #1 su main per pubblicare `/fanta/`.
+- Prossimi passi: fase 3 = primo listone reale + prima giornata di voti dal cron; poi modifica regole
+  post-creazione, correzione voti dall'interfaccia admin, link FantaTB nel menu del sito.
