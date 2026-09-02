@@ -1,4 +1,5 @@
 {
+  "_nota": "Rule-based classification. The four slots are a CONCRETENESS scale valid both for matchday football and for the tail of the transfer window: done=what happened, conf=official act, obj=imminent/preview, rumor=analysis (default). First group with a substring match wins. WARNING: the four key names are a contract with build.py:544-546 and board.html:274; renaming them breaks the build with KeyError.",
   "categorie_ordine": [
     "done",
     "conf",
@@ -7,6 +8,29 @@
   ],
   "categorie": {
     "done": [
+      "full-time",
+      "final score",
+      "highlights",
+      "beat",
+      "thrash",
+      "hat-trick",
+      "brace",
+      "scores",
+      "scored",
+      "own goal",
+      "comeback",
+      "sent off",
+      "red card",
+      "knocked out",
+      "held to",
+      "drew",
+      "equaliser",
+      "equalizer",
+      "late winner",
+      "stoppage time",
+      "penalty shootout",
+      "advance to",
+      "eliminated",
       "official",
       "here we go",
       "confirmed",
@@ -21,6 +45,22 @@
       "announced"
     ],
     "conf": [
+      "agrees terms",
+      "agree terms",
+      "confirmed line",
+      "starting xi",
+      "suspended",
+      "banned",
+      "postponed",
+      "sacked",
+      "appointed",
+      "club statement",
+      "charged by",
+      "league phase draw",
+      "group stage draw",
+      "fixture change",
+      "new manager",
+      "new head coach",
       "agreement",
       "agreed",
       "deal agreed",
@@ -32,6 +72,18 @@
       "advanced talks"
     ],
     "obj": [
+      "preview",
+      "predicted",
+      "probable",
+      "how to watch",
+      "where to watch",
+      "live stream",
+      "kick-off time",
+      "team news",
+      "press conference",
+      "ahead of",
+      "squad list",
+      "what time",
       "target",
       "priority",
       "talks",
@@ -47,6 +99,16 @@
       "interest in"
     ],
     "rumor": [
+      "league table",
+      "standings",
+      "player ratings",
+      "injury",
+      "injured",
+      "analysis",
+      "interview",
+      "reaction",
+      "verdict",
+      "talking points",
       "rumour",
       "rumor",
       "linked",
@@ -61,29 +123,5 @@
       "weighing",
       "eye"
     ]
-  },
-  "affidabilita": {
-    "3": [
-      "fabrizio romano",
-      "sky sports",
-      "the athletic",
-      "bbc",
-      "guardian",
-      "official",
-      "l'equipe",
-      "david ornstein",
-      "ornstein"
-    ],
-    "2": [
-      "mirror",
-      "the sun",
-      "daily mail",
-      "telegraph",
-      "standard",
-      "espn",
-      "goal",
-      "metro"
-    ]
-  },
-  "_default_affidabilita": 1
+  }
 }

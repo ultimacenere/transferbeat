@@ -1,4 +1,5 @@
 {
+  "_nota": "Clasificacion por reglas. Las cuatro casillas son una escala de CONCRECION valida tanto para el futbol jugado como para la cola del mercado: done=lo ocurrido, conf=acto oficial, obj=inminente/previa, rumor=analisis (por defecto). Gana el primer grupo con coincidencia por subcadena. AVISO: los nombres de las cuatro claves son un contrato con build.py:544-546 y board.html:274; renombrarlos rompe el build con KeyError.",
   "categorie_ordine": [
     "done",
     "conf",
@@ -7,6 +8,25 @@
   ],
   "categorie": {
     "done": [
+      "final del partido",
+      "crónica",
+      "goleada",
+      "remontada",
+      "empate",
+      "empata",
+      "gana",
+      "vence",
+      "venció",
+      "derrota",
+      "doblete",
+      "expulsado",
+      "tarjeta roja",
+      "marcó",
+      "gol de",
+      "eliminado",
+      "clasificado",
+      "resultado",
+      "en el descuento",
       "oficial",
       "aquí vamos",
       "fichaje confirmado",
@@ -20,6 +40,17 @@
       "presentado"
     ],
     "conf": [
+      "alineaciones oficiales",
+      "comunicado",
+      "sancionado",
+      "sanción",
+      "aplazado",
+      "sorteo",
+      "destituido",
+      "cesado",
+      "designación",
+      "nuevo entrenador",
+      "árbitro",
       "acuerdo",
       "acuerdo total",
       "principio de acuerdo",
@@ -30,6 +61,16 @@
       "pacto"
     ],
     "obj": [
+      "previa",
+      "probables",
+      "alineaciones probables",
+      "dónde ver",
+      "a qué hora",
+      "horario",
+      "rueda de prensa",
+      "convocatoria",
+      "convocados",
+      "antesala",
       "objetivo",
       "prioridad",
       "interés",
@@ -43,6 +84,15 @@
       "pretende"
     ],
     "rumor": [
+      "clasificación",
+      "puntuaciones",
+      "análisis",
+      "lesión",
+      "lesionado",
+      "entrevista",
+      "declaraciones",
+      "polémica",
+      "opinión",
       "rumor",
       "suena",
       "podría",
@@ -55,25 +105,5 @@
       "apunta",
       "sondeo"
     ]
-  },
-  "affidabilita": {
-    "3": [
-      "fabrizio romano",
-      "marca",
-      "diario as",
-      "mundo deportivo",
-      "relevo",
-      "the athletic",
-      "matteo moretto"
-    ],
-    "2": [
-      "sport",
-      "cadena ser",
-      "okdiario",
-      "fichajes",
-      "goal",
-      "mundodeportivo"
-    ]
-  },
-  "_default_affidabilita": 1
+  }
 }
