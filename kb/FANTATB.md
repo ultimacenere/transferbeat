@@ -68,6 +68,10 @@ RLS: ogni riga di lega visibile solo ai membri; scrittura regole solo all'admin.
 - **Fase 3 (settimane 3-4)**: cron voti da API-Football, calcolo punteggi e classifica, pagina voti pubblica.
 - **Fase 4**: Mantra, scambi/mercato di riparazione, statistiche, poi UK/ES (API-Football copre PL e LaLiga con lo stesso schema).
 
+## 7b. Abbonamenti attivi
+- **API-Football Pro, mensile, attivato il 2026-09-02**: scade intorno al **2026-10-02**. Va rinnovato o i voti si fermano.
+- Supabase: piano Free.
+
 ## 8. Cose che deve fare l'utente (non può farle Claude)
 1. Creare il progetto **Supabase** (supabase.com, login GitHub) e salvare URL + anon key + service key in `supabase_keys.txt` (gitignorato).
 2. Attivare **API-Football** piano Pro (dashboard.api-football.com) e salvare la chiave in `apifootball_key.txt` (gitignorato).

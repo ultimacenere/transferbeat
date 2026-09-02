@@ -37,7 +37,9 @@ def af_get(path, **params):
         print("manca la chiave API-Football (apifootball_key.txt o APIFOOTBALL_KEY)"); sys.exit(1)
     out, page = [], 1
     while True:
-        p = dict(params); p["page"] = page
+        p = dict(params)
+        if page > 1:
+            p["page"] = page
         for attempt in range(4):
             r = requests.get(API + path, headers={"x-apisports-key": key}, params=p, timeout=40)
             _calls += 1

@@ -51,7 +51,7 @@ def main():
     md = int(sys.argv[1]) if len(sys.argv) > 1 else pick_matchday(allfx)
     fixtures = af_get("/fixtures", league=LEAGUE_ID, season=SEASON, round=round_of(md))
     print("giornata %d: %d partite" % (md, len(fixtures)))
-    rows, finished, starts, ends = [], 0, None, None
+    rows, finished, starts, ends, meta = [], 0, None, None, {}
     for f in fixtures:
         fid = f["fixture"]["id"]; st = f["fixture"]["status"]["short"]; date = f["fixture"]["date"]
         starts = min(starts or date, date); ends = max(ends or date, date)
@@ -70,6 +70,7 @@ def main():
                 try: rating = float(g["rating"]) if g.get("rating") else None
                 except ValueError: rating = None
                 is_gk = (g.get("position") == "G")
+                meta[pl["player"]["id"]] = {"name": pl["player"]["name"], "team": team["team"]["name"], "team_id": team["team"]["id"], "pos": g.get("position")}
                 b = {"gol": go.get("total") or 0, "assist": go.get("assists") or 0,
                      "rig_sbagliato": pen.get("missed") or 0, "rig_parato": (pen.get("saved") or 0) if is_gk else 0,
                      "gol_subito": (go.get("conceded") or 0) if is_gk else 0,
@@ -87,12 +88,21 @@ def main():
                                      "status": status, "finished": finished, "total": len(fixtures), "ratings": rows})
     print("voti: %d righe, %d/%d partite finite, %d chiamate" % (len(rows), finished, len(fixtures), calls()))
     # i giocatori non ancora nel listone (es. neo-arrivati) vanno inseriti prima, o l'FK fallisce
+    best = {}   # un giocatore può comparire due volte nei tabellini API: tengo la riga con più minuti
+    for r in rows:
+        k = r["player_id"]
+        if k not in best or r["minutes"] > best[k]["minutes"]:
+            best[k] = r
+    rows = list(best.values())
     known = {r["id"] for r in sb_get("players", {"select": "id", "limit": "5000"})}
     if known:
-        missing = [r for r in rows if r["player_id"] not in known]
-        if missing:
-            print("attenzione: %d giocatori non nel listone, esclusi (rilanciare fanta_players.py)" % len(missing))
-            rows = [r for r in rows if r["player_id"] in known]
+        missing = [r["player_id"] for r in rows if r["player_id"] not in known]
+        if missing:   # hanno giocato ma non sono nelle rose attuali (ceduti dopo la giornata): li aggiungo inattivi
+            newp = [{"id": pid, "season": SEASON, "name": meta[pid]["name"], "team": meta[pid]["team"], "team_id": meta[pid]["team_id"],
+                     "role": {"G": "P", "D": "D", "M": "C", "F": "A"}.get(meta[pid]["pos"] or "", "C"), "price": 1, "active": False}
+                    for pid in missing if pid in meta]
+            sb_upsert("players", newp, on_conflict="id")
+            print("giocatori aggiunti al listone come inattivi:", len(newp))
     if rows and sb_upsert("player_ratings", rows, on_conflict="season,matchday,player_id"):
         sb_upsert("matchdays", [{"season": SEASON, "number": md, "starts_at": starts, "ends_at": ends, "status": status}],
                   on_conflict="season,number")

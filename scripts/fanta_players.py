@@ -56,6 +56,13 @@ def main():
                          "role": role, "price": price_of(role, st), "active": True,
                          "stats": {"prev": prev.get(pl["id"], {}), "cur": cur.get(pl["id"], {}), "age": pl.get("age"), "number": pl.get("number")}})
         time.sleep(0.3)
+    seen = set(); dedup = []
+    for r in rows:   # un giocatore in due rose (trasferimento non ancora recepito): tengo la prima occorrenza
+        if r["id"] not in seen:
+            seen.add(r["id"]); dedup.append(r)
+    if len(dedup) < len(rows):
+        print("doppioni rimossi:", len(rows) - len(dedup))
+    rows = dedup
     rows.sort(key=lambda r: ("PDCA".index(r["role"]), -r["price"], r["name"]))
     save_json("listone.json", {"updated": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "season": SEASON,
                                "players": [{k: r[k] for k in ("id", "name", "team", "role", "price")} for r in rows]})
