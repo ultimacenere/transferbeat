@@ -112,6 +112,8 @@ vuoti (`role_mantra`), da assegnare a mano in fase 4.
   Classifica; Regole complete modificabili (modificatori D/C/A, casa/trasferta, bonus/malus, porta inviolata,
   soglie gol, sostituzioni, panchinari, fase asta/campionato); listone reale e voti giornate 1-2;
   indice titolarità (`fanta_titolari.py`, tabella `player_status`).
-- MANCANO: i 3 secret su GitHub Actions; merge PR #1 per pubblicare `/fanta/`; link nel menu del sito;
+- 2026-09-02 sera: PUBBLICATO su transferbeat.com/fanta/ (merge su main via scripts/pubblica.sh). Link FantaTB nel menu
+  e nel piè di pagina. Lega test e bot eliminati. Strumento demo: `py scripts/fanta_demo.py` (bots/rose/formazioni/pulisci/elimina).
+- MANCANO: i 3 secret su GitHub Actions;
   correzione voti dall'interfaccia admin; probabili formazioni dalle notizie (LLM) per affinare la %;
   opzione "formazioni nascoste fino alla deadline"; Mantra; pulizia bot prima dell'asta vera.
