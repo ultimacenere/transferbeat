@@ -28,12 +28,26 @@ Alternative scartate: Cloudflare Workers+D1 (auth da costruire a mano), Firebase
 | Vercel, GitHub Actions, dominio | 0 | già in uso |
 | **Totale** | **~20 USD/mese in test, ~45 USD/mese a regime** | |
 
-## 4. Il nodo "voti"
-I voti editoriali (Gazzetta, Corriere, Fantacalcio.it) NON sono acquistabili via API. Il **voto FantaTB** sarà:
-- **voto base** = rating API-Football (scala 1-10 stile SofaScore) riportato nella scala 4-8 italiana con formula trasparente;
-- **bonus/malus** automatici da eventi reali: gol, assist, rigore segnato/sbagliato/parato, gol subito (portiere), ammonizione, espulsione, autogol, "senza voto" sotto i minuti minimi;
-- **override manuale** dell'admin di lega, per chi vuole usare i voti del proprio giornale.
-Va detto chiaramente agli utenti: non coincidono con i voti Gazzetta.
+## 4. Il nodo "voti" (verificato 2026-09-02)
+I voti editoriali NON sono in vendita self-service con chiave API e listino. Esistono però in **licenza B2B**:
+- **Atlanticmoon / Fantacalcio-Online (FCO)**: unico "Fantacalcio as a Service" italiano. Offre API,
+  white label web+app, motore di calcolo, listone, multi-campionato. Fonti voti 2026/27 sul loro
+  prodotto: **Fantacalcio.it** (ufficiale), **Corriere dello Sport (Roma)**, **Tuttosport (Torino)**,
+  più i voti statistici propri. Partner: RCS/Gazzetta (Magic Leghe dal 2017), DAZN, Fiorentina.
+  Nessun prezzo pubblico: contatto via form o tel. +39 011 2076222. https://www.atlanticmoon.com/fantacalcio/faas-fantacalcio-as-a-service/
+- **Gazzetta dello Sport**: dal 2026/27 ha **ritirato la licenza** dei suoi voti alle piattaforme terze
+  ("non ne abbiamo più i diritti di pubblicazione", FCO). Non contarci.
+- **Fantacalcio.it (Quadronica, 51% Lega Serie A da feb 2026)**: i T&C vietano scraping e riuso senza
+  autorizzazione scritta. Leghe Fantacalcio è la LORO piattaforma, non un'API per terzi. Una licenza
+  diretta va negoziata con loro, oppure passa da FCO.
+- **FantaMaster, FantaLab, Kickest**: voti **statistici** propri (algoritmi su dati Opta o simili), non redazionali.
+
+Strategia FantaTB a due binari:
+1. **Voto FantaTB statistico** (API-Football: rating + eventi) come base sempre disponibile, con override manuale dell'admin.
+2. **Trattativa con Atlanticmoon** per licenza voti redazionali (Fantacalcio.it / Corriere / Tuttosport) via API:
+   da avviare subito, il costo deciderà se e quando accenderla. Se l'accordo copre anche motore e listone,
+   valutare se comprare l'intero FaaS invece di costruire (build vs buy).
+Va detto chiaramente agli utenti quale fonte alimenta i voti.
 
 ## 5. Mantra: attenzione
 API-Football dà solo 4 ruoli (Por, Dif, Cen, Att). I ruoli Mantra (Dd, Ds, Dc, E, M, C, W, T, A, Pc) vanno
