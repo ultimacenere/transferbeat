@@ -14,7 +14,8 @@ import json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from site_common import (esct, ROOT, DATA, SITE, SEASON, AUTHOR, ORG, COMPS, COMP_BY_CODE, COMP_BY_LEAGUE, LEAGUE_LABEL, LEAGUE_ORDER,
                          ZONES, FD_ALIAS, FANTA_ALIAS, STATE_LABEL, STATE_ORDER, esc, slugify, norm, load_json, save_text, read_text,
-                         fdate_it, date_only, today_iso, dots, page, ld_script, breadcrumb_ld, LastMod, write_urlset, write_sitemap_index)
+                         fdate_it, date_only, today_iso, dots, page, ld_script, breadcrumb_ld, LastMod, write_urlset, write_sitemap_index, badge)
+import render_stats as RS   # statistiche squadra con grafici e schede giocatore (data/stats/*.json)
 
 FINISHED = ("FINISHED", "AWARDED")
 
@@ -27,7 +28,7 @@ def load_all():
          "rosters": load_json(os.path.join(DATA, "rosters.json"), {"rose": {}}) or {"rose": {}},
          "articles": load_json(os.path.join(DATA, "articles", "index.json"), {"articoli": []}) or {"articoli": []},
          "listone": load_json(os.path.join(DATA, "fanta", "listone.json"), {"players": []}) or {"players": []},
-         "voti": {}, "titolari": None}
+         "voti": {}, "titolari": None, "stats": RS.load_stats(), "pctx": None}
     fd = os.path.join(DATA, "fanta")
     if os.path.isdir(fd):
         for fn in sorted(os.listdir(fd)):
@@ -76,6 +77,14 @@ class Teams:
                             self.matches_of.setdefault(n, []).append((c, m))
         for n in self.matches_of:
             self.matches_of[n].sort(key=lambda x: x[1].get("utc", ""))
+        # squadre API-Football (data/stats/teams.json) -> nome di teams.json, e viceversa
+        self.api = RS.map_teams(D.get("stats") or {}, [t["nome"] for t in self.list])
+        self.api_name = {v: k for k, v in self.api.items()}
+
+    def api_link(self, api_id, fallback=""):
+        """Nome con link alla pagina squadra a partire dall'id API-Football (avversari nelle tabelle partita per partita)."""
+        n = self.api_name.get(api_id)
+        return ('<a href="' + self.url(n) + '">' + esc(n) + "</a>") if n else esc(fallback)
 
     def name_of(self, fdteam):
         s = (fdteam or {}).get("short") or ""
@@ -101,8 +110,7 @@ class Teams:
         t = self.by_name.get(nome)
         if not t:
             return esc(nome)
-        return ('<a href="' + self.url(nome) + '"' + (' class="' + cls + '"' if cls else "") + '><span class="lab" style="background:' +
-                esc(t.get("col") or "#67727e") + '">' + esc(t.get("lab") or "") + "</span>" + esc(nome) + "</a>")
+        return '<a href="' + self.url(nome) + '"' + (' class="' + cls + '"' if cls else "") + '>' + badge(t) + esc(nome) + "</a>"
 
 from datetime import datetime, timezone
 from urllib.parse import quote
@@ -205,19 +213,20 @@ def art_card(a):
 # ---------- pagine squadra ----------
 GRUPPI = {"done": "Fatti", "conf": "Ufficiali", "obj": "Anteprime", "rumor": "Voci e analisi"}
 
-def team_desc(nome, t, T):
+def team_desc(nome, t, T, has_st=False):
     pos = ""
     if nome in T.row_of:
         c, r, n, g = T.row_of[nome]
         pos = ", " + str(r.get("pos")) + "ª in " + COMP_BY_CODE[c["code"]]["nome"] + " con " + str(r.get("pt", 0)) + " punti"
-    return nome + pos + ": le notizie di oggi con fonte e grado di concretezza, classifica, ultime e prossime partite, rosa completa e articoli. Aggiornato ogni due ore da TransferBeat."
+    st = "statistiche della stagione con grafici (gol per fase di gara, casa e trasferta, xG, possesso, moduli), " if has_st else ""
+    return nome + pos + ": le notizie di oggi con fonte e grado di concretezza, " + st + "classifica, ultime e prossime partite, rosa completa con le schede dei giocatori e articoli. Aggiornato ogni due ore da TransferBeat."
 
 def render_team(D, T, t):
     nome = t["nome"]; canon = SITE + T.url(nome); lg = t.get("league", "")
     comp_meta = COMP_BY_LEAGUE.get(lg)
     bd = D["board_sq"].get(nome) or {}
     upd = D["board"].get("aggiornato") or ""
-    b = ['<h1><span class="lab" style="background:' + esc(t.get("col") or "#67727e") + '">' + esc(t.get("lab") or "") + "</span>" + esc(nome) + "</h1>"]
+    b = ["<h1>" + badge(t, 44) + esc(nome) + "</h1>"]
     b.append('<div class="sub">' + esc(LEAGUE_LABEL.get(lg, lg)) + " · notizie, classifica, calendario e rosa · aggiornato <time>" + esc(fdate_it(upd, True)) + "</time> · "
              '<a href="/board.html?team=' + quote(nome) + '">apri nella board live</a>' +
              (' · <a href="/campionati/' + comp_meta["slug"] + '.html">classifica ' + esc(comp_meta["nome"]) + "</a>" if comp_meta else "") + "</div>")
@@ -249,8 +258,16 @@ def render_team(D, T, t):
     if played:
         b.append('<h2>Ultime partite</h2><div class="card"><div class="in">' + "".join(match_row(T, m, COMP_BY_CODE.get(c["code"], {}).get("nome", c["code"])) for c, m in played[-6:][::-1]) + "</div></div>")
     b.append("</div></div>")
+    tid = T.api.get(nome)
+    if tid:
+        b.append(RS.team_stats_html(D["stats"], T, nome, tid))
     rosa = T.rose.get(nome) or []
-    if rosa:
+    rosa_api, names_api = RS.rosa_html(D["stats"], T, tid, D["pctx"]) if (tid and D.get("pctx")) else ("", [])
+    if rosa_api:
+        b.append("<h2>La rosa " + SEASON + " (" + str(len(names_api)) + " giocatori)</h2>" + rosa_api)
+        b.append('<p class="small">Rose da API-Football, aggiornate il ' + esc(fdate_it(D["pctx"]["updated"])) + '. Ogni nome apre la scheda del giocatore con statistiche, carriera e voti · <a href="/giocatori/">tutti i giocatori di Serie A</a>.</p>')
+        rosa = names_api
+    elif rosa:
         b.append("<h2>La rosa " + SEASON + " (" + str(len(rosa)) + ' giocatori)</h2><ul class="rosa">' + "".join("<li>" + esc(p) + "</li>" for p in rosa) + "</ul>")
         b.append('<p class="small">Rosa da football-data.org, aggiornata il ' + esc(fdate_it(D["rosters"].get("updated"))) + ".</p>")
     arts = [a for a in D["arts"] if a.get("team") == nome][:8]
@@ -267,7 +284,9 @@ def render_team(D, T, t):
     if rosa:
         ld["athlete"] = [{"@type": "Person", "name": p} for p in rosa]
     crumbs = [("Home", SITE + "/"), ("Squadre", SITE + "/squadre/"), (nome, canon)]
-    return page(nome + ": notizie, classifica, calendario e rosa", team_desc(nome, t, T), canon, "".join(b), crumbs=crumbs, ld=[ld], here="Squadre")
+    has_st = bool(tid and ((D["stats"].get("teams") or {}).get("teams") or {}).get(str(tid)))
+    return page(nome + (": notizie, statistiche, classifica, calendario e rosa" if has_st else ": notizie, classifica, calendario e rosa"),
+                team_desc(nome, t, T, has_st), canon, "".join(b), crumbs=crumbs, ld=[ld], here="Squadre")
 
 def render_squadre_index(D, T):
     canon = SITE + "/squadre/"
@@ -285,7 +304,7 @@ def render_squadre_index(D, T):
         for t in sorted(ts, key=key):
             r = T.row_of.get(t["nome"])
             extra = (" · " + str(r[1].get("pos")) + "ª, " + str(r[1].get("pt", 0)) + " pt") if r else ""
-            b.append('<a href="' + T.url(t["nome"]) + '"><span class="lab" style="background:' + esc(t.get("col")) + '">' + esc(t.get("lab")) + "</span>" + esc(t["nome"]) + esc(extra) + "</a>")
+            b.append('<a href="' + T.url(t["nome"]) + '">' + badge(t) + esc(t["nome"]) + esc(extra) + "</a>")
         b.append("</div>")
     ld = {"@context": "https://schema.org", "@type": "ItemList", "name": "Squadre seguite da TransferBeat",
           "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": t["nome"], "url": SITE + T.url(t["nome"])} for i, t in enumerate(T.list)]}
@@ -413,7 +432,7 @@ def render_listone(D, T):
          '<div class="card"><div style="overflow-x:auto"><table class="srt"><thead><tr><th class="sort" data-n="1">#</th><th class="sort l">Ruolo</th><th class="sort l">Giocatore</th>'
          '<th class="sort l">Squadra</th><th class="sort" data-n="1">Quotazione</th></tr></thead><tbody>']
     for i, p in enumerate(ps):
-        b.append('<tr data-r="' + esc(p.get("role")) + '"><td>' + str(i + 1) + '</td><td class="l">' + esc(RUOLI.get(p.get("role"), p.get("role"))) + '</td><td class="l">' + esc(p.get("name")) +
+        b.append('<tr data-r="' + esc(p.get("role")) + '"><td>' + str(i + 1) + '</td><td class="l">' + esc(RUOLI.get(p.get("role"), p.get("role"))) + '</td><td class="l">' + RS.plink(D.get("pctx"), p["id"], p.get("name")) +
                  '</td><td class="l">' + fanta_team_link(T, p.get("team")) + '</td><td class="pt" data-v="' + str(p.get("price") or 0) + '">' + str(p.get("price") or 0) + "</td></tr>")
     b.append("</tbody></table></div></div>" + SORT_JS)
     b.append('<p class="small">Il listone è usato nelle aste di <a href="/fanta/">FantaTB</a>, il fantacalcio gratuito di TransferBeat · dati grezzi: <a href="/data/fanta/listone.json">listone.json</a> · <a href="/fantacalcio/">tutti i dati del fantacalcio</a></p>')
@@ -456,7 +475,7 @@ def render_voti(D, T, md, V):
          '<th class="sort" data-n="1">Min</th><th class="sort" data-n="1">Voto</th><th class="l">Bonus e malus</th><th class="sort" data-n="1">Fantavoto</th></tr></thead><tbody>']
     for p, r in rated + sv:
         v = r.get("voto"); fv = r.get("fantavoto")
-        b.append('<tr data-r="' + esc(p.get("role")) + '"><td class="l">' + esc(p["name"]) + '</td><td class="l">' + fanta_team_link(T, p.get("team")) + "</td><td>" + esc(p.get("role")) +
+        b.append('<tr data-r="' + esc(p.get("role")) + '"><td class="l">' + RS.plink(D.get("pctx"), p["id"], p["name"]) + '</td><td class="l">' + fanta_team_link(T, p.get("team")) + "</td><td>" + esc(p.get("role")) +
                  '</td><td data-v="' + str(r.get("minutes") or 0) + '">' + str(r.get("minutes") or 0) + '</td><td data-v="' + (str(v) if v is not None else "-1") + '">' +
                  (dec(v) if v is not None else "s.v.") + '</td><td class="l">' + esc(bonus_txt(r.get("bonus"))) + '</td><td class="pt" data-v="' + (str(fv) if fv is not None else "-1") + '">' +
                  (dec(fv) if fv is not None else "—") + "</td></tr>")
@@ -491,18 +510,18 @@ def render_titolari(D, T):
          'quando c\'è. È un indice statistico, non una formazione ufficiale: le probabili dei giornali restano un\'altra cosa.</div>']
     if inf:
         b.append("<h2>Infortunati (" + str(len(inf)) + ')</h2><ul class="news">' + "".join(
-            "<li><b>" + esc(p["name"]) + "</b> (" + fanta_team_link(T, p.get("team")) + ", " + esc(p.get("role")) + ") · " + esc(s.get("injury")) +
+            "<li><b>" + RS.plink(D.get("pctx"), p["id"], p["name"]) + "</b> (" + fanta_team_link(T, p.get("team")) + ", " + esc(p.get("role")) + ") · " + esc(s.get("injury")) +
             (" · rientro stimato " + esc(fdate_it(s["back_at"] + "T12:00:00Z")) if s.get("back_at") else "") + "</li>" for p, s in inf) + "</ul>")
     if squal:
         b.append("<h2>Squalificati (" + str(len(squal)) + ')</h2><ul class="news">' + "".join(
-            "<li><b>" + esc(p["name"]) + "</b> (" + fanta_team_link(T, p.get("team")) + ") · " + esc(s.get("reason")) + "</li>" for p, s in squal) + "</ul>")
+            "<li><b>" + RS.plink(D.get("pctx"), p["id"], p["name"]) + "</b> (" + fanta_team_link(T, p.get("team")) + ") · " + esc(s.get("reason")) + "</li>" for p, s in squal) + "</ul>")
     b.append('<h2>Squadra per squadra</h2><div class="grid2">')
     order = {"P": 0, "D": 1, "C": 2, "A": 3}
     for team in sorted(teams):
         lst = sorted(teams[team], key=lambda x: (-(x[1].get("prob") or 0), order.get(x[0].get("role"), 9), x[0]["name"]))
         b.append('<div class="card"><h3>' + fanta_team_link(T, team) + '</h3><div class="in"><table><thead><tr><th class="l">Giocatore</th><th>R</th><th>Titolare</th><th class="l">Perché</th></tr></thead><tbody>')
         for p, s in lst:
-            b.append('<tr><td class="l">' + esc(p["name"]) + "</td><td>" + esc(p.get("role")) + "</td><td>" + pct(s.get("prob")) + '</td><td class="l small">' + esc(s.get("reason")) + "</td></tr>")
+            b.append('<tr><td class="l">' + RS.plink(D.get("pctx"), p["id"], p["name"]) + "</td><td>" + esc(p.get("role")) + "</td><td>" + pct(s.get("prob")) + '</td><td class="l small">' + esc(s.get("reason")) + "</td></tr>")
         b.append("</tbody></table></div></div>")
     b.append("</div>")
     b.append('<p class="small">Dati grezzi: <a href="/data/fanta/' + fn + '">' + fn + '</a> · usati nella schermata di schieramento di <a href="/fanta/">FantaTB</a> · <a href="/fantacalcio/">tutti i dati del fantacalcio</a></p>')
@@ -689,6 +708,7 @@ def render_llms(D, T):
     L += ["", "## Condizioni d'uso",
           "- Le notizie sono aggregate da fonti pubbliche e rimandano sempre alla testata originale: citare la fonte originale insieme a TransferBeat.",
           "- Classifiche e risultati: dati football-data.org. Voti e quotazioni FantaTB: elaborazione originale di TransferBeat su dati API-Football, riutilizzabili citando TransferBeat con un link.",
+          "- Schede giocatore: " + SITE + "/giocatori/ (una pagina per ogni giocatore di Serie A: statistiche stagione scorsa e in corso, per 90 minuti, carriera, voti FantaTB). Statistiche di squadra con grafici nelle pagine squadra. Dati API-Football, elaborazione TransferBeat.",
           "- Sitemap: " + SITE + "/sitemap.xml", ""]
     save_text(os.path.join(ROOT, "llms.txt"), "\n".join(L))
 
@@ -696,7 +716,12 @@ def main():
     D = load_all(); T = Teams(D); lm = LastMod()
     if not T.list:
         raise SystemExit("render_site: teams.json vuoto")
-    pages = {"pagine": [], "squadre": [], "campionati": [], "fanta": []}
+    if ((D["stats"].get("players") or {}).get("players")):
+        D["pctx"] = RS.build_ctx(D, D["stats"], T)      # URL delle schede, voti per giocatore, riferimenti di ruolo
+    missing = RS.unmapped_teams(D["stats"], T.api)
+    if missing:
+        print("render_site: squadre API-Football senza pagina squadra:", ", ".join(missing))
+    pages = {"pagine": [], "squadre": [], "campionati": [], "fanta": [], "giocatori": []}
     def out(rel_file, url, html_, group):
         save_text(os.path.join(ROOT, rel_file), html_)
         pages[group].append((SITE + url, lm.touch(url, html_)))
@@ -726,6 +751,18 @@ def main():
         if D["titolari"]:
             out("fantacalcio/titolari.html", "/fantacalcio/titolari.html", render_titolari(D, T), "fanta")
         out("fantacalcio/index.html", "/fantacalcio/", render_fanta_index(D, T), "fanta")
+    if D.get("pctx"):
+        written = set()
+        for pid, p in D["pctx"]["P"].items():
+            u = D["pctx"]["urls"][int(pid)]
+            out(u.lstrip("/"), u, RS.render_player(D, D["stats"], T, p, D["pctx"]), "giocatori")
+            written.add(os.path.basename(u))
+        out("giocatori/index.html", "/giocatori/", RS.render_players_index(D, D["stats"], T, D["pctx"]), "giocatori")
+        gdir = os.path.join(ROOT, "giocatori")
+        stale = [f for f in os.listdir(gdir) if f.endswith(".html") and f != "index.html" and f not in written]
+        for f in stale:   # schede di giocatori rinominati o usciti dal feed: via, altrimenti restano pagine orfane
+            os.remove(os.path.join(gdir, f))
+        print("render_site: %d schede giocatore%s" % (len(D["pctx"]["P"]), (", %d pagine vecchie rimosse" % len(stale)) if stale else ""))
     render_llms(D, T)
     for group, entries in pages.items():
         if entries:
