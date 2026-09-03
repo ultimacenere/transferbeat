@@ -139,7 +139,8 @@ Comandi (cartella `scripts`, `PYTHONIOENCODING=utf-8`):
   ritardo), titoli della board che citano il cognome, e giocatori usciti già acquistati in una lega.
 - `py fanta_players.py` → SINCRONIZZA: `active=false` a chi è uscito (resta nei voti, sparisce da listone e asta), squadra
   aggiornata, nuovi e rientrati quotati con la formula; **prezzi e ruoli di chi era già attivo non cambiano** (~140 chiamate se
-  ci sono giocatori da quotare). Scrive anche `listone.json`: poi commit e `bash scripts/pubblica.sh`.
+  ci sono giocatori da quotare). Scrive anche `listone.json`: poi `py scripts/render_site.py` (rigenera `fantacalcio/listone.html` e le sitemap, altrimenti la
+  pagina statica resta col listone vecchio), commit e `bash scripts/pubblica.sh`. Il cron `fanta.yml` fa già tutto in sequenza.
 - `py fanta_players.py --prezzi` → LISTONE COMPLETO: ricalcola prezzi e ruoli di tutti (solo primo listone e dopo gennaio).
 Regola: `--check` prima di ogni asta e 2-3 giorni dopo ogni chiusura del mercato; il cron sincronizza ogni giovedì (§8).
 I disattivati già in una rosa di lega restano lì: l'admin li svincola con `release_player` (rimborso); lo script li elenca.
