@@ -91,6 +91,7 @@ tbody tr:nth-child(-n+2) td.pos{color:var(--accent);font-weight:800}
   <div class="langsw" id="langsw"></div>
 </div></header>
 <div class="hero"><div class="wrap"><h1 id="heroH">Mondiale 2026</h1><p id="heroP">Stati Uniti · Canada · Messico — gironi, classifiche, calendario e risultati</p></div></div>
+<div class="wrap"><div id="archiveBanner" style="margin:16px 0 0;padding:12px 16px;border:1px solid #e2e6ea;border-left:4px solid #1f6fd6;border-radius:10px;background:#f7f8fa;font-size:13.5px"></div></div>
 <div class="wrap">
   <div id="notti"></div>
   <div class="seg" id="seg"></div>
@@ -98,7 +99,7 @@ tbody tr:nth-child(-n+2) td.pos{color:var(--accent);font-weight:800}
   <div id="view"></div>
 </div>
 <div class="foot"><div class="wrap" id="foot"></div></div>
-<nav class="tb-sitelinks" aria-label="Sezioni" style="border-top:1px solid #e2e6ea;margin-top:8px;padding:16px 18px;font-size:12px;display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center"><a href="https://transferbeat.com/" style="color:#67727e">Home</a><a href="https://transferbeat.com/articoli/it/" style="color:#67727e">Articoli</a><a href="https://transferbeat.com/articoli/en/" style="color:#67727e">Articles (EN)</a><a href="https://transferbeat.com/articoli/es/" style="color:#67727e">Artículos (ES)</a><a href="https://transferbeat.com/board.html" style="color:#67727e">Live board</a><a href="https://transferbeat.com/campionati.html" style="color:#67727e">Campionati</a><a href="https://transferbeat.com/mondiali.html" style="color:#67727e">Mondiale 2026</a><a href="https://transferbeat.com/fonti.html" style="color:#67727e">Fonti</a><a href="https://transferbeat.com/fanta/" style="color:#67727e">FantaTB</a></nav>
+<nav class="tb-sitelinks" aria-label="Sezioni" style="border-top:1px solid #e2e6ea;margin-top:8px;padding:16px 18px;font-size:12px;display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center"><a href="https://transferbeat.com/" style="color:#67727e">Home</a><a href="https://transferbeat.com/articoli/it/" style="color:#67727e">Articoli</a><a href="https://transferbeat.com/articoli/en/" style="color:#67727e">Articles (EN)</a><a href="https://transferbeat.com/articoli/es/" style="color:#67727e">Artículos (ES)</a><a href="https://transferbeat.com/board.html" style="color:#67727e">Live board</a><a href="https://transferbeat.com/campionati.html" style="color:#67727e">Campionati</a><a href="https://transferbeat.com/mondiali.html" style="color:#67727e">Archivio Mondiale 2026</a><a href="https://transferbeat.com/fonti.html" style="color:#67727e">Fonti</a><a href="https://transferbeat.com/fanta/" style="color:#67727e">FantaTB</a></nav>
 
 <script>
 const STR={
@@ -133,8 +134,9 @@ function applyStatic(){
     `<a class="home" href="index.html?lang=${lang}">${T.home}</a>
      <a href="board.html?lang=${lang}">${T.live}</a>
      <a href="articoli/${lang}/">${T.art}</a>
-     <a href="campionati.html?lang=${lang}">${lang==="it"?"Campionati":lang==="es"?"Ligas":"Leagues"}</a>
-     <a href="mondiali.html?lang=${lang}" style="color:var(--blue);font-weight:700">${T.mond}</a>`;
+     <a href="campionati.html?lang=${lang}" style="font-weight:700">${lang==="it"?"Campionati":lang==="es"?"Ligas":"Leagues"}</a>
+     <a href="fanta/" style="color:var(--accent);font-weight:700">FantaTB</a>`;
+  document.getElementById('archiveBanner').innerHTML={it:'<b>Edizione conclusa.</b> Questa è la pagina di archivio del Mondiale 2026: gironi, risultati e classifiche restano consultabili. Per il calcio di oggi vai a <a href="campionati.html?lang=it" style="color:var(--blue);font-weight:700">Campionati e coppe</a>.',en:'<b>Tournament over.</b> This is the World Cup 2026 archive page: groups, results and standings stay available. For today’s football go to <a href="campionati.html?lang=en" style="color:var(--blue);font-weight:700">Leagues and cups</a>.',es:'<b>Edición terminada.</b> Esta es la página de archivo del Mundial 2026: grupos, resultados y clasificaciones siguen disponibles. Para el fútbol de hoy ve a <a href="campionati.html?lang=es" style="color:var(--blue);font-weight:700">Ligas y copas</a>.'}[lang];
   const ls=document.getElementById('langsw');
   ls.innerHTML=['it','en','es'].map(l=>`<a class="${l===lang?'on':''}" data-l="${l}">${l.toUpperCase()}</a>`).join('');
   ls.querySelectorAll('a').forEach(a=>a.onclick=()=>{localStorage.setItem('tb_lang',a.dataset.l);location.search='?lang='+a.dataset.l;});

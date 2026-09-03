@@ -276,9 +276,10 @@ Misure dopo la fase B/C, sulla board reale: colonna anteprima da 42 a 78 voci, d
 65% al 51%, ANSA Calcio e Corriere dello Sport entrati come fonti dirette (26 e 31 titoli).
 
 ### PENDING (in ordine consigliato)
-1. **Fase I — archivio Mondiale** (rimuovere dalla nav principale, banner "Edizione conclusa" in
-   it/en/es, togliere lo step da `update.yml`, **tenere l'URL e il canonical**) e smontaggio
-   dell'affare-metro nella vista "Nomi" della board, da fare in **un solo commit** con il back-end.
+1. ~~Fase I — archivio Mondiale~~ fatta il 2026-09-03: via dai menu di home e board (resta "Archivio Mondiale 2026"
+   nei piè di pagina), banner "Edizione conclusa" it/en/es su `mondiali.html` con rimando ai Campionati, step
+   `mondiali.py` tolto da `update.yml` (dati congelati nel repo), URL e canonical invariati. Lo smontaggio della vista
+   "Nomi" (affare-metro) NON è stato fatto: la macchina del mercato resta sospesa, non cancellata (§7).
 2. **Fase J — bilancio mercato.** Decisione presa: **solo dalle notizie ufficiali già classificate**,
    non dal diff fra le rose (gli snapshot riflettono le ri-registrazioni delle liste, non i trasferimenti).
    Sorgente: lo storico di `data/it/board.json`, oltre 770 versioni dal 2026-06-03.
