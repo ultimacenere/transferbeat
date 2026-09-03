@@ -121,3 +121,6 @@ legend{font-size:12px;font-weight:700;color:var(--muted);padding:0 6px}
 #lsTable th.srt{cursor:pointer;white-space:nowrap}#lsTable th.srt:hover,#lsTable th.srt.on{color:var(--txt)}
 #lsTable a.pl{border-bottom:1px dotted var(--muted)}#lsTable a.pl:hover{color:var(--accent);border-bottom-color:var(--accent)}
 .pct{font-weight:700}.pct.g{color:#0a9d57}.pct.a{color:#d98700}.pct.r{color:#e0392b}
+#lsTable th.num,#llTable th.num{text-align:right}#llTable td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+#llTable th.srt{cursor:pointer;white-space:nowrap}#llTable th.srt:hover,#llTable th.srt.on{color:var(--txt)}#llTable a.pl{border-bottom:1px dotted var(--muted)}#llTable a.pl:hover{color:var(--accent)}
+#llTable td.muted{color:var(--muted);font-size:12px;white-space:nowrap}.free{color:#0a9d57;font-weight:700}#llTable tr.taken td{opacity:.7}

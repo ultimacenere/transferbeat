@@ -196,7 +196,8 @@ th.sort{cursor:pointer}th.sort:hover{color:var(--txt)}
 .ph{margin:0 0 10px;font-size:13px;color:var(--muted)}.lead{font-size:16px;line-height:1.65}
 .plist{list-style:none;columns:2;column-gap:24px;font-size:14px;margin-bottom:8px}.plist li{padding:3px 0;break-inside:avoid}.plist .n{display:inline-block;min-width:28px;color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
 @media(max-width:600px){.plist{columns:1}}
-.card .in table td,.card .in table th{padding:6px 5px;font-variant-numeric:tabular-nums}.photo{border-radius:12px;float:right;margin:0 0 10px 16px}"""
+.card .in table td,.card .in table th{padding:6px 5px;font-variant-numeric:tabular-nums}.photo{border-radius:12px;float:right;margin:0 0 10px 16px}
+.back{margin:12px 0 -2px;font-size:13px;color:var(--muted)}.back a{color:var(--blue);font-weight:600}.back a#backLs{display:inline-block;border:1px solid var(--line);border-radius:8px;padding:5px 11px;background:var(--panel)}"""
 
 def dots(n):
     try:

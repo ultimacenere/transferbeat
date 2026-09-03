@@ -276,4 +276,10 @@ non più generate (giocatori rinominati o usciti). Peso: `giocatori/` ~18 MB, `d
 MV (media dei voti FantaTB della stagione), FMV (media dei fantavoti), % titolarità (`player_status`), presenze/gol/assist di Serie A (blocchi `cur` di
 players.json, in mancanza dai voti). Compaiono: nella pagina statica `fantacalcio/listone.html` (colonne ordinabili, nome linkato alla scheda) e nella
 vista Listone dell'app (`fanta/app.js` legge `/data/fanta/schede.json`, scritto da `render_site.py`: per id → url, mv, fmv, tit, pres, gol, assist;
-intestazioni cliccabili per ordinare, nome → scheda in una nuova scheda del browser). Se `schede.json` manca l'app mostra i trattini e nessun link.
+intestazioni cliccabili per ordinare, nome → scheda nella stessa finestra). Se `schede.json` manca l'app mostra i trattini e nessun link.
+Dal 2026-09-03 sera (richieste dell'utente): colonne numeriche allineate a destra anche nelle intestazioni; **scheda "Listone" dentro la lega**
+(`#tab-listone`, `renderLeagueListone`: stessa tabella più colonna Stato = libero / squadra che lo ha preso con il prezzo, filtro "solo liberi",
+si aggiorna con le rose); **card "Listone FantaTB" nella home** anche senza leghe; **hash routing**: `show()` scrive `#home|#listone|#voti|#regole`,
+`renderTabs` scrive `#lega/<id>/<scheda>`, `init()` legge l'hash PRIMA di initAuth (che chiama show) e riapre vista o lega+scheda; le schede giocatore
+hanno in alto **"← Torna al listone"** (`#backLs`: se il referrer è l'app o il listone statico fa `history.back()`, così si torna alla vista o alla
+scheda di lega da cui si era partiti; altrimenti porta a `fantacalcio/listone.html`).

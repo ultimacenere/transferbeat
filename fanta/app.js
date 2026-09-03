@@ -23,6 +23,7 @@ function show(view){
   if (view === 'home') { if (!$('#clForm').innerHTML) $('#clForm').innerHTML = settingsFormHtml(null, 'cl'); loadLeagues(); }
   if (view === 'listone') renderListone();
   if (view === 'voti') loadVoti();
+  if (['home', 'listone', 'voti', 'regole'].includes(view)) history.replaceState(null, '', '#' + view);   // cosi' "indietro" dalle schede giocatore torna qui
 }
 document.addEventListener('click', e => {
   const a = e.target.closest('[data-view]'); if (a){ e.preventDefault(); if (!user && a.dataset.view !== 'listone' && a.dataset.view !== 'voti' && a.dataset.view !== 'regole') return show('auth'); show(a.dataset.view); }
@@ -38,7 +39,10 @@ function renderUser(){
 }
 async function initAuth(){
   const { data } = await sb.auth.getSession(); user = data.session ? data.session.user : null;
-  sb.auth.onAuthStateChange((_ev, session) => { user = session ? session.user : null; renderUser(); show(user ? 'home' : 'auth'); });
+  sb.auth.onAuthStateChange((_ev, session) => {
+    const prev = user ? user.id : null; user = session ? session.user : null; renderUser();
+    if (prev !== (user ? user.id : null)) show(user ? 'home' : 'auth');   // solo a login/logout veri: l'evento iniziale non deve coprire la vista scelta dall'hash
+  });
   renderUser(); show(user ? 'home' : 'auth');
 }
 $('#btnLogin').onclick = async () => {
@@ -62,28 +66,53 @@ async function loadPlayers(){
   players = data || []; playersById = {}; players.forEach(p => playersById[p.id] = p);
 }
 function roleTag(r){ return '<span class="role '+r+'">'+r+'</span>'; }
-let lsSort = { k: 'price', asc: false };
+/* tabella del listone, condivisa fra la vista pubblica (#lsTable) e la scheda Listone della lega (#tab-listone, con stato libero/preso) */
+const lsState = { ls: { k: 'price', asc: false }, ll: { k: 'price', asc: false } };
 const fmt2 = v => v == null ? '—' : Number(v).toFixed(2).replace('.', ',');
 function lsCell(v, f){ return '<td class="num">'+(v == null ? '—' : (f ? f(v) : v))+'</td>'; }
-function renderListone(){
-  const q = ($('#lsSearch').value || '').toLowerCase(); const r = $('#lsRole').value;
-  const val = (p, k) => {
-    if (k === 'price') return p.price; if (k === 'name') return p.name; if (k === 'team') return p.team; if (k === 'role') return 'PDCA'.indexOf(p.role);
-    const s = schede[p.id]; return (s && s[k] != null) ? s[k] : -1;
-  };
-  const rows = players.filter(p => p.active && (!r || p.role === r) && (!q || p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q)))
-    .sort((a, b) => { const x = val(a, lsSort.k), y = val(b, lsSort.k); const c = typeof x === 'string' ? x.localeCompare(y) : (x - y); return lsSort.asc ? c : -c; }).slice(0, 400);
-  const th = (k, lab, title) => '<th class="srt'+(lsSort.k === k ? ' on' : '')+'" data-k="'+k+'"'+(title ? ' title="'+title+'"' : '')+'>'+lab+(lsSort.k === k ? (lsSort.asc ? ' ▲' : ' ▼') : '')+'</th>';
-  $('#lsTable').innerHTML = players.length ? '<div class="tw"><table><thead><tr>'+th('role','R')+th('name','Giocatore')+th('team','Squadra')+th('price','Quot.')+
-    th('mv','MV','Media voto FantaTB, stagione in corso')+th('fmv','FMV','Fantamedia: media dei fantavoti con bonus e malus')+th('tit','Tit.','Indice di titolarità per la prossima giornata')+
-    th('pres','Pres.','Presenze in Serie A')+th('gol','Gol','Gol in Serie A')+th('assist','Assist','Assist in Serie A')+'</tr></thead><tbody>' +
+function lsVal(p, k){
+  if (k === 'price') return p.price; if (k === 'name') return p.name; if (k === 'team') return p.team; if (k === 'role') return 'PDCA'.indexOf(p.role);
+  if (k === 'stato') return p._stato || '';
+  const s = schede[p.id]; return (s && s[k] != null) ? s[k] : -1;
+}
+function filterPlayers(q, r){
+  q = (q || '').toLowerCase();
+  return players.filter(p => p.active && (!r || p.role === r) && (!q || p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q)));
+}
+function listoneHtml(rows, sort, withStato){
+  const th = (k, lab, title, num) => '<th class="srt'+(num ? ' num' : '')+(sort.k === k ? ' on' : '')+'" data-k="'+k+'"'+(title ? ' title="'+title+'"' : '')+'>'+lab+(sort.k === k ? (sort.asc ? ' ▲' : ' ▼') : '')+'</th>';
+  rows = rows.slice().sort((a, b) => { const x = lsVal(a, sort.k), y = lsVal(b, sort.k); const c = typeof x === 'string' ? x.localeCompare(y) : (x - y); return sort.asc ? c : -c; }).slice(0, 400);
+  return '<div class="tw"><table><thead><tr>'+th('role','R')+th('name','Giocatore')+th('team','Squadra')+(withStato ? th('stato','Stato','Libero o già in una rosa di questa lega') : '')+
+    th('price','Quot.','Quotazione FantaTB',true)+th('mv','MV','Media voto FantaTB, stagione in corso',true)+th('fmv','FMV','Fantamedia: media dei fantavoti con bonus e malus',true)+
+    th('tit','Tit.','Indice di titolarità per la prossima giornata',true)+th('pres','Pres.','Presenze in Serie A',true)+th('gol','Gol','Gol in Serie A',true)+th('assist','Assist','Assist in Serie A',true)+'</tr></thead><tbody>' +
     rows.map(p => { const s = schede[p.id] || {};
-      const nm = s.url ? '<a class="pl" href="'+esc(s.url)+'" target="_blank" rel="noopener" title="Apri la scheda con le statistiche">'+esc(p.name)+'</a>' : esc(p.name);
-      return '<tr><td>'+roleTag(p.role)+'</td><td>'+nm+'</td><td>'+esc(p.team)+'</td><td><b>'+p.price+'</b></td>'+lsCell(s.mv, fmt2)+lsCell(s.fmv, fmt2)+
-        lsCell(s.tit, v => '<span class="pct '+(v >= 70 ? 'g' : v >= 40 ? 'a' : 'r')+'">'+v+'%</span>')+lsCell(s.pres)+lsCell(s.gol)+lsCell(s.assist)+'</tr>'; }).join('') + '</tbody></table></div>' +
-    '<p class="small">MV = media voto FantaTB, FMV = fantamedia (voto più bonus e malus), Tit. = indice di titolarità per la prossima giornata; presenze, gol e assist in Serie A. Clic sull\'intestazione per ordinare, sul nome per la scheda completa.</p>'
+      const nm = s.url ? '<a class="pl" href="'+esc(s.url)+'" title="Apri la scheda con le statistiche (poi Torna al listone)">'+esc(p.name)+'</a>' : esc(p.name);
+      return '<tr'+(withStato && p._stato ? ' class="taken"' : '')+'><td>'+roleTag(p.role)+'</td><td>'+nm+'</td><td>'+esc(p.team)+'</td>'+
+        (withStato ? '<td class="muted">'+(p._stato ? esc(p._stato) : '<span class="free">libero</span>')+'</td>' : '')+
+        '<td class="num"><b>'+p.price+'</b></td>'+lsCell(s.mv, fmt2)+lsCell(s.fmv, fmt2)+lsCell(s.tit, v => '<span class="pct '+(v >= 70 ? 'g' : v >= 40 ? 'a' : 'r')+'">'+v+'%</span>')+
+        lsCell(s.pres)+lsCell(s.gol)+lsCell(s.assist)+'</tr>'; }).join('') + '</tbody></table></div>' +
+    '<p class="small">MV = media voto FantaTB, FMV = fantamedia (voto più bonus e malus), Tit. = indice di titolarità per la prossima giornata; presenze, gol e assist in Serie A. Clic sull\'intestazione per ordinare, sul nome per la scheda completa: da lì "Torna al listone" riporta qui.</p>';
+}
+function bindSort(el, key, rerender){
+  $$('th.srt', el).forEach(h => { h.onclick = () => { const k = h.dataset.k, st = lsState[key]; if (st.k === k) st.asc = !st.asc; else lsState[key] = { k: k, asc: (k === 'name' || k === 'team' || k === 'role' || k === 'stato') }; rerender(); }; });
+}
+function renderListone(){
+  const el = $('#lsTable');
+  el.innerHTML = players.length ? listoneHtml(filterPlayers($('#lsSearch').value, $('#lsRole').value), lsState.ls, false)
     : '<div class="msg">Listone non ancora caricato. Arriva con il primo aggiornamento dei dati.</div>';
-  $$('#lsTable th.srt').forEach(h => { h.onclick = () => { const k = h.dataset.k; if (lsSort.k === k) lsSort.asc = !lsSort.asc; else lsSort = { k: k, asc: (k === 'name' || k === 'team' || k === 'role') }; renderListone(); }; });
+  bindSort(el, 'ls', renderListone);
+}
+function renderLeagueListone(){
+  const el = $('#tab-listone'); if (!el || !L) return;
+  if (!$('#llSearch')) el.innerHTML = '<div class="row" style="max-width:720px;margin:10px 0;align-items:center"><input id="llSearch" placeholder="Cerca giocatore o squadra">' +
+    '<select id="llRole"><option value="">Tutti i ruoli</option><option value="P">Portieri</option><option value="D">Difensori</option><option value="C">Centrocampisti</option><option value="A">Attaccanti</option></select>' +
+    '<label class="small" style="white-space:nowrap"><input type="checkbox" id="llFree"> solo liberi</label></div><div id="llTable"></div>';
+  const owner = {}; L.rosters.forEach(r => { owner[r.player_id] = memberName(r.user_id) + ' (' + r.price + ')'; });
+  let rows = filterPlayers($('#llSearch').value, $('#llRole').value).map(p => Object.assign({}, p, { _stato: owner[p.id] || '' }));
+  if ($('#llFree').checked) rows = rows.filter(p => !p._stato);
+  $('#llTable').innerHTML = listoneHtml(rows, lsState.ll, true);
+  bindSort($('#llTable'), 'll', renderLeagueListone);
+  $('#llSearch').oninput = renderLeagueListone; $('#llRole').onchange = renderLeagueListone; $('#llFree').onchange = renderLeagueListone;
 }
 $('#lsSearch').oninput = renderListone; $('#lsRole').onchange = renderListone;
 
@@ -167,7 +196,7 @@ async function attachProfiles(members){
   members.forEach(m => m.profiles = by[m.user_id] || { username: '' });
   return members;
 }
-async function openLeague(id){
+async function openLeague(id, tab){
   const [{ data: league, error: e1 }, { data: members, error: e2 }] = await Promise.all([
     sb.from('leagues').select('*').eq('id', id).single(),
     sb.from('league_members').select(MEMBER_SEL).eq('league_id', id).order('call_order')
@@ -176,12 +205,12 @@ async function openLeague(id){
   await attachProfiles(members);
   L = { league, members, rosters: [], auction: null, bids: [] };
   L.me = members.find(m => m.user_id === user.id); L.isAdmin = !!(L.me && L.me.role === 'admin');
-  location.hash = 'lega/' + id;
+  history.replaceState(null, '', '#lega/' + id + (tab ? '/' + tab : ''));
   $$('main > section').forEach(s => s.classList.add('hidden')); $('#view-league').classList.remove('hidden');
   $('#lgName').textContent = league.name;
   $('#lgSub').innerHTML = esc(L.me.team_name)+' · '+members.length+'/'+(league.settings.max_teams || 20)+' squadre · codice invito <span class="code">'+esc(league.invite_code)+'</span>';
   await refreshLeagueData();
-  renderTabs(); renderRules(); renderAuction(); subscribe(); loadSeasonData();
+  renderTabs(tab); renderRules(); renderAuction(); subscribe(); loadSeasonData();
 }
 async function refreshLeagueData(){
   const [{ data: rosters }, { data: auction }, { data: members }, { data: bids }] = await Promise.all([
@@ -203,10 +232,12 @@ function phase(){ return (L.league.settings && L.league.settings.phase) || 'asta
 function renderTabs(active){
   const tabs = [];
   if (phase() === 'asta') tabs.push(['asta', 'Asta']);
-  tabs.push(['schiera', 'Schiera'], ['classifica', 'Classifica'], ['calendario', 'Calendario'], ['risultati', 'Risultati'], ['regole', 'Regole'], ['membri', 'Partecipanti']);
+  tabs.push(['listone', 'Listone'], ['schiera', 'Schiera'], ['classifica', 'Classifica'], ['calendario', 'Calendario'], ['risultati', 'Risultati'], ['regole', 'Regole'], ['membri', 'Partecipanti']);
   if (!active || !tabs.some(t => t[0] === active)) active = tabs[0][0];
   $('#lgTabs').innerHTML = tabs.map(t => '<a data-tab="'+t[0]+'" class="'+(t[0] === active ? 'on' : '')+'">'+t[1]+'</a>').join('');
   $$('#view-league [id^=tab-]').forEach(el => el.classList.toggle('hidden', el.id !== 'tab-' + active));
+  if (active === 'listone') renderLeagueListone();
+  if (L) history.replaceState(null, '', '#lega/' + L.league.id + '/' + active);   // ricaricando o tornando indietro si riapre la stessa scheda
 }
 function renderMembers(){
   const byUser = {}; L.rosters.forEach(r => (byUser[r.user_id] = byUser[r.user_id] || []).push(r));
@@ -229,7 +260,7 @@ function renderMembers(){
     if (error) err(error); else refreshLeagueData();
   });
 }
-function renderRosters(){ renderMembers(); }
+function renderRosters(){ renderMembers(); const t = $('#tab-listone'); if (t && !t.classList.contains('hidden')) renderLeagueListone(); }
 function renderRules(){
   const s = Object.assign({}, DEFAULT_SETTINGS, L.league.settings || {}), bn = Object.assign({}, DEFAULT_SETTINGS.bonus, s.bonus || {}), sl = Object.assign({}, DEFAULT_SETTINGS.slots, s.slots || {});
   const view = '<div class="card"><h2>Regole in vigore <span class="pill '+(phase() === 'asta' ? '' : 'live')+'">'+(phase() === 'asta' ? 'fase asta' : 'campionato')+'</span></h2><table><tbody>' +
@@ -551,11 +582,14 @@ async function renderResults(){
 async function init(){
   if (!CFG.SUPABASE_URL || CFG.SUPABASE_URL.includes('INSERISCI')) { msg('FantaTB non è ancora configurato (fanta/config.js).', 'err'); show('regole'); return; }
   sb = window.supabase.createClient(CFG.SUPABASE_URL, CFG.SUPABASE_ANON_KEY);
+  const h = location.hash;   // letto PRIMA di initAuth: show() lo sovrascrive con la vista corrente
   await Promise.all([loadPlayers(), loadMatchdays()]);
   await initAuth();
-  const m = location.hash.match(/^#lega\/([0-9a-f-]{36})$/);
-  if (m && user) openLeague(m[1]);
-  if (location.hash === '#crea') { if (user) { show('home'); setTimeout(() => { const f = $('#clName'); if (f) { f.scrollIntoView({ behavior: 'smooth', block: 'center' }); f.focus(); } }, 300); } else msg('Entra o crea un account: poi "Crea una lega" è nella tua pagina.', 'ok'); }
+  const m = h.match(/^#lega\/([0-9a-f-]{36})(?:\/([a-z]+))?$/);
+  if (m && user) openLeague(m[1], m[2]);
+  const v = h.slice(1);
+  if (['listone', 'voti', 'regole'].includes(v)) show(v);   // viste pubbliche raggiungibili anche senza login
+  if (h === '#crea') { if (user) { show('home'); setTimeout(() => { const f = $('#clName'); if (f) { f.scrollIntoView({ behavior: 'smooth', block: 'center' }); f.focus(); } }, 300); } else msg('Entra o crea un account: poi "Crea una lega" è nella tua pagina.', 'ok'); }
 }
 init().catch(err);
 })();

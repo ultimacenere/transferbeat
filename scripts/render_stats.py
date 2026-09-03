@@ -744,7 +744,7 @@ def render_player(D, S, T, p, ctx):
     desc = describe(p, team_site, a_cur, a_prev, mb, role_it, ctx, n_md)
     li = ctx["listone"].get(pid); st = ctx["tit"].get(pid)
     vs = ctx["voti"].get(pid) or {}
-    b = []
+    b = ['<p class="back"><a id="backLs" href="/fantacalcio/listone.html">← Torna al listone</a> · <a href="/fanta/#listone">listone nell\'app FantaTB</a> · <a href="/giocatori/">tutti i giocatori</a></p>']
     team_html = (badge(tteam, 26) + '<a href="%s">%s</a>' % (T.url(team_site), esc(team_site))) if tteam else esc(p.get("team_name") or "")
     b.append("<h1>%s</h1>" % esc(full))
     age = age_of((p.get("birth") or {}).get("date"))
@@ -856,6 +856,10 @@ def render_player(D, S, T, p, ctx):
         links.insert(0, '<a href="%s">pagina %s</a>' % (T.url(team_site), esc(team_site)))
     b.append('<p class="small">%s</p>' % " · ".join(links))
     b.append('<div class="note"><b>Come leggere i numeri.</b> Statistiche di gioco da API-Football (tabellini ufficiali elaborati dal provider); rating = punteggio statistico 0-10 del provider, da cui nasce il voto FantaTB (rating − 0,8, arrotondato al mezzo punto). Le voci "per 90\'" dividono per i minuti giocati. Nessun dato è inventato: le frasi della scheda sono costruite dai numeri qui sopra.</div>')
+    # "Torna al listone": se si arriva dall'app o dal listone statico usa history.back() (l'app riapre la vista o la scheda di lega grazie all'hash)
+    b.append("<script>(function(){var a=document.getElementById('backLs');if(!a)return;var r=document.referrer||'';var app=r.indexOf('/fanta/')>=0;"
+             "if(app){a.href='/fanta/#listone';a.textContent='\\u2190 Torna al listone FantaTB';}var back=app||r.indexOf('/fantacalcio/listone')>=0;"
+             "a.addEventListener('click',function(e){if(back&&history.length>1){e.preventDefault();history.back();}});})();</script>")
     # JSON-LD
     bd = p.get("birth") or {}
     ld = {"@context": "https://schema.org", "@type": "Person", "name": full, "url": canon, "jobTitle": "Calciatore, " + role_it, "description": desc[:500]}
