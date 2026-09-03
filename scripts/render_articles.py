@@ -6,9 +6,9 @@ con link alle pagine statiche, blocco "Correlati" (stessa squadra, poi stesso ti
 import json, os, html, sys
 from datetime import datetime, timezone
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from site_common import AUTHOR, ORG, COMP_BY_LEAGUE, DATA as _DATA, slugify, write_urlset, write_sitemap_index, date_only, load_json
+from site_common import AUTHOR, PERSON_LD, ORG, COMP_BY_LEAGUE, DATA as _DATA, slugify, write_urlset, write_sitemap_index, date_only, load_json
 TEAM_SLUG = {t["nome"]: slugify(t["nome"]) for t in (load_json(os.path.join(_DATA, "teams.json"), {}) or {}).get("squadre", [])}
-AUTHOR_LD = {"@type": "Person", "name": AUTHOR["name"], "url": AUTHOR["url"]}
+AUTHOR_LD = dict(PERSON_LD)
 
 LANGS = ("it", "en", "es")
 STATE_LABEL = {

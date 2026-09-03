@@ -335,7 +335,7 @@ Misure dopo la fase B/C, sulla board reale: colonna anteprima da 42 a 78 voci, d
    classifica; Champions: quando parte la league phase (metà settembre) la classifica compare da sola.
 5. **Freschezza: notifica.** Il fallimento della sentinella colora di rosso il workflow e GitHub manda una
    mail al proprietario del repo: verificare che arrivi davvero al primo rosso.
-6. **SEO/GEO, punti 1-7 eseguiti e pubblicati su main il 2026-09-03** (`24c556d`): restano la conferma del nome pubblico e i contatti per
+6. **SEO/GEO, punti 1-7 eseguiti e pubblicati su main il 2026-09-03** (`24c556d`): nome confermato e LinkedIn inserito; resta l'email di contatto per
    chi-siamo, Bing Webmaster Tools, il controllo di Search Console fra due settimane. Tutto in `kb/SEO.md` §6.
 
 ### SEO e GEO (diagnosi del 2026-09-03)

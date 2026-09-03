@@ -118,8 +118,8 @@ Cambiare dominio · comprare link · moltiplicare gli articoli riassuntivi · tr
     (URL dei file cambiati). `freshness.py` ha `check_render()`: fallisce se mancano le pagine statiche o la home ha l'apertura vuota.
   - `board.html?team=Inter` apre direttamente una squadra (le pagine squadra ci puntano); nella board il blocco statico squadra per squadra resta visibile
     (filtrato per lega/squadra dal JS) perché la vista "movimenti" a mercato chiuso è vuota.
-- **Serve dal committente** (§3.5-3.6): 1) conferma del nome pubblico in `AUTHOR` (`scripts/site_common.py`) e nel testo di `render_chi_siamo()`;
-  2) email di contatto e profili social da aggiungere a chi-siamo (`sameAs`) e all'Organization di `index.html`; 3) Bing Webmaster Tools → importa da Search Console;
+- **Serve dal committente** (§3.5-3.6): 1) ~~conferma del nome pubblico~~ confermato il 2026-09-03: LinkedIn in `sameAs` (AUTHOR/PERSON_LD in `site_common.py`,
+  chi-siamo, autore degli articoli, founder in `index.html`); 2) email di contatto da aggiungere a chi-siamo; 3) Bing Webmaster Tools → importa da Search Console;
   4) dopo 2 settimane `site:transferbeat.com` su Bing e rapporto Pagine in Search Console (le nuove URL: squadre/, campionati/, fantacalcio/, chi-siamo).
 - **Trovato durante il lavoro, fuori piano**: `data/teams.json` contiene 9 club retrocessi (Verona, Cremonese, Pisa, Mallorca, Girona, Real Oviedo, West Ham,
   Wolves, Burnley) e non i 9 promossi 2026-27 presenti in football-data (Frosinone, Monza, Venezia, Deportivo, Málaga, Racing Santander, Coventry, Hull, Ipswich):

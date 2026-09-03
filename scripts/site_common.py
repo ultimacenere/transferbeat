@@ -10,11 +10,13 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
 SITE = "https://transferbeat.com"
 SEASON = "2026-27"
-# Entita' editoriale (kb/SEO.md §3.5). Il nome pubblico e' DA CONFERMARE col committente prima della pubblicazione.
-AUTHOR = {"name": "Pierluigi Cella", "url": SITE + "/chi-siamo.html", "jobTitle": "Fondatore e responsabile editoriale"}
+# Entita' editoriale (kb/SEO.md §3.5). Nome pubblico confermato dal committente il 2026-09-03; il profilo LinkedIn va in sameAs.
+AUTHOR = {"name": "Pierluigi Cella", "url": SITE + "/chi-siamo.html", "jobTitle": "Fondatore e responsabile editoriale",
+          "sameAs": ["https://www.linkedin.com/in/pierluigi-cella-58076960/"]}
+PERSON_LD = {"@type": "Person", "name": AUTHOR["name"], "url": AUTHOR["url"], "jobTitle": AUTHOR["jobTitle"], "sameAs": AUTHOR["sameAs"]}
 ORG = {"@type": "Organization", "name": "TransferBeat", "url": SITE + "/",
        "logo": {"@type": "ImageObject", "url": SITE + "/favicon.png"},
-       "founder": {"@type": "Person", "name": AUTHOR["name"], "url": AUTHOR["url"]}}
+       "founder": PERSON_LD}
 
 # Competizioni: codice football-data -> pagina statica, nome italiano, lega della board (teams.json "league").
 COMPS = [

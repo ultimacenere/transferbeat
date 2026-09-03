@@ -736,7 +736,7 @@ def main():
     lm.save()
     print("render_site OK: " + ", ".join("%s %d" % (g, len(e)) for g, e in pages.items()) + " · sitemap: " + ", ".join(names))
 
-# ---------- chi siamo (entita': kb/SEO.md §3.5). Nome pubblico del fondatore DA CONFERMARE col committente; contatti e profili social da aggiungere. ----------
+# ---------- chi siamo (entita': kb/SEO.md §3.5). Nome confermato il 2026-09-03, LinkedIn in sameAs; email di contatto ancora da aggiungere. ----------
 def render_chi_siamo():
     canon = SITE + "/chi-siamo.html"
     a = AUTHOR
@@ -749,7 +749,7 @@ def render_chi_siamo():
          "<p>Dal settembre 2026 TransferBeat pubblica anche <a href=\"/fantatb.html\">FantaTB</a>, un fantacalcio gratuito con leghe private, asta live e voti statistici, e mette a disposizione di "
          "tutti i suoi dati originali: <a href=\"/fantacalcio/listone.html\">listone</a>, <a href=\"/fantacalcio/\">voti e probabili titolari</a>, con formula dichiarata e licenza aperta.</p>",
          "<h2>Chi lo fa</h2>",
-         "<p><b>" + esc(a["name"]) + "</b>, " + esc(a["jobTitle"]).lower() + ". Ha ideato TransferBeat nel 2026 e ne cura la linea editoriale, la scelta delle fonti e i criteri di classificazione delle notizie.</p>",
+         "<p><b>" + esc(a["name"]) + "</b>, " + esc(a["jobTitle"]).lower() + ". Ha ideato TransferBeat nel 2026 e ne cura la linea editoriale, la scelta delle fonti e i criteri di classificazione delle notizie. Profilo: <a href=\"" + esc(a["sameAs"][0]) + "\" rel=\"me noopener\" target=\"_blank\">LinkedIn</a>.</p>",
          "<h2>Come produciamo le notizie</h2>",
          "<p><b>Raccolta automatica, fonti dichiarate.</b> Un sistema legge ogni due ore le testate di calcio (Google News per ogni squadra, i feed RSS delle testate e i canali "
          "degli esperti di mercato) e classifica ogni titolo con regole pubbliche in quattro gradi di concretezza. A ogni testata è assegnato a mano un livello di affidabilità, "
@@ -763,7 +763,7 @@ def render_chi_siamo():
          "<p>Non copiamo articoli, non pubblichiamo voci senza fonte, non vendiamo funzioni a pagamento, non usiamo dati personali oltre l’email necessaria per giocare a FantaTB. "
          "Se trovi un errore, una fonte classificata male o una notizia da correggere, segnalacelo: la classificazione migliora anche così.</p>",
          '<p class="small">TransferBeat non è affiliato a Fantacalcio®, alle leghe o ai club citati. I marchi appartengono ai rispettivi proprietari.</p>']
-    person = {"@type": "Person", "name": a["name"], "url": canon, "jobTitle": a["jobTitle"], "worksFor": ORG}
+    person = {"@type": "Person", "name": a["name"], "url": canon, "jobTitle": a["jobTitle"], "sameAs": a.get("sameAs", []), "worksFor": ORG}
     ld = [{"@context": "https://schema.org", "@type": "AboutPage", "name": "Chi siamo", "url": canon, "about": ORG, "inLanguage": "it"},
           dict({"@context": "https://schema.org"}, **ORG), dict({"@context": "https://schema.org"}, **person)]
     return page("Chi siamo: come nasce TransferBeat, il giornale del calcio", "Chi fa TransferBeat e come lavora: notizie raccolte automaticamente da fonti dichiarate e ordinate per concretezza, articoli con l’aiuto dell’intelligenza artificiale e supervisione editoriale, dati originali di FantaTB con formule pubbliche.",
