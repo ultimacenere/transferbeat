@@ -428,12 +428,22 @@ def render_listone(D, T):
          '<div class="note"><b>Come calcoliamo le quotazioni.</b> Base per ruolo (P 1, D 1, C 1, A 2) + presenze della scorsa stagione su 38 × (P 8, D 10, C 12, A 14) '
          '+ gol × (D 3, C 2, A 1,2) + assist × (D 1, C 1, A 0,8) + (rating medio − 6,5) × 10 se sopra 6,5 con almeno 10 presenze; i portieri con meno di un gol subito '
          'a partita guadagnano 0,3 a presenza. Limite da 1 a 60 crediti. Fonte statistiche: API-Football. Il listone si rifà dopo il mercato di gennaio.</div>',
+         '<div class="note"><b>Le colonne accanto al nome.</b> MV = media dei voti FantaTB della stagione in corso; FMV = fantamedia, cioè la media dei fantavoti con bonus e malus; '
+         'Tit. = indice di titolarità per la prossima giornata; presenze, gol e assist in Serie A ' + SEASON + ' (statistiche API-Football). Il trattino vuol dire ancora senza voto. '
+         'Ogni nome apre la scheda del giocatore con statistiche complete, confronto con la scorsa stagione, carriera e voti giornata per giornata.</div>',
          '<div class="tools"><input id="q" placeholder="Cerca giocatore o squadra">' + ROLE_SELECT + '<span class="small">Clic sull\'intestazione per ordinare</span></div>',
          '<div class="card"><div style="overflow-x:auto"><table class="srt"><thead><tr><th class="sort" data-n="1">#</th><th class="sort l">Ruolo</th><th class="sort l">Giocatore</th>'
-         '<th class="sort l">Squadra</th><th class="sort" data-n="1">Quotazione</th></tr></thead><tbody>']
+         '<th class="sort l">Squadra</th><th class="sort" data-n="1">Quot.</th><th class="sort" data-n="1" title="Media voto FantaTB">MV</th><th class="sort" data-n="1" title="Fantamedia: media dei fantavoti">FMV</th>'
+         '<th class="sort" data-n="1" title="Indice di titolarità per la prossima giornata">Tit.</th><th class="sort" data-n="1" title="Presenze in Serie A">Pres.</th><th class="sort" data-n="1">Gol</th><th class="sort" data-n="1">Assist</th></tr></thead><tbody>']
+    def num_td(v, txt=None, cls=""):
+        return '<td' + ((' class="' + cls + '"') if cls else "") + ' data-v="' + (str(v) if v is not None else "-1") + '">' + (txt if txt is not None else (dec(v) if v is not None else "—")) + "</td>"
     for i, p in enumerate(ps):
+        s = RS.summary_of(D.get("pctx"), p["id"]) or {}
+        tit = s.get("tit")
+        tit_td = num_td(tit, ('<span class="pct ' + ("g" if tit >= 70 else ("a" if tit >= 40 else "r")) + '">' + str(int(tit)) + "%</span>") if tit is not None else "—")
         b.append('<tr data-r="' + esc(p.get("role")) + '"><td>' + str(i + 1) + '</td><td class="l">' + esc(RUOLI.get(p.get("role"), p.get("role"))) + '</td><td class="l">' + RS.plink(D.get("pctx"), p["id"], p.get("name")) +
-                 '</td><td class="l">' + fanta_team_link(T, p.get("team")) + '</td><td class="pt" data-v="' + str(p.get("price") or 0) + '">' + str(p.get("price") or 0) + "</td></tr>")
+                 '</td><td class="l">' + fanta_team_link(T, p.get("team")) + '</td><td class="pt" data-v="' + str(p.get("price") or 0) + '">' + str(p.get("price") or 0) + "</td>" +
+                 num_td(s.get("mv")) + num_td(s.get("fmv")) + tit_td + num_td(s.get("pres"), str(s.get("pres")) if s else "—") + num_td(s.get("gol"), str(s.get("gol")) if s else "—") + num_td(s.get("assist"), str(s.get("assist")) if s else "—") + "</tr>")
     b.append("</tbody></table></div></div>" + SORT_JS)
     b.append('<p class="small">Il listone è usato nelle aste di <a href="/fanta/">FantaTB</a>, il fantacalcio gratuito di TransferBeat · dati grezzi: <a href="/data/fanta/listone.json">listone.json</a> · <a href="/fantacalcio/">tutti i dati del fantacalcio</a></p>')
     ld = dataset_ld("Listone fantacalcio Serie A " + SEASON + " (quotazioni FantaTB)",
@@ -758,6 +768,7 @@ def main():
             out(u.lstrip("/"), u, RS.render_player(D, D["stats"], T, p, D["pctx"]), "giocatori")
             written.add(os.path.basename(u))
         out("giocatori/index.html", "/giocatori/", RS.render_players_index(D, D["stats"], T, D["pctx"]), "giocatori")
+        RS.write_schede(D["pctx"], os.path.join(DATA, "fanta", "schede.json"))   # per la vista Listone dell'app FantaTB
         gdir = os.path.join(ROOT, "giocatori")
         stale = [f for f in os.listdir(gdir) if f.endswith(".html") and f != "index.html" and f not in written]
         for f in stale:   # schede di giocatori rinominati o usciti dal feed: via, altrimenti restano pagine orfane

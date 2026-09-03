@@ -272,3 +272,8 @@ solo sui massimi, sempre una tabella accanto. I grafici sono `viewBox` 480 (720 
 **Lancio manuale**: `py scripts/stats_pull.py` (o `--squadre` / `--giocatori`), poi `py scripts/render_site.py`. `render_site` cancella le schede
 non più generate (giocatori rinominati o usciti). Peso: `giocatori/` ~18 MB, `data/stats` ~3 MB; le schede cambiano a ogni giornata (voti).
 `PHOTOS = False` in `render_stats.py`: le foto del CDN API-Football restano spente finché non si verifica la licenza.
+**Listone con MV, FMV, titolarità, presenze, gol, assist (2026-09-03, richiesta dell'utente).** `render_stats.player_summary` calcola per ogni giocatore
+MV (media dei voti FantaTB della stagione), FMV (media dei fantavoti), % titolarità (`player_status`), presenze/gol/assist di Serie A (blocchi `cur` di
+players.json, in mancanza dai voti). Compaiono: nella pagina statica `fantacalcio/listone.html` (colonne ordinabili, nome linkato alla scheda) e nella
+vista Listone dell'app (`fanta/app.js` legge `/data/fanta/schede.json`, scritto da `render_site.py`: per id → url, mv, fmv, tit, pres, gol, assist;
+intestazioni cliccabili per ordinare, nome → scheda in una nuova scheda del browser). Se `schede.json` manca l'app mostra i trattini e nessun link.

@@ -577,8 +577,42 @@ def build_ctx(D, S, T):
             voti.setdefault(r["player_id"], {})[md] = r
     tit = {s["player_id"]: s for s in ((D.get("titolari") or {}).get("status") or [])}
     listone = {p["id"]: p for p in (D.get("listone") or {}).get("players") or []}
-    return {"P": P, "urls": player_urls(P), "voti": voti, "tit": tit, "listone": listone, "ref": role_reference(P),
-            "updated": (S.get("players") or {}).get("updated") or ""}
+    ctx = {"P": P, "urls": player_urls(P), "voti": voti, "tit": tit, "listone": listone, "ref": role_reference(P),
+           "updated": (S.get("players") or {}).get("updated") or "", "summ": {}}
+    ctx["summ"] = {int(pid): player_summary(ctx, int(pid), p) for pid, p in P.items()}
+    return ctx
+
+def player_summary(ctx, pid, p=None):
+    """Riassunto della Serie A in corso per listone, app e schede: MV (media voto FantaTB), FMV (fantamedia), % titolarità,
+    presenze, gol e assist (dalle statistiche API-Football; se mancano, dai voti FantaTB)."""
+    vs = ctx["voti"].get(pid) or {}
+    vv = [r["voto"] for r in vs.values() if r.get("voto") is not None]
+    fv = [r["fantavoto"] for r in vs.values() if r.get("fantavoto") is not None]
+    st = ctx["tit"].get(pid) or {}
+    p = p or ctx["P"].get(str(pid)) or {}
+    cur = [b for b in (p.get("cur") or []) if (b.get("league") or {}).get("id") == 135]
+    a = agg(cur) if cur else None
+    pres = a["app"] if a else sum(1 for r in vs.values() if (r.get("minutes") or 0) > 0)
+    gol = a["gol"] if a else sum((r.get("bonus") or {}).get("gol", 0) for r in vs.values())
+    ast = a["assist"] if a else sum((r.get("bonus") or {}).get("assist", 0) for r in vs.values())
+    return {"url": ctx["urls"].get(pid), "mv": round(sum(vv) / len(vv), 2) if vv else None, "fmv": round(sum(fv) / len(fv), 2) if fv else None,
+            "tit": st.get("prob"), "pres": pres, "gol": gol, "assist": ast, "n": len(vv)}
+
+def summary_of(ctx, pid):
+    if not ctx:
+        return None
+    s = ctx["summ"].get(pid)
+    if s is None:
+        s = ctx["summ"][pid] = player_summary(ctx, pid)
+    return s
+
+def write_schede(ctx, path):
+    """data/fanta/schede.json per l'app FantaTB (vista Listone): per giocatore URL della scheda, MV, FMV, titolarità, presenze, gol, assist."""
+    import json
+    out = {"updated": ctx["updated"], "players": {str(pid): {k: v for k, v in s.items() if k != "n" and v is not None} for pid, s in sorted(ctx["summ"].items())}}
+    with open(path, "w", encoding="utf-8", newline="\n") as f:
+        json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
+        f.write("\n")
 
 def plink(ctx, pid, text, cls=""):
     u = (ctx or {}).get("urls", {}).get(pid)

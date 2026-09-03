@@ -8,7 +8,7 @@ const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp
 const ROLES = ['P','D','C','A'];
 const ROLE_NAME = {P:'Portieri', D:'Difensori', C:'Centrocampisti', A:'Attaccanti'};
 
-let sb = null, user = null, players = [], playersById = {};
+let sb = null, user = null, players = [], playersById = {}, schede = {};   // schede: /data/fanta/schede.json (URL scheda, MV, FMV, titolarità, presenze, gol, assist)
 let L = null;            // lega corrente: {league, members, rosters, auction, bids}
 let auctionTimer = null, channel = null;
 
@@ -54,17 +54,36 @@ $('#btnSignup').onclick = async () => {
 
 /* ---------- listone ---------- */
 async function loadPlayers(){
-  const { data, error } = await sb.from('players').select('id,name,team,role,price,active').order('price', { ascending: false }).limit(2000);
+  const [{ data, error }] = await Promise.all([
+    sb.from('players').select('id,name,team,role,price,active').order('price', { ascending: false }).limit(2000),
+    fetch('/data/fanta/schede.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(j => { schede = (j && j.players) || {}; }).catch(() => {})
+  ]);
   if (error) return err(error);
   players = data || []; playersById = {}; players.forEach(p => playersById[p.id] = p);
 }
 function roleTag(r){ return '<span class="role '+r+'">'+r+'</span>'; }
+let lsSort = { k: 'price', asc: false };
+const fmt2 = v => v == null ? '—' : Number(v).toFixed(2).replace('.', ',');
+function lsCell(v, f){ return '<td class="num">'+(v == null ? '—' : (f ? f(v) : v))+'</td>'; }
 function renderListone(){
   const q = ($('#lsSearch').value || '').toLowerCase(); const r = $('#lsRole').value;
-  const rows = players.filter(p => p.active && (!r || p.role === r) && (!q || p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q))).slice(0, 400);
-  $('#lsTable').innerHTML = players.length ? '<table><thead><tr><th>R</th><th>Giocatore</th><th>Squadra</th><th>Quot.</th></tr></thead><tbody>' +
-    rows.map(p => '<tr><td>'+roleTag(p.role)+'</td><td>'+esc(p.name)+'</td><td>'+esc(p.team)+'</td><td><b>'+p.price+'</b></td></tr>').join('') + '</tbody></table>'
+  const val = (p, k) => {
+    if (k === 'price') return p.price; if (k === 'name') return p.name; if (k === 'team') return p.team; if (k === 'role') return 'PDCA'.indexOf(p.role);
+    const s = schede[p.id]; return (s && s[k] != null) ? s[k] : -1;
+  };
+  const rows = players.filter(p => p.active && (!r || p.role === r) && (!q || p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q)))
+    .sort((a, b) => { const x = val(a, lsSort.k), y = val(b, lsSort.k); const c = typeof x === 'string' ? x.localeCompare(y) : (x - y); return lsSort.asc ? c : -c; }).slice(0, 400);
+  const th = (k, lab, title) => '<th class="srt'+(lsSort.k === k ? ' on' : '')+'" data-k="'+k+'"'+(title ? ' title="'+title+'"' : '')+'>'+lab+(lsSort.k === k ? (lsSort.asc ? ' ▲' : ' ▼') : '')+'</th>';
+  $('#lsTable').innerHTML = players.length ? '<div class="tw"><table><thead><tr>'+th('role','R')+th('name','Giocatore')+th('team','Squadra')+th('price','Quot.')+
+    th('mv','MV','Media voto FantaTB, stagione in corso')+th('fmv','FMV','Fantamedia: media dei fantavoti con bonus e malus')+th('tit','Tit.','Indice di titolarità per la prossima giornata')+
+    th('pres','Pres.','Presenze in Serie A')+th('gol','Gol','Gol in Serie A')+th('assist','Assist','Assist in Serie A')+'</tr></thead><tbody>' +
+    rows.map(p => { const s = schede[p.id] || {};
+      const nm = s.url ? '<a class="pl" href="'+esc(s.url)+'" target="_blank" rel="noopener" title="Apri la scheda con le statistiche">'+esc(p.name)+'</a>' : esc(p.name);
+      return '<tr><td>'+roleTag(p.role)+'</td><td>'+nm+'</td><td>'+esc(p.team)+'</td><td><b>'+p.price+'</b></td>'+lsCell(s.mv, fmt2)+lsCell(s.fmv, fmt2)+
+        lsCell(s.tit, v => '<span class="pct '+(v >= 70 ? 'g' : v >= 40 ? 'a' : 'r')+'">'+v+'%</span>')+lsCell(s.pres)+lsCell(s.gol)+lsCell(s.assist)+'</tr>'; }).join('') + '</tbody></table></div>' +
+    '<p class="small">MV = media voto FantaTB, FMV = fantamedia (voto più bonus e malus), Tit. = indice di titolarità per la prossima giornata; presenze, gol e assist in Serie A. Clic sull\'intestazione per ordinare, sul nome per la scheda completa.</p>'
     : '<div class="msg">Listone non ancora caricato. Arriva con il primo aggiornamento dei dati.</div>';
+  $$('#lsTable th.srt').forEach(h => { h.onclick = () => { const k = h.dataset.k; if (lsSort.k === k) lsSort.asc = !lsSort.asc; else lsSort = { k: k, asc: (k === 'name' || k === 'team' || k === 'role') }; renderListone(); }; });
 }
 $('#lsSearch').oninput = renderListone; $('#lsRole').onchange = renderListone;
 

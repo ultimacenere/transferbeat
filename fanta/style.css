@@ -116,3 +116,8 @@ legend{font-size:12px;font-weight:700;color:var(--muted);padding:0 6px}
 .prob.ok{background:#e6f6ee;color:#0b5d36}.prob.mid{background:#fff3d6;color:#8a5a00}.prob.low{background:#fdecea;color:#8a1f16}
 .prob{display:inline-block;font-size:11px;font-weight:700;padding:1px 6px;border-radius:10px;margin-left:2px;white-space:nowrap}
 .inj{color:var(--red);font-size:12px;font-weight:700;white-space:nowrap}
+/* listone: colonne MV/FMV/titolarità/presenze e link alle schede (2026-09-03) */
+.tw{overflow-x:auto}#lsTable td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+#lsTable th.srt{cursor:pointer;white-space:nowrap}#lsTable th.srt:hover,#lsTable th.srt.on{color:var(--txt)}
+#lsTable a.pl{border-bottom:1px dotted var(--muted)}#lsTable a.pl:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.pct{font-weight:700}.pct.g{color:#0a9d57}.pct.a{color:#d98700}.pct.r{color:#e0392b}
