@@ -23,7 +23,7 @@ JSON: {"slug":"<slug>","tipo":"storia","giocatore":"<nome completo o vuoto>","te
 
 PASSI DI PUBBLICAZIONE:
 6. Rigenera: da scripts/, python: import articles, render_articles; render_articles.render_all(articles.all_articles(),"https://transferbeat.com",articles.PAGES,articles.DATA). Verifica articoli/it/<slug>.html.
-7. Commit plumbing SOPRA origin/main aggiornato (git fetch; GIT_INDEX_FILE temporaneo; read-tree origin/main; update-index dei SOLI data/articles/*, articoli/**, sitemap.xml; write-tree; commit-tree -p origin/main; update-ref refs/heads/main; poi rm .git/index; git read-tree HEAD; git checkout-index -a -f). NON toccare data/{it,en,es}/*.json né data/competizioni.json. Se trovi un .lock in .git, rimuovilo e riprova.
+7. Commit plumbing SOPRA origin/main aggiornato (git fetch; GIT_INDEX_FILE temporaneo; read-tree origin/main; update-index dei SOLI data/articles/*, articoli/**, sitemap.xml, sitemap-articoli.xml; write-tree; commit-tree -p origin/main; update-ref refs/heads/main; poi rm .git/index; git read-tree HEAD; git checkout-index -a -f). NON toccare data/{it,en,es}/*.json né data/competizioni.json. Se trovi un .lock in .git, rimuovilo e riprova.
 8. PUBBLICA da solo eseguendo: bash scripts/pubblica.sh (pubblica via token, non stampa nulla di sensibile). Conferma il push; se rifiutato perché origin è avanzato, rifai il commit plumbing sopra il nuovo origin/main e ripubblica.
 
 Il formato "storia" usa la copertina img/cover-storia.svg e il badge FOCUS. Output: storia scelta, titolo e conferma pubblicazione.

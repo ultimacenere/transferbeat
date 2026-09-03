@@ -214,7 +214,9 @@ Claude esegue questi comandi a richiesta man mano che l'utente avanza (crea lega
 - Le scritture su Supabase lanciate da Claude (upsert/patch dagli script) possono essere bloccate dal classificatore della modalità
   automatica: in quel caso dare all'utente il comando da lanciare nel suo terminale, che è **Windows PowerShell 5.1** (niente `&&` né
   `VAR=x`: usare `;` e `$env:VAR="x"`; gli script stampano anche su console cp1252 senza crashare). Es.: `py scripts/fanta_players.py`.
-- Il cron `update.yml` del sito non tocca `fanta/`; `render_articles.py` rigenera `sitemap.xml` senza `/fanta/` (da aggiungere).
+- Il cron `update.yml` del sito non tocca `fanta/`. Dal 2026-09-03 `fanta.yml` lancia `scripts/render_site.py` dopo voti e titolarità: rigenera
+  `fantacalcio/{index,listone,voti-giornata-N,titolari}.html` (pagine statiche SEO con Dataset e FAQ, formule in chiaro) e `sitemap-fanta.xml`; `/fanta/` è in
+  `sitemap-pagine.xml`. Se si cambia una formula (§5-7) va aggiornato anche il testo delle pagine in `render_site.py` (VOTO_NOTE, FAQ, note del listone e dei titolari).
 
 ## 13. PENDING (in ordine di priorità)
 0. ~~Sincronizzare le rose~~ FATTO il 2026-09-03 alle 10:16 UTC (lanciato dall'utente): 16 disattivati (Leão, Nkunku, Kostić, Prati,
@@ -226,7 +228,7 @@ Claude esegue questi comandi a richiesta man mano che l'utente avanza (crea lega
 4. Correzione voti dall'interfaccia admin (`rating_overrides` esiste, manca la UI).
 5. Probabili formazioni dalle notizie (LLM, stesso motore degli articoli) per affinare la % titolarità; alert deadline formazioni.
 6. Opzione di lega "formazioni nascoste fino alla deadline".
-7. `/fanta/` in `sitemap.xml`; meta/SEO della pagina; pagina pubblica "classifica di lega" condivisibile.
+7. ~~`/fanta/` in `sitemap.xml`; meta/SEO della pagina~~ fatto il 2026-09-03 (title nuovo, sitemap, pagine `fantacalcio/`). Resta: pagina pubblica "classifica di lega" condivisibile.
 8. Scambi/mercato di riparazione tra squadre; svincoli con rimborso parziale.
 9. Mantra (ruoli manuali + moduli Mantra); poi Premier/Liga (API-Football copre entrambe con lo stesso schema).
 10. Rigenerare la service key Supabase prima dell'apertura al pubblico; valutare Supabase Pro se le leghe crescono.
