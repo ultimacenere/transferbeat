@@ -26,7 +26,7 @@ UI = {
          "via": "via", "smentita": "DESMENTIDO"},
 }
 RECAP_LABEL = {"it": "RECAP DI GIORNATA", "en": "DAILY RECAP", "es": "RESUMEN DEL DIA"}
-STORIA_LABEL = {"it": "FOCUS MERCATO", "en": "TRANSFER FOCUS", "es": "FOCO DE MERCADO"}
+STORIA_LABEL = {"it": "FOCUS", "en": "FOCUS", "es": "FOCO"}
 LUNCH_LABEL = {"it": "LUNCH BREAK", "en": "LUNCH BREAK", "es": "LUNCH BREAK"}
 SCOOP_LABEL = {"it": "SCOOP", "en": "SCOOP", "es": "SCOOP"}
 NOTTI_LABEL = {"it": "NOTTI MONDIALI", "en": "WORLD CUP NIGHTS", "es": "NOCHES MUNDIALES"}
