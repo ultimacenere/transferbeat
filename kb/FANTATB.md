@@ -5,6 +5,8 @@
 > Pubblico ridotto (lega dell'utente + amici) per la stagione di test; monetizzazione da valutare dopo.
 > Il database è vuoto di leghe (lega test e bot eliminati): pronto per la lega vera e per le demo.
 
+> **Regola SEO/GEO (2026-09-03)**: vale anche per FantaTB, vedi `kb/SEO.md`. Le pagine dati (listone, voti, titolarità) vanno pubblicate come HTML statico in `fantacalcio/` (piano §3.4). L'analisi di mercato con le funzioni da aggiungere è in `kb/report/mercato-fantacalcio-2026-09-03.html`: priorità web app installabile con notifiche, scambi e mercato di riparazione, "schiero solo se titolare", coppe e gironi, voti live, asta a buste chiuse.
+
 ## 0. In 60 secondi
 - **Cos'è**: leghe private con login, asta live in tempo reale, rose, formazioni con deadline, calendario di lega,
   calcolo punteggi con voto statistico FantaTB, classifica, regole configurabili dall'admin, listone e voti pubblici.

@@ -1,0 +1,172 @@
+<title>Perché TransferBeat non si posiziona</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+:root{--paper:#ffffff;--ink:#171a21;--muted:#5f6672;--line:#e6e2dc;--soft:#faf7f2;--accent:#ff6a00;--accent-ink:#b84800;--ok:#1a8f4e;--warn:#c98a00;--bad:#c62828;--tile:#fff4ea;--badbg:#fdecea;--warnbg:#fff6dd;--okbg:#e8f6ee}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#15171c;--ink:#eceae4;--muted:#a3a7ae;--line:#2c3038;--soft:#1c1f26;--accent:#ff8a3d;--accent-ink:#ffb27a;--ok:#5fcf8a;--warn:#f0b840;--bad:#ff7b7b;--tile:#2a1f16;--badbg:#3a1d1d;--warnbg:#3a2f14;--okbg:#17301f}}
+:root[data-theme="dark"]{--paper:#15171c;--ink:#eceae4;--muted:#a3a7ae;--line:#2c3038;--soft:#1c1f26;--accent:#ff8a3d;--accent-ink:#ffb27a;--ok:#5fcf8a;--warn:#f0b840;--bad:#ff7b7b;--tile:#2a1f16;--badbg:#3a1d1d;--warnbg:#3a2f14;--okbg:#17301f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Source Sans 3",Segoe UI,system-ui,sans-serif;font-size:16px;line-height:1.55}
+.wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+header.hero{border-bottom:3px solid var(--accent);padding:38px 0 26px}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink)}
+h1{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:clamp(34px,5vw,50px);line-height:1.02;margin:10px 0 12px;text-wrap:balance}
+.lead{font-size:18px;max-width:62ch;color:var(--muted);margin:0}
+.meta{margin-top:14px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted)}
+nav.toc{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--line);z-index:5}
+nav.toc .wrap{display:flex;gap:4px;overflow-x:auto;padding:8px 22px}
+nav.toc a{font-size:13px;font-weight:600;color:var(--muted);padding:6px 10px;border-radius:6px;white-space:nowrap;text-decoration:none}
+nav.toc a:hover,nav.toc a:focus-visible{color:var(--ink);background:var(--soft);outline:2px solid var(--accent)}
+section{padding:34px 0 10px;border-bottom:1px solid var(--line)}
+h2{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:30px;margin:0 0 6px;text-wrap:balance}
+h3{font-family:Fraunces,Georgia,serif;font-weight:500;font-size:21px;margin:24px 0 8px}
+p{max-width:70ch}.sub{color:var(--muted);margin:0 0 18px;max-width:70ch}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.tile{background:var(--tile);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.tile .n{font-family:Fraunces,Georgia,serif;font-size:32px;font-weight:700;line-height:1;color:var(--accent-ink);font-variant-numeric:tabular-nums}
+.tile .l{font-size:13px;color:var(--muted);margin-top:6px}
+.tw{overflow-x:auto;margin:14px 0 22px;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:620px}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--soft);font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+td.num{text-align:right;font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.cause{display:grid;grid-template-columns:110px 1fr;gap:14px;border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:12px 0}
+.cause .imp{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;padding:6px 8px;border-radius:6px;text-align:center;align-self:start}
+.imp.alto{background:var(--badbg);color:var(--bad)}.imp.medio{background:var(--warnbg);color:var(--warn)}.imp.basso{background:var(--okbg);color:var(--ok)}
+.cause b.t{font-size:17px;display:block;margin-bottom:4px}
+.cause .ev{font-size:13px;color:var(--muted);margin-top:8px;font-family:"IBM Plex Mono",monospace}
+.plan{counter-reset:s;list-style:none;padding:0}
+.plan li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:10px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.plan li::before{content:counter(s);font-family:Fraunces,Georgia,serif;font-size:30px;font-weight:700;color:var(--accent);line-height:1}
+.plan b{display:block}
+.who{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;padding:1px 7px;border-radius:4px;border:1px solid var(--line);color:var(--muted);margin-left:6px}
+.callout{background:var(--soft);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:8px;padding:14px 18px;margin:18px 0}
+ul{padding-left:20px;margin:6px 0 12px}li{margin:4px 0}
+code{font-family:"IBM Plex Mono",monospace;font-size:13px;background:var(--soft);padding:1px 5px;border-radius:4px}
+a{color:var(--accent-ink)}
+footer{padding:26px 0 50px;color:var(--muted);font-size:13px}
+</style>
+
+<header class="hero"><div class="wrap">
+<div class="eyebrow">Diagnosi SEO e GEO · transferbeat.com</div>
+<h1>Perché TransferBeat non si posiziona</h1>
+<p class="lead">Il sito è indicizzato da Google ma è invisibile: in tre mesi 316 impressioni e 43 clic, quasi tutti di chi cerca il nome. Le cause, in ordine di impatto, e il piano per uscirne.</p>
+<div class="meta">3 settembre 2026 · dati Search Console via Analytics dal lancio (giugno 2026) · verifiche sul codice e sul sito pubblicato</div>
+</div></header>
+<nav class="toc"><div class="wrap">
+<a href="#dati">I dati</a><a href="#cause">Le cause</a><a href="#geo">GEO</a><a href="#piano">Il piano</a><a href="#verificato">Verificato e ipotizzato</a>
+</div></nav>
+
+<section id="dati"><div class="wrap">
+<h2>Cosa dicono i dati</h2>
+<p class="sub">Search Console collegata ad Analytics, periodo giugno-settembre 2026.</p>
+<div class="tiles">
+<div class="tile"><div class="n">316</div><div class="l">impressioni totali in 3 mesi</div></div>
+<div class="tile"><div class="n">43</div><div class="l">clic, di cui 39 sulla home</div></div>
+<div class="tile"><div class="n">67%</div><div class="l">CTR della home: ricerca di marca</div></div>
+<div class="tile"><div class="n">72</div><div class="l">pagine con almeno un'impressione</div></div>
+<div class="tile"><div class="n">22</div><div class="l">query non anonime, 0 clic</div></div>
+<div class="tile"><div class="n">43</div><div class="l">posizione media sulle query</div></div>
+</div>
+<div class="tw"><table>
+<tr><th>Cosa</th><th>Valore</th><th>Lettura</th></tr>
+<tr><td>Home</td><td class="num">39 clic · 58 impr · pos 2,5</td><td>Compare quasi solo per "transferbeat". Chi la trova la cerca per nome.</td></tr>
+<tr><td>Miglior articolo (lunch break 6 giugno)</td><td class="num">1 clic · 26 impr · pos 2,4</td><td>Un solo pezzo su 549 ha superato le 20 impressioni.</td></tr>
+<tr><td>Articoli in inglese</td><td class="num">1-2 impr, pos 1-10</td><td>Sulle query inglesi la concorrenza è più debole: qualche pagina si affaccia in prima pagina, ma su ricerche quasi inesistenti.</td></tr>
+<tr><td>Query intercettate</td><td class="num">"atta fiore", "anan khalaili inter", "chelsea juventus transfer"</td><td>Solo code lunghe su giocatori minori dove i grandi editori non hanno una pagina. Nessuna query tematica: né calciomercato, né serie a, né fantacalcio.</td></tr>
+<tr><td><code>/?lang=es</code> come pagina separata</td><td class="num">4 impr</td><td>Google tratta le varianti di lingua come URL diverse della stessa pagina.</td></tr>
+<tr><td>Altri motori</td><td class="num">0 risultati per <code>site:transferbeat.com</code></td><td>Nell'indice usato dal nostro strumento di ricerca (non Google) il dominio non esiste. Una ricerca di "transferbeat" non trova alcuna menzione.</td></tr>
+</table></div>
+<div class="callout">La diagnosi in una riga: <b>indicizzato ma non competitivo</b>. Non è un problema di accesso o di errori tecnici gravi. È un sito nuovo, senza autorità, con contenuti derivati su query dominate dai grandi editori, e con pagine principali vuote per i motori.</div>
+</div></section>
+
+<section id="cause"><div class="wrap">
+<h2>Le cause, in ordine di impatto</h2>
+<p class="sub">Ogni causa con l'evidenza che la sostiene e il rimedio.</p>
+
+<div class="cause"><div class="imp alto">ALTO</div><div><b class="t">1. Contenuto derivato su query dove vincono i grandi editori</b>
+549 articoli in tre lingue in tre mesi, tutti riassunti di notizie di Sky, Gazzetta, Corriere, Di Marzio, con le fonti citate nel testo. Per Google è la definizione di contenuto non originale: sulle stesse query ci sono le fonti stesse, con autorità, freschezza e link. Un aggregatore nuovo non ha motivo di comparire prima di loro. Gli unici posizionamenti sono su nomi di giocatori minori che nessuno copre.
+<div class="ev">Evidenza: articolo recap del 1° settembre, 450 parole, 7 testate citate, nessun dato o angolo proprio. Query intercettate: solo code lunghe.</div></div></div>
+
+<div class="cause"><div class="imp alto">ALTO</div><div><b class="t">2. Dominio nuovo senza autorità né menzioni</b>
+Registrato a giugno 2026. Nessun backlink noto, nessuna menzione sul web, nessun profilo social collegato, nessuna presenza su Reddit o forum. Google tiene i domini nuovi in una fase di osservazione che dura mesi, e senza segnali esterni non ne escono.
+<div class="ev">Evidenza: ricerca "transferbeat" senza risultati fuori dal sito; nessun referral in Analytics oltre a diretto e organico di marca.</div></div></div>
+
+<div class="cause"><div class="imp alto">ALTO</div><div><b class="t">3. Le pagine principali sono vuote per i motori</b>
+Home, board e campionati contengono rispettivamente 330, 232 e 187 caratteri di testo nell'HTML. Tutto il resto viene caricato via JavaScript da file JSON. Google esegue il JavaScript ma con ritardo e con meno fiducia, gli altri motori e i crawler delle IA spesso non lo fanno affatto. Le pagine hub, cioè quelle che dovrebbero posizionarsi su "serie a classifica", "calciomercato inter", "calendario champions", per Google sono quasi bianche.
+<div class="ev">Evidenza: misura sul codice; l'H1 della home è un template JavaScript, non un testo.</div></div></div>
+
+<div class="cause"><div class="imp medio">MEDIO</div><div><b class="t">4. Tre lingue sulla stessa URL</b>
+Inglese e spagnolo sono <code>?lang=en</code> e <code>?lang=es</code> sulla stessa pagina, con un unico canonical. I tag hreflang puntano a varianti che Google considera la stessa URL: segnale contraddittorio, pagine straniere non indicizzabili come tali. Gli articoli invece hanno URL separate per lingua e sono fatti bene.
+<div class="ev">Evidenza: <code>/?lang=es</code> compare in Search Console come pagina a sé con 4 impressioni; canonical identico per le tre lingue su home, board, campionati, fonti.</div></div></div>
+
+<div class="cause"><div class="imp medio">MEDIO</div><div><b class="t">5. Titoli e descrizioni senza tema</b>
+"TransferBeat — Home", "TransferBeat — Live board". Nessuna parola chiave, nessuna promessa. Il titolo è il primo segnale di rilevanza e il testo del link nei risultati.
+<div class="ev">Evidenza: tag title letti dal codice.</div></div></div>
+
+<div class="cause"><div class="imp medio">MEDIO</div><div><b class="t">6. Sitemap che grida al lupo</b>
+559 URL con lastmod uguale alla data del giorno, ogni giorno, perché la sitemap viene rigenerata a ogni pubblicazione. Google impara a ignorare il campo e non distingue il nuovo dal vecchio, quindi visita meno.
+<div class="ev">Evidenza: <code>grep lastmod sitemap.xml</code>, 559 valori identici.</div></div></div>
+
+<div class="cause"><div class="imp medio">MEDIO</div><div><b class="t">7. Nessuna entità riconoscibile dietro il sito</b>
+Autore "Redazione TransferBeat", organizzazione senza persone, senza pagina "chi siamo", senza indirizzo, senza social. I dati strutturati esistono (NewsArticle, Organization, WebSite) ma descrivono un'entità che non esiste altrove sul web. Per Google e per i motori generativi la fiducia nasce dall'entità, non dalla pagina.
+<div class="ev">Evidenza: JSON-LD degli articoli con author di tipo Organization; nessuna pagina about; nessun profilo collegato con sameAs.</div></div></div>
+
+<div class="cause"><div class="imp basso">BASSO</div><div><b class="t">8. Struttura interna piatta</b>
+Nessuna pagina per squadra, per competizione o per giocatore. Gli articoli non hanno correlati né tag: ogni pezzo è un vicolo cieco con quattro link di menu. Le 60 squadre della board non hanno una URL propria da posizionare.
+<div class="ev">Evidenza: articolo con 4 link interni e nessun correlato; board con squadre selezionate via JavaScript senza URL.</div></div></div>
+
+<div class="cause"><div class="imp basso">BASSO</div><div><b class="t">9. Il cambio di rotta è recente</b>
+Fino al 2 settembre il sito era di calciomercato, con 549 articoli su quel tema e il nome che lo dice. Da ieri parla di campionati e fantacalcio. Google ha bisogno di settimane per ricategorizzare un sito, e il segnale storico oggi è ancora "aggregatore di mercato".
+<div class="ev">Evidenza: riconversione pubblicata il 3 settembre 2026.</div></div></div>
+</div></section>
+
+<section id="geo"><div class="wrap">
+<h2>GEO: essere citati dalle intelligenze artificiali</h2>
+<p class="sub">ChatGPT, Perplexity, Gemini e le AI Overviews di Google citano fonti che possono leggere, capire e attribuire. Oggi TransferBeat non è citabile.</p>
+<div class="tw"><table>
+<tr><th>Requisito</th><th>Stato</th><th>Perché conta</th></tr>
+<tr><td>Presenza nell'indice Bing</td><td><b style="color:var(--bad)">assente</b></td><td>ChatGPT e Copilot leggono il web tramite Bing. Se Bing non ha il sito, le risposte non possono citarlo. Bing Webmaster Tools e IndexNow non risultano configurati.</td></tr>
+<tr><td>Contenuto leggibile senza JavaScript</td><td><b style="color:var(--bad)">no</b> sulle pagine principali</td><td>I crawler delle IA prendono l'HTML statico. Home, board e campionati risultano vuote.</td></tr>
+<tr><td>Dati originali citabili</td><td><b style="color:var(--warn)">in parte</b></td><td>Il listone FantaTB, le quotazioni, l'indice di titolarità, la classificazione per concretezza sono dati propri: oggi vivono dentro l'app o in JSON, non in pagine con testo e tabelle.</td></tr>
+<tr><td>Entità chiara (chi siamo, chi scrive, dove)</td><td><b style="color:var(--bad)">no</b></td><td>Le IA attribuiscono a entità note. Serve una pagina "chi siamo" con persone, storia, contatti, e collegamenti a profili esterni coerenti.</td></tr>
+<tr><td>Domande e risposte esplicite</td><td><b style="color:var(--bad)">no</b></td><td>Le IA estraggono risposte da blocchi domanda-risposta, definizioni, tabelle con intestazioni. FAQ con dati strutturati FAQPage sulle pagine chiave.</td></tr>
+<tr><td>File llms.txt</td><td><b style="color:var(--bad)">assente</b></td><td>Indice in testo semplice di cosa offre il sito e dove; adottato da un numero crescente di crawler.</td></tr>
+<tr><td>Dati strutturati</td><td><b style="color:var(--ok)">presenti</b> sugli articoli</td><td>NewsArticle, Organization, WebSite ci sono. Mancano Person per gli autori, SportsEvent e SportsTeam per partite e squadre, Dataset per listone e voti, FAQPage.</td></tr>
+<tr><td>Menzioni esterne del marchio</td><td><b style="color:var(--bad)">nessuna</b></td><td>Le IA pesano la frequenza con cui un nome compare in fonti diverse. Zero menzioni significa zero probabilità di citazione.</td></tr>
+</table></div>
+</div></section>
+
+<section id="piano"><div class="wrap">
+<h2>Il piano</h2>
+<p class="sub">In ordine di rapporto tra impatto e sforzo. Le voci con etichetta "codice" le posso fare io nel repository; quelle con "tu" richiedono account, contenuti o relazioni.</p>
+<ol class="plan">
+<li><div><b>Pagine hub con testo vero, rese lato server<span class="who">codice</span></b>Home, board, campionati e una pagina per ogni squadra e competizione generate dal cron come HTML statico con testo, tabelle e link, non solo JSON. Le 60 squadre diventano 60 URL del tipo <code>/squadre/inter/</code> con notizie, classifica, calendario e rosa. È la mossa che cambia di più: crea le pagine su cui il sito può davvero posizionarsi.</div></li>
+<li><div><b>Lingue su URL separate o una lingua sola<span class="who">codice</span></b>Home, board, campionati e fonti in <code>/en/</code> e <code>/es/</code> con canonical propri, oppure abbandonare EN ed ES sulle pagine hub e tenerle solo per gli articoli. Consiglio la seconda: il traffico è italiano e le versioni straniere diluiscono tutto.</div></li>
+<li><div><b>Titoli, descrizioni e sitemap onesta<span class="who">codice</span></b>Title con tema e promessa ("Classifica Serie A 2026-27, risultati e marcatori aggiornati | TransferBeat"), descrizioni specifiche, lastmod reale per ogni URL, sitemap divise per tipo con priorità. Un pomeriggio di lavoro.</div></li>
+<li><div><b>Contenuto originale che nessun editore ha<span class="who">codice + tu</span></b>Pagine dati da FantaTB e dai campionati: listone con quotazioni FantaTB, voti FantaTB per giornata, probabilità di titolarità, infortuni con rientri, classifiche e marcatori. Sono ricerche vere ("voti fantacalcio 3 giornata", "quotazioni fantacalcio", "infortunati serie a") e sono dati nostri, citabili dalle IA. È la differenza tra aggregare e pubblicare.</div></li>
+<li><div><b>Entità e persone<span class="who">tu</span></b>Pagina "chi siamo" con nome, storia, sede, contatti; autori con nome e cognome e profilo; profili social del sito collegati con sameAs; una pagina LinkedIn o un profilo fondatore. Anche una redazione di una persona è un'entità, "Redazione TransferBeat" no.</div></li>
+<li><div><b>Bing, IndexNow e llms.txt<span class="who">tu + codice</span></b>Registrare il sito su Bing Webmaster Tools importando da Search Console, attivare IndexNow nel cron di pubblicazione, aggiungere <code>/llms.txt</code>. Rende il sito citabile da ChatGPT e Copilot in poche settimane.</div></li>
+<li><div><b>Struttura interna e correlati<span class="who">codice</span></b>Correlati per squadra e per tema in fondo a ogni articolo, tag per squadra, breadcrumb con dati strutturati, link dalle pagine squadra agli articoli e viceversa.</div></li>
+<li><div><b>Menzioni e link<span class="who">tu</span></b>Presentare FantaTB nelle community giuste: subreddit di fantacalcio, forum GruppoEsperti, gruppi Telegram e Facebook, creator del fantacalcio con una lega demo gratuita. Il primo obiettivo non è il link, è che il nome compaia fuori dal sito. FantaTB è un motivo di menzione, un aggregatore di notizie no.</div></li>
+<li><div><b>Meno pezzi, più profondi<span class="who">tu</span></b>Tre riassunti al giorno in tre lingue producono 9 pagine derivate al giorno. Meglio un pezzo al giorno con un dato o un'analisi propri, in italiano, e le altre lingue solo per FantaTB e le pagine dati.</div></li>
+<li><div><b>Pazienza misurata<span class="who">tu</span></b>Un dominio nuovo con questi interventi comincia a vedere impressioni tematiche dopo 6-10 settimane e clic significativi dopo 3-4 mesi. Da controllare ogni mese in Search Console: impressioni per query tematiche, pagine indicizzate, pagine escluse e perché.</div></li>
+</ol>
+<div class="callout"><b>Cosa non serve fare</b>: cambiare dominio, comprare link, moltiplicare gli articoli, tradurre di più. Nessuna di queste cose risolve le tre cause alte.</div>
+</div></section>
+
+<section id="verificato"><div class="wrap">
+<h2>Cosa è verificato e cosa è ipotizzato</h2>
+<h3>Verificato</h3><ul>
+<li>Dati di Search Console e Analytics forniti dal proprietario.</li>
+<li>Testo statico delle pagine principali, tag title, canonical, hreflang, lastmod, dati strutturati e struttura degli articoli letti dal codice sorgente e dal sito pubblicato.</li>
+<li>Assenza del dominio e del marchio nei risultati del motore di ricerca usato dallo strumento di analisi, diverso da Google.</li>
+<li>Robots.txt aperto, sitemap presente, nessun noindex.</li></ul>
+<h3>Ipotizzato, coerente con i dati</h3><ul>
+<li>Il peso relativo delle cause: la penalizzazione da contenuto derivato e da dominio nuovo non è misurabile direttamente, ma è l'unica spiegazione compatibile con "indicizzato, 316 impressioni, solo code lunghe".</li>
+<li>La velocità di recupero dopo gli interventi: stime da esperienza su siti editoriali nuovi.</li></ul>
+<h3>Da verificare in Search Console</h3><ul>
+<li>Rapporto Pagine: quante URL sono "scansionate ma non indicizzate" o "duplicate senza canonical scelto dall'utente". Se le seconde sono molte, la causa 4 sale di peso.</li>
+<li>Rapporto Prestazioni con filtro per paese: quanto traffico arriva dall'estero sulle pagine inglesi e spagnole.</li></ul>
+</div></section>
+<footer><div class="wrap">TransferBeat · diagnosi interna · settembre 2026</div></footer>

@@ -1,0 +1,18 @@
+# Mercato italiano fantacalcio (agente 4) — sintesi dati chiave
+- Giocatori: ~6 mln italiani (S, MF 2023); ~5 mln attivi/settimana (S, Fantamagazine 2024)
+- Fantacalcio.it: 6,5 mln registrati 2025 -> ~7 mln 2026 (D); 4,5 mln utenti app (D); 2,5 mln attivi -> 3-4 mln formazioni/settimana (D); quota >90% (D, sondaggio Sapienza 2022); Similarweb lug 2026: 12,4 mln visite/mese, #1 Fantasy Sports IT, 69% diretto, 71,6% uomini, 25-34
+- Crescita registrati: 1,8M (2016) 3,5M (2019) 4M (2022) 6,5M (2025) 7M (2026)
+- FantaMaster: 2-2,5 mln utenti (D); App Store 4,6 stelle / 38k; Premium 9,99 EUR/anno, Full 19,99
+- Fantacalcio-Online/Magic Leghe: 510k+ (D); dal 2006; 4 allenatori in seconda IA; 150+ regole; import rosa
+- Fantapazz: App Store 4,2 / 2.600; Asta Live, Asta eBay, Asta Automatica; 3 redazioni voti; no-ads 7,99/anno
+- Fanta.Soccer: 4,3 / 1.300; campionati esteri; premium 4,99-7,99
+- Fantamagazine: redazione voti entro 2h, 50k utenti attivi, 120 collaboratori, fornisce voti a FCO
+- Fantacampionato Gazzetta: 29,99 EUR/anno (1 squadra) 59,99 (3), montepremi 340k (auto)
+- Fantacup (Corriere dello Sport): voti oggettivi live, premi
+- Sorare: Serie A licenza; ricavi 59M (2023) -> 43M (2024), perdite >220M, taglio 35% staff nov 2025
+- IA: FantaAI (1,99/mese), Fantalgoritmo (19,99/anno, 50k paganti dichiarati), Algo (100k), Fantametric (gratis xG), Fantacalcio Analyst (gratis, integrato 26/27), FantaGOAT
+- Quadronica ricavi: 4,5M (2022) 4,8M (2023) 7,26M (2024) 9,68M (2025), utile 3,5M; Lega Serie A 51% per ~18M (val. 40M) feb 2026; Premium Leghe 12,49/anno; sponsor Enilive, Bancomat, Tecnocasa, DAZN (voti live in partita 26/27, bundle 19,99/mese)
+- Trend: voti live/in TV, IA nativa gratuita, asta remota (FantaAsta Live gratis da ago 2024), xG/xA, gioco a premi, Mantra novita 26/27 (modificatore modulo, prestiti), EuroLeghe
+- Lamentele: voti soggettivi/incoerenti, pubblicita anche in premium, crash/lentezza, premium legato al device, listone incompleto, supporto lento, costo bundle DAZN 47/mese
+- Desideri: voto oggettivo trasparente, IA gratis, asta remota nativa, import/export rose, prestiti/scambi negoziati
+- Mancanti: eta media, quota Mantra/Classic, utenti Fantapazz/Fanta.Soccer, partecipanti Gazzetta

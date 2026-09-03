@@ -1,0 +1,338 @@
+<title>Fantacalcio in Italia 2026</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+:root{--paper:#ffffff;--ink:#171a21;--muted:#5f6672;--line:#e6e2dc;--soft:#faf7f2;--accent:#ff6a00;--accent-ink:#b84800;--navy:#1b1140;--ok:#1a8f4e;--warn:#c98a00;--bad:#c62828;--tile:#fff4ea}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#15171c;--ink:#eceae4;--muted:#a3a7ae;--line:#2c3038;--soft:#1c1f26;--accent:#ff8a3d;--accent-ink:#ffb27a;--navy:#c9bfff;--ok:#5fcf8a;--warn:#f0b840;--bad:#ff7b7b;--tile:#2a1f16}}
+:root[data-theme="dark"]{--paper:#15171c;--ink:#eceae4;--muted:#a3a7ae;--line:#2c3038;--soft:#1c1f26;--accent:#ff8a3d;--accent-ink:#ffb27a;--navy:#c9bfff;--ok:#5fcf8a;--warn:#f0b840;--bad:#ff7b7b;--tile:#2a1f16}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Source Sans 3",Segoe UI,system-ui,sans-serif;font-size:16px;line-height:1.55}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header.hero{border-bottom:3px solid var(--accent);padding:38px 0 26px}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink)}
+h1{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:clamp(34px,5vw,52px);line-height:1.02;margin:10px 0 12px;text-wrap:balance}
+.lead{font-size:18px;max-width:64ch;color:var(--muted);margin:0}
+.meta{margin-top:14px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted)}
+nav.toc{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--line);z-index:5}
+nav.toc .wrap{display:flex;gap:4px;overflow-x:auto;padding:8px 22px}
+nav.toc a{font-size:13px;font-weight:600;color:var(--muted);padding:6px 10px;border-radius:6px;white-space:nowrap;text-decoration:none}
+nav.toc a:hover,nav.toc a:focus-visible{color:var(--ink);background:var(--soft);outline:2px solid var(--accent)}
+section{padding:34px 0 8px;border-bottom:1px solid var(--line)}
+h2{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:30px;margin:0 0 6px;text-wrap:balance}
+h3{font-family:Fraunces,Georgia,serif;font-weight:500;font-size:21px;margin:26px 0 8px}
+h4{font-size:15px;margin:16px 0 6px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+p{max-width:70ch}
+.sub{color:var(--muted);margin:0 0 18px;max-width:70ch}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:18px 0}
+.tile{background:var(--tile);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.tile .n{font-family:Fraunces,Georgia,serif;font-size:32px;font-weight:700;line-height:1;color:var(--accent-ink);font-variant-numeric:tabular-nums}
+.tile .l{font-size:13px;color:var(--muted);margin-top:6px}
+.tile .s{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);margin-top:4px}
+.tw{overflow-x:auto;margin:14px 0 22px;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--soft);font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);position:sticky;top:0}
+td.num,th.num{text-align:right;font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;padding:1px 7px;border-radius:4px;border:1px solid var(--line);color:var(--muted);margin-left:4px}
+.tag.d{border-color:var(--ok);color:var(--ok)}.tag.s{border-color:var(--warn);color:var(--warn)}
+.y{color:var(--ok);font-weight:700}.n{color:var(--bad);font-weight:700}.p{color:var(--warn);font-weight:700}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.card{border:1px solid var(--line);border-radius:10px;padding:16px 18px;background:var(--paper)}
+.card h3{margin-top:0;font-size:22px}
+.card .k{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted)}
+ul{padding-left:20px;margin:6px 0 12px}li{margin:4px 0}
+.pro li::marker{color:var(--ok)}.con li::marker{color:var(--bad)}
+.quote{border-left:3px solid var(--accent);padding:6px 14px;color:var(--muted);font-style:italic;margin:10px 0}
+.rank{counter-reset:r;list-style:none;padding:0}
+.rank li{counter-increment:r;display:grid;grid-template-columns:44px 1fr;gap:10px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.rank li::before{content:counter(r);font-family:Fraunces,Georgia,serif;font-size:30px;font-weight:700;color:var(--accent);line-height:1}
+.rank b{display:block}
+.callout{background:var(--soft);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:8px;padding:14px 18px;margin:18px 0;max-width:none}
+.fonti{font-size:13px;columns:2;column-gap:28px}.fonti li{break-inside:avoid}
+a{color:var(--accent-ink)}
+footer{padding:26px 0 50px;color:var(--muted);font-size:13px}
+@media(max-width:640px){.fonti{columns:1}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+
+<header class="hero"><div class="wrap">
+<div class="eyebrow">Analisi di mercato · TransferBeat / FantaTB</div>
+<h1>Fantacalcio in Italia 2026</h1>
+<p class="lead">Chi sono le piattaforme, cosa fanno, cosa gli utenti amano e odiano, quanti sono gli utenti. E cosa manca a FantaTB per stare al tavolo.</p>
+<div class="meta">Ricerca 3 settembre 2026 · fonti in fondo · [D] dato dichiarato dall'azienda · [S] stima di terzi o nostra · [ND] non trovato</div>
+</div></header>
+<nav class="toc"><div class="wrap">
+<a href="#numeri">Il mercato</a><a href="#mappa">Mappa</a><a href="#schede">Schede</a><a href="#confronto">Confronto funzioni</a><a href="#amate">Le più apprezzate</a><a href="#odiate">Le più criticate</a><a href="#trend">Trend</a><a href="#fantatb">FantaTB</a><a href="#fonti">Fonti</a>
+</div></nav>
+
+<section id="numeri"><div class="wrap">
+<h2>Il mercato in numeri</h2>
+<p class="sub">Un gioco di massa con un monopolista di fatto, un business piccolo rispetto al pubblico, e un anno di svolta: la Lega Serie A ha comprato il leader.</p>
+<div class="tiles">
+<div class="tile"><div class="n">~6 mln</div><div class="l">italiani che giocano a fantacalcio</div><div class="s">[S] MilanoFinanza 2023</div></div>
+<div class="tile"><div class="n">7 mln</div><div class="l">registrati su Fantacalcio.it</div><div class="s">[D] ago 2026 · 6,5 mln nel 2025</div></div>
+<div class="tile"><div class="n">5 mln+</div><div class="l">squadre attive su Leghe 2025/26</div><div class="s">[D] · 2-3 mln giocatori attivi [S]</div></div>
+<div class="tile"><div class="n">&gt;90%</div><div class="l">quota del leader</div><div class="s">[D] sondaggio Sapienza 2022</div></div>
+<div class="tile"><div class="n">9,7 M€</div><div class="l">ricavi Quadronica 2025</div><div class="s">[D] utile 3,5 M€ · 4,5 M€ nel 2022</div></div>
+<div class="tile"><div class="n">40 M€</div><div class="l">valutazione all'ingresso della Lega</div><div class="s">[S] 51% per ~18 M€, feb 2026</div></div>
+<div class="tile"><div class="n">12,4 mln</div><div class="l">visite/mese a fantacalcio.it</div><div class="s">[S] Similarweb lug 2026 · 69% traffico diretto</div></div>
+<div class="tile"><div class="n">12-15 M€</div><div class="l">ricavi stimati dell'intero settore</div><div class="s">[S] nostra, da bilanci e listini</div></div>
+</div>
+<div class="grid2">
+<div class="card"><h3>Chi gioca</h3><ul>
+<li>Target dichiarato maschi 18-34, in espansione a 18-44. Donne circa il 5% dei giocatori (2022), pubblico femminile "in crescita" [D].</li>
+<li>Audience web del leader: 72% uomini, fascia prevalente 25-34 [S Similarweb].</li>
+<li>Oltre il 90% usa l'app; Excel sopravvive come strumento d'asta [D/S]. Età media italiana: nessuna indagine pubblica [ND].</li>
+<li>Crescita dei registrati del leader: 1,8 mln (2016), 3,5 (2019), 4 (2022), 6,5 (2025), 7 (2026). Sono registrazioni cumulate, non attivi.</li></ul></div>
+<div class="card"><h3>Come si fanno i soldi</h3><ul>
+<li>Pubblicità display è la voce principale del leader (concessionaria Sky Media), poi abbonamento Premium 12,49 €/anno per utente, sponsor nativi (maglia obbligatoria con 8 brand, Enilive title sponsor, mini-giochi Panini e Philadelphia), bundle DAZN 19,99 €/mese.</li>
+<li>I challenger vivono di abbonamenti annuali tra 8 e 30 € e di pubblicità nel piano gratuito.</li>
+<li>I giochi a premi vendono l'iscrizione: Gazzetta 29,99-59,99 €/anno con montepremi da 340.000 €.</li>
+<li>Gli strumenti di supporto all'asta (FantaLab, Fantalgoritmo, FantaAI) sono il segmento che cresce più in fretta: FantaLab dichiara 1 M$ di ricavi annui e 62.000 paganti [D CEO].</li></ul></div>
+</div>
+</div></section>
+
+<section id="mappa"><div class="wrap">
+<h2>Mappa dei player</h2>
+<p class="sub">Tre famiglie: piattaforme per leghe private con asta, giochi a squadra unica con premi, strumenti di supporto all'asta e alla formazione.</p>
+<div class="tw"><table>
+<tr><th>Piattaforma</th><th>Famiglia</th><th>Società · dal</th><th>Utenti dichiarati</th><th>Store (Play · App Store)</th><th>Prezzo</th></tr>
+<tr><td><b>Fantacalcio.it / Leghe Fantacalcio</b></td><td>Leghe private</td><td>Quadronica, Napoli · 2008 (51% Lega Serie A 2026)</td><td>7 mln registrati, 5 mln squadre attive, 4,5 mln utenti app <span class="tag d">D</span></td><td class="num">4,7 (201k) · 4,5 (55k)</td><td>Gratis + Premium 12,49 €/anno</td></tr>
+<tr><td><b>FantaMaster</b></td><td>Leghe private</td><td>FantaMaster Srl, Milano · 2015</td><td>2-2,5 mln <span class="tag d">D</span> · 1 mln+ download</td><td class="num">4,4 (43k) · 4,6 (38k)</td><td>Gratis + 9,99 / 19,99 €/anno</td></tr>
+<tr><td><b>Fantacalcio Online / Magic Leghe</b></td><td>Leghe private + B2B</td><td>Atlanticmoon, Moncalieri · 2006</td><td>510.000 dal 2006 <span class="tag d">D</span> · 40.000 attivi nel 2018</td><td class="num">3,7 (405) · 2,9 (26)</td><td>Gratis + 3-20 €/squadra</td></tr>
+<tr><td><b>Fantapazz</b></td><td>Leghe private</td><td>D. Pasciuto, Amburgo</td><td>[ND]</td><td class="num">— · 4,2 (2,6k)</td><td>Gratis + 7,99 €/anno</td></tr>
+<tr><td><b>Fanta.Soccer</b></td><td>Leghe private, campionati esteri</td><td>FantaSoccerVillage, Napoli</td><td>[ND]</td><td class="num">— · 4,3 (1,3k)</td><td>Gratis + 4,99-7,99 €/anno</td></tr>
+<tr><td><b>FantaLab</b></td><td>Tool asta e stagione + manageriale</td><td>Fantalab Ltd, Londra · 2022</td><td>2 mln (sito) · 1 mln attivi (CEO) · 62k paganti <span class="tag d">D</span></td><td class="num">4,5 (3,2k) · 4,6 (3,9k)</td><td>Gratis + 7,99-29,99 €/anno</td></tr>
+<tr><td><b>Kickest</b></td><td>Squadra unica, punteggi Opta</td><td>Fantaking Interactive, Brescia · 2018</td><td>&gt;100.000 registrati, 38.000 squadre <span class="tag d">D</span></td><td class="num">4,1 (983) · 3,8 (175)</td><td>Gratis + acquisti 0,99-17,99 €</td></tr>
+<tr><td><b>Fantacampionato Gazzetta</b></td><td>Concorso a premi, squadra unica</td><td>RCS MediaGroup · 1994 / digitale 2001</td><td>&gt;50.000 <span class="tag d">D</span> (PR 25/26)</td><td class="num">4,4 (2,5k) · 3,9 (345)</td><td>29,99 o 59,99 €/anno obbligatori</td></tr>
+<tr><td>Fantamagazine</td><td>Redazione voti (per FCO), community</td><td>dal 2007</td><td>50.000 attivi, 120 collaboratori <span class="tag d">D</span></td><td class="num">—</td><td>Gratis</td></tr>
+<tr><td>Fantalgoritmo · FantaAI · Algo · Fantametric · FantaGOAT</td><td>Tool IA per asta e formazione</td><td>startup 2021-2025</td><td>50.000 paganti (Fantalgoritmo) · 100.000 (Algo) <span class="tag d">D</span></td><td class="num">—</td><td>0-25 €/anno</td></tr>
+<tr><td>Sorare (Serie A)</td><td>Fantasy con carte NFT</td><td>Parigi · Serie A dal 2022</td><td>378.000 possessori di carte nel mondo</td><td class="num">—</td><td>Free + carte</td></tr>
+</table></div>
+<div class="callout">Lettura: il mercato delle leghe private è un monopolio di fatto di Fantacalcio.it, con FantaMaster unico challenger a sette cifre di download. Tutti gli altri sono sotto l'1% o sono strumenti complementari che vivono dentro l'ecosistema del leader.</div>
+</div></section>
+
+<section id="schede"><div class="wrap">
+<h2>Schede piattaforma</h2>
+<p class="sub">Funzioni, prezzi, voce degli utenti e numeri, piattaforma per piattaforma.</p>
+
+<div class="card"><h3>Fantacalcio.it · Leghe Fantacalcio Serie A Enilive</h3>
+<div class="k">Fantasy ufficiale della Serie A dal 2021/22 · 20 dipendenti · ricavi 9,7 M€ (2025)</div>
+<h4>Funzioni</h4><ul>
+<li><b>Lega</b>: wizard, Classic, Mantra (ruoli tattici, moduli reali, esclusiva), Classic Plus; admin, super admin e delega; sponsor di maglia obbligatorio; fino a 6 divisioni; Sala Trofei.</li>
+<li><b>Competizioni in parallelo</b>: campionato con calendario all'italiana, a specchio o asimmetrico; Formula 1; 1 contro tutti; scontri diretti; eliminazione diretta; gironi stile Champions; Battle Royale; Highlander; squadra fantasma per numeri dispari.</li>
+<li><b>Mercato, 8 modalità</b>: Asta Smart online a round con timeout, timeshift e autobid; Asta Classica online; buste chiuse; scambi asimmetrici con conguaglio; svincoli al buio; mercato a gettone; prestiti (novità 2026/27, 3-25 giornate); mercato a quotazione. App gratuita FantaAsta Live per l'asta in presenza o da remoto, draft o rilanci, con export delle rose.</li>
+<li><b>Voti, 3 fonti</b>: redazione con voti live (Trevisani, Pardo, Giunta); Voto Statistico Alvin482 su 482 parametri Opta; Voti Italia, media di tre testate. Corriere, Tuttosport e Gazzetta non selezionabili singolarmente.</li>
+<li><b>Regole</b>: bonus e malus tutti modificabili, gol vittoria e pareggio, Player of the Match Panini; soglie gol e fasce; modificatori portiere, difesa, centrocampo, attacco, Fattore Modulo (2026/27), rendimento, fair play, capitano; 1-11 sostituzioni con riserva d'ufficio; Switch "lo schiero solo se è titolare" con cambio modulo automatico.</li>
+<li><b>Live e dati</b>: voti e tabellini live, proiezione del calcolo, probabili formazioni, griglia portieri, rigoristi, listone con FVM, statistiche, pagelle motivate, highlights in app con DAZN, Fantacalcio Analyst gratuito (statistiche di lega), storico formazioni, notifiche push.</li></ul>
+<h4>A pagamento</h4><p>Il gioco è tutto gratuito. Premium per utente 12,49 €/anno: niente pubblicità, indici in inserimento formazione, probabili integrate, live delle altre partite della lega, simulazione del risultato. Bundle DAZN Full Mobile 19,99 €/mese con Premium incluso.</p>
+<div class="grid2"><div class="pro"><h4>Apprezzato</h4><ul><li>Completezza e continuità: "la utilizzo da più di 10 anni".</li><li>Notifiche e live: "dal venerdì le notifiche si susseguono".</li><li>Grafica semplice e funzionale, customer service.</li></ul></div>
+<div class="con"><h4>Criticato</h4><ul><li>Pubblicità invasiva, tema numero uno anche tra chi paga: "le pagine non si possono praticamente leggere".</li><li>Voti e assist contestati: "sembra non vedano le partite".</li><li>Premium legato al telefono e non all'account; bug nella creazione lega; niente dark mode.</li></ul></div></div>
+<h4>Numeri</h4><p>7 mln registrati, 5 mln squadre attive, 6 mln utenti unici al mese sul sito, oltre 1 miliardo di pagine viste al mese in app (2021), Premium "centinaia di migliaia" [S]. Trustpilot 2,7 su 6 recensioni. Nessun montepremi sul gioco: solo concorsi con sponsor e FantaChampions Sky.</p></div>
+
+<div class="card" style="margin-top:16px"><h3>FantaMaster</h3>
+<div class="k">Il primo challenger · 2 milioni di utenti dichiarati · 1 mln+ download · bootstrap dal 2015</div>
+<h4>Funzioni</h4><ul>
+<li><b>Mercato, 8 modalità</b>: asta eBay con autobid e anti-sniping, asta in presenza, Asta LIVE da remoto con timer 5-60 secondi e chat, buste chiuse, listone libero, mercato manuale, svincoli con recupero percentuale, scambi con scadenza; limiti di offerte per ruolo.</li>
+<li><b>Competizioni</b> attivabili insieme: scontri diretti, somma punti, Coppa Play Off da 2 a 64 squadre, coppa a gironi, Apertura e Clausura, Formula 1, Sopravvivenza, SuperSfida.</li>
+<li><b>Voti, 4 fonti</b> combinabili: Statistico Live Opta, Fantacampionato Gazzetta (partnership 2026/27 con listone e assist), redazionali, community. Niente Mantra: ruoli liberi per giocatore, tre listoni.</li>
+<li><b>Regole</b>: modificatori difesa, attacco, centrocampo, capitano anche progressivo, modulo, fattore campo, correttezza, squadra perfetta; bonus gol vittoria e pareggio, rigore procurato, MVP automatico da Opta, portiere imbattuto.</li>
+<li><b>Panchina</b>: fino a 11 sostituzioni, cambio modulo, Sostituzioni LIVE, SWAP condizionale. Import rose da CSV, Registro attività dell'admin, chat di lega.</li>
+<li><b>IA</b>: Formazione Perfetta, "Chi compro", "Chi schiero", ranking, assistente d'asta, Squadre IA che riempiono i posti vacanti.</li></ul>
+<h4>A pagamento</h4><p>Free con pubblicità. Premium 9,99 €/anno o 2,99 €/mese; Full 19,99 €/anno con strategia d'asta a fasce e simulazione rosa. Full gratis per sempre agli admin che migrano una lega da 8 squadre in su.</p>
+<div class="grid2"><div class="pro"><h4>Apprezzato</h4><ul><li>Supporto rapidissimo: "risolto in tempo praticamente zero".</li><li>Più fonti di voto combinabili, notifiche live, "un'infinità di strumenti".</li></ul></div>
+<div class="con"><h4>Criticato</h4><ul><li>Pubblicità nel piano gratuito: "ogni click me ne partiva una", video da 30 secondi.</li><li>Assist e quotazioni non allineati, stato infortunati in ritardo.</li></ul></div></div>
+<h4>Numeri</h4><p>Play 4,4 su 43.400, App Store 4,6 su 38.000, settimo tra le app Sport. Nel 2017/18 dichiarava 350.000 utenti attivi al mese e 150.000 al giorno. Bilanci non pubblici. Partnership con Goal, Sportitalia, Gazzetta; spin-off Champions, Mondiale, Euro; FM Odds sulle quote.</p></div>
+
+<div class="card" style="margin-top:16px"><h3>Fantacalcio Online · Magic Leghe</h3>
+<div class="k">Atlanticmoon, dal 2006 · 510.000 utenti dal 2006 · fatturato 2023 408.000 € · ex piattaforma della Gazzetta</div>
+<h4>Funzioni</h4><ul>
+<li>"150 opzioni, una per una": 70 regole nel piano gratuito, oltre 150 nel Pro; 10 modificatori; divisioni con promozioni e retrocessioni; contratti pluriennali "Dynasty"; import della lega da altre piattaforme senza rifare l'asta.</li>
+<li>Mercato: Asta Manager online con app d'asta, asta offline, acquisto diretto, draft a buste chiuse, riparazione continua, scambi, svincoli al 50%, tetto ai cambi per giornata; strumento di stima dei prezzi d'asta.</li>
+<li>Voti: Fantacalcio.it in tutti i piani, redazioni Roma e Torino nel Plus, voti oggettivi live proprietari su circa 300 parametri; fino a 3 fonti pesate. La Gazzetta è sparita dal 2026/27 per motivi di licenza.</li>
+<li>IA: quattro "allenatori in seconda" per asta, formazione, mercato e gestione lega, più FantaGPT nel piano Max. Formazioni su blockchain e NFT ai vincitori come esperimento 2022/23.</li></ul>
+<h4>A pagamento</h4><p>Per squadra e per stagione con tetto di lega: Pro 3-4 €, Plus 5-8 €, Max 12,90-19,90 €; VIP app 8,99 €. Modello B2B "Fantacalcio as a Service" in white label per Fiorentina, RCS e DAZN.</p>
+<div class="grid2"><div class="pro"><h4>Apprezzato</h4><ul><li>Voti oggettivi live, design pulito, personalizzazione.</li></ul></div>
+<div class="con"><h4>Criticato</h4><ul><li>App che è il sito dentro una finestra: lenta, giocatori che spariscono, scambi solo da browser.</li><li>Pubblicità anche pagando; "senza la Gazzetta non ha più ragione di esistere"; aggiornamento di stagione in ritardo.</li></ul></div></div>
+<h4>Numeri</h4><p>Play 3,7 su 405 e 100.000 download, App Store 2,9 su 26; la vecchia app Magic Leghe 1,7 su 43. Attivi nel 2018: 40.000 su 400.000 registrati.</p></div>
+
+<div class="card" style="margin-top:16px"><h3>FantaLab</h3>
+<div class="k">Londra, 2022 · 500.000+ download · 1 M$ di ricavi annui e 62.000 paganti dichiarati dal CEO · partner ufficiale Fantacalcio.it 2025</div>
+<h4>Funzioni</h4><ul>
+<li><b>Il tool d'asta più completo del mercato</b>: fasce e slot con budget, prezzo massimo per giocatore, prezzi medi pagati nelle altre leghe, fasce dei creator (SOS Fanta, Il Profeta e altri) adattate ai crediti della propria lega.</li>
+<li><b>Asta live online</b> con banditore automatico o a chiamata, Classic e Mantra, "Asta da solo", prezzi reattivi che si ricalcolano durante l'asta, videochiamata integrata con registrazione e highlights, modalità Ninja con offerte anonime, streaming, simulatore, classifica nazionale delle aste, Magic Asta (draft in 20 minuti con sconosciuti), matchmaking "Trova Fantacalcio".</li>
+<li><b>Stagione</b>: probabili formazioni per testata, formazione consigliata su indici di schierabilità, tool scambi con percentuale di convenienza, abbinamenti portieri e attaccanti sul calendario, xG, xA, heatmap, Expected FMV, centro dati su cinque campionati.</li>
+<li><b>FantaLab Manager</b>: gioco manageriale gratuito con carte, settore giovanile, sponsor, clan e room a premi.</li></ul>
+<h4>A pagamento</h4><p>Base 0 €, Manager 7,99, Tool Asta 17,99 (il più scelto), Tool più Manager 22,99, Ultra 29,99 €/anno. Nessuna pubblicità dichiarata. Codici sconto dei creator come canale di acquisizione.</p>
+<div class="grid2"><div class="pro"><h4>Apprezzato</h4><ul><li>"Grafica curata, intuitiva e piacevolissima"; assistenza che risolve in minuti; poter giocare al manageriale senza avere una lega.</li></ul></div>
+<div class="con"><h4>Criticato</h4><ul><li>Versione 2026/27 "lenta e macchinosa", sincronizzazione forzata della lega, iPad non ottimizzato, accessibilità rotta.</li></ul></div></div>
+<h4>Numeri</h4><p>App Store 4,6 su 3.900, Play 4,5 su 3.230 e terza app Sport più redditizia, Trustpilot 3,9 su 35. I numeri di utenti sono incoerenti tra loro: 2 milioni sul sito, 1 milione di attivi secondo il CEO, circa 100.000 secondo la stampa.</p></div>
+
+<div class="card" style="margin-top:16px"><h3>Kickest</h3>
+<div class="k">Fantaking Interactive, Brescia, 2018 · "il fanta senza pagelle" · vetrina B2C di un fornitore white label</div>
+<h4>Funzioni</h4><ul>
+<li>Gioco a squadra unica non esclusiva: 200 crediti, 15 giocatori, fino a 3 squadre, capitano ×1,5; classifica Overall, quattro tornei stagionali, Kickest Cup con 1.000 gironi, campionati pubblici e privati.</li>
+<li>Punteggi al 100% da eventi Opta, oltre 30 voci: presenza +4, titolare +2, gol da 14 a 18 per ruolo, assist 5, clean sheet 5 o 10, giallo −2. Cambi tra i "turni" della stessa giornata, mercato illimitato con −5 punti a trasferimento, plusvalenze.</li>
+<li>Dal 2026/27 Leghe Private con rose esclusive: asta e draft fatti fuori dall'app, scambi in app, regole bloccate a stagione avviata.</li></ul>
+<h4>A pagamento</h4><p>Gratis con pubblicità; senza pubblicità 3,99 €, Pallone d'Oro 17,99 €, pass e wildcard. Montepremi 4.000 € in buoni Amazon.</p>
+<div class="grid2"><div class="pro"><h4>Apprezzato</h4><ul><li>"Finalmente un fantacalcio basato su numeri e non sul voto di un soggetto"; il tabellone statistico.</li></ul></div>
+<div class="con"><h4>Criticato</h4><ul><li>Pubblicità anche per chi ha pagato, crash, menu poco intuitivi, statistiche criptiche, per anni nessuna asta.</li></ul></div></div>
+<h4>Numeri</h4><p>Oltre 100.000 registrati e 38.000 squadre nella stagione in corso [D]; Play 4,1 su 983, App Store 3,8 su 175.</p></div>
+
+<div class="card" style="margin-top:16px"><h3>Fantacampionato Gazzetta</h3>
+<div class="k">RCS · nato su carta nel 1994 · concorso a premi a squadra unica, senza asta, a pagamento</div>
+<h4>Funzioni</h4><ul>
+<li>500 crediti, 21 giocatori, 4 cambi a giornata, sette moduli, capitano con bonus e malus; voti redazionali della Gazzetta con bonus standard e modificatore difesa; classifiche Generale, Mensile, Apertura, Coppa Gazzetta, Lettori; giochi collaterali Fanta5, FantaMarket, Testa a Testa, FantaDuello, Creators Cup; voti live in app; piattaforma rinnovata nel 2026/27.</li></ul>
+<h4>A pagamento</h4><p>Full 29,99 €/anno per una squadra con G+ incluso, Pro 59,99 € per tre squadre. Montepremi oltre 340.000 € e 1.000 premi, con una Mazda MX-5 al primo. Vende anche i voti in licenza a FantaMaster.</p>
+<div class="grid2"><div class="pro"><h4>Apprezzato</h4><ul><li>"Il fantagioco più bello e ricco d'Italia"; competere contro migliaia di utenti senza dover organizzare un'asta.</li></ul></div>
+<div class="con"><h4>Criticato</h4><ul><li>Pubblicità nonostante l'abbonamento, tema numero uno nel 2025-26; nuova interfaccia 2026 bocciata; crash in fase di formazione; abbonamenti pagati e non riconosciuti; "un gioco per lupi solitari".</li></ul></div></div>
+<h4>Numeri</h4><p>Oltre 50.000 fantallenatori [D 25/26]; Play 4,4 su 2.460, App Store 3,9 su 345; ricavi stimati 1,5-3 M€ dagli abbonamenti [S nostra].</p></div>
+
+<h3>Le minori, in breve</h3><ul>
+<li><b>Fantapazz</b>: leghe private con Asta Live (prima in Italia), Asta eBay e Asta Automatica, tre redazioni voti, proiezioni live, "Fantacontrario"; senza pubblicità 7,99 €/anno; App Store 4,2 su 2.600.</li>
+<li><b>Fanta.Soccer</b>: leghe su Serie A, B, Premier, Liga, Bundesliga, Ligue 1 e coppe; 4,3 su 1.300.</li>
+<li><b>Fantamagazine</b>: redazione di 120 collaboratori che pubblica i voti entro due ore dal fischio finale e li fornisce a Fantacalcio Online; 50.000 utenti attivi.</li>
+<li><b>PianetaFanta</b>: dal 2003, archivio statistico e lega storica "PianetaLeague".</li>
+<li><b>Tool IA</b>: Fantalgoritmo con bot WhatsApp e 50.000 paganti dichiarati, FantaAI di un creator da 80.000 follower, Algo con 100.000 utenti dichiarati, Fantametric gratuito con indice "Moneyball", FantaGOAT del collettivo Fantaboom.</li>
+<li><b>Sorare</b>: carte NFT con licenza Serie A; in ritirata, ricavi da 59 a 43 M€ e taglio del 35% dello staff a fine 2025.</li></ul>
+</div></section>
+
+<section id="confronto"><div class="wrap">
+<h2>Confronto funzioni</h2>
+<p class="sub">Le funzioni che decidono la scelta di una lega, piattaforma per piattaforma. L'ultima colonna è FantaTB com'è oggi.</p>
+<div class="tw"><table>
+<tr><th>Funzione</th><th>Fantacalcio.it</th><th>FantaMaster</th><th>FCO</th><th>FantaLab</th><th>Kickest</th><th>Gazzetta</th><th>FantaTB oggi</th></tr>
+<tr><td>Leghe private con rose esclusive</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="p">solo tool</td><td class="p">dal 26/27</td><td class="n">✗</td><td class="y">✓</td></tr>
+<tr><td>Asta live da remoto con timer</td><td class="y">✓ Smart, Classica, FantaAsta Live</td><td class="y">✓ 5-60 s, chat</td><td class="y">✓ app d'asta</td><td class="y">✓ con video</td><td class="n">✗ offline</td><td class="n">✗</td><td class="y">✓ timer, realtime</td></tr>
+<tr><td>Asta a buste chiuse / eBay con autobid</td><td class="y">✓ entrambe</td><td class="y">✓ entrambe</td><td class="y">✓ buste</td><td class="p">draft</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td></tr>
+<tr><td>Scambi tra squadre</td><td class="y">✓ asimmetrici, conguaglio</td><td class="y">✓ con scadenza</td><td class="y">✓</td><td class="p">tool valutazione</td><td class="y">✓</td><td class="n">✗</td><td class="n">✗</td></tr>
+<tr><td>Svincoli e mercato di riparazione</td><td class="y">✓ al buio, gettone, prestiti</td><td class="y">✓ finestre, % recupero</td><td class="y">✓ continuo</td><td class="n">—</td><td class="p">mercato −5 pt</td><td class="p">4 cambi/giornata</td><td class="p">solo admin</td></tr>
+<tr><td>Mantra / ruoli tattici</td><td class="y">✓ esclusiva</td><td class="p">ruoli liberi</td><td class="p">ruoli custom</td><td class="y">✓ in asta</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td></tr>
+<tr><td>Competizioni multiple (coppe, F1, gironi)</td><td class="y">✓ 8 tipi</td><td class="y">✓ 8 tipi</td><td class="y">✓ 5 tipi</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="p">solo campionato</td></tr>
+<tr><td>Divisioni, promozioni</td><td class="y">✓ 6</td><td class="n">✗</td><td class="y">✓</td><td class="n">—</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td></tr>
+<tr><td>Fonti voti</td><td class="y">3 (redazione live, Opta, Italia)</td><td class="y">4 combinabili</td><td class="y">3 pesate + oggettivi</td><td class="p">consulta</td><td class="y">solo Opta</td><td class="y">Gazzetta</td><td class="p">1 statistico + correzioni</td></tr>
+<tr><td>Voti live durante le partite</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="n">✗</td><td class="y">✓</td><td class="y">✓</td><td class="n">✗</td></tr>
+<tr><td>Modificatori (difesa, centrocampo, attacco, modulo…)</td><td class="y">✓ 8</td><td class="y">✓ 8+</td><td class="y">✓ 10</td><td class="n">—</td><td class="n">✗</td><td class="p">difesa</td><td class="y">✓ 3 + casa</td></tr>
+<tr><td>Bonus e malus personalizzabili</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="n">—</td><td class="n">✗</td><td class="n">✗</td><td class="y">✓</td></tr>
+<tr><td>"Schiero solo se titolare" / cambio modulo automatico</td><td class="y">✓ Switch</td><td class="y">✓ SWAP</td><td class="y">✓ assistente</td><td class="n">—</td><td class="p">cambi tra turni</td><td class="n">✗</td><td class="n">✗</td></tr>
+<tr><td>Probabili formazioni integrate</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓ multi-testata</td><td class="y">✓ multi-testata</td><td class="p">articoli</td><td class="y">✓</td><td class="p">% titolarità</td></tr>
+<tr><td>Infortuni e squalifiche in schieramento</td><td class="y">✓</td><td class="p">in ritardo</td><td class="y">✓</td><td class="y">✓</td><td class="p">—</td><td class="y">✓</td><td class="y">✓ con rientro</td></tr>
+<tr><td>Notifiche push</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="p">—</td><td class="p">—</td><td class="p">—</td><td class="n">✗</td></tr>
+<tr><td>Statistiche avanzate, xG</td><td class="p">base</td><td class="y">80+, heatmap</td><td class="y">xG, FantaRating</td><td class="y">xG, xA, heatmap</td><td class="y">Opta</td><td class="n">✗</td><td class="n">✗</td></tr>
+<tr><td>IA per asta e formazione</td><td class="y">Analyst gratis</td><td class="y">Premium</td><td class="y">4 assistenti + GPT</td><td class="y">fasce creator</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td></tr>
+<tr><td>Import/export rose da altre piattaforme</td><td class="y">da FantaAsta</td><td class="y">CSV</td><td class="y">✓</td><td class="y">sync</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td></tr>
+<tr><td>App negli store</td><td class="y">✓</td><td class="y">✓</td><td class="y">webview</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="n">solo web</td></tr>
+<tr><td>Senza pubblicità nel gratuito</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="y">✓</td><td class="n">✗</td><td class="n">✗ (a pagamento!)</td><td class="y">✓</td></tr>
+<tr><td>Campionati esteri</td><td class="y">EuroLeghe</td><td class="y">Champions, Euro</td><td class="y">✓</td><td class="y">dati 5 leghe</td><td class="n">✗</td><td class="n">✗</td><td class="p">predisposto</td></tr>
+<tr><td>Campo visivo per schierare</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+</table></div>
+</div></section>
+
+<section id="amate"><div class="wrap">
+<h2>Le funzioni più apprezzate</h2>
+<p class="sub">Classifica costruita dalle recensioni negli store, dai forum e dai temi che i concorrenti copiano l'uno dall'altro.</p>
+<ol class="rank">
+<li><div><b>Voto oggettivo e trasparente</b>Il voto statistico su dati Opta ha "ridotto le discussioni" (forum GruppoEsperti) e ha creato Kickest. Ogni piattaforma seria ne offre uno accanto ai voti redazionali. Il punto non è la fonte, è poterla scegliere e capirla.</div></li>
+<li><div><b>Asta live da remoto ben fatta</b>Timer che si riavvia, autobid e anti-sniping, chat, ordine di chiamata, export delle rose. FantaLab ha alzato l'asticella con videochiamata integrata e prezzi reattivi; Fantacalcio.it ha risposto con l'app gratuita FantaAsta Live.</div></li>
+<li><div><b>Notifiche live sulla propria partita</b>Gol, assist, bonus e malus dei propri giocatori e di quelli dell'avversario, in tempo reale. Sono il motivo per cui l'app resta aperta il weekend: "dal venerdì le notifiche si susseguono".</div></li>
+<li><div><b>Personalizzazione delle regole</b>Modificatori, bonus a pesi, soglie gol, sostituzioni, riserva d'ufficio. Fantacalcio Online ne fa un marchio ("150 opzioni"); ogni lega ha le sue tradizioni e vuole ritrovarle.</div></li>
+<li><div><b>Più competizioni nella stessa lega</b>Campionato più coppa a eliminazione, gironi stile Champions, Formula 1, survivor. Tiene vive le leghe anche quando il campionato è deciso.</div></li>
+<li><div><b>Supporto che risponde subito</b>È il complimento più frequente per FantaMaster e FantaLab, e la critica più frequente per Gazzetta. In un gioco che si decide nel weekend, un problema all'asta o alla deadline è un dramma.</div></li>
+<li><div><b>Sostituzioni intelligenti</b>"Lo schiero solo se è titolare", cambio modulo automatico, riserva d'ufficio. Tolgono l'ansia del venerdì sera e riducono le liti sui senza voto.</div></li>
+<li><div><b>Mercato vivo</b>Scambi con conguaglio, svincoli al buio, gettoni, prestiti (novità 2026/27): il mercato di riparazione è la seconda asta della stagione e tiene alto il coinvolgimento a gennaio.</div></li>
+<li><div><b>Consigli di formazione e fasce d'asta</b>Indici di schierabilità, "chi schiero", fasce dei creator: è ciò per cui la gente paga davvero (FantaLab 62.000 abbonati, il tool asta è il piano più venduto).</div></li>
+<li><div><b>Un'interfaccia pulita</b>"Grafica curata, intuitiva" è la lode più ripetuta su FantaLab; la nuova interfaccia 2026 della Gazzetta è stata bocciata dagli abbonati. Il design pesa quanto le funzioni.</div></li>
+</ol>
+</div></section>
+
+<section id="odiate"><div class="wrap">
+<h2>Le lamentele ricorrenti</h2>
+<p class="sub">Dove i leader perdono fiducia. Ogni voce è un'opportunità per chi entra.</p>
+<ol class="rank">
+<li><div><b>Pubblicità invasiva, anche pagando</b>Tema numero uno su Fantacalcio.it, FantaMaster, Kickest e persino sul Fantacampionato Gazzetta che costa 30 € l'anno. Video non saltabili, banner che coprono un terzo dello schermo, Premium che non toglie i pre-roll.</div></li>
+<li><div><b>Voti e assist "senza senso"</b>Pagelle redazionali contestate ogni settimana, assist negati, correzioni a posteriori. È il motivo per cui il voto statistico ha conquistato spazio.</div></li>
+<li><div><b>Crash e lentezza</b>Dopo gli aggiornamenti di stagione, in asta, nel salvataggio della formazione. Fantacalcio Online paga il prezzo di un'app che è un sito in webview.</div></li>
+<li><div><b>Premium legato al telefono e non all'account</b>Richiesta esplicita e ripetuta da anni agli store di Leghe Fantacalcio.</div></li>
+<li><div><b>Supporto lento o assente</b>Gazzetta e Fantacalcio Online; disdette solo per telefono, abbonamenti pagati e non riconosciuti.</div></li>
+<li><div><b>Listone incompleto e ruoli sbagliati</b>Giocatori mancanti a inizio stagione, ruoli aggiornati in ritardo, quotazioni ferme.</div></li>
+<li><div><b>Funzioni bloccate dietro il premium</b>Probabili, indici, live delle altre partite: le cose che servono il venerdì sera sono quelle a pagamento.</div></li>
+<li><div><b>Dipendenza da una fonte</b>Quando la Gazzetta ha ritirato la licenza, per gli utenti di Fantacalcio Online la piattaforma "non ha più ragione di esistere".</div></li>
+</ol>
+</div></section>
+
+<section id="trend"><div class="wrap">
+<h2>Trend 2024-2026</h2>
+<ul>
+<li><b>I voti entrano nella TV.</b> Dal 2026/27 i voti live di Fantacalcio.it compaiono dentro le partite su DAZN, con la "Fantacalcio Night" del venerdì e un bundle da 19,99 €/mese. Il fantacalcio diventa un layer della trasmissione.</li>
+<li><b>L'IA passa da tool a pagamento a funzione gratuita.</b> Prima l'ondata di assistenti esterni (FantaAI, Fantalgoritmo, Algo), poi la risposta del leader con Fantacalcio Analyst gratuito. La strategia "IA a pagamento" ha vita breve.</li>
+<li><b>L'asta da remoto è ormai standard.</b> Timer, autobid, draft, export: chi non ce l'ha non parte. La frontiera è la videochiamata integrata e i prezzi che reagiscono all'asta.</li>
+<li><b>Statistiche avanzate ovunque.</b> Opta dentro le piattaforme, xG e xA nei tool, heatmap nelle app minori.</li>
+<li><b>Il mercato di riparazione si arricchisce.</b> Prestiti, gettoni, scambi asimmetrici, contratti pluriennali: la seconda metà di stagione vale quanto la prima.</li>
+<li><b>Verticalizzazione dell'incumbent.</b> Con la Lega Serie A dentro, Fantacalcio.it avrà highlights ufficiali, dati dei tifosi e pacchetti sponsor integrati campo più digitale. Per i piccoli lo spazio è nella nicchia e nel servizio, non nella scala.</li>
+<li><b>Creator economy.</b> Fasce d'asta e indici dei creator venduti come contenuto premium con codici sconto: FantaLab ha costruito così la sua base pagante.</li>
+<li><b>Nessun dato pubblico</b> sulla quota Mantra contro Classic, sull'età media, sul numero di leghe attive. Chi li avesse avrebbe un vantaggio informativo.</li>
+</ul>
+</div></section>
+
+<section id="fantatb"><div class="wrap">
+<h2>Cosa significa per FantaTB</h2>
+<p class="sub">Dove siamo già al livello del mercato, dove no, e in che ordine colmare i buchi.</p>
+<div class="grid2">
+<div class="card"><h3>Già al livello o oltre</h3><ul class="pro">
+<li>Asta live in tempo reale con timer che si riavvia e controlli lato server su crediti e slot.</li>
+<li>Regole complete: tre modificatori, fattore casa, bonus e malus a pesi, porta inviolata, soglie gol, panchina e sostituzioni. Sopra Kickest e Gazzetta, alla pari con i leader sulle basi.</li>
+<li>Voto statistico trasparente con formula pubblica e correzione dell'admin: risponde alla lamentela numero due del mercato.</li>
+<li>Indice di titolarità con infortuni e tempi di recupero nella schermata di schieramento: FantaMaster lo fa pagare, i leader lo danno con il Premium.</li>
+<li>Risultati partita per partita con panchina, subtotali e modificatori esposti: più leggibile della maggior parte dei concorrenti.</li>
+<li>Zero pubblicità e zero funzioni bloccate: è esattamente la lamentela numero uno di tutto il mercato, e nessun concorrente gratuito può dirlo.</li></ul></div>
+<div class="card"><h3>Buchi che pesano</h3><ul class="con">
+<li>Nessuna app negli store: per il pubblico italiano il fantacalcio è un'icona sul telefono. Una web app installabile con notifiche è il minimo.</li>
+<li>Niente notifiche push: la funzione che tiene l'app aperta nel weekend.</li>
+<li>Nessun mercato tra squadre: scambi, svincoli con rimborso, riparazione a gennaio.</li>
+<li>Una sola competizione: manca la coppa a eliminazione, i gironi, la Formula 1.</li>
+<li>Niente "schiero solo se titolare" né cambio modulo automatico.</li>
+<li>Voti solo a giornata finita, niente live; una sola fonte.</li>
+<li>Niente Mantra, niente asta a buste chiuse, niente import da altre piattaforme.</li></ul></div>
+</div>
+<h3>Ordine consigliato</h3>
+<ol class="rank">
+<li><div><b>Web app installabile e notifiche push</b>Manifest, icona, installazione da Safari e Chrome, notifiche su deadline formazione, esito asta, calcolo giornata e gol dei propri giocatori. Nessun store, nessuna commissione.</div></li>
+<li><div><b>Scambi, svincoli e mercato di riparazione</b>Proposte di scambio con conguaglio crediti e accettazione dell'altro manager, svincolo con rimborso percentuale, finestre di mercato decise dall'admin, asta di riparazione con la stessa macchina dell'asta iniziale.</div></li>
+<li><div><b>Sostituzione condizionale</b>"Schiera X solo se titolare, altrimenti Y": lo schema di FantaLab e del Switch di Fantacalcio.it, usando i dati di formazione ufficiale che API-Football pubblica un'ora prima del match.</div></li>
+<li><div><b>Coppa a eliminazione diretta e gironi</b>Tabellone con andata e ritorno o gara secca, gironi stile Champions, tutte sulla stessa giornata di Serie A e con lo stesso motore di calcolo.</div></li>
+<li><div><b>Voti live</b>API-Football aggiorna rating ed eventi durante la partita: basta far girare il cron ogni 15 minuti nelle finestre di gara e mostrare "in corso" in Risultati.</div></li>
+<li><div><b>Asta a buste chiuse e asta eBay</b>Le due modalità che servono a chi non riesce a riunirsi in una sera. Sono varianti della macchina d'asta esistente.</div></li>
+<li><div><b>Seconda fonte voto e import rose</b>Una fonte redazionale in licenza quando avrà senso, e l'import da CSV o da FantaAsta Live per rubare leghe già fatte.</div></li>
+<li><div><b>Mantra</b>Solo dopo il resto: richiede ruoli a mano su 650 giocatori e un motore di moduli reali.</div></li>
+</ol>
+<div class="callout"><b>Posizionamento che regge:</b> il fantacalcio gratuito senza pubblicità, con il voto più trasparente del mercato e un servizio che risponde. Non si vince sulla quantità di funzioni contro un leader da 20 dipendenti e 10 milioni di ricavi: si vince sulle tre cose che i suoi utenti gli rimproverano di più.</div>
+</div></section>
+
+<section id="fonti"><div class="wrap">
+<h2>Fonti principali</h2>
+<p class="sub">Selezione delle fonti usate. Dati letti il 3 settembre 2026; le recensioni negli store cambiano ogni giorno.</p>
+<ul class="fonti">
+<li><a href="https://www.ilnapolista.it/2026/06/il-business-fantacalcio-e-la-lca-holding-srl-la-lega-serie-a-costruisce-il-futuro/">Il Napolista, bilanci Quadronica 2023-25 e LCA Holding</a></li>
+<li><a href="https://en.ilsole24ore.com/art/serie-enters-fantasy-football-bought-51percent-most-popular-app-in-italia-AI3VK6RB">Il Sole 24 Ore, acquisizione del 51% da parte della Lega</a></li>
+<li><a href="https://www.milanofinanza.it/news/fantacalcio-fa-soldi-veri-utili-a-1-5-milioni-ecco-tutti-i-numeri-del-gioco-online-che-ha-stregato-4-202309071950172404">MilanoFinanza 2023, numeri del gioco</a></li>
+<li><a href="https://www.ilpost.it/2025/08/21/fantacalcio-storia-cambiamenti-guadagni/">Il Post 2025, storia e guadagni</a></li>
+<li><a href="https://www.similarweb.com/website/fantacalcio.it/">Similarweb, fantacalcio.it luglio 2026</a></li>
+<li><a href="https://leghe.fantacalcio.it/guide-leghe-fantacalcio">Guide Leghe Fantacalcio (mercati, calcolo, modificatori, sostituzioni)</a></li>
+<li><a href="https://www.fantacalcio.it/news/redazionali/04_08_2026/fantacalcio-unveil-listone-e-novita-app-leghe-26-27-segui-l-evento-su-youtube-496035">Fantacalcio Unveil 2026/27</a></li>
+<li><a href="https://www.fantacalcio.it/news/redazionali/20_08_2026/dazn-e-fantacalcio-consolidano-la-partnership-grandi-novita-per-la-nuova-stagione-di-serie-aenilive-496702">Partnership DAZN 2026/27</a></li>
+<li><a href="https://apps.apple.com/it/app/leghe-fantacalcio-serie-a/id977629806">App Store, Leghe Fantacalcio</a> · <a href="https://it.trustpilot.com/review/fantacalcio.it">Trustpilot</a></li>
+<li><a href="https://leghe.fantamaster.it/pricing/">FantaMaster, piani</a> · <a href="https://www.fantamaster.it/guide-leghe-fantacalcio-fantamaster/come-funziona-lasta-live/">Asta LIVE</a> · <a href="https://apps.apple.com/it/app/fantamaster-fanta-leghe/id1416886024">App Store</a></li>
+<li><a href="https://www.raffaelegaito.com/fantamaster-fantacalcio-lavoro/">Intervista ai fondatori FantaMaster (numeri 2017/18)</a></li>
+<li><a href="https://www.fantacalcio-online.com/it/pro">Fantacalcio Online, piani e 150 regole</a> · <a href="https://www.fantacalcio-online.com/it/gestione-leghe/gestione-voti-standard">fonti voti 2026/27</a> · <a href="https://www.atlanticmoon.com/fantacalcio/faas-fantacalcio-as-a-service/">Atlanticmoon FaaS</a></li>
+<li><a href="https://www.fantalab.it/">FantaLab</a> · <a href="https://www.sosfanta.com/news/fantalab-novita-2026-27-asta-fantacalcio/">novità 2026/27</a> · <a href="https://www.linkedin.com/posts/federico-allegro_fundraising-startups-gaming-activity-7316384525389885441-rMVs">numeri dichiarati dal CEO</a> · <a href="https://find-and-update.company-information.service.gov.uk/company/14175206">Companies House</a></li>
+<li><a href="https://docs.kickest.it/">Kickest, documentazione</a> · <a href="https://www.kickest.it/it/serie-a/notizie/36176/kickest-26-27-novita-premi-scoring-system">novità 2026/27</a> · <a href="https://fantaking.it/fantasy-sports-game/kickest">Fantaking</a></li>
+<li><a href="https://www.goal.com/it/liste/fantacampionato-gazzetta-listone-regolamento-premi-e-come-si-gioca/bltfe67f1234de5e401">Fantacampionato Gazzetta, regolamento e premi</a> · <a href="https://apps.apple.com/it/app/fantacampionato-gazzetta/id1500543133">App Store</a></li>
+<li><a href="https://apps.apple.com/it/app/fantapazz/id901157238">Fantapazz</a> · <a href="https://apps.apple.com/it/app/fanta-soccer-leghe-fantacalcio/id689777921">Fanta.Soccer</a> · <a href="https://www.fantamagazine.com/rubriche/i-numeri-del-fantacalcio/">Fantamagazine, i numeri</a></li>
+<li><a href="https://www.money.it/migliori-app-per-fantacalcio-gratis-o-quasi">Money.it, le migliori app 2026</a> · <a href="https://www.fantalgoritmo.it/">Fantalgoritmo</a> · <a href="https://apps.apple.com/it/app/fantaai/id6775883066">FantaAI</a></li>
+<li><a href="https://www.wonderchannel.it/dazn-porta-i-voti-del-fantacalcio-dentro-le-partite-idea-comodissima-ma-da-fantallenatore-continuo-ad-avere-un-problema-con-certe-pagelle/">Wonder Channel, voti in TV e pagelle contestate</a> · <a href="https://forum.gruppoesperti.it/viewtopic.php?t=146221">Forum GruppoEsperti</a></li>
+<li><a href="https://www.cryptotimes.io/2025/11/21/sorare-lays-off-35-of-staff-cto-steps-back-as-nft-boom-fades/">Sorare, tagli 2025</a></li>
+</ul>
+<h3>Metodo e limiti</h3>
+<p>Quattro ricerche parallele su siti ufficiali, store, registri camerali, stampa economica e forum. I numeri di utenti sono quasi sempre dichiarati dalle aziende e cumulativi: vanno letti come ordini di grandezza. Reddit non era accessibile agli strumenti usati. Non esistono dati pubblici su leghe attive, quota Mantra e età media.</p>
+</div></section>
+<footer><div class="wrap">TransferBeat · analisi interna · settembre 2026</div></footer>

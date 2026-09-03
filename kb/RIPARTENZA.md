@@ -6,6 +6,8 @@
 > modello di estrazione sono tutti conservati. Si riaccende in mezz'ora seguendo la **§7**.
 > Prossime riaperture: **finestra invernale (gennaio)** e **fine campionato (giugno)**.
 
+> **REGOLA SEO/GEO (2026-09-03): il posizionamento ha la massima priorità. Leggere `kb/SEO.md` prima di toccare qualsiasi pagina.** Lì ci sono la regola in 9 punti, la diagnosi, i link ai due report (SEO/GEO e mercato fantacalcio) e il piano in 7 punti approvato, ancora da eseguire.
+
 ## 0. La verità fondamentale
 **Il sito NON dipende da nessun computer.** Fonte di verità: GitHub (`ultimacenere/transferbeat`).
 Vercel pubblica da lì (dominio transferbeat.com via Register.it). I cron girano su GitHub Actions,
@@ -108,6 +110,7 @@ passare da un deploy, quindi un cambio di schema sarebbe in produzione prima del
 8. Test: chiedi a Claude di verificare lo stato (git fetch + apertura sito).
 
 ## 3. Regole operative per Claude (IMPORTANTI)
+- **SEO prima di tutto**: ogni pagina o script che produce HTML rispetta `kb/SEO.md` §0. Le consegne dicono cosa hanno fatto per il posizionamento.
 - **La cartella locale va in deriva: la verità è `origin/main`.** La copia su Google Drive può restare
   indietro di settimane senza che nulla lo segnali. **Prima di analizzare o decidere qualsiasi cosa,
   leggere i file con `git show origin/main:<file>`, non dal disco.** Un'analisi fatta sui file locali
