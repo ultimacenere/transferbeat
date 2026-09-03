@@ -31,6 +31,9 @@
 | `scripts/fanta_voti.py` | voti di una giornata (§5) → `player_ratings`, `matchdays`, poi `compute_all_leagues` → `data/fanta/voti-NN.json` |
 | `scripts/fanta_titolari.py` | indice titolarità + infortuni con rientro (§7) → `player_status` → `data/fanta/titolari-NN.json` |
 | `scripts/fanta_demo.py` | strumento demo/test: bot, rose casuali, formazioni, pulizia, eliminazione lega (§11) |
+| `scripts/stats_pull.py` | statistiche squadra (classifiche, teams/statistics, fixtures/statistics) per Serie A, Premier, Liga e schede giocatore Serie A (profili, stagione corrente e precedente, trasferimenti) → `data/stats/*.json` (§14) |
+| `scripts/render_stats.py` | grafici SVG, sezione "Statistiche" delle pagine squadra, schede `giocatori/<slug>.html` e `giocatori/index.html`; importato da `render_site.py` (§14) |
+| `data/stats/{teams,matches,players}.json` | cache dei dati API-Football per squadre, partite e giocatori (committati dal cron) |
 | `.github/workflows/fanta.yml` | cron voti+titolarità (sere di campionato e mattine seguenti) e listone su richiesta (`task=listone`) |
 | `data/fanta/*.json` | copie statiche dei dati generati (committate dal cron) |
 
@@ -157,7 +160,8 @@ la lista è quasi vuota. Le notizie/probabili formazioni (LLM) per affinare la %
 
 ## 8. Cron e operazioni ricorrenti
 - `fanta.yml`: schedule `30 21 * * 6,0,1,2,3,4` e `0 7 * * 1,2,5` (UTC) → voti + titolarità; `0 6 * * 4` (giovedì) → sincronizzazione
-  rose; `workflow_dispatch` con `task=voti|rose|listone` (listone = `--prezzi`) e `matchday`. Committa `data/fanta`. **Inattivo finché mancano i secret** (§2).
+  rose; `workflow_dispatch` con `task=voti|rose|listone` (listone = `--prezzi`) e `matchday`. Dal 2026-09-03 dopo voti e titolarità lancia anche
+  `stats_pull.py` (statistiche squadra e schede giocatore, §14) e poi `render_site.py`. Committa `data/fanta`, `data/stats`, `giocatori/`, `squadre/`. **Inattivo finché mancano i secret** (§2).
 - **Lancio manuale** (dal worktree, cartella `scripts`, con `PYTHONIOENCODING=utf-8`): `py fanta_voti.py` (o `py fanta_voti.py N`),
   poi `py fanta_titolari.py`. Listone: `py fanta_players.py --check` (verifica), `py fanta_players.py` (sincronizza rose, prezzi invariati), `--prezzi` dopo gennaio (§6).
 - Ogni script stampa il numero di chiamate API usate.
@@ -234,3 +238,37 @@ Claude esegue questi comandi a richiesta man mano che l'utente avanza (crea lega
 9. Mantra (ruoli manuali + moduli Mantra); poi Premier/Liga (API-Football copre entrambe con lo stesso schema).
 10. Rigenerare la service key Supabase prima dell'apertura al pubblico; valutare Supabase Pro se le leghe crescono.
 11. Listone da rifare dopo il mercato di gennaio (`fanta_players.py --prezzi`, o `task=listone` dal workflow); a fine mercato `--check` e sincronizzazione.
+12. Statistiche e schede (§14): verificare la licenza di foto e loghi API-Football prima di attivare `PHOTOS` in `render_stats.py`; heatmap/mappa
+    posizioni rinviate a un collegamento con Opta o StatsBomb (API-Football non ha coordinate); schede giocatore per Premier e Liga solo se si accetta
+    il peso nel repo (~18 MB per campionato, rigenerati a ogni giornata); carriera per stagione (`/players?id&season` per ogni anno) come backfill futuro.
+13. `teams.json` aveva ancora le retrocesse 2025-26 (Verona, Cremonese, Pisa; West Ham, Wolves, Burnley; Girona, Mallorca, Real Oviedo) e non le promosse:
+    il 2026-09-03 sono state AGGIUNTE le 9 promosse (Frosinone, Monza, Venezia, Hull City, Ipswich Town, Coventry City, Deportivo, Racing Santander, Málaga);
+    le retrocesse restano con pagina e notizie ma senza classifica e statistiche. Decidere se toglierle (le URL già indicizzate andrebbero in 404).
+
+## 14. Statistiche squadra e schede giocatore (dal 2026-09-03)
+**Cosa c'è.** Nelle pagine `squadre/<slug>.html` delle 60 squadre in classifica (Serie A, Premier League, Liga) una sezione "Statistiche 2026-27":
+tessere (classifica, partite, gol fatti/subiti con medie, porte inviolate, possesso medio, xG a partita), forma V/N/P, grafici SVG inline con
+tabella accanto (gol per fase di gara fatti/subiti; casa e trasferta V/N/P; gol e xG per giornata; possesso per giornata; tiri e tiri in porta per
+giornata; moduli usati) e la tabella partita per partita (possesso, tiri, xG, corner, parate, precisione passaggi; avversario linkato).
+Per la Serie A la rosa viene dalle rose API-Football, per ruolo, con numero, età, nazionalità e link alla scheda. Le 670 schede `giocatori/<slug>.html`
+(651 in rosa + chi ha giocato ed è stato ceduto, segnato "non più in Serie A") hanno: descrizione in italiano costruita SOLO dai dati (ruolo,
+nazionalità, nascita, altezza/peso, arrivo con formula, maglie vestite, numeri della stagione scorsa e di quella in corso, voto medio FantaTB,
+quotazione e titolarità); tessere; confronto 2025-26 (campionato principale della stagione, scelto fra le leghe nazionali con più minuti) contro
+Serie A 2026-27 con colonne per 90'; grafico a barre orizzontali per 90' (grigio = scorsa, blu = corrente, solo con ≥90'); radar per 90' contro il
+90° percentile dei pari ruolo (riferimento: pari ruolo con ≥900' nel campionato 2025-26; giocatore con ≥450' scorsa / ≥180' corrente; niente radar
+per i portieri); tabella di tutte le competizioni 2025-26; voti e fantavoto FantaTB per giornata (grafico + tabella con link alla pagina voti);
+carriera dai trasferimenti (feed API-Football, parte dagli anni recenti); articoli che citano il giocatore; compagni di squadra; JSON-LD Person con
+memberOf SportsTeam. Indice `giocatori/index.html` (più quotati + squadra per squadra per ruolo), voce "Giocatori" nel menu, `sitemap-giocatori.xml`.
+Listone, voti e titolari linkano i nomi alle schede. Lo stemma delle squadre è ora un quadrato SVG con i **colori sociali** (`col`/`col2` in
+`teams.json`, funzione `badge()` in `site_common.py`), non più la sigla su un colore solo.
+**Dati** (`scripts/stats_pull.py`, chiave API-Football come gli altri script): `/standings` e `/teams/statistics` per le 60 squadre (61 chiamate),
+`/fixtures` + `/fixtures/statistics` solo per le partite finite non in cache (~10 per giornata per lega), `/players/squads` (20), `/players?league=135&season`
+(~27 pagine, solo chi ha giocato), profili mancanti e stagione precedente per giocatore (in cache per sempre: `prev_season`), `/transfers?team` (20) con
+fallback per giocatore. Prima esecuzione 2026-09-03: **1.223 chiamate, 10 minuti**; a regime ~60-130 per lancio. Il feed non ha coordinate/heatmap.
+Le statistiche di squadra "gol per minuto" arrivano incomplete nei primi giorni: la pagina dichiara i gol senza minuto invece di farli quadrare.
+**Regole grafiche** (skill dataviz, palette validata col suo script): blu #1f6fd6, arancio #eb6834, viola #7b46c9, grigio #a7b0ba per la de-enfasi;
+barre ≤24px con punta arrotondata e 2px d'aria, linee 2px, marcatori con anello bianco, griglia hairline, legenda con ≥2 serie, etichette dirette
+solo sui massimi, sempre una tabella accanto. I grafici sono `viewBox` 480 (720 a tutta larghezza, `max-width:720px`) così il testo non si rimpicciolisce.
+**Lancio manuale**: `py scripts/stats_pull.py` (o `--squadre` / `--giocatori`), poi `py scripts/render_site.py`. `render_site` cancella le schede
+non più generate (giocatori rinominati o usciti). Peso: `giocatori/` ~18 MB, `data/stats` ~3 MB; le schede cambiano a ogni giornata (voti).
+`PHOTOS = False` in `render_stats.py`: le foto del CDN API-Football restano spente finché non si verifica la licenza.

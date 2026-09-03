@@ -32,8 +32,10 @@ Google News RSS  →  scripts/build.py  →  data/board.json + data/home.json  �
 │  └─ keywords.es.json
 ├─ scripts/build.py         # ingestione RSS + classificazione + movimenti + scrittura JSON
 ├─ scripts/render_site.py   # pagine statiche SEO: testo nelle hub, squadre/, campionati/, fantacalcio/, chi-siamo, llms.txt, sitemap
+├─ scripts/stats_pull.py    # statistiche squadra (Serie A, Premier, Liga) e schede giocatore Serie A da API-Football -> data/stats/*.json
+├─ scripts/render_stats.py  # grafici SVG, sezione Statistiche delle pagine squadra e giocatori/<slug>.html (usato da render_site.py)
 ├─ scripts/site_common.py   # costanti, alias squadre, template pagina, sitemap e lastmod condivisi (vedi kb/SEO.md)
-├─ squadre/ · campionati/ · fantacalcio/   # GENERATE da render_site.py (non modificare a mano)
+├─ squadre/ · campionati/ · fantacalcio/ · giocatori/   # GENERATE da render_site.py (non modificare a mano)
 ├─ requirements.txt         # feedparser, googlenewsdecoder, requests
 └─ .github/workflows/update.yml   # cron 3×/giorno
 ```

@@ -37,7 +37,7 @@ ZONES = {"SA": [4, 1, 1, 3], "PL": [5, 1, 0, 3], "PD": [5, 1, 1, 3], "BL1": [4, 
 # Alias: nome in teams.json -> "short" di football-data (competizioni.json). Gli altri coincidono.
 FD_ALIAS = {"Como": "Como 1907", "Barcelona": "Barça", "Atlético Madrid": "Atleti", "Athletic Club": "Athletic",
             "Sevilla": "Sevilla FC", "Celta Vigo": "Celta", "Brighton": "Brighton Hove", "Nottingham Forest": "Nottingham",
-            "Leeds": "Leeds United"}
+            "Leeds": "Leeds United", "Racing Santander": "Santander", "Venezia": "Venezia FC"}
 # Alias: squadra nel listone FantaTB (API-Football) -> nome in teams.json.
 FANTA_ALIAS = {"AC Milan": "Milan", "AS Roma": "Roma"}
 
@@ -129,9 +129,9 @@ def today_iso():
 
 # ---------- template pagina (solo italiano) ----------
 NAV = [("Home", "/"), ("Live", "/board.html"), ("Articoli", "/articoli/it/"), ("Campionati", "/campionati.html"),
-       ("Squadre", "/squadre/"), ("FantaTB", "/fantatb.html"), ("Fonti", "/fonti.html")]
+       ("Squadre", "/squadre/"), ("Giocatori", "/giocatori/"), ("FantaTB", "/fantatb.html"), ("Fonti", "/fonti.html")]
 SITELINKS = [("Home", "/"), ("Articoli", "/articoli/it/"), ("Articles (EN)", "/articoli/en/"), ("Artículos (ES)", "/articoli/es/"),
-             ("Live board", "/board.html"), ("Campionati", "/campionati.html"), ("Squadre", "/squadre/"),
+             ("Live board", "/board.html"), ("Campionati", "/campionati.html"), ("Squadre", "/squadre/"), ("Giocatori di Serie A", "/giocatori/"),
              ("Fantacalcio: listone, voti e titolari", "/fantacalcio/"), ("FantaTB", "/fanta/"), ("Fonti", "/fonti.html"),
              ("Chi siamo", "/chi-siamo.html"), ("Archivio Mondiale 2026", "/mondiali.html")]
 GA = ('<script async src="https://www.googletagmanager.com/gtag/js?id=G-RLST76W6H2"></script>'
@@ -183,7 +183,20 @@ tr.z1 td.pos{color:var(--accent);font-weight:800}tr.z2 td.pos{color:var(--blue);
 .foot{border-top:3px solid var(--accent);margin-top:30px;padding:18px 0 6px;color:var(--muted);font-size:12px;text-align:center}
 .sitelinks{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;padding:10px 18px 18px;font-size:12px}.sitelinks a{color:var(--muted)}
 .tools{margin:8px 0 12px;display:flex;gap:8px;flex-wrap:wrap}.tools input,.tools select{font:inherit;font-size:13px;padding:7px 10px;border:1px solid var(--line);border-radius:8px}
-th.sort{cursor:pointer}th.sort:hover{color:var(--txt)}"""
+th.sort{cursor:pointer}th.sort:hover{color:var(--txt)}
+.badge{vertical-align:middle;margin-right:8px;flex:none}h1 .badge{vertical-align:-9px;margin-right:12px}.chips a .badge{margin-right:6px;vertical-align:-7px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:10px;margin:8px 0 18px}
+.kpi{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#fff}.kpi .l{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;font-weight:700}
+.kpi .v{font-size:24px;font-weight:600;line-height:1.25;margin-top:2px}.kpi .s{font-size:12px;color:var(--muted)}
+.chart{width:100%;max-width:720px;height:auto;display:block;font-family:'Segoe UI',system-ui,sans-serif;margin:4px 0 10px}.chart .ax{fill:var(--muted);font-size:12.5px}.chart .lb{fill:var(--txt);font-size:12.5px;font-weight:600}
+.chart .grid{stroke:var(--line);stroke-width:1}.chart .base{stroke:#c3c2b7;stroke-width:1}.chart .ring{stroke:#fff;stroke-width:2}
+.legend2{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin:2px 0 6px}.legend2 i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.form{display:inline-flex;gap:3px;vertical-align:middle}.form i{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 4px;border-radius:5px;color:#fff;font-size:11px;font-weight:800;font-style:normal}
+.form .w{background:var(--done)}.form .d{background:#9aa5b1}.form .l{background:var(--red)}
+.ph{margin:0 0 10px;font-size:13px;color:var(--muted)}.lead{font-size:16px;line-height:1.65}
+.plist{list-style:none;columns:2;column-gap:24px;font-size:14px;margin-bottom:8px}.plist li{padding:3px 0;break-inside:avoid}.plist .n{display:inline-block;min-width:28px;color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
+@media(max-width:600px){.plist{columns:1}}
+.card .in table td,.card .in table th{padding:6px 5px;font-variant-numeric:tabular-nums}.photo{border-radius:12px;float:right;margin:0 0 10px 16px}"""
 
 def dots(n):
     try:
@@ -191,6 +204,16 @@ def dots(n):
     except Exception:
         n = 0
     return '<span class="reli">' + "".join('<i class="%s"></i>' % ("on" if i <= n else "") for i in (1, 2, 3)) + "</span>"
+
+def badge(t, size=26, cls="badge"):
+    """Stemma con i colori sociali: quadrato diviso in diagonale fra col (sopra) e col2 (sotto) con la sigla; t = voce di teams.json.
+    Il testo bianco ha un bordo scuro (paint-order) cosi' resta leggibile anche sui colori chiari (bianco, giallo)."""
+    t = t or {}
+    col = t.get("col") or "#67727e"; col2 = t.get("col2") or col; lab = t.get("lab") or ""
+    return ('<svg class="%s" width="%d" height="%d" viewBox="0 0 26 26" aria-hidden="true"><rect width="26" height="26" rx="6" fill="%s"/>'
+            '<path d="M26 0V26H0Z" fill="%s"/><rect x=".5" y=".5" width="25" height="25" rx="6" fill="none" stroke="rgba(0,0,0,.16)"/>'
+            '<text x="13" y="17" text-anchor="middle" font-size="10" font-weight="800" fill="#fff" stroke="rgba(0,0,0,.6)" stroke-width="2.2" '
+            'paint-order="stroke" font-family="\'Segoe UI\',system-ui,sans-serif">%s</text></svg>') % (cls, size, size, esc(col), esc(col2), esc(lab))
 
 def breadcrumb_ld(items):
     """items: [(nome, url assoluta)] -> JSON-LD BreadcrumbList."""

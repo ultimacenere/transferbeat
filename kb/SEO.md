@@ -83,6 +83,13 @@ Da `data/fanta/*.json` (committati dal workflow `fanta.yml`), generate da `rende
 - `render_articles.py`: blocco "Correlati" (stessa squadra, stesso tipo, ultimi 5), tag squadra con link alla pagina squadra,
   breadcrumb Home › Articoli › Squadra › Articolo con BreadcrumbList, link alla pagina competizione.
 - Dalle pagine squadra agli articoli e viceversa; dalla board statica alle pagine squadra.
+### 3.8 Statistiche squadra e schede giocatore (2026-09-03) — codice, vedi `kb/FANTATB.md` §14
+- 670 pagine `giocatori/<slug>.html` (Serie A) con testo unico costruito dai dati, tabelle e grafici SVG inline (indicizzabili, niente JS),
+  JSON-LD Person + BreadcrumbList, indice `giocatori/`, `sitemap-giocatori.xml`, voce "Giocatori" nel menu e nei sitelink. Le query lunghe
+  sui nomi dei giocatori (unico traffico organico attuale, §2) ora hanno una pagina dedicata.
+- Pagine squadra: sezione "Statistiche" (title e description aggiornati: "notizie, statistiche, classifica…"), rosa con link alle schede,
+  stemma con i colori sociali. Listone, voti e titolari linkano i nomi alle schede (maglia interna a tre livelli: squadra → giocatore → voti).
+- Dati `data/stats/*.json` da `scripts/stats_pull.py` (API-Football), rigenerazione in `fanta.yml`; niente foto finché non è verificata la licenza.
 
 ## 4. Verifica dopo ogni intervento
 - `py -X utf8 scripts/render_site.py` deve finire con `render_site OK`; poi `node --check` sugli script inline delle hub e `grep -c '&lt;p&gt;'` a zero.
