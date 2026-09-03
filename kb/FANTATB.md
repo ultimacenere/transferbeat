@@ -169,6 +169,11 @@ dinamiche (`renderTabs`): Asta (solo in fase asta) · Schiera · Classifica · C
   🔁 per i subentrati, Totale parziale, extra, Totale. Giornata non calcolata → formazioni schierate finora.
 - **Classifica**: Pt, G, V, N, P, GF, GS, fantapunti.
 - **Listone** e **Voti** sono pubblici (senza login). "Come funziona" spiega voto e regole.
+- **Promozione (2026-09-03)**: landing `fantatb.html` (root, it/en/es, punti forti + CTA "Crea la tua lega ora" → `fanta/#crea`,
+  che nell'app porta al form di creazione o al login) e `fanta/promo.js`, incluso da home, board, campionati, fonti e da tutte le
+  pagine articolo (template in `render_articles.py`): banner in testata sotto il menu (chiudibile per la sessione) e due banner
+  laterali fissi visibili sopra 1540 px. Palette "sgargiante" richiesta dall'utente: fucsia #ff2e88 → arancio #ff7a1a → giallo
+  #ffd400, bottoni blu notte #1b1140. Lo script non si carica dentro `/fanta/`.
 - Login condiviso tra le finestre dello stesso browser (localStorage): per due account insieme serve incognito/altro browser/telefono.
 
 ## 11. Strumento demo (`py scripts/fanta_demo.py <comando> <CODICE_INVITO> ...`, dalla cartella scripts)

@@ -536,6 +536,7 @@ async function init(){
   await initAuth();
   const m = location.hash.match(/^#lega\/([0-9a-f-]{36})$/);
   if (m && user) openLeague(m[1]);
+  if (location.hash === '#crea') { if (user) { show('home'); setTimeout(() => { const f = $('#clName'); if (f) { f.scrollIntoView({ behavior: 'smooth', block: 'center' }); f.focus(); } }, 300); } else msg('Entra o crea un account: poi "Crea una lega" è nella tua pagina.', 'ok'); }
 }
 init().catch(err);
 })();

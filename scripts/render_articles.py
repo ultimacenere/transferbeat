@@ -183,7 +183,7 @@ def render_article(art, lang, site):
         if og_img:
             ld["image"] = [og_img]
         out.append('<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + '</script>')
-        out.append('</body></html>')
+        out.append('<script src="/fanta/promo.js" defer></script></body></html>')
         return "".join(out)
     out.append('<div class="sources"><h2>' + UI[lang]["sources"] + '</h2><ul>')
     for u in art["updates"]:
@@ -209,7 +209,7 @@ def render_article(art, lang, site):
             {"@type": "ListItem", "position": 2, "name": UI[lang]["list"], "item": site + "/articoli/" + lang + "/"},
             {"@type": "ListItem", "position": 3, "name": title, "item": canon}]}
     out.append('<script type="application/ld+json">' + json.dumps(bc, ensure_ascii=False) + '</script>')
-    out.append('</body></html>')
+    out.append('<script src="/fanta/promo.js" defer></script></body></html>')
     return "".join(out)
 
 def render_index(arts, lang, site):
@@ -231,7 +231,7 @@ def render_index(arts, lang, site):
                    '<div class="m">' + esc(a.get("team","")) + ' · ' + fdate(a.get("updated",""), lang) + '</div></a>')
     if not arts:
         out.append('<p style="color:#8a94a0">—</p>')
-    out.append('</div><div class="wrap"><div class="foot">© TransferBeat</div></div></body></html>')
+    out.append('</div><div class="wrap"><div class="foot">© TransferBeat</div></div><script src="/fanta/promo.js" defer></script></body></html>')
     return "".join(out)
 
 def render_all(arts, site, pages_dir, data_dir):
@@ -253,7 +253,7 @@ def render_all(arts, site, pages_dir, data_dir):
     os.makedirs(os.path.join(data_dir, "articles"), exist_ok=True)
     json.dump(idx, open(os.path.join(data_dir, "articles", "index.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     # sitemap
-    urls = [site + "/", site + "/board.html", site + "/campionati.html", site + "/mondiali.html", site + "/fonti.html", site + "/fanta/"]
+    urls = [site + "/", site + "/board.html", site + "/campionati.html", site + "/mondiali.html", site + "/fonti.html", site + "/fanta/", site + "/fantatb.html"]
     for lang in LANGS:
         urls.append(site + "/articoli/" + lang + "/")
         for a in arts:
