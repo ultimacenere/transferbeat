@@ -294,6 +294,17 @@ Misure dopo la fase B/C, sulla board reale: colonna anteprima da 42 a 78 voci, d
 5. **Freschezza: notifica.** Il fallimento della sentinella colora di rosso il workflow e GitHub manda una
    mail al proprietario del repo: verificare che arrivi davvero al primo rosso.
 
+### SEO e GEO (diagnosi del 2026-09-03)
+Search Console (via GA4) da giugno: 316 impressioni, 43 clic (39 sulla home = ricerca di marca), 22 query tutte code lunghe su
+nomi di giocatori, posizione media 43. Il sito è indicizzato ma non compete. Cause in ordine di impatto: (1) contenuto derivato
+su query dei grandi editori, (2) dominio nuovo senza menzioni né link, (3) home/board/campionati vuote per i motori (200-330
+caratteri di HTML statico, tutto via JS), (4) tre lingue sulla stessa URL con lo stesso canonical, (5) title senza tema,
+(6) sitemap con lastmod sempre "oggi" su 559 URL, (7) nessuna entità (autore anonimo, niente chi siamo), (8) struttura piatta
+senza pagine squadra/competizione, (9) riconversione appena fatta. GEO: assente da Bing (quindi da ChatGPT/Copilot), niente llms.txt,
+niente FAQ, dati propri (listone, voti, titolarità) non pubblicati come pagine. Piano nei report pubblicati come artifact
+("Perché TransferBeat non si posiziona", "Fantacalcio in Italia 2026"). Priorità codice: pagine hub statiche per squadra e
+competizione, lingue su URL separate o solo IT, title/description/lastmod veri, pagine dati FantaTB, correlati, llms.txt, IndexNow.
+
 ### Punti aperti minori
 - **`guard.py`**: i due difetti elencati in §5 non sono stati corretti perché il classificatore dei
   permessi ha bloccato la modifica (è uno script di sicurezza). Serve un via libera esplicito.
