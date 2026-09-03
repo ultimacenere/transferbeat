@@ -4,6 +4,12 @@
 import json, os, sys, time
 import requests
 
+for _s in (sys.stdout, sys.stderr):   # console Windows non UTF-8: i caratteri non rappresentabili diventano '?' invece di far crashare
+    try:
+        _s.reconfigure(errors="replace")
+    except Exception:
+        pass
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data", "fanta")
 SEASON = int(os.environ.get("FANTA_SEASON", "2026"))   # stagione 2026-27

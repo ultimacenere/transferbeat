@@ -211,13 +211,15 @@ Claude esegue questi comandi a richiesta man mano che l'utente avanza (crea lega
 - Test end-to-end senza toccare l'utente: script Python con utenti temporanei via `/auth/v1/admin/users` e RPC con il loro JWT
   (vedi gli smoke test del 2026-09-02); pulire sempre alla fine. `fanta_demo.py` copre i casi ricorrenti.
 - Dopo ogni modifica al frontend dire all'utente **Ctrl+F5** (cache del browser).
+- Le scritture su Supabase lanciate da Claude (upsert/patch dagli script) possono essere bloccate dal classificatore della modalità
+  automatica: in quel caso dare all'utente il comando da lanciare nel suo terminale, che è **Windows PowerShell 5.1** (niente `&&` né
+  `VAR=x`: usare `;` e `$env:VAR="x"`; gli script stampano anche su console cp1252 senza crashare). Es.: `py scripts/fanta_players.py`.
 - Il cron `update.yml` del sito non tocca `fanta/`; `render_articles.py` rigenera `sitemap.xml` senza `/fanta/` (da aggiungere).
 
 ## 13. PENDING (in ordine di priorità)
-0. **Sincronizzare le rose** (`py fanta_players.py` dalla cartella scripts, poi commit di `data/fanta/listone.json` e `bash scripts/pubblica.sh`).
-   Il 2026-09-03 `--check` trova 16 usciti (Leão, Nkunku, Kostić, Prati, Zappa, Petagna…), 2 cambi (Ricci → Como, Giacomone → Bologna),
-   11 rientrati, 5 nuovi. La scrittura sul database è bloccata dai permessi della modalità automatica: la lancia l'utente (o autorizza Claude).
-   Nella lega test 9 usciti sono già in rosa (Leão a "real" per 30): svincolarli o eliminare la lega.
+0. ~~Sincronizzare le rose~~ FATTO il 2026-09-03 alle 10:16 UTC (lanciato dall'utente): 16 disattivati (Leão, Nkunku, Kostić, Prati,
+   Zappa, Petagna…), 2 cambi (Ricci → Como, Giacomone → Bologna), 11 rientrati e 5 nuovi quotati; ora 651 attivi e 34 inattivi.
+   Nella lega test 9 usciti restano in rosa (Leão a "real" per 30): svincolarli o eliminare la lega. Ripetere `--check` prima dell'asta vera.
 1. **Secret GitHub Actions** (`APIFOOTBALL_KEY`, `SUPABASE_URL`, `SUPABASE_SERVICE_KEY`) → cron voti/titolarità automatico. Finché mancano: lancio manuale (§8).
 2. **Rinnovo API-Football** entro il 2026-10-02 (§2).
 3. **Asta vera della lega dell'utente** (8 squadre): prima `elimina` la lega demo `test` (B9B24C58); Supabase Free basta.
