@@ -20,15 +20,15 @@ STATE_COLOR = {"rumor": "#d98700", "obj": "#d98700", "conf": "#7b46c9", "done": 
 UI = {
   "it": {"by": "Redazione TransferBeat", "sources": "Fonti", "updated": "Aggiornato il", "home": "Home",
          "board": "Board live", "campionati": "Campionati", "back": "← Tutti gli articoli", "status": "Stato", "list": "Articoli",
-         "disc": "TransferBeat aggrega notizie di mercato citando le fonti originali. Notizia in aggiornamento.",
+         "disc": "TransferBeat aggrega notizie di calcio citando le fonti originali. Notizia in aggiornamento.",
          "via": "via", "smentita": "SMENTITA", "squadre": "Squadre", "related": "Articoli correlati", "edby": "a cura di"},
   "en": {"by": "TransferBeat Newsroom", "sources": "Sources", "updated": "Updated on", "home": "Home",
          "board": "Live board", "campionati": "Leagues", "back": "← All articles", "status": "Status", "list": "Articles",
-         "disc": "TransferBeat aggregates transfer news citing the original sources. Developing story.",
+         "disc": "TransferBeat aggregates football news citing the original sources. Developing story.",
          "via": "via", "smentita": "DENIED", "squadre": "Clubs", "related": "Related articles", "edby": "edited by"},
   "es": {"by": "Redaccion TransferBeat", "sources": "Fuentes", "updated": "Actualizado el", "home": "Inicio",
          "board": "Board en vivo", "campionati": "Ligas", "back": "← Todos los articulos", "status": "Estado", "list": "Articulos",
-         "disc": "TransferBeat agrega noticias de mercado citando las fuentes originales. Noticia en desarrollo.",
+         "disc": "TransferBeat agrega noticias de fútbol citando las fuentes originales. Noticia en desarrollo.",
          "via": "via", "smentita": "DESMENTIDO", "squadre": "Equipos", "related": "Artículos relacionados", "edby": "editado por"},
 }
 RECAP_LABEL = {"it": "RECAP DI GIORNATA", "en": "DAILY RECAP", "es": "RESUMEN DEL DIA"}
