@@ -283,8 +283,10 @@ Misure dopo la fase B/C, sulla board reale: colonna anteprima da 42 a 78 voci, d
 2. **Fase J — bilancio mercato.** Decisione presa: **solo dalle notizie ufficiali già classificate**,
    non dal diff fra le rose (gli snapshot riflettono le ri-registrazioni delle liste, non i trasferimenti).
    Sorgente: lo storico di `data/it/board.json`, oltre 770 versioni dal 2026-06-03.
-3. **Fase K — palinsesto editoriale.** Le tre pianificate (12:00, 16:00, 20:00) producono articoli ogni
-   giorno ma sono ancora tarate sul mercato (etichette LUNCH BREAK / FOCUS MERCATO / RECAP). Vedi `kb/PIANIFICATE.md`.
+3. ~~Fase K — palinsesto editoriale~~ fatta il 2026-09-03: i tre prompt riscritti sul calcio giocato (fonti: colonne della board,
+   competizioni.json per risultati e classifiche, ultim'ora), badge FOCUS al posto di FOCUS MERCATO, copie dei prompt in
+   `kb/pianificate/`. RESTA APERTO il limite di affidabilità: le pianificate girano solo a PC acceso con Cowork
+   (nessun articolo il 29-31/8 e il 2/9). Opzione: routine cloud a orario fisso. Vedi `kb/PIANIFICATE.md`.
 4. **Campionati, evoluzioni**: barra news dedicata come nel Mondiale; link alla board per squadra dalla
    classifica; Champions: quando parte la league phase (metà settembre) la classifica compare da sola.
 5. **Freschezza: notifica.** Il fallimento della sentinella colora di rosso il workflow e GitHub manda una

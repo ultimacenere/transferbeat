@@ -1,14 +1,26 @@
 # Pianificate Cowork (da ricreare su ogni macchina)
-Tre pianificate alimentano il palinsesto editoriale (3 articoli/giorno = 9 pagine IT/EN/ES).
-Formati e copertine: lunch (ambra, img/cover-lunch.svg) · storia/focus (blu, img/cover-storia.svg) · recap serale (verde, img/cover-recap.svg).
-Pubblicano da sole con `bash scripts/pubblica.sh` (token Contents:write). I prompt completi e aggiornati sono nei file SKILL.md in C:\Users\<utente>\Documents\Claude\Scheduled\<taskId>\ — per ricrearle su un'altra macchina, copiare il prompt dal SKILL.md corrispondente (o chiedere a Claude di rigenerarle da questa KB).
+Tre pianificate alimentano il palinsesto editoriale (3 articoli/giorno = 9 pagine IT/EN/ES). **Riscritte il 2026-09-03 per il
+calcio giocato** (mercato chiuso): fonti = notizie classificate della board (`colonne`), `data/competizioni.json` (unica fonte per
+risultati, classifiche e numeri), ultim'ora del branch `live`. Regola: risultati mai dai titoli, voci chiamate voci, meglio corto che inventato.
+Formati e copertine: lunch (ambra, img/cover-lunch.svg) · storia/FOCUS (blu, img/cover-storia.svg) · recap serale (verde, img/cover-recap.svg).
+Pubblicano da sole con `bash scripts/pubblica.sh` (token Contents:write).
+
+**I prompt completi sono copiati in `kb/pianificate/*.md`** (identici ai SKILL.md in
+`C:/Users/<utente>/Documents/Claude/Scheduled/<nome>/SKILL.md`). Per ricrearle su un'altra macchina: nuova pianificata in Cowork
+con lo stesso nome, orario e prompt. Se si modifica un prompt, aggiornare ENTRAMBE le copie.
 
 ## 1) recap-mattina-transferbeat — "LUNCH BREAK" — ogni giorno 12:00 (cron: 0 12 * * *)
-Punto di metà giornata. Slug lunch-break-AAAA-MM-GG, tipo "lunch", lab LUNCH, col #d98700.
-Fonti: nomi di oggi da origin/main:data/it/board.json + ultim'ora live (ultime ~14h). Claude scrive (no Groq), IT+EN+ES, regole anti-invenzione, fonti citate. Render con render_articles, commit plumbing su origin/main, push se possibile altrimenti avviso pubblica-ora.bat.
+Punto di metà giornata su campionati e coppe: ieri sera e stanotte (risultati da competizioni.json), notizie del mattino, cosa si gioca
+oggi, classifica. Slug lunch-break-AAAA-MM-GG, tipo "lunch", lab LUNCH, col #d98700.
 
-## 2) focus-mercato-transferbeat — "FOCUS MERCATO" — ogni giorno 16:00 (cron: 0 16 * * *)
-Articolo-storia sulla trattativa più rilevante del giorno (curatela: stato avanzato > club di peso > numero fonti > clamore). Slug storia-<cognome>, tipo "storia", team/league/lab/col del club da data/teams.json. Se l'articolo esiste già per quel giocatore: AGGIORNARLO (sviluppi + updated), non duplicare. IT+EN+ES.
+## 2) focus-mercato-transferbeat — "FOCUS" — ogni giorno 16:00 (cron: 0 16 * * *)
+La storia del giorno: partita chiave, giocatore in forma, allenatore, caso, o un'ufficialità presente nei dati. Slug storia-<cognome>
+o storia-<club>-<tema>, tipo "storia", lab/col/lega del club da data/teams.json. Se esiste già: aggiornare, non duplicare.
+(Il nome della pianificata resta "focus-mercato-transferbeat" per non perdere lo storico; il badge sul sito è FOCUS.)
 
 ## 3) recap-serale-transferbeat — "RECAP DI GIORNATA" — ogni giorno 20:00 (cron: 0 20 * * *)
-Recap completo della giornata. Slug recap-AAAA-MM-GG, tipo "recap", lab RECAP, col #0a9d57. Stesse regole.
+Risultati veri del giorno per competizione, classifica, notizie principali, partite in corso o in programma, domani. Alle 20 le partite
+serali non sono finite: il prompt impone di dirlo e di non inventare. Slug recap-AAAA-MM-GG, tipo "recap", lab RECAP, col #0a9d57.
+
+## Limite noto (2026-09-03)
+Le pianificate girano solo se il PC è acceso con Cowork aperto: buchi il 29-31/8 e il 2/9. Alternativa da valutare: routine cloud a orario fisso.
