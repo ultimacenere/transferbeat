@@ -76,7 +76,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#fff;color:#161b21;l
 a{color:inherit;text-decoration:none}
 .wrap{max-width:760px;margin:0 auto;padding:0 18px}
 .top{border-bottom:1px solid #e2e6ea;padding:14px 0;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.brand{font-family:Georgia,serif;font-size:26px;font-weight:700}.brand b{color:#0a9d57}
+.brand{font-family:Georgia,serif;font-size:26px;font-weight:700}.brand b{color:#ff6a00}
 .nav a{font-size:13px;color:#67727e;margin-left:14px}
 .langsw a{font-size:11px;font-weight:700;padding:3px 7px;border:1px solid #e2e6ea;border-radius:6px;color:#67727e;margin-left:4px}
 .langsw a.on{background:#161b21;color:#fff;border-color:#161b21}
@@ -98,7 +98,7 @@ article p{margin-bottom:14px;font-size:16px}
 .disc{font-size:12px;color:#8a94a0;margin-top:18px;font-style:italic}
 .foot{border-top:1px solid #e2e6ea;padding:18px 0;font-size:12px;color:#8a94a0;text-align:center}
 .lcard{display:block;border:1px solid #e2e6ea;border-radius:10px;padding:14px 16px;margin-bottom:12px}
-.lcard:hover{border-color:#0a9d57}
+.lcard:hover{border-color:#ff6a00}
 .lcard .h{font-family:Georgia,serif;font-size:19px;margin:6px 0 4px}
 .lcard .m{font-size:12px;color:#8a94a0}
 .list-h{font-family:Georgia,serif;font-size:28px;margin:18px 0 4px}

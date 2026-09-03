@@ -15,6 +15,8 @@ aggiornarsi da solo.** Il computer serve solo per: modifiche al codice, articoli
 
 > **FantaTB (fantacalcio, online su /fanta/ dal 2026-09-02): KB dedicata in `kb/FANTATB.md`.** Supabase + API-Football, script `scripts/fanta_*.py`, workflow `fanta.yml`.
 
+> **Colore di marca (dal 2026-09-03): arancione vivo `#ff6a00`** (`--accent` in tutte le pagine e nel template articoli), al posto del verde `#0a9d57`. Il verde resta SOLO come colore di stato "fatto/done" e del tipo articolo Recap; il campo di gioco di FantaTB resta verde.
+
 ## 1. Architettura in 60 secondi
 - **Feed 1 (testate, ogni 2 ore 06-22 UTC)**: `update.yml` → `scripts/build.py` interroga Google News
   (query = `teams.json["kw"][lang]` + `squadra["search"]`, es. "notizie calcio Inter Milan") più i feed
