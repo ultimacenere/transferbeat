@@ -71,10 +71,29 @@ def check_competizioni():
     if a > 26: errors.append("competizioni.json: aggiornato %.1f ore fa (max 26): football-data non risponde da un giorno" % a)
     if n < 3: errors.append("competizioni.json: solo %d competizioni" % n)
 
+def check_render():
+    """Le pagine statiche SEO (render_site.py) devono esserci e avere contenuto: kb/SEO.md §0.1."""
+    idx = os.path.join(ROOT, "index.html")
+    try:
+        s = open(idx, encoding="utf-8").read()
+    except Exception as e:
+        errors.append("index.html illeggibile (%s)" % e); return
+    import re
+    m = re.search(r"<!--static:lead-->(.*?)<!--/static:lead-->", s, re.S)
+    if not m or len(m.group(1)) < 200: errors.append("index.html: blocco statico di apertura vuoto (render_site.py non ha girato?)")
+    for f in ("squadre/index.html", "campionati/index.html", "sitemap-squadre.xml", "llms.txt"):
+        if not os.path.exists(os.path.join(ROOT, f)): errors.append(f + ": manca (render_site.py)")
+    try:
+        if "sitemapindex" not in open(os.path.join(ROOT, "sitemap.xml"), encoding="utf-8").read(): errors.append("sitemap.xml non e' un indice")
+    except Exception:
+        errors.append("sitemap.xml manca")
+    notes.append("render: pagine statiche presenti")
+
 def main():
     for lang in LANGS:
         check_lang(lang)
     check_competizioni()
+    check_render()
     for n in notes:
         print("  ", n)
     if errors:

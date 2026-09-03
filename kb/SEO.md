@@ -85,6 +85,7 @@ Da `data/fanta/*.json` (committati dal workflow `fanta.yml`), generate da `rende
 - Dalle pagine squadra agli articoli e viceversa; dalla board statica alle pagine squadra.
 
 ## 4. Verifica dopo ogni intervento
+- `py -X utf8 scripts/render_site.py` deve finire con `render_site OK`; poi `node --check` sugli script inline delle hub e `grep -c '&lt;p&gt;'` a zero.
 - Testo statico sulle hub misurato (obiettivo migliaia di caratteri); `node --check` sul JS; pagine aperte senza `undefined`.
 - Search Console: rapporto Pagine (indicizzate/escluse e perché), Prestazioni con query tematiche; rivedere ogni mese.
 - Bing Webmaster: pagine indicizzate. Test `site:transferbeat.com` su Google e Bing.
@@ -95,5 +96,29 @@ Da `data/fanta/*.json` (committati dal workflow `fanta.yml`), generate da `rende
 Cambiare dominio · comprare link · moltiplicare gli articoli riassuntivi · tradurre di più le hub · caricare contenuto solo via JS.
 
 ## 6. Stato
-- 2026-09-03: diagnosi e piano scritti, nessun intervento ancora eseguito. Il committente ha dato il via a tutti i 7 punti;
-  il lavoro riparte in una nuova sessione da questo file (ordine §3).
+- 2026-09-03 (mattina): diagnosi e piano scritti.
+- 2026-09-03 (pomeriggio): **eseguiti i punti 1-7** sul branch `claude/seo-plan-1bda54` (PR da aprire e mergiare dal committente). In sintesi:
+  - `scripts/site_common.py` (costanti, alias squadre teams.json ↔ football-data ↔ listone, date italiane senza tzdata, template pagina, sitemap, lastmod con hash)
+    e `scripts/render_site.py` (punti 1, 3, 4, 5-codice, 6-codice). Girano in `update.yml` dopo `competizioni.py` e in `fanta.yml`, PRIMA del commit.
+    A mano: `py -X utf8 scripts/render_site.py` (3 secondi, nessuna rete, legge solo i JSON).
+  - Hub: testo statico iniettato fra i marcatori `<!--static:NOME-->…<!--/static:NOME-->` di index/board/campionati (home 5.600 caratteri di testo, board 32.000,
+    campionati 7.600, prima 200-330); title e description nuovi; `hreflang` e selettore lingua tolti da tutte le hub (solo IT; il JS accetta ancora `?lang=` ma nessun
+    link lo usa); H1 unico (i titoli dinamici sono diventati H2); menu "Squadre"; piè di pagina con Squadre, Fantacalcio, Chi siamo.
+  - `squadre/<slug>.html` (60) + `squadre/index.html`; `campionati/<slug>.html` (6) + indice; `fantacalcio/{index,listone,voti-giornata-N,titolari}.html`
+    (Dataset con link ai JSON, FAQPage nell'indice); `chi-siamo.html` (AboutPage, Organization con `founder`, Person); `llms.txt`.
+  - Sitemap: `sitemap.xml` è un INDICE di `sitemap-pagine/squadre/campionati/articoli/fanta.xml`; lastmod veri: `data/lastmod.json` tiene l'hash di ogni pagina
+    (senza orari e "2 ore fa") e la data dell'ultimo cambiamento; gli articoli usano il campo `updated`. `render_articles.py` scrive solo `sitemap-articoli.xml`
+    e richiama `write_sitemap_index()`; le pianificate committano anche `sitemap-articoli.xml`.
+  - Articoli (`render_articles.py`): `author` Person → chi-siamo con firma visibile, breadcrumb Home › Articoli › Squadra › Articolo (anche BreadcrumbList),
+    tag squadra e competizione linkati alle pagine statiche, blocco "Articoli correlati" (stessa squadra, poi stesso tipo, 5), menu hub senza `?lang=`.
+  - IndexNow: `scripts/indexnow.py` + chiave `indexnow-<chiave>.txt` in root; chiamato da `update.yml`, `fanta.yml` e `pubblica.sh` dopo ogni push riuscito
+    (URL dei file cambiati). `freshness.py` ha `check_render()`: fallisce se mancano le pagine statiche o la home ha l'apertura vuota.
+  - `board.html?team=Inter` apre direttamente una squadra (le pagine squadra ci puntano); nella board il blocco statico squadra per squadra resta visibile
+    (filtrato per lega/squadra dal JS) perché la vista "movimenti" a mercato chiuso è vuota.
+- **Serve dal committente** (§3.5-3.6): 1) conferma del nome pubblico in `AUTHOR` (`scripts/site_common.py`) e nel testo di `render_chi_siamo()`;
+  2) email di contatto e profili social da aggiungere a chi-siamo (`sameAs`) e all'Organization di `index.html`; 3) Bing Webmaster Tools → importa da Search Console;
+  4) merge della PR; dopo 2 settimane `site:transferbeat.com` su Bing e rapporto Pagine in Search Console.
+- **Trovato durante il lavoro, fuori piano**: `data/teams.json` contiene 9 club retrocessi (Verona, Cremonese, Pisa, Mallorca, Girona, Real Oviedo, West Ham,
+  Wolves, Burnley) e non i 9 promossi 2026-27 presenti in football-data (Frosinone, Monza, Venezia, Deportivo, Málaga, Racing Santander, Coventry, Hull, Ipswich):
+  le loro pagine squadra escono senza classifica e senza partite, e la board non raccoglie notizie sui promossi. Da aggiornare in `teams.json` (nome, search, lab,
+  col, league, paese) e rilanciare build + render.

@@ -76,9 +76,13 @@ fi
 
 REMOTE="https://x-access-token:${TOKEN}@github.com/${REPO_SLUG}.git"
 red(){ sed -E "s/${TOKEN}/***/g"; }
+BEFORE=$(git ls-remote "$REMOTE" refs/heads/main 2>/dev/null | cut -f1)   # per IndexNow: URL cambiate rispetto a quanto era online
+PY=$(command -v py || command -v python3 || command -v python)
 for i in 1 2 3 4 5; do
   if git push "$REMOTE" HEAD:main 2>&1 | red; then
-    echo "Pubblicato (tentativo $i)."; exit 0
+    echo "Pubblicato (tentativo $i)."
+    [ -n "$PY" ] && "$PY" -X utf8 scripts/indexnow.py "$BEFORE" HEAD 2>&1 | tail -3
+    exit 0
   fi
   echo "Push respinto: integro gli aggiornamenti remoti e ritento ($i)..."
   rm -f "$(git rev-parse --git-dir)/index.lock"

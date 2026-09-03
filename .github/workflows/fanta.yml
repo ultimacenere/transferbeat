@@ -47,11 +47,13 @@ jobs:
       - name: Indice titolarità
         if: ${{ env.LISTONE != 'true' && env.ROSE != 'true' }}
         run: python scripts/fanta_titolari.py || echo "titolari skip"
+      - name: Pagine statiche fantacalcio (listone, voti, titolari) e sitemap
+        run: python scripts/render_site.py || echo "render_site skip"
       - name: Commit dati
         run: |
           git config user.name "TransferBeat Bot"
           git config user.email "bot@transferbeat.com"
-          git add data/fanta
+          git add data/fanta fantacalcio squadre campionati data/lastmod.json llms.txt robots.txt sitemap.xml sitemap-*.xml index.html board.html campionati.html chi-siamo.html
           git diff --cached --quiet || git commit -m "FantaTB dati $(date -u +'%Y-%m-%d %H:%M UTC')"
           git pull --rebase origin main || true
-          git push || echo "push fallito"
+          git push && python scripts/indexnow.py || echo "push fallito"
