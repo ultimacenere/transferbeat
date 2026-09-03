@@ -23,4 +23,7 @@ Risultati veri del giorno per competizione, classifica, notizie principali, part
 serali non sono finite: il prompt impone di dirlo e di non inventare. Slug recap-AAAA-MM-GG, tipo "recap", lab RECAP, col #0a9d57.
 
 ## Limite noto (2026-09-03)
+Le pianificate girano nel clone `C:/Users/User/Desktop/Calciomercato` (non nella cartella su Drive): il loro `github_token.txt` è quello.
+Dal 2026-09-03 `pubblica.sh` recupera da solo un token valido dalle altre copie (vedi `kb/RIPARTENZA.md` §3), ma dopo un "Regenerate"
+conviene comunque aggiornare entrambe le copie e i job cron-job.org.
 Le pianificate girano solo se il PC è acceso con Cowork aperto: buchi il 29-31/8 e il 2/9. Alternativa da valutare: routine cloud a orario fisso.

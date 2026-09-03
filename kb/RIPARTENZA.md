@@ -126,6 +126,14 @@ passare da un deploy, quindi un cambio di schema sarebbe in produzione prima del
 - **Push AUTOMATICO**: `bash scripts/pubblica.sh` (usa github_token.txt, non stampa il token).
   Lo usano le pianificate per pubblicarsi da sole; l'utente può sempre usare `pubblica-ora.bat`
   oppure `carica-modifiche.bat`.
+- **DUE COPIE del repo su questa macchina** (scoperto il 2026-09-03): `C:/Users/User/Desktop/Calciomercato`
+  (ci girano le TRE PIANIFICATE Cowork) e `G:/Il mio Drive/Calciomercato` (sessioni Claude Code, con
+  worktree in `.claude/worktrees/`). I segreti sono gitignorati: ogni copia ha il SUO `github_token.txt`
+  e i worktree non ce l'hanno affatto. Dal 2026-09-03 `pubblica.sh` cerca il token in tutte le posizioni
+  note (TB_TOKEN_FILE, cartella corrente, radice del worktree principale, Desktop, Drive), lo verifica
+  contro l'API e riallinea da solo il file della cartella corrente col primo valore valido; se nessuno è
+  valido lo dice in chiaro. Prima pushava col token vuoto o vecchio e riportava un 401 "Invalid username
+  or token" che sembrava un token scaduto.
 - Se un push è "rejected (fetch first)": un cron è passato prima → ricostruire il commit sopra il
   nuovo origin/main (stesso pattern plumbing) e ripushare.
 - **Lock git stale**: se un comando git dice "Another git process seems to be running", su Drive
@@ -158,6 +166,11 @@ passare da un deploy, quindi un cambio di schema sarebbe in produzione prima del
   ATTENZIONE: "Regenerate" cambia il VALORE del token e revoca il vecchio all'istante (la voce nella
   lista resta la stessa, quindi sembra invariato): dopo ogni rigenerazione i 2 job cron-job.org restano
   fermi finché non incolli il nuovo valore nell'header. Verifica: TEST RUN sul job deve dare HTTP 204.
+  **Checklist dopo ogni rigenerazione**: (1) nuovo valore in `github_token.txt` su Drive O sul Desktop
+  (al primo `pubblica.sh` la copia valida si propaga all'altra); (2) header Authorization dei 2 job
+  cron-job.org. Caso reale del 2026-09-02: token rigenerato alle 00:34 e salvato solo su Drive; il clone
+  Desktop ha tenuto il vecchio (revocato) e le tre pianificate del 2/9 hanno scritto gli articoli senza
+  poterli pubblicare (401). Recuperati e pubblicati a mano il 3/9.
 
 ## 5. Runbook guasti rapidi
 - **Guasto SILENZIOSO (il più pericoloso)**: quasi ogni percorso del codice degrada con un default
@@ -181,6 +194,20 @@ passare da un deploy, quindi un cambio di schema sarebbe in produzione prima del
   l'estrazione globale da→a usa il **match ESATTO** dei club, più la blacklist allenatori di
   `brain.py`. Caso noto già risolto: **"Milan" non deve mai matchare l'Inter**, il cui campo `search`
   è "Inter Milan".
+- **Pianificata che dice "token scaduto" / 401 sul push**: quasi sempre il token è valido e la copia del
+  repo in cui gira ha il file vecchio (o è un worktree senza file). Verifica con uno script Python che
+  legge il file e chiama `GET /repos/ultimacenere/transferbeat` (mai `cat token | curl`: il classificatore
+  lo blocca). Gli articoli scritti restano nel commit locale di quel clone
+  (`git -C C:/Users/User/Desktop/Calciomercato log origin/main..main`): recuperare SOLO i
+  `data/articles/*.json`, rigenerare con `render_articles` sopra `origin/main` aggiornato e pubblicare.
+  NON riportare index/sitemap/HTML del commit vecchio: sono stati generati col template precedente.
+- **`update.yml` rosso allo step commit con CONFLICT su un JSON generato** (successo il 2026-09-03
+  00:13 UTC su `data/competizioni.json`): corsa fra il cron e un push manuale che tocca gli stessi file.
+  Il run successivo riparte pulito da `origin/main`; nessuna azione, salvo non pushare a mano i JSON
+  generati mentre un run è in corso.
+- **Ultim'ora "ferma da mesi"**: quasi sempre un falso allarme da lettura locale. La verità è
+  `git fetch origin && git show origin/live:data/ultimora.json` oppure la URL raw del branch `live`:
+  il campo `aggiornato` deve essere di pochi minuti fa.
 - **Push impossibile / repo locale incasinato**: il repo locale è sacrificabile! Se serve:
   ri-clonare da zero (la verità è su GitHub) e rimettere i 3 file segreti.
 
