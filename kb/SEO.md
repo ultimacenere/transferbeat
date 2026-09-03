@@ -97,7 +97,10 @@ Cambiare dominio · comprare link · moltiplicare gli articoli riassuntivi · tr
 
 ## 6. Stato
 - 2026-09-03 (mattina): diagnosi e piano scritti.
-- 2026-09-03 (pomeriggio): **eseguiti i punti 1-7** sul branch `claude/seo-plan-1bda54` (PR da aprire e mergiare dal committente). In sintesi:
+- 2026-09-03 (pomeriggio): **eseguiti i punti 1-7** e **PUBBLICATI su main** (commit `24c556d`, deploy Vercel verificato: 16 URL nuove su 16 rispondono 200,
+  title nuovi, zero hreflang). Il primo ping IndexNow risponde 403 `SiteVerificationNotCompleted` finché Bing non completa la verifica della chiave
+  (asincrona anche con `indexnow-<chiave>.txt` già online): i ping successivi dei cron passano da soli; se il 403 dura più di un giorno, controllare
+  che la URL della chiave risponda 200 col solo valore della chiave. In sintesi:
   - `scripts/site_common.py` (costanti, alias squadre teams.json ↔ football-data ↔ listone, date italiane senza tzdata, template pagina, sitemap, lastmod con hash)
     e `scripts/render_site.py` (punti 1, 3, 4, 5-codice, 6-codice). Girano in `update.yml` dopo `competizioni.py` e in `fanta.yml`, PRIMA del commit.
     A mano: `py -X utf8 scripts/render_site.py` (3 secondi, nessuna rete, legge solo i JSON).
@@ -117,7 +120,7 @@ Cambiare dominio · comprare link · moltiplicare gli articoli riassuntivi · tr
     (filtrato per lega/squadra dal JS) perché la vista "movimenti" a mercato chiuso è vuota.
 - **Serve dal committente** (§3.5-3.6): 1) conferma del nome pubblico in `AUTHOR` (`scripts/site_common.py`) e nel testo di `render_chi_siamo()`;
   2) email di contatto e profili social da aggiungere a chi-siamo (`sameAs`) e all'Organization di `index.html`; 3) Bing Webmaster Tools → importa da Search Console;
-  4) merge della PR; dopo 2 settimane `site:transferbeat.com` su Bing e rapporto Pagine in Search Console.
+  4) dopo 2 settimane `site:transferbeat.com` su Bing e rapporto Pagine in Search Console (le nuove URL: squadre/, campionati/, fantacalcio/, chi-siamo).
 - **Trovato durante il lavoro, fuori piano**: `data/teams.json` contiene 9 club retrocessi (Verona, Cremonese, Pisa, Mallorca, Girona, Real Oviedo, West Ham,
   Wolves, Burnley) e non i 9 promossi 2026-27 presenti in football-data (Frosinone, Monza, Venezia, Deportivo, Málaga, Racing Santander, Coventry, Hull, Ipswich):
   le loro pagine squadra escono senza classifica e senza partite, e la board non raccoglie notizie sui promossi. Da aggiornare in `teams.json` (nome, search, lab,
