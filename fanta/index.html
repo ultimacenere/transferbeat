@@ -20,6 +20,7 @@
   <nav><div class="wrap">
     <a data-view="home" class="on">Le mie leghe</a>
     <a data-view="listone">Listone</a>
+    <a data-view="liste">Obiettivi</a>
     <a data-view="voti">Voti</a>
     <a data-view="regole">Come funziona</a>
   </div></nav>
@@ -68,7 +69,8 @@
         <div class="card" style="margin-top:14px">
           <h2>Unisciti con un codice</h2>
           <label>Codice invito</label><input id="jnCode" placeholder="es. 3F9A1C2B" style="text-transform:uppercase">
-          <label>Nome della tua squadra</label><input id="jnTeam">
+          <div id="jnPickBox" class="hidden"><label>Squadra da reclamare (rosa già caricata dall'admin)</label><select id="jnPick"></select></div>
+          <label>Nome della tua squadra</label><input id="jnTeam" placeholder="se non reclami una squadra esistente">
           <div class="row" style="margin-top:12px"><button id="btnJoin" class="sec">Unisciti</button></div>
         </div>
       </div>
@@ -95,8 +97,7 @@
   <section id="view-listone" class="hidden">
     <h1>Listone FantaTB</h1>
     <p class="lead">Quotazioni calcolate da FantaTB su presenze, rendimento, gol e assist. Ruoli Classic. Accanto a ogni nome: media voto (MV), fantamedia (FMV), indice di titolarità, presenze, gol e assist della stagione in corso; il nome apre la scheda del giocatore con le statistiche complete.</p>
-    <div class="row" style="max-width:600px"><input id="lsSearch" placeholder="Cerca giocatore o squadra">
-      <select id="lsRole"><option value="">Tutti i ruoli</option><option value="P">Portieri</option><option value="D">Difensori</option><option value="C">Centrocampisti</option><option value="A">Attaccanti</option></select></div>
+    <div id="lsFilters"></div>
     <div id="lsTable" style="margin-top:12px"></div>
   </section>
 
@@ -106,6 +107,19 @@
     <p class="lead">Voto statistico: rating della partita riportato in scala italiana, più bonus e malus da gol, assist, rigori e cartellini. Senza voto sotto i 15 minuti.</p>
     <div class="row" style="max-width:400px"><select id="vtDay"></select></div>
     <div id="vtTable" style="margin-top:12px"></div>
+  </section>
+
+  <!-- LISTE OBIETTIVI (tier 1-5), anche senza lega -->
+  <section id="view-liste" class="hidden">
+    <h1>Liste obiettivi</h1>
+    <p class="lead">La tua lista per l'asta con i tier da 1 (Top) a 5 (Da evitare), anche senza una lega: dal Listone assegni il tier a ogni giocatore, qui li vedi per tier con quotazione, media voto, fantamedia e titolarità. Condividi la lista con un link o copia quelle consigliate.</p>
+    <div class="grid3">
+      <div id="lsteEditor"></div>
+      <div>
+        <div class="card"><h2>Le mie liste</h2><div id="lsteMine"></div></div>
+        <div class="card" style="margin-top:14px"><h2>Liste condivise e consigliate</h2><div id="lsteFeatured"></div></div>
+      </div>
+    </div>
   </section>
 
   <!-- REGOLE -->

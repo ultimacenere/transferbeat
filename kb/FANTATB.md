@@ -283,3 +283,28 @@ si aggiorna con le rose); **card "Listone FantaTB" nella home** anche senza legh
 `renderTabs` scrive `#lega/<id>/<scheda>`, `init()` legge l'hash PRIMA di initAuth (che chiama show) e riapre vista o lega+scheda; le schede giocatore
 hanno in alto **"← Torna al listone"** (`#backLs`: se il referrer è l'app o il listone statico fa `history.back()`, così si torna alla vista o alla
 scheda di lega da cui si era partiti; altrimenti porta a `fantacalcio/listone.html`).
+
+## 15. Import rose da Excel, squadre in attesa, liste obiettivi con tier (2026-09-03 sera, `fix-008-rose-liste.sql`)
+**Prerequisito: l'utente deve eseguire `fanta/supabase/fix-008-rose-liste.sql` nell'SQL Editor (editor vuoto).** Finché non lo fa, l'app mostra
+errori "relation does not exist" su queste funzioni (le liste falliscono in silenzio, l'import segnala l'errore).
+**Import rose (admin, scheda Partecipanti → "Importa le rose da Excel o CSV").** SheetJS caricato al volo da cdnjs (`xlsx 0.18.5`). Due formati:
+tabella con intestazioni (Fantasquadra/Squadra, Giocatore/Calciatore, Prezzo/Costo, opzionali Ruolo e Squadra reale; `detectCols`, con "Squadra"
+che diventa squadra reale se c'è già Fantasquadra) o blocchi stile export Fantacalcio.it (`parseRows`: riga con una sola cella = fantasquadra).
+Abbinamento nomi (`matchPlayer`): token del nome del file contro cognome del feed + slug della scheda (`schede.json`), bonus per ruolo e squadra
+reale; se il punteggio non è univoco la riga è "ambigua" e l'admin sceglie da una tendina (o cerca). Anteprima per fantasquadra con esito per
+riga; "Importa" chiama `import_roster(p_league, p_team, p_roster, p_replace)` una volta per squadra: se esiste un membro con quel nome
+(confronto senza maiuscole) assegna i giocatori con i prezzi e scala i crediti (`p_replace` svuota prima la rosa e rimborsa), i giocatori già
+in altre rose vengono saltati; altrimenti la squadra finisce in **`league_pending`** (nome + roster jsonb). **Chi entra col codice invito**
+(`checkPendingForCode` → RPC `pending_teams`) vede la tendina "Squadra da reclamare": `join_league_claim` crea il membro con quel nome, copia rosa
+e prezzi e cancella la squadra in attesa; senza scelta resta il normale `join_league`. Le squadre in attesa sono elencate in Partecipanti
+(`loadPending`, admin può eliminarle con `delete_pending`).
+**Liste obiettivi (vista "Obiettivi", `#view-liste`, anche senza lega; senza login si vedono solo le liste condivise).** Tabelle `lists`
+(owner, name, description, author, is_public, featured, share_code 8 hex) e `list_items` (list_id, player_id, tier 1-5, note); RLS: le mie in
+lettura/scrittura, le pubbliche o consigliate in lettura anche per anon. Tier: 1 Top, 2 Obiettivo, 3 Alternativa, 4 Scommessa, 5 Da evitare
+(`TIERS`, chip `.tier.tN`). La **lista attiva** (localStorage `fantatb_list`) aggiunge al Listone (pubblico e di lega) la colonna Tier con la
+tendina per assegnarlo riga per riga e i filtri "Solo in lista / Non in lista / Tier N"; nuovi filtri anche per squadra e "solo con voto".
+Editor (`renderListEditor`): giocatori per tier con quotazione, MV, FMV, titolarità, nota per giocatore, aggiunta per nome, Rinomina, Elimina,
+**Condividi** (is_public → link `/fanta/#lista/<codice>`); chi apre una lista altrui la vede e può **copiarla** (RPC `copy_list`). Le liste
+**consigliate** (influencer, redazione) sono quelle con `featured = true`, da impostare a mano in SQL (`update lists set featured = true, author =
+'Nome' where share_code = '...'`): compaiono in "Liste condivise e consigliate" insieme alle pubbliche più recenti. Hash: `#liste`, `#lista/<codice>`.
+Non testato con un account (richiede login): verificati sintassi, vista anonima e flusso del listone; il primo giro con dati veri va fatto dall'utente.

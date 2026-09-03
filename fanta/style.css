@@ -124,3 +124,14 @@ legend{font-size:12px;font-weight:700;color:var(--muted);padding:0 6px}
 #lsTable th.num,#llTable th.num{text-align:right}#llTable td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 #llTable th.srt{cursor:pointer;white-space:nowrap}#llTable th.srt:hover,#llTable th.srt.on{color:var(--txt)}#llTable a.pl{border-bottom:1px dotted var(--muted)}#llTable a.pl:hover{color:var(--accent)}
 #llTable td.muted{color:var(--muted);font-size:12px;white-space:nowrap}.free{color:#0a9d57;font-weight:700}#llTable tr.taken td{opacity:.7}
+/* liste obiettivi (tier), filtri del listone, import rose (2026-09-03) */
+.tier{display:inline-block;min-width:28px;padding:1px 6px;border-radius:5px;color:#fff;font-size:11px;font-weight:800;text-align:center;vertical-align:middle}
+.tier.t1{background:#c9a227}.tier.t2{background:#0a9d57}.tier.t3{background:#1f6fd6}.tier.t4{background:#d98700}.tier.t5{background:#8a8f95}
+.fbar>*{flex:1 1 150px}.fbar2{margin:8px 0 4px;font-size:12px;color:var(--muted)}.fbar2>*{flex:0 0 auto}.fbar2 select{max-width:260px;font-size:13px;padding:5px 8px}.fbar2 a{color:var(--accent2);font-weight:600}
+.chk1{display:flex;align-items:center;gap:6px;flex:0 0 auto;white-space:nowrap;margin:0}
+select.tierSel{width:auto;padding:3px 6px;font-size:12px}td.tc{white-space:nowrap}
+.hits{display:flex;flex-direction:column;gap:3px;margin:6px 0 10px}.hits a{padding:6px 9px;border-radius:6px;background:#fff;border:1px solid var(--line);cursor:pointer;font-size:13px}.hits a:hover{border-color:var(--accent)}
+input.note{width:auto;min-width:130px;padding:4px 6px;font-size:12px}
+.imp .ok{color:#0a9d57;font-weight:700}.imp .ko{color:var(--red);font-weight:700}.imp .amb{color:#d98700;font-weight:700}
+.imp select[data-row],.imp input.fix{width:auto;padding:3px 6px;font-size:12px;margin-right:4px}.imp input.fix{max-width:110px}
+#lsteEditor h3{margin-top:16px}#lsteEditor .tw{margin-bottom:6px}
