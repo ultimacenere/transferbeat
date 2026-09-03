@@ -3,7 +3,8 @@
 
 > **Stato: ONLINE su https://transferbeat.com/fanta/** dal 2026-09-02 sera. Serie A 2026-27, regole Classic.
 > Pubblico ridotto (lega dell'utente + amici) per la stagione di test; monetizzazione da valutare dopo.
-> Il database è vuoto di leghe (lega test e bot eliminati): pronto per la lega vera e per le demo.
+> Nel database c'è la lega **test** (codice B9B24C58, creata la notte del 2026-09-03: Picchio admin, Luigi Ragoni, 6 bot, rose complete,
+> calendario e 2 giornate calcolate): da eliminare con `fanta_demo.py elimina B9B24C58` prima della lega vera.
 
 > **Regola SEO/GEO (2026-09-03)**: vale anche per FantaTB, vedi `kb/SEO.md`. Le pagine dati (listone, voti, titolarità) vanno pubblicate come HTML statico in `fantacalcio/` (piano §3.4). L'analisi di mercato con le funzioni da aggiungere è in `kb/report/mercato-fantacalcio-2026-09-03.html`: priorità web app installabile con notifiche, scambi e mercato di riparazione, "schiero solo se titolare", coppe e gironi, voti live, asta a buste chiuse.
 
@@ -26,7 +27,7 @@
 | `fanta/supabase/schema.sql` | schema completo per installazioni nuove = base + fix-001..007 accodati (idempotente) |
 | `fanta/supabase/fix-00N-*.sql` | i singoli blocchi già eseguiti sul progetto reale (storico) |
 | `scripts/fanta_common.py` | chiavi, chiamate API-Football (paginazione, retry 429), upsert/get/rpc Supabase con service key |
-| `scripts/fanta_players.py` | listone: rose attuali + statistiche stagione precedente → quotazione (§6) → `players` + `data/fanta/listone.json` |
+| `scripts/fanta_players.py` | listone: `--check` verifica senza scrivere · senza flag sincronizza le rose (prezzi invariati) · `--prezzi` ricalcola tutto (§6) → `players` + `data/fanta/listone.json` |
 | `scripts/fanta_voti.py` | voti di una giornata (§5) → `player_ratings`, `matchdays`, poi `compute_all_leagues` → `data/fanta/voti-NN.json` |
 | `scripts/fanta_titolari.py` | indice titolarità + infortuni con rientro (§7) → `player_status` → `data/fanta/titolari-NN.json` |
 | `scripts/fanta_demo.py` | strumento demo/test: bot, rose casuali, formazioni, pulizia, eliminazione lega (§11) |
@@ -128,6 +129,23 @@ Formula: base per ruolo (P1 D1 C1 A2) + presenze/38 × (P8 D10 C12 A14) + gol ×
 Esito 2026-09-02: 651 giocatori, prezzi 1–51 (Dimarco 51, N. Paz 50, Lautaro 44). Doppioni tra rose rimossi (tenuta la prima).
 Ritoccabile a mano in `players.price`. Ruoli Mantra vuoti.
 
+**Aggiornamento e verifica delle rose (dal 2026-09-03).** Il feed rose di API-Football (`players/squads`) è aggiornato dal provider
+"più volte a settimana" e a ridosso della chiusura del mercato resta indietro di giorni: il 2026-09-02 alle 13:33 UTC dava ancora
+Leão al Milan (cessione al Galatasaray registrata in `/transfers` con data 2026-08-28), Nkunku, Kostić, Prati, Zappa e altri 11 nelle
+vecchie squadre, e non aveva Pinamonti, Šutalo e altri 9 che avevano già giocato in Serie A. Il 2026-09-03 il feed era corretto.
+Comandi (cartella `scripts`, `PYTHONIOENCODING=utf-8`):
+- `py fanta_players.py --check` → SOLO LETTURA (~41 chiamate): usciti dalla Serie A (con destinazione da `/transfers`), cambi di
+  squadra, rientrati, nuovi, "sospetti" (in rosa ma con un trasferimento da luglio in poi verso un'altra squadra = feed rose in
+  ritardo), titoli della board che citano il cognome, e giocatori usciti già acquistati in una lega.
+- `py fanta_players.py` → SINCRONIZZA: `active=false` a chi è uscito (resta nei voti, sparisce da listone e asta), squadra
+  aggiornata, nuovi e rientrati quotati con la formula; **prezzi e ruoli di chi era già attivo non cambiano** (~140 chiamate se
+  ci sono giocatori da quotare). Scrive anche `listone.json`: poi commit e `bash scripts/pubblica.sh`.
+- `py fanta_players.py --prezzi` → LISTONE COMPLETO: ricalcola prezzi e ruoli di tutti (solo primo listone e dopo gennaio).
+Regola: `--check` prima di ogni asta e 2-3 giorni dopo ogni chiusura del mercato; il cron sincronizza ogni giovedì (§8).
+I disattivati già in una rosa di lega restano lì: l'admin li svincola con `release_player` (rimborso); lo script li elenca.
+Le voci di `/transfers` senza squadra di arrivo reale (id nullo, quasi tutte datate 29-30 giugno) sono rinnovi/fine prestito e
+vengono ignorate. Anche `data/rosters.json` del sito notizie (football-data.org) era in ritardo: il 2026-08-31 aveva Leão al Milan.
+
 ## 7. Indice di titolarità (`fanta_titolari.py`, tabella `player_status`)
 Per la prossima giornata (ultima `rated` + 1). Da `player_ratings` delle ultime 3 giornate: 90% se titolare (≥60') in tutte;
 altrimenti 15 + 25×titolare + 5×subentrato (5..95); mai in campo 10%; mai convocato 20%; espulso nell'ultima giornata 0% "squalifica".
@@ -137,10 +155,10 @@ rossa ✚ con tipo infortunio in Schiera e Risultati. **Limite**: l'API popola g
 la lista è quasi vuota. Le notizie/probabili formazioni (LLM) per affinare la % sono un'evoluzione prevista, non fatta.
 
 ## 8. Cron e operazioni ricorrenti
-- `fanta.yml`: schedule `30 21 * * 6,0,1,2,3,4` e `0 7 * * 1,2,5` (UTC) → voti + titolarità; `workflow_dispatch` con `task=listone|voti`
-  e `matchday`. Committa `data/fanta`. **Inattivo finché mancano i secret** (§2).
+- `fanta.yml`: schedule `30 21 * * 6,0,1,2,3,4` e `0 7 * * 1,2,5` (UTC) → voti + titolarità; `0 6 * * 4` (giovedì) → sincronizzazione
+  rose; `workflow_dispatch` con `task=voti|rose|listone` (listone = `--prezzi`) e `matchday`. Committa `data/fanta`. **Inattivo finché mancano i secret** (§2).
 - **Lancio manuale** (dal worktree, cartella `scripts`, con `PYTHONIOENCODING=utf-8`): `py fanta_voti.py` (o `py fanta_voti.py N`),
-  poi `py fanta_titolari.py`. Listone: `py fanta_players.py` (rifarlo dopo il mercato di gennaio; i prezzi cambiano solo se rilanciato).
+  poi `py fanta_titolari.py`. Listone: `py fanta_players.py --check` (verifica), `py fanta_players.py` (sincronizza rose, prezzi invariati), `--prezzi` dopo gennaio (§6).
 - Ogni script stampa il numero di chiamate API usate.
 
 ## 9. Decisioni prese e perché (non riaprire senza motivo)
@@ -196,9 +214,13 @@ Claude esegue questi comandi a richiesta man mano che l'utente avanza (crea lega
 - Il cron `update.yml` del sito non tocca `fanta/`; `render_articles.py` rigenera `sitemap.xml` senza `/fanta/` (da aggiungere).
 
 ## 13. PENDING (in ordine di priorità)
+0. **Sincronizzare le rose** (`py fanta_players.py` dalla cartella scripts, poi commit di `data/fanta/listone.json` e `bash scripts/pubblica.sh`).
+   Il 2026-09-03 `--check` trova 16 usciti (Leão, Nkunku, Kostić, Prati, Zappa, Petagna…), 2 cambi (Ricci → Como, Giacomone → Bologna),
+   11 rientrati, 5 nuovi. La scrittura sul database è bloccata dai permessi della modalità automatica: la lancia l'utente (o autorizza Claude).
+   Nella lega test 9 usciti sono già in rosa (Leão a "real" per 30): svincolarli o eliminare la lega.
 1. **Secret GitHub Actions** (`APIFOOTBALL_KEY`, `SUPABASE_URL`, `SUPABASE_SERVICE_KEY`) → cron voti/titolarità automatico. Finché mancano: lancio manuale (§8).
 2. **Rinnovo API-Football** entro il 2026-10-02 (§2).
-3. **Asta vera della lega dell'utente** (8 squadre): prima `pulisci`/`elimina` eventuali leghe demo; Supabase Free basta.
+3. **Asta vera della lega dell'utente** (8 squadre): prima `elimina` la lega demo `test` (B9B24C58); Supabase Free basta.
 4. Correzione voti dall'interfaccia admin (`rating_overrides` esiste, manca la UI).
 5. Probabili formazioni dalle notizie (LLM, stesso motore degli articoli) per affinare la % titolarità; alert deadline formazioni.
 6. Opzione di lega "formazioni nascoste fino alla deadline".
@@ -206,4 +228,4 @@ Claude esegue questi comandi a richiesta man mano che l'utente avanza (crea lega
 8. Scambi/mercato di riparazione tra squadre; svincoli con rimborso parziale.
 9. Mantra (ruoli manuali + moduli Mantra); poi Premier/Liga (API-Football copre entrambe con lo stesso schema).
 10. Rigenerare la service key Supabase prima dell'apertura al pubblico; valutare Supabase Pro se le leghe crescono.
-11. Listone da rifare dopo il mercato di gennaio (`fanta_players.py`, o `task=listone` dal workflow).
+11. Listone da rifare dopo il mercato di gennaio (`fanta_players.py --prezzi`, o `task=listone` dal workflow); a fine mercato `--check` e sincronizzazione.

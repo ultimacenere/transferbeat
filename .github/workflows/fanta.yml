@@ -1,14 +1,16 @@
 name: FantaTB voti e listone
 
 # Voti: sabato/domenica/lunedì sera e martedì mattina (UTC), per coprire anticipi, posticipi e infrasettimanali.
+# Rose: ogni giovedì alle 06:00 UTC sincronizza squadre/uscite/nuovi arrivi dal feed API-Football (prezzi invariati).
 on:
   schedule:
     - cron: "30 21 * * 6,0,1,2,3,4"
     - cron: "0 7 * * 1,2,5"
+    - cron: "0 6 * * 4"
   workflow_dispatch:
     inputs:
       task:
-        description: "voti | listone"
+        description: "voti | rose (sincronizza rose, prezzi invariati) | listone (ricalcola anche i prezzi)"
         default: "voti"
       matchday:
         description: "numero giornata (vuoto = automatico)"
@@ -16,6 +18,13 @@ on:
 
 permissions:
   contents: write
+
+env:
+  APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+  SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+  ROSE: ${{ github.event.inputs.task == 'rose' || github.event.schedule == '0 6 * * 4' }}
+  LISTONE: ${{ github.event.inputs.task == 'listone' }}
 
 jobs:
   run:
@@ -26,26 +35,17 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - name: Listone
-        if: ${{ github.event.inputs.task == 'listone' }}
-        env:
-          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+      - name: Listone completo (prezzi e ruoli ricalcolati)
+        if: ${{ env.LISTONE == 'true' }}
+        run: python scripts/fanta_players.py --prezzi
+      - name: Sincronizza rose (settimanale o task=rose)
+        if: ${{ env.ROSE == 'true' }}
         run: python scripts/fanta_players.py
       - name: Voti
-        if: ${{ github.event.inputs.task != 'listone' }}
-        env:
-          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        if: ${{ env.LISTONE != 'true' && env.ROSE != 'true' }}
         run: python scripts/fanta_voti.py ${{ github.event.inputs.matchday }}
       - name: Indice titolarità
-        if: ${{ github.event.inputs.task != 'listone' }}
-        env:
-          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        if: ${{ env.LISTONE != 'true' && env.ROSE != 'true' }}
         run: python scripts/fanta_titolari.py || echo "titolari skip"
       - name: Commit dati
         run: |
