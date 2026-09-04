@@ -12,7 +12,7 @@ Uso: python scripts/render_site.py            (in update.yml DOPO build.py e com
 Legge SOLO i JSON gia' presenti: nessuna rete, nessuna chiave. Non tocca data/<lang>/*.json."""
 import json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from site_common import (esct, ROOT, DATA, SITE, SEASON, AUTHOR, ORG, COMPS, COMP_BY_CODE, COMP_BY_LEAGUE, LEAGUE_LABEL, LEAGUE_ORDER,
+from site_common import (esct, ROOT, DATA, SITE, SEASON, AUTHOR, ORG, COMPS, COMP_BY_CODE, COMP_BY_LEAGUE, LEAGUE_LABEL, LEAGUE_ORDER, punti,
                          ZONES, FD_ALIAS, FANTA_ALIAS, STATE_LABEL, STATE_ORDER, esc, slugify, norm, load_json, save_text, read_text,
                          fdate_it, date_only, today_iso, dots, page, ld_script, breadcrumb_ld, LastMod, write_urlset, write_sitemap_index, badge)
 import render_stats as RS   # statistiche squadra con grafici e schede giocatore (data/stats/*.json)
@@ -217,9 +217,9 @@ def team_desc(nome, t, T, has_st=False):
     pos = ""
     if nome in T.row_of:
         c, r, n, g = T.row_of[nome]
-        pos = ", " + str(r.get("pos")) + "ª in " + COMP_BY_CODE[c["code"]]["nome"] + " con " + str(r.get("pt", 0)) + " punti"
-    st = "statistiche della stagione con grafici (gol per fase di gara, casa e trasferta, xG, possesso, moduli), " if has_st else ""
-    return nome + pos + ": le notizie di oggi con fonte e grado di concretezza, " + st + "classifica, ultime e prossime partite, rosa completa con le schede dei giocatori e articoli. Aggiornato ogni due ore da TransferBeat."
+        pos = ", " + str(r.get("pos")) + "ª in " + COMP_BY_CODE[c["code"]]["nome"] + " con " + punti(r.get("pt", 0))
+    st = "statistiche con grafici, " if has_st else ""
+    return nome + pos + ": notizie con fonte e concretezza, " + st + "classifica, partite, rosa e articoli."
 
 def render_team(D, T, t):
     nome = t["nome"]; canon = SITE + T.url(nome); lg = t.get("league", "")
@@ -285,7 +285,7 @@ def render_team(D, T, t):
         ld["athlete"] = [{"@type": "Person", "name": p} for p in rosa]
     crumbs = [("Home", SITE + "/"), ("Squadre", SITE + "/squadre/"), (nome, canon)]
     has_st = bool(tid and ((D["stats"].get("teams") or {}).get("teams") or {}).get(str(tid)))
-    return page(nome + (": notizie, statistiche, classifica, calendario e rosa" if has_st else ": notizie, classifica, calendario e rosa"),
+    return page(nome + (": notizie, statistiche e classifica" if has_st else ": notizie, classifica e rosa"),
                 team_desc(nome, t, T, has_st), canon, "".join(b), crumbs=crumbs, ld=[ld], here="Squadre")
 
 def render_squadre_index(D, T):
@@ -308,15 +308,15 @@ def render_squadre_index(D, T):
         b.append("</div>")
     ld = {"@context": "https://schema.org", "@type": "ItemList", "name": "Squadre seguite da TransferBeat",
           "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": t["nome"], "url": SITE + T.url(t["nome"])} for i, t in enumerate(T.list)]}
-    return page("Squadre di Serie A, Premier League e Liga: notizie, classifiche e rose",
+    return page("Squadre di Serie A, Premier League e Liga",
                 "Le " + str(len(T.list)) + " squadre seguite da TransferBeat, una pagina ciascuna: notizie del giorno con fonti e concretezza, classifica, prossime partite, rosa e articoli.",
                 canon, "".join(b), crumbs=[("Home", SITE + "/"), ("Squadre", canon)], ld=[ld], here="Squadre")
 
 # ---------- pagine competizione ----------
 def comp_title(meta, c):
     if c.get("classifica"):
-        return "Classifica " + meta["nome"] + " " + SEASON + ", risultati, calendario e marcatori"
-    return meta["nome"] + " " + SEASON + ": calendario, risultati e classifica"
+        return "Classifica " + meta["nome"] + " " + SEASON + " e risultati"
+    return meta["nome"] + " " + SEASON + ": calendario e risultati"
 
 def comp_leader(c):
     for tbl in c.get("classifica", []):
@@ -368,8 +368,8 @@ def render_comp(D, T, c):
              ' · <a href="/campionati.html">versione interattiva</a></p>')
     lead_txt = ""
     if lead:
-        lead_txt = "classifica aggiornata con " + (T.name_of(lead["team"]) or lead["team"].get("short") or "") + " in testa a " + str(lead.get("pt", 0)) + " punti, "
-    desc = meta["nome"] + " " + SEASON + ": " + (lead_txt or "calendario completo, ") + "risultati dell'ultima giornata, calendario della prossima e classifica marcatori. Dati ufficiali, aggiornati ogni due ore."
+        lead_txt = "classifica con " + (T.name_of(lead["team"]) or lead["team"].get("short") or "") + " in testa a " + punti(lead.get("pt", 0)) + ", "
+    desc = meta["nome"] + " " + SEASON + ": " + lead_txt + "risultati e calendario giornata per giornata, marcatori. Ogni due ore."
     ld = [{"@context": "https://schema.org", "@type": "SportsOrganization", "name": meta["nome"], "sport": "Calcio", "url": canon}]
     if events:
         ld.append({"@context": "https://schema.org", "@type": "ItemList", "name": meta["nome"] + " " + SEASON + ": partite",
@@ -388,8 +388,8 @@ def render_comp_index(D, T):
         b.append('<div class="card"><h3><a href="/campionati/' + meta["slug"] + '.html">' + esc(meta["nome"]) + '</a></h3><div class="in">Giornata ' + str(c.get("giornata") or "") + " · " +
                  (("in testa " + T.link(lead["team"]) + " con " + str(lead.get("pt", 0)) + " punti") if lead else "fase a campionato non ancora iniziata") +
                  ' · <a href="/campionati/' + meta["slug"] + '.html">classifica, risultati e marcatori →</a></div></div>')
-    return page("Campionati e coppe " + SEASON + ": classifiche, risultati e marcatori",
-                "Serie A, Champions League, Premier League, Liga, Bundesliga e Ligue 1: classifica, risultati, calendario e marcatori di ogni competizione, in pagine aggiornate ogni due ore.",
+    return page("Campionati e coppe " + SEASON + ": classifiche",
+                "Serie A, Champions League, Premier League, Liga, Bundesliga e Ligue 1: classifica, risultati, calendario e marcatori, aggiornati ogni due ore.",
                 canon, "".join(b), crumbs=[("Home", SITE + "/"), ("Campionati", canon)], here="Campionati")
 
 # ---------- fantacalcio: pagine dati (kb/SEO.md §3.4, formule in kb/FANTATB.md §5-7) ----------
@@ -449,8 +449,8 @@ def render_listone(D, T):
     ld = dataset_ld("Listone fantacalcio Serie A " + SEASON + " (quotazioni FantaTB)",
                     "Quotazioni FantaTB di " + str(n) + " giocatori di Serie A con ruolo Classic e squadra, calcolate con formula pubblica da presenze, gol, assist e rating.",
                     canon, SITE + "/data/fanta/listone.json", upd, ["fantacalcio", "listone", "quotazioni", "Serie A " + SEASON])
-    return page("Listone fantacalcio " + SEASON + ": quotazioni FantaTB di " + str(n) + " giocatori",
-                "Il listone del fantacalcio " + SEASON + " con le quotazioni FantaTB di " + str(n) + " giocatori di Serie A: ruolo, squadra e prezzo in crediti, formula pubblica, tabella ordinabile e dati scaricabili.",
+    return page("Listone fantacalcio " + SEASON + ": quotazioni FantaTB",
+                "Listone fantacalcio " + SEASON + ": quotazioni FantaTB di " + str(n) + " giocatori di Serie A con ruolo, squadra e prezzo in crediti, formula pubblica e dati scaricabili.",
                 canon, "".join(b), crumbs=FANTA_CRUMB + [("Listone", canon)], ld=[ld], here="FantaTB")
 
 BONUS_IT = {"gol": ("⚽", "gol"), "assist": ("👟", "assist"), "rig_sbagliato": ("❌", "rigore sbagliato"), "rig_parato": ("🧤", "rigore parato"),
@@ -496,8 +496,8 @@ def render_voti(D, T, md, V):
     ld = dataset_ld("Voti fantacalcio FantaTB, Serie A " + SEASON + " giornata " + str(md),
                     "Voto statistico, minuti, bonus e malus e fantavoto di " + str(len(rows)) + " giocatori di Serie A per la giornata " + str(md) + ", calcolati da FantaTB con formula pubblica.",
                     canon, SITE + "/data/fanta/" + fn, upd, ["fantacalcio", "voti", "fantavoto", "Serie A giornata " + str(md)])
-    return page("Voti fantacalcio giornata " + str(md) + " Serie A " + SEASON + ": voto, bonus e fantavoto",
-                "I voti FantaTB della giornata " + str(md) + " di Serie A " + SEASON + ": " + str(len(rated)) + " giocatori con voto statistico, minuti, bonus e malus e fantavoto. I migliori: " + re.sub(r"<[^>]+>", "", top) + ".",
+    return page("Voti fantacalcio giornata " + str(md) + " Serie A " + SEASON,
+                "Voti FantaTB della giornata " + str(md) + " di Serie A " + SEASON + ": " + str(len(rated)) + " giocatori con voto statistico, bonus, malus e fantavoto. I migliori: " + re.sub(r"<[^>]+>", "", ", ".join(esc(p["name"]) + " " + dec(r.get("fantavoto")) for p, r in rated[:3])) + ".",
                 canon, "".join(b), crumbs=FANTA_CRUMB + [("Voti giornata " + str(md), canon)], ld=[ld], here="FantaTB")
 
 def render_titolari(D, T):
@@ -538,9 +538,9 @@ def render_titolari(D, T):
     ld = dataset_ld("Indice di titolarità FantaTB, Serie A " + SEASON + " giornata " + str(md),
                     "Probabilità di titolarità, infortuni con rientro stimato e squalifiche per " + str(len(rows)) + " giocatori di Serie A in vista della giornata " + str(md) + ".",
                     canon, SITE + "/data/fanta/" + fn, upd, ["fantacalcio", "probabili formazioni", "titolari", "infortunati", "squalificati"])
-    return page("Probabili titolari, infortunati e squalificati giornata " + str(md) + " Serie A",
-                "Chi gioca e chi no nella giornata " + str(md) + " di Serie A " + SEASON + ": indice di titolarità FantaTB per " + str(len(rows)) + " giocatori, " + str(len(inf)) +
-                " infortunati con rientro stimato e " + str(len(squal)) + " squalificati, squadra per squadra.",
+    return page("Probabili titolari giornata " + str(md) + " Serie A " + SEASON,
+                "Chi gioca nella giornata " + str(md) + " di Serie A " + SEASON + ": indice di titolarità FantaTB per " + str(len(rows)) + " giocatori, " + str(len(inf)) +
+                " infortunati con rientro stimato e " + str(len(squal)) + " squalificati.",
                 canon, "".join(b), crumbs=FANTA_CRUMB + [("Titolari", canon)], ld=[ld], here="FantaTB")
 
 FAQ = [("Come si calcola il voto FantaTB?", "Dal rating statistico della partita meno 0,8, arrotondato al mezzo punto fra 4 e 8,5; senza voto sotto i 15 minuti. Il fantavoto aggiunge bonus e malus con pesi pubblici: gol +3, assist +1, rigore sbagliato −3, rigore parato +3, gol subito −1 per i portieri, autogol −2, ammonizione −0,5, espulsione −1. L'admin di lega può correggere qualsiasi voto."),
@@ -568,8 +568,8 @@ def render_fanta_index(D, T):
           {"@context": "https://schema.org", "@type": "WebApplication", "name": "FantaTB", "url": SITE + "/fanta/", "applicationCategory": "GameApplication", "operatingSystem": "Web",
            "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": ORG,
            "description": "Fantacalcio gratuito con leghe private, asta live, voti statistici e regole su misura."}]
-    return page("Fantacalcio " + SEASON + ": listone, voti e probabili titolari gratis",
-                "Listone con le quotazioni di " + str(n) + " giocatori, voti statistici di ogni giornata di Serie A e probabili titolari con infortunati e squalificati: i dati aperti di FantaTB, il fantacalcio gratuito di TransferBeat.",
+    return page("Fantacalcio " + SEASON + ": listone, voti e titolari",
+                "Listone con le quotazioni di " + str(n) + " giocatori, voti statistici di ogni giornata di Serie A e probabili titolari con infortunati: i dati aperti di FantaTB, gratis.",
                 canon, "".join(b), crumbs=FANTA_CRUMB, ld=ld, here="FantaTB")
 
 # ---------- iniezione statica nelle hub (fra <!--static:NOME--> e <!--/static:NOME-->) ----------
@@ -814,7 +814,7 @@ def render_chi_siamo():
     person = {"@type": "Person", "name": a["name"], "url": canon, "jobTitle": a["jobTitle"], "sameAs": a.get("sameAs", []), "worksFor": ORG}
     ld = [{"@context": "https://schema.org", "@type": "AboutPage", "name": "Chi siamo", "url": canon, "about": ORG, "inLanguage": "it"},
           dict({"@context": "https://schema.org"}, **ORG), dict({"@context": "https://schema.org"}, **person)]
-    return page("Chi siamo: come nasce TransferBeat, il giornale del calcio", "Chi fa TransferBeat e come lavora: notizie raccolte automaticamente da fonti dichiarate e ordinate per concretezza, articoli con l’aiuto dell’intelligenza artificiale e supervisione editoriale, dati originali di FantaTB con formule pubbliche.",
+    return page("Chi siamo: come nasce TransferBeat, il giornale del calcio", "Chi fa TransferBeat e come lavora: notizie da fonti dichiarate ordinate per concretezza, articoli supervisionati, dati FantaTB con formule pubbliche.",
                 canon, "".join(b), crumbs=[("Home", SITE + "/"), ("Chi siamo", canon)], ld=ld)
 
 if __name__ == "__main__":

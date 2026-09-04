@@ -216,6 +216,65 @@ def badge(t, size=26, cls="badge"):
             '<text x="13" y="17" text-anchor="middle" font-size="10" font-weight="800" fill="#fff" stroke="rgba(0,0,0,.6)" stroke-width="2.2" '
             'paint-order="stroke" font-family="\'Segoe UI\',system-ui,sans-serif">%s</text></svg>') % (cls, size, size, esc(col), esc(col2), esc(lab))
 
+# ---------- limiti SEO di title e description (kb/SEO.md §0.2) ----------
+TITLE_MAX = 60      # caratteri del <title> completo, suffisso compreso
+DESC_MAX = 155      # caratteri della meta description
+BRAND_SUFFIX = " | TransferBeat"
+# Parole che non devono restare "appese" alla fine di un taglio (it/en/es).
+_TRAIL = {"e", "a", "o", "di", "da", "in", "con", "su", "per", "tra", "fra", "il", "lo", "la", "i", "gli", "le", "un", "una", "uno", "del", "della",
+          "dello", "dei", "degli", "delle", "al", "alla", "allo", "ai", "agli", "alle", "dal", "dalla", "nel", "nella", "sul", "sulla", "che", "ed", "od",
+          "and", "or", "the", "of", "to", "at", "on", "for", "with", "by", "from", "an", "as", "y", "el", "los", "las", "de", "del", "en", "por", "para", "al", "u"}
+
+def punti(n):
+    """'1 punto' / '6 punti'."""
+    try:
+        n = int(n or 0)
+    except Exception:
+        n = 0
+    return str(n) + (" punto" if n == 1 else " punti")
+
+def cut_words(text, limit):
+    """Taglia a fine parola entro `limit` caratteri, senza lasciare punteggiatura o preposizioni appese. Nessun puntino di sospensione."""
+    text = re.sub(r"\s+", " ", (text or "")).strip()
+    if len(text) <= limit:
+        return text
+    cut = text[:limit + 1]
+    cut = cut[:cut.rfind(" ")] if " " in cut else cut[:limit]
+    while True:
+        prev = cut
+        cut = cut.rstrip(" ,;:.-–—(\"'«»")
+        parts = cut.rsplit(" ", 1)
+        if len(parts) == 2 and parts[1].lower().strip("'’") in _TRAIL:
+            cut = parts[0]
+        if cut == prev:
+            break
+    return cut.strip()
+
+def seo_title(title, limit=TITLE_MAX):
+    """<title> entro `limit` caratteri: con il suffisso della testata se ci sta, altrimenti senza (Google mostra comunque il nome del sito);
+    se anche da solo supera il limite, taglio a fine parola."""
+    t = re.sub(r"\s+", " ", (title or "")).strip()
+    if "TransferBeat" in t:
+        return t if len(t) <= limit else cut_words(t, limit)
+    if len(t) + len(BRAND_SUFFIX) <= limit:
+        return t + BRAND_SUFFIX
+    return t if len(t) <= limit else cut_words(t, limit)
+
+def seo_desc(desc, limit=DESC_MAX):
+    """Meta description entro `limit` caratteri, tagliata a fine parola."""
+    d = re.sub(r"\s+", " ", (desc or "")).strip()
+    if len(d) <= limit:
+        return d
+    head = d[:limit + 1]
+    ends = [x.start() for x in re.finditer(r"(?<![A-ZÀ-Ý])[.!?](?= )", head)]   # niente iniziali tipo "A. Raimondo"
+    m = ends[-1] if ends else -1
+    if m >= limit * 0.6:            # c'e' una frase intera che ci sta: chiudo li'
+        return head[:m + 1]
+    m = max(head.rfind("; "), head.rfind(": "))
+    if m >= limit * 0.7:
+        return head[:m] + "."
+    return cut_words(d, limit - 1) + "…"
+
 def breadcrumb_ld(items):
     """items: [(nome, url assoluta)] -> JSON-LD BreadcrumbList."""
     return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
@@ -225,8 +284,10 @@ def ld_script(obj):
     return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False) + "</script>"
 
 def page(title, desc, canon, body, crumbs=None, ld=None, here="", og_type="website", extra_head="", promo=True):
-    """Pagina completa in italiano. title senza suffisso: viene aggiunto ' | TransferBeat'."""
-    full = title if title.endswith("TransferBeat") else title + " | TransferBeat"
+    """Pagina completa in italiano. title senza suffisso: seo_title() aggiunge ' | TransferBeat' se il totale resta entro 60 caratteri
+    e taglia a fine parola se serve; la description e' limitata a 155 caratteri da seo_desc() (kb/SEO.md §0.2)."""
+    full = seo_title(title)
+    desc = seo_desc(desc)
     h = ['<!DOCTYPE html><html lang="it"><head><meta charset="UTF-8">', GA,
          '<meta name="viewport" content="width=device-width,initial-scale=1">',
          "<title>" + esc(full) + "</title>",

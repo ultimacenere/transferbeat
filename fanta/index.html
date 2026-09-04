@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FantaTB, l'app: leghe, asta live, formazioni e voti | TransferBeat</title>
+<title>FantaTB, l'app: leghe, asta live e voti | TransferBeat</title>
 <meta name="description" content="FantaTB: crea la tua lega, fai l'asta live con gli amici, schiera la formazione e gioca con il voto statistico FantaTB. Gratis.">
 <link rel="canonical" href="https://transferbeat.com/fanta/">
 <meta name="robots" content="index,follow">
@@ -54,7 +54,7 @@
 
   <!-- HOME: leghe -->
   <section id="view-home" class="hidden">
-    <h1>🏆 Le mie leghe</h1>
+    <h2 class="vh">🏆 Le mie leghe</h2>
     <div class="grid3">
       <div>
         <ul class="list" id="leagueList"></ul>
@@ -82,7 +82,7 @@
   <!-- LEGA -->
   <section id="view-league" class="hidden">
     <a data-view="home" class="muted">← Le mie leghe</a>
-    <h1 id="lgName"></h1>
+    <h2 class="vh" id="lgName"></h2>
     <p class="lead" id="lgSub"></p>
     <div id="lgKpis" class="kpis"></div>
     <div class="tabs" id="lgTabs"></div>
@@ -98,7 +98,7 @@
 
   <!-- LISTONE -->
   <section id="view-listone" class="hidden">
-    <h1>📋 Listone FantaTB</h1>
+    <h2 class="vh">📋 Listone FantaTB</h2>
     <p class="lead">Quotazioni calcolate da FantaTB su presenze, rendimento, gol e assist. Ruoli Classic. Accanto a ogni nome: media voto (MV), fantamedia (FMV), indice di titolarità, presenze, gol e assist della stagione in corso; il nome apre la scheda del giocatore con le statistiche complete.</p>
     <div id="lsFilters"></div>
     <div id="lsTable" style="margin-top:12px"></div>
@@ -106,7 +106,7 @@
 
   <!-- VOTI -->
   <section id="view-voti" class="hidden">
-    <h1>⭐ Voti FantaTB</h1>
+    <h2 class="vh">⭐ Voti FantaTB</h2>
     <p class="lead">Voto statistico: rating della partita riportato in scala italiana, più bonus e malus da gol, assist, rigori e cartellini. Senza voto sotto i 15 minuti.</p>
     <div class="row" style="max-width:400px"><select id="vtDay"></select></div>
     <div id="vtTable" style="margin-top:12px"></div>
@@ -114,7 +114,7 @@
 
   <!-- LISTE OBIETTIVI (tier 1-5), anche senza lega -->
   <section id="view-liste" class="hidden">
-    <h1>🎯 Obiettivi e strategie</h1>
+    <h2 class="vh">🎯 Obiettivi e strategie</h2>
     <p class="lead">La tua lista per l'asta con i tier da 1 (Top) a 5 (Da evitare) e la strategia per spenderli bene: budget per ruolo, quanti giocatori per tier, tetti di spesa e prezzi attesi con l'inflazione della tua lega. Tutto condivisibile con un link, anche senza una lega.</p>
     <div class="tabs" id="lsteTabs"><a data-ltab="liste" class="on">🎯 Liste obiettivi</a><a data-ltab="strategie">📐 Strategie d'asta</a></div>
     <div id="lstePane">
@@ -129,14 +129,14 @@
 
   <!-- MESSAGGI (staff) -->
   <section id="view-messaggi" class="hidden">
-    <h1>💬 Messaggi degli utenti</h1>
+    <h2 class="vh">💬 Messaggi degli utenti</h2>
     <p class="lead">Le conversazioni aperte dal pulsante "Scrivici": suggerimenti, segnalazioni e domande. Le risposte arrivano all'utente dentro l'app.</p>
     <div id="msgList"></div>
   </section>
 
   <!-- REGOLE -->
   <section id="view-regole" class="hidden">
-    <h1>❓ Come funziona</h1>
+    <h2 class="vh">❓ Come funziona</h2>
     <div class="card">
       <h2>In breve</h2>
       <p>1. Crea una lega e condividi il codice invito con gli amici. 2. Fate l'asta live: l'admin chiama un giocatore, tutti rilanciano dal telefono, il timer si riavvia a ogni offerta. 3. Ogni giornata schierate la formazione; i punteggi arrivano con il voto FantaTB.</p>

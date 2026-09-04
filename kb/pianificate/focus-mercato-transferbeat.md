@@ -17,7 +17,7 @@ CURATELA: scegli UNA storia. Criteri in ordine: (a) un fatto avvenuto o un atto 
 
 Se esiste già data/articles/<slug>.json: AGGIORNALO (integra gli sviluppi, aggiorna stato e updated, mantieni created); altrimenti crealo.
 
-SCRITTURA: in ITALIANO, titolo <=75 caratteri, lead 2 frasi, 4-6 paragrafi che raccontano la storia: cosa è successo, cronologia, chi ha riportato cosa, i numeri (solo da competizioni.json), cosa succede adesso. Solo fatti dai dati; cita le fonti; niente cifre o dettagli inventati; le voci vanno chiamate voci. Poi versioni EN e ES fedeli.
+SCRITTURA: in ITALIANO, titolo <=60 caratteri (diventa il <title> della pagina: tema e promessa, senza suffisso), lead 2 frasi con la prima entro 150 caratteri (diventa la meta description), 4-6 paragrafi che raccontano la storia: cosa è successo, cronologia, chi ha riportato cosa, i numeri (solo da competizioni.json), cosa succede adesso. Solo fatti dai dati; cita le fonti; niente cifre o dettagli inventati; le voci vanno chiamate voci. Poi versioni EN e ES fedeli.
 
 JSON: {"slug":"<slug>","tipo":"storia","giocatore":"<nome completo o vuoto>","team":"<club principale>","league":"<lega>","lab":"<lab del club da data/teams.json>","col":"<col del club>","stato":"<rumor|obj|conf|done, secondo la concretezza>","smentita":false,"created":"<ISO UTC>","updated":"<ISO UTC>","updates":[],"content":{"it":{title,lead,body[]},"en":{...},"es":{...}}}.
 

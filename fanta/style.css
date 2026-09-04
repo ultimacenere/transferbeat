@@ -24,7 +24,7 @@ nav a:hover{color:var(--txt);background:#e6e9ef}
 nav a.on{background:var(--navy);color:#fff}
 nav a[data-view=home]:before{content:"🏆 "}nav a[data-view=listone]:before{content:"📋 "}nav a[data-view=liste]:before{content:"🎯 "}nav a[data-view=voti]:before{content:"⭐ "}nav a[data-view=regole]:before{content:"❓ "}
 main{padding:24px 0 60px}
-h1{font-family:var(--serif);font-size:30px;margin-bottom:6px;letter-spacing:-.3px}
+h1,.vh{font-family:var(--serif);font-size:30px;font-weight:700;margin-bottom:6px;letter-spacing:-.3px}
 h2{font-size:17px;margin:18px 0 8px;display:flex;align-items:center;gap:8px}
 h2:before{content:"";display:inline-block;width:4px;height:16px;border-radius:2px;background:var(--grad)}
 h3{font-size:13px;margin:12px 0 6px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
@@ -169,14 +169,14 @@ legend{font-size:12px;font-weight:700;color:var(--muted);padding:0 6px}
 .prob{display:inline-block;font-size:11px;font-weight:700;padding:1px 6px;border-radius:10px;margin-left:2px;white-space:nowrap}
 .prob.ok{background:#e6f6ee;color:#0b5d36}.prob.mid{background:#fff3d6;color:#8a5a00}.prob.low{background:#fdecea;color:#8a1f16}
 .inj{color:var(--red);font-size:12px;font-weight:700;white-space:nowrap}
-@media(max-width:600px){h1{font-size:26px}.card{padding:14px}.mast .name{font-size:28px}}
+@media(max-width:600px){h1,.vh{font-size:26px}.card{padding:14px}.mast .name{font-size:28px}}
 /* righe colorate per tier (lista attiva): oro, verdino, azzurro, arancio marcato, rosso leggero */
 tbody tr.tr1 td{background:#fff1bf}tbody tr.tr2 td{background:#e2f6e9}tbody tr.tr3 td{background:#e1edfb}tbody tr.tr4 td{background:#ffcf98}tbody tr.tr5 td{background:#fbdcd8}
 tbody tr.tr1:hover td{background:#ffe89a}tbody tr.tr2:hover td{background:#d2f0dc}tbody tr.tr3:hover td{background:#d1e3f8}tbody tr.tr4:hover td{background:#ffc37f}tbody tr.tr5:hover td{background:#f8cbc5}
 .list li.on{border-left-color:var(--green);background:#f3fbf6}
 /* ---- colore di sezione, chat, strategie, tessere (2026-09-04 sera) ---- */
 body{--sec:var(--accent)}body[data-sec=home]{--sec:#0a9d57}body[data-sec=listone]{--sec:#1f6fd6}body[data-sec=liste]{--sec:#c9a227}body[data-sec=voti]{--sec:#7b46c9}body[data-sec=regole]{--sec:#67727e}body[data-sec=league]{--sec:#ff6a00}body[data-sec=messaggi]{--sec:#e0392b}body[data-sec=auth]{--sec:#ff2e88}
-h1:after{content:"";display:block;width:64px;height:4px;border-radius:2px;background:var(--sec);margin:8px 0 2px}
+h1:after,.vh:after{content:"";display:block;width:64px;height:4px;border-radius:2px;background:var(--sec);margin:8px 0 2px}
 nav a.on{background:var(--sec)}.tabs a.on{background:var(--sec)}
 .card{border-top:3px solid var(--sec)}.card.hi{border-top-color:var(--accent)}
 .hero{background:linear-gradient(135deg,#fff7ec,#ffe3f0);border:1px solid #ffd0e0;border-radius:14px;padding:14px 18px;margin:0 0 18px}.hero ul{margin:8px 0 0 18px;font-size:14px;line-height:1.7}

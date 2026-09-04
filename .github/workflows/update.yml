@@ -41,7 +41,7 @@ jobs:
         run: python scripts/competizioni.py || echo "competizioni skip (la sentinella segnala se i dati invecchiano)"
 
       - name: Pagine statiche SEO (hub, squadre, competizioni, fantacalcio, chi siamo, sitemap, llms.txt)
-        run: python scripts/render_site.py || echo "render_site FALLITO: restano le pagine precedenti (la sentinella lo segnala)"
+        run: python scripts/render_site.py || echo "render_site FALLITO, restano le pagine precedenti (la sentinella lo segnala)"
 
       - name: Commit dei dati e degli articoli
         run: |

@@ -114,6 +114,10 @@ passare da un deploy, quindi un cambio di schema sarebbe in produzione prima del
 
 ## 3. Regole operative per Claude (IMPORTANTI)
 - **SEO prima di tutto**: ogni pagina o script che produce HTML rispetta `kb/SEO.md` §0. Le consegne dicono cosa hanno fatto per il posizionamento.
+- **Title ≤60 e description ≤155 li impone `site_common.page()`** (`seo_title`/`seo_desc`, dal 2026-09-05): i template passano titoli corti senza suffisso e
+  descrizioni già entro misura; dopo ogni modifica ai generatori `py -X utf8 scripts/seo_audit.py` deve dare zero sforamenti (`kb/SEO.md` §4).
+- **Workflow GitHub**: prima del push validare il YAML (`py -c "import yaml,sys;yaml.safe_load(open(sys.argv[1],encoding='utf-8'))" .github/workflows/update.yml`);
+  negli `echo` dei `run:` su una riga niente `: ` (usare `run: |`). `update.yml` è rimasto invalido dal 3/9 al 5/9 senza alcun avviso.
 - **Dopo ogni modifica a dati, template o articoli: `py -X utf8 scripts/render_site.py`** e commit anche dei file generati (hub, `squadre/`, `campionati/`,
   `fantacalcio/`, `chi-siamo.html`, `llms.txt`, `sitemap*.xml`, `data/lastmod.json`). Mai scrivere a mano fra i marcatori `<!--static:…-->` delle hub: il
   prossimo giro li sovrascrive. Le pagine generate usano il template di `site_common.page()`: per cambiare menu, CSS o piè di pagina si tocca quello.
@@ -183,6 +187,10 @@ passare da un deploy, quindi un cambio di schema sarebbe in produzione prima del
   poterli pubblicare (401). Recuperati e pubblicati a mano il 3/9.
 
 ## 5. Runbook guasti rapidi
+- **`update.yml` non gira (dati fermi, hub senza gli ultimi articoli, nessun evento `schedule`)**: nella pagina Actions i run del workflow sono tutti
+  `failure` con evento `push` e ZERO job → il file YAML è invalido ("Invalid workflow file", riga indicata nel run). Successo il 2026-09-05: `: ` dentro un `echo`
+  di un `run:` su una riga. Rimedio: correggere, validare con PyYAML, push, poi `workflow_dispatch` da Actions o via API per recuperare i dati.
+  Attenzione: `fanta.yml` rigenera comunque le pagine statiche e il sito sembra vivo; il campo `aggiornato` di `data/it/board.json` è il vero termometro.
 - **Guasto SILENZIOSO (il più pericoloso)**: quasi ogni percorso del codice degrada con un default
   (`classify` → "rumor", `reliability` → 1, `except Exception: pass`) e il workflow resta verde.
   Lo strato AI è rimasto morto **6 settimane** così. Controllo rapido di salute:

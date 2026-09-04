@@ -926,8 +926,8 @@ def render_player(D, S, T, p, ctx):
     elif p.get("team_name"):
         ld["memberOf"] = {"@type": "SportsTeam", "name": p["team_name"]}
     crumbs = [("Home", SITE + "/"), ("Giocatori", SITE + "/giocatori/"), (full, canon)]
-    title = "%s: statistiche, carriera e voti FantaTB" % full
-    meta = "%s, %s %s%s: scheda con statistiche %s e %s a confronto, per 90 minuti e rispetto ai pari ruolo, carriera, voti e fantavoto FantaTB giornata per giornata." % (
+    title = "%s: statistiche e voti FantaTB" % full
+    meta = "%s, %s %s%s: statistiche %s e %s, per 90 minuti e rispetto ai pari ruolo, carriera e voti FantaTB." % (
         full, role_it, ART.get(team_site or "", "del " + (team_site or p.get("team_name") or "")), (", %d anni" % age) if age is not None else "", PREV_LABEL, SEASON)
     return page(title, meta, canon, "".join(b), crumbs=crumbs, ld=[ld], here="Giocatori")
 
@@ -977,6 +977,6 @@ def render_players_index(D, S, T, ctx):
     b.append('<p class="small">Dati: API-Football (statistiche e rose), FantaTB (voti, quotazioni, titolarità). Le schede si aggiornano dopo ogni giornata. <a href="/fantacalcio/">Dati aperti del fantacalcio</a> · <a href="/squadre/">pagine squadra</a>.</p>')
     ld = {"@context": "https://schema.org", "@type": "ItemList", "name": "Giocatori di Serie A " + SEASON,
           "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": full_name(p), "url": SITE + ctx["urls"][p["id"]]} for i, p in enumerate(top)]}
-    return page("Giocatori di Serie A %s: schede con statistiche, carriera e voti" % SEASON,
-                "Tutti i giocatori di Serie A %s con una scheda ciascuno: statistiche della stagione scorsa e di quella in corso a confronto, profilo per 90 minuti, carriera, voti e fantavoto FantaTB." % SEASON,
+    return page("Giocatori di Serie A %s: schede e voti" % SEASON,
+                "Tutti i giocatori di Serie A %s, una scheda ciascuno: statistiche di questa stagione e della scorsa, profilo per 90 minuti, carriera e voti FantaTB." % SEASON,
                 canon, "".join(b), crumbs=[("Home", SITE + "/"), ("Giocatori", canon)], ld=[ld], here="Giocatori")

@@ -6,7 +6,7 @@ con link alle pagine statiche, blocco "Correlati" (stessa squadra, poi stesso ti
 import json, os, html, sys
 from datetime import datetime, timezone
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from site_common import AUTHOR, PERSON_LD, ORG, COMP_BY_LEAGUE, DATA as _DATA, slugify, write_urlset, write_sitemap_index, date_only, load_json
+from site_common import AUTHOR, PERSON_LD, ORG, COMP_BY_LEAGUE, DATA as _DATA, slugify, write_urlset, write_sitemap_index, date_only, load_json, seo_title, seo_desc, ld_script, breadcrumb_ld
 TEAM_SLUG = {t["nome"]: slugify(t["nome"]) for t in (load_json(os.path.join(_DATA, "teams.json"), {}) or {}).get("squadre", [])}
 AUTHOR_LD = dict(PERSON_LD)
 
@@ -27,7 +27,7 @@ UI = {
          "disc": "TransferBeat aggregates football news citing the original sources. Developing story.",
          "via": "via", "smentita": "DENIED", "squadre": "Clubs", "related": "Related articles", "edby": "edited by"},
   "es": {"by": "Redaccion TransferBeat", "sources": "Fuentes", "updated": "Actualizado el", "home": "Inicio",
-         "board": "Board en vivo", "campionati": "Ligas", "back": "← Todos los articulos", "status": "Estado", "list": "Articulos",
+         "board": "Board en vivo", "campionati": "Ligas", "back": "← Todos los artículos", "status": "Estado", "list": "Artículos",
          "disc": "TransferBeat agrega noticias de fútbol citando las fuentes originales. Noticia en desarrollo.",
          "via": "via", "smentita": "DESMENTIDO", "squadre": "Equipos", "related": "Artículos relacionados", "edby": "editado por"},
 }
@@ -121,14 +121,16 @@ def head(title, desc, canon, alts, lang, og_img=""):
          '<script async src="https://www.googletagmanager.com/gtag/js?id=G-RLST76W6H2"></script>',
          "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RLST76W6H2');</script>",
          '<meta name="viewport" content="width=device-width,initial-scale=1">',
-         '<title>' + esc(title) + ' | TransferBeat</title>',
-         '<meta name="description" content="' + esc(desc) + '">',
+         '<title>' + esc(seo_title(title)) + '</title>',
+         '<meta name="description" content="' + esc(seo_desc(desc)) + '">',
          '<link rel="canonical" href="' + esc(canon) + '">']
     for l, u in alts.items():
         h.append('<link rel="alternate" hreflang="' + l + '" href="' + esc(u) + '">')
+    if alts.get('it'):
+        h.append('<link rel="alternate" hreflang="x-default" href="' + esc(alts['it']) + '">')
     h.append('<meta property="og:type" content="article"><meta property="og:site_name" content="TransferBeat">')
     h.append('<meta property="og:title" content="' + esc(title) + '">')
-    h.append('<meta property="og:description" content="' + esc(desc) + '">')
+    h.append('<meta property="og:description" content="' + esc(seo_desc(desc)) + '">')
     h.append('<meta property="og:url" content="' + esc(canon) + '">')
     if og_img:
         h.append('<meta property="og:image" content="' + esc(og_img) + '">')
@@ -254,10 +256,19 @@ def render_article(art, lang, site, arts=None):
     out.append('<script src="/fanta/promo.js" defer></script></body></html>')
     return "".join(out)
 
+# Title (senza suffisso: lo aggiunge seo_title) e description degli indici articoli, kb/SEO.md §0.2.
+INDEX_META = {
+  "it": ("Articoli: recap, lunch break e focus", "Tutti gli articoli di TransferBeat: il Recap di giornata su campionati e coppe, il Lunch Break di metà giornata e il Focus sulla storia del giorno."),
+  "en": ("Articles: recaps, lunch breaks and focus", "All TransferBeat articles: the daily Recap on leagues and cups, the midday Lunch Break and the Focus on the story of the day, in English."),
+  "es": ("Artículos: recap, lunch break y focus", "Todos los artículos de TransferBeat: el Recap del día sobre ligas y copas, el Lunch Break de mediodía y el Focus sobre la historia del día."),
+}
+
 def render_index(arts, lang, site):
     canon = site + "/articoli/" + lang + "/"
     alts = {l: site + "/articoli/" + l + "/" for l in LANGS}
-    out = [head(UI[lang]["list"], UI[lang]["list"] + " - TransferBeat", canon, alts, lang), topbar(lang, alts, site)]
+    meta = INDEX_META[lang]
+    out = [head(meta[0], meta[1], canon, alts, lang), topbar(lang, alts, site),
+           ld_script(breadcrumb_ld([(UI[lang]["home"], site + "/"), (UI[lang]["list"], canon)]))]
     out.append('<div class="wrap"><h1 class="list-h">' + UI[lang]["list"] + '</h1>')
     for a in arts:
         c = a["content"].get(lang) or a["content"]["it"]

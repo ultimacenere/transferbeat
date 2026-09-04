@@ -2,6 +2,8 @@
 Tre pianificate alimentano il palinsesto editoriale (3 articoli/giorno = 9 pagine IT/EN/ES). **Riscritte il 2026-09-03 per il
 calcio giocato** (mercato chiuso): fonti = notizie classificate della board (`colonne`), `data/competizioni.json` (unica fonte per
 risultati, classifiche e numeri), ultim'ora del branch `live`. Regola: risultati mai dai titoli, voci chiamate voci, meglio corto che inventato.
+**Dal 2026-09-05 (SEO, `kb/SEO.md` §0.2)**: titolo ≤60 caratteri (diventa il `<title>` così com'è, senza suffisso) e prima frase del lead ≤150 caratteri
+(diventa la meta description; oltre, `render_articles` taglia a fine frase o a fine parola con "…"). Prompt aggiornati in entrambe le copie.
 Formati e copertine: lunch (ambra, img/cover-lunch.svg) · storia/FOCUS (blu, img/cover-storia.svg) · recap serale (verde, img/cover-recap.svg).
 Pubblicano da sole con `bash scripts/pubblica.sh` (token Contents:write).
 **Dal 2026-09-03** `render_articles.render_all` scrive `sitemap-articoli.xml` (lastmod = data dell'articolo) e rigenera l'indice `sitemap.xml`:

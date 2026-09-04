@@ -93,6 +93,11 @@ Da `data/fanta/*.json` (committati dal workflow `fanta.yml`), generate da `rende
 
 ## 4. Verifica dopo ogni intervento
 - `py -X utf8 scripts/render_site.py` deve finire con `render_site OK`; poi `node --check` sugli script inline delle hub e `grep -c '&lt;p&gt;'` a zero.
+- **`py -X utf8 scripts/seo_audit.py`** (dal 2026-09-05): audit di tutte le pagine HTML contro §0 (title ≤60, description ≤155, canonical, hreflang, H1 unico,
+  JSON-LD, breadcrumb, testo statico, `?lang=`, coerenza pagine/sitemap). Deve dare zero title >60, zero description >155, zero duplicati, H1 ≠ 1 nessuno.
+- **Workflow**: prima di pushare un file in `.github/workflows/`, `py -c "import yaml,sys;yaml.safe_load(open(sys.argv[1],encoding='utf-8'))" <file>`.
+  Un workflow invalido non avvisa: GitHub crea run FALLITI SENZA JOB (evento `push`) e ferma cron e `workflow_dispatch`. Controllo:
+  `GET /repos/ultimacenere/transferbeat/actions/workflows/update.yml/runs?per_page=3` deve mostrare eventi `schedule` recenti con esito success.
 - Testo statico sulle hub misurato (obiettivo migliaia di caratteri); `node --check` sul JS; pagine aperte senza `undefined`.
 - Search Console: rapporto Pagine (indicizzate/escluse e perché), Prestazioni con query tematiche; rivedere ogni mese.
 - Bing Webmaster: pagine indicizzate. Test `site:transferbeat.com` su Google e Bing.
@@ -132,3 +137,25 @@ Cambiare dominio · comprare link · moltiplicare gli articoli riassuntivi · tr
   Wolves, Burnley) e non i 9 promossi 2026-27 presenti in football-data (Frosinone, Monza, Venezia, Deportivo, Málaga, Racing Santander, Coventry, Hull, Ipswich):
   le loro pagine squadra escono senza classifica e senza partite, e la board non raccoglie notizie sui promossi. Da aggiornare in `teams.json` (nome, search, lab,
   col, league, paese) e rilanciare build + render.
+- 2026-09-05 (notte): **check delle regole §0 su tutto il sito e correzioni**. Trovato e corretto:
+  - **`update.yml` INVALIDO dal push di `24c556d` (3/9)**: alla riga 44 l'`echo "render_site FALLITO: restano…"` conteneva `: ` in uno scalare YAML non quotato
+    ("mapping values are not allowed here"). GitHub segnava "Invalid workflow file", creava un run fallito senza job a ogni push e non lanciava più né il cron
+    né i `workflow_dispatch`: board, home e classifiche fermi al 3/9 (36 ore), home senza il recap del 4/9, sentinella `freshness.py` mai eseguita, niente IndexNow
+    per hub e squadre. `fanta.yml` (valido) rigenerava le pagine statiche e ha mascherato il guasto. Corretto (virgola al posto dei due punti), validato con PyYAML,
+    rilanciato con `workflow_dispatch`.
+  - **Title e description (§0.2) fuori misura in tutti i generatori**: 18 title ≤60 e 8 description ≤155 su 1.334 pagine (articoli con il lead intero come description,
+    fino a 441 caratteri). Ora `site_common.seo_title()` (suffisso " | TransferBeat" solo se il totale resta ≤60, altrimenti nessun suffisso: Google aggiunge da sé il
+    nome del sito; oltre 60 taglio a fine parola) e `seo_desc()` (≤155: a fine frase se possibile, altrimenti a fine parola con "…"), applicati in `page()`,
+    in `render_articles.head()` e agli og:*. Template accorciati: squadre ("Inter: notizie, statistiche e classifica"), competizioni ("Classifica Serie A 2026-27 e
+    risultati"), listone, voti, titolari, indice fantacalcio, schede e indice giocatori, chi siamo; hub riscritte a mano (home "Serie A e coppe: notizie e classifiche",
+    board "Notizie squadra per squadra, per concretezza", campionati.html "Campionati live: classifiche e risultati", non più uguale a serie-a). Prompt delle tre
+    pianificate (kb + SKILL.md): titolo ≤60 e prima frase del lead ≤150.
+  - Indici articoli con title/description propri e BreadcrumbList (erano "Articoli | TransferBeat"); `hreflang="x-default"` (→ IT) negli articoli; ES "Artículos";
+    H1 unico in `fanta/index.html` (le viste usano `<h2 class="vh">` con lo stesso stile); `scripts/seo_audit.py` nel repo (§4).
+  - Esito: 1.334 pagine, title max 60, description max 155, zero duplicati, H1 unico ovunque, JSON-LD senza errori. Senza suffisso restano i 573 articoli
+    (titoli giornalistici lunghi) e ~85 pagine con nomi lunghi.
+  - **Restano aperti**: `www.transferbeat.com` risponde con il certificato del solo apice (errore SSL nel browser): in Vercel → Settings → Domains aggiungere
+    `www.transferbeat.com` con redirect a `transferbeat.com` (committente); email di contatto in chi-siamo; `fonti.html` (282 caratteri statici, fonti via JS) e
+    `fantatb.html` (testi via JS) da rendere statici; retrocesse in `teams.json` (kb/FANTATB.md §13.13: 9 pagine magre, redirect 301 o testo onesto);
+    og:image sulle pagine generate da `site_common` (serve un PNG); JSON-LD su board/campionati/fonti/fantatb; le sezioni del 3/9 non compaiono ancora su Bing
+    (stima 60-90 URL indicizzate, solo pagine vecchie): ricontrollare dal 17/9 con Bing Webmaster Tools e Search Console.
