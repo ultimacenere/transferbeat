@@ -10241,7 +10241,7 @@
 "team": 494,
 "team_name": "Udinese",
 "number": 32,
-"position": "Attacker",
+"position": "Midfielder",
 "active": true,
 "cur": [
 {
@@ -49272,7 +49272,7 @@
 "team": 494,
 "team_name": "Udinese",
 "number": 11,
-"position": "Midfielder",
+"position": "Defender",
 "active": true,
 "cur": [
 {
@@ -155899,7 +155899,7 @@
 "team": 494,
 "team_name": "Udinese",
 "number": 46,
-"position": "Attacker",
+"position": "Midfielder",
 "active": true,
 "cur": [
 {
@@ -203576,7 +203576,7 @@
 "weight": null,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/479776.png",
-"active": false,
+"active": true,
 "team": 867,
 "team_name": "Lecce",
 "position": "Attacker",
@@ -203669,7 +203669,8 @@
 "name": "Laerke Hjalte"
 }
 }
-]
+],
+"number": 34
 },
 "483662": {
 "id": 483662,
@@ -204715,7 +204716,20 @@
 }
 ],
 "prev_season": 2025,
-"transfers": []
+"transfers": [
+{
+"date": "2026-07-30",
+"type": "Transfer",
+"from": {
+"id": 541,
+"name": "Real Madrid"
+},
+"to": {
+"id": 502,
+"name": "Fiorentina"
+}
+}
+]
 },
 "493365": {
 "id": 493365,
@@ -205913,79 +205927,7 @@
 "number": 5,
 "position": "Defender",
 "active": true,
-"cur": [
-{
-"team": {
-"id": 1579,
-"name": "Monza"
-},
-"league": {
-"id": 135,
-"name": "Serie A",
-"country": "Italy",
-"season": 2026
-},
-"games": {
-"appearences": 0,
-"lineups": 0,
-"minutes": null,
-"number": 5,
-"position": "Defender",
-"rating": null,
-"captain": false
-},
-"substitutes": {
-"in": 0,
-"out": 0,
-"bench": 1
-},
-"shots": {
-"total": null,
-"on": null
-},
-"goals": {
-"total": 0,
-"conceded": 0,
-"assists": 0,
-"saves": null
-},
-"passes": {
-"total": null,
-"key": null,
-"accuracy": null
-},
-"tackles": {
-"total": null,
-"blocks": null,
-"interceptions": null
-},
-"duels": {
-"total": null,
-"won": null
-},
-"dribbles": {
-"attempts": null,
-"success": null,
-"past": null
-},
-"fouls": {
-"drawn": null,
-"committed": null
-},
-"cards": {
-"yellow": 0,
-"yellowred": 0,
-"red": 0
-},
-"penalty": {
-"won": null,
-"commited": null,
-"scored": 0,
-"missed": 0,
-"saved": null
-}
-}
-],
+"cur": [],
 "cur_season": 2026,
 "prev": [
 {
@@ -207098,7 +207040,7 @@
 "team": 503,
 "team_name": "Torino",
 "number": 79,
-"position": "Attacker",
+"position": "Midfielder",
 "active": true,
 "cur": [
 {
@@ -217320,7 +217262,7 @@
 "id": 80296,
 "team": 503,
 "team_name": "Torino",
-"number": 23,
+"number": 20,
 "position": "Goalkeeper",
 "active": true,
 "photo": "https://media.api-sports.io/football/players/80296.png",
@@ -219282,7 +219224,7 @@
 "team_name": "Napoli",
 "number": 14,
 "position": "Midfielder",
-"active": true,
+"active": false,
 "photo": "https://media.api-sports.io/football/players/561707.png",
 "name": "V. Prisco",
 "cur": [],
@@ -231044,7 +230986,7 @@
 "team_name": "Genoa",
 "number": 74,
 "position": "Defender",
-"active": true,
+"active": false,
 "photo": "https://media.api-sports.io/football/players/644542.png",
 "name": "Mamedi Doucoure",
 "cur": [],
@@ -234356,7 +234298,7 @@
 "team_name": "Bologna",
 "number": 34,
 "position": "Goalkeeper",
-"active": true,
+"active": false,
 "photo": "https://media.api-sports.io/football/players/616143.png",
 "name": "Riccardo Gnudi",
 "cur": [],
@@ -238363,7 +238305,7 @@
 "team_name": "Lecce",
 "number": 34,
 "position": "Attacker",
-"active": true,
+"active": false,
 "photo": "https://media.api-sports.io/football/players/589739.png",
 "name": "Hjalte Laerke",
 "cur": [],
@@ -239233,9 +239175,652 @@
 }
 }
 ]
+},
+"436239": {
+"id": 436239,
+"name": "Y. Maye",
+"first": null,
+"last": null,
+"birth": {
+"date": null,
+"place": null,
+"country": null
+},
+"nationality": null,
+"height": null,
+"weight": null,
+"injured": false,
+"photo": "https://media.api-sports.io/football/players/436239.png",
+"active": false,
+"team": 1579,
+"team_name": "Monza",
+"position": "Defender",
+"cur": [
+{
+"team": {
+"id": 1579,
+"name": "Monza"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 0,
+"lineups": 0,
+"minutes": null,
+"number": 5,
+"position": "Defender",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 1
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+}
+],
+"cur_season": 2026,
+"prev": [
+{
+"team": {
+"id": 505,
+"name": "Inter"
+},
+"league": {
+"id": 137,
+"name": "Coppa Italia",
+"country": "Italy",
+"season": 2025
+},
+"games": {
+"appearences": 0,
+"lineups": 0,
+"minutes": null,
+"number": 49,
+"position": "Defender",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 1
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
 }
 },
-"updated": "2026-09-03T14:13:27Z",
+{
+"team": {
+"id": 505,
+"name": "Inter"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2025
+},
+"games": {
+"appearences": 0,
+"lineups": 0,
+"minutes": null,
+"number": 49,
+"position": "Defender",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 3
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+}
+],
+"prev_season": 2025,
+"transfers": []
+},
+"441134": {
+"id": 441134,
+"team": 495,
+"team_name": "Genoa",
+"number": 74,
+"position": "Defender",
+"active": true,
+"photo": "https://media.api-sports.io/football/players/441134.png",
+"name": "M. Doucoure",
+"cur": [],
+"cur_season": 2026,
+"first": "Mamedi",
+"last": "Doucouré",
+"birth": {
+"date": "2007-01-19",
+"place": null,
+"country": "France"
+},
+"nationality": "France",
+"height": null,
+"weight": null,
+"injured": false,
+"prev": [],
+"prev_season": 2025,
+"transfers": [
+{
+"date": "2024-08-29",
+"type": "-",
+"from": {
+"id": 24732,
+"name": "Genoa U20"
+},
+"to": {
+"id": 24732,
+"name": "Genoa U20"
+}
+}
+]
+},
+"491232": {
+"id": 491232,
+"team": 500,
+"team_name": "Bologna",
+"number": 34,
+"position": "Goalkeeper",
+"active": true,
+"photo": "https://media.api-sports.io/football/players/491232.png",
+"name": "R. Gnudi",
+"cur": [],
+"cur_season": 2026,
+"first": null,
+"last": null,
+"birth": {
+"date": null,
+"place": null,
+"country": null
+},
+"nationality": null,
+"height": null,
+"weight": null,
+"injured": false,
+"prev": [
+{
+"team": {
+"id": 500,
+"name": "Bologna"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2025
+},
+"games": {
+"appearences": 0,
+"lineups": 0,
+"minutes": null,
+"number": 12,
+"position": "Goalkeeper",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 1
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+}
+],
+"prev_season": 2025,
+"transfers": [
+{
+"date": "2026-05-01",
+"type": "Raise",
+"from": {
+"id": 500,
+"name": "Bologna"
+},
+"to": {
+"id": 500,
+"name": "Bologna"
+}
+}
+]
+},
+"495493": {
+"id": 495493,
+"team": 492,
+"team_name": "Napoli",
+"number": 14,
+"position": "Midfielder",
+"active": true,
+"photo": "https://media.api-sports.io/football/players/495493.png",
+"name": "V. Prisco",
+"cur": [],
+"cur_season": 2026,
+"first": null,
+"last": null,
+"birth": {
+"date": null,
+"place": null,
+"country": null
+},
+"nationality": null,
+"height": null,
+"weight": null,
+"injured": false,
+"prev": [
+{
+"team": {
+"id": 492,
+"name": "Napoli"
+},
+"league": {
+"id": 137,
+"name": "Coppa Italia",
+"country": "Italy",
+"season": 2025
+},
+"games": {
+"appearences": 0,
+"lineups": 0,
+"minutes": null,
+"number": 95,
+"position": "Midfielder",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 1
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+},
+{
+"team": {
+"id": 492,
+"name": "Napoli"
+},
+"league": {
+"id": 2,
+"name": "UEFA Champions League",
+"country": "World",
+"season": 2025
+},
+"games": {
+"appearences": 0,
+"lineups": 0,
+"minutes": null,
+"number": 58,
+"position": "Midfielder",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 1
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+},
+{
+"team": {
+"id": 492,
+"name": "Napoli"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2025
+},
+"games": {
+"appearences": 0,
+"lineups": 0,
+"minutes": null,
+"number": 95,
+"position": "Midfielder",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 6
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+}
+],
+"prev_season": 2025,
+"transfers": [
+{
+"date": "2025-06-30",
+"type": "Raise",
+"from": {
+"id": 26436,
+"name": "Napoli U20"
+},
+"to": {
+"id": 26436,
+"name": "Napoli U20"
+}
+}
+]
+}
+},
+"updated": "2026-09-04T12:06:39Z",
 "season": 2026,
 "league": 135
 }
