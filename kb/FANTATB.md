@@ -219,6 +219,12 @@ Claude esegue questi comandi a richiesta man mano che l'utente avanza (crea lega
 - Le scritture su Supabase lanciate da Claude (upsert/patch dagli script) possono essere bloccate dal classificatore della modalità
   automatica: in quel caso dare all'utente il comando da lanciare nel suo terminale, che è **Windows PowerShell 5.1** (niente `&&` né
   `VAR=x`: usare `;` e `$env:VAR="x"`; gli script stampano anche su console cp1252 senza crashare). Es.: `py scripts/fanta_players.py`.
+- **Due copie locali del repo (2026-09-04).** `G:\Il mio Drive\Calciomercato` (Google Drive: sessioni Claude Code e worktree) e
+  `C:\Users\User\Desktop\Calciomercato` (disco locale: pianificate Cowork che committano gli articoli alle 12:40, 16:10, 20:40). La copia Drive
+  era ferma a 3c33db6 con 248 file "modificati" (git su Drive + autocrlf) e `git pull` falliva: salvata nel ramo **`backup/drive-2026-09-04`**
+  (su GitHub) e riallineata a origin/main con `reset --hard` + `clean -fd` (chiavi e worktree ignorati da git conservati). Raccomandazione:
+  ufficiale = Desktop; prima di eliminare Drive copiare sul Desktop `supabase_keys.txt` e `apifootball_key.txt` (lì mancano) e la cartella
+  memoria di Claude. Il Desktop ha anch'esso 563 file con differenze reali e file spuri: stesso trattamento, fuori dagli orari delle pianificate.
 - Il cron `update.yml` del sito non tocca `fanta/`. Dal 2026-09-03 `fanta.yml` lancia `scripts/render_site.py` dopo voti e titolarità: rigenera
   `fantacalcio/{index,listone,voti-giornata-N,titolari}.html` (pagine statiche SEO con Dataset e FAQ, formule in chiaro) e `sitemap-fanta.xml`; `/fanta/` è in
   `sitemap-pagine.xml`. Se si cambia una formula (§5-7) va aggiornato anche il testo delle pagine in `render_site.py` (VOTO_NOTE, FAQ, note del listone e dei titolari).
