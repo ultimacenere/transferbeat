@@ -4,9 +4,6 @@ calcio giocato** (mercato chiuso): fonti = notizie classificate della board (`co
 risultati, classifiche e numeri), ultim'ora del branch `live`. Regola: risultati mai dai titoli, voci chiamate voci, meglio corto che inventato.
 Formati e copertine: lunch (ambra, img/cover-lunch.svg) · storia/FOCUS (blu, img/cover-storia.svg) · recap serale (verde, img/cover-recap.svg).
 Pubblicano da sole con `bash scripts/pubblica.sh` (token Contents:write).
-**Dal 2026-09-03** `render_articles.render_all` scrive `sitemap-articoli.xml` (lastmod = data dell'articolo) e rigenera l'indice `sitemap.xml`:
-il commit plumbing include `sitemap.xml, sitemap-articoli.xml` (prompt aggiornati in entrambe le copie). Le hub e le pagine squadra si aggiornano
-da sole al giro successivo di `update.yml` (`render_site.py`), quindi le pianificate NON devono lanciarlo.
 
 **I prompt completi sono copiati in `kb/pianificate/*.md`** (identici ai SKILL.md in
 `C:/Users/<utente>/Documents/Claude/Scheduled/<nome>/SKILL.md`). Per ricrearle su un'altra macchina: nuova pianificata in Cowork

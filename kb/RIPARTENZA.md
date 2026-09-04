@@ -15,9 +15,6 @@ innescati da cron-job.org **e da una pianificazione interna a `update.yml`** (ri
 cron-job.org si ferma, l'aggiornamento dati parte comunque). **A PC spento il sito continua ad
 aggiornarsi da solo.** Il computer serve solo per: modifiche al codice, articoli scritti da Claude, push.
 
-> **Pagine statiche SEO (dal 2026-09-03)**: `scripts/render_site.py` (con `site_common.py`) genera il testo statico delle hub, `squadre/`, `campionati/`,
-> `fantacalcio/`, `chi-siamo.html`, `llms.txt`, le sitemap e l'indice `sitemap.xml`; gira in `update.yml` e `fanta.yml` prima del commit. Stato e dettagli in `kb/SEO.md` §6.
-
 > **FantaTB (fantacalcio, online su /fanta/ dal 2026-09-02): KB dedicata in `kb/FANTATB.md`.** Supabase + API-Football, script `scripts/fanta_*.py`, workflow `fanta.yml`.
 
 > **Colore di marca (dal 2026-09-03): arancione vivo `#ff6a00`** (`--accent` in tutte le pagine e nel template articoli), al posto del verde `#0a9d57`. Il verde resta SOLO come colore di stato "fatto/done" e del tipo articolo Recap; il campo di gioco di FantaTB resta verde.
@@ -114,13 +111,6 @@ passare da un deploy, quindi un cambio di schema sarebbe in produzione prima del
 
 ## 3. Regole operative per Claude (IMPORTANTI)
 - **SEO prima di tutto**: ogni pagina o script che produce HTML rispetta `kb/SEO.md` §0. Le consegne dicono cosa hanno fatto per il posizionamento.
-- **Dopo ogni modifica a dati, template o articoli: `py -X utf8 scripts/render_site.py`** e commit anche dei file generati (hub, `squadre/`, `campionati/`,
-  `fantacalcio/`, `chi-siamo.html`, `llms.txt`, `sitemap*.xml`, `data/lastmod.json`). Mai scrivere a mano fra i marcatori `<!--static:…-->` delle hub: il
-  prossimo giro li sovrascrive. Le pagine generate usano il template di `site_common.page()`: per cambiare menu, CSS o piè di pagina si tocca quello.
-- **Rebase di un branch su `origin/main` con file generati in conflitto** (`data/articles/index.json`, `sitemap*.xml`, `articoli/**`, hub): prendere la
-  versione di origin/main (`git checkout --ours` durante il rebase), rigenerare con `render_articles.render_all` + `render_site.py`, poi `git add` e
-  `--continue`. Mai risolvere a mano dentro un file generato. Se il rebase si ferma, `git status` prima di qualsiasi push: HEAD potrebbe essere origin/main.
-- **`.claude/` è in `.gitignore`** (worktree di Claude e `launch.json` dell'anteprima): non deve mai finire nei commit.
 - **La cartella locale va in deriva: la verità è `origin/main`.** La copia su Google Drive può restare
   indietro di settimane senza che nulla lo segnali. **Prima di analizzare o decidere qualsiasi cosa,
   leggere i file con `git show origin/main:<file>`, non dal disco.** Un'analisi fatta sui file locali
@@ -239,9 +229,7 @@ passare da un deploy, quindi un cambio di schema sarebbe in produzione prima del
   congela all'ultima versione buona.
 - **`mondo_home` non è per lingua**: `fetch(m["search"])` usa la stessa stringa per it/en/es, quindi
   con locale italiano tornano fonti inglesi. Si corregge solo toccando `build.py`.
-- ~~sitemap: mondiali.html e fonti.html non compaiono~~ superato il 2026-09-03: `sitemap.xml` è un indice, lastmod veri (vedi `kb/SEO.md` §6).
-- **`data/teams.json` in ritardo di una stagione**: 9 club retrocessi al posto dei 9 promossi 2026-27 (elenco in `kb/SEO.md` §6). La board non raccoglie
-  notizie su Frosinone, Monza, Venezia e gli altri promossi; le pagine squadra dei retrocessi escono senza classifica.
+- ~~sitemap: mondiali.html e fonti.html non compaiono~~ corretto il 2026-09-03 (558 URL).
 
 ## 6. Cosa NON è nel repo (backup su Drive, file privato)
 - `groq_key.txt` (chiave Groq)
@@ -335,8 +323,6 @@ Misure dopo la fase B/C, sulla board reale: colonna anteprima da 42 a 78 voci, d
    classifica; Champions: quando parte la league phase (metà settembre) la classifica compare da sola.
 5. **Freschezza: notifica.** Il fallimento della sentinella colora di rosso il workflow e GitHub manda una
    mail al proprietario del repo: verificare che arrivi davvero al primo rosso.
-6. **SEO/GEO, punti 1-7 eseguiti e pubblicati su main il 2026-09-03** (`24c556d`): nome confermato e LinkedIn inserito; resta l'email di contatto per
-   chi-siamo, Bing Webmaster Tools, il controllo di Search Console fra due settimane. Tutto in `kb/SEO.md` §6.
 
 ### SEO e GEO (diagnosi del 2026-09-03)
 Search Console (via GA4) da giugno: 316 impressioni, 43 clic (39 sulla home = ricerca di marca), 22 query tutte code lunghe su

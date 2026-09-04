@@ -8,7 +8,7 @@ const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp
 const ROLES = ['P','D','C','A'];
 const ROLE_NAME = {P:'Portieri', D:'Difensori', C:'Centrocampisti', A:'Attaccanti'};
 
-let sb = null, user = null, players = [], playersById = {}, schede = {};   // schede: /data/fanta/schede.json (URL scheda, MV, FMV, titolarità, presenze, gol, assist)
+let sb = null, user = null, players = [], playersById = {};
 let L = null;            // lega corrente: {league, members, rosters, auction, bids}
 let auctionTimer = null, channel = null;
 
@@ -23,11 +23,9 @@ function show(view){
   if (view === 'home') { if (!$('#clForm').innerHTML) $('#clForm').innerHTML = settingsFormHtml(null, 'cl'); loadLeagues(); }
   if (view === 'listone') renderListone();
   if (view === 'voti') loadVoti();
-  if (view === 'liste') renderListe();
-  if (['home', 'listone', 'voti', 'regole', 'liste'].includes(view)) history.replaceState(null, '', '#' + view);   // cosi' "indietro" dalle schede giocatore torna qui
 }
 document.addEventListener('click', e => {
-  const a = e.target.closest('[data-view]'); if (a){ e.preventDefault(); if (!user && !['listone', 'voti', 'regole', 'liste'].includes(a.dataset.view)) return show('auth'); show(a.dataset.view); }
+  const a = e.target.closest('[data-view]'); if (a){ e.preventDefault(); if (!user && a.dataset.view !== 'listone' && a.dataset.view !== 'voti' && a.dataset.view !== 'regole') return show('auth'); show(a.dataset.view); }
   const t = e.target.closest('[data-tab]'); if (t){ e.preventDefault(); renderTabs(t.dataset.tab); }
 });
 
@@ -40,10 +38,7 @@ function renderUser(){
 }
 async function initAuth(){
   const { data } = await sb.auth.getSession(); user = data.session ? data.session.user : null;
-  sb.auth.onAuthStateChange((_ev, session) => {
-    const prev = user ? user.id : null; user = session ? session.user : null; renderUser();
-    if (prev !== (user ? user.id : null)) { loadLists().then(loadSharedLists).then(() => {}); show(user ? 'home' : 'auth'); }   // solo a login/logout veri: l'evento iniziale non deve coprire la vista scelta dall'hash
-  });
+  sb.auth.onAuthStateChange((_ev, session) => { user = session ? session.user : null; renderUser(); show(user ? 'home' : 'auth'); });
   renderUser(); show(user ? 'home' : 'auth');
 }
 $('#btnLogin').onclick = async () => {
@@ -59,107 +54,19 @@ $('#btnSignup').onclick = async () => {
 
 /* ---------- listone ---------- */
 async function loadPlayers(){
-  const [{ data, error }] = await Promise.all([
-    sb.from('players').select('id,name,team,role,price,active').order('price', { ascending: false }).limit(2000),
-    fetch('/data/fanta/schede.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(j => { schede = (j && j.players) || {}; }).catch(() => {})
-  ]);
+  const { data, error } = await sb.from('players').select('id,name,team,role,price,active').order('price', { ascending: false }).limit(2000);
   if (error) return err(error);
   players = data || []; playersById = {}; players.forEach(p => playersById[p.id] = p);
 }
 function roleTag(r){ return '<span class="role '+r+'">'+r+'</span>'; }
-/* tabella del listone, condivisa fra la vista pubblica (#lsTable) e la scheda Listone della lega (#tab-listone, con stato libero/preso).
-   Filtri: testo, ruolo, squadra, tier della lista attiva, solo con voto (+ solo liberi in lega). Colonna Tier modificabile se la lista e' mia. */
-const lsState = { ls: { k: 'price', asc: false }, ll: { k: 'price', asc: false }, le: { k: 'price', asc: false } };
-const TIERS = { 1: 'Top', 2: 'Obiettivo', 3: 'Alternativa', 4: 'Scommessa', 5: 'Da evitare' };
-const fmt2 = v => v == null ? '—' : Number(v).toFixed(2).replace('.', ',');
-const heatCls = v => v == null ? 'h0' : v >= 7 ? 'h1' : v >= 6.5 ? 'h2' : v >= 6 ? 'h3' : 'h4';   // colore di MV/FMV: verde forte, verde, neutro, rosso
-const heatFmt = v => '<span class="heat '+heatCls(v)+'">'+fmt2(v)+'</span>';
-function lsCell(v, f){ return '<td class="num">'+(v == null ? '—' : (f ? f(v) : v))+'</td>'; }
-function tierOf(pid){ const it = curList && curList.items[pid]; return it ? it.tier : 0; }
-function tierChip(t){ return t ? '<span class="tier t'+t+'" title="'+esc(TIERS[t])+'">T'+t+'</span>' : '<span class="muted">—</span>'; }
-function tierSelect(pid, t, withRemove){ return '<select class="tierSel" data-pid="'+pid+'"><option value="0">'+(withRemove ? 'togli' : '—')+'</option>'+[1,2,3,4,5].map(x => '<option value="'+x+'"'+(x === t ? ' selected' : '')+'>T'+x+' '+TIERS[x]+'</option>').join('')+'</select>'; }
-function lsVal(p, k){
-  if (k === 'price') return p.price; if (k === 'name') return p.name; if (k === 'team') return p.team; if (k === 'role') return 'PDCA'.indexOf(p.role);
-  if (k === 'stato') return p._stato || ''; if (k === 'tier') { const t = tierOf(p.id); return t ? 6 - t : 0; }
-  const s = schede[p.id]; return (s && s[k] != null) ? s[k] : -1;
-}
-function filterBarHtml(px, withList){
-  const teams = [...new Set(players.filter(p => p.active).map(p => p.team))].sort();
-  return '<div class="row fbar"><input id="'+px+'Search" placeholder="Cerca giocatore o squadra">' +
-    '<select id="'+px+'Role"><option value="">Tutti i ruoli</option><option value="P">Portieri</option><option value="D">Difensori</option><option value="C">Centrocampisti</option><option value="A">Attaccanti</option></select>' +
-    '<select id="'+px+'Team"><option value="">Tutte le squadre</option>'+teams.map(t => '<option>'+esc(t)+'</option>').join('')+'</select>' +
-    '<select id="'+px+'Tier"><option value="">Lista: tutti</option><option value="in">Solo in lista</option><option value="out">Non in lista</option>'+[1,2,3,4,5].map(t => '<option value="'+t+'">Tier '+t+' · '+TIERS[t]+'</option>').join('')+'</select>' +
-    '<select id="'+px+'Voto"><option value="">Con e senza voto</option><option value="1">Solo con voto</option></select>' +
-    (px === 'll' ? '<label class="small chk1"><input type="checkbox" id="llFree"> solo liberi</label>' : '') + '</div>' +
-    (withList === false ? '' : '<div class="row fbar2"><span class="lab">🎯 Lista obiettivi attiva</span><select id="'+px+'List"></select><a data-view="liste">apri la lista →</a><span class="small" id="'+px+'ListInfo"></span></div>');
-}
-function fillListSelect(sel, rerender){
-  if (!sel) return;
-  const opt = (l, pre) => '<option value="'+l.id+'"'+(curList && curList.id === l.id ? ' selected' : '')+'>'+esc((pre || '') + l.name + (pre && l.author ? ' · di ' + l.author : ''))+'</option>';
-  sel.innerHTML = '<option value="">— nessuna —</option>' +
-    (lists.length ? '<optgroup label="Le mie liste">'+lists.map(l => opt(l)).join('')+'</optgroup>' : '') +
-    (sharedLists.length ? '<optgroup label="Condivise e consigliate (sola lettura)">'+sharedLists.map(l => opt(l, l.featured ? '★ ' : '↗ ')).join('')+'</optgroup>' : '') +
-    (!user ? '<option value="" disabled>entra per creare una lista tua</option>' : '');
-  const info = $('#' + sel.id + 'Info');
-  if (info) info.textContent = !curList ? 'scegli una lista e assegna i tier dalla colonna Tier' : (user && curList.owner_id === user.id ? 'stai compilando questa lista: cambia il tier dalla colonna Tier' : 'lista di ' + (curList.author || 'un altro utente') + ', sola lettura: dalla vista Obiettivi puoi copiarla');
-  sel.onchange = async () => { await selectList(sel.value || null); rerender(); };
-}
-function filterPlayers(px){
-  const g = id => { const e = $('#' + px + id); return e ? e.value : ''; };
-  const q = (g('Search') || '').toLowerCase(), r = g('Role'), tm = g('Team'), tf = g('Tier'), vf = g('Voto');
-  return players.filter(p => p.active && (!r || p.role === r) && (!tm || p.team === tm) && (!q || p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q))
-    && (!vf || (schede[p.id] && schede[p.id].mv != null))
-    && (!tf || (tf === 'in' ? tierOf(p.id) > 0 : tf === 'out' ? tierOf(p.id) === 0 : tierOf(p.id) === +tf)));
-}
-function listoneHtml(rows, sort, withStato){
-  const th = (k, lab, title, num) => '<th class="srt'+(num ? ' num' : '')+(sort.k === k ? ' on' : '')+'" data-k="'+k+'"'+(title ? ' title="'+title+'"' : '')+'>'+lab+(sort.k === k ? (sort.asc ? ' ▲' : ' ▼') : '')+'</th>';
-  const canTier = !!(curList && user && curList.owner_id === user.id);
-  rows = rows.slice().sort((a, b) => { const x = lsVal(a, sort.k), y = lsVal(b, sort.k); const c = typeof x === 'string' ? x.localeCompare(y) : (x - y); return sort.asc ? c : -c; }).slice(0, 400);
-  return '<div class="tw"><table><thead><tr>'+th('role','R')+th('name','Giocatore')+th('team','Squadra')+(withStato ? th('stato','Stato','Libero o già in una rosa di questa lega') : '')+
-    (curList ? th('tier','Tier','Tier nella lista attiva: '+curList.name) : '')+
-    th('price','Quot.','Quotazione FantaTB',true)+th('mv','MV','Media voto FantaTB, stagione in corso',true)+th('fmv','FMV','Fantamedia: media dei fantavoti con bonus e malus',true)+
-    th('tit','Tit.','Indice di titolarità per la prossima giornata',true)+th('pres','Pres.','Presenze in Serie A',true)+th('gol','Gol','Gol in Serie A',true)+th('assist','Assist','Assist in Serie A',true)+'</tr></thead><tbody>' +
-    rows.map(p => { const s = schede[p.id] || {}; const t = tierOf(p.id);
-      const nm = s.url ? '<a class="pl" href="'+esc(s.url)+'" title="Apri la scheda con le statistiche (poi Torna al listone)">'+esc(p.name)+'</a>' : esc(p.name);
-      const cls = ((withStato && p._stato) ? 'taken ' : '') + (t ? 'tr' + t : '');
-      return '<tr'+(cls ? ' class="'+cls.trim()+'"' : '')+'><td>'+roleTag(p.role)+'</td><td>'+nm+'</td><td>'+esc(p.team)+'</td>'+
-        (withStato ? '<td class="muted">'+(p._stato ? esc(p._stato) : '<span class="free">libero</span>')+'</td>' : '')+
-        (curList ? '<td class="tc">'+(canTier ? tierSelect(p.id, t, false) : tierChip(t))+'</td>' : '')+
-        '<td class="num"><b>'+p.price+'</b></td>'+lsCell(s.mv, heatFmt)+lsCell(s.fmv, heatFmt)+lsCell(s.tit, v => '<span class="pct '+(v >= 70 ? 'g' : v >= 40 ? 'a' : 'r')+'">'+v+'%</span>')+
-        lsCell(s.pres)+lsCell(s.gol)+lsCell(s.assist)+'</tr>'; }).join('') + '</tbody></table></div>' +
-    '<p class="small">MV = media voto FantaTB, FMV = fantamedia (voto più bonus e malus), Tit. = indice di titolarità per la prossima giornata; presenze, gol e assist in Serie A. Clic sull\'intestazione per ordinare, sul nome per la scheda completa: da lì "Torna al listone" riporta qui.' +
-    (curList ? ' Tier: '+[1,2,3,4,5].map(x => 'T'+x+' '+TIERS[x]).join(', ')+'.' : ' Scegli una lista obiettivi per vedere e assegnare i tier.')+'</p>';
-}
-function bindSort(el, key, rerender){
-  $$('th.srt', el).forEach(h => { h.onclick = () => { const k = h.dataset.k, st = lsState[key]; if (st.k === k) st.asc = !st.asc; else lsState[key] = { k: k, asc: (k === 'name' || k === 'team' || k === 'role' || k === 'stato') }; rerender(); }; });
-  el.onchange = e => { const s = e.target.closest('.tierSel'); if (s) setTier(+s.dataset.pid, +s.value); };
-}
-function ensureFilters(px, wrap, rerender, withList){
-  if (!wrap || wrap.innerHTML) return;
-  wrap.innerHTML = filterBarHtml(px, withList);
-  $('#' + px + 'Search').oninput = rerender;
-  ['Role', 'Team', 'Tier', 'Voto'].forEach(id => { $('#' + px + id).onchange = rerender; });
-  if (px === 'll') $('#llFree').onchange = rerender;
-}
 function renderListone(){
-  const el = $('#lsTable'); if (!el) return;
-  ensureFilters('ls', $('#lsFilters'), renderListone);
-  fillListSelect($('#lsList'), renderListone);
-  el.innerHTML = players.length ? listoneHtml(filterPlayers('ls'), lsState.ls, false)
+  const q = ($('#lsSearch').value || '').toLowerCase(); const r = $('#lsRole').value;
+  const rows = players.filter(p => p.active && (!r || p.role === r) && (!q || p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q))).slice(0, 400);
+  $('#lsTable').innerHTML = players.length ? '<table><thead><tr><th>R</th><th>Giocatore</th><th>Squadra</th><th>Quot.</th></tr></thead><tbody>' +
+    rows.map(p => '<tr><td>'+roleTag(p.role)+'</td><td>'+esc(p.name)+'</td><td>'+esc(p.team)+'</td><td><b>'+p.price+'</b></td></tr>').join('') + '</tbody></table>'
     : '<div class="msg">Listone non ancora caricato. Arriva con il primo aggiornamento dei dati.</div>';
-  bindSort(el, 'ls', renderListone);
 }
-function renderLeagueListone(){
-  const el = $('#tab-listone'); if (!el || !L) return;
-  if (!$('#llFilters')) el.innerHTML = '<div id="llFilters" style="margin:10px 0"></div><div id="llTable"></div>';
-  ensureFilters('ll', $('#llFilters'), renderLeagueListone);
-  fillListSelect($('#llList'), renderLeagueListone);
-  const owner = {}; L.rosters.forEach(r => { owner[r.player_id] = memberName(r.user_id) + ' (' + r.price + ')'; });
-  let rows = filterPlayers('ll').map(p => Object.assign({}, p, { _stato: owner[p.id] || '' }));
-  if ($('#llFree').checked) rows = rows.filter(p => !p._stato);
-  $('#llTable').innerHTML = listoneHtml(rows, lsState.ll, true);
-  bindSort($('#llTable'), 'll', renderLeagueListone);
-}
+$('#lsSearch').oninput = renderListone; $('#lsRole').onchange = renderListone;
 
 /* ---------- voti ---------- */
 async function loadVoti(){
@@ -226,13 +133,11 @@ $('#btnCreate').onclick = async () => {
 };
 $('#btnJoin').onclick = async () => {
   const code = $('#jnCode').value.trim(), team = $('#jnTeam').value.trim();
-  const pick = $('#jnPickBox') && !$('#jnPickBox').classList.contains('hidden') ? $('#jnPick').value : '';
-  if (!code || (!team && !pick)) return msg('Servono codice e nome squadra (o una squadra da reclamare)', 'err');
-  const { data, error } = pick ? await sb.rpc('join_league_claim', { p_code: code, p_team: pick }) : await sb.rpc('join_league', { p_code: code, p_team: team });
+  if (!code || !team) return msg('Servono codice e nome squadra', 'err');
+  const { data, error } = await sb.rpc('join_league', { p_code: code, p_team: team });
   if (error) return err(error);
-  msg(pick ? 'Sei dentro: la squadra "'+pick+'" con la sua rosa è tua' : 'Sei dentro!', 'ok'); openLeague(data);
+  msg('Sei dentro!', 'ok'); openLeague(data);
 };
-$('#jnCode').oninput = () => { clearTimeout(window._jnT); window._jnT = setTimeout(checkPendingForCode, 400); };
 
 /* ---------- lega ---------- */
 const MEMBER_SEL = 'user_id, team_name, role, credits, call_order';
@@ -243,7 +148,7 @@ async function attachProfiles(members){
   members.forEach(m => m.profiles = by[m.user_id] || { username: '' });
   return members;
 }
-async function openLeague(id, tab){
+async function openLeague(id){
   const [{ data: league, error: e1 }, { data: members, error: e2 }] = await Promise.all([
     sb.from('leagues').select('*').eq('id', id).single(),
     sb.from('league_members').select(MEMBER_SEL).eq('league_id', id).order('call_order')
@@ -252,12 +157,12 @@ async function openLeague(id, tab){
   await attachProfiles(members);
   L = { league, members, rosters: [], auction: null, bids: [] };
   L.me = members.find(m => m.user_id === user.id); L.isAdmin = !!(L.me && L.me.role === 'admin');
-  history.replaceState(null, '', '#lega/' + id + (tab ? '/' + tab : ''));
+  location.hash = 'lega/' + id;
   $$('main > section').forEach(s => s.classList.add('hidden')); $('#view-league').classList.remove('hidden');
   $('#lgName').textContent = league.name;
   $('#lgSub').innerHTML = esc(L.me.team_name)+' · '+members.length+'/'+(league.settings.max_teams || 20)+' squadre · codice invito <span class="code">'+esc(league.invite_code)+'</span>';
   await refreshLeagueData();
-  renderTabs(tab); renderRules(); renderAuction(); subscribe(); loadSeasonData();
+  renderTabs(); renderRules(); renderAuction(); subscribe(); loadSeasonData();
 }
 async function refreshLeagueData(){
   const [{ data: rosters }, { data: auction }, { data: members }, { data: bids }] = await Promise.all([
@@ -279,12 +184,10 @@ function phase(){ return (L.league.settings && L.league.settings.phase) || 'asta
 function renderTabs(active){
   const tabs = [];
   if (phase() === 'asta') tabs.push(['asta', 'Asta']);
-  tabs.push(['listone', 'Listone'], ['schiera', 'Schiera'], ['classifica', 'Classifica'], ['calendario', 'Calendario'], ['risultati', 'Risultati'], ['regole', 'Regole'], ['membri', 'Partecipanti']);
+  tabs.push(['schiera', 'Schiera'], ['classifica', 'Classifica'], ['calendario', 'Calendario'], ['risultati', 'Risultati'], ['regole', 'Regole'], ['membri', 'Partecipanti']);
   if (!active || !tabs.some(t => t[0] === active)) active = tabs[0][0];
   $('#lgTabs').innerHTML = tabs.map(t => '<a data-tab="'+t[0]+'" class="'+(t[0] === active ? 'on' : '')+'">'+t[1]+'</a>').join('');
   $$('#view-league [id^=tab-]').forEach(el => el.classList.toggle('hidden', el.id !== 'tab-' + active));
-  if (active === 'listone') renderLeagueListone();
-  if (L) history.replaceState(null, '', '#lega/' + L.league.id + '/' + active);   // ricaricando o tornando indietro si riapre la stessa scheda
 }
 function renderMembers(){
   const byUser = {}; L.rosters.forEach(r => (byUser[r.user_id] = byUser[r.user_id] || []).push(r));
@@ -300,15 +203,14 @@ function renderMembers(){
     return '<div class="card'+(m.user_id === user.id ? ' hi' : '')+'"><h2>'+esc(m.team_name)+' <span class="muted">crediti '+m.credits+' · '+head+'</span></h2>' +
       (rs.length ? '<table><tbody>'+rows+'</tbody></table>' : '<div class="muted">Rosa vuota</div>') + '</div>';
   }).join('') + '</div>';
-  $('#tab-membri').innerHTML = table + cards + '<div id="pendingBox"></div>' + (L.isAdmin ? importHtml() : '');
-  bindImport(); loadPending();
+  $('#tab-membri').innerHTML = table + cards;
   $$('[data-release]').forEach(b => b.onclick = async () => {
     if (!confirm('Rimuovere il giocatore dalla rosa e rimborsare i crediti?')) return;
     const { error } = await sb.rpc('release_player', { p_league: L.league.id, p_player: +b.dataset.release });
     if (error) err(error); else refreshLeagueData();
   });
 }
-function renderRosters(){ renderMembers(); const t = $('#tab-listone'); if (t && !t.classList.contains('hidden')) renderLeagueListone(); }
+function renderRosters(){ renderMembers(); }
 function renderRules(){
   const s = Object.assign({}, DEFAULT_SETTINGS, L.league.settings || {}), bn = Object.assign({}, DEFAULT_SETTINGS.bonus, s.bonus || {}), sl = Object.assign({}, DEFAULT_SETTINGS.slots, s.slots || {});
   const view = '<div class="card"><h2>Regole in vigore <span class="pill '+(phase() === 'asta' ? '' : 'live')+'">'+(phase() === 'asta' ? 'fase asta' : 'campionato')+'</span></h2><table><tbody>' +
@@ -627,283 +529,14 @@ async function renderResults(){
 }
 
 /* ---------- avvio ---------- */
-/* ---------- liste obiettivi con tier 1-5 (tabelle lists / list_items, fix-008), condivisibili per codice ---------- */
-let lists = [], sharedLists = [], curList = null, sharedList = null, keyCache = null;
-async function loadSharedLists(){
-  if (!sb) return;
-  const { data, error } = await sb.from('lists').select('id,name,description,author,share_code,featured,is_public,owner_id,updated_at').or('featured.eq.true,is_public.eq.true').order('featured', { ascending: false }).order('updated_at', { ascending: false }).limit(50);
-  sharedLists = error ? [] : (data || []).filter(l => !user || l.owner_id !== user.id);
-}
-async function restoreActiveList(){
-  const want = localStorage.getItem('fantatb_list');
-  if (want && !curList && (lists.some(l => l.id === want) || sharedLists.some(l => l.id === want))) await selectList(want);
-}
-async function loadLists(){
-  if (!user || !sb) { lists = []; curList = null; return; }
-  const { data, error } = await sb.from('lists').select('*').eq('owner_id', user.id).order('created_at');
-  if (error) { lists = []; if (!/relation|does not exist|schema cache/i.test(error.message || '')) err(error); return; }
-  lists = data || [];
-  if (curList && !lists.some(l => l.id === curList.id)) curList = null;
-  const want = localStorage.getItem('fantatb_list');
-  if (!curList && want && lists.some(l => l.id === want)) await selectList(want);
-}
-async function selectList(id){
-  if (!id) { curList = null; localStorage.removeItem('fantatb_list'); return; }
-  const l = lists.find(x => x.id === id) || sharedLists.find(x => x.id === id); if (!l) return;   // le condivise si usano in sola lettura
-  const { data, error } = await sb.from('list_items').select('player_id,tier,note').eq('list_id', id);
-  if (error) return err(error);
-  curList = Object.assign({ items: {} }, l); (data || []).forEach(it => { curList.items[it.player_id] = { tier: it.tier, note: it.note || '' }; });
-  localStorage.setItem('fantatb_list', id);
-}
-async function setTier(pid, tier){
-  if (!curList) return msg('Scegli o crea prima una lista obiettivi', 'err');
-  if (!user || curList.owner_id !== user.id) return msg('Puoi modificare solo le tue liste: copiala prima', 'err');
-  if (!tier) { const { error } = await sb.from('list_items').delete().eq('list_id', curList.id).eq('player_id', pid); if (error) return err(error); delete curList.items[pid]; }
-  else { const note = (curList.items[pid] || {}).note || ''; const { error } = await sb.from('list_items').upsert({ list_id: curList.id, player_id: pid, tier: tier, note: note }); if (error) return err(error); curList.items[pid] = { tier: tier, note: note }; }
-  sb.from('lists').update({ updated_at: new Date().toISOString() }).eq('id', curList.id).then(() => {});
-  const v = $('#view-liste'); if (v && !v.classList.contains('hidden')) { renderListTiers(curList, true); renderListBrowse(); }
-}
-async function renderListe(){
-  const box = $('#lsteMine'); if (!box) return;
-  if (!user) {
-    box.innerHTML = '<div class="msg">Entra o crea un account (gratis) per salvare le tue liste. Le liste condivise si vedono anche senza account.</div><a data-view="auth" class="btn">Entra</a>';
-  } else {
-    await loadLists();
-    box.innerHTML = '<ul class="list">' + (lists.length ? lists.map(l => { const on = !!(curList && curList.id === l.id && !sharedList);
-      return '<li'+(on ? ' class="on"' : '')+'><div><b>'+esc(l.name)+'</b>'+(on ? ' <span class="pill live">attiva</span>' : '')+'<div class="muted">'+(l.is_public ? '🔗 condivisa · codice '+esc(l.share_code) : 'privata')+'</div></div>' +
-        '<button class="small'+(on ? '' : ' sec')+'" data-list="'+l.id+'" data-name="'+esc(l.name)+'">'+(on ? 'Modifica ↓' : 'Apri')+'</button></li>'; }).join('') : '<li class="muted">Nessuna lista: creane una qui sotto.</li>') + '</ul>' +
-      '<p class="small">La lista <b>attiva</b> è quella che vedi nella colonna Tier del Listone e qui sotto nel listone completo.</p>' +
-      '<div class="row" style="margin-top:10px"><input id="lsteNew" placeholder="Nome della nuova lista, es. Asta 2026"><button id="lsteCreate" class="sec" style="flex:0 0 auto">Crea</button></div>';
-    $$('[data-list]', box).forEach(b => { b.onclick = async () => { sharedList = null; await selectList(b.dataset.list); history.replaceState(null, '', '#liste'); await renderListe();
-      msg('Lista "'+b.dataset.name+'" attiva: assegna i tier dal listone qui sotto o dal Listone', 'ok'); const ed = $('#lsteEditor'); if (ed) ed.scrollIntoView({ behavior: 'smooth', block: 'start' }); }; });
-    $('#lsteCreate').onclick = async () => {
-      const name = $('#lsteNew').value.trim(); if (!name) return msg('Dai un nome alla lista', 'err');
-      const { data, error } = await sb.from('lists').insert({ owner_id: user.id, name: name, author: (user.user_metadata && user.user_metadata.username) || '' }).select().single();
-      if (error) return err(error);
-      sharedList = null; await loadLists(); await selectList(data.id); renderListe();
-    };
-  }
-  renderListEditor();
-  renderFeatured();
-}
-function renderListEditor(){
-  const ed = $('#lsteEditor'), br = $('#lsteBrowse'); if (!ed) return;
-  const l = sharedList || curList;
-  if (!l) {
-    ed.innerHTML = '<div class="msg hint">🎯 <b>Apri o crea una lista</b> (colonna a destra). Poi scorri il <b>listone completo qui sotto</b>, filtra per ruolo, squadra o voto e assegna un tier a ogni giocatore dalla colonna Tier. ' +
-      'Tier: <span class="tier t1">T1</span> Top · <span class="tier t2">T2</span> Obiettivo · <span class="tier t3">T3</span> Alternativa · <span class="tier t4">T4</span> Scommessa · <span class="tier t5">T5</span> Da evitare.</div>';
-    if (br) { br.innerHTML = ''; br.dataset.list = ''; }
-    return;
-  }
-  const own = !!(user && l.owner_id === user.id && !sharedList);
-  const link = location.origin + '/fanta/#lista/' + l.share_code;
-  ed.innerHTML = '<div class="card lhead"><div class="row" style="justify-content:space-between;align-items:flex-start"><div style="flex:1 1 auto"><h2 style="margin:0">🎯 '+esc(l.name)+(l.featured ? ' <span class="pill">consigliata</span>' : '')+'</h2><div class="muted">'+(l.author ? 'di '+esc(l.author)+' · ' : '')+'<span id="lsteCount">'+Object.keys(l.items).length+'</span> giocatori'+(l.description ? ' · '+esc(l.description) : '')+'</div></div>' +
-    '<div class="row" style="flex:0 0 auto">' + (own ? '<button class="small sec" id="lsteShare">'+(l.is_public ? '🔗 Condivisa ✓' : '🔗 Condividi')+'</button><button class="small sec" id="lsteRename">Rinomina</button><button class="small warn" id="lsteDelete">Elimina</button>'
-      : (user ? '<button class="small" id="lsteCopy">Copia nelle mie liste</button>' : '<a data-view="auth" class="btn small">Entra per copiarla</a>')) + '</div></div>' +
-    (own && l.is_public ? '<p class="small">Link da condividere: <a href="'+esc(link)+'">'+esc(link)+'</a> · codice <b>'+esc(l.share_code)+'</b>. Chi lo apre vede la lista e può copiarla.</p>' : '') +
-    (own ? '<div class="tiers-legend">'+[1,2,3,4,5].map(t => '<span><span class="tier t'+t+'">T'+t+'</span> '+TIERS[t]+'</span>').join('')+'</div>' +
-      '<div class="row" style="margin-top:8px"><input id="lsteAdd" placeholder="Aggiunta rapida: scrivi un nome (oppure usa il listone qui sotto)"><select id="lsteAddTier" style="flex:0 0 auto">'+[1,2,3,4,5].map(t => '<option value="'+t+'">Tier '+t+' · '+TIERS[t]+'</option>').join('')+'</select></div><div id="lsteHits" class="hits"></div>' : '') +
-    '<div id="lsteTiers"></div></div>';
-  renderListTiers(l, own);
-  if (own) {
-    $('#lsteShare').onclick = async () => { const { error } = await sb.from('lists').update({ is_public: !l.is_public }).eq('id', l.id); if (error) return err(error); await loadLists(); await selectList(l.id); renderListe(); };
-    $('#lsteRename').onclick = async () => { const name = prompt('Nuovo nome della lista', l.name); if (!name || !name.trim()) return; const { error } = await sb.from('lists').update({ name: name.trim() }).eq('id', l.id); if (error) return err(error); await loadLists(); await selectList(l.id); renderListe(); };
-    $('#lsteDelete').onclick = async () => { if (!confirm('Eliminare la lista "'+l.name+'"?')) return; const { error } = await sb.from('lists').delete().eq('id', l.id); if (error) return err(error); curList = null; localStorage.removeItem('fantatb_list'); await loadLists(); renderListe(); };
-    const add = $('#lsteAdd');
-    add.oninput = () => {
-      const q = add.value.trim().toLowerCase(); const hits = $('#lsteHits'); if (q.length < 2) { hits.innerHTML = ''; return; }
-      const found = players.filter(p => p.active && !l.items[p.id] && (p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q))).slice(0, 8);
-      hits.innerHTML = found.map(p => '<a data-add="'+p.id+'">'+roleTag(p.role)+' '+esc(p.name)+' <span class="muted">'+esc(p.team)+' · quot. '+p.price+'</span></a>').join('') || '<span class="muted small">Nessun giocatore trovato</span>';
-      $$('[data-add]', hits).forEach(a => { a.onclick = async () => { await setTier(+a.dataset.add, +$('#lsteAddTier').value); add.value = ''; hits.innerHTML = ''; }; });
-    };
-    // il listone completo con i filtri: e' il modo principale per costruire la lista
-    if (br) {
-      if (br.dataset.list !== l.id) { br.innerHTML = '<div class="card"><h2>📋 Scegli dal listone</h2><p class="small">Filtra per ruolo, squadra, voto o tier già assegnato e imposta il tier nella colonna <b>Tier</b>: la lista sopra si aggiorna subito. Clic sul nome per la scheda del giocatore.</p><div id="leFilters"></div><div id="leTable" style="margin-top:8px"></div></div>'; br.dataset.list = l.id; }
-      ensureFilters('le', $('#leFilters'), renderListBrowse, false);
-      renderListBrowse();
-    }
-  } else {
-    if (br) { br.innerHTML = ''; br.dataset.list = ''; }
-  }
-  if (!own && user && $('#lsteCopy')) {
-    $('#lsteCopy').onclick = async () => {
-      const { data, error } = await sb.rpc('copy_list', { p_code: l.share_code, p_name: null }); if (error) return err(error);
-      sharedList = null; history.replaceState(null, '', '#liste'); await loadLists(); await selectList(data); msg('Lista copiata fra le tue', 'ok'); renderListe();
-    };
-  }
-}
-function renderListTiers(l, own){
-  const box = $('#lsteTiers'); if (!box || !l) return;
-  const byTier = {}; Object.keys(l.items).forEach(pid => { const it = l.items[pid]; (byTier[it.tier] = byTier[it.tier] || []).push(+pid); });
-  const cnt = $('#lsteCount'); if (cnt) cnt.textContent = Object.keys(l.items).length;
-  let h = '';
-  for (let t = 1; t <= 5; t++) {
-    const ps = (byTier[t] || []).map(pid => playersById[pid]).filter(Boolean).sort((a, b) => ROLES.indexOf(a.role) - ROLES.indexOf(b.role) || b.price - a.price);
-    h += '<h3><span class="tier t'+t+'">T'+t+'</span> '+TIERS[t]+' <span class="muted">('+ps.length+')</span></h3>' + (ps.length ? '<div class="tw"><table><thead><tr><th>R</th><th>Giocatore</th><th>Squadra</th><th class="num">Quot.</th><th class="num">MV</th><th class="num">FMV</th><th class="num">Tit.</th><th>'+(own ? 'Nota' : '')+'</th>'+(own ? '<th></th>' : '')+'</tr></thead><tbody>' +
-      ps.map(p => { const s = schede[p.id] || {}; const it = l.items[p.id];
-        return '<tr class="tr'+t+'"><td>'+roleTag(p.role)+'</td><td>'+(s.url ? '<a class="pl" href="'+esc(s.url)+'">'+esc(p.name)+'</a>' : esc(p.name))+'</td><td class="muted">'+esc(p.team)+'</td><td class="num"><b>'+p.price+'</b></td><td class="num">'+heatFmt(s.mv)+'</td><td class="num">'+heatFmt(s.fmv)+'</td><td class="num">'+(s.tit != null ? '<span class="pct '+(s.tit >= 70 ? 'g' : s.tit >= 40 ? 'a' : 'r')+'">'+s.tit+'%</span>' : '—')+'</td>' +
-          (own ? '<td><input class="note" data-note="'+p.id+'" value="'+esc(it.note || '')+'" placeholder="nota"></td><td>'+tierSelect(p.id, it.tier, true)+'</td>' : '<td class="muted">'+esc(it.note || '')+'</td>') + '</tr>'; }).join('') + '</tbody></table></div>' : '<div class="muted small">Nessun giocatore in questo tier.</div>');
-  }
-  box.innerHTML = h;
-  if (own) box.onchange = async e => {
-    const s = e.target.closest('.tierSel'); if (s) return setTier(+s.dataset.pid, +s.value);
-    const n = e.target.closest('[data-note]'); if (n) { const pid = +n.dataset.note; const { error } = await sb.from('list_items').update({ note: n.value }).eq('list_id', l.id).eq('player_id', pid); if (error) err(error); else if (l.items[pid]) l.items[pid].note = n.value; }
-  };
-}
-function renderListBrowse(){
-  const el = $('#leTable'); if (!el || !curList) return;
-  el.innerHTML = players.length ? listoneHtml(filterPlayers('le'), lsState.le, false) : '<div class="msg">Listone non ancora caricato.</div>';
-  bindSort(el, 'le', renderListBrowse);
-}
-async function renderFeatured(){
-  const box = $('#lsteFeatured'); if (!box) return;
-  await loadSharedLists();
-  const rows = sharedLists;
-  box.innerHTML = (rows.length ? '<ul class="list">' + rows.map(l => '<li><div><b>'+esc(l.name)+'</b>'+(l.featured ? ' <span class="pill">consigliata</span>' : '')+'<div class="muted">'+(l.author ? 'di '+esc(l.author) : 'lista condivisa')+(l.description ? ' · '+esc(l.description) : '')+'</div></div><button class="small sec" data-shared="'+esc(l.share_code)+'">Apri</button></li>').join('') + '</ul>' : '<div class="muted small">Nessuna lista condivisa al momento. Le liste "consigliate" (redazione, influencer) compariranno qui.</div>') +
-    '<div class="row" style="margin-top:10px"><input id="lsteCode" placeholder="Codice di una lista condivisa" style="text-transform:uppercase"><button id="lsteOpen" class="sec" style="flex:0 0 auto">Apri</button></div>';
-  $$('[data-shared]', box).forEach(b => { b.onclick = () => openSharedList(b.dataset.shared); });
-  $('#lsteOpen').onclick = () => openSharedList($('#lsteCode').value.trim());
-}
-async function openSharedList(code){
-  if (!code) return;
-  const { data, error } = await sb.from('lists').select('*').eq('share_code', code.toUpperCase()).maybeSingle();
-  if (error || !data) return msg('Lista non trovata o non condivisa', 'err');
-  const { data: items } = await sb.from('list_items').select('player_id,tier,note').eq('list_id', data.id);
-  sharedList = Object.assign({ items: {} }, data); (items || []).forEach(it => { sharedList.items[it.player_id] = { tier: it.tier, note: it.note || '' }; });
-  show('liste'); history.replaceState(null, '', '#lista/' + data.share_code);
-}
-
-/* ---------- import rose da Excel/CSV (admin di lega) e squadre in attesa (fix-008) ---------- */
-let impRows = [];
-const normTxt = s => String(s == null ? '' : s).replace(/[ðđ]/g, 'd').replace(/[ÐĐ]/g, 'D').replace(/ø/g, 'o').replace(/Ø/g, 'O').replace(/ł/g, 'l').replace(/Ł/g, 'L').replace(/ß/g, 'ss').replace(/æ/g, 'ae').replace(/þ/g, 'th').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim();
-const numv = v => { if (v == null || v === '') return null; const f = parseFloat(String(v).replace(',', '.').replace(/[^\d.\-]/g, '')); return isNaN(f) ? null : Math.round(f); };
-const HDR = { team: ['fantasquadra', 'fanta squadra', 'squadra fantacalcio', 'fantallenatore', 'allenatore', 'proprietario', 'team', 'squadra'], player: ['giocatore', 'calciatore', 'nome', 'player', 'name'],
-  price: ['prezzo', 'costo', 'crediti', 'quotazione', 'pagato', 'euro', 'price', 'valore'], role: ['ruolo', 'r', 'role'], real: ['squadra reale', 'club', 'sq', 'squadra calciatore', 'squadra del giocatore', 'squadra serie a'] };
-function loadXlsx(){ return new Promise((res, rej) => { if (window.XLSX) return res(); const s = document.createElement('script'); s.src = 'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js'; s.onload = res; s.onerror = () => rej(new Error('Libreria Excel non caricata: controlla la connessione')); document.head.appendChild(s); }); }
-function detectCols(row){
-  const cols = {};
-  (row || []).forEach((c, i) => { const n = normTxt(c); if (!n) return;
-    if (n === 'squadra' && cols.team != null && cols.real == null) { cols.real = i; return; }
-    for (const k in HDR) { if (cols[k] == null && HDR[k].some(h => n === normTxt(h))) { cols[k] = i; return; } } });
-  return cols;
-}
-function parseRows(rows){
-  let head = -1, cols = {};
-  for (let i = 0; i < Math.min(rows.length, 20); i++) { const c = detectCols(rows[i]); if (c.player != null && c.team != null) { head = i; cols = c; break; } }
-  const out = [];
-  if (head >= 0) {
-    for (let i = head + 1; i < rows.length; i++) { const r = rows[i] || []; if (!r[cols.player]) continue;
-      out.push({ team: String(r[cols.team] || '').trim(), player: String(r[cols.player]).trim(), price: cols.price != null ? numv(r[cols.price]) : null,
-        role: cols.role != null ? String(r[cols.role] || '').trim().toUpperCase() : '', real: cols.real != null ? String(r[cols.real] || '').trim() : '' }); }
-  } else {   // blocchi (export "rose" di Fantacalcio.it): riga con una sola cella = fantasquadra; poi righe Ruolo, Calciatore, Squadra, Costo
-    let team = '';
-    for (const r of rows) {
-      const cells = (r || []).map(c => String(c == null ? '' : c).trim()).filter(Boolean); if (!cells.length) continue;
-      if (cells.length === 1) { if (!/^(ruolo|calciatore|giocatore|squadra|costo|prezzo|crediti)$/i.test(cells[0])) team = cells[0]; continue; }
-      if (cells.every(c => /^(ruolo|calciatore|giocatore|squadra|costo|prezzo|crediti|r|nome)$/i.test(c))) continue;
-      const role = cells.find(c => /^[PDCA]$/i.test(c)) || ''; const nums = cells.filter(c => /^\d+([.,]\d+)?$/.test(c));
-      const texts = cells.filter(c => c !== role && !nums.includes(c)); if (!texts.length) continue;
-      out.push({ team: team, player: texts[0], real: texts[1] || '', price: nums.length ? numv(nums[nums.length - 1]) : null, role: role.toUpperCase() });
-    }
-  }
-  return out.filter(x => x.player && x.team);
-}
-function playerKeys(p){
-  const s = schede[p.id] || {}; const slug = s.url ? s.url.replace(/^\/giocatori\//, '').replace(/\.html$/, '').replace(/-\d+$/, '').replace(/-/g, ' ') : '';
-  const sur = normTxt(p.name.replace(/^[A-Za-zÀ-ɏ]\.\s*/, ''));
-  return { sur: sur, toks: new Set((sur + ' ' + normTxt(slug)).split(' ').filter(t => t.length > 1)) };
-}
-function matchPlayer(row){
-  if (!keyCache) { keyCache = {}; players.forEach(p => { if (p.active) keyCache[p.id] = playerKeys(p); }); }
-  const full = normTxt(row.player), inToks = full.split(' ').filter(t => t.length > 1);
-  if (!inToks.length) return { list: [], sure: false };
-  const score = p => { const k = keyCache[p.id]; let s = inToks.filter(t => k.toks.has(t)).length * 2;
-    if (full === k.sur || k.sur === inToks.join(' ')) s += 3;
-    if (row.role && p.role === row.role) s += 2; else if (row.role && /^[PDCA]$/.test(row.role) && p.role !== row.role) s -= 3;
-    if (row.real) { const rt = normTxt(row.real), pt = normTxt(p.team); if (pt === rt || pt.includes(rt) || rt.includes(pt.split(' ').pop())) s += 2; }
-    return s; };
-  let cands = players.filter(p => p.active && keyCache[p.id] && inToks.some(t => t.length >= 3 && keyCache[p.id].toks.has(t))).map(p => [p, score(p)]).sort((a, b) => b[1] - a[1]);
-  if (!cands.length) return { list: [], sure: false };
-  return { list: cands.slice(0, 6).map(c => c[0]), sure: cands.length === 1 || cands[0][1] > cands[1][1] };
-}
-function importHtml(){
-  return '<div class="card imp" style="margin-top:18px" id="impCard"><h2>Importa le rose da Excel o CSV</h2>' +
-    '<p class="small">Formati accettati: una tabella con colonne <b>Fantasquadra</b>, <b>Giocatore</b>, <b>Prezzo</b> (e se ci sono Ruolo e Squadra reale, aiutano l\'abbinamento), oppure l\'export "rose" di Fantacalcio.it a blocchi (riga con il nome della fantasquadra, poi Ruolo · Calciatore · Squadra · Costo). ' +
-    'Se il nome della fantasquadra coincide con quello di un partecipante (maiuscole e spazi non contano), la rosa va a lui con i prezzi e i crediti si scalano; altrimenti la squadra resta <b>in attesa</b> e chi entra con il codice invito la sceglie come propria.</p>' +
-    '<div class="row"><input type="file" id="impFile" accept=".xlsx,.xls,.csv"><label class="small chk1"><input type="checkbox" id="impReplace" checked> sostituisci le rose già presenti (rimborsando i crediti)</label></div>' +
-    '<div id="impPreview"></div></div>';
-}
-function bindImport(){
-  const f = $('#impFile'); if (!f) return;
-  f.onchange = async () => { const file = f.files && f.files[0]; if (!file) return; msg('Leggo il file…', 'ok');
-    try { await loadXlsx(); const buf = await file.arrayBuffer(); const wb = XLSX.read(buf, { type: 'array' }); const ws = wb.Sheets[wb.SheetNames[0]];
-      const rows = XLSX.utils.sheet_to_json(ws, { header: 1, raw: true, defval: '' });
-      const parsed = parseRows(rows);
-      if (!parsed.length) return msg('Nessuna riga riconosciuta: servono almeno le colonne Fantasquadra, Giocatore e Prezzo (o il formato a blocchi)', 'err');
-      keyCache = null;
-      impRows = parsed.map(r => { const m = matchPlayer(r); return Object.assign(r, { cands: m.list, pid: (m.list.length && m.sure) ? m.list[0].id : null, sure: m.sure }); });
-      msg(''); renderImportPreview();
-    } catch (e) { err(e); } };
-}
-function renderImportPreview(){
-  const box = $('#impPreview'); if (!box) return;
-  const teams = {}; impRows.forEach((r, i) => { (teams[r.team] = teams[r.team] || []).push(i); });
-  const memberOf = {}; L.members.forEach(m => { memberOf[normTxt(m.team_name)] = m; });
-  const optOf = (r, i) => '<select data-row="'+i+'"><option value="">— salta —</option>' + r.cands.map(p => '<option value="'+p.id+'"'+(p.id === r.pid ? ' selected' : '')+'>'+esc(p.role+' '+p.name+' · '+p.team)+'</option>').join('') + '</select><input class="fix" data-fix="'+i+'" placeholder="cerca…">';
-  let h = ''; let tot = 0;
-  Object.keys(teams).forEach(t => { const m = memberOf[normTxt(t)]; const idx = teams[t];
-    h += '<h3>'+esc(t)+' <span class="muted">('+idx.length+' righe · '+(m ? 'partecipante: '+esc(m.team_name) : 'nessun partecipante con questo nome: resterà in attesa')+')</span></h3><div class="tw"><table><thead><tr><th>Nel file</th><th>Giocatore FantaTB</th><th class="num">Prezzo</th><th>Esito</th></tr></thead><tbody>';
-    idx.forEach(i => { const r = impRows[i]; if (r.pid) tot++;
-      h += '<tr><td>'+esc(r.player)+(r.role ? ' <span class="muted">'+esc(r.role)+'</span>' : '')+(r.real ? ' <span class="muted">'+esc(r.real)+'</span>' : '')+'</td><td>'+optOf(r, i)+'</td><td class="num">'+(r.price != null ? r.price : '<span class="ko">—</span>')+'</td>' +
-        '<td>'+(r.pid ? (r.sure ? '<span class="ok">✓ abbinato</span>' : '<span class="amb">scelto fra più candidati</span>') : (r.cands.length ? '<span class="amb">⚠ ambiguo: scegli</span>' : '<span class="ko">✗ non trovato</span>'))+'</td></tr>'; });
-    h += '</tbody></table></div>'; });
-  box.innerHTML = h + '<div class="row" style="margin-top:10px"><button id="impGo" style="flex:0 0 auto">Importa '+tot+' giocatori in '+Object.keys(teams).length+' squadre</button><span class="small">Le righe senza abbinamento vengono saltate. Controlla i prezzi: quelli mancanti valgono 0.</span></div>';
-  box.onchange = e => { const s = e.target.closest('select[data-row]'); if (s) { const r = impRows[+s.dataset.row]; r.pid = s.value ? +s.value : null; r.sure = true; renderImportPreview(); } };
-  box.oninput = e => { const f = e.target.closest('input[data-fix]'); if (!f) return; const q = f.value.trim().toLowerCase(); if (q.length < 2) return;
-    const r = impRows[+f.dataset.fix]; r.cands = players.filter(p => p.active && (p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q))).slice(0, 8);
-    const sel = f.previousElementSibling; sel.innerHTML = '<option value="">— salta —</option>' + r.cands.map(p => '<option value="'+p.id+'">'+esc(p.role+' '+p.name+' · '+p.team)+'</option>').join(''); };
-  $('#impGo').onclick = async () => {
-    const replace = $('#impReplace').checked; const results = [];
-    for (const t of Object.keys(teams)) {
-      const roster = teams[t].map(i => impRows[i]).filter(r => r.pid).map(r => ({ player_id: r.pid, price: r.price || 0 }));
-      const { data, error } = await sb.rpc('import_roster', { p_league: L.league.id, p_team: t, p_roster: roster, p_replace: replace });
-      results.push(error ? esc(t)+': errore ('+esc(error.message)+')' : esc(data.team)+': '+(data.pending ? data.players+' giocatori, squadra <b>in attesa</b> di chi entrerà col codice' : data.players+' giocatori assegnati'+(data.skipped ? ', '+data.skipped+' saltati (già in altre rose o non validi)' : '')));
-    }
-    box.innerHTML = '<div class="msg ok"><b>Import completato.</b><br>'+results.join('<br>')+'</div>';
-    impRows = []; await refreshLeagueData(); loadPending();
-  };
-}
-async function loadPending(){
-  const box = $('#pendingBox'); if (!box || !L) return;
-  const { data, error } = await sb.from('league_pending').select('team_name,roster,created_at').eq('league_id', L.league.id).order('team_name');
-  if (error || !data || !data.length) { box.innerHTML = ''; return; }
-  box.innerHTML = '<h3 style="margin-top:18px">Squadre in attesa ('+data.length+')</h3><p class="small">Rose già caricate: chi entra con il codice invito <b>'+esc(L.league.invite_code)+'</b> sceglie una di queste squadre e la eredita con giocatori e prezzi.</p><ul class="list">' +
-    data.map(p => '<li><div><b>'+esc(p.team_name)+'</b><div class="muted">'+(p.roster || []).length+' giocatori · '+(p.roster || []).reduce((a, x) => a + (x.price || 0), 0)+' crediti spesi</div></div>'+(L.isAdmin ? '<button class="small warn" data-delpend="'+esc(p.team_name)+'">Elimina</button>' : '')+'</li>').join('') + '</ul>';
-  $$('[data-delpend]', box).forEach(b => { b.onclick = async () => { if (!confirm('Eliminare la squadra in attesa "'+b.dataset.delpend+'"?')) return; const { error } = await sb.rpc('delete_pending', { p_league: L.league.id, p_team: b.dataset.delpend }); if (error) err(error); else loadPending(); }; });
-}
-async function checkPendingForCode(){
-  const code = $('#jnCode').value.trim(); const box = $('#jnPickBox'), sel = $('#jnPick');
-  if (!box || code.length < 8) { if (box) box.classList.add('hidden'); return; }
-  const { data, error } = await sb.rpc('pending_teams', { p_code: code });
-  if (error || !data || !data.length) { box.classList.add('hidden'); return; }
-  sel.innerHTML = '<option value="">— squadra nuova (scrivi il nome qui sotto) —</option>' + data.map(t => '<option value="'+esc(t.team_name)+'">'+esc(t.team_name)+' ('+t.players+' giocatori già in rosa)</option>').join('');
-  box.classList.remove('hidden');
-}
-
 async function init(){
   if (!CFG.SUPABASE_URL || CFG.SUPABASE_URL.includes('INSERISCI')) { msg('FantaTB non è ancora configurato (fanta/config.js).', 'err'); show('regole'); return; }
   sb = window.supabase.createClient(CFG.SUPABASE_URL, CFG.SUPABASE_ANON_KEY);
-  const h = location.hash;   // letto PRIMA di initAuth: show() lo sovrascrive con la vista corrente
   await Promise.all([loadPlayers(), loadMatchdays()]);
   await initAuth();
-  const m = h.match(/^#lega\/([0-9a-f-]{36})(?:\/([a-z]+))?$/);
-  if (m && user) openLeague(m[1], m[2]);
-  await loadLists(); await loadSharedLists(); await restoreActiveList();
-  const v = h.slice(1);
-  if (['listone', 'voti', 'regole', 'liste'].includes(v)) show(v);   // viste pubbliche raggiungibili anche senza login
-  const ml = h.match(/^#lista\/([A-Za-z0-9]{6,12})$/);
-  if (ml) openSharedList(ml[1]);
-  if (h === '#crea') { if (user) { show('home'); setTimeout(() => { const f = $('#clName'); if (f) { f.scrollIntoView({ behavior: 'smooth', block: 'center' }); f.focus(); } }, 300); } else msg('Entra o crea un account: poi "Crea una lega" è nella tua pagina.', 'ok'); }
+  const m = location.hash.match(/^#lega\/([0-9a-f-]{36})$/);
+  if (m && user) openLeague(m[1]);
+  if (location.hash === '#crea') { if (user) { show('home'); setTimeout(() => { const f = $('#clName'); if (f) { f.scrollIntoView({ behavior: 'smooth', block: 'center' }); f.focus(); } }, 300); } else msg('Entra o crea un account: poi "Crea una lega" è nella tua pagina.', 'ok'); }
 }
 init().catch(err);
 })();

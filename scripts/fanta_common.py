@@ -4,12 +4,6 @@
 import json, os, sys, time
 import requests
 
-for _s in (sys.stdout, sys.stderr):   # console Windows non UTF-8: i caratteri non rappresentabili diventano '?' invece di far crashare
-    try:
-        _s.reconfigure(errors="replace")
-    except Exception:
-        pass
-
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data", "fanta")
 SEASON = int(os.environ.get("FANTA_SEASON", "2026"))   # stagione 2026-27
@@ -77,34 +71,14 @@ def sb_upsert(table, rows, on_conflict=None, chunk=500):
             raise RuntimeError("Supabase %s: %s %s" % (table, r.status_code, r.text[:300]))
     return True
 
-def sb_get(table, params, page=1000):
-    """GET su Supabase con la service key. Legge tutte le righe a blocchi di `page` (PostgREST ne restituisce al massimo 1000 per chiamata)."""
+def sb_get(table, params):
     url, key = supabase_conf()
     if not (url and key):
         return []
-    out, start = [], 0
-    while True:
-        h = {"apikey": key, "Authorization": "Bearer " + key, "Range": "%d-%d" % (start, start + page - 1)}
-        r = requests.get(url + "/rest/v1/" + table, headers=h, params=params, timeout=60)
-        if r.status_code == 416:   # oltre l'ultima riga
-            break
-        r.raise_for_status()
-        chunk = r.json(); out.extend(chunk)
-        if len(chunk) < page:
-            break
-        start += page
-    return out
-
-def sb_patch(table, filters, data):
-    """PATCH su Supabase con la service key: aggiorna `data` sulle righe che rispettano `filters` (es. {"id": "in.(1,2)"})."""
-    url, key = supabase_conf()
-    if not (url and key):
-        print("Supabase non configurato: salto la patch su", table); return False
-    h = {"apikey": key, "Authorization": "Bearer " + key, "Content-Type": "application/json", "Prefer": "return=minimal"}
-    r = requests.patch(url + "/rest/v1/" + table, headers=h, params=filters, data=json.dumps(data), timeout=60)
-    if r.status_code >= 300:
-        raise RuntimeError("Supabase patch %s: %s %s" % (table, r.status_code, r.text[:300]))
-    return True
+    h = {"apikey": key, "Authorization": "Bearer " + key}
+    r = requests.get(url + "/rest/v1/" + table, headers=h, params=params, timeout=60)
+    r.raise_for_status()
+    return r.json()
 
 def save_json(name, obj):
     os.makedirs(DATA, exist_ok=True)

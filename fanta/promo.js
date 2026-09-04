@@ -10,7 +10,8 @@
   }[lang] || null;
   if (!T) T = arguments.callee ? null : null;
   T = T || {kicker:'IL FANTACALCIO DI TRANSFERBEAT', h:'FantaTB è gratis. Per sempre.', p:'', cta:'Crea la tua lega ora', side1:'', side2:'', side3:'', more:'Scopri FantaTB', close:'Chiudi'};
-  var landing = '/fantatb.html', app = landing;   // URL assoluto: lo script gira anche in /articoli/, /squadre/, /campionati/, /fantacalcio/
+  var base = (location.pathname.indexOf('/articoli/') === 0) ? '/' : '';   // le pagine articolo stanno due livelli sotto
+  var landing = base + 'fantatb.html?lang=' + lang, app = landing;
   var css = '.tbp-top{background:linear-gradient(100deg,#ff2e88,#ff7a1a 55%,#ffd400);color:#1b1140;font-family:"Segoe UI",system-ui,sans-serif;position:relative}'+
     '.tbp-top .w{max-width:1180px;margin:0 auto;padding:12px 56px 12px 18px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}'+
     '.tbp-top .k{font-size:10px;font-weight:800;letter-spacing:1.2px;opacity:.85}.tbp-top .h{font-family:Georgia,serif;font-size:20px;font-weight:700;line-height:1.1}'+
