@@ -366,6 +366,14 @@ budget per ruolo, obiettivi con priorità, prezzo atteso, tetto, MV/FMV/titolari
 lista, filtro automatico) e "La mia rosa" (slot per ruolo precompilati con la rosa della lega aperta, formule SUM/COUNTA per speso, residuo,
 slot riempiti, totale). Leggibilità: `--muted` più scuro (#4f5b67), testi secondari 13px, lead 16px. Logo in testata → `href="/"`.
 Descrizioni delle 4 strategie riscritte con la logica dei tier (rilanciare `fanta_strategie.py` per aggiornarle nel DB).
+**Bug grave trovato e corretto (2026-09-04 sera):** avevo messo `data-view` sul `<body>` per i colori di sezione, ma il gestore globale
+dei clic fa `e.target.closest('[data-view]')` e risale fino al body: OGNI clic ovunque richiamava `show(vista)` e ridisegnava la vista,
+cancellando campi inline, link e dialoghi ("l'Excel non si scarica", "non si rinomina la lista"). Ora l'attributo è **`data-sec`**
+(`body[data-sec=...]` nello stile). Regola: mai usare `data-view`/`data-tab`/`data-ltab` su elementi che non siano link del menu.
+Nella stessa passata: **niente più `prompt()`/`confirm()`** per creare, rinominare, eliminare liste e strategie (campo inline `.newbox`
+nella striscia, rinomina inline nel titolo, eliminazione a due clic "Sicuro? Elimina davvero"): alcuni browser li bloccano. Export Excel
+con **link di riserva** (`#strXlsxLink`, blob URL, "File pronto: clicca qui") oltre al download automatico di `XLSX.writeFile`.
+Restano 3 `confirm()` nelle azioni admin di lega (svincola, elimina squadra in attesa): da convertire allo stesso modo.
 
 ## 16. Allineamento al listone ufficiale: ruoli, squadre, quotazioni (2026-09-04, `scripts/fanta_quotazioni.py`)
 **Problema.** Ruolo e squadra in `players` vengono dal feed API-Football: la posizione (Midfielder/Defender) NON è il ruolo del fantacalcio

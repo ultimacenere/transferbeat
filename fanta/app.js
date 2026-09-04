@@ -25,7 +25,7 @@ function show(view){
   if (view === 'voti') loadVoti();
   if (view === 'liste') { renderListe(); if (lsteTab === 'strategie') renderStrategie(); }
   if (view === 'messaggi') renderMessaggi();
-  document.body.dataset.view = view;   // colore di sezione (style.css: body[data-view=...])
+  document.body.dataset.sec = view;   // colore di sezione (style.css: body[data-sec=...]); NON data-view: il gestore dei clic risale agli antenati con [data-view]
   if (['home', 'listone', 'voti', 'regole', 'messaggi'].includes(view)) history.replaceState(null, '', '#' + view);   // cosi' "indietro" dalle schede giocatore torna qui
   if (view === 'liste') history.replaceState(null, '', '#' + (lsteTab === 'strategie' ? 'strategie' : 'liste'));
 }
@@ -261,7 +261,7 @@ async function openLeague(id, tab){
   $('#lgName').textContent = league.name;
   $('#lgSub').innerHTML = esc(L.me.team_name)+' · '+members.length+'/'+(league.settings.max_teams || 20)+' squadre · codice invito <span class="code">'+esc(league.invite_code)+'</span>';
   await refreshLeagueData();
-  document.body.dataset.view = 'league';
+  document.body.dataset.sec = 'league';
   renderTabs(tab); renderRules(); renderAuction(); subscribe(); loadSeasonData(); leagueKpis();
 }
 async function refreshLeagueData(){
@@ -678,12 +678,12 @@ async function renderListe(){
   const bar = $('#lsteBar'); if (!bar) return;
   await loadLists(); await loadSharedLists();
   const on = l => !!(curList && curList.id === l.id && !sharedList);
-  bar.innerHTML = (user ? '<button id="lsteCreateBtn">＋ Crea la tua lista</button>' : '<a data-view="auth" class="btn">Entra per creare la tua lista</a>') +
+  bar.innerHTML = (user ? '<span class="newbox"><input id="lsteNew" placeholder="Nome della nuova lista, es. Asta 2026"><button id="lsteCreateBtn">＋ Crea</button></span>' : '<a data-view="auth" class="btn">Entra per creare la tua lista</a>') +
     lists.map(l => '<a class="chip'+(on(l) ? ' on' : '')+'" data-list="'+l.id+'" data-name="'+esc(l.name)+'" title="'+(l.is_public ? 'condivisa · codice '+esc(l.share_code) : 'privata')+'">'+(on(l) ? '✓ ' : '')+esc(l.name)+(l.is_public ? ' 🔗' : '')+'</a>').join('') +
     (user && !lists.length ? '<span class="small" style="align-self:center">Nessuna lista ancora: creane una e assegna i tier dal listone qui sotto.</span>' : '');
   $$('[data-list]', bar).forEach(b => { b.onclick = async () => { sharedList = null; await selectList(b.dataset.list); history.replaceState(null, '', '#liste'); await renderListe(); msg('Lista "'+b.dataset.name+'" attiva: assegna i tier dal listone qui sotto o dal Listone', 'ok'); }; });
   const cb = $('#lsteCreateBtn');
-  if (cb) cb.onclick = async () => { const name = prompt('Nome della nuova lista', 'Asta ' + new Date().getFullYear()); if (!name || !name.trim()) return;
+  if (cb) cb.onclick = async () => { const name = (($('#lsteNew') || {}).value || '').trim(); if (!name) { msg('Scrivi il nome della nuova lista nel campo accanto al pulsante', 'err'); return; }
     const { data, error } = await sb.from('lists').insert({ owner_id: user.id, name: name.trim(), author: (user.user_metadata && user.user_metadata.username) || '' }).select().single();
     if (error) return err(error); sharedList = null; await loadLists(); await selectList(data.id); renderListe(); };
   const tb = $('#lsteTb'); const feat = sharedLists.filter(l => l.featured);
@@ -713,8 +713,11 @@ function renderListEditor(){
   renderListTiers(l, own);
   if (own) {
     $('#lsteShare').onclick = async () => { const { error } = await sb.from('lists').update({ is_public: !l.is_public }).eq('id', l.id); if (error) return err(error); await loadLists(); await selectList(l.id); renderListe(); };
-    $('#lsteRename').onclick = async () => { const name = prompt('Nuovo nome della lista', l.name); if (!name || !name.trim()) return; const { error } = await sb.from('lists').update({ name: name.trim() }).eq('id', l.id); if (error) return err(error); await loadLists(); await selectList(l.id); renderListe(); };
-    $('#lsteDelete').onclick = async () => { if (!confirm('Eliminare la lista "'+l.name+'"?')) return; const { error } = await sb.from('lists').delete().eq('id', l.id); if (error) return err(error); curList = null; localStorage.removeItem('fantatb_list'); await loadLists(); renderListe(); };
+    $('#lsteRename').onclick = () => { const h2 = $('#lsteEditor h2'); if (!h2 || $('#lsteRenameInp')) return;
+      h2.innerHTML = '<input id="lsteRenameInp" value="'+esc(l.name)+'" style="width:auto;min-width:240px"> <button class="small" id="lsteRenameOk">Salva nome</button>'; $('#lsteRenameInp').focus();
+      $('#lsteRenameOk').onclick = async () => { const name = $('#lsteRenameInp').value.trim(); if (!name) return; const { error } = await sb.from('lists').update({ name: name }).eq('id', l.id); if (error) return err(error); await loadLists(); await selectList(l.id); renderListe(); };
+      $('#lsteRenameInp').onkeydown = e => { if (e.key === 'Enter') $('#lsteRenameOk').click(); }; };
+    $('#lsteDelete').onclick = async () => { const b = $('#lsteDelete'); if (b.dataset.sure !== '1') { b.dataset.sure = '1'; b.textContent = 'Sicuro? Elimina davvero'; return; } const { error } = await sb.from('lists').delete().eq('id', l.id); if (error) return err(error); curList = null; localStorage.removeItem('fantatb_list'); await loadLists(); renderListe(); };
     const add = $('#lsteAdd');
     add.oninput = () => {
       const q = add.value.trim().toLowerCase(); const hits = $('#lsteHits'); if (q.length < 2) { hits.innerHTML = ''; return; }
@@ -1067,12 +1070,12 @@ async function renderStrategie(){
   const bar = $('#strBar'), ed = $('#strEditor'), tb = $('#strTb'), sh = $('#strShared'); if (!ed) return;
   await Promise.all([loadStrategies(), loadSharedStrategies()]);
   const on = s => !!(curStrat && curStrat.id === s.id && !sharedStrat);
-  bar.innerHTML = (user ? '<button id="strNew">＋ Crea la tua strategia</button>' : '<a data-view="auth" class="btn">Entra per creare la tua strategia</a>') +
+  bar.innerHTML = (user ? '<span class="newbox"><input id="strNewName" placeholder="Nome della nuova strategia"><button id="strNew">＋ Crea</button></span>' : '<a data-view="auth" class="btn">Entra per creare la tua strategia</a>') +
     strategies.map(s => '<a class="chip'+(on(s) ? ' on' : '')+'" data-strat="'+s.id+'" title="'+s.teams+' squadre · '+s.credits+' crediti'+(s.is_public ? ' · condivisa '+esc(s.share_code) : '')+'">'+(on(s) ? '✓ ' : '')+esc(s.name)+(s.is_public ? ' 🔗' : '')+'</a>').join('') +
     (user && !strategies.length ? '<span class="small" style="align-self:center">Nessuna strategia ancora: creane una o parti da una di TransferBeat con "Usa".</span>' : '');
   $$('[data-strat]', bar).forEach(b => { b.onclick = async () => { sharedStrat = null; await selectStrategy(b.dataset.strat); history.replaceState(null, '', '#strategie'); renderStrategie(); }; });
   const nb = $('#strNew');
-  if (nb) nb.onclick = async () => { const name = prompt('Nome della strategia', 'Asta ' + new Date().getFullYear()); if (!name || !name.trim()) return;
+  if (nb) nb.onclick = async () => { const name = (($('#strNewName') || {}).value || '').trim(); if (!name) { msg('Scrivi il nome della nuova strategia nel campo accanto al pulsante', 'err'); return; }
     const { data, error } = await sb.from('strategies').insert(Object.assign({}, DEF_STRAT, { name: name.trim(), owner_id: user.id, author: (user.user_metadata && user.user_metadata.username) || '', list_id: curList ? curList.id : null })).select().single();
     if (error) return err(error); sharedStrat = null; await loadStrategies(); await selectStrategy(data.id); renderStrategie(); };
   const feat = sharedStrategies.filter(s => s.featured), pub = sharedStrategies.filter(s => !s.featured);
@@ -1097,7 +1100,7 @@ async function renderStrategie(){
     $('#strSave').onclick = async () => { const s = readStratForm(st); const row = { name: s.name, description: s.description, teams: s.teams, credits: s.credits, slots: s.slots, budget: s.budget, targets: s.targets, list_id: s.list_id, updated_at: new Date().toISOString() };
       const { error } = await sb.from('strategies').update(row).eq('id', st.id); if (error) return err(error); await loadStrategies(); await selectStrategy(st.id); msg('Strategia salvata', 'ok'); renderStrategie(); };
     $('#strShare').onclick = async () => { const { error } = await sb.from('strategies').update({ is_public: !st.is_public }).eq('id', st.id); if (error) return err(error); await loadStrategies(); await selectStrategy(st.id); renderStrategie(); };
-    $('#strDelete').onclick = async () => { if (!confirm('Eliminare la strategia "'+st.name+'"?')) return; const { error } = await sb.from('strategies').delete().eq('id', st.id); if (error) return err(error); curStrat = null; localStorage.removeItem('fantatb_strategy'); await loadStrategies(); renderStrategie(); };
+    $('#strDelete').onclick = async () => { const b = $('#strDelete'); if (b.dataset.sure !== '1') { b.dataset.sure = '1'; b.textContent = 'Sicuro? Elimina davvero'; return; } const { error } = await sb.from('strategies').delete().eq('id', st.id); if (error) return err(error); curStrat = null; localStorage.removeItem('fantatb_strategy'); await loadStrategies(); renderStrategie(); };
   } else if (user && $('#strCopy')) {
     $('#strCopy').onclick = async () => { const { data, error } = await sb.rpc('copy_strategy', { p_code: st.share_code, p_name: null }); if (error) return err(error); sharedStrat = null; await loadLists(); await loadStrategies(); await selectStrategy(data); msg('Strategia copiata fra le tue: ora puoi modificarla', 'ok'); history.replaceState(null, '', '#strategie'); renderStrategie(); };
   }
@@ -1130,7 +1133,12 @@ async function exportStrategyXlsx(st){
   rr.push(['Totale', st.credits, { t: 'n', f: 'SUM(C' + first + ':C' + last + ')' }, { t: 'n', f: st.credits + '-SUM(C' + first + ':C' + last + ')' }, { t: 'n', f: 'SUM(E' + first + ':E' + last + ')' }]);
   const ws3 = XLSX.utils.aoa_to_sheet(rr); ws3['!cols'] = [{ wch: 8 }, { wch: 6 }, { wch: 24 }, { wch: 14 }, { wch: 17 }, { wch: 24 }];
   XLSX.utils.book_append_sheet(wb, ws3, 'La mia rosa');
-  XLSX.writeFile(wb, 'FantaTB - ' + String(st.name).replace(/[\\/:*?"<>|]+/g, ' ') + '.xlsx');
+  const fname = 'FantaTB - ' + String(st.name).replace(/[\\/:*?"<>|]+/g, ' ') + '.xlsx';
+  const out = XLSX.write(wb, { bookType: 'xlsx', type: 'array' }); const url = URL.createObjectURL(new Blob([out], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }));
+  let a = $('#strXlsxLink'); if (!a) { a = document.createElement('a'); a.id = 'strXlsxLink'; a.className = 'btn small'; a.style.marginLeft = '6px'; $('#strXlsx').after(a); }
+  a.href = url; a.download = fname; a.textContent = '⬇️ File pronto: clicca qui per salvarlo';
+  try { XLSX.writeFile(wb, fname); } catch (e) { console.warn('download automatico fallito', e); }
+  msg('Excel pronto: se il download non è partito, usa il pulsante "File pronto: clicca qui"', 'ok');
 }
 async function openSharedStrategy(code){
   if (!code) return;
