@@ -317,3 +317,29 @@ menu e schede di lega a pillole con icona (via `::before` su `data-view`/`data-t
 input con anello di focus, tabelle con intestazione fissa, zebra al passaggio e nomi in evidenza, chip `.heat` per MV/FMV (h1 ≥7 verde forte,
 h2 ≥6,5 verde, h3 ≥6 neutro, h4 <6 rosso; `heatCls`/`heatFmt` in app.js), barra "Lista obiettivi attiva" color ambra, asta su fondo blu notte
 con timer pulsante, titoli con emoji nelle viste. Nessun cambio di layout nel campo di Schiera e nei Risultati.
+(c) Liste, seconda passata: nel pannello "Le mie liste" il bottone è **Apri** (Modifica ↓ se già attiva, con chip "attiva", toast e scroll
+all'editor): "attiva" = la lista che si vede nella colonna Tier del Listone. Le liste **condivise o consigliate** (`loadSharedLists`, optgroup
+"Condivise e consigliate") si possono scegliere come lista attiva anche dal Listone in **sola lettura** (chip al posto della tendina; la barra
+dice di chi è); per modificarle si copiano dalla vista Obiettivi. Righe del listone colorate per tier (`tr.tr1..tr5`: oro, verdino, azzurro,
+arancio marcato, rosso leggero), anche nel riepilogo. `restoreActiveList` ripristina la lista attiva da localStorage anche se condivisa.
+
+## 16. Allineamento al listone ufficiale: ruoli, squadre, quotazioni (2026-09-04, `scripts/fanta_quotazioni.py`)
+**Problema.** Ruolo e squadra in `players` vengono dal feed API-Football: la posizione (Midfielder/Defender) NON è il ruolo del fantacalcio
+(Dimarco = C invece di D), il feed rose resta indietro a fine mercato (Guðmundsson ancora alla Fiorentina, Norton-Cuffy ancora al Genoa) e le
+quotazioni calcolate con la formula §6 non sono confrontabili con quelle usate da tutte le leghe. Non esiste un'API con i ruoli del
+fantacalcio; FantaLab li deriva a sua volta dal listone ufficiale e il suo scraping è fragile e non autorizzato.
+**Soluzione adottata: import del listone ufficiale** (file Excel "Quotazioni Fantacalcio" scaricabile dal proprio account Fantacalcio.it,
+aggiornato durante il mercato; colonne Id, R, RM, Nome, Squadra, Qt.A, Qt.I, Diff., FVM). Lo script legge xlsx (lettore minimo integrato,
+niente dipendenze) o CSV, abbina i nomi (cognome + iniziale del file contro nome API-Football e nome/cognome di `data/stats/players.json`,
+bonus squadra e portiere/non portiere; alias manuali in `data/fanta/alias_quotazioni.json` = {"nome|squadra": id}) e aggiorna `role`,
+`role_mantra` (colonna RM, risolve anche il pending Mantra), `team`/`team_id`, e con `--prezzi` anche `price` = Qt.A. Salva `stats.qt`
+{team, qta, qti, fvm, rm, date}: **`fanta_players.py` rispetta la squadra del listone ufficiale per 45 giorni** (`qt_locked`) e unisce `stats`
+invece di sovrascriverlo. `--disattiva` mette `active=false` a chi è in tabella ma non nel file (usciti dalla Serie A). Riscrive
+`data/fanta/listone.json` dalla tabella; poi `render_site.py` + `pubblica.sh`. `--check` = solo rapporto; `--check --locale data/fanta/listone.json`
+= prova senza Supabase (usata il 2026-09-04 con un file di esempio: 12/12 abbinati). Le scritture su Supabase le lancia l'utente (§12).
+**Attenzione (decisione dell'utente):** ruoli e squadre sono fatti; le **quotazioni** di Fantacalcio.it sono un prodotto editoriale: usarle
+dentro l'app per le leghe private è un conto, ripubblicarle tali e quali nel listone statico pubblico (`fantacalcio/listone.html`, JSON con
+licenza CC BY) è un rischio. Alternativa per la pagina pubblica: quotazione FantaTB ricalibrata sulla scala del mercato (regressione su Qt.A
+per ruolo con le nostre statistiche), da fare se si decide di tenere le due cose separate.
+Le schede giocatore (`data/stats/players.json`, da API-Football) mostrano ancora la squadra del feed: da allineare in `stats_pull.py`
+leggendo `players.stats.qt` (pending).

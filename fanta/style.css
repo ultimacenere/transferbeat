@@ -170,3 +170,7 @@ legend{font-size:12px;font-weight:700;color:var(--muted);padding:0 6px}
 .prob.ok{background:#e6f6ee;color:#0b5d36}.prob.mid{background:#fff3d6;color:#8a5a00}.prob.low{background:#fdecea;color:#8a1f16}
 .inj{color:var(--red);font-size:12px;font-weight:700;white-space:nowrap}
 @media(max-width:600px){h1{font-size:26px}.card{padding:14px}.mast .name{font-size:28px}}
+/* righe colorate per tier (lista attiva): oro, verdino, azzurro, arancio marcato, rosso leggero */
+tbody tr.tr1 td{background:#fff1bf}tbody tr.tr2 td{background:#e2f6e9}tbody tr.tr3 td{background:#e1edfb}tbody tr.tr4 td{background:#ffcf98}tbody tr.tr5 td{background:#fbdcd8}
+tbody tr.tr1:hover td{background:#ffe89a}tbody tr.tr2:hover td{background:#d2f0dc}tbody tr.tr3:hover td{background:#d1e3f8}tbody tr.tr4:hover td{background:#ffc37f}tbody tr.tr5:hover td{background:#f8cbc5}
+.list li.on{border-left-color:var(--green);background:#f3fbf6}

@@ -42,7 +42,7 @@ async function initAuth(){
   const { data } = await sb.auth.getSession(); user = data.session ? data.session.user : null;
   sb.auth.onAuthStateChange((_ev, session) => {
     const prev = user ? user.id : null; user = session ? session.user : null; renderUser();
-    if (prev !== (user ? user.id : null)) { loadLists().then(() => {}); show(user ? 'home' : 'auth'); }   // solo a login/logout veri: l'evento iniziale non deve coprire la vista scelta dall'hash
+    if (prev !== (user ? user.id : null)) { loadLists().then(loadSharedLists).then(() => {}); show(user ? 'home' : 'auth'); }   // solo a login/logout veri: l'evento iniziale non deve coprire la vista scelta dall'hash
   });
   renderUser(); show(user ? 'home' : 'auth');
 }
@@ -91,12 +91,17 @@ function filterBarHtml(px, withList){
     '<select id="'+px+'Tier"><option value="">Lista: tutti</option><option value="in">Solo in lista</option><option value="out">Non in lista</option>'+[1,2,3,4,5].map(t => '<option value="'+t+'">Tier '+t+' · '+TIERS[t]+'</option>').join('')+'</select>' +
     '<select id="'+px+'Voto"><option value="">Con e senza voto</option><option value="1">Solo con voto</option></select>' +
     (px === 'll' ? '<label class="small chk1"><input type="checkbox" id="llFree"> solo liberi</label>' : '') + '</div>' +
-    (withList === false ? '' : '<div class="row fbar2"><span class="lab">🎯 Lista obiettivi attiva</span><select id="'+px+'List"></select><a data-view="liste">apri la lista →</a><span class="small">scegli una lista e assegna i tier dalla colonna Tier</span></div>');
+    (withList === false ? '' : '<div class="row fbar2"><span class="lab">🎯 Lista obiettivi attiva</span><select id="'+px+'List"></select><a data-view="liste">apri la lista →</a><span class="small" id="'+px+'ListInfo"></span></div>');
 }
 function fillListSelect(sel, rerender){
   if (!sel) return;
-  sel.innerHTML = '<option value="">— nessuna —</option>' + lists.map(l => '<option value="'+l.id+'"'+(curList && curList.id === l.id ? ' selected' : '')+'>'+esc(l.name)+'</option>').join('') +
-    (!user ? '<option value="" disabled>entra per creare una lista</option>' : '');
+  const opt = (l, pre) => '<option value="'+l.id+'"'+(curList && curList.id === l.id ? ' selected' : '')+'>'+esc((pre || '') + l.name + (pre && l.author ? ' · di ' + l.author : ''))+'</option>';
+  sel.innerHTML = '<option value="">— nessuna —</option>' +
+    (lists.length ? '<optgroup label="Le mie liste">'+lists.map(l => opt(l)).join('')+'</optgroup>' : '') +
+    (sharedLists.length ? '<optgroup label="Condivise e consigliate (sola lettura)">'+sharedLists.map(l => opt(l, l.featured ? '★ ' : '↗ ')).join('')+'</optgroup>' : '') +
+    (!user ? '<option value="" disabled>entra per creare una lista tua</option>' : '');
+  const info = $('#' + sel.id + 'Info');
+  if (info) info.textContent = !curList ? 'scegli una lista e assegna i tier dalla colonna Tier' : (user && curList.owner_id === user.id ? 'stai compilando questa lista: cambia il tier dalla colonna Tier' : 'lista di ' + (curList.author || 'un altro utente') + ', sola lettura: dalla vista Obiettivi puoi copiarla');
   sel.onchange = async () => { await selectList(sel.value || null); rerender(); };
 }
 function filterPlayers(px){
@@ -116,7 +121,8 @@ function listoneHtml(rows, sort, withStato){
     th('tit','Tit.','Indice di titolarità per la prossima giornata',true)+th('pres','Pres.','Presenze in Serie A',true)+th('gol','Gol','Gol in Serie A',true)+th('assist','Assist','Assist in Serie A',true)+'</tr></thead><tbody>' +
     rows.map(p => { const s = schede[p.id] || {}; const t = tierOf(p.id);
       const nm = s.url ? '<a class="pl" href="'+esc(s.url)+'" title="Apri la scheda con le statistiche (poi Torna al listone)">'+esc(p.name)+'</a>' : esc(p.name);
-      return '<tr'+(withStato && p._stato ? ' class="taken"' : '')+'><td>'+roleTag(p.role)+'</td><td>'+nm+'</td><td>'+esc(p.team)+'</td>'+
+      const cls = ((withStato && p._stato) ? 'taken ' : '') + (t ? 'tr' + t : '');
+      return '<tr'+(cls ? ' class="'+cls.trim()+'"' : '')+'><td>'+roleTag(p.role)+'</td><td>'+nm+'</td><td>'+esc(p.team)+'</td>'+
         (withStato ? '<td class="muted">'+(p._stato ? esc(p._stato) : '<span class="free">libero</span>')+'</td>' : '')+
         (curList ? '<td class="tc">'+(canTier ? tierSelect(p.id, t, false) : tierChip(t))+'</td>' : '')+
         '<td class="num"><b>'+p.price+'</b></td>'+lsCell(s.mv, heatFmt)+lsCell(s.fmv, heatFmt)+lsCell(s.tit, v => '<span class="pct '+(v >= 70 ? 'g' : v >= 40 ? 'a' : 'r')+'">'+v+'%</span>')+
@@ -622,7 +628,16 @@ async function renderResults(){
 
 /* ---------- avvio ---------- */
 /* ---------- liste obiettivi con tier 1-5 (tabelle lists / list_items, fix-008), condivisibili per codice ---------- */
-let lists = [], curList = null, sharedList = null, keyCache = null;
+let lists = [], sharedLists = [], curList = null, sharedList = null, keyCache = null;
+async function loadSharedLists(){
+  if (!sb) return;
+  const { data, error } = await sb.from('lists').select('id,name,description,author,share_code,featured,is_public,owner_id,updated_at').or('featured.eq.true,is_public.eq.true').order('featured', { ascending: false }).order('updated_at', { ascending: false }).limit(50);
+  sharedLists = error ? [] : (data || []).filter(l => !user || l.owner_id !== user.id);
+}
+async function restoreActiveList(){
+  const want = localStorage.getItem('fantatb_list');
+  if (want && !curList && (lists.some(l => l.id === want) || sharedLists.some(l => l.id === want))) await selectList(want);
+}
 async function loadLists(){
   if (!user || !sb) { lists = []; curList = null; return; }
   const { data, error } = await sb.from('lists').select('*').eq('owner_id', user.id).order('created_at');
@@ -634,7 +649,7 @@ async function loadLists(){
 }
 async function selectList(id){
   if (!id) { curList = null; localStorage.removeItem('fantatb_list'); return; }
-  const l = lists.find(x => x.id === id); if (!l) return;
+  const l = lists.find(x => x.id === id) || sharedLists.find(x => x.id === id); if (!l) return;   // le condivise si usano in sola lettura
   const { data, error } = await sb.from('list_items').select('player_id,tier,note').eq('list_id', id);
   if (error) return err(error);
   curList = Object.assign({ items: {} }, l); (data || []).forEach(it => { curList.items[it.player_id] = { tier: it.tier, note: it.note || '' }; });
@@ -654,10 +669,13 @@ async function renderListe(){
     box.innerHTML = '<div class="msg">Entra o crea un account (gratis) per salvare le tue liste. Le liste condivise si vedono anche senza account.</div><a data-view="auth" class="btn">Entra</a>';
   } else {
     await loadLists();
-    box.innerHTML = '<ul class="list">' + (lists.length ? lists.map(l => '<li><div><b>'+esc(l.name)+'</b><div class="muted">'+(l.is_public ? 'condivisa · codice '+esc(l.share_code) : 'privata')+'</div></div>' +
-      '<button class="small'+(curList && curList.id === l.id && !sharedList ? '' : ' sec')+'" data-list="'+l.id+'">'+(curList && curList.id === l.id && !sharedList ? 'Attiva' : 'Apri')+'</button></li>').join('') : '<li class="muted">Nessuna lista: creane una qui sotto.</li>') + '</ul>' +
+    box.innerHTML = '<ul class="list">' + (lists.length ? lists.map(l => { const on = !!(curList && curList.id === l.id && !sharedList);
+      return '<li'+(on ? ' class="on"' : '')+'><div><b>'+esc(l.name)+'</b>'+(on ? ' <span class="pill live">attiva</span>' : '')+'<div class="muted">'+(l.is_public ? '🔗 condivisa · codice '+esc(l.share_code) : 'privata')+'</div></div>' +
+        '<button class="small'+(on ? '' : ' sec')+'" data-list="'+l.id+'" data-name="'+esc(l.name)+'">'+(on ? 'Modifica ↓' : 'Apri')+'</button></li>'; }).join('') : '<li class="muted">Nessuna lista: creane una qui sotto.</li>') + '</ul>' +
+      '<p class="small">La lista <b>attiva</b> è quella che vedi nella colonna Tier del Listone e qui sotto nel listone completo.</p>' +
       '<div class="row" style="margin-top:10px"><input id="lsteNew" placeholder="Nome della nuova lista, es. Asta 2026"><button id="lsteCreate" class="sec" style="flex:0 0 auto">Crea</button></div>';
-    $$('[data-list]', box).forEach(b => { b.onclick = async () => { sharedList = null; await selectList(b.dataset.list); history.replaceState(null, '', '#liste'); renderListe(); }; });
+    $$('[data-list]', box).forEach(b => { b.onclick = async () => { sharedList = null; await selectList(b.dataset.list); history.replaceState(null, '', '#liste'); await renderListe();
+      msg('Lista "'+b.dataset.name+'" attiva: assegna i tier dal listone qui sotto o dal Listone', 'ok'); const ed = $('#lsteEditor'); if (ed) ed.scrollIntoView({ behavior: 'smooth', block: 'start' }); }; });
     $('#lsteCreate').onclick = async () => {
       const name = $('#lsteNew').value.trim(); if (!name) return msg('Dai un nome alla lista', 'err');
       const { data, error } = await sb.from('lists').insert({ owner_id: user.id, name: name, author: (user.user_metadata && user.user_metadata.username) || '' }).select().single();
@@ -723,7 +741,7 @@ function renderListTiers(l, own){
     const ps = (byTier[t] || []).map(pid => playersById[pid]).filter(Boolean).sort((a, b) => ROLES.indexOf(a.role) - ROLES.indexOf(b.role) || b.price - a.price);
     h += '<h3><span class="tier t'+t+'">T'+t+'</span> '+TIERS[t]+' <span class="muted">('+ps.length+')</span></h3>' + (ps.length ? '<div class="tw"><table><thead><tr><th>R</th><th>Giocatore</th><th>Squadra</th><th class="num">Quot.</th><th class="num">MV</th><th class="num">FMV</th><th class="num">Tit.</th><th>'+(own ? 'Nota' : '')+'</th>'+(own ? '<th></th>' : '')+'</tr></thead><tbody>' +
       ps.map(p => { const s = schede[p.id] || {}; const it = l.items[p.id];
-        return '<tr><td>'+roleTag(p.role)+'</td><td>'+(s.url ? '<a class="pl" href="'+esc(s.url)+'">'+esc(p.name)+'</a>' : esc(p.name))+'</td><td class="muted">'+esc(p.team)+'</td><td class="num"><b>'+p.price+'</b></td><td class="num">'+heatFmt(s.mv)+'</td><td class="num">'+heatFmt(s.fmv)+'</td><td class="num">'+(s.tit != null ? '<span class="pct '+(s.tit >= 70 ? 'g' : s.tit >= 40 ? 'a' : 'r')+'">'+s.tit+'%</span>' : '—')+'</td>' +
+        return '<tr class="tr'+t+'"><td>'+roleTag(p.role)+'</td><td>'+(s.url ? '<a class="pl" href="'+esc(s.url)+'">'+esc(p.name)+'</a>' : esc(p.name))+'</td><td class="muted">'+esc(p.team)+'</td><td class="num"><b>'+p.price+'</b></td><td class="num">'+heatFmt(s.mv)+'</td><td class="num">'+heatFmt(s.fmv)+'</td><td class="num">'+(s.tit != null ? '<span class="pct '+(s.tit >= 70 ? 'g' : s.tit >= 40 ? 'a' : 'r')+'">'+s.tit+'%</span>' : '—')+'</td>' +
           (own ? '<td><input class="note" data-note="'+p.id+'" value="'+esc(it.note || '')+'" placeholder="nota"></td><td>'+tierSelect(p.id, it.tier, true)+'</td>' : '<td class="muted">'+esc(it.note || '')+'</td>') + '</tr>'; }).join('') + '</tbody></table></div>' : '<div class="muted small">Nessun giocatore in questo tier.</div>');
   }
   box.innerHTML = h;
@@ -739,9 +757,8 @@ function renderListBrowse(){
 }
 async function renderFeatured(){
   const box = $('#lsteFeatured'); if (!box) return;
-  const { data, error } = await sb.from('lists').select('id,name,description,author,share_code,featured,is_public,updated_at').or('featured.eq.true,is_public.eq.true').order('featured', { ascending: false }).order('updated_at', { ascending: false }).limit(30);
-  const mine = new Set(lists.map(l => l.id));
-  const rows = error ? [] : (data || []).filter(l => !mine.has(l.id));
+  await loadSharedLists();
+  const rows = sharedLists;
   box.innerHTML = (rows.length ? '<ul class="list">' + rows.map(l => '<li><div><b>'+esc(l.name)+'</b>'+(l.featured ? ' <span class="pill">consigliata</span>' : '')+'<div class="muted">'+(l.author ? 'di '+esc(l.author) : 'lista condivisa')+(l.description ? ' · '+esc(l.description) : '')+'</div></div><button class="small sec" data-shared="'+esc(l.share_code)+'">Apri</button></li>').join('') + '</ul>' : '<div class="muted small">Nessuna lista condivisa al momento. Le liste "consigliate" (redazione, influencer) compariranno qui.</div>') +
     '<div class="row" style="margin-top:10px"><input id="lsteCode" placeholder="Codice di una lista condivisa" style="text-transform:uppercase"><button id="lsteOpen" class="sec" style="flex:0 0 auto">Apri</button></div>';
   $$('[data-shared]', box).forEach(b => { b.onclick = () => openSharedList(b.dataset.shared); });
@@ -758,7 +775,7 @@ async function openSharedList(code){
 
 /* ---------- import rose da Excel/CSV (admin di lega) e squadre in attesa (fix-008) ---------- */
 let impRows = [];
-const normTxt = s => String(s == null ? '' : s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim();
+const normTxt = s => String(s == null ? '' : s).replace(/[ðđ]/g, 'd').replace(/[ÐĐ]/g, 'D').replace(/ø/g, 'o').replace(/Ø/g, 'O').replace(/ł/g, 'l').replace(/Ł/g, 'L').replace(/ß/g, 'ss').replace(/æ/g, 'ae').replace(/þ/g, 'th').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim();
 const numv = v => { if (v == null || v === '') return null; const f = parseFloat(String(v).replace(',', '.').replace(/[^\d.\-]/g, '')); return isNaN(f) ? null : Math.round(f); };
 const HDR = { team: ['fantasquadra', 'fanta squadra', 'squadra fantacalcio', 'fantallenatore', 'allenatore', 'proprietario', 'team', 'squadra'], player: ['giocatore', 'calciatore', 'nome', 'player', 'name'],
   price: ['prezzo', 'costo', 'crediti', 'quotazione', 'pagato', 'euro', 'price', 'valore'], role: ['ruolo', 'r', 'role'], real: ['squadra reale', 'club', 'sq', 'squadra calciatore', 'squadra del giocatore', 'squadra serie a'] };
@@ -881,7 +898,7 @@ async function init(){
   await initAuth();
   const m = h.match(/^#lega\/([0-9a-f-]{36})(?:\/([a-z]+))?$/);
   if (m && user) openLeague(m[1], m[2]);
-  await loadLists();
+  await loadLists(); await loadSharedLists(); await restoreActiveList();
   const v = h.slice(1);
   if (['listone', 'voti', 'regole', 'liste'].includes(v)) show(v);   // viste pubbliche raggiungibili anche senza login
   const ml = h.match(/^#lista\/([A-Za-z0-9]{6,12})$/);

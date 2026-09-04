@@ -15,7 +15,13 @@ possono restare indietro di giorni rispetto ai trasferimenti), trasferimenti per
 come contro-verifica), statistiche della stagione precedente (players?league=135, solo se servono prezzi nuovi).
 Formula della quotazione in kb/FANTATB.md §6. Scrive data/fanta/listone.json e aggiorna la tabella players."""
 import re, sys, time, unicodedata
+from datetime import date, timedelta
 from fanta_common import *
+
+def qt_locked(old):
+    """La squadra scritta da fanta_quotazioni.py (listone ufficiale, players.stats.qt) vale piu' del feed rose per 45 giorni."""
+    qt = ((old or {}).get("stats") or {}).get("qt") or {}
+    return bool(qt.get("date") and qt.get("team") and qt["date"] >= (date.today() - timedelta(days=45)).isoformat())
 
 ROLE_BASE = {"P": 1, "D": 1, "C": 1, "A": 2}
 ROLE_APP  = {"P": 8, "D": 10, "C": 12, "A": 14}
@@ -161,7 +167,7 @@ def main():
     t0 = time.time()
     teams, rows = fetch_rosters()
     transfers = fetch_transfers(teams, "%d-06-01" % SEASON)
-    db = sb_get("players", {"select": "id,name,team,team_id,role,price,active"})
+    db = sb_get("players", {"select": "id,name,team,team_id,role,price,active,stats"})
     usciti, cambiati, rientrati, nuovi, sospetti = compare(rows, db, transfers)
     report(rows, db, transfers, usciti, cambiati, rientrati, nuovi, sospetti)
     if check:
@@ -176,8 +182,10 @@ def main():
         keep = bool(old) and old["active"] and not prezzi   # gli inattivi (aggiunti dai voti con prezzo fittizio) vengono riquotati
         row = {"id": r["id"], "season": SEASON, "name": r["name"], "team": r["team"], "team_id": r["team_id"],
                "role": old["role"] if keep else r["role"], "active": True}
-        if stats:
-            row["stats"] = {"prev": stats[0].get(r["id"], {}), "cur": stats[1].get(r["id"], {}), "age": r["age"], "number": r["number"]}
+        if keep and qt_locked(old) and old.get("team"):
+            row["team"], row["team_id"] = old["team"], old.get("team_id")   # squadra dal listone ufficiale (fanta_quotazioni.py): il feed rose e' in ritardo
+        if stats:   # si aggiunge alle statistiche gia' salvate (stats.qt del listone ufficiale non va perso)
+            row["stats"] = dict((old or {}).get("stats") or {}, prev=stats[0].get(r["id"], {}), cur=stats[1].get(r["id"], {}), age=r["age"], number=r["number"])
         row["price"] = old["price"] if keep else price_of(row["role"], (stats[0].get(r["id"]) or stats[1].get(r["id"]) or {}) if stats else {})
         out.append(row)
     out.sort(key=lambda r: ("PDCA".index(r["role"]), -r["price"], r["name"]))
