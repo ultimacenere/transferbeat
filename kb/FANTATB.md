@@ -374,6 +374,12 @@ Nella stessa passata: **niente più `prompt()`/`confirm()`** per creare, rinomin
 nella striscia, rinomina inline nel titolo, eliminazione a due clic "Sicuro? Elimina davvero"): alcuni browser li bloccano. Export Excel
 con **link di riserva** (`#strXlsxLink`, blob URL, "File pronto: clicca qui") oltre al download automatico di `XLSX.writeFile`.
 Restano 3 `confirm()` nelle azioni admin di lega (svincola, elimina squadra in attesa): da convertire allo stesso modo.
+**Mobile e maglie (feedback da Z Fold 6 chiuso, 2026-09-04 sera).** Il campo di Schiera sforava in larghezza (slot fissi da 78px × 5) e i
+nomi erano illeggibili. Ora sotto 600px gli slot sono flessibili (`flex:1 1 0`, max 110px), maglie 44px con lettera 16px, nomi 13px su
+**due righe** (`-webkit-line-clamp:2`), squadra 11px; panchina con maglie 38px; tessere di lega su 2 colonne. Verificato a 375px con un campo
+di prova: `scrollWidth == clientWidth`. **Maglie con i colori sociali**: `schede.json` ha ora `teams` {nome squadra API → [col, col2]}
+(scritto da `write_schede(ctx, path, T)` passando per `FANTA_ALIAS`), l'app lo carica in `teamColors` e `shirtStyle(team)` mette sulla
+maglia un gradiente diagonale col/col2 con testo bianco ombreggiato; senza colori resta il colore del ruolo dal CSS.
 
 ## 16. Allineamento al listone ufficiale: ruoli, squadre, quotazioni (2026-09-04, `scripts/fanta_quotazioni.py`)
 **Problema.** Ruolo e squadra in `players` vengono dal feed API-Football: la posizione (Midfielder/Defender) NON è il ruolo del fantacalcio

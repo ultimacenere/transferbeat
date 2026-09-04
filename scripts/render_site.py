@@ -768,7 +768,7 @@ def main():
             out(u.lstrip("/"), u, RS.render_player(D, D["stats"], T, p, D["pctx"]), "giocatori")
             written.add(os.path.basename(u))
         out("giocatori/index.html", "/giocatori/", RS.render_players_index(D, D["stats"], T, D["pctx"]), "giocatori")
-        RS.write_schede(D["pctx"], os.path.join(DATA, "fanta", "schede.json"))   # per la vista Listone dell'app FantaTB
+        RS.write_schede(D["pctx"], os.path.join(DATA, "fanta", "schede.json"), T)   # per l'app FantaTB: listone, maglie con i colori sociali
         gdir = os.path.join(ROOT, "giocatori")
         stale = [f for f in os.listdir(gdir) if f.endswith(".html") and f != "index.html" and f not in written]
         for f in stale:   # schede di giocatori rinominati o usciti dal feed: via, altrimenti restano pagine orfane

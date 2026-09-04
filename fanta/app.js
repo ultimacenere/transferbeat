@@ -8,7 +8,7 @@ const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp
 const ROLES = ['P','D','C','A'];
 const ROLE_NAME = {P:'Portieri', D:'Difensori', C:'Centrocampisti', A:'Attaccanti'};
 
-let sb = null, user = null, players = [], playersById = {}, schede = {};   // schede: /data/fanta/schede.json (URL scheda, MV, FMV, titolarità, presenze, gol, assist)
+let sb = null, user = null, players = [], playersById = {}, schede = {}, teamColors = {};   // schede/teamColors: /data/fanta/schede.json (URL scheda, MV, FMV, titolarità, presenze, gol, assist; colori sociali per squadra)
 let L = null;            // lega corrente: {league, members, rosters, auction, bids}
 let auctionTimer = null, channel = null;
 
@@ -65,12 +65,16 @@ $('#btnSignup').onclick = async () => {
 async function loadPlayers(){
   const [{ data, error }] = await Promise.all([
     sb.from('players').select('id,name,team,role,price,active').order('price', { ascending: false }).limit(2000),
-    fetch('/data/fanta/schede.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(j => { schede = (j && j.players) || {}; }).catch(() => {})
+    fetch('/data/fanta/schede.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(j => { schede = (j && j.players) || {}; teamColors = (j && j.teams) || {}; }).catch(() => {})
   ]);
   if (error) return err(error);
   players = data || []; playersById = {}; players.forEach(p => playersById[p.id] = p);
 }
 function roleTag(r){ return '<span class="role '+r+'">'+r+'</span>'; }
+function shirtStyle(team){   // maglia con i colori sociali del club (schede.json -> teams), altrimenti il colore del ruolo dal CSS
+  const c = teamColors[team]; if (!c) return '';
+  return ' style="background:linear-gradient(135deg,'+c[0]+' 0 50%,'+c[1]+' 50% 100%);color:#fff;text-shadow:0 0 3px rgba(0,0,0,.9),0 1px 2px rgba(0,0,0,.8)"';
+}
 /* tabella del listone, condivisa fra la vista pubblica (#lsTable) e la scheda Listone della lega (#tab-listone, con stato libero/preso).
    Filtri: testo, ruolo, squadra, tier della lista attiva, solo con voto (+ solo liberi in lega). Colonna Tier modificabile se la lista e' mia. */
 const lsState = { ls: { k: 'price', asc: false }, ll: { k: 'price', asc: false }, le: { k: 'price', asc: false } };
@@ -469,7 +473,7 @@ function pitchHtml(cur){
     const slots = [];
     for (let i = 0; i < want[r]; i++) {
       const p = ids[i] ? playersById[ids[i]] : null;
-      slots.push(p ? '<div class="slot '+r+'" data-out="'+p.id+'" title="Togli dal campo"><div class="shirt">'+r+'</div><span class="nm">'+esc(shortName(p.name))+'</span><span class="tm">'+esc(p.team)+'</span></div>'
+      slots.push(p ? '<div class="slot '+r+'" data-out="'+p.id+'" title="Togli dal campo"><div class="shirt"'+shirtStyle(p.team)+'>'+r+'</div><span class="nm">'+esc(shortName(p.name))+'</span><span class="tm">'+esc(p.team)+'</span></div>'
                    : '<div class="slot '+r+' empty"><div class="shirt">'+r+'</div><span class="nm">&nbsp;</span></div>');
     }
     return '<div class="prow">'+slots.join('')+'</div>';
@@ -497,7 +501,7 @@ async function renderLineup(force){
     '<div><label>&nbsp;</label><span class="row"><button id="luSave" '+(open ? '' : 'disabled')+'>Salva formazione</button><button id="luClear" class="sec">Svuota</button></span></div></div>' +
     '<p class="muted" style="margin:8px 0">Deadline: '+fmtDate(info.starts_at)+' · '+(open ? 'formazioni aperte' : 'giornata iniziata, formazioni chiuse')+(lu ? ' · salvata il '+fmtDate(lu.submitted_at) : ' · nessuna formazione salvata')+' · in campo '+cur.starters.length+'/11 · panchina '+cur.bench.length+'/'+bmax+'</p>';
   const benchStrip = '<div class="bench"><div class="bt">Panchina <span class="muted">(ordine di ingresso)</span></div><div class="brow">' + Array.from({ length: bmax }, (_, i) => { const p = cur.bench[i] ? playersById[cur.bench[i]] : null;
-    return p ? '<div class="slot '+p.role+'" data-bout="'+p.id+'" title="Togli dalla panchina"><div class="shirt">'+(i + 1)+'</div><span class="nm">'+esc(shortName(p.name))+'</span><span class="tm">'+p.role+' · '+esc(p.team)+'</span><span class="mv"><button class="small sec" data-bl="'+p.id+'">◀</button><button class="small sec" data-br="'+p.id+'">▶</button></span></div>'
+    return p ? '<div class="slot '+p.role+'" data-bout="'+p.id+'" title="Togli dalla panchina"><div class="shirt"'+shirtStyle(p.team)+'>'+(i + 1)+'</div><span class="nm">'+esc(shortName(p.name))+'</span><span class="tm">'+p.role+' · '+esc(p.team)+'</span><span class="mv"><button class="small sec" data-bl="'+p.id+'">◀</button><button class="small sec" data-br="'+p.id+'">▶</button></span></div>'
              : '<div class="slot empty"><div class="shirt">'+(i + 1)+'</div><span class="nm">&nbsp;</span></div>'; }).join('') + '</div></div>';
   const roster = '<div class="card"><h2>La tua rosa <span class="muted">clicca: prima in campo, poi in panchina · % = probabilità di giocare titolare</span></h2><div class="roster">' + ROLES.map(r => {
     const list = mine.filter(p => p.role === r).sort((a, b) => b.price - a.price);

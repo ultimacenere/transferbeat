@@ -206,3 +206,15 @@ details.help{margin:8px 0 12px;border:1px solid var(--line);border-radius:10px;p
 .prio{display:inline-block;padding:1px 7px;border-radius:6px;font-size:11px;font-weight:800;white-space:nowrap}.prio.p1{background:#e3f6ea;color:#0b5d36}.prio.p2{background:#fff3d6;color:#8a5a00}
 #lstePane h3,#strPane h3{margin-top:14px}
 .newbox{display:inline-flex;gap:6px;align-items:center;flex:0 0 auto}.newbox input{width:240px;padding:8px 10px;font-size:13px}
+/* ---- campo di Schiera su telefono: tutto nella larghezza dello schermo, maglie e nomi piu' grandi (2026-09-04) ---- */
+.slot .shirt{font-size:14px}.slot .nm{font-size:12px;white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.15}
+@media(max-width:600px){
+  .pitch{padding:10px 2px 8px;border-radius:12px}.pitch:before{width:120px;height:120px;margin-left:-60px;top:-30px}.pitch:after{width:180px;height:50px;margin-left:-90px}
+  .prow{margin:6px 0;justify-content:space-around;gap:2px}
+  .slot{width:auto;flex:1 1 0;min-width:0;max-width:110px;font-size:12.5px}
+  .slot .shirt{width:44px;height:44px;line-height:44px;font-size:16px}
+  .slot .nm{font-size:13px}.slot .tm{font-size:11px}
+  .bench .brow{gap:6px}.bench .slot{flex:0 0 72px}.bench .slot .shirt{width:38px;height:38px;line-height:38px;font-size:14px}
+  .kpis{grid-template-columns:repeat(2,1fr)}.kpi .v{font-size:20px}
+  .tabs a{padding:7px 11px;font-size:13px}
+}

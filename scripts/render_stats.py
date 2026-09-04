@@ -606,10 +606,21 @@ def summary_of(ctx, pid):
         s = ctx["summ"][pid] = player_summary(ctx, pid)
     return s
 
-def write_schede(ctx, path):
-    """data/fanta/schede.json per l'app FantaTB (vista Listone): per giocatore URL della scheda, MV, FMV, titolarità, presenze, gol, assist."""
+def write_schede(ctx, path, T=None):
+    """data/fanta/schede.json per l'app FantaTB: per giocatore URL della scheda, MV, FMV, titolarità, presenze, gol, assist;
+    in `teams` i colori sociali per nome squadra API-Football (maglie in campo)."""
     import json
-    out = {"updated": ctx["updated"], "players": {str(pid): {k: v for k, v in s.items() if k != "n" and v is not None} for pid, s in sorted(ctx["summ"].items())}}
+    teams = {}
+    if T is not None:   # nome squadra API-Football (players.team_name) -> [col, col2] di teams.json, passando per l'alias FANTA_ALIAS
+        for p in (ctx.get("P") or {}).values():
+            tn = p.get("team_name")
+            if tn and tn not in teams:
+                site = T.fanta_name(tn)
+                t = T.by_name.get(site) if site else None
+                if t:
+                    teams[tn] = [t.get("col") or "#67727e", t.get("col2") or t.get("col") or "#67727e"]
+    out = {"updated": ctx["updated"], "teams": teams,
+           "players": {str(pid): {k: v for k, v in s.items() if k != "n" and v is not None} for pid, s in sorted(ctx["summ"].items())}}
     with open(path, "w", encoding="utf-8", newline="\n") as f:
         json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
         f.write("\n")
