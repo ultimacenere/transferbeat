@@ -1,5 +1,5 @@
 {
-"updated": "2026-09-04T12:05:39Z",
+"updated": "2026-09-03T14:03:12Z",
 "season": 2026,
 "leagues": {
 "135": {
@@ -1670,39 +1670,6 @@
 },
 {
 "rank": 11,
-"team_id": 548,
-"name": "Real Sociedad",
-"points": 4,
-"gd": -3,
-"form": "DWLL",
-"description": "",
-"all": {
-"played": 4,
-"win": 1,
-"draw": 1,
-"lose": 2,
-"gf": 3,
-"ga": 6
-},
-"home": {
-"played": 2,
-"win": 1,
-"draw": 1,
-"lose": 0,
-"gf": 2,
-"ga": 1
-},
-"away": {
-"played": 2,
-"win": 0,
-"draw": 0,
-"lose": 2,
-"gf": 1,
-"ga": 5
-}
-},
-{
-"rank": 12,
 "team_id": 540,
 "name": "Espanyol",
 "points": 3,
@@ -1735,7 +1702,7 @@
 }
 },
 {
-"rank": 13,
+"rank": 12,
 "team_id": 531,
 "name": "Athletic Club",
 "points": 3,
@@ -1765,6 +1732,39 @@
 "lose": 1,
 "gf": 2,
 "ga": 2
+}
+},
+{
+"rank": 13,
+"team_id": 548,
+"name": "Real Sociedad",
+"points": 3,
+"gd": -3,
+"form": "WLL",
+"description": "",
+"all": {
+"played": 3,
+"win": 1,
+"draw": 0,
+"lose": 2,
+"gf": 3,
+"ga": 6
+},
+"home": {
+"played": 1,
+"win": 1,
+"draw": 0,
+"lose": 0,
+"gf": 2,
+"ga": 1
+},
+"away": {
+"played": 2,
+"win": 0,
+"draw": 0,
+"lose": 2,
+"gf": 1,
+"ga": 5
 }
 },
 {
@@ -1835,39 +1835,6 @@
 },
 {
 "rank": 16,
-"team_id": 538,
-"name": "Celta Vigo",
-"points": 2,
-"gd": -3,
-"form": "DLLD",
-"description": "",
-"all": {
-"played": 4,
-"win": 0,
-"draw": 2,
-"lose": 2,
-"gf": 1,
-"ga": 4
-},
-"home": {
-"played": 2,
-"win": 0,
-"draw": 0,
-"lose": 2,
-"gf": 1,
-"ga": 4
-},
-"away": {
-"played": 2,
-"win": 0,
-"draw": 2,
-"lose": 0,
-"gf": 0,
-"ga": 0
-}
-},
-{
-"rank": 17,
 "team_id": 532,
 "name": "Valencia",
 "points": 1,
@@ -1897,6 +1864,39 @@
 "lose": 1,
 "gf": 1,
 "ga": 3
+}
+},
+{
+"rank": 17,
+"team_id": 538,
+"name": "Celta Vigo",
+"points": 1,
+"gd": -3,
+"form": "LLD",
+"description": "",
+"all": {
+"played": 3,
+"win": 0,
+"draw": 1,
+"lose": 2,
+"gf": 1,
+"ga": 4
+},
+"home": {
+"played": 2,
+"win": 0,
+"draw": 0,
+"lose": 2,
+"gf": 1,
+"ga": 4
+},
+"away": {
+"played": 1,
+"win": 0,
+"draw": 1,
+"lose": 0,
+"gf": 0,
+"ga": 0
 }
 },
 {
@@ -9059,150 +9059,6 @@
 }
 }
 },
-"548": {
-"id": 548,
-"name": "Real Sociedad",
-"league": 140,
-"form": "LLWD",
-"fixtures": {
-"played": {
-"home": 2,
-"away": 2,
-"total": 4
-},
-"wins": {
-"home": 1,
-"away": 0,
-"total": 1
-},
-"draws": {
-"home": 1,
-"away": 0,
-"total": 1
-},
-"loses": {
-"home": 0,
-"away": 2,
-"total": 2
-}
-},
-"goals_for": {
-"total": {
-"home": 2,
-"away": 1,
-"total": 3
-},
-"avg": {
-"home": 1.0,
-"away": 0.5,
-"total": 0.8
-},
-"minute": {
-"0-15": 1,
-"16-30": 0,
-"31-45": 1,
-"46-60": 0,
-"61-75": 1,
-"76-90": 0,
-"91-105": 0,
-"106-120": 0
-}
-},
-"goals_against": {
-"total": {
-"home": 1,
-"away": 5,
-"total": 6
-},
-"avg": {
-"home": 0.5,
-"away": 2.5,
-"total": 1.5
-},
-"minute": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 2,
-"46-60": 1,
-"61-75": 2,
-"76-90": 1,
-"91-105": 0,
-"106-120": 0
-}
-},
-"biggest": {
-"streak": {
-"wins": 1,
-"draws": 0,
-"loses": 2
-},
-"wins": {
-"home": "2-1",
-"away": null
-},
-"loses": {
-"home": null,
-"away": "4-1"
-},
-"goals": {
-"for": {
-"home": 2,
-"away": 1
-},
-"against": {
-"home": 1,
-"away": 4
-}
-}
-},
-"clean_sheet": {
-"home": 1,
-"away": 0,
-"total": 1
-},
-"failed_to_score": {
-"home": 1,
-"away": 1,
-"total": 2
-},
-"penalty": {
-"scored": 0,
-"missed": 0,
-"total": 0
-},
-"lineups": [
-{
-"formation": "4-2-3-1",
-"played": 3
-},
-{
-"formation": "4-4-2",
-"played": 1
-}
-],
-"cards": {
-"yellow": {
-"0-15": 0,
-"16-30": 2,
-"31-45": 1,
-"46-60": 3,
-"61-75": 2,
-"76-90": 1,
-"91-105": 1,
-"106-120": 0
-},
-"red": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 0,
-"46-60": 0,
-"61-75": 0,
-"76-90": 0,
-"91-105": 0,
-"106-120": 0
-}
-}
-},
 "540": {
 "id": 540,
 "name": "Espanyol",
@@ -9477,6 +9333,150 @@
 },
 "red": {
 "0-15": 1,
+"16-30": 0,
+"31-45": 0,
+"46-60": 0,
+"61-75": 0,
+"76-90": 0,
+"91-105": 0,
+"106-120": 0
+}
+}
+},
+"548": {
+"id": 548,
+"name": "Real Sociedad",
+"league": 140,
+"form": "LLW",
+"fixtures": {
+"played": {
+"home": 1,
+"away": 2,
+"total": 3
+},
+"wins": {
+"home": 1,
+"away": 0,
+"total": 1
+},
+"draws": {
+"home": 0,
+"away": 0,
+"total": 0
+},
+"loses": {
+"home": 0,
+"away": 2,
+"total": 2
+}
+},
+"goals_for": {
+"total": {
+"home": 2,
+"away": 1,
+"total": 3
+},
+"avg": {
+"home": 2.0,
+"away": 0.5,
+"total": 1.0
+},
+"minute": {
+"0-15": 1,
+"16-30": 0,
+"31-45": 1,
+"46-60": 0,
+"61-75": 1,
+"76-90": 0,
+"91-105": 0,
+"106-120": 0
+}
+},
+"goals_against": {
+"total": {
+"home": 1,
+"away": 5,
+"total": 6
+},
+"avg": {
+"home": 1.0,
+"away": 2.5,
+"total": 2.0
+},
+"minute": {
+"0-15": 0,
+"16-30": 0,
+"31-45": 2,
+"46-60": 1,
+"61-75": 2,
+"76-90": 1,
+"91-105": 0,
+"106-120": 0
+}
+},
+"biggest": {
+"streak": {
+"wins": 0,
+"draws": 0,
+"loses": 2
+},
+"wins": {
+"home": "2-1",
+"away": null
+},
+"loses": {
+"home": null,
+"away": "4-1"
+},
+"goals": {
+"for": {
+"home": 2,
+"away": 1
+},
+"against": {
+"home": 1,
+"away": 4
+}
+}
+},
+"clean_sheet": {
+"home": 0,
+"away": 0,
+"total": 0
+},
+"failed_to_score": {
+"home": 0,
+"away": 1,
+"total": 1
+},
+"penalty": {
+"scored": 0,
+"missed": 0,
+"total": 0
+},
+"lineups": [
+{
+"formation": "4-2-3-1",
+"played": 2
+},
+{
+"formation": "4-4-2",
+"played": 1
+}
+],
+"cards": {
+"yellow": {
+"0-15": 0,
+"16-30": 1,
+"31-45": 1,
+"46-60": 3,
+"61-75": 2,
+"76-90": 0,
+"91-105": 1,
+"106-120": 0
+},
+"red": {
+"0-15": 0,
 "16-30": 0,
 "31-45": 0,
 "46-60": 0,
@@ -9771,146 +9771,6 @@
 }
 }
 },
-"538": {
-"id": 538,
-"name": "Celta Vigo",
-"league": 140,
-"form": "DLLD",
-"fixtures": {
-"played": {
-"home": 2,
-"away": 2,
-"total": 4
-},
-"wins": {
-"home": 0,
-"away": 0,
-"total": 0
-},
-"draws": {
-"home": 0,
-"away": 2,
-"total": 2
-},
-"loses": {
-"home": 2,
-"away": 0,
-"total": 2
-}
-},
-"goals_for": {
-"total": {
-"home": 1,
-"away": 0,
-"total": 1
-},
-"avg": {
-"home": 0.5,
-"away": 0.0,
-"total": 0.3
-},
-"minute": {
-"0-15": 1,
-"16-30": 0,
-"31-45": 0,
-"46-60": 0,
-"61-75": 0,
-"76-90": 0,
-"91-105": 0,
-"106-120": 0
-}
-},
-"goals_against": {
-"total": {
-"home": 4,
-"away": 0,
-"total": 4
-},
-"avg": {
-"home": 2.0,
-"away": 0.0,
-"total": 1.0
-},
-"minute": {
-"0-15": 0,
-"16-30": 2,
-"31-45": 0,
-"46-60": 1,
-"61-75": 1,
-"76-90": 0,
-"91-105": 0,
-"106-120": 0
-}
-},
-"biggest": {
-"streak": {
-"wins": 0,
-"draws": 1,
-"loses": 2
-},
-"wins": {
-"home": null,
-"away": null
-},
-"loses": {
-"home": "0-2",
-"away": null
-},
-"goals": {
-"for": {
-"home": 1,
-"away": 0
-},
-"against": {
-"home": 2,
-"away": 0
-}
-}
-},
-"clean_sheet": {
-"home": 0,
-"away": 2,
-"total": 2
-},
-"failed_to_score": {
-"home": 1,
-"away": 2,
-"total": 3
-},
-"penalty": {
-"scored": 0,
-"missed": 0,
-"total": 0
-},
-"lineups": [
-{
-"formation": "3-4-3",
-"played": 4
-}
-],
-"cards": {
-"yellow": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 0,
-"46-60": 3,
-"61-75": 1,
-"76-90": 2,
-"91-105": 0,
-"106-120": 0
-},
-"red": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 0,
-"46-60": 1,
-"61-75": 0,
-"76-90": 0,
-"91-105": 0,
-"106-120": 0
-}
-}
-},
 "532": {
 "id": 532,
 "name": "Valencia",
@@ -10044,6 +9904,146 @@
 "16-30": 0,
 "31-45": 0,
 "46-60": 0,
+"61-75": 0,
+"76-90": 0,
+"91-105": 0,
+"106-120": 0
+}
+}
+},
+"538": {
+"id": 538,
+"name": "Celta Vigo",
+"league": 140,
+"form": "DLL",
+"fixtures": {
+"played": {
+"home": 2,
+"away": 1,
+"total": 3
+},
+"wins": {
+"home": 0,
+"away": 0,
+"total": 0
+},
+"draws": {
+"home": 0,
+"away": 1,
+"total": 1
+},
+"loses": {
+"home": 2,
+"away": 0,
+"total": 2
+}
+},
+"goals_for": {
+"total": {
+"home": 1,
+"away": 0,
+"total": 1
+},
+"avg": {
+"home": 0.5,
+"away": 0.0,
+"total": 0.3
+},
+"minute": {
+"0-15": 1,
+"16-30": 0,
+"31-45": 0,
+"46-60": 0,
+"61-75": 0,
+"76-90": 0,
+"91-105": 0,
+"106-120": 0
+}
+},
+"goals_against": {
+"total": {
+"home": 4,
+"away": 0,
+"total": 4
+},
+"avg": {
+"home": 2.0,
+"away": 0.0,
+"total": 1.3
+},
+"minute": {
+"0-15": 0,
+"16-30": 2,
+"31-45": 0,
+"46-60": 1,
+"61-75": 1,
+"76-90": 0,
+"91-105": 0,
+"106-120": 0
+}
+},
+"biggest": {
+"streak": {
+"wins": 0,
+"draws": 1,
+"loses": 0
+},
+"wins": {
+"home": null,
+"away": null
+},
+"loses": {
+"home": "0-2",
+"away": null
+},
+"goals": {
+"for": {
+"home": 1,
+"away": 0
+},
+"against": {
+"home": 2,
+"away": 0
+}
+}
+},
+"clean_sheet": {
+"home": 0,
+"away": 1,
+"total": 1
+},
+"failed_to_score": {
+"home": 1,
+"away": 1,
+"total": 2
+},
+"penalty": {
+"scored": 0,
+"missed": 0,
+"total": 0
+},
+"lineups": [
+{
+"formation": "3-4-3",
+"played": 3
+}
+],
+"cards": {
+"yellow": {
+"0-15": 0,
+"16-30": 0,
+"31-45": 0,
+"46-60": 1,
+"61-75": 1,
+"76-90": 1,
+"91-105": 0,
+"106-120": 0
+},
+"red": {
+"0-15": 0,
+"16-30": 0,
+"31-45": 0,
+"46-60": 1,
 "61-75": 0,
 "76-90": 0,
 "91-105": 0,

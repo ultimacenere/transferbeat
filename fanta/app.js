@@ -23,12 +23,16 @@ function show(view){
   if (view === 'home') { if (!$('#clForm').innerHTML) $('#clForm').innerHTML = settingsFormHtml(null, 'cl'); loadLeagues(); }
   if (view === 'listone') renderListone();
   if (view === 'voti') loadVoti();
-  if (view === 'liste') renderListe();
-  if (['home', 'listone', 'voti', 'regole', 'liste'].includes(view)) history.replaceState(null, '', '#' + view);   // cosi' "indietro" dalle schede giocatore torna qui
+  if (view === 'liste') { renderListe(); if (lsteTab === 'strategie') renderStrategie(); }
+  if (view === 'messaggi') renderMessaggi();
+  document.body.dataset.view = view;   // colore di sezione (style.css: body[data-view=...])
+  if (['home', 'listone', 'voti', 'regole', 'messaggi'].includes(view)) history.replaceState(null, '', '#' + view);   // cosi' "indietro" dalle schede giocatore torna qui
+  if (view === 'liste') history.replaceState(null, '', '#' + (lsteTab === 'strategie' ? 'strategie' : 'liste'));
 }
 document.addEventListener('click', e => {
   const a = e.target.closest('[data-view]'); if (a){ e.preventDefault(); if (!user && !['listone', 'voti', 'regole', 'liste'].includes(a.dataset.view)) return show('auth'); show(a.dataset.view); }
   const t = e.target.closest('[data-tab]'); if (t){ e.preventDefault(); renderTabs(t.dataset.tab); }
+  const lt = e.target.closest('[data-ltab]'); if (lt){ e.preventDefault(); setLsteTab(lt.dataset.ltab); }
 });
 
 /* ---------- auth ---------- */
@@ -42,7 +46,7 @@ async function initAuth(){
   const { data } = await sb.auth.getSession(); user = data.session ? data.session.user : null;
   sb.auth.onAuthStateChange((_ev, session) => {
     const prev = user ? user.id : null; user = session ? session.user : null; renderUser();
-    if (prev !== (user ? user.id : null)) { loadLists().then(loadSharedLists).then(() => {}); show(user ? 'home' : 'auth'); }   // solo a login/logout veri: l'evento iniziale non deve coprire la vista scelta dall'hash
+    if (prev !== (user ? user.id : null)) { loadLists().then(loadSharedLists).then(loadStrategies).then(() => initChat()).catch(() => {}); show(user ? 'home' : 'auth'); }   // solo a login/logout veri: l'evento iniziale non deve coprire la vista scelta dall'hash
   });
   renderUser(); show(user ? 'home' : 'auth');
 }
@@ -213,7 +217,7 @@ async function loadLeagues(){
   if (error) return err(error);
   const ul = $('#leagueList');
   ul.innerHTML = (data && data.length) ? data.map(m => '<li><div><b>'+esc(m.leagues.name)+'</b><div class="muted">'+esc(m.team_name)+' · '+(m.role === 'admin' ? 'admin' : 'partecipante')+' · crediti '+m.credits+'</div></div><button class="small" data-open="'+m.league_id+'">Apri</button></li>').join('')
-    : '<li class="muted">Non sei ancora in nessuna lega. Creane una o entra con un codice.</li>';
+    : '<li class="muted"><div><b>🏟️ Nessuna lega ancora.</b><div class="muted">Creane una con il modulo a destra, oppure entra con il codice invito che ti hanno mandato. Nel frattempo puoi già studiare il <a data-view="listone">listone</a> e preparare la tua <a data-view="liste">lista obiettivi</a>.</div></div></li>';
   $$('[data-open]', ul).forEach(b => b.onclick = () => openLeague(b.dataset.open));
 }
 $('#btnCreate').onclick = async () => {
@@ -257,7 +261,8 @@ async function openLeague(id, tab){
   $('#lgName').textContent = league.name;
   $('#lgSub').innerHTML = esc(L.me.team_name)+' · '+members.length+'/'+(league.settings.max_teams || 20)+' squadre · codice invito <span class="code">'+esc(league.invite_code)+'</span>';
   await refreshLeagueData();
-  renderTabs(tab); renderRules(); renderAuction(); subscribe(); loadSeasonData();
+  document.body.dataset.view = 'league';
+  renderTabs(tab); renderRules(); renderAuction(); subscribe(); loadSeasonData(); leagueKpis();
 }
 async function refreshLeagueData(){
   const [{ data: rosters }, { data: auction }, { data: members }, { data: bids }] = await Promise.all([
@@ -308,7 +313,7 @@ function renderMembers(){
     if (error) err(error); else refreshLeagueData();
   });
 }
-function renderRosters(){ renderMembers(); const t = $('#tab-listone'); if (t && !t.classList.contains('hidden')) renderLeagueListone(); }
+function renderRosters(){ renderMembers(); leagueKpis(); const t = $('#tab-listone'); if (t && !t.classList.contains('hidden')) renderLeagueListone(); }
 function renderRules(){
   const s = Object.assign({}, DEFAULT_SETTINGS, L.league.settings || {}), bn = Object.assign({}, DEFAULT_SETTINGS.bonus, s.bonus || {}), sl = Object.assign({}, DEFAULT_SETTINGS.slots, s.slots || {});
   const view = '<div class="card"><h2>Regole in vigore <span class="pill '+(phase() === 'asta' ? '' : 'live')+'">'+(phase() === 'asta' ? 'fase asta' : 'campionato')+'</span></h2><table><tbody>' +
@@ -340,7 +345,7 @@ function renderAuction(){
   if (!a) { box.innerHTML = '<div class="msg err">Asta non inizializzata per questa lega.</div>'; return; }
   const p = a.player_id ? (playersById[a.player_id] || { name: '#'+a.player_id, team: '', role: 'C', price: 1 }) : null;
   const live = a.status === 'live';
-  let html = '<div class="grid3"><div>';
+  let html = stratDashHtml() + '<div class="grid3"><div>';
   if (live && p) {
     const bidder = a.bidder_id ? memberName(a.bidder_id) : null;
     html += '<div class="auction"><div class="row" style="justify-content:space-between"><div><div class="pl">'+roleTag(p.role)+' '+esc(p.name)+'</div><div class="team">'+esc(p.team)+' · quotazione '+p.price+'</div></div><div class="timer" id="auTimer">--</div></div>' +
@@ -890,6 +895,227 @@ async function checkPendingForCode(){
   box.classList.remove('hidden');
 }
 
+/* ---------- chat rapida utente <-> staff (tabelle messages/staff, fix-009) ---------- */
+let isStaff = false, chatOpen = false, chatChannel = null, chatUnread = 0;
+function fmtWhen(iso){ const d = new Date(iso); return d.toLocaleDateString('it-IT', { day: 'numeric', month: 'short' }) + ' ' + d.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' }); }
+async function initChat(){
+  const btn = $('#chatBtn'); if (!btn) return;
+  btn.onclick = () => { if (!user) { msg('Entra o crea un account per scriverci: rispondiamo qui dentro.', 'ok'); return show('auth'); } chatOpen = !chatOpen; $('#chatPanel').classList.toggle('hidden', !chatOpen); if (chatOpen) { loadChat(); $('#chatText').focus(); } };
+  $('#chatClose').onclick = () => { chatOpen = false; $('#chatPanel').classList.add('hidden'); };
+  $('#chatSend').onclick = sendChat;
+  $('#chatText').onkeydown = e => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) sendChat(); };
+  isStaff = false;
+  if (chatChannel) { try { sb.removeChannel(chatChannel); } catch (e) {} chatChannel = null; }
+  if (!user) { $$('nav a[data-view=messaggi]').forEach(a => a.classList.add('hidden')); return; }
+  const { data } = await sb.from('staff').select('user_id').eq('user_id', user.id).maybeSingle();
+  isStaff = !!data;
+  $$('nav a[data-view=messaggi]').forEach(a => a.classList.toggle('hidden', !isStaff));
+  await refreshUnread();
+  chatChannel = sb.channel('chat-' + user.id).on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'messages' }, () => {
+    refreshUnread(); if (chatOpen) loadChat(); const v = $('#view-messaggi'); if (isStaff && v && !v.classList.contains('hidden')) renderMessaggi(); }).subscribe();
+}
+async function refreshUnread(){
+  if (!user) return;
+  const q = isStaff ? sb.from('messages').select('id', { count: 'exact', head: true }).eq('from_staff', false).eq('read_by_staff', false)
+                    : sb.from('messages').select('id', { count: 'exact', head: true }).eq('user_id', user.id).eq('from_staff', true).eq('read_by_user', false);
+  const { count, error } = await q; chatUnread = error ? 0 : (count || 0);
+  const b = $('#chatBadge'); if (b) { b.textContent = chatUnread; b.classList.toggle('hidden', !chatUnread); }
+  const n = $('nav a[data-view=messaggi] .nbadge'); if (n) { n.textContent = chatUnread; n.classList.toggle('hidden', !chatUnread); }
+}
+async function loadChat(){
+  const box = $('#chatMsgs'); if (!box || !user) return;
+  const { data, error } = await sb.from('messages').select('id,from_staff,text,created_at,read_by_user').eq('user_id', user.id).order('created_at');
+  if (error) { box.innerHTML = '<div class="msg err">Chat non disponibile: '+esc(error.message)+'</div>'; return; }
+  box.innerHTML = (data && data.length) ? data.map(m => '<div class="cm '+(m.from_staff ? 'staff' : 'user')+'"><div>'+esc(m.text).replace(/\n/g, '<br>')+'</div><span>'+(m.from_staff ? 'TransferBeat · ' : '')+fmtWhen(m.created_at)+'</span></div>').join('')
+    : '<div class="msg hint">👋 Scrivici un suggerimento, una segnalazione o una domanda: rispondiamo qui, e vedrai un pallino sul pulsante quando c\'è una risposta.</div>';
+  box.scrollTop = box.scrollHeight;
+  const unread = (data || []).filter(m => m.from_staff && !m.read_by_user).map(m => m.id);
+  if (unread.length) { await sb.from('messages').update({ read_by_user: true }).in('id', unread); refreshUnread(); }
+}
+async function sendChat(){
+  const t = $('#chatText'); const text = (t.value || '').trim(); if (!text) return;
+  const { error } = await sb.from('messages').insert({ user_id: user.id, author: user.id, from_staff: false, text: text, page: location.hash || '#home' });
+  if (error) return err(error);
+  t.value = ''; loadChat();
+}
+async function renderMessaggi(){
+  const box = $('#msgList'); if (!box) return;
+  if (!isStaff) { box.innerHTML = '<div class="msg">Questa vista è riservata allo staff.</div>'; return; }
+  const { data, error } = await sb.from('messages').select('id,user_id,from_staff,text,page,created_at,read_by_staff').order('created_at', { ascending: false }).limit(500);
+  if (error) return err(error);
+  const conv = {}; (data || []).forEach(m => { (conv[m.user_id] = conv[m.user_id] || []).push(m); });
+  const ids = Object.keys(conv);
+  const { data: profs } = ids.length ? await sb.from('profiles').select('id,username').in('id', ids) : { data: [] };
+  const name = {}; (profs || []).forEach(p => { name[p.id] = p.username; });
+  box.innerHTML = ids.length ? ids.map(uid => { const ms = conv[uid].slice().reverse(); const unread = ms.filter(m => !m.from_staff && !m.read_by_staff).length;
+    return '<div class="card conv"><h2>'+esc(name[uid] || uid.slice(0, 8))+(unread ? ' <span class="pill live">'+unread+' da leggere</span>' : '')+' <span class="muted">ultimo: '+fmtWhen(ms[ms.length - 1].created_at)+'</span></h2>' +
+      '<div class="cmlist">'+ms.map(m => '<div class="cm '+(m.from_staff ? 'staff' : 'user')+'"><div>'+esc(m.text).replace(/\n/g, '<br>')+'</div><span>'+(m.from_staff ? 'staff' : esc(name[uid] || 'utente'))+' · '+fmtWhen(m.created_at)+(m.page ? ' · da '+esc(m.page) : '')+'</span></div>').join('')+'</div>' +
+      '<div class="row"><input data-reply="'+uid+'" placeholder="Rispondi a '+esc(name[uid] || 'utente')+'…"><button class="small" data-send="'+uid+'" style="flex:0 0 auto">Invia</button></div></div>'; }).join('')
+    : '<div class="msg hint">Nessun messaggio ancora. Quando un utente scrive dal pulsante "Scrivici", compare qui.</div>';
+  $$('[data-send]', box).forEach(b => { b.onclick = async () => { const inp = $('[data-reply="'+b.dataset.send+'"]'); const text = inp.value.trim(); if (!text) return;
+    const { error } = await sb.from('messages').insert({ user_id: b.dataset.send, author: user.id, from_staff: true, text: text }); if (error) return err(error); inp.value = ''; renderMessaggi(); }; });
+  const unreadIds = (data || []).filter(m => !m.from_staff && !m.read_by_staff).map(m => m.id);
+  if (unreadIds.length) { await sb.from('messages').update({ read_by_staff: true }).in('id', unreadIds); refreshUnread(); }
+}
+
+/* ---------- strategie d'asta (tabella strategies, fix-009): formato + budget per ruolo + obiettivi per tier, con tetti di spesa ---------- */
+let strategies = [], sharedStrategies = [], curStrat = null, sharedStrat = null, lsteTab = 'liste';
+const TIER_W = { 1: 1.0, 2: 0.6, 3: 0.38, 4: 0.22, 5: 0.1 };
+const DEF_STRAT = { name: 'La mia strategia', teams: 8, credits: 500, slots: { P: 3, D: 8, C: 8, A: 6 }, budget: { P: 8, D: 22, C: 25, A: 45 },
+  targets: { P: { 1: 1 }, D: { 1: 1, 2: 2, 3: 2 }, C: { 1: 1, 2: 2, 3: 2 }, A: { 1: 1, 2: 1, 3: 2 } }, list_id: null, description: '' };
+function setLsteTab(t){
+  lsteTab = t;
+  $$('#lsteTabs a').forEach(a => a.classList.toggle('on', a.dataset.ltab === t));
+  const lp = $('#lstePane'), sp = $('#strPane'); if (lp) lp.classList.toggle('hidden', t !== 'liste'); if (sp) sp.classList.toggle('hidden', t !== 'strategie');
+  history.replaceState(null, '', '#' + (t === 'strategie' ? 'strategie' : 'liste'));
+  if (t === 'strategie') renderStrategie();
+}
+async function loadStrategies(){
+  if (!user || !sb) { strategies = []; if (!sharedStrat) curStrat = null; return; }
+  const { data, error } = await sb.from('strategies').select('*').eq('owner_id', user.id).order('created_at');
+  strategies = error ? [] : (data || []);
+  if (curStrat && !sharedStrat && !strategies.some(s => s.id === curStrat.id)) curStrat = null;
+  const want = localStorage.getItem('fantatb_strategy');
+  if (!curStrat && want && strategies.some(s => s.id === want)) await selectStrategy(want);
+}
+async function loadSharedStrategies(){
+  if (!sb) return;
+  const { data, error } = await sb.from('strategies').select('*').or('featured.eq.true,is_public.eq.true').order('featured', { ascending: false }).order('updated_at', { ascending: false }).limit(50);
+  sharedStrategies = error ? [] : (data || []).filter(s => !user || s.owner_id !== user.id);
+}
+async function stratList(st){
+  if (!st || !st.list_id) return null;
+  const l = lists.find(x => x.id === st.list_id) || sharedLists.find(x => x.id === st.list_id);
+  let meta = l;
+  if (!meta) { const { data } = await sb.from('lists').select('*').eq('id', st.list_id).maybeSingle(); meta = data; }
+  if (!meta) return null;
+  const { data: items } = await sb.from('list_items').select('player_id,tier,note').eq('list_id', st.list_id);
+  const out = Object.assign({ items: {} }, meta); (items || []).forEach(it => { out.items[it.player_id] = { tier: it.tier, note: it.note || '' }; });
+  return out;
+}
+async function selectStrategy(id){
+  if (!id) { curStrat = null; localStorage.removeItem('fantatb_strategy'); return; }
+  const s = strategies.find(x => x.id === id) || sharedStrategies.find(x => x.id === id); if (!s) return;
+  curStrat = Object.assign({}, s); curStrat.list = await stratList(s);
+  localStorage.setItem('fantatb_strategy', id);
+}
+function inflation(st){   // crediti in gioco / valore di listone di chi verra' davvero comprato (i migliori per quotazione, ruolo per ruolo)
+  let val = 0;
+  ROLES.forEach(r => { const n = (st.teams || 8) * ((st.slots || {})[r] || 0); val += players.filter(p => p.active && p.role === r).sort((a, b) => b.price - a.price).slice(0, n).reduce((a, p) => a + p.price, 0); });
+  return val ? ((st.teams || 8) * (st.credits || 500)) / val : 1;
+}
+function stratPlan(st, list){
+  const f = inflation(st); const plan = { f: f, roles: {} };
+  ROLES.forEach(r => {
+    const budget = Math.round((st.credits || 500) * ((st.budget || {})[r] || 0) / 100); const tg = (st.targets || {})[r] || {};
+    const nTarget = Object.values(tg).reduce((a, v) => a + (+v || 0), 0); const reserve = Math.max(0, ((st.slots || {})[r] || 0) - nTarget);
+    const wsum = Object.keys(tg).reduce((a, t) => a + (+tg[t] || 0) * TIER_W[t], 0);
+    const caps = {}; Object.keys(tg).forEach(t => { if (+tg[t] > 0) caps[t] = wsum ? Math.max(1, Math.round((budget - reserve) * TIER_W[t] / wsum)) : 0; });
+    const exp = {}, cand = {};
+    if (list) for (let t = 1; t <= 5; t++) { const ps = Object.keys(list.items).filter(pid => list.items[pid].tier === t).map(pid => playersById[pid]).filter(p => p && p.role === r).sort((a, b) => b.price - a.price);
+      cand[t] = ps; if (ps.length) exp[t] = Math.round(ps.reduce((a, p) => a + p.price, 0) / ps.length * f); }
+    plan.roles[r] = { budget: budget, reserve: reserve, nTarget: nTarget, caps: caps, exp: exp, cand: cand };
+  });
+  return plan;
+}
+function stratForm(st){
+  const num = (id, v, extra) => '<input type="number" id="st_'+id+'" value="'+v+'" '+(extra || '')+'>';
+  return '<div class="strgrid"><div><label>Nome</label><input id="st_name" value="'+esc(st.name)+'"></div><div><label>Squadre</label>'+num('teams', st.teams, 'min="2" max="20"')+'</div><div><label>Crediti</label>'+num('credits', st.credits, 'min="50" step="10"')+'</div>' +
+    ROLES.map(r => '<div><label>Slot '+ROLE_NAME[r]+'</label>'+num('slot_' + r, st.slots[r], 'min="0"')+'</div>').join('') + '</div>' +
+    '<h3>Budget per ruolo (% dei crediti) <span id="st_sum" class="muted"></span></h3><div class="strgrid">' + ROLES.map(r => '<div><label>'+roleTag(r)+' '+ROLE_NAME[r]+'</label>'+num('b_' + r, st.budget[r], 'min="0" max="100"')+'</div>').join('') + '</div>' +
+    '<h3>Quanti giocatori per tier vuoi prendere</h3><div class="tgrid"><div></div>'+[1,2,3,4,5].map(t => '<div class="muted" style="text-align:center"><span class="tier t'+t+'">T'+t+'</span> '+TIERS[t]+'</div>').join('') +
+    ROLES.map(r => '<div>'+roleTag(r)+' '+ROLE_NAME[r]+'</div>'+[1,2,3,4,5].map(t => '<input type="number" min="0" id="tg_'+r+'_'+t+'" value="'+((st.targets[r] || {})[t] || 0)+'">').join('')).join('') + '</div>' +
+    '<div class="strgrid" style="margin-top:8px"><div><label>Lista obiettivi collegata</label><select id="st_list"><option value="">— nessuna —</option>'+(lists.length ? '<optgroup label="Le mie liste">'+lists.map(l => '<option value="'+l.id+'"'+(st.list_id === l.id ? ' selected' : '')+'>'+esc(l.name)+'</option>').join('')+'</optgroup>' : '')+(sharedLists.length ? '<optgroup label="Condivise e consigliate">'+sharedLists.map(l => '<option value="'+l.id+'"'+(st.list_id === l.id ? ' selected' : '')+'>'+esc((l.featured ? '★ ' : '↗ ') + l.name)+'</option>').join('')+'</optgroup>' : '')+'</select></div>' +
+    '<div><label>Note</label><input id="st_desc" value="'+esc(st.description || '')+'" placeholder="es. punto tutto su due top in attacco"></div></div>';
+}
+function readStratForm(base){
+  const g = id => $('#st_' + id); const n = (id, d) => { const v = parseInt(g(id).value, 10); return isNaN(v) ? d : v; };
+  const st = Object.assign({}, base);
+  st.name = g('name').value.trim() || base.name; st.teams = n('teams', 8); st.credits = n('credits', 500); st.description = g('desc').value.trim(); st.list_id = g('list').value || null;
+  st.slots = {}; st.budget = {}; st.targets = {};
+  ROLES.forEach(r => { st.slots[r] = n('slot_' + r, 0); st.budget[r] = n('b_' + r, 0); st.targets[r] = {}; for (let t = 1; t <= 5; t++) { const v = parseInt($('#tg_' + r + '_' + t).value, 10) || 0; if (v > 0) st.targets[r][t] = v; } });
+  return st;
+}
+function planHtml(st, list){
+  const plan = stratPlan(st, list); const tot = (st.teams || 8) * (st.credits || 500);
+  let h = '<div class="card plan"><h2>📐 Il piano</h2><p class="small">Crediti in gioco nella lega: <b>'+tot+'</b>. Fattore di inflazione stimato <b>'+plan.f.toFixed(2)+'</b> (crediti totali diviso il valore di listone dei giocatori che verranno comprati): il "prezzo atteso" è la quotazione moltiplicata per questo fattore. Il "tetto" è quanto puoi spendere per ogni obiettivo restando nel budget del ruolo, lasciando 1 credito per ogni slot che riempirai a fine asta.</p>';
+  h += '<div class="tw"><table><thead><tr><th>Ruolo</th><th class="num">Budget</th><th class="num">Slot</th><th class="num">Obiettivi</th><th class="num">Riserva 1 cr.</th>' + [1,2,3,4,5].map(t => '<th class="num"><span class="tier t'+t+'">T'+t+'</span> n × tetto</th>').join('') + '</tr></thead><tbody>';
+  ROLES.forEach(r => { const p = plan.roles[r];
+    h += '<tr><td>'+roleTag(r)+' '+ROLE_NAME[r]+'</td><td class="num"><b>'+p.budget+'</b> <span class="muted">('+(st.budget[r] || 0)+'%)</span></td><td class="num">'+(st.slots[r] || 0)+'</td><td class="num">'+p.nTarget+'</td><td class="num">'+p.reserve+'</td>' +
+      [1,2,3,4,5].map(t => { const n = (st.targets[r] || {})[t] || 0; return '<td class="num">'+(n ? n+' × <b>'+p.caps[t]+'</b>'+(p.exp[t] ? '<div class="muted">atteso '+p.exp[t]+'</div>' : '') : '—')+'</td>'; }).join('') + '</tr>'; });
+  h += '</tbody></table></div>';
+  const bsum = ROLES.reduce((a, r) => a + (st.budget[r] || 0), 0);
+  if (bsum !== 100) h += '<div class="msg err">Le percentuali del budget sommano a '+bsum+'%, non a 100.</div>';
+  if (list) {
+    h += '<h2>🎯 Gli obiettivi ruolo per ruolo</h2><p class="small">Dalla lista "'+esc(list.name)+'": quotazione, prezzo atteso con l\'inflazione e tetto del tier. Verde se il tetto copre il prezzo atteso, rosso se dovrai scegliere.</p>';
+    ROLES.forEach(r => { const p = plan.roles[r]; const rows = [];
+      for (let t = 1; t <= 5; t++) (p.cand[t] || []).forEach(pl => { const expv = Math.round(pl.price * plan.f); const cap = p.caps[t]; const s = schede[pl.id] || {};
+        rows.push('<tr class="tr'+t+'"><td><span class="tier t'+t+'">T'+t+'</span></td><td>'+(s.url ? '<a class="pl" href="'+esc(s.url)+'">'+esc(pl.name)+'</a>' : esc(pl.name))+'</td><td class="muted">'+esc(pl.team)+'</td><td class="num">'+pl.price+'</td><td class="num">'+expv+'</td><td class="num">'+(cap ? '<span class="'+(cap >= expv ? 'okc' : 'koc')+'">'+cap+'</span>' : '<span class="muted">nessun obiettivo T'+t+'</span>')+'</td><td class="num">'+fmt2(s.mv)+'</td></tr>'); });
+      if (rows.length) h += '<h3>'+roleTag(r)+' '+ROLE_NAME[r]+' <span class="muted">budget '+p.budget+'</span></h3><div class="tw"><table><thead><tr><th>Tier</th><th>Giocatore</th><th>Squadra</th><th class="num">Quot.</th><th class="num">Atteso</th><th class="num">Tetto</th><th class="num">MV</th></tr></thead><tbody>'+rows.join('')+'</tbody></table></div>'; });
+  } else h += '<div class="msg hint">Collega una lista obiettivi per vedere i giocatori con prezzo atteso e tetto.</div>';
+  return h + '</div>';
+}
+async function renderStrategie(){
+  const mine = $('#strMine'), ed = $('#strEditor'), sh = $('#strShared'); if (!ed) return;
+  await Promise.all([loadStrategies(), loadSharedStrategies()]);
+  if (!user) mine.innerHTML = '<div class="msg">Entra o crea un account (gratis) per salvare le tue strategie. Quelle consigliate si vedono anche senza account.</div><a data-view="auth" class="btn">Entra</a>';
+  else {
+    mine.innerHTML = '<ul class="list">' + (strategies.length ? strategies.map(s => { const on = !!(curStrat && curStrat.id === s.id && !sharedStrat);
+      return '<li'+(on ? ' class="on"' : '')+'><div><b>'+esc(s.name)+'</b>'+(on ? ' <span class="pill live">attiva</span>' : '')+'<div class="muted">'+s.teams+' squadre · '+s.credits+' crediti · '+(s.is_public ? '🔗 condivisa · '+esc(s.share_code) : 'privata')+'</div></div><button class="small'+(on ? '' : ' sec')+'" data-strat="'+s.id+'">'+(on ? 'Modifica ↓' : 'Apri')+'</button></li>'; }).join('') : '<li class="muted">Nessuna strategia: creane una qui sotto.</li>') + '</ul>' +
+      '<p class="small">La strategia <b>attiva</b> compare come cruscotto nella scheda Asta della tua lega: pianificato contro speso, ruolo per ruolo.</p><div class="row" style="margin-top:10px"><button id="strNew" class="sec">＋ Nuova strategia</button></div>';
+    $$('[data-strat]', mine).forEach(b => { b.onclick = async () => { sharedStrat = null; await selectStrategy(b.dataset.strat); renderStrategie(); $('#strEditor').scrollIntoView({ behavior: 'smooth', block: 'start' }); }; });
+    $('#strNew').onclick = async () => { const { data, error } = await sb.from('strategies').insert(Object.assign({}, DEF_STRAT, { owner_id: user.id, author: (user.user_metadata && user.user_metadata.username) || '', list_id: curList ? curList.id : null })).select().single();
+      if (error) return err(error); sharedStrat = null; await loadStrategies(); await selectStrategy(data.id); renderStrategie(); };
+  }
+  sh.innerHTML = (sharedStrategies.length ? '<ul class="list">' + sharedStrategies.map(s => '<li><div><b>'+esc(s.name)+'</b>'+(s.featured ? ' <span class="pill">consigliata</span>' : '')+'<div class="muted">'+s.teams+' squadre · '+s.credits+' crediti'+(s.author ? ' · di '+esc(s.author) : '')+(s.description ? ' · '+esc(s.description) : '')+'</div></div><button class="small sec" data-sharedstrat="'+esc(s.share_code)+'">Apri</button></li>').join('') + '</ul>' : '<div class="muted small">Nessuna strategia condivisa al momento. Le strategie consigliate da TransferBeat compariranno qui.</div>') +
+    '<div class="row" style="margin-top:10px"><input id="strCode" placeholder="Codice di una strategia condivisa" style="text-transform:uppercase"><button id="strOpen" class="sec" style="flex:0 0 auto">Apri</button></div>';
+  $$('[data-sharedstrat]', sh).forEach(b => { b.onclick = () => openSharedStrategy(b.dataset.sharedstrat); });
+  $('#strOpen').onclick = () => openSharedStrategy($('#strCode').value.trim());
+  const st = sharedStrat || curStrat;
+  if (!st) { ed.innerHTML = '<div class="msg hint">📐 <b>Crea una strategia</b> (colonna a destra) o apri una consigliata. Scegli il formato, le percentuali di budget per ruolo e quanti giocatori per tier vuoi prendere: il piano ti dà il tetto di spesa per ogni obiettivo e il prezzo atteso con l\'inflazione della tua lega.</div>'; return; }
+  const own = !!(user && st.owner_id === user.id && !sharedStrat);
+  const link = location.origin + '/fanta/#strategia/' + st.share_code;
+  ed.innerHTML = '<div class="card lhead"><div class="row" style="justify-content:space-between;align-items:flex-start"><div style="flex:1 1 auto"><h2 style="margin:0">📐 '+esc(st.name)+(st.featured ? ' <span class="pill">consigliata</span>' : '')+'</h2><div class="muted">'+(st.author ? 'di '+esc(st.author)+' · ' : '')+st.teams+' squadre · '+st.credits+' crediti'+(st.description ? ' · '+esc(st.description) : '')+'</div></div>' +
+    '<div class="row" style="flex:0 0 auto">' + (own ? '<button class="small" id="strSave">💾 Salva e ricalcola</button><button class="small sec" id="strShare">'+(st.is_public ? '🔗 Condivisa ✓' : '🔗 Condividi')+'</button><button class="small warn" id="strDelete">Elimina</button>' : (user ? '<button class="small" id="strCopy">Copia nelle mie strategie</button>' : '<a data-view="auth" class="btn small">Entra per copiarla</a>')) + '</div></div>' +
+    (own && st.is_public ? '<p class="small">Link da condividere: <a href="'+esc(link)+'">'+esc(link)+'</a> · codice <b>'+esc(st.share_code)+'</b></p>' : '') +
+    (own ? stratForm(st) : '<div class="strgrid"><div><label>Formato</label>'+st.teams+' squadre, '+st.credits+' crediti, slot '+ROLES.map(r => r+st.slots[r]).join(' ')+'</div><div><label>Budget</label>'+ROLES.map(r => r+' '+(st.budget[r] || 0)+'%').join(' · ')+'</div></div>') + '</div>' + planHtml(st, st.list);
+  if (own) {
+    const upd = () => { const s = ROLES.reduce((a, r) => a + (parseInt($('#st_b_' + r).value, 10) || 0), 0); $('#st_sum').textContent = '= ' + s + '%' + (s === 100 ? ' ✓' : ' (deve fare 100)'); }; upd(); ROLES.forEach(r => { $('#st_b_' + r).oninput = upd; });
+    $('#strSave').onclick = async () => { const s = readStratForm(st); const row = { name: s.name, description: s.description, teams: s.teams, credits: s.credits, slots: s.slots, budget: s.budget, targets: s.targets, list_id: s.list_id, updated_at: new Date().toISOString() };
+      const { error } = await sb.from('strategies').update(row).eq('id', st.id); if (error) return err(error); await loadStrategies(); await selectStrategy(st.id); msg('Strategia salvata', 'ok'); renderStrategie(); };
+    $('#strShare').onclick = async () => { const { error } = await sb.from('strategies').update({ is_public: !st.is_public }).eq('id', st.id); if (error) return err(error); await loadStrategies(); await selectStrategy(st.id); renderStrategie(); };
+    $('#strDelete').onclick = async () => { if (!confirm('Eliminare la strategia "'+st.name+'"?')) return; const { error } = await sb.from('strategies').delete().eq('id', st.id); if (error) return err(error); curStrat = null; localStorage.removeItem('fantatb_strategy'); await loadStrategies(); renderStrategie(); };
+  } else if (user && $('#strCopy')) {
+    $('#strCopy').onclick = async () => { const { data, error } = await sb.rpc('copy_strategy', { p_code: st.share_code, p_name: null }); if (error) return err(error); sharedStrat = null; await loadLists(); await loadStrategies(); await selectStrategy(data); msg('Strategia copiata fra le tue', 'ok'); history.replaceState(null, '', '#strategie'); renderStrategie(); };
+  }
+}
+async function openSharedStrategy(code){
+  if (!code) return;
+  const { data, error } = await sb.from('strategies').select('*').eq('share_code', code.toUpperCase()).maybeSingle();
+  if (error || !data) return msg('Strategia non trovata o non condivisa', 'err');
+  sharedStrat = Object.assign({}, data); sharedStrat.list = await stratList(data);
+  show('liste'); setLsteTab('strategie'); history.replaceState(null, '', '#strategia/' + data.share_code);
+}
+function stratDashHtml(){   // cruscotto nella scheda Asta: pianificato contro speso per ruolo, obiettivi ancora liberi
+  if (!curStrat || !L) return '';
+  const st = curStrat; const plan = stratPlan(st, st.list); const mine = L.rosters.filter(r => r.user_id === user.id);
+  const taken = new Set(L.rosters.map(r => r.player_id));
+  let h = '<div class="card plan" style="margin-bottom:14px"><h2>📐 '+esc(st.name)+' <span class="muted">crediti residui '+(L.me ? L.me.credits : '?')+' · inflazione stimata '+plan.f.toFixed(2)+'</span></h2><div class="strgrid">';
+  ROLES.forEach(r => { const p = plan.roles[r]; const spent = mine.filter(x => (playersById[x.player_id] || {}).role === r).reduce((a, x) => a + x.price, 0); const pct = p.budget ? Math.min(100, Math.round(spent * 100 / p.budget)) : 0;
+    h += '<div><div class="small">'+roleTag(r)+' '+ROLE_NAME[r]+' · speso <b>'+spent+'</b> su '+p.budget+' · slot '+(st.slots[r] - slotsLeft(user.id, r))+'/'+st.slots[r]+'</div><div class="bar"><i style="width:'+pct+'%;background:'+(spent > p.budget ? 'var(--red)' : 'var(--accent)')+'"></i></div></div>'; });
+  h += '</div>';
+  if (st.list) { const free = []; ROLES.forEach(r => { for (let t = 1; t <= 3; t++) (plan.roles[r].cand[t] || []).forEach(pl => { if (!taken.has(pl.id)) free.push([t, pl, plan.roles[r].caps[t], Math.round(pl.price * plan.f)]); }); });
+    if (free.length) h += '<p class="small" style="margin-top:8px">Obiettivi ancora liberi: ' + free.slice(0, 14).map(x => '<span class="tier t'+x[0]+'">T'+x[0]+'</span> '+esc(x[1].name)+' <span class="muted">('+(x[2] ? 'tetto '+x[2] : 'atteso '+x[3])+')</span>').join(' · ') + (free.length > 14 ? ' …' : '') + '</p>'; }
+  return h + '</div>';
+}
+function leagueKpis(){
+  const box = $('#lgKpis'); if (!box || !L || !L.me) return;
+  const next = (matchdays || []).find(m => m.status === 'scheduled' && m.starts_at && new Date(m.starts_at) > new Date());
+  const kp = (l, v, s) => '<div class="kpi"><div class="l">'+l+'</div><div class="v">'+v+'</div>'+(s ? '<div class="s">'+s+'</div>' : '')+'</div>';
+  box.innerHTML = kp('Crediti residui', L.me.credits, 'su '+(L.league.settings.credits || 500)) + ROLES.map(r => kp('Slot '+ROLE_NAME[r].toLowerCase(), (slotsOf()[r] - slotsLeft(user.id, r))+'/'+slotsOf()[r], slotsLeft(user.id, r) ? slotsLeft(user.id, r)+' liberi' : 'completo')).join('') +
+    kp('Squadre', L.members.length+'/'+(L.league.settings.max_teams || 20), phase() === 'asta' ? 'fase asta' : 'campionato') + (next ? kp('Prossima giornata', 'G'+next.number, 'formazioni entro '+fmtWhen(next.starts_at)) : '');
+}
+
 async function init(){
   if (!CFG.SUPABASE_URL || CFG.SUPABASE_URL.includes('INSERISCI')) { msg('FantaTB non è ancora configurato (fanta/config.js).', 'err'); show('regole'); return; }
   sb = window.supabase.createClient(CFG.SUPABASE_URL, CFG.SUPABASE_ANON_KEY);
@@ -898,11 +1124,15 @@ async function init(){
   await initAuth();
   const m = h.match(/^#lega\/([0-9a-f-]{36})(?:\/([a-z]+))?$/);
   if (m && user) openLeague(m[1], m[2]);
-  await loadLists(); await loadSharedLists(); await restoreActiveList();
+  await loadLists(); await loadSharedLists(); await restoreActiveList(); await loadStrategies(); initChat();
   const v = h.slice(1);
   if (['listone', 'voti', 'regole', 'liste'].includes(v)) show(v);   // viste pubbliche raggiungibili anche senza login
+  if (v === 'strategie') { show('liste'); setLsteTab('strategie'); }
+  if (v === 'messaggi' && user) show('messaggi');
   const ml = h.match(/^#lista\/([A-Za-z0-9]{6,12})$/);
   if (ml) openSharedList(ml[1]);
+  const ms = h.match(/^#strategia\/([A-Za-z0-9]{6,12})$/);
+  if (ms) openSharedStrategy(ms[1]);
   if (h === '#crea') { if (user) { show('home'); setTimeout(() => { const f = $('#clName'); if (f) { f.scrollIntoView({ behavior: 'smooth', block: 'center' }); f.focus(); } }, 300); } else msg('Entra o crea un account: poi "Crea una lega" è nella tua pagina.', 'ok'); }
 }
 init().catch(err);

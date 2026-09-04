@@ -331,6 +331,32 @@ all'editor): "attiva" = la lista che si vede nella colonna Tier del Listone. Le 
 dice di chi è); per modificarle si copiano dalla vista Obiettivi. Righe del listone colorate per tier (`tr.tr1..tr5`: oro, verdino, azzurro,
 arancio marcato, rosso leggero), anche nel riepilogo. `restoreActiveList` ripristina la lista attiva da localStorage anche se condivisa.
 
+## 17. Chat rapida, strategie d'asta, restyling con colori di sezione (2026-09-04 sera, `fix-009-chat-strategie.sql`)
+**Prerequisito: l'utente esegue `fanta/supabase/fix-009-chat-strategie.sql`** (editor vuoto). Finché non lo fa la chat dice "Chat non
+disponibile" e le strategie non si salvano. Etichetta di ritorno prima di tutto questo: **tag `pre-restyle-2026-09-04`** (su GitHub): per
+tornare indietro `git checkout pre-restyle-2026-09-04 -- fanta/` e pubblicare.
+**Chat** (`messages`: una conversazione per utente; `staff`: chi risponde, inserito dal fix con l'email dell'admin). Pulsante fisso
+"💬 Scrivici" in basso a destra (`#chatBtn`, pannello `#chatPanel`): l'utente scrive, lo staff risponde dalla vista **Messaggi** (voce di
+menu visibile solo a chi è in `staff`, `isStaff` letto da `initChat`). Realtime su `messages` (badge non letti sul pulsante e sul menu,
+`refreshUnread`; `read_by_user`/`read_by_staff`). RLS: l'utente vede solo la sua conversazione, lo staff tutte. Niente email: la
+notifica è il badge in app (per l'email servirebbe pg_net + un servizio di invio: pending).
+**Strategie** (`strategies`: formato teams/credits/slots, `budget` % per ruolo, `targets` {ruolo: {tier: n}}, `list_id` lista collegata,
+condivisione come le liste, `copy_strategy` copia anche la lista se non è mia). Vista Obiettivi con due sotto-schede (`#lsteTabs`: Liste /
+Strategie, hash `#liste` / `#strategie`, `#strategia/<codice>` apre una condivisa). Editor `stratForm` + piano `planHtml`:
+**inflazione** = crediti in gioco / valore di listone dei giocatori che verranno comprati (i migliori per quotazione per ruolo × slot ×
+squadre); **prezzo atteso** = quotazione × inflazione; **tetto** per tier = (budget del ruolo − 1 credito per ogni slot non obiettivo)
+ripartito con pesi T1 1 / T2 0,6 / T3 0,38 / T4 0,22 / T5 0,1 (`TIER_W`). Tabella ruolo per ruolo con i giocatori della lista: verde se
+il tetto copre il prezzo atteso. La strategia **attiva** (localStorage `fantatb_strategy`) mette un **cruscotto nella scheda Asta**
+(`stratDashHtml`: speso vs pianificato per ruolo, barre, obiettivi ancora liberi con tetto). **Strategie consigliate**: `scripts/fanta_strategie.py
+--owner <email>` (service key, la lancia l'utente; `--check` = anteprima) crea 4 liste + 4 strategie featured intestate allo staff:
+Equilibrata, Sbilanciata sui bonus, Modificatore difesa, Low budget e scommesse (tier per ruolo da quotazione/fantamedia/media voto/
+titolarità/età; low budget: T1-T2 restano i big veri, T3-T4 le scommesse). Idempotente per nome.
+**Restyling**: `body[data-view]` (impostato in `show()` e in `openLeague` = `league`) → variabile `--sec` per sezione (home verde, listone
+blu, obiettivi oro, voti viola, lega arancio, messaggi rosso, login fucsia): sottolineatura del titolo, pillola attiva, bordo alto delle
+card, tessere. Tessere di lega `#lgKpis` (`leagueKpis`: crediti residui, slot per ruolo, squadre, prossima giornata con scadenza), hero
+nella pagina di accesso, stato vuoto delle leghe con link a listone e obiettivi. Verificato da anonimo (sotto-schede, chat chiusa,
+colori); chat, editor strategie e cruscotto richiedono login e il fix 009: primo giro dell'utente.
+
 ## 16. Allineamento al listone ufficiale: ruoli, squadre, quotazioni (2026-09-04, `scripts/fanta_quotazioni.py`)
 **Problema.** Ruolo e squadra in `players` vengono dal feed API-Football: la posizione (Midfielder/Defender) NON è il ruolo del fantacalcio
 (Dimarco = C invece di D), il feed rose resta indietro a fine mercato (Guðmundsson ancora alla Fiorentina, Norton-Cuffy ancora al Genoa) e le
