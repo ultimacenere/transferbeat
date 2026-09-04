@@ -235,24 +235,21 @@ def main():
     for pid, e in matched.items():
         p = next(x for x in db if x["id"] == pid)
         team_api = TEAM_API.get(e["squadra"], e["squadra"])
-        row = {"id": pid}
-        if "&" in (p.get("name") or ""):
-            row["name"] = html.unescape(p["name"])          # il feed a volte consegna N&apos;Diaye
+        # PostgREST vuole le STESSE chiavi in tutte le righe dell'upsert: riga completa, con i valori attuali dove non cambia nulla
+        row = {"id": pid, "season": SEASON, "name": html.unescape(p.get("name") or ""), "role": p.get("role"), "role_mantra": p.get("role_mantra") or [],
+               "team": p.get("team"), "team_id": p.get("team_id"), "price": p.get("price"), "active": True, "stats": dict(p.get("stats") or {})}
         if e["r"] in ("P", "D", "C", "A") and e["r"] != p.get("role"):
             row["role"] = e["r"]; diff_role.append((p, e))
-        if e["rm"] and e["rm"] != (p.get("role_mantra") or []):
+        if e["rm"]:
             row["role_mantra"] = e["rm"]
         if team_api and norm(team_api) != norm(p.get("team") or ""):
             row["team"] = team_api; diff_team.append((p, e))
             if team_api in team_ids:
                 row["team_id"] = team_ids[team_api]
         q = qt_of(e)
-        if prezzi and q is not None and fanta_price(pid, q) != p.get("price"):
+        if prezzi and q is not None:
             row["price"] = fanta_price(pid, q)
-        st = dict(p.get("stats") or {}); st["qt"] = {"team": team_api, "qta": e["qta"], "qti": e["qti"], "fvm": e["fvm"], "rm": e["rm"], "date": today}
-        row["stats"] = st
-        if not p.get("active"):
-            row["active"] = True
+        row["stats"]["qt"] = {"team": team_api, "qta": e["qta"], "qti": e["qti"], "fvm": e["fvm"], "rm": e["rm"], "date": today}
         updates.append(row)
     absent = [p for p in db if p.get("active") and p["id"] not in matched]
     # ---- rapporto ----
@@ -286,17 +283,31 @@ def main():
         known_ids = {p["id"] for p in db}
         found = 0
         for e in to_search:
-            sur = norm(e["nome"]).split()[0] if norm(e["nome"]) else ""
-            if len(sur) < 3:
+            toks = norm(e["nome"]).split()
+            abbr = toks[-1] if len(toks) > 1 and len(toks[-1]) <= 3 and (len(toks[-1]) == 1 or "." in e["nome"]) else ""
+            surt = [t for t in (toks[:-1] if abbr else toks) if len(t) >= 3] or toks
+            if not surt:
                 continue
             team_api = TEAM_API.get(e["squadra"], e["squadra"])
-            try:
-                res = af_get("/players", search=sur, league=LEAGUE_ID, season=SEASON)
+            ak = norm(e["nome"]) + "|" + norm(e["squadra"])
+            try:   # /players?search= trova solo chi ha già statistiche: i nuovi arrivi si trovano con /players/profiles
+                res = af_get("/players/profiles", player=alias[ak]) if ak in alias and alias[ak] not in known_ids else af_get("/players/profiles", search=surt[0])
             except Exception as ex:
                 print("   ricerca API fallita per %s: %s" % (e["nome"], ex)); continue
-            hits = [it for it in res if any(norm(s.get("team", {}).get("name") or "") == norm(team_api) for s in it.get("statistics", []))]
+            if ak in alias and alias[ak] not in known_ids:
+                res = [it for it in res if it["player"]["id"] == alias[ak]]      # alias verso un id nuovo: inserimento diretto
+            def ok(it):
+                pl = it["player"]; full = norm((pl.get("firstname") or "") + " " + (pl.get("lastname") or "") + " " + (pl.get("name") or ""))
+                if not all(t in full.split() for t in surt):
+                    return False
+                if abbr:
+                    fn = norm(pl.get("firstname") or "")
+                    return fn.startswith(abbr) or (pl.get("name") or "").lower().startswith(abbr[:1] + ".")
+                return True
+            hits = [it for it in res if ok(it)]
             if len(hits) != 1:
-                print("   %-22s %-12s: %d risultati su API-Football, non inserito" % (e["nome"], e["squadra"], len(hits))); continue
+                print("   %-22s %-12s: %d candidati su API-Football%s" % (e["nome"], e["squadra"], len(hits),
+                      (" -> " + " / ".join("%s %s (id %s, %s)" % (it["player"].get("firstname"), it["player"].get("lastname"), it["player"]["id"], it["player"].get("nationality")) for it in hits[:5]) + ": scegli e metti l'id in alias") if hits else "")); continue
             pl = hits[0]["player"]; q = qt_of(e)
             if pl["id"] in known_ids:
                 print("   %-22s %-12s: su API-Football è id %s, già in tabella con altro nome: aggiungi l'alias" % (e["nome"], e["squadra"], pl["id"])); continue
