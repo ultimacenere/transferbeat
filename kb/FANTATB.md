@@ -343,3 +343,21 @@ licenza CC BY) è un rischio. Alternativa per la pagina pubblica: quotazione Fan
 per ruolo con le nostre statistiche), da fare se si decide di tenere le due cose separate.
 Le schede giocatore (`data/stats/players.json`, da API-Football) mostrano ancora la squadra del feed: da allineare in `stats_pull.py`
 leggendo `players.stats.qt` (pending).
+**Decisioni dell'utente (2026-09-04 sera):** i ruoli ufficiali si usano senza remore (fissi tutta la stagione, usati da tutti); le quotazioni
+si usano **sfasate di ±1** (`fanta_price`: id pari +1, dispari −1, mai sotto 1) sulla **Qt.I** (quotazione iniziale; `--attuale` per la Qt.A).
+Il file ufficiale 2026-27 ha **533 giocatori** contro i **651 attivi** del feed: la differenza sono riserve, terzi portieri, giovani e
+prestiti che il feed rose tiene in organico ma il listone ufficiale non quota → `--disattiva` li mette `active=false` (~155). I 36 "non
+trovati" sono arrivi che il feed non ha ancora (Woltemade, Beto, Gnonto, De Gea era un caso di nome, ora abbinato…): `--cerca` li cerca
+su API-Football (`/players?search=cognome&league=135&season=2026`, 1 chiamata l'uno, filtro per squadra) e li inserisce con ruolo, squadra e
+prezzo dal file; se l'id trovato è già in tabella con altro nome lo dice (serve un alias). Abbinamento finale in locale: **496/533, 1 ambiguo**.
+Regole dell'abbinamento (`score_rows`): token del cognome del file (≥3 lettere) tutti presenti nel nome; deve toccare il **nome mostrato
+dall'API** (`prim`), non solo il cognome esteso delle schede (Sanchez Ro. ≠ "Álex Jiménez" Sánchez); forma unita per apostrofi e trattini
+(Ndiaye = N'Diaye); iniziale +1/−2, abbreviazione del nome (Pessina Mas.) +1/−1 sul nome delle schede; squadra +3/−2; portiere/non
+portiere −3, stesso ruolo +1; candidati sotto 3 = non trovato; due passate: se due righe reclamano lo stesso giocatore vince il punteggio.
+`fanta_players.py` ora: `html.unescape` sui nomi (il feed consegna `N&apos;Diaye`), e per chi ha `stats.qt` **ruolo e prezzo non si
+ricalcolano mai** (nemmeno con `--prezzi`), squadra bloccata per 45 giorni.
+**Procedura (utente, dalla cartella principale dopo `git pull`):**
+`py scripts\fanta_quotazioni.py "<file.xlsx>" --check --prezzi` → leggere il rapporto → `py scripts\fanta_quotazioni.py "<file.xlsx>" --prezzi --disattiva --cerca`
+→ `py scripts\render_site.py` → `bash scripts\pubblica.sh`. Alias per i casi ambigui in `data/fanta/alias_quotazioni.json`.
+Dopo l'import, il listone pubblico e l'app mostrano ruoli ufficiali e quotazioni "ufficiale ±1"; il modificatore di FantaTB §6 resta solo
+per chi non è nel file.

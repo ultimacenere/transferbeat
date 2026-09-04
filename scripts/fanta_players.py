@@ -14,7 +14,7 @@ Fonti API-Football: rose attuali (players/squads, 20 chiamate: il provider le ag
 possono restare indietro di giorni rispetto ai trasferimenti), trasferimenti per squadra (transfers, 20 chiamate, usati
 come contro-verifica), statistiche della stagione precedente (players?league=135, solo se servono prezzi nuovi).
 Formula della quotazione in kb/FANTATB.md §6. Scrive data/fanta/listone.json e aggiorna la tabella players."""
-import re, sys, time, unicodedata
+import html, re, sys, time, unicodedata
 from datetime import date, timedelta
 from fanta_common import *
 
@@ -68,7 +68,7 @@ def fetch_rosters():
             if pl["id"] in seen:      # in due rose (trasferimento recepito a metà dal feed): tengo la prima occorrenza
                 doppi += 1; continue
             seen.add(pl["id"])
-            rows.append({"id": pl["id"], "name": pl["name"], "team": tname, "team_id": tid,
+            rows.append({"id": pl["id"], "name": html.unescape(pl["name"] or ""), "team": tname, "team_id": tid,
                          "role": role_of(pl.get("position")), "age": pl.get("age"), "number": pl.get("number")})
         time.sleep(0.3)
     if doppi:
@@ -180,13 +180,14 @@ def main():
     for r in rows:
         old = dbmap.get(r["id"])
         keep = bool(old) and old["active"] and not prezzi   # gli inattivi (aggiunti dai voti con prezzo fittizio) vengono riquotati
+        official = bool(old and ((old.get("stats") or {}).get("qt")))   # ruolo e prezzo dal listone ufficiale (fanta_quotazioni.py): non si ricalcolano mai
         row = {"id": r["id"], "season": SEASON, "name": r["name"], "team": r["team"], "team_id": r["team_id"],
-               "role": old["role"] if keep else r["role"], "active": True}
+               "role": old["role"] if (keep or official) else r["role"], "active": True}
         if keep and qt_locked(old) and old.get("team"):
             row["team"], row["team_id"] = old["team"], old.get("team_id")   # squadra dal listone ufficiale (fanta_quotazioni.py): il feed rose e' in ritardo
         if stats:   # si aggiunge alle statistiche gia' salvate (stats.qt del listone ufficiale non va perso)
             row["stats"] = dict((old or {}).get("stats") or {}, prev=stats[0].get(r["id"], {}), cur=stats[1].get(r["id"], {}), age=r["age"], number=r["number"])
-        row["price"] = old["price"] if keep else price_of(row["role"], (stats[0].get(r["id"]) or stats[1].get(r["id"]) or {}) if stats else {})
+        row["price"] = old["price"] if (keep or official) else price_of(row["role"], (stats[0].get(r["id"]) or stats[1].get(r["id"]) or {}) if stats else {})
         out.append(row)
     out.sort(key=lambda r: ("PDCA".index(r["role"]), -r["price"], r["name"]))
     save_json("listone.json", {"updated": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "season": SEASON,
