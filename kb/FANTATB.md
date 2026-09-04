@@ -47,8 +47,10 @@
   `supabase_keys.txt` (3 righe: URL, anon key, service key) · `apifootball_key.txt` (1 riga) · `github_token.txt`.
   Gli script cercano i file nella radice del repo da cui girano (`ROOT`), oppure le variabili `SUPABASE_URL`,
   `SUPABASE_SERVICE_KEY`, `APIFOOTBALL_KEY`.
-- **Secret GitHub Actions**: `APIFOOTBALL_KEY`, `SUPABASE_URL`, `SUPABASE_SERVICE_KEY`. **NON ANCORA INSERITI** (l'utente li
-  mette "in un secondo momento"): finché mancano il workflow `fanta.yml` fallisce e i voti si lanciano a mano (§8).
+- **Secret GitHub Actions**: `APIFOOTBALL_KEY`, `SUPABASE_URL`, `SUPABASE_SERVICE_KEY`. **INSERITI il 2026-09-04** da Claude via API
+  (l'utente ha dato al token fine-grained il permesso "Secrets: read and write"; cifratura sealed-box con pynacl, `PUT /repos/.../actions/secrets/<nome>`).
+  Primo `workflow_dispatch task=voti` lanciato subito dopo: run 33865993064 verde su tutti gli step (voti, titolarità, statistiche, pagine,
+  commit `5ad8c84`). Da ora il cron di §8 è attivo. Per cambiare un valore: aggiornare il file locale e rifare il PUT (o Settings → Secrets).
 - La service key è passata in chat il 2026-09-02: prima del lancio pubblico conviene rigenerarla (Project Settings → API Keys)
   e aggiornare file locale e secret.
 - Costi: ~19 USD/mese API-Football; Supabase 0 (Free) → 25 USD se serve il Pro; Vercel/Actions/dominio 0.
@@ -161,7 +163,7 @@ la lista è quasi vuota. Le notizie/probabili formazioni (LLM) per affinare la %
 ## 8. Cron e operazioni ricorrenti
 - `fanta.yml`: schedule `30 21 * * 6,0,1,2,3,4` e `0 7 * * 1,2,5` (UTC) → voti + titolarità; `0 6 * * 4` (giovedì) → sincronizzazione
   rose; `workflow_dispatch` con `task=voti|rose|listone` (listone = `--prezzi`) e `matchday`. Dal 2026-09-03 dopo voti e titolarità lancia anche
-  `stats_pull.py` (statistiche squadra e schede giocatore, §14) e poi `render_site.py`. Committa `data/fanta`, `data/stats`, `giocatori/`, `squadre/`. **Inattivo finché mancano i secret** (§2).
+  `stats_pull.py` (statistiche squadra e schede giocatore, §14) e poi `render_site.py`. Committa `data/fanta`, `data/stats`, `giocatori/`, `squadre/`. **Attivo dal 2026-09-04** (secret inseriti, §2).
 - **Lancio manuale** (dal worktree, cartella `scripts`, con `PYTHONIOENCODING=utf-8`): `py fanta_voti.py` (o `py fanta_voti.py N`),
   poi `py fanta_titolari.py`. Listone: `py fanta_players.py --check` (verifica), `py fanta_players.py` (sincronizza rose, prezzi invariati), `--prezzi` dopo gennaio (§6).
 - Ogni script stampa il numero di chiamate API usate.
@@ -233,7 +235,7 @@ Claude esegue questi comandi a richiesta man mano che l'utente avanza (crea lega
 0. ~~Sincronizzare le rose~~ FATTO il 2026-09-03 alle 10:16 UTC (lanciato dall'utente): 16 disattivati (Leão, Nkunku, Kostić, Prati,
    Zappa, Petagna…), 2 cambi (Ricci → Como, Giacomone → Bologna), 11 rientrati e 5 nuovi quotati; ora 651 attivi e 34 inattivi.
    Nella lega test 9 usciti restano in rosa (Leão a "real" per 30): svincolarli o eliminare la lega. Ripetere `--check` prima dell'asta vera.
-1. **Secret GitHub Actions** (`APIFOOTBALL_KEY`, `SUPABASE_URL`, `SUPABASE_SERVICE_KEY`) → cron voti/titolarità automatico. Finché mancano: lancio manuale (§8).
+1. ~~Secret GitHub Actions~~ FATTO il 2026-09-04 (§2): cron voti/titolarità/statistiche automatico, primo run verde.
 2. **Rinnovo API-Football** entro il 2026-10-02 (§2).
 3. **Asta vera della lega dell'utente** (8 squadre): prima `elimina` la lega demo `test` (B9B24C58); Supabase Free basta.
 4. Correzione voti dall'interfaccia admin (`rating_overrides` esiste, manca la UI).
