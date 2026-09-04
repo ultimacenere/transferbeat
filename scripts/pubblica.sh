@@ -76,6 +76,12 @@ fi
 
 REMOTE="https://x-access-token:${TOKEN}@github.com/${REPO_SLUG}.git"
 red(){ sed -E "s/${TOKEN}/***/g"; }
+# Uso alternativo: pubblica.sh <refspec>  (es. refs/heads/backup/x:refs/heads/backup/x) spinge un ramo qualsiasi con lo stesso token,
+# senza rebase né IndexNow. Serve per i rami di backup delle copie locali.
+if [ -n "$1" ]; then
+  if git push "$REMOTE" "$1" 2>&1 | red; then echo "Pubblicato: $1"; exit 0; fi
+  echo "ERRORE: push di $1 fallito."; exit 1
+fi
 BEFORE=$(git ls-remote "$REMOTE" refs/heads/main 2>/dev/null | cut -f1)   # per IndexNow: URL cambiate rispetto a quanto era online
 PY=$(command -v py || command -v python3 || command -v python)
 for i in 1 2 3 4 5; do

@@ -227,6 +227,11 @@ Claude esegue questi comandi a richiesta man mano che l'utente avanza (crea lega
 - Test end-to-end senza toccare l'utente: script Python con utenti temporanei via `/auth/v1/admin/users` e RPC con il loro JWT
   (vedi gli smoke test del 2026-09-02); pulire sempre alla fine. `fanta_demo.py` copre i casi ricorrenti.
 - Dopo ogni modifica al frontend dire all'utente **Ctrl+F5** (cache del browser).
+- `bash scripts/pubblica.sh <refspec>` (dal 2026-09-04) spinge un ramo qualsiasi con lo stesso token, senza rebase né IndexNow:
+  serve per i rami di backup delle copie locali (`backup/drive-2026-09-04`, `backup/desktop-2026-09-04`).
+- In modalità automatica il classificatore BLOCCA `git reset --hard`/`git clean` sulle copie locali e la lettura dei file token
+  (anche solo i prefissi): quei comandi vanno dati all'utente in sintassi PowerShell; le scritture Supabase le lancia lui.
+- Niente `confirm()`/`prompt()` nell'app: helper `sure(bottone, etichetta)` in `fanta/app.js` (primo clic arma per 5 s, secondo esegue).
 - Le scritture su Supabase lanciate da Claude (upsert/patch dagli script) possono essere bloccate dal classificatore della modalità
   automatica: in quel caso dare all'utente il comando da lanciare nel suo terminale, che è **Windows PowerShell 5.1** (niente `&&` né
   `VAR=x`: usare `;` e `$env:VAR="x"`; gli script stampano anche su console cp1252 senza crashare). Es.: `py scripts/fanta_players.py`.
@@ -247,6 +252,10 @@ Claude esegue questi comandi a richiesta man mano che l'utente avanza (crea lega
 1. ~~Secret GitHub Actions~~ FATTO il 2026-09-04 (§2): cron voti/titolarità/statistiche automatico, primo run verde.
 2. **Rinnovo API-Football** entro il 2026-10-02 (§2).
 3. **Asta vera della lega dell'utente** (8 squadre): prima `elimina` la lega demo `test` (B9B24C58); Supabase Free basta.
+3b. **Copie locali del repo** (2026-09-04): Drive riallineata (backup `backup/drive-2026-09-04`); Desktop: backup pushato in
+    `backup/desktop-2026-09-04` (b063c8f, lock stantio del 3/9 rimosso), il reset a origin/main + pulizia dei file spuri lo lancia
+    l'utente fuori dagli orari delle pianificate (12:40, 16:10, 20:40); poi eliminare la cartella Drive (memoria e chiavi già copiate sul Desktop).
+3c. **Chat: notifica email** allo staff (pg_net + servizio di invio) ancora da fare: oggi solo badge in app.
 4. Correzione voti dall'interfaccia admin (`rating_overrides` esiste, manca la UI).
 5. Probabili formazioni dalle notizie (LLM, stesso motore degli articoli) per affinare la % titolarità; alert deadline formazioni.
 6. Opzione di lega "formazioni nascoste fino alla deadline".
@@ -300,6 +309,11 @@ si aggiorna con le rose); **card "Listone FantaTB" nella home** anche senza legh
 `renderTabs` scrive `#lega/<id>/<scheda>`, `init()` legge l'hash PRIMA di initAuth (che chiama show) e riapre vista o lega+scheda; le schede giocatore
 hanno in alto **"← Torna al listone"** (`#backLs`: se il referrer è l'app o il listone statico fa `history.back()`, così si torna alla vista o alla
 scheda di lega da cui si era partiti; altrimenti porta a `fantacalcio/listone.html`).
+
+**Pulizia del feed (2026-09-04 sera, `clean_players` in `render_stats.load_stats`)**: nomi doppiamente codificati riportati a UTF-8
+("R. ObriÄ‡" → Obrić, "C. Inao OulaÃ¯" → Oulaï), entità HTML sciolte ("N&apos;Diaye"), doppioni del feed rimossi (stesso nome e squadra
+con un id vuoto senza nascita né statistiche: Laerke 589739, Doucoure 644542). Gli omonimi veri (L. Colombo, M. Pessina, L. Pellegrini)
+restano con slug suffissato dall'id. Schede: 667.
 
 ## 15. Import rose da Excel, squadre in attesa, liste obiettivi con tier (2026-09-03 sera, `fix-008-rose-liste.sql`)
 **`fix-008-rose-liste.sql` ESEGUITO dall'utente il 2026-09-04** (verificato: `lists`/`list_items` leggibili, RPC presenti e con i controlli di
@@ -449,3 +463,15 @@ nascita 1998-06-28 cercando il soprannome); Toni Fernández = id 445973; **Sankh
 il provider usa il secondo cognome Bocoum Diawara) ed era stato disattivato per il nome diverso: alias verso il suo id. Morale per i prossimi
 listoni: prima di cercare un "non trovato" su API-Football guardare nella lista degli "assenti dal file" se c'è lo stesso giocatore con un
 altro cognome. `alias_quotazioni.json` ora ha 34 voci e va conservato: vale anche per il listone di gennaio.
+
+## 18. Riepilogo della giornata 2026-09-04 (in ordine, con i commit su main)
+1. Listone allineato al file ufficiale Fantacalcio.it: 533/533 (ruoli, Mantra, squadre, Qt.I ±1), 155 non quotati disattivati, 33 nuovi (§16, 9007acc).
+2. Copia Drive del repo salvata in `backup/drive-2026-09-04` e riallineata; chiavi e memoria copiate sul Desktop (copia ufficiale = Desktop).
+3. Secret GitHub Actions inseriti via API: cron `fanta.yml` attivo (run 33865993064 verde).
+4. fix-009 eseguito: chat rapida con lo staff, strategie d'asta (4 di TransferBeat + personalizzate condivisibili, export Excel a 3 fogli),
+   restyling con colori di sezione; tag di ritorno `pre-restyle-2026-09-04` (§17, a3347da).
+5. Bug `data-view` sul body (ogni clic ridisegnava la vista: Excel "non si scarica", rinomina impossibile) → `data-sec`; via prompt/confirm (bd9ca9e).
+6. Campo di Schiera adattato al telefono (Z Fold 6 chiuso) e maglie con i colori sociali dei club (`teams` in schede.json, f0fb6dc).
+7. `fanta_demo.py bilancia`: rose bilanciate sul FVM per la lega test come simulazione reale (§11, 28ad9fd); lancio dell'utente.
+8. Chiusura: helper `sure()` al posto degli ultimi 3 `confirm()` admin, pulizia nomi/doppioni del feed, `pubblica.sh <refspec>`,
+   backup Desktop `backup/desktop-2026-09-04`.

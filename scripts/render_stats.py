@@ -7,7 +7,7 @@ Regole grafiche (skill dataviz): palette validata blu #1f6fd6 / arancio #eb6834 
 de-enfasi; barre <= 24px con punta arrotondata e 2px di aria fra barre adiacenti; linee 2px; marcatori >= 8px con anello
 bianco; griglia hairline; legenda sempre presente con >= 2 serie; etichette dirette solo sui massimi; accanto a ogni
 grafico c'e' sempre la tabella con i numeri."""
-import os, math
+import os, html, math
 from datetime import date
 from site_common import esc, slugify, norm, load_json, DATA, SITE, SEASON, fdate_it, date_only, page, ORG, FANTA_ALIAS, badge
 
@@ -64,10 +64,43 @@ ART = {"Inter": "dell'Inter", "Juventus": "della Juventus", "Milan": "del Milan"
 ART_A = {k: v.replace("dell'", "all'").replace("della ", "alla ").replace("dello ", "allo ").replace("del ", "al ") for k, v in ART.items()}
 
 # ---------- dati ----------
+def _fix_text(s):
+    """Il feed a volte consegna nomi doppiamente codificati ('R. ObriÄ‡', 'C. Inao OulaÃ¯'): li riporta a UTF-8."""
+    if s and "&" in s:
+        s = html.unescape(s)   # "N&apos;Diaye" -> "N'Diaye"
+    if s and any(ch in s for ch in "ÃÄÅÂ"):
+        try:
+            return s.encode("latin-1").decode("utf-8")
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            return s
+    return s
+
+def clean_players(pl):
+    """Nomi corretti e doppioni del feed rimossi: API-Football a volte ha lo stesso giocatore con due id nella stessa squadra,
+    uno vuoto (senza data di nascita, senza statistiche). Tiene quello con i dati."""
+    P = pl.get("players") or {}
+    for p in P.values():
+        for k in ("name", "first", "last"):
+            if p.get(k):
+                p[k] = _fix_text(p[k])
+    seen = {}
+    for pid, p in list(P.items()):
+        key = (full_name(p).lower(), p.get("team"))
+        empty = not ((p.get("birth") or {}).get("date")) and not p.get("cur") and not p.get("prev")
+        if key in seen:
+            other = P[seen[key]]
+            oempty = not ((other.get("birth") or {}).get("date")) and not other.get("cur") and not other.get("prev")
+            if empty and not oempty:
+                del P[pid]; continue
+            if oempty and not empty:
+                del P[seen[key]]
+        seen[key] = pid
+    return pl
+
 def load_stats():
     return {"teams": load_json(os.path.join(STATS_DIR, "teams.json"), {}) or {},
             "matches": load_json(os.path.join(STATS_DIR, "matches.json"), {}) or {},
-            "players": load_json(os.path.join(STATS_DIR, "players.json"), {}) or {}}
+            "players": clean_players(load_json(os.path.join(STATS_DIR, "players.json"), {}) or {})}
 
 def has_stats(S):
     return bool((S.get("teams") or {}).get("teams"))

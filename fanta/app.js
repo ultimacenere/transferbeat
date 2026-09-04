@@ -4,6 +4,13 @@
 const CFG = window.FANTATB_CONFIG || {};
 const $ = (s, el) => (el || document).querySelector(s);
 const $$ = (s, el) => Array.from((el || document).querySelectorAll(s));
+// Conferma a due clic al posto di confirm() (bloccato da alcuni browser): il primo clic arma il bottone per 5 s, il secondo esegue.
+function sure(b, label){
+  if (b.dataset.sure === '1') { b.dataset.sure = ''; return true; }
+  b.dataset.sure = '1'; b.dataset.was = b.textContent; b.textContent = label || 'Sicuro?'; b.classList.add('warn');
+  setTimeout(() => { if (b.dataset.sure === '1') { b.dataset.sure = ''; b.textContent = b.dataset.was; } }, 5000);
+  return false;
+}
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const ROLES = ['P','D','C','A'];
 const ROLE_NAME = {P:'Portieri', D:'Difensori', C:'Centrocampisti', A:'Attaccanti'};
@@ -312,7 +319,7 @@ function renderMembers(){
   $('#tab-membri').innerHTML = table + cards + '<div id="pendingBox"></div>' + (L.isAdmin ? importHtml() : '');
   bindImport(); loadPending();
   $$('[data-release]').forEach(b => b.onclick = async () => {
-    if (!confirm('Rimuovere il giocatore dalla rosa e rimborsare i crediti?')) return;
+    if (!sure(b, 'Svincolo?')) return;   // primo clic arma, secondo esegue (niente confirm(): il browser lo blocca)
     const { error } = await sb.rpc('release_player', { p_league: L.league.id, p_player: +b.dataset.release });
     if (error) err(error); else refreshLeagueData();
   });
@@ -550,7 +557,7 @@ function renderCalendar(){
   }).join('');
   box.innerHTML = html;
   const g = $('#calGen'); if (g) g.onclick = async () => {
-    if (S.fixtures.length && !confirm('Rigenerare il calendario? Calendario e risultati attuali verranno cancellati.')) return;
+    if (S.fixtures.length && !sure(g, 'Sicuro? Cancella calendario e risultati')) return;
     const { data, error } = await sb.rpc('generate_calendar', { p_league: L.league.id, p_start: +$('#calStart').value, p_gironi: +$('#calG').value });
     if (error) return err(error); msg('Calendario generato: '+data+' partite', 'ok'); loadSeasonData();
   };
@@ -891,7 +898,7 @@ async function loadPending(){
   if (error || !data || !data.length) { box.innerHTML = ''; return; }
   box.innerHTML = '<h3 style="margin-top:18px">Squadre in attesa ('+data.length+')</h3><p class="small">Rose già caricate: chi entra con il codice invito <b>'+esc(L.league.invite_code)+'</b> sceglie una di queste squadre e la eredita con giocatori e prezzi.</p><ul class="list">' +
     data.map(p => '<li><div><b>'+esc(p.team_name)+'</b><div class="muted">'+(p.roster || []).length+' giocatori · '+(p.roster || []).reduce((a, x) => a + (x.price || 0), 0)+' crediti spesi</div></div>'+(L.isAdmin ? '<button class="small warn" data-delpend="'+esc(p.team_name)+'">Elimina</button>' : '')+'</li>').join('') + '</ul>';
-  $$('[data-delpend]', box).forEach(b => { b.onclick = async () => { if (!confirm('Eliminare la squadra in attesa "'+b.dataset.delpend+'"?')) return; const { error } = await sb.rpc('delete_pending', { p_league: L.league.id, p_team: b.dataset.delpend }); if (error) err(error); else loadPending(); }; });
+  $$('[data-delpend]', box).forEach(b => { b.onclick = async () => { if (!sure(b, 'Sicuro? Elimina')) return; const { error } = await sb.rpc('delete_pending', { p_league: L.league.id, p_team: b.dataset.delpend }); if (error) err(error); else loadPending(); }; });
 }
 async function checkPendingForCode(){
   const code = $('#jnCode').value.trim(); const box = $('#jnPickBox'), sel = $('#jnPick');
