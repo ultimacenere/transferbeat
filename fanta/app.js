@@ -69,9 +69,11 @@ async function loadPlayers(){
 function roleTag(r){ return '<span class="role '+r+'">'+r+'</span>'; }
 /* tabella del listone, condivisa fra la vista pubblica (#lsTable) e la scheda Listone della lega (#tab-listone, con stato libero/preso).
    Filtri: testo, ruolo, squadra, tier della lista attiva, solo con voto (+ solo liberi in lega). Colonna Tier modificabile se la lista e' mia. */
-const lsState = { ls: { k: 'price', asc: false }, ll: { k: 'price', asc: false } };
+const lsState = { ls: { k: 'price', asc: false }, ll: { k: 'price', asc: false }, le: { k: 'price', asc: false } };
 const TIERS = { 1: 'Top', 2: 'Obiettivo', 3: 'Alternativa', 4: 'Scommessa', 5: 'Da evitare' };
 const fmt2 = v => v == null ? '—' : Number(v).toFixed(2).replace('.', ',');
+const heatCls = v => v == null ? 'h0' : v >= 7 ? 'h1' : v >= 6.5 ? 'h2' : v >= 6 ? 'h3' : 'h4';   // colore di MV/FMV: verde forte, verde, neutro, rosso
+const heatFmt = v => '<span class="heat '+heatCls(v)+'">'+fmt2(v)+'</span>';
 function lsCell(v, f){ return '<td class="num">'+(v == null ? '—' : (f ? f(v) : v))+'</td>'; }
 function tierOf(pid){ const it = curList && curList.items[pid]; return it ? it.tier : 0; }
 function tierChip(t){ return t ? '<span class="tier t'+t+'" title="'+esc(TIERS[t])+'">T'+t+'</span>' : '<span class="muted">—</span>'; }
@@ -81,7 +83,7 @@ function lsVal(p, k){
   if (k === 'stato') return p._stato || ''; if (k === 'tier') { const t = tierOf(p.id); return t ? 6 - t : 0; }
   const s = schede[p.id]; return (s && s[k] != null) ? s[k] : -1;
 }
-function filterBarHtml(px){
+function filterBarHtml(px, withList){
   const teams = [...new Set(players.filter(p => p.active).map(p => p.team))].sort();
   return '<div class="row fbar"><input id="'+px+'Search" placeholder="Cerca giocatore o squadra">' +
     '<select id="'+px+'Role"><option value="">Tutti i ruoli</option><option value="P">Portieri</option><option value="D">Difensori</option><option value="C">Centrocampisti</option><option value="A">Attaccanti</option></select>' +
@@ -89,7 +91,7 @@ function filterBarHtml(px){
     '<select id="'+px+'Tier"><option value="">Lista: tutti</option><option value="in">Solo in lista</option><option value="out">Non in lista</option>'+[1,2,3,4,5].map(t => '<option value="'+t+'">Tier '+t+' · '+TIERS[t]+'</option>').join('')+'</select>' +
     '<select id="'+px+'Voto"><option value="">Con e senza voto</option><option value="1">Solo con voto</option></select>' +
     (px === 'll' ? '<label class="small chk1"><input type="checkbox" id="llFree"> solo liberi</label>' : '') + '</div>' +
-    '<div class="row fbar2"><span class="small">Lista obiettivi attiva:</span><select id="'+px+'List"></select><a class="small" data-view="liste">gestisci le liste →</a></div>';
+    (withList === false ? '' : '<div class="row fbar2"><span class="lab">🎯 Lista obiettivi attiva</span><select id="'+px+'List"></select><a data-view="liste">apri la lista →</a><span class="small">scegli una lista e assegna i tier dalla colonna Tier</span></div>');
 }
 function fillListSelect(sel, rerender){
   if (!sel) return;
@@ -117,7 +119,7 @@ function listoneHtml(rows, sort, withStato){
       return '<tr'+(withStato && p._stato ? ' class="taken"' : '')+'><td>'+roleTag(p.role)+'</td><td>'+nm+'</td><td>'+esc(p.team)+'</td>'+
         (withStato ? '<td class="muted">'+(p._stato ? esc(p._stato) : '<span class="free">libero</span>')+'</td>' : '')+
         (curList ? '<td class="tc">'+(canTier ? tierSelect(p.id, t, false) : tierChip(t))+'</td>' : '')+
-        '<td class="num"><b>'+p.price+'</b></td>'+lsCell(s.mv, fmt2)+lsCell(s.fmv, fmt2)+lsCell(s.tit, v => '<span class="pct '+(v >= 70 ? 'g' : v >= 40 ? 'a' : 'r')+'">'+v+'%</span>')+
+        '<td class="num"><b>'+p.price+'</b></td>'+lsCell(s.mv, heatFmt)+lsCell(s.fmv, heatFmt)+lsCell(s.tit, v => '<span class="pct '+(v >= 70 ? 'g' : v >= 40 ? 'a' : 'r')+'">'+v+'%</span>')+
         lsCell(s.pres)+lsCell(s.gol)+lsCell(s.assist)+'</tr>'; }).join('') + '</tbody></table></div>' +
     '<p class="small">MV = media voto FantaTB, FMV = fantamedia (voto più bonus e malus), Tit. = indice di titolarità per la prossima giornata; presenze, gol e assist in Serie A. Clic sull\'intestazione per ordinare, sul nome per la scheda completa: da lì "Torna al listone" riporta qui.' +
     (curList ? ' Tier: '+[1,2,3,4,5].map(x => 'T'+x+' '+TIERS[x]).join(', ')+'.' : ' Scegli una lista obiettivi per vedere e assegnare i tier.')+'</p>';
@@ -126,9 +128,9 @@ function bindSort(el, key, rerender){
   $$('th.srt', el).forEach(h => { h.onclick = () => { const k = h.dataset.k, st = lsState[key]; if (st.k === k) st.asc = !st.asc; else lsState[key] = { k: k, asc: (k === 'name' || k === 'team' || k === 'role' || k === 'stato') }; rerender(); }; });
   el.onchange = e => { const s = e.target.closest('.tierSel'); if (s) setTier(+s.dataset.pid, +s.value); };
 }
-function ensureFilters(px, wrap, rerender){
+function ensureFilters(px, wrap, rerender, withList){
   if (!wrap || wrap.innerHTML) return;
-  wrap.innerHTML = filterBarHtml(px);
+  wrap.innerHTML = filterBarHtml(px, withList);
   $('#' + px + 'Search').oninput = rerender;
   ['Role', 'Team', 'Tier', 'Voto'].forEach(id => { $('#' + px + id).onchange = rerender; });
   if (px === 'll') $('#llFree').onchange = rerender;
@@ -644,7 +646,7 @@ async function setTier(pid, tier){
   if (!tier) { const { error } = await sb.from('list_items').delete().eq('list_id', curList.id).eq('player_id', pid); if (error) return err(error); delete curList.items[pid]; }
   else { const note = (curList.items[pid] || {}).note || ''; const { error } = await sb.from('list_items').upsert({ list_id: curList.id, player_id: pid, tier: tier, note: note }); if (error) return err(error); curList.items[pid] = { tier: tier, note: note }; }
   sb.from('lists').update({ updated_at: new Date().toISOString() }).eq('id', curList.id).then(() => {});
-  const v = $('#view-liste'); if (v && !v.classList.contains('hidden')) renderListEditor();
+  const v = $('#view-liste'); if (v && !v.classList.contains('hidden')) { renderListTiers(curList, true); renderListBrowse(); }
 }
 async function renderListe(){
   const box = $('#lsteMine'); if (!box) return;
@@ -667,30 +669,25 @@ async function renderListe(){
   renderFeatured();
 }
 function renderListEditor(){
-  const ed = $('#lsteEditor'); if (!ed) return;
+  const ed = $('#lsteEditor'), br = $('#lsteBrowse'); if (!ed) return;
   const l = sharedList || curList;
-  if (!l) { ed.innerHTML = '<div class="msg">Apri o crea una lista: poi dal <a data-view="listone"><b>Listone</b></a> assegni un tier a ogni giocatore (colonna Tier), oppure aggiungi i giocatori da qui. Tier 1 Top · 2 Obiettivo · 3 Alternativa · 4 Scommessa · 5 Da evitare.</div>'; return; }
+  if (!l) {
+    ed.innerHTML = '<div class="msg hint">🎯 <b>Apri o crea una lista</b> (colonna a destra). Poi scorri il <b>listone completo qui sotto</b>, filtra per ruolo, squadra o voto e assegna un tier a ogni giocatore dalla colonna Tier. ' +
+      'Tier: <span class="tier t1">T1</span> Top · <span class="tier t2">T2</span> Obiettivo · <span class="tier t3">T3</span> Alternativa · <span class="tier t4">T4</span> Scommessa · <span class="tier t5">T5</span> Da evitare.</div>';
+    if (br) { br.innerHTML = ''; br.dataset.list = ''; }
+    return;
+  }
   const own = !!(user && l.owner_id === user.id && !sharedList);
-  const byTier = {}; Object.keys(l.items).forEach(pid => { const it = l.items[pid]; (byTier[it.tier] = byTier[it.tier] || []).push(+pid); });
   const link = location.origin + '/fanta/#lista/' + l.share_code;
-  let h = '<div class="card"><div class="row" style="justify-content:space-between;align-items:flex-start"><div style="flex:1 1 auto"><h2 style="margin:0">'+esc(l.name)+(l.featured ? ' <span class="pill">consigliata</span>' : '')+'</h2><div class="muted">'+(l.author ? 'di '+esc(l.author)+' · ' : '')+Object.keys(l.items).length+' giocatori'+(l.description ? ' · '+esc(l.description) : '')+'</div></div>' +
-    '<div class="row" style="flex:0 0 auto">' + (own ? '<button class="small sec" id="lsteShare">'+(l.is_public ? 'Condivisa ✓' : 'Condividi')+'</button><button class="small sec" id="lsteRename">Rinomina</button><button class="small warn" id="lsteDelete">Elimina</button>'
+  ed.innerHTML = '<div class="card lhead"><div class="row" style="justify-content:space-between;align-items:flex-start"><div style="flex:1 1 auto"><h2 style="margin:0">🎯 '+esc(l.name)+(l.featured ? ' <span class="pill">consigliata</span>' : '')+'</h2><div class="muted">'+(l.author ? 'di '+esc(l.author)+' · ' : '')+'<span id="lsteCount">'+Object.keys(l.items).length+'</span> giocatori'+(l.description ? ' · '+esc(l.description) : '')+'</div></div>' +
+    '<div class="row" style="flex:0 0 auto">' + (own ? '<button class="small sec" id="lsteShare">'+(l.is_public ? '🔗 Condivisa ✓' : '🔗 Condividi')+'</button><button class="small sec" id="lsteRename">Rinomina</button><button class="small warn" id="lsteDelete">Elimina</button>'
       : (user ? '<button class="small" id="lsteCopy">Copia nelle mie liste</button>' : '<a data-view="auth" class="btn small">Entra per copiarla</a>')) + '</div></div>' +
     (own && l.is_public ? '<p class="small">Link da condividere: <a href="'+esc(link)+'">'+esc(link)+'</a> · codice <b>'+esc(l.share_code)+'</b>. Chi lo apre vede la lista e può copiarla.</p>' : '') +
-    (own ? '<div class="row" style="margin-top:8px"><input id="lsteAdd" placeholder="Aggiungi un giocatore: scrivi il nome"><select id="lsteAddTier" style="flex:0 0 auto">'+[1,2,3,4,5].map(t => '<option value="'+t+'">Tier '+t+' · '+TIERS[t]+'</option>').join('')+'</select></div><div id="lsteHits" class="hits"></div>' : '');
-  for (let t = 1; t <= 5; t++) {
-    const ps = (byTier[t] || []).map(pid => playersById[pid]).filter(Boolean).sort((a, b) => ROLES.indexOf(a.role) - ROLES.indexOf(b.role) || b.price - a.price);
-    h += '<h3><span class="tier t'+t+'">T'+t+'</span> '+TIERS[t]+' <span class="muted">('+ps.length+')</span></h3>' + (ps.length ? '<div class="tw"><table><thead><tr><th>R</th><th>Giocatore</th><th>Squadra</th><th class="num">Quot.</th><th class="num">MV</th><th class="num">FMV</th><th class="num">Tit.</th><th>'+(own ? 'Nota' : '')+'</th>'+(own ? '<th></th>' : '')+'</tr></thead><tbody>' +
-      ps.map(p => { const s = schede[p.id] || {}; const it = l.items[p.id];
-        return '<tr><td>'+roleTag(p.role)+'</td><td>'+(s.url ? '<a class="pl" href="'+esc(s.url)+'">'+esc(p.name)+'</a>' : esc(p.name))+'</td><td class="muted">'+esc(p.team)+'</td><td class="num"><b>'+p.price+'</b></td><td class="num">'+fmt2(s.mv)+'</td><td class="num">'+fmt2(s.fmv)+'</td><td class="num">'+(s.tit != null ? s.tit+'%' : '—')+'</td>' +
-          (own ? '<td><input class="note" data-note="'+p.id+'" value="'+esc(it.note || '')+'" placeholder="nota"></td><td>'+tierSelect(p.id, it.tier, true)+'</td>' : '<td class="muted">'+esc(it.note || '')+'</td>') + '</tr>'; }).join('') + '</tbody></table></div>' : '<div class="muted small">Nessun giocatore in questo tier.</div>');
-  }
-  ed.innerHTML = h + '</div>';
+    (own ? '<div class="tiers-legend">'+[1,2,3,4,5].map(t => '<span><span class="tier t'+t+'">T'+t+'</span> '+TIERS[t]+'</span>').join('')+'</div>' +
+      '<div class="row" style="margin-top:8px"><input id="lsteAdd" placeholder="Aggiunta rapida: scrivi un nome (oppure usa il listone qui sotto)"><select id="lsteAddTier" style="flex:0 0 auto">'+[1,2,3,4,5].map(t => '<option value="'+t+'">Tier '+t+' · '+TIERS[t]+'</option>').join('')+'</select></div><div id="lsteHits" class="hits"></div>' : '') +
+    '<div id="lsteTiers"></div></div>';
+  renderListTiers(l, own);
   if (own) {
-    ed.onchange = async e => {
-      const s = e.target.closest('.tierSel'); if (s) return setTier(+s.dataset.pid, +s.value);
-      const n = e.target.closest('[data-note]'); if (n) { const pid = +n.dataset.note; const { error } = await sb.from('list_items').update({ note: n.value }).eq('list_id', l.id).eq('player_id', pid); if (error) err(error); else if (l.items[pid]) l.items[pid].note = n.value; }
-    };
     $('#lsteShare').onclick = async () => { const { error } = await sb.from('lists').update({ is_public: !l.is_public }).eq('id', l.id); if (error) return err(error); await loadLists(); await selectList(l.id); renderListe(); };
     $('#lsteRename').onclick = async () => { const name = prompt('Nuovo nome della lista', l.name); if (!name || !name.trim()) return; const { error } = await sb.from('lists').update({ name: name.trim() }).eq('id', l.id); if (error) return err(error); await loadLists(); await selectList(l.id); renderListe(); };
     $('#lsteDelete').onclick = async () => { if (!confirm('Eliminare la lista "'+l.name+'"?')) return; const { error } = await sb.from('lists').delete().eq('id', l.id); if (error) return err(error); curList = null; localStorage.removeItem('fantatb_list'); await loadLists(); renderListe(); };
@@ -701,12 +698,44 @@ function renderListEditor(){
       hits.innerHTML = found.map(p => '<a data-add="'+p.id+'">'+roleTag(p.role)+' '+esc(p.name)+' <span class="muted">'+esc(p.team)+' · quot. '+p.price+'</span></a>').join('') || '<span class="muted small">Nessun giocatore trovato</span>';
       $$('[data-add]', hits).forEach(a => { a.onclick = async () => { await setTier(+a.dataset.add, +$('#lsteAddTier').value); add.value = ''; hits.innerHTML = ''; }; });
     };
-  } else if (user && $('#lsteCopy')) {
+    // il listone completo con i filtri: e' il modo principale per costruire la lista
+    if (br) {
+      if (br.dataset.list !== l.id) { br.innerHTML = '<div class="card"><h2>📋 Scegli dal listone</h2><p class="small">Filtra per ruolo, squadra, voto o tier già assegnato e imposta il tier nella colonna <b>Tier</b>: la lista sopra si aggiorna subito. Clic sul nome per la scheda del giocatore.</p><div id="leFilters"></div><div id="leTable" style="margin-top:8px"></div></div>'; br.dataset.list = l.id; }
+      ensureFilters('le', $('#leFilters'), renderListBrowse, false);
+      renderListBrowse();
+    }
+  } else {
+    if (br) { br.innerHTML = ''; br.dataset.list = ''; }
+  }
+  if (!own && user && $('#lsteCopy')) {
     $('#lsteCopy').onclick = async () => {
       const { data, error } = await sb.rpc('copy_list', { p_code: l.share_code, p_name: null }); if (error) return err(error);
       sharedList = null; history.replaceState(null, '', '#liste'); await loadLists(); await selectList(data); msg('Lista copiata fra le tue', 'ok'); renderListe();
     };
   }
+}
+function renderListTiers(l, own){
+  const box = $('#lsteTiers'); if (!box || !l) return;
+  const byTier = {}; Object.keys(l.items).forEach(pid => { const it = l.items[pid]; (byTier[it.tier] = byTier[it.tier] || []).push(+pid); });
+  const cnt = $('#lsteCount'); if (cnt) cnt.textContent = Object.keys(l.items).length;
+  let h = '';
+  for (let t = 1; t <= 5; t++) {
+    const ps = (byTier[t] || []).map(pid => playersById[pid]).filter(Boolean).sort((a, b) => ROLES.indexOf(a.role) - ROLES.indexOf(b.role) || b.price - a.price);
+    h += '<h3><span class="tier t'+t+'">T'+t+'</span> '+TIERS[t]+' <span class="muted">('+ps.length+')</span></h3>' + (ps.length ? '<div class="tw"><table><thead><tr><th>R</th><th>Giocatore</th><th>Squadra</th><th class="num">Quot.</th><th class="num">MV</th><th class="num">FMV</th><th class="num">Tit.</th><th>'+(own ? 'Nota' : '')+'</th>'+(own ? '<th></th>' : '')+'</tr></thead><tbody>' +
+      ps.map(p => { const s = schede[p.id] || {}; const it = l.items[p.id];
+        return '<tr><td>'+roleTag(p.role)+'</td><td>'+(s.url ? '<a class="pl" href="'+esc(s.url)+'">'+esc(p.name)+'</a>' : esc(p.name))+'</td><td class="muted">'+esc(p.team)+'</td><td class="num"><b>'+p.price+'</b></td><td class="num">'+heatFmt(s.mv)+'</td><td class="num">'+heatFmt(s.fmv)+'</td><td class="num">'+(s.tit != null ? '<span class="pct '+(s.tit >= 70 ? 'g' : s.tit >= 40 ? 'a' : 'r')+'">'+s.tit+'%</span>' : '—')+'</td>' +
+          (own ? '<td><input class="note" data-note="'+p.id+'" value="'+esc(it.note || '')+'" placeholder="nota"></td><td>'+tierSelect(p.id, it.tier, true)+'</td>' : '<td class="muted">'+esc(it.note || '')+'</td>') + '</tr>'; }).join('') + '</tbody></table></div>' : '<div class="muted small">Nessun giocatore in questo tier.</div>');
+  }
+  box.innerHTML = h;
+  if (own) box.onchange = async e => {
+    const s = e.target.closest('.tierSel'); if (s) return setTier(+s.dataset.pid, +s.value);
+    const n = e.target.closest('[data-note]'); if (n) { const pid = +n.dataset.note; const { error } = await sb.from('list_items').update({ note: n.value }).eq('list_id', l.id).eq('player_id', pid); if (error) err(error); else if (l.items[pid]) l.items[pid].note = n.value; }
+  };
+}
+function renderListBrowse(){
+  const el = $('#leTable'); if (!el || !curList) return;
+  el.innerHTML = players.length ? listoneHtml(filterPlayers('le'), lsState.le, false) : '<div class="msg">Listone non ancora caricato.</div>';
+  bindSort(el, 'le', renderListBrowse);
 }
 async function renderFeatured(){
   const box = $('#lsteFeatured'); if (!box) return;

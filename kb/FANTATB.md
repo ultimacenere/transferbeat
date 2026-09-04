@@ -308,3 +308,12 @@ Editor (`renderListEditor`): giocatori per tier con quotazione, MV, FMV, titolar
 **consigliate** (influencer, redazione) sono quelle con `featured = true`, da impostare a mano in SQL (`update lists set featured = true, author =
 'Nome' where share_code = '...'`): compaiono in "Liste condivise e consigliate" insieme alle pubbliche più recenti. Hash: `#liste`, `#lista/<codice>`.
 Non testato con un account (richiede login): verificati sintassi, vista anonima e flusso del listone; il primo giro con dati veri va fatto dall'utente.
+**2026-09-04 (feedback utente).** (a) La lista si costruisce **dentro la vista Obiettivi con il listone completo e i suoi filtri**: `#lsteBrowse`
+(sotto la griglia) mostra `filterBarHtml('le', false)` + `listoneHtml` con la colonna Tier; `renderListEditor` costruisce lo scheletro una volta per
+lista (`br.dataset.list`), `renderListTiers` ridisegna solo il riepilogo per tier e `renderListBrowse` solo la tabella, così i filtri non si
+azzerano a ogni tier assegnato (`setTier` chiama queste due, non l'editor intero). L'aggiunta rapida per nome resta nell'intestazione.
+(b) **Restyling** di `fanta/style.css` (tutte le classi precedenti conservate): barra gradiente fucsia→arancio→giallo in testata (palette promo),
+menu e schede di lega a pillole con icona (via `::before` su `data-view`/`data-tab`), card bianche con ombra e raggio 14, bottoni con gradiente,
+input con anello di focus, tabelle con intestazione fissa, zebra al passaggio e nomi in evidenza, chip `.heat` per MV/FMV (h1 ≥7 verde forte,
+h2 ≥6,5 verde, h3 ≥6 neutro, h4 <6 rosso; `heatCls`/`heatFmt` in app.js), barra "Lista obiettivi attiva" color ambra, asta su fondo blu notte
+con timer pulsante, titoli con emoji nelle viste. Nessun cambio di layout nel campo di Schiera e nei Risultati.
