@@ -11,7 +11,7 @@ import glob, os, re, subprocess, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://transferbeat.com"
 HOST = "transferbeat.com"
-SERVED = re.compile(r"^(index\.html|[a-z0-9-]+\.html|articoli/[a-z]{2}/[^/]+\.html|squadre/[^/]+\.html|campionati/[^/]+\.html|fantacalcio/[^/]+\.html|"
+SERVED = re.compile(r"^(index\.html|[a-z0-9-]+\.html|articoli/[a-z]{2}/[^/]+\.html|squadre/[^/]+\.html|campionati/[^/]+\.html|fantacalcio/[^/]+\.html|giocatori/[^/]+\.html|"
                     r"fanta/index\.html|llms\.txt|sitemap[a-z-]*\.xml|data/fanta/[^/]+\.json)$")
 
 def key():
