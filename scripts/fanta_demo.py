@@ -3,10 +3,12 @@
 """FantaTB - strumento demo/test. Usa la service key (supabase_keys.txt), quindi bypassa le regole: SOLO per prove.
   py fanta_demo.py bots <CODICE_INVITO> [n=7]              crea n account bot (botN@fantatb.test / fantatb-botN) e li iscrive
   py fanta_demo.py rose <CODICE_INVITO>                    riempie le rose di TUTTE le squadre con giocatori casuali (slot e crediti ok)
+  py fanta_demo.py bilancia <CODICE_INVITO> [--check] [--seed=N]  RIFA le rose di tutte le squadre bilanciate sul FVM (simulazione reale):
+                                                           prezzi in scala sul budget, formazioni migliori, giornate ricalcolate, fase campionato
   py fanta_demo.py formazioni <CODICE_INVITO> <G> [tutti]  formazioni dei bot (o di tutti) per la giornata G
   py fanta_demo.py pulisci <CODICE_INVITO>                 elimina bot, rose, formazioni, calendario e risultati; l'admin resta, crediti pieni
   py fanta_demo.py elimina <CODICE_INVITO>                 elimina la lega intera (e i bot)"""
-import sys, json, random
+import sys, os, json, random
 from fanta_common import *
 
 TEAMS = ["Real Marzapane", "Atletico Divano", "Dinamo Panchina", "Sporting Grigliata", "Inter Nos", "Bayern Leverkusen di Sotto",
@@ -114,7 +116,104 @@ def cmd_elimina(code):
         req("/auth/v1/admin/users/" + uid, method="DELETE", prefer="return=minimal")
     print("lega eliminata:", l["name"])
 
+def _val(p):
+    """valore di mercato: FVM ufficiale Fantacalcio.it (base 1000, in stats.qt), altrimenti quotazione x 10"""
+    v = ((p.get("stats") or {}).get("qt") or {}).get("fvm")
+    return float(v) if v else float(p["price"]) * 10
+
+def cmd_bilancia(code, *opts):
+    """rose bilanciate per TUTTE le squadre (simulazione reale): draft a serpentina sul FVM per ruolo + scambi correttivi,
+    prezzi pagati in scala così che ognuno spenda quasi tutto il budget, formazioni migliori per le giornate già calcolate
+    e per la prossima, giornate ricalcolate, fase 'campionato'. Con --check stampa solo il piano. --seed=N per ripetere."""
+    check = "--check" in opts; seed = next((int(o.split("=")[1]) for o in opts if o.startswith("--seed=")), None)
+    rnd = random.Random(seed)
+    l = league(code); lid = l["id"]; s = l["settings"]; slots = s.get("slots") or {"P": 3, "D": 8, "C": 8, "A": 6}
+    credits = s.get("credits", 500); bmax = s.get("bench_size", 7)
+    mem = members(lid); n = len(mem)
+    if n < 2:
+        print("servono almeno 2 squadre"); sys.exit(1)
+    players = req("/rest/v1/players?select=id,name,role,team,price,stats&active=eq.true&limit=2000")
+    sch = json.load(open(os.path.join(DATA, "schede.json"), encoding="utf-8")).get("players", {})
+    for p in players:
+        p["val"] = _val(p); p["tit"] = (sch.get(str(p["id"])) or {}).get("tit") or 0
+    miss = [p["name"] for p in players if not ((p.get("stats") or {}).get("qt") or {}).get("fvm")]
+    print("squadre: %d  giocatori attivi: %d  senza FVM: %d %s" % (n, len(players), len(miss), miss[:5]))
+    order = list(range(n)); rnd.shuffle(order); rosa = {i: [] for i in range(n)}
+    for k, r in enumerate("PDCA"):   # serpentina: fascia per fascia, ogni ruolo parte da una squadra diversa
+        pool = sorted([p for p in players if p["role"] == r], key=lambda p: (-p["val"], -p["price"], -p["tit"]))[:n * slots[r]]
+        start = (k * 3) % n
+        for b in range(slots[r]):
+            seq = order[start:] + order[:start]
+            if b % 2:
+                seq = seq[::-1]
+            for i, t in enumerate(seq):
+                rosa[t].append(pool[b * n + i])
+    tot = lambda t: sum(p["val"] for p in rosa[t])
+    for _ in range(500):   # scambi correttivi a parità di ruolo tra la squadra più forte e la più debole
+        hi = max(rosa, key=tot); lo = min(rosa, key=tot); gap = tot(hi) - tot(lo); best = None
+        for a in rosa[hi]:
+            for b in rosa[lo]:
+                d = a["val"] - b["val"]
+                if a["role"] == b["role"] and 0 < d < gap:
+                    ng = abs(gap - 2 * d)
+                    if ng < gap and (best is None or ng < best[0]):
+                        best = (ng, a, b)
+        if not best:
+            break
+        _, a, b = best; rosa[hi].remove(a); rosa[lo].remove(b); rosa[hi].append(b); rosa[lo].append(a)
+    rows, spend, paid = [], {}, {}
+    for t in rosa:   # prezzi pagati: FVM in scala sul budget della squadra (resto casuale 0-6), minimo 1, somma esatta
+        target = credits - rnd.randint(0, 6); k = target / tot(t)
+        pr = {p["id"]: max(1, int(round(p["val"] * k))) for p in rosa[t]}
+        diff = target - sum(pr.values()); ordered = sorted(rosa[t], key=lambda p: -p["val"]); i = 0
+        while diff != 0:
+            p = ordered[i % len(ordered)]; i += 1
+            if diff > 0:
+                pr[p["id"]] += 1; diff -= 1
+            elif pr[p["id"]] > 1:
+                pr[p["id"]] -= 1; diff += 1
+        spend[t] = sum(pr.values()); paid[t] = pr
+        rows += [{"league_id": lid, "player_id": p["id"], "user_id": mem[t]["user_id"], "price": pr[p["id"]]} for p in rosa[t]]
+    mds = sorted({x["matchday"] for x in req("/rest/v1/results?select=matchday&league_id=eq." + lid)})
+    todo = mds + [(max(mds) + 1) if mds else 1]
+    lus = []
+    for t in rosa:   # formazione migliore per valore: modulo che massimizza il valore degli 11, panchina 1P 2D 2C 2A
+        by = {r: sorted([p for p in rosa[t] if p["role"] == r], key=lambda p: (-p["val"], -p["tit"])) for r in "PDCA"}
+        cands = []
+        for mod in ("3-4-3", "3-5-2", "4-3-3", "4-4-2", "4-5-1", "5-3-2", "5-4-1"):
+            d, c, a = map(int, mod.split("-"))
+            if len(by["D"]) < d or len(by["C"]) < c or len(by["A"]) < a:
+                continue
+            st = by["P"][:1] + by["D"][:d] + by["C"][:c] + by["A"][:a]
+            cands.append((sum(p["val"] for p in st), mod, st, (d, c, a)))
+        vmax = max(x[0] for x in cands)   # un modulo a caso tra quelli entro il 3% del migliore, per non avere 8 squadre uguali
+        v, mod, st, (d, c, a) = rnd.choice([x for x in cands if x[0] >= vmax * 0.97]); sid = {p["id"] for p in st}
+        bench = (by["P"][1:2] + by["D"][d:d + 2] + by["C"][c:c + 2] + by["A"][a:a + 2])[:bmax]
+        for md in todo:
+            lus.append({"league_id": lid, "user_id": mem[t]["user_id"], "matchday": md, "module": mod,
+                        "starters": [p["id"] for p in st], "bench": [p["id"] for p in bench]})
+        rosa[t].sort(key=lambda p: ("PDCA".index(p["role"]), -p["val"]))
+        top = ", ".join("%s %d" % (p["name"], paid[t][p["id"]]) for p in sorted(rosa[t], key=lambda p: -p["val"])[:3])
+        print("%-28s FVM %5.0f  spesa %3d  resto %2d  %s  top: %s" % (mem[t]["team_name"], tot(t), spend[t], credits - spend[t], mod, top))
+    vals = [tot(t) for t in rosa]
+    print("scarto FVM tra la più forte e la più debole: %.1f%%   giornate da ricalcolare: %s   prossima: %d" % (
+        (max(vals) - min(vals)) / max(vals) * 100, mds, todo[-1]))
+    if check:
+        print("(--check: nessuna scrittura)"); return
+    for tb in ("lineups", "rosters", "auction_bids"):
+        req("/rest/v1/%s?league_id=eq.%s" % (tb, lid), method="DELETE", prefer="return=minimal")
+    req("/rest/v1/auctions?league_id=eq." + lid, {"status": "idle", "player_id": None, "current_bid": None, "bidder_id": None}, "PATCH", "return=minimal")
+    req("/rest/v1/rosters", rows, prefer="return=minimal")
+    for t in rosa:
+        req("/rest/v1/league_members?league_id=eq.%s&user_id=eq.%s" % (lid, mem[t]["user_id"]), {"credits": credits - spend[t]}, "PATCH", "return=minimal")
+    req("/rest/v1/lineups?on_conflict=league_id,user_id,matchday", lus, prefer="resolution=merge-duplicates,return=minimal")
+    for md in mds:
+        req("/rest/v1/rpc/compute_matchday", {"p_league": lid, "p_matchday": md}); print("giornata %d ricalcolata" % md)
+    s["phase"] = "campionato"
+    req("/rest/v1/leagues?id=eq." + lid, {"settings": s}, "PATCH", "return=minimal")
+    print("fatto: %d rose da %d, %d formazioni (giornate %s), fase 'campionato'" % (n, len(rows) // n, len(lus), todo))
+
 if __name__ == "__main__":
     if len(sys.argv) < 3:
         print(__doc__); sys.exit(1)
-    {"bots": cmd_bots, "rose": cmd_rose, "formazioni": cmd_formazioni, "pulisci": cmd_pulisci, "elimina": cmd_elimina}[sys.argv[1]](*sys.argv[2:])
+    {"bots": cmd_bots, "rose": cmd_rose, "bilancia": cmd_bilancia, "formazioni": cmd_formazioni, "pulisci": cmd_pulisci, "elimina": cmd_elimina}[sys.argv[1]](*sys.argv[2:])

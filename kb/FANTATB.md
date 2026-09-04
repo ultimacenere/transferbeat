@@ -4,7 +4,7 @@
 > **Stato: ONLINE su https://transferbeat.com/fanta/** dal 2026-09-02 sera. Serie A 2026-27, regole Classic.
 > Pubblico ridotto (lega dell'utente + amici) per la stagione di test; monetizzazione da valutare dopo.
 > Nel database c'è la lega **test** (codice B9B24C58, creata la notte del 2026-09-03: Picchio admin, Luigi Ragoni, 6 bot, rose complete,
-> calendario e 2 giornate calcolate): da eliminare con `fanta_demo.py elimina B9B24C58` prima della lega vera.
+> calendario e 2 giornate calcolate; dal 2026-09-04 sera rose bilanciate con `bilancia`, simulazione reale voluta dall'utente): da eliminare con `fanta_demo.py elimina B9B24C58` prima della lega vera.
 
 > **Regola SEO/GEO (2026-09-03)**: vale anche per FantaTB, vedi `kb/SEO.md`. Le pagine dati (listone, voti, titolarità) vanno pubblicate come HTML statico in `fantacalcio/` (piano §3.4). L'analisi di mercato con le funzioni da aggiungere è in `kb/report/mercato-fantacalcio-2026-09-03.html`: priorità web app installabile con notifiche, scambi e mercato di riparazione, "schiero solo se titolare", coppe e gironi, voti live, asta a buste chiuse.
 
@@ -30,7 +30,7 @@
 | `scripts/fanta_players.py` | listone: `--check` verifica senza scrivere · senza flag sincronizza le rose (prezzi invariati) · `--prezzi` ricalcola tutto (§6) → `players` + `data/fanta/listone.json` |
 | `scripts/fanta_voti.py` | voti di una giornata (§5) → `player_ratings`, `matchdays`, poi `compute_all_leagues` → `data/fanta/voti-NN.json` |
 | `scripts/fanta_titolari.py` | indice titolarità + infortuni con rientro (§7) → `player_status` → `data/fanta/titolari-NN.json` |
-| `scripts/fanta_demo.py` | strumento demo/test: bot, rose casuali, formazioni, pulizia, eliminazione lega (§11) |
+| `scripts/fanta_demo.py` | strumento demo/test: bot, rose casuali o bilanciate (`bilancia`), formazioni, pulizia, eliminazione lega (§11) |
 | `scripts/stats_pull.py` | statistiche squadra (classifiche, teams/statistics, fixtures/statistics) per Serie A, Premier, Liga e schede giocatore Serie A (profili, stagione corrente e precedente, trasferimenti) → `data/stats/*.json` (§14) |
 | `scripts/render_stats.py` | grafici SVG, sezione "Statistiche" delle pagine squadra, schede `giocatori/<slug>.html` e `giocatori/index.html`; importato da `render_site.py` (§14) |
 | `data/stats/{teams,matches,players}.json` | cache dei dati API-Football per squadre, partite e giocatori (committati dal cron) |
@@ -208,6 +208,15 @@ dinamiche (`renderTabs`): Asta (solo in fase asta) · Schiera · Classifica · C
 `rose CODICE` riempie le rose di tutte le squadre con giocatori casuali (slot e crediti rispettati) · `formazioni CODICE G [tutti]`
 formazioni dei bot (o di tutti) per la giornata G (i più cari per ruolo, modulo casuale, panchina ≤ bench_size) ·
 `pulisci CODICE` toglie bot, rose, formazioni, calendario, risultati e riporta l'admin ai crediti pieni · `elimina CODICE` cancella la lega.
+`bilancia CODICE [--check] [--seed=N]` (2026-09-04 sera, richiesto dall'utente per tenere la lega test come **simulazione reale**):
+RIFÀ le rose di tutte le squadre bilanciate. Valore = **FVM** ufficiale Fantacalcio.it (`stats.qt.fvm`, base 1000; ripiego quotazione×10).
+Per ogni ruolo prende i primi n×slot per FVM e li distribuisce a serpentina fascia per fascia (ordine squadre casuale, ogni ruolo parte da
+una squadra diversa), poi scambi correttivi a parità di ruolo tra la più forte e la più debole finché lo scarto non scende (sulla lega test:
+0,1%). Prezzi pagati = FVM in scala sul budget della squadra (resto casuale 0-6 crediti, minimo 1, somma esatta): Lautaro ~134, Malen ~164
+su 500. Poi cancella rose/formazioni/rilanci, azzera l'asta, inserisce rose e crediti residui, salva la formazione migliore per valore
+(modulo a caso tra quelli entro il 3% del migliore, panchina 1P 2D 2C 2A) per le giornate già calcolate e la prossima, richiama
+`compute_matchday` sulle giornate calcolate (upsert: classifica e calendario coerenti con le nuove rose) e mette la fase a `campionato`.
+`--check` stampa solo il piano. Non tocca il calendario.
 Usa la service key: bypassa deadline e regole → solo per prove. La sera del 2026-09-02 l'utente presenta il progetto a un amico:
 Claude esegue questi comandi a richiesta man mano che l'utente avanza (crea lega → bots → asta o rose → calendario → formazioni → calcola).
 
