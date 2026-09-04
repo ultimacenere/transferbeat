@@ -23,6 +23,7 @@
     <a data-view="liste">Obiettivi</a>
     <a data-view="voti">Voti</a>
     <a data-view="regole">Come funziona</a>
+    <a data-view="messaggi" class="hidden">Messaggi <span class="nbadge hidden"></span></a>
   </div></nav>
 </div></header>
 
@@ -32,7 +33,8 @@
   <!-- AUTH -->
   <section id="view-auth" class="hidden">
     <h1>⚽ FantaTB</h1>
-    <p class="lead">Il fantacalcio gratuito di TransferBeat: leghe private, asta live dal telefono, voto statistico trasparente, listone con statistiche e liste obiettivi. Entra o crea un account in dieci secondi.</p>
+    <p class="lead">Il fantacalcio gratuito di TransferBeat. Entra o crea un account in dieci secondi.</p>
+    <div class="hero"><b>Cosa trovi dentro</b><ul><li>🏆 <b>Leghe private</b> con asta live dal telefono e regole su misura, anche con le rose importate da Excel.</li><li>📋 <b>Listone ufficiale</b> con media voto, fantamedia, titolarità, statistiche e scheda di ogni giocatore.</li><li>🎯 <b>Liste obiettivi per tier e strategie d'asta</b> con budget per ruolo e tetti di spesa, da condividere con gli amici.</li><li>⭐ <b>Voti statistici</b> trasparenti dopo ogni giornata, formula pubblica.</li></ul></div>
     <div class="grid">
       <div class="card">
         <h2>Entra</h2>
@@ -82,6 +84,7 @@
     <a data-view="home" class="muted">← Le mie leghe</a>
     <h1 id="lgName"></h1>
     <p class="lead" id="lgSub"></p>
+    <div id="lgKpis" class="kpis"></div>
     <div class="tabs" id="lgTabs"></div>
     <div id="tab-asta" class="hidden"></div>
     <div id="tab-listone" class="hidden"></div>
@@ -111,8 +114,10 @@
 
   <!-- LISTE OBIETTIVI (tier 1-5), anche senza lega -->
   <section id="view-liste" class="hidden">
-    <h1>🎯 Liste obiettivi</h1>
-    <p class="lead">La tua lista per l'asta con i tier da 1 (Top) a 5 (Da evitare), anche senza una lega. Scorri il listone completo con i filtri e assegna il tier a ogni giocatore: il riepilogo per tier si aggiorna subito, con quotazione, media voto, fantamedia e titolarità. Condividi la lista con un link o copia quelle consigliate.</p>
+    <h1>🎯 Obiettivi e strategie</h1>
+    <p class="lead">La tua lista per l'asta con i tier da 1 (Top) a 5 (Da evitare) e la strategia per spenderli bene: budget per ruolo, quanti giocatori per tier, tetti di spesa e prezzi attesi con l'inflazione della tua lega. Tutto condivisibile con un link, anche senza una lega.</p>
+    <div class="tabs" id="lsteTabs"><a data-ltab="liste" class="on">🎯 Liste obiettivi</a><a data-ltab="strategie">📐 Strategie d'asta</a></div>
+    <div id="lstePane">
     <div class="grid3">
       <div id="lsteEditor"></div>
       <div>
@@ -121,6 +126,15 @@
       </div>
     </div>
     <div id="lsteBrowse" style="margin-top:18px"></div>
+    </div>
+    <div id="strPane" class="hidden"><div class="grid3"><div id="strEditor"></div><div><div class="card"><h2>Le mie strategie</h2><div id="strMine"></div></div><div class="card" style="margin-top:14px"><h2>Strategie consigliate e condivise</h2><div id="strShared"></div></div></div></div></div>
+  </section>
+
+  <!-- MESSAGGI (staff) -->
+  <section id="view-messaggi" class="hidden">
+    <h1>💬 Messaggi degli utenti</h1>
+    <p class="lead">Le conversazioni aperte dal pulsante "Scrivici": suggerimenti, segnalazioni e domande. Le risposte arrivano all'utente dentro l'app.</p>
+    <div id="msgList"></div>
   </section>
 
   <!-- REGOLE -->
@@ -136,6 +150,8 @@
     </div>
   </section>
 </main>
+<button id="chatBtn" class="chatbtn">💬 <span>Scrivici</span><b id="chatBadge" class="hidden"></b></button>
+<div id="chatPanel" class="chatpanel hidden"><div class="chathead"><b>Scrivici</b><span class="small">suggerimenti, segnalazioni, domande</span><a id="chatClose">✕</a></div><div id="chatMsgs" class="chatmsgs"></div><div class="chatform"><textarea id="chatText" rows="2" placeholder="Scrivi qui… (Ctrl+Invio per inviare)"></textarea><button id="chatSend" class="small">Invia</button></div></div>
 <footer><div class="wrap">FantaTB è un servizio gratuito di <a href="../">TransferBeat</a>. I voti sono statistici, calcolati da FantaTB, e non coincidono con quelli dei quotidiani. Non affiliato a Fantacalcio®. Dati aperti: <a href="/fantacalcio/listone.html">listone</a> · <a href="/fantacalcio/">voti e titolari</a> · <a href="/chi-siamo.html">chi siamo</a>.</div></footer>
 <script src="app.js"></script>
 </body>
