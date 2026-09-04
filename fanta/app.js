@@ -668,41 +668,42 @@ async function setTier(pid, tier){
   sb.from('lists').update({ updated_at: new Date().toISOString() }).eq('id', curList.id).then(() => {});
   const v = $('#view-liste'); if (v && !v.classList.contains('hidden')) { renderListTiers(curList, true); renderListBrowse(); }
 }
+const TIER_HELP = '<details class="help"><summary>ℹ️ Come funzionano le liste e i tier</summary>' +
+  '<p>Una lista obiettivi è il tuo elenco personale dei giocatori da tenere d\'occhio all\'asta, ognuno con un <b>tier</b>: <span class="tier t1">T1</span> Top (i pochi per cui vale la pena spendere), <span class="tier t2">T2</span> Obiettivo (quelli che vuoi davvero), <span class="tier t3">T3</span> Alternativa (se i primi sfuggono), <span class="tier t4">T4</span> Scommessa (poco costo, potenziale alto), <span class="tier t5">T5</span> Da evitare (per ricordarti di non farti tentare).</p>' +
+  '<ul><li>Il tier si assegna dalla colonna <b>Tier</b> del listone qui sotto, filtrando per ruolo, squadra o voto, oppure dal Listone principale con la lista attiva.</li>' +
+  '<li>Nel riepilogo per tier vedi quotazione ufficiale, media voto (MV), fantamedia (FMV) e titolarità: puoi aggiungere una nota a ogni giocatore.</li>' +
+  '<li><b>Condividi</b> rende la lista pubblica con un link: chi la apre la vede in sola lettura e può copiarla; le liste di TransferBeat sono quelle marcate ⭐.</li>' +
+  '<li>La lista collegata a una <b>strategia d\'asta</b> diventa il piano di spesa: budget per ruolo, quanti giocatori per tier, tetti e prezzi attesi (scheda "Strategie d\'asta").</li></ul></details>';
 async function renderListe(){
-  const box = $('#lsteMine'); if (!box) return;
-  if (!user) {
-    box.innerHTML = '<div class="msg">Entra o crea un account (gratis) per salvare le tue liste. Le liste condivise si vedono anche senza account.</div><a data-view="auth" class="btn">Entra</a>';
-  } else {
-    await loadLists();
-    box.innerHTML = '<ul class="list">' + (lists.length ? lists.map(l => { const on = !!(curList && curList.id === l.id && !sharedList);
-      return '<li'+(on ? ' class="on"' : '')+'><div><b>'+esc(l.name)+'</b>'+(on ? ' <span class="pill live">attiva</span>' : '')+'<div class="muted">'+(l.is_public ? '🔗 condivisa · codice '+esc(l.share_code) : 'privata')+'</div></div>' +
-        '<button class="small'+(on ? '' : ' sec')+'" data-list="'+l.id+'" data-name="'+esc(l.name)+'">'+(on ? 'Modifica ↓' : 'Apri')+'</button></li>'; }).join('') : '<li class="muted">Nessuna lista: creane una qui sotto.</li>') + '</ul>' +
-      '<p class="small">La lista <b>attiva</b> è quella che vedi nella colonna Tier del Listone e qui sotto nel listone completo.</p>' +
-      '<div class="row" style="margin-top:10px"><input id="lsteNew" placeholder="Nome della nuova lista, es. Asta 2026"><button id="lsteCreate" class="sec" style="flex:0 0 auto">Crea</button></div>';
-    $$('[data-list]', box).forEach(b => { b.onclick = async () => { sharedList = null; await selectList(b.dataset.list); history.replaceState(null, '', '#liste'); await renderListe();
-      msg('Lista "'+b.dataset.name+'" attiva: assegna i tier dal listone qui sotto o dal Listone', 'ok'); const ed = $('#lsteEditor'); if (ed) ed.scrollIntoView({ behavior: 'smooth', block: 'start' }); }; });
-    $('#lsteCreate').onclick = async () => {
-      const name = $('#lsteNew').value.trim(); if (!name) return msg('Dai un nome alla lista', 'err');
-      const { data, error } = await sb.from('lists').insert({ owner_id: user.id, name: name, author: (user.user_metadata && user.user_metadata.username) || '' }).select().single();
-      if (error) return err(error);
-      sharedList = null; await loadLists(); await selectList(data.id); renderListe();
-    };
-  }
-  renderListEditor();
+  const bar = $('#lsteBar'); if (!bar) return;
+  await loadLists(); await loadSharedLists();
+  const on = l => !!(curList && curList.id === l.id && !sharedList);
+  bar.innerHTML = (user ? '<button id="lsteCreateBtn">＋ Crea la tua lista</button>' : '<a data-view="auth" class="btn">Entra per creare la tua lista</a>') +
+    lists.map(l => '<a class="chip'+(on(l) ? ' on' : '')+'" data-list="'+l.id+'" data-name="'+esc(l.name)+'" title="'+(l.is_public ? 'condivisa · codice '+esc(l.share_code) : 'privata')+'">'+(on(l) ? '✓ ' : '')+esc(l.name)+(l.is_public ? ' 🔗' : '')+'</a>').join('') +
+    (user && !lists.length ? '<span class="small" style="align-self:center">Nessuna lista ancora: creane una e assegna i tier dal listone qui sotto.</span>' : '');
+  $$('[data-list]', bar).forEach(b => { b.onclick = async () => { sharedList = null; await selectList(b.dataset.list); history.replaceState(null, '', '#liste'); await renderListe(); msg('Lista "'+b.dataset.name+'" attiva: assegna i tier dal listone qui sotto o dal Listone', 'ok'); }; });
+  const cb = $('#lsteCreateBtn');
+  if (cb) cb.onclick = async () => { const name = prompt('Nome della nuova lista', 'Asta ' + new Date().getFullYear()); if (!name || !name.trim()) return;
+    const { data, error } = await sb.from('lists').insert({ owner_id: user.id, name: name.trim(), author: (user.user_metadata && user.user_metadata.username) || '' }).select().single();
+    if (error) return err(error); sharedList = null; await loadLists(); await selectList(data.id); renderListe(); };
+  const tb = $('#lsteTb'); const feat = sharedLists.filter(l => l.featured);
+  if (tb) { tb.innerHTML = feat.length ? feat.map(l => '<div class="tcard"><b>⭐ '+esc(l.name)+'</b><div class="small">'+esc(l.description || '')+'</div><div class="row" style="margin-top:6px"><button class="small sec" data-shared="'+esc(l.share_code)+'">Apri</button></div></div>').join('') : '<span class="small">Le liste obiettivi di TransferBeat compariranno qui.</span>';
+    $$('[data-shared]', tb).forEach(b => { b.onclick = () => openSharedList(b.dataset.shared); }); }
   renderFeatured();
+  renderListEditor();
 }
 function renderListEditor(){
   const ed = $('#lsteEditor'), br = $('#lsteBrowse'); if (!ed) return;
   const l = sharedList || curList;
   if (!l) {
-    ed.innerHTML = '<div class="msg hint">🎯 <b>Apri o crea una lista</b> (colonna a destra). Poi scorri il <b>listone completo qui sotto</b>, filtra per ruolo, squadra o voto e assegna un tier a ogni giocatore dalla colonna Tier. ' +
+    ed.innerHTML = TIER_HELP + '<div class="msg hint">🎯 <b>Apri o crea una lista</b> con il pulsante qui sopra. Poi scorri il <b>listone completo qui sotto</b>, filtra per ruolo, squadra o voto e assegna un tier a ogni giocatore dalla colonna Tier. ' +
       'Tier: <span class="tier t1">T1</span> Top · <span class="tier t2">T2</span> Obiettivo · <span class="tier t3">T3</span> Alternativa · <span class="tier t4">T4</span> Scommessa · <span class="tier t5">T5</span> Da evitare.</div>';
     if (br) { br.innerHTML = ''; br.dataset.list = ''; }
     return;
   }
   const own = !!(user && l.owner_id === user.id && !sharedList);
   const link = location.origin + '/fanta/#lista/' + l.share_code;
-  ed.innerHTML = '<div class="card lhead"><div class="row" style="justify-content:space-between;align-items:flex-start"><div style="flex:1 1 auto"><h2 style="margin:0">🎯 '+esc(l.name)+(l.featured ? ' <span class="pill">consigliata</span>' : '')+'</h2><div class="muted">'+(l.author ? 'di '+esc(l.author)+' · ' : '')+'<span id="lsteCount">'+Object.keys(l.items).length+'</span> giocatori'+(l.description ? ' · '+esc(l.description) : '')+'</div></div>' +
+  ed.innerHTML = TIER_HELP + '<div class="card lhead"><div class="row" style="justify-content:space-between;align-items:flex-start"><div style="flex:1 1 auto"><h2 style="margin:0">🎯 '+esc(l.name)+(l.featured ? ' <span class="pill">consigliata</span>' : '')+'</h2><div class="muted">'+(l.author ? 'di '+esc(l.author)+' · ' : '')+'<span id="lsteCount">'+Object.keys(l.items).length+'</span> giocatori'+(l.description ? ' · '+esc(l.description) : '')+'</div></div>' +
     '<div class="row" style="flex:0 0 auto">' + (own ? '<button class="small sec" id="lsteShare">'+(l.is_public ? '🔗 Condivisa ✓' : '🔗 Condividi')+'</button><button class="small sec" id="lsteRename">Rinomina</button><button class="small warn" id="lsteDelete">Elimina</button>'
       : (user ? '<button class="small" id="lsteCopy">Copia nelle mie liste</button>' : '<a data-view="auth" class="btn small">Entra per copiarla</a>')) + '</div></div>' +
     (own && l.is_public ? '<p class="small">Link da condividere: <a href="'+esc(link)+'">'+esc(link)+'</a> · codice <b>'+esc(l.share_code)+'</b>. Chi lo apre vede la lista e può copiarla.</p>' : '') +
@@ -762,9 +763,8 @@ function renderListBrowse(){
 }
 async function renderFeatured(){
   const box = $('#lsteFeatured'); if (!box) return;
-  await loadSharedLists();
-  const rows = sharedLists;
-  box.innerHTML = (rows.length ? '<ul class="list">' + rows.map(l => '<li><div><b>'+esc(l.name)+'</b>'+(l.featured ? ' <span class="pill">consigliata</span>' : '')+'<div class="muted">'+(l.author ? 'di '+esc(l.author) : 'lista condivisa')+(l.description ? ' · '+esc(l.description) : '')+'</div></div><button class="small sec" data-shared="'+esc(l.share_code)+'">Apri</button></li>').join('') + '</ul>' : '<div class="muted small">Nessuna lista condivisa al momento. Le liste "consigliate" (redazione, influencer) compariranno qui.</div>') +
+  const rows = sharedLists.filter(l => !l.featured);
+  box.innerHTML = (rows.length ? '<ul class="list">' + rows.map(l => '<li><div><b>'+esc(l.name)+'</b><div class="muted">'+(l.author ? 'di '+esc(l.author) : 'lista condivisa')+(l.description ? ' · '+esc(l.description) : '')+'</div></div><button class="small sec" data-shared="'+esc(l.share_code)+'">Apri</button></li>').join('') + '</ul>' : '<div class="muted small">Nessuna lista condivisa dagli utenti al momento. Chi condivide la sua lista compare qui.</div>') +
     '<div class="row" style="margin-top:10px"><input id="lsteCode" placeholder="Codice di una lista condivisa" style="text-transform:uppercase"><button id="lsteOpen" class="sec" style="flex:0 0 auto">Apri</button></div>';
   $$('[data-shared]', box).forEach(b => { b.onclick = () => openSharedList(b.dataset.shared); });
   $('#lsteOpen').onclick = () => openSharedList($('#lsteCode').value.trim());
@@ -1036,9 +1036,15 @@ function readStratForm(base){
   ROLES.forEach(r => { st.slots[r] = n('slot_' + r, 0); st.budget[r] = n('b_' + r, 0); st.targets[r] = {}; for (let t = 1; t <= 5; t++) { const v = parseInt($('#tg_' + r + '_' + t).value, 10) || 0; if (v > 0) st.targets[r][t] = v; } });
   return st;
 }
+const PLAN_HELP = '<details class="help"><summary>ℹ️ Come leggere il piano</summary>' +
+  '<ul><li><b>Crediti in gioco</b> = squadre × crediti. <b>Inflazione</b> = crediti in gioco diviso il valore di listone dei giocatori che verranno davvero comprati (i migliori per quotazione in ogni ruolo, tanti quanti gli slot di tutte le squadre). Con 8 squadre da 500 crediti è di solito fra 1,3 e 2.</li>' +
+  '<li><b>Prezzo atteso</b> = quotazione ufficiale × inflazione: quanto costerà probabilmente quel giocatore nella tua lega.</li>' +
+  '<li><b>Budget del ruolo</b> = crediti × percentuale. Da questo si toglie 1 credito per ogni slot che non è un obiettivo (li riempirai a fine asta), e il resto si divide fra gli obiettivi con pesi per tier: T1 pesa 1, T2 0,6, T3 0,38, T4 0,22, T5 0,1. Il risultato è il <b>tetto</b>: il massimo da offrire per ogni giocatore di quel tier restando nel budget.</li>' +
+  '<li>Per ogni tier vedi solo i giocatori <span class="prio p1">da prendere</span> (tanti quanti ne hai chiesti) e una o due <span class="prio p2">alternative</span>, presi dalla lista collegata in ordine di quotazione. Verde se il tetto copre il prezzo atteso, rosso se dovrai rinunciare a qualcosa.</li>' +
+  '<li>La strategia <b>attiva</b> compare come cruscotto nella scheda Asta della tua lega: speso contro pianificato, ruolo per ruolo.</li></ul></details>';
 function planHtml(st, list){
   const plan = stratPlan(st, list); const tot = (st.teams || 8) * (st.credits || 500);
-  let h = '<div class="card plan"><h2>📐 Il piano</h2><p class="small">Crediti in gioco nella lega: <b>'+tot+'</b>. Fattore di inflazione stimato <b>'+plan.f.toFixed(2)+'</b> (crediti totali diviso il valore di listone dei giocatori che verranno comprati): il "prezzo atteso" è la quotazione moltiplicata per questo fattore. Il "tetto" è quanto puoi spendere per ogni obiettivo restando nel budget del ruolo, lasciando 1 credito per ogni slot che riempirai a fine asta.</p>';
+  let h = '<div class="card plan"><h2>📐 Il piano</h2><p class="small">Crediti in gioco nella lega <b>'+tot+'</b> · inflazione stimata <b>'+plan.f.toFixed(2)+'</b> · lista collegata: <b>'+(list ? esc(list.name) : 'nessuna')+'</b></p>' + PLAN_HELP;
   h += '<div class="tw"><table><thead><tr><th>Ruolo</th><th class="num">Budget</th><th class="num">Slot</th><th class="num">Obiettivi</th><th class="num">Riserva 1 cr.</th>' + [1,2,3,4,5].map(t => '<th class="num"><span class="tier t'+t+'">T'+t+'</span> n × tetto</th>').join('') + '</tr></thead><tbody>';
   ROLES.forEach(r => { const p = plan.roles[r];
     h += '<tr><td>'+roleTag(r)+' '+ROLE_NAME[r]+'</td><td class="num"><b>'+p.budget+'</b> <span class="muted">('+(st.budget[r] || 0)+'%)</span></td><td class="num">'+(st.slots[r] || 0)+'</td><td class="num">'+p.nTarget+'</td><td class="num">'+p.reserve+'</td>' +
@@ -1047,38 +1053,45 @@ function planHtml(st, list){
   const bsum = ROLES.reduce((a, r) => a + (st.budget[r] || 0), 0);
   if (bsum !== 100) h += '<div class="msg err">Le percentuali del budget sommano a '+bsum+'%, non a 100.</div>';
   if (list) {
-    h += '<h2>🎯 Gli obiettivi ruolo per ruolo</h2><p class="small">Dalla lista "'+esc(list.name)+'": quotazione, prezzo atteso con l\'inflazione e tetto del tier. Verde se il tetto copre il prezzo atteso, rosso se dovrai scegliere.</p>';
+    h += '<h2>🎯 Chi prendere, ruolo per ruolo</h2>';
     ROLES.forEach(r => { const p = plan.roles[r]; const rows = [];
-      for (let t = 1; t <= 5; t++) (p.cand[t] || []).forEach(pl => { const expv = Math.round(pl.price * plan.f); const cap = p.caps[t]; const s = schede[pl.id] || {};
-        rows.push('<tr class="tr'+t+'"><td><span class="tier t'+t+'">T'+t+'</span></td><td>'+(s.url ? '<a class="pl" href="'+esc(s.url)+'">'+esc(pl.name)+'</a>' : esc(pl.name))+'</td><td class="muted">'+esc(pl.team)+'</td><td class="num">'+pl.price+'</td><td class="num">'+expv+'</td><td class="num">'+(cap ? '<span class="'+(cap >= expv ? 'okc' : 'koc')+'">'+cap+'</span>' : '<span class="muted">nessun obiettivo T'+t+'</span>')+'</td><td class="num">'+fmt2(s.mv)+'</td></tr>'); });
-      if (rows.length) h += '<h3>'+roleTag(r)+' '+ROLE_NAME[r]+' <span class="muted">budget '+p.budget+'</span></h3><div class="tw"><table><thead><tr><th>Tier</th><th>Giocatore</th><th>Squadra</th><th class="num">Quot.</th><th class="num">Atteso</th><th class="num">Tetto</th><th class="num">MV</th></tr></thead><tbody>'+rows.join('')+'</tbody></table></div>'; });
-  } else h += '<div class="msg hint">Collega una lista obiettivi per vedere i giocatori con prezzo atteso e tetto.</div>';
+      for (let t = 1; t <= 5; t++) { const n = (st.targets[r] || {})[t] || 0; if (!n) continue; const c = p.cand[t] || [];
+        if (!c.length) { rows.push('<tr><td><span class="tier t'+t+'">T'+t+'</span></td><td colspan="7" class="muted">nessun '+ROLE_NAME[r].toLowerCase()+' di tier '+t+' nella lista: aggiungine dalla scheda Liste</td></tr>'); continue; }
+        c.slice(0, n + Math.min(2, Math.max(1, n))).forEach((pl, i) => { const expv = Math.round(pl.price * plan.f); const cap = p.caps[t]; const s = schede[pl.id] || {};
+          rows.push('<tr class="tr'+t+'"><td><span class="tier t'+t+'">T'+t+'</span></td><td><span class="prio '+(i < n ? 'p1">da prendere' : 'p2">alternativa')+'</span></td><td>'+(s.url ? '<a class="pl" href="'+esc(s.url)+'">'+esc(pl.name)+'</a>' : esc(pl.name))+'</td><td class="muted">'+esc(pl.team)+'</td><td class="num">'+pl.price+'</td><td class="num">'+expv+'</td><td class="num"><span class="'+(cap >= expv ? 'okc' : 'koc')+'">'+cap+'</span></td><td class="num">'+fmt2(s.mv)+'</td></tr>'); }); }
+      if (rows.length) h += '<h3>'+roleTag(r)+' '+ROLE_NAME[r]+' <span class="muted">budget '+p.budget+' · '+p.nTarget+' obiettivi su '+(st.slots[r] || 0)+' slot</span></h3><div class="tw"><table><thead><tr><th>Tier</th><th>Priorità</th><th>Giocatore</th><th>Squadra</th><th class="num">Quot.</th><th class="num">Atteso</th><th class="num">Tetto</th><th class="num">MV</th></tr></thead><tbody>'+rows.join('')+'</tbody></table></div>'; });
+  } else h += '<div class="msg hint">Collega una lista obiettivi (campo "Lista obiettivi collegata" qui sopra, poi Salva) per vedere chi prendere con prezzo atteso e tetto.</div>';
   return h + '</div>';
 }
 async function renderStrategie(){
-  const mine = $('#strMine'), ed = $('#strEditor'), sh = $('#strShared'); if (!ed) return;
+  const bar = $('#strBar'), ed = $('#strEditor'), tb = $('#strTb'), sh = $('#strShared'); if (!ed) return;
   await Promise.all([loadStrategies(), loadSharedStrategies()]);
-  if (!user) mine.innerHTML = '<div class="msg">Entra o crea un account (gratis) per salvare le tue strategie. Quelle consigliate si vedono anche senza account.</div><a data-view="auth" class="btn">Entra</a>';
-  else {
-    mine.innerHTML = '<ul class="list">' + (strategies.length ? strategies.map(s => { const on = !!(curStrat && curStrat.id === s.id && !sharedStrat);
-      return '<li'+(on ? ' class="on"' : '')+'><div><b>'+esc(s.name)+'</b>'+(on ? ' <span class="pill live">attiva</span>' : '')+'<div class="muted">'+s.teams+' squadre · '+s.credits+' crediti · '+(s.is_public ? '🔗 condivisa · '+esc(s.share_code) : 'privata')+'</div></div><button class="small'+(on ? '' : ' sec')+'" data-strat="'+s.id+'">'+(on ? 'Modifica ↓' : 'Apri')+'</button></li>'; }).join('') : '<li class="muted">Nessuna strategia: creane una qui sotto.</li>') + '</ul>' +
-      '<p class="small">La strategia <b>attiva</b> compare come cruscotto nella scheda Asta della tua lega: pianificato contro speso, ruolo per ruolo.</p><div class="row" style="margin-top:10px"><button id="strNew" class="sec">＋ Nuova strategia</button></div>';
-    $$('[data-strat]', mine).forEach(b => { b.onclick = async () => { sharedStrat = null; await selectStrategy(b.dataset.strat); renderStrategie(); $('#strEditor').scrollIntoView({ behavior: 'smooth', block: 'start' }); }; });
-    $('#strNew').onclick = async () => { const { data, error } = await sb.from('strategies').insert(Object.assign({}, DEF_STRAT, { owner_id: user.id, author: (user.user_metadata && user.user_metadata.username) || '', list_id: curList ? curList.id : null })).select().single();
-      if (error) return err(error); sharedStrat = null; await loadStrategies(); await selectStrategy(data.id); renderStrategie(); };
-  }
-  sh.innerHTML = (sharedStrategies.length ? '<ul class="list">' + sharedStrategies.map(s => '<li><div><b>'+esc(s.name)+'</b>'+(s.featured ? ' <span class="pill">consigliata</span>' : '')+'<div class="muted">'+s.teams+' squadre · '+s.credits+' crediti'+(s.author ? ' · di '+esc(s.author) : '')+(s.description ? ' · '+esc(s.description) : '')+'</div></div><button class="small sec" data-sharedstrat="'+esc(s.share_code)+'">Apri</button></li>').join('') + '</ul>' : '<div class="muted small">Nessuna strategia condivisa al momento. Le strategie consigliate da TransferBeat compariranno qui.</div>') +
+  const on = s => !!(curStrat && curStrat.id === s.id && !sharedStrat);
+  bar.innerHTML = (user ? '<button id="strNew">＋ Crea la tua strategia</button>' : '<a data-view="auth" class="btn">Entra per creare la tua strategia</a>') +
+    strategies.map(s => '<a class="chip'+(on(s) ? ' on' : '')+'" data-strat="'+s.id+'" title="'+s.teams+' squadre · '+s.credits+' crediti'+(s.is_public ? ' · condivisa '+esc(s.share_code) : '')+'">'+(on(s) ? '✓ ' : '')+esc(s.name)+(s.is_public ? ' 🔗' : '')+'</a>').join('') +
+    (user && !strategies.length ? '<span class="small" style="align-self:center">Nessuna strategia ancora: creane una o parti da una di TransferBeat con "Usa".</span>' : '');
+  $$('[data-strat]', bar).forEach(b => { b.onclick = async () => { sharedStrat = null; await selectStrategy(b.dataset.strat); history.replaceState(null, '', '#strategie'); renderStrategie(); }; });
+  const nb = $('#strNew');
+  if (nb) nb.onclick = async () => { const name = prompt('Nome della strategia', 'Asta ' + new Date().getFullYear()); if (!name || !name.trim()) return;
+    const { data, error } = await sb.from('strategies').insert(Object.assign({}, DEF_STRAT, { name: name.trim(), owner_id: user.id, author: (user.user_metadata && user.user_metadata.username) || '', list_id: curList ? curList.id : null })).select().single();
+    if (error) return err(error); sharedStrat = null; await loadStrategies(); await selectStrategy(data.id); renderStrategie(); };
+  const feat = sharedStrategies.filter(s => s.featured), pub = sharedStrategies.filter(s => !s.featured);
+  tb.innerHTML = feat.length ? feat.map(s => '<div class="tcard"><b>⭐ '+esc(s.name)+'</b><div class="small">'+esc(s.description || '')+'</div><div class="small" style="margin-top:4px">'+s.teams+' squadre · '+s.credits+' crediti · budget '+ROLES.map(r => r+' '+(s.budget[r] || 0)+'%').join(' ')+'</div><div class="row" style="margin-top:6px"><button class="small" data-sharedstrat="'+esc(s.share_code)+'">Usa</button></div></div>').join('')
+    : '<span class="small">Le strategie di TransferBeat compariranno qui (le crea lo staff con fanta_strategie.py).</span>';
+  $$('[data-sharedstrat]', tb).forEach(b => { b.onclick = () => openSharedStrategy(b.dataset.sharedstrat); });
+  sh.innerHTML = (pub.length ? '<ul class="list">' + pub.map(s => '<li><div><b>'+esc(s.name)+'</b><div class="muted">'+s.teams+' squadre · '+s.credits+' crediti'+(s.author ? ' · di '+esc(s.author) : '')+(s.description ? ' · '+esc(s.description) : '')+'</div></div><button class="small sec" data-sharedstrat="'+esc(s.share_code)+'">Apri</button></li>').join('') + '</ul>' : '<div class="muted small">Nessuna strategia condivisa dagli utenti al momento: chi preme "Condividi" sulla sua compare qui.</div>') +
     '<div class="row" style="margin-top:10px"><input id="strCode" placeholder="Codice di una strategia condivisa" style="text-transform:uppercase"><button id="strOpen" class="sec" style="flex:0 0 auto">Apri</button></div>';
   $$('[data-sharedstrat]', sh).forEach(b => { b.onclick = () => openSharedStrategy(b.dataset.sharedstrat); });
   $('#strOpen').onclick = () => openSharedStrategy($('#strCode').value.trim());
   const st = sharedStrat || curStrat;
-  if (!st) { ed.innerHTML = '<div class="msg hint">📐 <b>Crea una strategia</b> (colonna a destra) o apri una consigliata. Scegli il formato, le percentuali di budget per ruolo e quanti giocatori per tier vuoi prendere: il piano ti dà il tetto di spesa per ogni obiettivo e il prezzo atteso con l\'inflazione della tua lega.</div>'; return; }
+  if (!st) { ed.innerHTML = '<div class="msg hint">📐 <b>Crea la tua strategia</b> con il pulsante qui sopra, oppure parti da una di TransferBeat con "Usa" e poi copiala per modificarla. Scegli il formato, le percentuali di budget per ruolo e quanti giocatori per tier vuoi prendere: il piano ti dà il tetto di spesa per ogni obiettivo e il prezzo atteso con l\'inflazione della tua lega.</div>' + PLAN_HELP; return; }
   const own = !!(user && st.owner_id === user.id && !sharedStrat);
   const link = location.origin + '/fanta/#strategia/' + st.share_code;
-  ed.innerHTML = '<div class="card lhead"><div class="row" style="justify-content:space-between;align-items:flex-start"><div style="flex:1 1 auto"><h2 style="margin:0">📐 '+esc(st.name)+(st.featured ? ' <span class="pill">consigliata</span>' : '')+'</h2><div class="muted">'+(st.author ? 'di '+esc(st.author)+' · ' : '')+st.teams+' squadre · '+st.credits+' crediti'+(st.description ? ' · '+esc(st.description) : '')+'</div></div>' +
-    '<div class="row" style="flex:0 0 auto">' + (own ? '<button class="small" id="strSave">💾 Salva e ricalcola</button><button class="small sec" id="strShare">'+(st.is_public ? '🔗 Condivisa ✓' : '🔗 Condividi')+'</button><button class="small warn" id="strDelete">Elimina</button>' : (user ? '<button class="small" id="strCopy">Copia nelle mie strategie</button>' : '<a data-view="auth" class="btn small">Entra per copiarla</a>')) + '</div></div>' +
-    (own && st.is_public ? '<p class="small">Link da condividere: <a href="'+esc(link)+'">'+esc(link)+'</a> · codice <b>'+esc(st.share_code)+'</b></p>' : '') +
-    (own ? stratForm(st) : '<div class="strgrid"><div><label>Formato</label>'+st.teams+' squadre, '+st.credits+' crediti, slot '+ROLES.map(r => r+st.slots[r]).join(' ')+'</div><div><label>Budget</label>'+ROLES.map(r => r+' '+(st.budget[r] || 0)+'%').join(' · ')+'</div></div>') + '</div>' + planHtml(st, st.list);
+  ed.innerHTML = '<div class="card lhead"><div class="row" style="justify-content:space-between;align-items:flex-start"><div style="flex:1 1 auto"><h2 style="margin:0">📐 '+esc(st.name)+(st.featured ? ' <span class="pill">TransferBeat</span>' : '')+(own && on(st) ? ' <span class="pill live">attiva</span>' : '')+'</h2><div class="muted">'+(st.author ? 'di '+esc(st.author)+' · ' : '')+st.teams+' squadre · '+st.credits+' crediti</div>'+(st.description ? '<p style="margin:6px 0 0;font-size:14px">'+esc(st.description)+'</p>' : '')+'</div>' +
+    '<div class="row" style="flex:0 0 auto">' + (own ? '<button class="small" id="strSave">💾 Salva e ricalcola</button><button class="small sec" id="strShare">'+(st.is_public ? '🔗 Condivisa ✓' : '🔗 Condividi')+'</button>' : (user ? '<button class="small" id="strCopy">Copia e modifica</button>' : '<a data-view="auth" class="btn small">Entra per copiarla</a>')) + '<button class="small sec" id="strXlsx">⬇️ Excel</button>' + (own ? '<button class="small warn" id="strDelete">Elimina</button>' : '') + '</div></div>' +
+    (own && st.is_public ? '<p class="small">Link da condividere: <a href="'+esc(link)+'">'+esc(link)+'</a> · codice <b>'+esc(st.share_code)+'</b>. Chi lo apre la vede e può copiarla.</p>' : '') +
+    (own ? stratForm(st) : '<div class="strgrid"><div><label>Formato</label>'+st.teams+' squadre, '+st.credits+' crediti, slot '+ROLES.map(r => r+st.slots[r]).join(' ')+'</div><div><label>Budget</label>'+ROLES.map(r => r+' '+(st.budget[r] || 0)+'%').join(' · ')+'</div><div><label>Obiettivi per tier</label>'+ROLES.map(r => r+': '+[1,2,3,4,5].filter(t => (st.targets[r] || {})[t]).map(t => (st.targets[r] || {})[t]+'×T'+t).join(' ')).join(' · ')+'</div></div>') + '</div>' + planHtml(st, st.list);
+  $('#strXlsx').onclick = () => exportStrategyXlsx(st);
   if (own) {
     const upd = () => { const s = ROLES.reduce((a, r) => a + (parseInt($('#st_b_' + r).value, 10) || 0), 0); $('#st_sum').textContent = '= ' + s + '%' + (s === 100 ? ' ✓' : ' (deve fare 100)'); }; upd(); ROLES.forEach(r => { $('#st_b_' + r).oninput = upd; });
     $('#strSave').onclick = async () => { const s = readStratForm(st); const row = { name: s.name, description: s.description, teams: s.teams, credits: s.credits, slots: s.slots, budget: s.budget, targets: s.targets, list_id: s.list_id, updated_at: new Date().toISOString() };
@@ -1086,8 +1099,38 @@ async function renderStrategie(){
     $('#strShare').onclick = async () => { const { error } = await sb.from('strategies').update({ is_public: !st.is_public }).eq('id', st.id); if (error) return err(error); await loadStrategies(); await selectStrategy(st.id); renderStrategie(); };
     $('#strDelete').onclick = async () => { if (!confirm('Eliminare la strategia "'+st.name+'"?')) return; const { error } = await sb.from('strategies').delete().eq('id', st.id); if (error) return err(error); curStrat = null; localStorage.removeItem('fantatb_strategy'); await loadStrategies(); renderStrategie(); };
   } else if (user && $('#strCopy')) {
-    $('#strCopy').onclick = async () => { const { data, error } = await sb.rpc('copy_strategy', { p_code: st.share_code, p_name: null }); if (error) return err(error); sharedStrat = null; await loadLists(); await loadStrategies(); await selectStrategy(data); msg('Strategia copiata fra le tue', 'ok'); history.replaceState(null, '', '#strategie'); renderStrategie(); };
+    $('#strCopy').onclick = async () => { const { data, error } = await sb.rpc('copy_strategy', { p_code: st.share_code, p_name: null }); if (error) return err(error); sharedStrat = null; await loadLists(); await loadStrategies(); await selectStrategy(data); msg('Strategia copiata fra le tue: ora puoi modificarla', 'ok'); history.replaceState(null, '', '#strategie'); renderStrategie(); };
   }
+}
+async function exportStrategyXlsx(st){
+  try { await loadXlsx(); } catch (e) { return err(e); }
+  const list = st.list; const plan = stratPlan(st, list);
+  const wb = XLSX.utils.book_new();
+  const rows = [['Strategia', st.name], ['Formato', st.teams + ' squadre · ' + st.credits + ' crediti · slot P' + st.slots.P + ' D' + st.slots.D + ' C' + st.slots.C + ' A' + st.slots.A], ['Inflazione stimata', +plan.f.toFixed(2)], ['Lista collegata', list ? list.name : '—'], ['Note', st.description || ''], [],
+    ['Ruolo', 'Budget %', 'Budget crediti', 'Slot', 'Obiettivi', 'Riserva (1 cr.)', 'Tetto T1', 'Tetto T2', 'Tetto T3', 'Tetto T4', 'Tetto T5']];
+  ROLES.forEach(r => { const p = plan.roles[r]; rows.push([ROLE_NAME[r], st.budget[r] || 0, p.budget, st.slots[r] || 0, p.nTarget, p.reserve, p.caps[1] || '', p.caps[2] || '', p.caps[3] || '', p.caps[4] || '', p.caps[5] || '']); });
+  rows.push([], ['Ruolo', 'Tier', 'Priorità', 'Giocatore', 'Squadra', 'Quotazione', 'Prezzo atteso', 'Tetto', 'MV', 'FMV', 'Titolarità %', 'Nota']);
+  ROLES.forEach(r => { const p = plan.roles[r]; for (let t = 1; t <= 5; t++) { const n = (st.targets[r] || {})[t] || 0; if (!n) continue;
+    (p.cand[t] || []).slice(0, n + Math.min(2, Math.max(1, n))).forEach((pl, i) => { const s = schede[pl.id] || {}; rows.push([ROLE_NAME[r], 'T' + t, i < n ? 'Da prendere' : 'Alternativa', pl.name, pl.team, pl.price, Math.round(pl.price * plan.f), p.caps[t], s.mv == null ? '' : s.mv, s.fmv == null ? '' : s.fmv, s.tit == null ? '' : s.tit, (list && list.items[pl.id] || {}).note || '']); }); } });
+  const ws1 = XLSX.utils.aoa_to_sheet(rows); ws1['!cols'] = [{ wch: 16 }, { wch: 9 }, { wch: 13 }, { wch: 24 }, { wch: 14 }, { wch: 11 }, { wch: 13 }, { wch: 8 }, { wch: 7 }, { wch: 7 }, { wch: 11 }, { wch: 30 }];
+  XLSX.utils.book_append_sheet(wb, ws1, 'Strategia');
+  const lr = [['Ruolo', 'Giocatore', 'Squadra', 'Tier', 'Quotazione', 'Prezzo atteso', 'MV', 'FMV', 'Titolarità %', 'Presenze', 'Gol', 'Assist']];
+  players.filter(p => p.active).sort((a, b) => ROLES.indexOf(a.role) - ROLES.indexOf(b.role) || b.price - a.price).forEach(p => { const s = schede[p.id] || {}; const t = (list && list.items[p.id]) ? 'T' + list.items[p.id].tier : '';
+    lr.push([p.role, p.name, p.team, t, p.price, Math.round(p.price * plan.f), s.mv == null ? '' : s.mv, s.fmv == null ? '' : s.fmv, s.tit == null ? '' : s.tit, s.pres == null ? '' : s.pres, s.gol == null ? '' : s.gol, s.assist == null ? '' : s.assist]); });
+  const ws2 = XLSX.utils.aoa_to_sheet(lr); ws2['!cols'] = [{ wch: 6 }, { wch: 24 }, { wch: 14 }, { wch: 6 }, { wch: 11 }, { wch: 13 }, { wch: 7 }, { wch: 7 }, { wch: 11 }, { wch: 9 }, { wch: 6 }, { wch: 7 }]; ws2['!autofilter'] = { ref: 'A1:L' + lr.length };
+  XLSX.utils.book_append_sheet(wb, ws2, 'Listone');
+  const mine = (L && user) ? L.rosters.filter(x => x.user_id === user.id) : [];
+  const rr = [['Ruolo', 'Slot', 'Giocatore', 'Prezzo pagato', 'Tetto pianificato', 'Note']]; let line = 2; const span = {};
+  ROLES.forEach(r => { const have = mine.filter(x => (playersById[x.player_id] || {}).role === r); span[r] = [line, line];
+    for (let i = 0; i < (st.slots[r] || 0); i++) { const x = have[i]; rr.push([r, i + 1, x ? (playersById[x.player_id] || {}).name || '' : '', x ? x.price : '', '', '']); span[r][1] = line; line++; } });
+  rr.push([], ['Ruolo', 'Budget pianificato', 'Speso', 'Residuo', 'Slot riempiti']);
+  const first = rr.length + 1;
+  ROLES.forEach(r => { const [a, b] = span[r]; rr.push([ROLE_NAME[r], plan.roles[r].budget, { t: 'n', f: 'SUM(D' + a + ':D' + b + ')' }, { t: 'n', f: plan.roles[r].budget + '-SUM(D' + a + ':D' + b + ')' }, { t: 'n', f: 'COUNTA(C' + a + ':C' + b + ')' }]); });
+  const last = rr.length;
+  rr.push(['Totale', st.credits, { t: 'n', f: 'SUM(C' + first + ':C' + last + ')' }, { t: 'n', f: st.credits + '-SUM(C' + first + ':C' + last + ')' }, { t: 'n', f: 'SUM(E' + first + ':E' + last + ')' }]);
+  const ws3 = XLSX.utils.aoa_to_sheet(rr); ws3['!cols'] = [{ wch: 8 }, { wch: 6 }, { wch: 24 }, { wch: 14 }, { wch: 17 }, { wch: 24 }];
+  XLSX.utils.book_append_sheet(wb, ws3, 'La mia rosa');
+  XLSX.writeFile(wb, 'FantaTB - ' + String(st.name).replace(/[\\/:*?"<>|]+/g, ' ') + '.xlsx');
 }
 async function openSharedStrategy(code){
   if (!code) return;

@@ -23,16 +23,16 @@ SLOTS = {"P": 3, "D": 8, "C": 8, "A": 6}
 STRATS = [
     {"name": "Equilibrata (8 squadre, 500 crediti)", "budget": {"P": 8, "D": 24, "C": 26, "A": 42}, "mode": "quot",
      "targets": {"P": {"1": 1}, "D": {"1": 1, "2": 2, "3": 3}, "C": {"1": 1, "2": 2, "3": 3}, "A": {"1": 1, "2": 1, "3": 2}},
-     "description": "Un top per reparto, poi seconde e terze scelte solide. La base sicura per chi non vuole scommettere."},
+     "description": "Tier per quotazione ufficiale: T1 i migliori per ruolo (3 portieri, 5 difensori, 5 centrocampisti, 4 attaccanti), T2 i successivi 5-10, poi T3 e T4. Budget 8/24/26/42: un top per reparto e seconde scelte solide. La base sicura per chi non vuole scommettere."},
     {"name": "Sbilanciata sui bonus (8 squadre, 500 crediti)", "budget": {"P": 5, "D": 16, "C": 24, "A": 55}, "mode": "bonus",
      "targets": {"P": {"2": 1}, "D": {"2": 2, "3": 3}, "C": {"1": 1, "2": 1, "3": 3}, "A": {"1": 2, "2": 1, "3": 1}},
-     "description": "Due attaccanti di primissima fascia e un centrocampista da gol: i bonus fanno la differenza, la difesa si riempie a poco."},
+     "description": "Tier per quotazione più bonus attesi (fantamedia sopra la media voto e fantavalore di mercato): salgono i giocatori da gol e assist. Budget 5/16/24/55: due attaccanti di primissima fascia e un centrocampista da gol, portiere e difesa a poco."},
     {"name": "Modificatore difesa (8 squadre, 500 crediti)", "budget": {"P": 14, "D": 32, "C": 22, "A": 32}, "mode": "difesa",
      "targets": {"P": {"1": 1}, "D": {"1": 2, "2": 2, "3": 2}, "C": {"2": 2, "3": 3}, "A": {"1": 1, "2": 1, "3": 1}},
-     "description": "Per le leghe con il modificatore difesa: portiere top e tre difensori da media voto alta, il resto equilibrato."},
+     "description": "Per le leghe con il modificatore difesa. Portieri e difensori ordinati per media voto e titolarità della stagione scorsa, non per quotazione: contano i 6 e mezzo, non i gol. Budget 14/32/22/32: portiere top, due difensori T1 e due T2, il resto equilibrato."},
     {"name": "Low budget e scommesse (8 squadre, 500 crediti)", "budget": {"P": 6, "D": 18, "C": 26, "A": 50}, "mode": "scommesse",
      "targets": {"P": {"3": 1}, "D": {"2": 1, "3": 3, "4": 3}, "C": {"2": 1, "3": 3, "4": 3}, "A": {"1": 1, "3": 2, "4": 3}},
-     "description": "Un solo big, poi titolari sottoquotati e giovani in rampa di lancio: rischio alto, rendimento potenzialmente altissimo."},
+     "description": "T1 e T2 restano i big veri per quotazione (per non sbagliare l'unico colpo grosso); T3 e T4 sono le scommesse: titolari sottoquotati con fantamedia alta e under 23 in rampa di lancio. Budget 6/18/26/50: un solo big, molte scommesse, rischio alto e rendimento potenzialmente altissimo."},
 ]
 TIER_SIZES = {"P": [3, 5, 6, 8], "D": [5, 10, 14, 16], "C": [5, 10, 14, 16], "A": [4, 8, 10, 12]}   # quanti giocatori per T1..T4 per ruolo
 

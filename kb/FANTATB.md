@@ -356,6 +356,16 @@ blu, obiettivi oro, voti viola, lega arancio, messaggi rosso, login fucsia): sot
 card, tessere. Tessere di lega `#lgKpis` (`leagueKpis`: crediti residui, slot per ruolo, squadre, prossima giornata con scadenza), hero
 nella pagina di accesso, stato vuoto delle leghe con link a listone e obiettivi. Verificato da anonimo (sotto-schede, chat chiusa,
 colori); chat, editor strategie e cruscotto richiedono login e il fix 009: primo giro dell'utente.
+**Seconda passata (feedback utente, 2026-09-04 sera):** fix 009 ESEGUITO e `fanta_strategie.py` lanciato (le 4 strategie compaiono).
+Layout **orizzontale** in Obiettivi, per liste e strategie: striscia "Le tue …" (pulsante "＋ Crea …" per primo, poi pillole con la
+spunta su quella attiva, `.strip`/`.chip`), striscia "Le … di TransferBeat" (tessere `.tcard` con descrizione e "Usa"/"Apri"), `details`
+"condivise dagli utenti e codice" chiuso di default, editor e piano a tutta larghezza. Piano: **solo i giocatori da prendere** (tanti quanti
+gli obiettivi del tier) più 1-2 **alternative** (`.prio p1/p2`), niente listone intero; riquadro "Come leggere il piano" (`PLAN_HELP`) e
+"Come funzionano le liste e i tier" (`TIER_HELP`). **Export Excel** (`exportStrategyXlsx`, SheetJS): fogli "Strategia" (formato, inflazione,
+budget per ruolo, obiettivi con priorità, prezzo atteso, tetto, MV/FMV/titolarità, note), "Listone" (tutti gli attivi con il tier della
+lista, filtro automatico) e "La mia rosa" (slot per ruolo precompilati con la rosa della lega aperta, formule SUM/COUNTA per speso, residuo,
+slot riempiti, totale). Leggibilità: `--muted` più scuro (#4f5b67), testi secondari 13px, lead 16px. Logo in testata → `href="/"`.
+Descrizioni delle 4 strategie riscritte con la logica dei tier (rilanciare `fanta_strategie.py` per aggiornarle nel DB).
 
 ## 16. Allineamento al listone ufficiale: ruoli, squadre, quotazioni (2026-09-04, `scripts/fanta_quotazioni.py`)
 **Problema.** Ruolo e squadra in `players` vengono dal feed API-Football: la posizione (Midfielder/Defender) NON è il ruolo del fantacalcio

@@ -195,3 +195,13 @@ nav a[data-view=messaggi]:before{content:"💬 "}.nbadge{background:var(--red);c
 .list li.muted{display:block}.list li.muted a{color:var(--accent2);font-weight:700}
 @media(max-width:600px){.chatpanel{height:70vh;bottom:66px}}
 .chatpanel.hidden{display:none}nav a.hidden{display:none}
+
+/* ---- layout orizzontale liste/strategie, leggibilita' (2026-09-04 sera) ---- */
+:root{--muted:#4f5b67}.muted{font-size:13px}.small{font-size:13px;color:var(--muted)}p.lead{font-size:16px;color:#2f3a45}
+.kpi .s,.cm span,.fbar2,.legend2{font-size:13px}.msg{font-size:14px}.hits a{font-size:14px}
+.strip{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 10px;align-items:stretch;scrollbar-width:thin}.strip>button,.strip>.btn{flex:0 0 auto;align-self:center}
+.chip{flex:0 0 auto;align-self:center;padding:8px 14px;border-radius:20px;border:1.5px solid var(--line);background:#fff;font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap}.chip:hover{border-color:var(--sec)}.chip.on{background:var(--sec);border-color:var(--sec);color:#fff}
+.tcard{flex:0 0 260px;border:1px solid var(--line);border-top:3px solid var(--sec);border-radius:12px;padding:10px 12px;background:#fff;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:2px}.tcard b{font-size:14px}.tcard .row{margin-top:auto}
+details.help{margin:8px 0 12px;border:1px solid var(--line);border-radius:10px;padding:8px 14px;background:#fafbfd}details.help summary{cursor:pointer;font-weight:700}details.help p,details.help li{font-size:14px;margin:6px 0}details.help ul{margin-left:18px}
+.prio{display:inline-block;padding:1px 7px;border-radius:6px;font-size:11px;font-weight:800;white-space:nowrap}.prio.p1{background:#e3f6ea;color:#0b5d36}.prio.p2{background:#fff3d6;color:#8a5a00}
+#lstePane h3,#strPane h3{margin-top:14px}

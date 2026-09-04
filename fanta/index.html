@@ -14,7 +14,7 @@
 <body>
 <header class="mast"><div class="wrap">
   <div class="row">
-    <a class="name" href="../">Transfer<b>Beat</b><span class="badge">FANTA TB</span></a>
+    <a class="name" href="/" title="Torna a TransferBeat">Transfer<b>Beat</b><span class="badge">FANTA TB</span></a>
     <div class="user" id="userBox"></div>
   </div>
   <nav><div class="wrap">
@@ -118,16 +118,13 @@
     <p class="lead">La tua lista per l'asta con i tier da 1 (Top) a 5 (Da evitare) e la strategia per spenderli bene: budget per ruolo, quanti giocatori per tier, tetti di spesa e prezzi attesi con l'inflazione della tua lega. Tutto condivisibile con un link, anche senza una lega.</p>
     <div class="tabs" id="lsteTabs"><a data-ltab="liste" class="on">🎯 Liste obiettivi</a><a data-ltab="strategie">📐 Strategie d'asta</a></div>
     <div id="lstePane">
-    <div class="grid3">
-      <div id="lsteEditor"></div>
-      <div>
-        <div class="card"><h2>Le mie liste</h2><div id="lsteMine"></div></div>
-        <div class="card" style="margin-top:14px"><h2>Liste condivise e consigliate</h2><div id="lsteFeatured"></div></div>
-      </div>
-    </div>
+    <h3>Le tue liste</h3><div id="lsteBar" class="strip"></div>
+    <h3>Le liste di TransferBeat</h3><div id="lsteTb" class="strip"></div>
+    <details class="help"><summary>🔗 Liste condivise dagli utenti e codice</summary><div id="lsteFeatured"></div></details>
+    <div id="lsteEditor"></div>
     <div id="lsteBrowse" style="margin-top:18px"></div>
     </div>
-    <div id="strPane" class="hidden"><div class="grid3"><div id="strEditor"></div><div><div class="card"><h2>Le mie strategie</h2><div id="strMine"></div></div><div class="card" style="margin-top:14px"><h2>Strategie consigliate e condivise</h2><div id="strShared"></div></div></div></div></div>
+    <div id="strPane" class="hidden"><h3>Le tue strategie</h3><div id="strBar" class="strip"></div><h3>Le strategie di TransferBeat</h3><div id="strTb" class="strip"></div><details class="help"><summary>🔗 Strategie condivise dagli utenti e codice</summary><div id="strShared"></div></details><div id="strEditor"></div></div>
   </section>
 
   <!-- MESSAGGI (staff) -->
