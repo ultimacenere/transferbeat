@@ -361,3 +361,12 @@ ricalcolano mai** (nemmeno con `--prezzi`), squadra bloccata per 45 giorni.
 → `py scripts\render_site.py` → `bash scripts\pubblica.sh`. Alias per i casi ambigui in `data/fanta/alias_quotazioni.json`.
 Dopo l'import, il listone pubblico e l'app mostrano ruoli ufficiali e quotazioni "ufficiale ±1"; il modificatore di FantaTB §6 resta solo
 per chi non è nel file.
+**Lezioni dal primo lancio reale (2026-09-04 sera, dal worktree con le chiavi copiate: la cartella principale su Drive è ferma a 3c33db6
+con 248 file "modificati" e il `git pull` fallisce, vedi §12):** (1) l'upsert PostgREST vuole le **stesse chiavi in tutte le righe**
+(errore PGRST102 "All object keys must match"): ora ogni riga è completa (id, season, name, role, role_mantra, team, team_id, price,
+active, stats). (2) `/players?search=` trova solo chi ha già statistiche nella stagione: i nuovi arrivi si cercano con
+`/players/profiles?search=cognome` (niente squadra nella risposta: filtro per cognome e iniziale/abbreviazione; più candidati → si sceglie con
+l'alias, che può puntare anche a un id NON in tabella: viene inserito via `/players/profiles?player=id`). (3) Nel DB ci sono **doppioni
+dello stesso giocatore con due id API** (Valdepeñas 560901/490779, O. Diallo 568482/432610, Lærke 479776/589739): alias verso l'id attivo
+nelle rose, gli altri restano inattivi. (4) Alcuni nomi in tabella sono mojibake ("R. ObriÄ", "C. Inao OulaÃ¯") o doppi (Mamedi Doucoure
+×2 con id diversi): pulizia da fare. (5) Nel PowerShell dell'utente non esiste `bash`: `pubblica.sh` lo lancia Claude dal suo terminale.
