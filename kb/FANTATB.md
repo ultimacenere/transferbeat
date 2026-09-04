@@ -377,3 +377,8 @@ non si inserisce e non avrebbe voti), **Pedro Gonçalves** (Fiorentina, 3 profil
 nato 2000, l'utente deve dire quale), **Toni Fernández** (Venezia, alias 445973 "Antonio Fernández Casino" nato 2008-07-15, dubbio sull'anno;
 il primo tentativo è fallito perché con l'alias verso un id nuovo il filtro sul nome scartava "Antonio" per "T.": corretto, ora con l'alias
 il filtro si salta). Rilanciando lo script gli alias già risolti si riscrivono identici; `alias_quotazioni.json` ha 32 voci.
+**Chiuso il 2026-09-04 in serata: 533 su 533** (commit 9007acc). Gli ultimi tre: Pote è su API-Football come "Pote" (id 18748, trovato per data di
+nascita 1998-06-28 cercando il soprannome); Toni Fernández = id 445973; **Sankhoun Diawara era già in tabella come "S. Bocoum"** (id 467860,
+il provider usa il secondo cognome Bocoum Diawara) ed era stato disattivato per il nome diverso: alias verso il suo id. Morale per i prossimi
+listoni: prima di cercare un "non trovato" su API-Football guardare nella lista degli "assenti dal file" se c'è lo stesso giocatore con un
+altro cognome. `alias_quotazioni.json` ora ha 34 voci e va conservato: vale anche per il listone di gennaio.
