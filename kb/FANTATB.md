@@ -285,8 +285,8 @@ hanno in alto **"← Torna al listone"** (`#backLs`: se il referrer è l'app o i
 scheda di lega da cui si era partiti; altrimenti porta a `fantacalcio/listone.html`).
 
 ## 15. Import rose da Excel, squadre in attesa, liste obiettivi con tier (2026-09-03 sera, `fix-008-rose-liste.sql`)
-**Prerequisito: l'utente deve eseguire `fanta/supabase/fix-008-rose-liste.sql` nell'SQL Editor (editor vuoto).** Finché non lo fa, l'app mostra
-errori "relation does not exist" su queste funzioni (le liste falliscono in silenzio, l'import segnala l'errore).
+**`fix-008-rose-liste.sql` ESEGUITO dall'utente il 2026-09-04** (verificato: `lists`/`list_items` leggibili, RPC presenti e con i controlli di
+autenticazione attesi). Nota: `pending_teams` è eseguibile anche da anon (rivela solo i nomi delle squadre in attesa di un codice invito noto).
 **Import rose (admin, scheda Partecipanti → "Importa le rose da Excel o CSV").** SheetJS caricato al volo da cdnjs (`xlsx 0.18.5`). Due formati:
 tabella con intestazioni (Fantasquadra/Squadra, Giocatore/Calciatore, Prezzo/Costo, opzionali Ruolo e Squadra reale; `detectCols`, con "Squadra"
 che diventa squadra reale se c'è già Fantasquadra) o blocchi stile export Fantacalcio.it (`parseRows`: riga con una sola cella = fantasquadra).
