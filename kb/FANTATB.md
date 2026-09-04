@@ -370,3 +370,10 @@ l'alias, che può puntare anche a un id NON in tabella: viene inserito via `/pla
 dello stesso giocatore con due id API** (Valdepeñas 560901/490779, O. Diallo 568482/432610, Lærke 479776/589739): alias verso l'id attivo
 nelle rose, gli altri restano inattivi. (4) Alcuni nomi in tabella sono mojibake ("R. ObriÄ", "C. Inao OulaÃ¯") o doppi (Mamedi Doucoure
 ×2 con id diversi): pulizia da fare. (5) Nel PowerShell dell'utente non esiste `bash`: `pubblica.sh` lo lancia Claude dal suo terminale.
+**Esito finale (2026-09-04 sera, tre lanci dell'utente): 530 attivi su 533 del listone ufficiale**, tutti con ruolo Classic, ruoli Mantra,
+squadra e quotazione Qt.I ±1; 155 disattivati; 33 nuovi arrivi inseriti (5 trovati da soli + 28 via alias con nome completo dato
+dall'utente e cercato su `/players/profiles`). Mancano: **Sankhoun Diawara** (Milan, non esiste su API-Football con nessuna grafia: senza id
+non si inserisce e non avrebbe voti), **Pedro Gonçalves** (Fiorentina, 3 profili plausibili: 141903 nato 1996, 141975 nato 1999, 129774
+nato 2000, l'utente deve dire quale), **Toni Fernández** (Venezia, alias 445973 "Antonio Fernández Casino" nato 2008-07-15, dubbio sull'anno;
+il primo tentativo è fallito perché con l'alias verso un id nuovo il filtro sul nome scartava "Antonio" per "T.": corretto, ora con l'alias
+il filtro si salta). Rilanciando lo script gli alias già risolti si riscrivono identici; `alias_quotazioni.json` ha 32 voci.

@@ -304,7 +304,7 @@ def main():
                     fn = norm(pl.get("firstname") or "")
                     return fn.startswith(abbr) or (pl.get("name") or "").lower().startswith(abbr[:1] + ".")
                 return True
-            hits = [it for it in res if ok(it)]
+            hits = res if (ak in alias and alias[ak] not in known_ids) else [it for it in res if ok(it)]   # con l'alias il nome puo' essere diverso (Toni = Antonio)
             if len(hits) != 1:
                 print("   %-22s %-12s: %d candidati su API-Football%s" % (e["nome"], e["squadra"], len(hits),
                       (" -> " + " / ".join("%s %s (id %s, %s)" % (it["player"].get("firstname"), it["player"].get("lastname"), it["player"]["id"], it["player"].get("nationality")) for it in hits[:5]) + ": scegli e metti l'id in alias") if hits else "")); continue
