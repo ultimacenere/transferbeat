@@ -218,3 +218,6 @@ details.help{margin:8px 0 12px;border:1px solid var(--line);border-radius:10px;p
   .kpis{grid-template-columns:repeat(2,1fr)}.kpi .v{font-size:20px}
   .tabs a{padding:7px 11px;font-size:13px}
 }
+
+/* fix 011: tabella del modificatore difesa nelle regole */
+.modtab{margin-top:10px;font-size:13px}.modtab table{width:auto;margin:6px 0}.modtab th{text-align:left}.modtab input{width:84px}.chk.muted{opacity:.55}.chk.muted small{font-weight:400}

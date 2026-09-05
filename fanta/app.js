@@ -197,9 +197,15 @@ async function renderVoti(){
 /* ---------- regole di lega: form condiviso (creazione e modifica) ---------- */
 const BONUS_KEYS = [['gol', 'Gol', 3], ['assist', 'Assist', 1], ['rig_sbagliato', 'Rigore sbagliato', -3], ['rig_parato', 'Rigore parato', 3],
   ['gol_subito', 'Gol subito (portiere)', -1], ['autogol', 'Autogol', -2], ['amm', 'Ammonizione', -0.5], ['esp', 'Espulsione', -1], ['porta_inviolata', 'Porta inviolata (portiere)', 0]];
+// modificatore difesa (fix 011): tabella a soglie come su Fantacalcio.it, con o senza portiere, bonus proprio o malus all'avversario
+const MOD_DEF_TAB = [[6, 0.5], [6.25, 1], [6.5, 2], [6.75, 3], [7, 4.5], [7.25, 6], [7.5, 7.5]];
+const MOD_OTHER = [['mod_portiere', 'Modificatore portiere'], ['mod_modulo', 'Modificatore modulo'], ['mod_rendimento', 'Fattore rendimento'], ['mod_fairplay', 'Fattore fairplay'], ['mod_capitano', 'Fattore capitano']];
 const DEFAULT_SETTINGS = { type: 'classic', phase: 'asta', credits: 500, max_teams: 8, slots: { P: 3, D: 8, C: 8, A: 6 }, timer: 20, max_subs: 3, bench_size: 7,
   goal_base: 66, goal_step: 6, mod_difesa: true, mod_centrocampo: false, mod_attacco: false, bonus_casa: 0, bonus_trasferta: 0,
+  mod_difesa_tab: MOD_DEF_TAB.map(([min, v]) => ({ min, v })), mod_difesa_portiere: true, mod_difesa_applica: 'propria',
   bonus: Object.fromEntries(BONUS_KEYS.map(k => [k[0], k[2]])) };
+function modDefTab(s){ return (Array.isArray(s.mod_difesa_tab) && s.mod_difesa_tab.length) ? s.mod_difesa_tab : DEFAULT_SETTINGS.mod_difesa_tab; }
+function modDefText(s){ const t = modDefTab(s); return (s.mod_difesa_portiere === false ? '4 migliori difensori' : '3 migliori difensori + portiere') + ', ' + (s.mod_difesa_applica === 'avversaria' ? 'malus all\'avversario' : 'bonus alla propria squadra') + ': ' + t.map(r => '≥' + r.min + ' +' + r.v).join(' · '); }
 function settingsFormHtml(s, px){
   s = Object.assign({}, DEFAULT_SETTINGS, s || {}); const sl = Object.assign({}, DEFAULT_SETTINGS.slots, s.slots || {}); const bn = Object.assign({}, DEFAULT_SETTINGS.bonus, s.bonus || {});
   const num = (id, label, v, step) => '<div><label>'+label+'</label><input id="'+px+'_'+id+'" type="number" step="'+(step || 1)+'" value="'+v+'"></div>';
@@ -207,8 +213,14 @@ function settingsFormHtml(s, px){
   return '<fieldset><legend>Lega</legend><div class="settings-grid">' + num('credits', 'Crediti', s.credits) + num('max_teams', 'Squadre max', s.max_teams) + num('timer', 'Timer asta (s)', s.timer) + num('max_subs', 'Sostituzioni max', s.max_subs) + num('bench_size', 'Panchinari', s.bench_size) + '</div></fieldset>' +
     '<fieldset><legend>Rose</legend><div class="settings-grid">' + num('P', 'Portieri', sl.P) + num('D', 'Difensori', sl.D) + num('C', 'Centrocampisti', sl.C) + num('A', 'Attaccanti', sl.A) + '</div></fieldset>' +
     '<fieldset><legend>Gol e scontri</legend><div class="settings-grid">' + num('goal_base', 'Primo gol a', s.goal_base, 0.5) + num('goal_step', 'Un gol ogni', s.goal_step, 0.5) + num('bonus_casa', 'Fattore casa', s.bonus_casa, 0.5) + num('bonus_trasferta', 'Fattore trasferta', s.bonus_trasferta, 0.5) + '</div></fieldset>' +
-    '<fieldset><legend>Modificatori</legend><div class="settings-grid">' + chk('mod_difesa', 'Difesa', s.mod_difesa) + chk('mod_centrocampo', 'Centrocampo', s.mod_centrocampo) + chk('mod_attacco', 'Attacco', s.mod_attacco) + '</div>' +
-    '<p class="muted" style="margin-top:6px">Difesa: media di portiere e 3 migliori difensori (almeno 4 schierati), da +1 a +6. Attacco: media voto degli attaccanti (almeno 2), stessa scala. Centrocampo: confronto tra le medie dei centrocampisti delle due squadre, da +1 a +6 a chi ha la media più alta.</p></fieldset>' +
+    '<fieldset><legend>Modificatori</legend><div class="settings-grid">' + chk('mod_difesa', 'Modificatore difesa', s.mod_difesa) + chk('mod_centrocampo', 'Modificatore centrocampo', s.mod_centrocampo) + chk('mod_attacco', 'Modificatore attacco', s.mod_attacco) +
+      MOD_OTHER.map(m => '<div class="chk muted"><input type="checkbox" disabled><label style="margin:0">'+m[1]+' <small>(non disponibile)</small></label></div>').join('') + '</div>' +
+    '<div class="modtab"><b>Modificatore difesa</b>: si applica schierando almeno 4 difensori. Il calcolo avviene sul voto (senza bonus e malus) dei 3 migliori difensori più il portiere, oppure dei 4 migliori difensori se il portiere non è incluso.' +
+      '<table><thead><tr><th>Media voto da</th><th>Bonus</th></tr></thead><tbody>' + modDefTab(s).map((row, i) => '<tr><td><input id="'+px+'_mdt_min'+i+'" type="number" step="0.25" value="'+row.min+'"></td><td><input id="'+px+'_mdt_v'+i+'" type="number" step="0.5" value="'+row.v+'"></td></tr>').join('') + '</tbody></table>' +
+      '<div class="settings-grid">' + chk('mod_difesa_portiere', 'Includi portiere', s.mod_difesa_portiere !== false) +
+      '<div><label>Applicazione bonus/malus</label><select id="'+px+'_mod_difesa_applica"><option value="propria" '+(s.mod_difesa_applica !== 'avversaria' ? 'selected' : '')+'>Propria squadra</option><option value="avversaria" '+(s.mod_difesa_applica === 'avversaria' ? 'selected' : '')+'>Squadra avversaria (malus)</option></select></div></div>' +
+      '<p class="muted" style="margin:6px 0 0">Sotto la prima soglia il modificatore vale 0. Media voto inferiore a 6 non dà mai bonus.</p></div>' +
+    '<p class="muted" style="margin-top:6px">Attacco: media voto degli attaccanti (almeno 2), scala fissa da +1 a +6. Centrocampo: confronto tra le medie dei centrocampisti delle due squadre, da +1 a +6 a chi ha la media più alta. Gli altri modificatori di Fantacalcio.it non sono ancora disponibili.</p></fieldset>' +
     '<fieldset><legend>Bonus e malus</legend><div class="settings-grid">' + BONUS_KEYS.map(k => num('b_' + k[0], k[1], bn[k[0]], 0.5)).join('') + '</div></fieldset>';
 }
 function readSettingsForm(px, base){
@@ -218,6 +230,8 @@ function readSettingsForm(px, base){
   s.slots = { P: n('P', 3), D: n('D', 8), C: n('C', 8), A: n('A', 6) };
   s.goal_base = n('goal_base', 66); s.goal_step = n('goal_step', 6); s.bonus_casa = n('bonus_casa', 0); s.bonus_trasferta = n('bonus_trasferta', 0);
   s.mod_difesa = g('mod_difesa').checked; s.mod_centrocampo = g('mod_centrocampo').checked; s.mod_attacco = g('mod_attacco').checked;
+  s.mod_difesa_tab = MOD_DEF_TAB.map(([min, v], i) => ({ min: n('mdt_min' + i, min), v: n('mdt_v' + i, v) })).sort((a, b) => a.min - b.min);
+  s.mod_difesa_portiere = g('mod_difesa_portiere').checked; s.mod_difesa_applica = g('mod_difesa_applica').value === 'avversaria' ? 'avversaria' : 'propria';
   s.bonus = Object.fromEntries(BONUS_KEYS.map(k => [k[0], n('b_' + k[0], k[2])]));
   return s;
 }
@@ -333,7 +347,7 @@ function renderRules(){
     '<tr><td>Sostituzioni</td><td>'+s.max_subs+'</td><td>Panchinari</td><td>'+s.bench_size+'</td></tr><tr><td>Timer asta</td><td colspan="3">'+s.timer+' s</td></tr>' +
     '<tr><td>Gol</td><td colspan="3">primo a '+s.goal_base+', poi uno ogni '+s.goal_step+' punti</td></tr>' +
     '<tr><td>Fattore casa / trasferta</td><td colspan="3">'+s.bonus_casa+' / '+s.bonus_trasferta+'</td></tr>' +
-    '<tr><td>Modificatori</td><td colspan="3">'+[s.mod_difesa && 'difesa', s.mod_centrocampo && 'centrocampo', s.mod_attacco && 'attacco'].filter(Boolean).join(', ') + (s.mod_difesa || s.mod_centrocampo || s.mod_attacco ? '' : 'nessuno')+'</td></tr>' +
+    '<tr><td>Modificatori</td><td colspan="3">'+[s.mod_difesa && ('difesa (' + modDefText(s) + ')'), s.mod_centrocampo && 'centrocampo', s.mod_attacco && 'attacco'].filter(Boolean).join(' · ') + (s.mod_difesa || s.mod_centrocampo || s.mod_attacco ? '' : 'nessuno')+'</td></tr>' +
     '<tr><td>Bonus e malus</td><td colspan="3">'+BONUS_KEYS.map(k => k[1].toLowerCase()+' '+(bn[k[0]] > 0 ? '+' : '')+bn[k[0]]).join(' · ')+'</td></tr>' +
     '</tbody></table></div>';
   if (!L.isAdmin) { $('#tab-regole').innerHTML = view; return; }

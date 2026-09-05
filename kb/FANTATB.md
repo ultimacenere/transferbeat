@@ -504,3 +504,13 @@ statistiche, pagine, commit; `workflow_dispatch task=live` per lanciarlo a mano.
 per i pending, pillola "provvisorio" sulle schede, voce "(live, provvisoria)" nel menu giornate e nota esplicativa.
 **Il fix 010 va eseguito dall'utente nel SQL Editor** (editor vuoto, incolla `fix-010-live.sql`, Run); finché non lo fa, il calcolo
 live sostituisce dalla panchina anche chi deve ancora giocare (risultati falsati ma provvisori: a `rated` si sistemano da soli).
+**Modificatori come su Fantacalcio.it (2026-09-06, `fix-011-modificatori.sql`, screenshot delle opzioni della lega dell'utente).**
+Nuove chiavi in `settings`: `mod_difesa_tab` = tabella a soglie `[{min, v}]` (default Fantacalcio.it: 6→+0,5, 6,25→+1, 6,5→+2, 6,75→+3,
+7→+4,5, 7,25→+6, 7,5→+7,5; sotto 6 vale 0), `mod_difesa_portiere` (true: media dei 3 migliori D + portiere; false: 4 migliori D),
+`mod_difesa_applica` (`propria` = bonus alla propria squadra, `avversaria` = malus all'avversaria, applicato nel ciclo degli scontri
+con `detail.mod_def_v`, extra "Malus difesa avversaria"). SQL: `mod_lookup(avg, tab)` + `compute_matchday` riscritta (include il fix 010).
+Frontend: fieldset Modificatori con difesa/centrocampo/attacco più gli altri di Fantacalcio.it (portiere, modulo, rendimento, fairplay,
+capitano) come interruttori disabilitati "non disponibile"; tabella soglie modificabile, "Includi portiere", tendina applicazione;
+`modDefTab`/`modDefText`, riga Modificatori in "Regole in vigore". La vecchia scala fissa 1..6 (`mod_table`) resta solo per l'attacco.
+Lega Fantamarcio 26/27: impostata con la tabella dello screenshot (portiere incluso, propria squadra). **Il fix 011 va eseguito dall'utente**
+(sostituisce compute_matchday: basta il 011 anche senza il 010); poi ricalcolare le giornate 1-3 con "Ricalcola" o `compute_matchday`.
