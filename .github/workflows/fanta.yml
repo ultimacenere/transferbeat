@@ -1,16 +1,20 @@
 name: FantaTB voti e listone
 
 # Voti: sabato/domenica/lunedì sera e martedì mattina (UTC), per coprire anticipi, posticipi e infrasettimanali.
+# Live: nei giorni di partita (ven-lun 12-22 UTC, mar-gio 17-22 UTC) ogni 30 minuti solo voti delle partite finite e
+#       risultati provvisori delle leghe (~2-22 chiamate API per giro), senza pagine né commit.
 # Rose: ogni giovedì alle 06:00 UTC sincronizza squadre/uscite/nuovi arrivi dal feed API-Football (prezzi invariati).
 on:
   schedule:
     - cron: "30 21 * * 6,0,1,2,3,4"
     - cron: "0 7 * * 1,2,5"
     - cron: "0 6 * * 4"
+    - cron: "*/30 12-22 * * 5,6,0,1"
+    - cron: "*/30 17-22 * * 2,3,4"
   workflow_dispatch:
     inputs:
       task:
-        description: "voti | rose (sincronizza rose, prezzi invariati) | listone (ricalcola anche i prezzi)"
+        description: "voti | live (solo voti e risultati provvisori, niente pagine) | rose (sincronizza rose, prezzi invariati) | listone (ricalcola anche i prezzi)"
         default: "voti"
       matchday:
         description: "numero giornata (vuoto = automatico)"
@@ -25,6 +29,8 @@ env:
   SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
   ROSE: ${{ github.event.inputs.task == 'rose' || github.event.schedule == '0 6 * * 4' }}
   LISTONE: ${{ github.event.inputs.task == 'listone' }}
+  # live: nei giorni di partita ogni 30 minuti solo voti + risultati provvisori delle leghe (fix 010), senza pagine e senza commit
+  LIVE: ${{ github.event.inputs.task == 'live' || github.event.schedule == '*/30 12-22 * * 5,6,0,1' || github.event.schedule == '*/30 17-22 * * 2,3,4' }}
 
 jobs:
   run:
@@ -45,13 +51,16 @@ jobs:
         if: ${{ env.LISTONE != 'true' && env.ROSE != 'true' }}
         run: python scripts/fanta_voti.py ${{ github.event.inputs.matchday }}
       - name: Indice titolarità
-        if: ${{ env.LISTONE != 'true' && env.ROSE != 'true' }}
+        if: ${{ env.LISTONE != 'true' && env.ROSE != 'true' && env.LIVE != 'true' }}
         run: python scripts/fanta_titolari.py || echo "titolari skip"
       - name: Statistiche squadre e schede giocatore (data/stats, ~60-130 chiamate a regime)
+        if: ${{ env.LIVE != 'true' }}
         run: python scripts/stats_pull.py || echo "stats_pull skip (restano i JSON precedenti)"
       - name: Pagine statiche (fantacalcio, squadre con statistiche, schede giocatore) e sitemap
+        if: ${{ env.LIVE != 'true' }}
         run: python scripts/render_site.py || echo "render_site skip"
       - name: Commit dati
+        if: ${{ env.LIVE != 'true' }}
         run: |
           git config user.name "TransferBeat Bot"
           git config user.email "bot@transferbeat.com"

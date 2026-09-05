@@ -475,3 +475,32 @@ altro cognome. `alias_quotazioni.json` ora ha 34 voci e va conservato: vale anch
 7. `fanta_demo.py bilancia`: rose bilanciate sul FVM per la lega test come simulazione reale (§11, 28ad9fd); lancio dell'utente.
 8. Chiusura: helper `sure()` al posto degli ultimi 3 `confirm()` admin, pulizia nomi/doppioni del feed, `pubblica.sh <refspec>`,
    backup Desktop `backup/desktop-2026-09-04`.
+
+## 19. Lega reale "Fantamarcio 26/27" su FantaTB (2026-09-06)
+La lega dell'utente (asta fatta il 2026-09-05 su app.fantalab.it, voti dei giornali, modificatore difesa) è stata **replicata su FantaTB**
+come copia di controllo: lega **Fantamarcio 26/27**, codice invito **03F0C96B**, id `f849d0cb-bb12-4923-9874-ca3f38493a2c`, admin Picchio
+(squadra Real Picchiese), fase `campionato`, regole di default (500 crediti, 3/8/8/6, mod difesa). La lega di prova `test` (B9B24C58) è stata eliminata.
+Le altre 7 squadre sono **bot** (`botN@fantatb.test` / `fantatb-botN`, username = nome squadra): 1 Atletico sul Divano, 2 Innominata FC,
+3 I Kinderini, 4 Allegri FC, 5 Space Wolves, 6 Conlemane, 7 S.S. WSQK 94.5 Eleven. Rose caricate dall'export Excel di FantaLab
+(200 giocatori, tutti abbinati alla tabella `players`), crediti residui aggiornati.
+**Calendario**: su richiesta dell'utente la copia parte dalla **1ª giornata di Serie A** (turno N = giornata N), con gli accoppiamenti veri
+dei turni 1-4 presi dal calendario della lega reale (che invece inizia dalla 4ª di Serie A: i turni coincidono, le giornate no). I turni
+successivi vanno aggiunti quando l'utente li comunica (inserimento diretto in `league_fixtures`, `generate_calendar` non riproduce il loro
+ordine). Giornate 1 e 2 calcolate con le formazioni migliori a posteriori (voti reali) per tutte le squadre; giornata 3 live con formazioni
+miglior-attese (o voti reali dove già disponibili): la calcola il cron a giornata `rated`.
+**Formazioni dei bot**: vanno schierate ogni settimana prima di `matchdays.starts_at`, altrimenti i bot fanno 0. Script usato
+(scratchpad della sessione, da portare nel repo come `scripts/fanta_bots.py` e nel cron): sceglie il modulo che massimizza
+`prob_tit/100 × fm25_stima` (o il fantavoto reale se la gara è già votata), panchina D-C-A-D-C-A-P. Per G4 formazioni salvate per
+tutte e 8 le squadre (quella del Real Picchiese è provvisoria: l'utente la cambia dall'app entro l'11/9).
+Le chiavi `supabase_keys.txt` e `apifootball_key.txt` sono copiate anche nel worktree `asta-8-500-crediti-strategia-8c33e5` (gitignorate).
+**Risultati live (2026-09-06, `fix-010-live.sql`, richiesta dell'utente "voglio vedere i bonus live").** Prima una giornata veniva
+calcolata solo a `rated`. Ora: (1) `compute_matchday` legge lo status della giornata e, se non è `rated`, NON sostituisce chi non ha
+ancora una riga in `player_ratings` (partita non finita: `fanta_voti.py` scrive righe solo per le partite FT) ma lo segna
+`pending` con fantavoto 0 provvisorio; chi ha la riga con voto null (giocato <15' o in panchina) viene sostituito come prima; a
+`rated` tutto come prima (anche i non convocati senza riga vengono sostituiti). `detail.live = true` finché la giornata non è
+`rated`. (2) `fanta_voti.py` chiama `compute_all_leagues` anche a status `live`. (3) `fanta.yml`: due schedule in più
+(`*/30 12-22 * * 5,6,0,1` e `*/30 17-22 * * 2,3,4`) con `LIVE=true` → solo step Voti (2-22 chiamate API), niente titolarità,
+statistiche, pagine, commit; `workflow_dispatch task=live` per lanciarlo a mano. (4) Frontend Risultati: "attesa" al posto di s.v.
+per i pending, pillola "provvisorio" sulle schede, voce "(live, provvisoria)" nel menu giornate e nota esplicativa.
+**Il fix 010 va eseguito dall'utente nel SQL Editor** (editor vuoto, incolla `fix-010-live.sql`, Run); finché non lo fa, il calcolo
+live sostituisce dalla panchina anche chi deve ancora giocare (risultati falsati ma provvisori: a `rated` si sistemano da soli).

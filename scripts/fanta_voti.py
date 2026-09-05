@@ -107,8 +107,8 @@ def main():
         sb_upsert("matchdays", [{"season": SEASON, "number": md, "starts_at": starts, "ends_at": ends, "status": status}],
                   on_conflict="season,number")
         print("upsert ok")
-        if status == "rated":
-            print("leghe calcolate:", sb_rpc("compute_all_leagues", {"p_matchday": md}))
+        if status in ("rated", "live"):   # live: risultati provvisori con i voti delle partite finite (fix 010)
+            print("leghe calcolate (%s):" % status, sb_rpc("compute_all_leagues", {"p_matchday": md}))
 
 if __name__ == "__main__":
     main()

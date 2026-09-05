@@ -598,7 +598,8 @@ function teamSheet(r, name, opts){
   const missing = !r || d.lineup === false;
   const nm = id => injCross((S.rstatus || {})[id]) + shortName((playersById[id] || { name: '#'+id }).name);
   const empty = '<tr><td>&nbsp;</td><td class="muted">–</td><td></td><td></td></tr>';
-  let rows = pl.map(p => '<tr><td>'+roleTag(p.role)+'</td><td>'+(p.sub ? '<span class="muted" style="text-decoration:line-through">'+esc(nm(p.player_id))+'</span> 🔁 '+esc(nm(p.sub)) : esc(nm(p.player_id)))+' <span class="em">'+emojis(p.bonus)+'</span></td><td>'+(p.voto == null ? 's.v.' : f1(p.voto))+'</td><td><b>'+f1(p.fv)+'</b></td></tr>').join('');
+  // p.pending (fix 010): giornata live e partita del giocatore non ancora finita -> "attesa", niente sostituzione
+  let rows = pl.map(p => '<tr><td>'+roleTag(p.role)+'</td><td>'+(p.sub ? '<span class="muted" style="text-decoration:line-through">'+esc(nm(p.player_id))+'</span> 🔁 '+esc(nm(p.sub)) : esc(nm(p.player_id)))+' <span class="em">'+emojis(p.bonus)+'</span></td><td>'+(p.pending ? '<span class="muted">attesa</span>' : (p.voto == null ? 's.v.' : f1(p.voto)))+'</td><td><b>'+(p.pending ? '–' : f1(p.fv))+'</b></td></tr>').join('');
   for (let i = pl.length; i < 11; i++) rows += empty;
   const labels = opts.labels.length ? opts.labels : (!extras.length && d.mod_difesa ? ['Modificatore difesa'] : []);
   const exRows = labels.map(lb => { const e = extras.find(x => x.label === lb) || (lb === 'Modificatore difesa' && d.mod_difesa ? { v: d.mod_difesa } : { v: 0 });
@@ -606,7 +607,7 @@ function teamSheet(r, name, opts){
   let brows = bench.map((p, i) => '<tr class="'+(p.used ? '' : 'ex')+'"><td><span class="pill">'+(i + 1)+'</span></td><td>'+roleTag(p.role)+' '+esc(nm(p.player_id))+(p.used ? ' 🔁' : '')+' <span class="em">'+emojis(p.bonus)+'</span></td><td>'+(p.voto == null ? 's.v.' : f1(p.voto))+'</td><td>'+(p.fv == null ? '–' : f1(p.fv))+'</td></tr>').join('');
   for (let i = bench.length; i < opts.benchN; i++) brows += empty;
   const base = d.base != null ? d.base : pl.reduce((a, p) => a + (+p.fv || 0), 0);
-  return '<div><h3>'+esc(name)+(missing ? ' <span class="pill">formazione non inviata</span>' : '')+'</h3><table><thead><tr><th></th><th>Giocatore</th><th>V</th><th>FV</th></tr></thead><tbody>' + rows +
+  return '<div><h3>'+esc(name)+(missing ? ' <span class="pill">formazione non inviata</span>' : '')+(d.live ? ' <span class="pill live">provvisorio</span>' : '')+'</h3><table><thead><tr><th></th><th>Giocatore</th><th>V</th><th>FV</th></tr></thead><tbody>' + rows +
     '<tr class="tot"><td></td><td>Totale parziale</td><td></td><td>'+f1(missing ? 0 : base)+'</td></tr>' + exRows +
     '<tr class="grand"><td></td><td>Totale</td><td></td><td>'+f1(r ? r.total : 0)+'</td></tr>' +
     (opts.benchN ? '<tr><td colspan="4" class="muted" style="padding-top:10px"><b>Panchina</b></td></tr>' + brows : '') + '</tbody></table></div>';
@@ -630,8 +631,10 @@ async function renderResults(){
   let lus = [];
   if (!computed) { const { data } = await sb.from('lineups').select('user_id, module, starters, bench, submitted_at').eq('league_id', L.league.id).eq('matchday', md); lus = data || []; }
   const lu = uid => lus.find(x => x.user_id === uid);
-  let html = '<div class="row" style="max-width:360px"><select id="rsMd">' + mds.map(n => '<option value="'+n+'" '+(n === md ? 'selected' : '')+'>Giornata '+n+(withRes.has(n) ? '' : (mdOpen(n) ? ' (da giocare)' : ' (in corso)'))+'</option>').join('') + '</select></div>';
+  const liveMds = new Set(S.results.filter(r => r.detail && r.detail.live).map(r => r.matchday));   // fix 010: risultati provvisori
+  let html = '<div class="row" style="max-width:360px"><select id="rsMd">' + mds.map(n => '<option value="'+n+'" '+(n === md ? 'selected' : '')+'>Giornata '+n+(withRes.has(n) ? (liveMds.has(n) ? ' (live, provvisoria)' : '') : (mdOpen(n) ? ' (da giocare)' : ' (in corso)'))+'</option>').join('') + '</select></div>';
   if (!computed) html += '<p class="muted" style="margin:8px 0">Giornata non ancora calcolata: formazioni schierate finora. Deadline '+fmtDate(mdInfo(md).starts_at)+'.</p>';
+  else if (liveMds.has(md)) html += '<p class="muted" style="margin:8px 0">Risultati provvisori: voti e bonus delle partite già finite, aggiornati ogni 30 minuti nei giorni di gara. Chi deve ancora giocare è "attesa"; le sostituzioni dalla panchina si applicano solo a giornata completa.</p>';
   if (fxs.length) html += fxs.map(f => { const h = res(f.home_id), a = f.away_id ? res(f.away_id) : null;
     return '<div class="match"><div class="score"><div class="t r">'+esc(memberName(f.home_id))+'</div><div class="g">'+(computed ? (f.home_goals != null ? f.home_goals : '-')+' - '+(f.away_id ? (f.away_goals != null ? f.away_goals : '-') : '') : 'vs')+'</div><div class="t">'+(f.away_id ? esc(memberName(f.away_id)) : '<span class="muted">riposo</span>')+'</div>' +
       (computed ? '<div class="fp" style="text-align:right">'+f1(h && h.total)+' fantapunti</div><div></div><div class="fp">'+(a ? f1(a.total)+' fantapunti' : '')+'</div>' : '') + '</div>' +
