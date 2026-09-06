@@ -132,7 +132,7 @@ def render(D, T, P, latest, helpers):
     def colors(name):
         site = T.fanta_name(name); t = T.by_name.get(site) if site else None
         return ((t.get("col") or "#67727e"), (t.get("col2") or "#ffffff")) if t else ("#67727e", "#ffffff")
-    b = ["<h1>Probabili formazioni giornata %d Serie A %s: moduli, titolari e percentuali" % (md, SEASON),
+    b = ["<h1>Probabili formazioni giornata %d Serie A %s: moduli, titolari e percentuali</h1>" % (md, SEASON),
          '<div class="sub">%d partite da %s a %s · %d indisponibili, %d ballottaggi, %d sostituzioni forzate · %s · aggiornato <time>%s</time></div>' % (len(fx), esc(d1), esc(d2), n_out, n_bal, n_forced, esc(stage), esc(fdate_it(upd, True))),
          '<p>Le probabili formazioni della giornata %d di Serie A %s partita per partita, costruite da TransferBeat con i propri dati: per ogni squadra il modulo e l\'undici '
          'dell\'ultima formazione ufficiale, la percentuale di ogni giocatore di partire titolare calcolata sulle ultime tre gare e sull\'indice di titolarità FantaTB, '
