@@ -1,5 +1,5 @@
 {
-"updated": "2026-09-06T00:29:32Z",
+"updated": "2026-09-06T00:36:03Z",
 "season": 2026,
 "matchday": 4,
 "stage": "settimana",
@@ -495,7 +495,7 @@
 },
 {
 "id": 400530,
-"name": "R. ObriÄ",
+"name": "R. Obrić",
 "role": "D",
 "pos": "D",
 "prob": 15
@@ -1022,15 +1022,21 @@
 "share": 60
 },
 {
-"id": 490779,
-"name": "Valde",
+"id": 560901,
+"name": "V. Valdepenas",
 "role": "D",
 "pos": "D",
 "grid": "2:1",
-"prob": 83,
+"prob": 64,
 "why": "titolare nelle ultime 2 su 3",
-"ballot": null,
-"out_for": null
+"ballot": {
+"id": 1084,
+"name": "M. Pongračić",
+"prob": 40,
+"share": 38
+},
+"out_for": null,
+"share": 62
 },
 {
 "id": 876,
@@ -1050,21 +1056,21 @@
 "share": 52
 },
 {
-"id": 474591,
-"name": "C. Inao OulaÃ¯",
+"id": 506685,
+"name": "J. Oulai",
 "role": "C",
 "pos": "M",
 "grid": "3:2",
-"prob": 83,
+"prob": 64,
 "why": "titolare nelle ultime 2 su 3",
 "ballot": {
 "id": 347644,
 "name": "A. Atta",
 "prob": 61,
-"share": 42
+"share": 49
 },
 "out_for": null,
-"share": 58
+"share": 51
 },
 {
 "id": 1639,
@@ -1126,15 +1132,15 @@
 "prob": 14
 },
 {
-"id": 1084,
-"name": "M. Pongračić",
-"role": "D",
-"pos": "D",
-"prob": 40
-},
-{
 "id": 41144,
 "name": "Dodô",
+"role": "D",
+"pos": "D",
+"prob": 34
+},
+{
+"id": 31642,
+"name": "L. Ranieri",
 "role": "D",
 "pos": "D",
 "prob": 34
@@ -2212,8 +2218,8 @@
 "prob": 16
 },
 {
-"id": 479776,
-"name": "H. Laerke",
+"id": 589789,
+"name": "P. Esteban",
 "role": "A",
 "pos": "F",
 "prob": 12
@@ -2380,11 +2386,11 @@
 ],
 "bench": [
 {
-"id": 408625,
+"id": 557183,
 "name": "D. Renzetti",
 "role": "P",
 "pos": "G",
-"prob": 12
+"prob": 11
 },
 {
 "id": 1632,
@@ -3102,11 +3108,11 @@
 "prob": 16
 },
 {
-"id": 432610,
+"id": 568482,
 "name": "O. Diallo",
 "role": "C",
 "pos": "M",
-"prob": 12
+"prob": 14
 },
 {
 "id": 301924,
@@ -3609,12 +3615,12 @@
 "out_for": null
 },
 {
-"id": 550912,
-"name": "F. Ondoa",
+"id": 421859,
+"name": "Manga Foe Ondoa",
 "role": "C",
 "pos": "M",
 "grid": "3:3",
-"prob": 80,
+"prob": 70,
 "why": "titolare nelle ultime 2 su 2",
 "ballot": null,
 "out_for": null

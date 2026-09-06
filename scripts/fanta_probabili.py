@@ -7,8 +7,45 @@ indisponibili e squalificati dall'indice, sostituti scelti per posizione, ballot
 
   py scripts/fanta_probabili.py [giornata]     scrive data/fanta/probabili-NN.json (giornata = ultima rated + 1 se omessa)
 Chiamate API: 1 (/fixtures della stagione) + 1 per ogni partita giocata non ancora in cache (data/fanta/lineups.json), quindi ~10 a settimana."""
-import sys, os, json, time, datetime
+import sys, os, json, time, datetime, re, unicodedata
 from fanta_common import *
+
+SPECIAL = str.maketrans({"ð": "d", "Ð": "D", "đ": "d", "Đ": "D", "ø": "o", "Ø": "O", "ł": "l", "Ł": "L", "ß": "ss", "æ": "ae", "ı": "i", "İ": "I"})
+def norm(s):
+    s = unicodedata.normalize("NFKD", str(s or "").translate(SPECIAL)).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", " ", s).strip()
+
+def fix_moji(s):
+    """Il feed consegna a volte nomi in UTF-8 letto come latin-1 ('OulaÃ¯', 'ObriÄ‡'): li riporto a UTF-8."""
+    try:
+        if any(ch in (s or "") for ch in ("Ã", "Ä", "Å", "Ð")):
+            return s.encode("latin-1").decode("utf-8")
+    except Exception:
+        pass
+    return s or ""
+
+def make_canon(lst):
+    """pid del feed -> pid del listone: stesso id, oppure stesso cognome nella stessa squadra (doppioni di id API, kb §16)."""
+    by_team = {}
+    for p in lst.values():
+        by_team.setdefault(p.get("team"), []).append(p)
+    cache = {}
+    def canon(pid, name, team):
+        if pid in lst:
+            return pid
+        k = (pid, team)
+        if k in cache:
+            return cache[k]
+        toks = [t for t in norm(fix_moji(name)).split() if len(t) >= 3]
+        best = None
+        for p in by_team.get(team, []):
+            ptoks = [t for t in norm(p["name"]).split() if len(t) >= 3]
+            if toks and ptoks and (toks[-1] == ptoks[-1] or (len(toks[-1]) >= 5 and any(t.startswith(toks[-1]) or toks[-1].startswith(t) for t in ptoks if len(t) >= 5))):
+                if best is None or len(p["name"]) < len(best["name"]):
+                    best = p
+        cache[k] = best["id"] if best else pid
+        return cache[k]
+    return canon
 
 W = [0.5, 0.3, 0.2]                      # pesi delle ultime 3 formazioni ufficiali (dalla più recente)
 POS_OF_ROLE = {"P": "G", "D": "D", "C": "M", "A": "F"}
@@ -76,10 +113,14 @@ def main():
     days = (datetime.datetime.strptime(first[:19], "%Y-%m-%dT%H:%M:%S") - now).total_seconds() / 86400
     stage = "giorno-gara" if days < 1 else ("vigilia" if days <= 3 else "settimana")
     teams = {}
+    canon = make_canon(lst)
     for tid, L in hist.items():
         if not L:
             continue
         name = L[0]["name"]
+        for lu in L:   # id del feed -> id del listone (doppioni) e nomi ripuliti, una volta sola
+            for p in lu["xi"] + lu["bench"]:
+                p["id"] = canon(p["id"], p.get("name"), name); p["name"] = fix_moji(p.get("name"))
         score, seen = {}, {}
         for i, lu in enumerate(L):
             w = W[i] if i < len(W) else 0
