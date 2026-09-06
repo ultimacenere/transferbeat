@@ -514,3 +514,7 @@ capitano) come interruttori disabilitati "non disponibile"; tabella soglie modif
 `modDefTab`/`modDefText`, riga Modificatori in "Regole in vigore". La vecchia scala fissa 1..6 (`mod_table`) resta solo per l'attacco.
 Lega Fantamarcio 26/27: impostata con la tabella dello screenshot (portiere incluso, propria squadra). **Il fix 011 va eseguito dall'utente**
 (sostituisce compute_matchday: basta il 011 anche senza il 010); poi ricalcolare le giornate 1-3 con "Ricalcola" o `compute_matchday`.
+**6 politico nelle giornate live (2026-09-06, `fix-012-sei-politico.sql`, richiesta dell'utente).** A giornata non `rated`, chi non ha ancora
+la riga in `player_ratings` riceve voto 6 e fantavoto 6 senza bonus (`pending = true`): entra nel totale provvisorio e nel modificatore
+difesa come un 6, così il risultato live è una simulazione completa e non un parziale. Frontend: riga arancione (`.pol`, `tr.pol`) con
+"6*" e legenda nella nota della giornata live. Sostituisce `compute_matchday` del fix 011 (contiene 010 e 011). **Da eseguire dall'utente.**
