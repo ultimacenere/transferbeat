@@ -550,3 +550,25 @@ presenze/gol/assist; ultimi 5 fantavoti come chip colorate; stagione scorsa (cam
 rating); infortunio con rientro; link "Scheda completa". I dati in più stanno in `schede.json` (`player_summary` in render_stats.py:
 `photo, age, nat, prev, last, inj, back`; ~177 KB). Pending UX: stessa scheda nella lista dell'asta e in Schiera; scheda anche nel listone
 statico pubblico (`fantacalcio/listone.html`); filtri del listone su mobile.
+
+## 22. Guscio del sito nell'app e sistema visivo (2026-09-06, commit `ca2e1872`; dettagli in kb/SEO.md §7)
+- `fanta/index.html`: testata del sito (`site_common.shell_header(here="Fantacalcio", cta=False)` incollata statica, con `#userBox` a destra), barra di sezione
+  `<nav class="secbar">` con le voci dell'app come `<a data-view="…">` (Le mie leghe, Listone, Obiettivi, Voti, Come funziona, Messaggi + `.nbadge`) più il link
+  "Dati pubblici" → /fantacalcio/; footer del sito in fondo. Title "Accedi a FantaTB: le tue leghe, asta e formazioni", robots index,follow (decisione del
+  committente: tutto indicizzabile), canonical invariato. Via il badge "FANTA TB", via le emoji dai titoli delle viste e dalla vista di accesso (che ora è
+  visibile anche senza JS: `#view-auth` senza `hidden` nel markup; app.js nasconde le viste che non servono). La landing pubblica è `/fantatb.html`
+  (generata da `scripts/render_landing.py`), l'unica con WebApplication JSON-LD.
+- `fanta/style.css`: `:root` con i token del sito (--bg #f6f4fb, --brand #ff6a00 con testo --ink #1b1140, --violet #4b1d95, --ok/--warn/--err, badge ruolo
+  --rP/--rD/--rC/--rA); font di sistema, Georgia solo su h1; tier T1-T5 con CINQUE cromie diverse (`--t1..--t5`, contrasto AA sul chip); nessun gradiente
+  oltre a quello firma; `.secbar` e footer copiati dal CSS di site_common; `.pcard` e `.pol` allineati ai token.
+- `fanta/app.js`: tolto il limite silenzioso `slice(0,400)` sul listone; selettore della voce attiva allineato alla secbar. Router e viste NON toccati.
+- `fanta/promo.js` eliminato (sostituito dal ribbon di site_common, mai mostrato nel ramo Fantacalcio).
+- Il listone statico `fantacalcio/listone.html` ha ora la scheda rapida al mouseover (stessa logica di `pcardHtml`, dati da `/data/fanta/schede.json` scaricato al
+  primo hover) e le colonne Quot./MV/FMV/Titolare/Pres./Gol/Assist (FVM tolta perché assente per molti).
+### 22.1 Pending app (da fare DOPO il desktop, decisione del committente)
+1. Router con `hashchange` + `pushState` (oggi solo `replaceState`: il tasto Indietro non funziona sui deep link).
+2. Home leghe con card e bottone principale "Schiera giornata N"; crea lega in 2 passi; tabelle che reggono a 375 px (contenitore `.tscroll`).
+3. Icone SVG monocrome al posto delle emoji nei bonus dei risultati; chat "Scrivici" nella voce Messaggi con badge non letti.
+4. BreadcrumbList e JSON-LD in `fanta/index.html`; stessa scheda rapida nella lista dell'asta e in Schiera; filtri del listone su mobile.
+5. Bot formazioni nel cron, turni del calendario dal 5° in poi (§19), statistiche combinate e consiglio AI, nuova scheda giocatore stile FantaLab
+   (specifica in scratchpad `specifica_scheda_giocatore.json` della sessione del 2026-09-05/06), voti delle redazioni (5 decisioni aperte), articoli fase 1.

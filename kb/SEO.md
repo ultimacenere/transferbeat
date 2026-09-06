@@ -166,3 +166,53 @@ Serie A 2026-27", H1 con "moduli, titolari e percentuali", ~3.000 parole di test
 FAQPage + Dataset, ancore per partita (#inter-udinese), link a squadre e schede giocatore. In sitemap-fanta e IndexNow come le altre pagine fanta.
 Keyword: "probabili formazioni serie a", "probabili formazioni giornata N", "probabili formazioni fantacalcio". Aggiornata giovedì sera, venerdì
 15 UTC, sabato 8 UTC e a ogni run voti; i title non cambiano tra un aggiornamento e l'altro.
+
+## 7. Nuova veste del sito, alberatura e guscio unico (2026-09-06, commit `ca2e1872` su main, online e verificato)
+Origine: audit di navigabilità/UX (10 problemi verificati: 9 menu diversi, "FantaTB" con tre destinazioni, tre pagine "cos'è FantaTB" in cannibalizzazione,
+H1 non chiuso nelle probabili, 585 articoli vicolo cieco, schede giocatore senza ingresso dalla home, sezione fanta senza menu, 4 sistemi visivi, router
+dell'app senza Indietro, doppioni index.html/campionati.html) + mockup approvati in direzione C (arancio #ff6a00 + viola #4b1d95, tela Claude Design:
+https://claude.ai/code/artifact/fa39467d-b3c6-4321-885b-563cbcaf982d). Decisioni del committente: font di sistema + Georgia solo su H1 e logo (niente webfont),
+via "BETA", via il promo fucsia-arancio-giallo e gli skyscraper, TUTTO indicizzabile (anche `/fanta/`), pagine nuove senza revisione, tier a 5 cromie,
+prima il desktop poi l'app. Etichetta della board nel menu: "Notizie" (default; alternative "Live"/"Calciomercato" mai scelte).
+### 7.1 Guscio unico (`scripts/site_common.py`)
+- `NAV` a 6 voci (Notizie /board.html, Campionati /campionati/, Squadre, Giocatori, Fantacalcio /fantacalcio/, Articoli) + `CTA` "Gioca a FantaTB" → /fantatb.html;
+  `FANTA_BAR` (Panoramica, Probabili formazioni, Voti /fantacalcio/voti.html, Listone, Infortunati e squalificati /fantacalcio/titolari.html, Regolamento,
+  Guida all'asta); `CAMP_BAR` (Tutte + 6 competizioni + Mondiale 2026); `FOOTER` a 3 colonne (Sezioni, Fantacalcio, TransferBeat: chi siamo, fonti, dati aperti,
+  EN/ES, archivio Mondiale) da cui deriva `SITELINKS`.
+- Funzioni: `shell_header(here, bar, bar_here, cta)`, `section_bar`, `shell_footer`, `ribbon()` (48 px blu notte, CTA + X, memoria 7 giorni in localStorage
+  `tb_ribbon`; MAI nel ramo Fantacalcio), `breadcrumb_html`, `page(..., bar=, bar_here=)`, `apply_shell(path, here, bar, bar_here, promo)` per le pagine a mano.
+  `here` accetta anche i nomi vecchi ("Live"→Notizie, "FantaTB"→Fantacalcio). `fanta/promo.js` ELIMINATO: nessuna pagina lo include più.
+- Token CSS (`:root`): --bg #f6f4fb, --card #fff, --line #e5e1ee, --txt #161b21, --txt2 #3d4750, --muted #5b6670, --brand #ff6a00 (mai testo bianco sopra:
+  testo --ink #1b1140), --brand-ink #c24d00, --violet #4b1d95, --ok/--warn/--err, badge ruolo --rP/--rD/--rC/--rA, --grad (gradiente firma, al massimo uno per
+  pagina); alias vecchi (--accent, --done, --rumor, --red) mantenuti. Componenti: .secbar, .kpis/.kpi, .rb (badge ruolo), .pill, .pol (6 politico), .door, .grad,
+  .status, .tscroll (tabelle su mobile). Niente emoji nel markup generato.
+- Pagine a mano (index, board, campionati, fonti, mondiali.html): tre marcatori `<!--shell:css-->`, `<!--shell:header-->`, `<!--shell:footer-->` riempiti da
+  `apply_shell` a ogni `render_site.py` (prima delle inject `static:`); lo `<style>` proprio resta DOPO il blocco shell:css. La home ha il nuovo marcatore
+  `<!--static:fanta-->` (blocco Fantacalcio) e linka /giocatori/; le tab campionato puntano alle URL statiche /campionati/<slug>.html.
+### 7.2 Alberatura e URL (nessuna URL rinominata; 3 livelli, tutto entro 3 clic dalla home)
+- Nuove: `/fantacalcio/voti.html` (URL fissa = ultima giornata; le `voti-giornata-N.html` restano archivio, quella della giornata corrente ha canonical su voti.html
+  e sta fuori sitemap), `/fantacalcio/regolamento.html` (FAQPage), `/fantacalcio/guida-asta.html` (HowTo), `/fantacalcio/consigli.html` (ItemList, "chi schierare"
+  dalle probabili ≥70% × fantamedia) — generate da `scripts/render_fanta_extra.py` (`render_all(D, T)`), agganciate in `render_site.main()` con try/except.
+- `/fantatb.html` è GENERATA da `scripts/render_landing.py` (`render(D, T)`): testo statico ≥2.500 caratteri, WebApplication JSON-LD SOLO qui (tolto dall'hub),
+  FAQPage, CTA a /fanta/#crea. `/fanta/` resta index,follow e in sitemap, con title distinto ("Accedi a FantaTB: le tue leghe, asta e formazioni"), senza CTA.
+- `/fantacalcio/titolari.html` riposizionata su "Infortunati e squalificati" (URL invariata). `campionati.html`: H1/title non cannibalizzano più serie-a;
+  il 301 verso /campionati/ resta rimandato finché il committente non legge le impressioni in Search Console.
+- Redirect in `vercel.json`: `/index.html` → `/` (308 verificato) oltre a `/home.json`.
+- Ancore nelle probabili: `#partita-<slug casa>-<slug ospite>` e `#squadra-<slug>`; le schede giocatore e le pagine squadra le linkano.
+- Articoli: `render_articles.py` usa shell_header (here Articoli, barra lingue Italiano/English/Español), ribbon solo in IT, footer del sito, card Fantacalcio
+  contestuale; etichetta della board "Notizie/News/Noticias".
+- Esito (seo_audit + controlli): 1.359 pagine, header/footer del guscio 1/1 ovunque, promo.js 0, H1 unico e chiuso ovunque, title ≤60, description ≤155,
+  JSON-LD 0 errori, link interni rotti 0, IndexNow 200 su 1.366 URL.
+### 7.3 Pending dopo il 2026-09-06 (rifiniture di bassa gravità trovate dal verificatore e non ancora fatte)
+1. `consigli.html` è linkata solo da regolamento e guida: aggiungere la porta "Chi schierare nella giornata N" nell'hub (`render_fanta_index`) e nel blocco
+   `static:fanta` della home (o una voce in `FANTA_BAR`).
+2. Per la giornata corrente `render_stats.py`, `render_landing.py`, `render_fanta_extra.py` e `render_probabili.py` linkano `voti-giornata-N.html` invece di
+   `voti.html`: introdurre `voti_url(md, last_md)` in `site_common` e usarla ovunque.
+3. Due giocatori con doppio id API-Football (Mamedi Doucouré, V. Prisco) → 4 title e 2 description duplicati: deduplicare in `stats_pull.py`.
+4. `fanta/index.html` senza BreadcrumbList e JSON-LD (canonical e robots ok).
+5. Nel CSS condiviso resta un secondo `linear-gradient` (dissolvenza `.tabsw::after` del menu su mobile): sostituire con ombra piatta o documentare l'eccezione.
+6. `render_landing.py`: titolo della card fantavoti va a capo male a 375 px (`.lp-proof .h` senza flex-wrap).
+7. `regolamento.html` emette un secondo oggetto WebApplication in `about`: usare un riferimento `@id` alla landing.
+8. Non ancora fatti dal piano dell'audit: fase 5 (tabelle interattive in /campionati/ + 301 di campionati.html dopo Search Console), home "portale" completa
+   (7 notizie, classifica Serie A, ultimi articoli), riposizionamento di `/fantacalcio/titolari.html` su URL nuova (solo se si vuole, con 301), og:image,
+   email in chi-siamo, www → apice in Vercel, verifica dal vivo su mobile, poi l'APP FantaTB (router con hashchange, viste, tabelle mobile: kb/FANTATB.md §22).
