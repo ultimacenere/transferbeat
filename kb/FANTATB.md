@@ -540,3 +540,13 @@ difesa come un 6, così il risultato live è una simulazione completa e non un p
 - Limiti noti: le percentuali sono statistiche (niente notizie dagli allenamenti); i nuovi arrivi senza formazioni recenti hanno 15-40;
   i moduli con griglie non standard dell'API (es. 3-4-1-2) si disegnano dalla griglia reale, quindi sempre coerenti; Coppe e turnover non
   sono modellati (pending: pesare l'impegno infrasettimanale). Le probabili di altri siti restano ESCLUSE per scelta.
+
+## 21. Scheda rapida del giocatore nell'app (2026-09-06, richiesta dell'utente: "statistiche visibili dal listone come popup al mouseover")
+`fanta/app.js` `pcardHtml/pcardShow/pcardHide`: finestra fissa `#pcard` (stile `.pcard` in style.css) che compare dopo 260 ms al passaggio del
+mouse su una riga `tr[data-pid]` del listone (pubblico e di lega) e sul telefono (`hover: none`) al tocco sul nome; si chiude uscendo con il
+mouse, con ×, con Esc o cliccando altrove. Contenuto: foto (media.api-sports.io), nome, ruolo, tier della lista attiva, squadra con striscia
+del colore sociale, età e nazionalità; Quot., FVM (dalla tabella `players`, `select ... fvm:stats->qt->fvm`), titolarità, MV, FMV,
+presenze/gol/assist; ultimi 5 fantavoti come chip colorate; stagione scorsa (campionato principale: presenze, titolarità, gol, assist,
+rating); infortunio con rientro; link "Scheda completa". I dati in più stanno in `schede.json` (`player_summary` in render_stats.py:
+`photo, age, nat, prev, last, inj, back`; ~177 KB). Pending UX: stessa scheda nella lista dell'asta e in Schiera; scheda anche nel listone
+statico pubblico (`fantacalcio/listone.html`); filtri del listone su mobile.

@@ -224,3 +224,12 @@ details.help{margin:8px 0 12px;border:1px solid var(--line);border-radius:10px;p
 
 /* fix 012: 6 politico nelle giornate live */
 .pol{color:#c2410c;font-weight:700}tr.pol td{background:#fff4ec}
+
+/* scheda rapida del giocatore (pcard): al passaggio del mouse sulle righe del listone, al tocco sul telefono */
+.pcard{position:fixed;z-index:70;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 48px rgba(22,27,33,.22);font-size:13px;overflow:hidden}
+.pcard.hidden{display:none}
+.pc-head{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--panel2)}.pc-head img{width:52px;height:52px;border-radius:50%;object-fit:cover;background:#fff}.pc-head b{font-size:15px}
+.pc-x{margin-left:auto;background:transparent;border:0;font-size:20px;line-height:1;color:var(--muted);cursor:pointer;padding:2px 6px}
+.pc-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px 10px;padding:10px 12px}.pc-grid .lab,.pc-row .lab{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:700}.pc-grid b{font-size:15px}
+.pc-row{padding:2px 12px 8px}.pc-row .lab{display:inline-block;margin-right:4px}.pc-inj{color:var(--red);font-weight:600}
+.pc-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 12px;border-top:1px solid var(--line)}.pc-foot a.pl{font-weight:700;color:var(--blue)}

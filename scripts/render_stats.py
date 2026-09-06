@@ -628,8 +628,16 @@ def player_summary(ctx, pid, p=None):
     pres = a["app"] if a else sum(1 for r in vs.values() if (r.get("minutes") or 0) > 0)
     gol = a["gol"] if a else sum((r.get("bonus") or {}).get("gol", 0) for r in vs.values())
     ast = a["assist"] if a else sum((r.get("bonus") or {}).get("assist", 0) for r in vs.values())
+    # scheda rapida per la finestra al passaggio del mouse nell'app (fanta/app.js pcard): foto, età, stagione scorsa, ultimi fantavoti, infortunio
+    mb = main_block(p.get("prev")); pa = agg([mb]) if mb else None
+    prev = ({"lega": (mb.get("league") or {}).get("name"), "pres": pa["app"], "tit": pa["lineups"], "gol": pa["gol"], "assist": pa["assist"], "rating": pa["rating"]}
+            if pa and pa["app"] else None)
+    last = [[md, r["fantavoto"]] for md, r in sorted(vs.items()) if r.get("fantavoto") is not None][-5:]
+    inj = st.get("injury") or (st.get("reason") if (st.get("prob") == 0 and st.get("reason")) else None)
     return {"url": ctx["urls"].get(pid), "mv": round(sum(vv) / len(vv), 2) if vv else None, "fmv": round(sum(fv) / len(fv), 2) if fv else None,
-            "tit": st.get("prob"), "pres": pres, "gol": gol, "assist": ast, "n": len(vv)}
+            "tit": st.get("prob"), "pres": pres, "gol": gol, "assist": ast, "n": len(vv),
+            "photo": p.get("photo"), "age": age_of((p.get("birth") or {}).get("date")), "nat": p.get("nationality"),
+            "prev": prev, "last": last or None, "inj": inj, "back": st.get("back_at")}
 
 def summary_of(ctx, pid):
     if not ctx:

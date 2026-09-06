@@ -71,7 +71,7 @@ $('#btnSignup').onclick = async () => {
 /* ---------- listone ---------- */
 async function loadPlayers(){
   const [{ data, error }] = await Promise.all([
-    sb.from('players').select('id,name,team,role,price,active').order('price', { ascending: false }).limit(2000),
+    sb.from('players').select('id,name,team,role,price,active,fvm:stats->qt->fvm').order('price', { ascending: false }).limit(2000),
     fetch('/data/fanta/schede.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(j => { schede = (j && j.players) || {}; teamColors = (j && j.teams) || {}; }).catch(() => {})
   ]);
   if (error) return err(error);
@@ -137,7 +137,7 @@ function listoneHtml(rows, sort, withStato){
     rows.map(p => { const s = schede[p.id] || {}; const t = tierOf(p.id);
       const nm = s.url ? '<a class="pl" href="'+esc(s.url)+'" title="Apri la scheda con le statistiche (poi Torna al listone)">'+esc(p.name)+'</a>' : esc(p.name);
       const cls = ((withStato && p._stato) ? 'taken ' : '') + (t ? 'tr' + t : '');
-      return '<tr'+(cls ? ' class="'+cls.trim()+'"' : '')+'><td>'+roleTag(p.role)+'</td><td>'+nm+'</td><td>'+esc(p.team)+'</td>'+
+      return '<tr data-pid="'+p.id+'"'+(cls ? ' class="'+cls.trim()+'"' : '')+'><td>'+roleTag(p.role)+'</td><td>'+nm+'</td><td>'+esc(p.team)+'</td>'+
         (withStato ? '<td class="muted">'+(p._stato ? esc(p._stato) : '<span class="free">libero</span>')+'</td>' : '')+
         (curList ? '<td class="tc">'+(canTier ? tierSelect(p.id, t, false) : tierChip(t))+'</td>' : '')+
         '<td class="num"><b>'+p.price+'</b></td>'+lsCell(s.mv, heatFmt)+lsCell(s.fmv, heatFmt)+lsCell(s.tit, v => '<span class="pct '+(v >= 70 ? 'g' : v >= 40 ? 'a' : 'r')+'">'+v+'%</span>')+
@@ -145,6 +145,45 @@ function listoneHtml(rows, sort, withStato){
     '<p class="small">MV = media voto FantaTB, FMV = fantamedia (voto più bonus e malus), Tit. = indice di titolarità per la prossima giornata; presenze, gol e assist in Serie A. Clic sull\'intestazione per ordinare, sul nome per la scheda completa: da lì "Torna al listone" riporta qui.' +
     (curList ? ' Tier: '+[1,2,3,4,5].map(x => 'T'+x+' '+TIERS[x]).join(', ')+'.' : ' Scegli una lista obiettivi per vedere e assegnare i tier.')+'</p>';
 }
+/* ---------- scheda rapida del giocatore (pcard): finestra al passaggio del mouse sulle righe del listone, tocco sul telefono ---------- */
+function pcardHtml(p){
+  const s = schede[p.id] || {}; const col = teamColors[p.team] || ['#67727e', '#67727e']; const t = tierOf(p.id);
+  const num = (v, d) => v == null ? '—' : (d == null ? v : Number(v).toFixed(d));
+  const heat = v => v == null ? '<span class="heat h0">—</span>' : heatFmt(v);
+  const last = (s.last || []).map(x => '<span class="heat '+heatCls(x[1])+'" title="Giornata '+x[0]+'">'+Number(x[1]).toFixed(1)+'</span>').join(' ');
+  const prev = s.prev ? '<div class="pc-row"><span class="lab">'+esc(s.prev.lega || 'Stagione scorsa')+'</span> '+num(s.prev.pres)+' presenze ('+num(s.prev.tit)+' da titolare), '+num(s.prev.gol)+' gol, '+num(s.prev.assist)+' assist'+(s.prev.rating ? ', rating '+Number(s.prev.rating).toFixed(2) : '')+'</div>' : '';
+  const inj = s.inj ? '<div class="pc-row pc-inj">✚ '+esc(s.inj)+(s.back ? ' · rientro '+esc(fmtDate(s.back + 'T12:00:00Z').replace(/,.*$/, '')) : '')+'</div>' : '';
+  const tit = s.tit == null ? '—' : '<span class="pct '+(s.tit >= 70 ? 'g' : s.tit >= 40 ? 'a' : 'r')+'">'+s.tit+'%</span>';
+  return '<div class="pc-head" style="border-left:6px solid '+esc(col[0])+'">'+(s.photo ? '<img src="'+esc(s.photo)+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">' : '')+
+    '<div><b>'+esc(p.name)+'</b> '+roleTag(p.role)+(t ? ' '+tierChip(t) : '')+'<div class="muted">'+esc(p.team)+(s.age ? ' · '+s.age+' anni' : '')+(s.nat ? ' · '+esc(s.nat) : '')+'</div></div><button class="pc-x" type="button" aria-label="Chiudi">×</button></div>' +
+    '<div class="pc-grid"><div><span class="lab">Quot.</span><b>'+p.price+'</b></div><div><span class="lab">FVM</span><b>'+(p.fvm != null ? p.fvm : '—')+'</b></div><div><span class="lab">Titolare</span><b>'+tit+'</b></div>' +
+    '<div><span class="lab">MV</span>'+heat(s.mv)+'</div><div><span class="lab">FMV</span>'+heat(s.fmv)+'</div><div><span class="lab">Pres · Gol · Assist</span><b>'+num(s.pres)+' · '+num(s.gol)+' · '+num(s.assist)+'</b></div></div>' +
+    (last ? '<div class="pc-row"><span class="lab">Ultimi fantavoti</span> '+last+'</div>' : '') + prev + inj +
+    '<div class="pc-foot">'+(s.url ? '<a class="pl" href="'+esc(s.url)+'">Scheda completa →</a>' : '<span class="muted">Scheda non disponibile</span>')+'<span class="muted small">Stagione '+SEASON+'-'+String(SEASON + 1).slice(2)+' · dati FantaTB</span></div>';
+}
+let pcTimer = null, pcPid = null;
+function pcardEl(){ let el = $('#pcard'); if (!el) { el = document.createElement('div'); el.id = 'pcard'; el.className = 'pcard hidden'; document.body.appendChild(el); el.addEventListener('mouseenter', () => { clearTimeout(pcTimer); }); el.addEventListener('mouseleave', () => pcardHide(180)); el.addEventListener('click', e => { if (e.target.closest('.pc-x')) pcardHide(0); }); } return el; }
+function pcardShow(pid, anchor){
+  const p = playersById[pid]; if (!p) return; const el = pcardEl(); pcPid = pid; el.innerHTML = pcardHtml(p); el.classList.remove('hidden');
+  const r = anchor.getBoundingClientRect(), w = Math.min(380, window.innerWidth - 16), h = el.offsetHeight || 260;
+  let left = Math.min(Math.max(8, r.left), window.innerWidth - w - 8), top = r.bottom + 6;
+  if (top + h > window.innerHeight - 8) top = Math.max(8, r.top - h - 6);
+  el.style.width = w + 'px'; el.style.left = left + 'px'; el.style.top = top + 'px';
+}
+function pcardHide(delay){ clearTimeout(pcTimer); pcTimer = setTimeout(() => { const el = $('#pcard'); if (el) el.classList.add('hidden'); pcPid = null; }, delay || 0); }
+const pcTouch = window.matchMedia('(hover: none)').matches;
+document.addEventListener('mouseover', e => {
+  if (pcTouch) return; const row = e.target.closest('tr[data-pid]'); if (!row) return;
+  clearTimeout(pcTimer); const pid = +row.dataset.pid; if (pid === pcPid) return;
+  pcTimer = setTimeout(() => pcardShow(pid, row.querySelector('td:nth-child(2)') || row), 260);
+});
+document.addEventListener('mouseout', e => { if (pcTouch) return; const row = e.target.closest('tr[data-pid]'); if (row && !(e.relatedTarget && (e.relatedTarget.closest('#pcard') || e.relatedTarget.closest('tr[data-pid]') === row))) pcardHide(220); });
+document.addEventListener('click', e => {
+  const x = e.target.closest('a.pl'); const row = e.target.closest('tr[data-pid]');
+  if (pcTouch && x && row && !e.target.closest('#pcard')) { e.preventDefault(); if (pcPid === +row.dataset.pid) pcardHide(0); else pcardShow(+row.dataset.pid, x); return; }
+  if (!e.target.closest('#pcard') && !row) pcardHide(0);
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') pcardHide(0); });
 function bindSort(el, key, rerender){
   $$('th.srt', el).forEach(h => { h.onclick = () => { const k = h.dataset.k, st = lsState[key]; if (st.k === k) st.asc = !st.asc; else lsState[key] = { k: k, asc: (k === 'name' || k === 'team' || k === 'role' || k === 'stato') }; rerender(); }; });
   el.onchange = e => { const s = e.target.closest('.tierSel'); if (s) setTier(+s.dataset.pid, +s.value); };
