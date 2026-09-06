@@ -159,3 +159,10 @@ Cambiare dominio · comprare link · moltiplicare gli articoli riassuntivi · tr
     `fantatb.html` (testi via JS) da rendere statici; retrocesse in `teams.json` (kb/FANTATB.md §13.13: 9 pagine magre, redirect 301 o testo onesto);
     og:image sulle pagine generate da `site_common` (serve un PNG); JSON-LD su board/campionati/fonti/fantatb; le sezioni del 3/9 non compaiono ancora su Bing
     (stima 60-90 URL indicizzate, solo pagine vecchie): ricontrollare dal 17/9 con Bing Webmaster Tools e Search Console.
+
+### 3.6 Probabili formazioni (2026-09-06)
+`fantacalcio/probabili-formazioni.html` (URL fissa, ultima giornata) + `probabili-giornata-N.html` (archivio). Title "Probabili formazioni giornata N
+Serie A 2026-27", H1 con "moduli, titolari e percentuali", ~3.000 parole di testo generato dai dati per giornata (un paragrafo per squadra),
+FAQPage + Dataset, ancore per partita (#inter-udinese), link a squadre e schede giocatore. In sitemap-fanta e IndexNow come le altre pagine fanta.
+Keyword: "probabili formazioni serie a", "probabili formazioni giornata N", "probabili formazioni fantacalcio". Aggiornata giovedì sera, venerdì
+15 UTC, sabato 8 UTC e a ogni run voti; i title non cambiano tra un aggiornamento e l'altro.

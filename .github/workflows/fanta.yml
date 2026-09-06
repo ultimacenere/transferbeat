@@ -11,6 +11,8 @@ on:
     - cron: "0 6 * * 4"
     - cron: "*/30 12-22 * * 5,6,0,1"
     - cron: "*/30 17-22 * * 2,3,4"
+    - cron: "0 15 * * 5"
+    - cron: "0 8 * * 6"
   workflow_dispatch:
     inputs:
       task:
@@ -53,6 +55,9 @@ jobs:
       - name: Indice titolarità
         if: ${{ env.LISTONE != 'true' && env.ROSE != 'true' && env.LIVE != 'true' }}
         run: python scripts/fanta_titolari.py || echo "titolari skip"
+      - name: Probabili formazioni (ultime 3 formazioni ufficiali + titolarità, ~1-11 chiamate)
+        if: ${{ env.LISTONE != 'true' && env.ROSE != 'true' && env.LIVE != 'true' }}
+        run: python scripts/fanta_probabili.py || echo "probabili skip"
       - name: Statistiche squadre e schede giocatore (data/stats, ~60-130 chiamate a regime)
         if: ${{ env.LIVE != 'true' }}
         run: python scripts/stats_pull.py || echo "stats_pull skip (restano i JSON precedenti)"

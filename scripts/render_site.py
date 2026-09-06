@@ -16,6 +16,7 @@ from site_common import (esct, ROOT, DATA, SITE, SEASON, AUTHOR, ORG, COMPS, COM
                          ZONES, FD_ALIAS, FANTA_ALIAS, STATE_LABEL, STATE_ORDER, esc, slugify, norm, load_json, save_text, read_text,
                          fdate_it, date_only, today_iso, dots, page, ld_script, breadcrumb_ld, LastMod, write_urlset, write_sitemap_index, badge)
 import render_stats as RS   # statistiche squadra con grafici e schede giocatore (data/stats/*.json)
+import render_probabili as RP   # probabili formazioni con i due mezzi campi (data/fanta/probabili-NN.json)
 
 FINISHED = ("FINISHED", "AWARDED")
 
@@ -28,7 +29,7 @@ def load_all():
          "rosters": load_json(os.path.join(DATA, "rosters.json"), {"rose": {}}) or {"rose": {}},
          "articles": load_json(os.path.join(DATA, "articles", "index.json"), {"articoli": []}) or {"articoli": []},
          "listone": load_json(os.path.join(DATA, "fanta", "listone.json"), {"players": []}) or {"players": []},
-         "voti": {}, "titolari": None, "stats": RS.load_stats(), "pctx": None}
+         "voti": {}, "titolari": None, "probabili": {}, "stats": RS.load_stats(), "pctx": None}
     fd = os.path.join(DATA, "fanta")
     if os.path.isdir(fd):
         for fn in sorted(os.listdir(fd)):
@@ -37,6 +38,11 @@ def load_all():
                 v = load_json(os.path.join(fd, fn))
                 if v and v.get("ratings"):
                     D["voti"][int(m.group(1))] = v
+            m = re.match(r"probabili-(\d+)\.json$", fn)
+            if m:
+                pr = load_json(os.path.join(fd, fn))
+                if pr and pr.get("fixtures") and pr.get("teams"):
+                    D["probabili"][int(m.group(1))] = pr
             m = re.match(r"titolari-(\d+)\.json$", fn)
             if m:
                 t = load_json(os.path.join(fd, fn))
@@ -274,7 +280,7 @@ def render_team(D, T, t):
     if arts:
         b.append("<h2>Articoli su " + esc(nome) + '</h2><div class="arts">' + "".join(art_card(a) for a in arts) + "</div>")
     if lg == "Serie A" and D["listone"].get("players"):
-        b.append('<p class="small">Fantacalcio: <a href="/fantacalcio/listone.html">quotazioni FantaTB</a> e <a href="/fantacalcio/titolari.html">probabili titolari</a> dei giocatori del ' + esc(nome) + ".</p>")
+        b.append('<p class="small">Fantacalcio: <a href="/fantacalcio/listone.html">quotazioni FantaTB</a>, <a href="/fantacalcio/probabili-formazioni.html">probabili formazioni</a> e <a href="/fantacalcio/titolari.html">probabili titolari</a> dei giocatori del ' + esc(nome) + ".</p>")
     ld = {"@context": "https://schema.org", "@type": "SportsTeam", "name": nome, "sport": "Calcio", "url": canon,
           "memberOf": {"@type": "SportsOrganization", "name": LEAGUE_LABEL.get(lg, lg)}}
     if t.get("paese"):
@@ -549,6 +555,7 @@ FAQ = [("Come si calcola il voto FantaTB?", "Dal rating statistico della partita
        ("Serve installare un'app?", "No: funziona dal browser del telefono e del computer. Bastano un'email e una password."),
        ("Come si calcolano le quotazioni del listone?", "Da presenze, gol, assist e rating della stagione precedente, con una base per ruolo e un limite fra 1 e 60 crediti. La formula completa è nella pagina del listone; il listone si rifà dopo il mercato di gennaio."),
        ("Cos'è l'indice di titolarità?", "Una probabilità da 0 a 100 che un giocatore parta titolare nella prossima giornata, calcolata dalle ultime tre partite, più infortuni e squalifiche con data di rientro stimata. È un indice statistico, non una formazione ufficiale."),
+       ("Come nascono le probabili formazioni?", "Dalle ultime tre formazioni ufficiali di ogni squadra (modulo e posizioni in campo) e dall'indice di titolarità: ogni titolare ha una percentuale, gli indisponibili vengono sostituiti dal giocatore più probabile nella stessa posizione e i ballottaggi mostrano i due contendenti. Sono probabili di TransferBeat costruite sui nostri dati, aggiornate più volte a settimana."),
        ("Posso riutilizzare questi dati?", "Sì: listone, voti e titolarità sono pubblicati anche come file JSON con licenza CC BY 4.0. Basta citare TransferBeat con un link.")]
 
 def render_fanta_index(D, T):
@@ -561,6 +568,8 @@ def render_fanta_index(D, T):
          '<div class="sub">I dati originali di FantaTB, il fantacalcio gratuito di TransferBeat: quotazioni di ' + str(n) + " giocatori, voti statistici dopo ogni giornata di Serie A, indice di titolarità con infortunati e squalificati. Anche in JSON, licenza CC BY 4.0.</div>",
          '<div class="grid2"><div class="card"><h3>Listone</h3><div class="in">Quotazioni FantaTB di ' + str(n) + ' giocatori di Serie A, ruolo Classic, tabella ordinabile.<br><a class="btn" href="/fantacalcio/listone.html">Apri il listone</a></div></div>',
          '<div class="card"><h3>Voti</h3><div class="in">Voto, minuti, bonus e malus e fantavoto di ogni giocatore, giornata per giornata.<br>' + voti_btns + "</div></div>",
+         '<div class="card"><h3>Probabili formazioni</h3><div class="in">' + (("Moduli, undici titolari con la percentuale di ogni giocatore, ballottaggi e indisponibili per la giornata " + str(max(D["probabili"])) + ', partita per partita.<br><a class="btn" href="/fantacalcio/probabili-formazioni.html">Le probabili formazioni</a>')
+                                                                        if D.get("probabili") else '<span class="small">In arrivo prima della prossima giornata.</span>') + "</div></div>",
          '<div class="card"><h3>Probabili titolari</h3><div class="in">' + tit_html + "</div></div>",
          '<div class="card"><h3>Gioca con FantaTB</h3><div class="in">Leghe private, asta live dal telefono, regole su misura, classifica ogni giornata. Gratis.<br><a class="btn" href="/fanta/#crea">Crea la tua lega</a> <a class="btn sec" href="/fantatb.html">Scopri FantaTB</a></div></div></div>',
          '<h2>Domande frequenti</h2><div class="faq">' + "".join("<details><summary>" + esc(q) + "</summary><p>" + esc(a) + "</p></details>" for q, a in FAQ) + "</div>"]
@@ -760,6 +769,12 @@ def main():
             out("fantacalcio/voti-giornata-%d.html" % md, "/fantacalcio/voti-giornata-%d.html" % md, render_voti(D, T, md, V), "fanta")
         if D["titolari"]:
             out("fantacalcio/titolari.html", "/fantacalcio/titolari.html", render_titolari(D, T), "fanta")
+        if D["probabili"]:   # l'ultima giornata sull'URL fissa, le precedenti in archivio (nessun doppione: la corrente non ha pagina d'archivio)
+            mds = sorted(D["probabili"]); helpers = {"plink": RS.plink, "pctx": D.get("pctx"), "fanta_team_link": fanta_team_link, "dataset_ld": dataset_ld, "crumb": FANTA_CRUMB, "others": mds}
+            for md in mds:
+                latest = (md == mds[-1])
+                rel = "fantacalcio/probabili-formazioni.html" if latest else "fantacalcio/probabili-giornata-%d.html" % md
+                out(rel, "/" + rel, RP.render(D, T, D["probabili"][md], latest, helpers), "fanta")
         out("fantacalcio/index.html", "/fantacalcio/", render_fanta_index(D, T), "fanta")
     if D.get("pctx"):
         written = set()

@@ -518,3 +518,25 @@ Lega Fantamarcio 26/27: impostata con la tabella dello screenshot (portiere incl
 la riga in `player_ratings` riceve voto 6 e fantavoto 6 senza bonus (`pending = true`): entra nel totale provvisorio e nel modificatore
 difesa come un 6, così il risultato live è una simulazione completa e non un parziale. Frontend: riga arancione (`.pol`, `tr.pol`) con
 "6*" e legenda nella nota della giornata live. Sostituisce `compute_matchday` del fix 011 (contiene 010 e 011). **Da eseguire dall'utente.**
+
+## 20. Probabili formazioni (2026-09-06, richiesta dell'utente: pagina con i due mezzi campi stile Gazzetta, percentuali per giocatore, testo SEO per giornata)
+**Solo dati nostri, nessun confronto con altri siti** (deciso dall'utente dopo la ricerca su fonti e licenze: le probabili altrui non si copiano).
+- `scripts/fanta_probabili.py [giornata]` → `data/fanta/probabili-NN.json`. Per squadra: ultime 3 formazioni ufficiali da API-Football
+  `/fixtures/lineups` (modulo, undici con griglia `riga:colonna`, panchina, allenatore), cache in `data/fanta/lineups.json` (committata: le
+  formazioni giocate non cambiano, ~10 chiamate a settimana dopo il primo giro da 25). Probabilità = 100 × Σ pesi (0,5/0,3/0,2) delle
+  titolarità + 15 × pesi delle panchine, piano a 70 per chi era titolare nell'ultima gara, fusa 70/30 con `titolari-NN.json` (che porta
+  infortuni e squalifiche: prob 0 → sostituito dal più probabile nella stessa posizione API G/D/M/F, con bonus a chi ha già giocato quella
+  casella). Ballottaggio se un'alternativa nella stessa posizione ha ≥30 e sta entro 30 punti; quote normalizzate a 100. `stage`:
+  settimana / vigilia / giorno-gara. Va lanciato DOPO `fanta_titolari.py` (usa il file della stessa giornata).
+- `scripts/render_probabili.py` (importato da `render_site.py`): `fantacalcio/probabili-formazioni.html` = ultima giornata (URL fissa),
+  `probabili-giornata-N.html` per le precedenti (la corrente non ha pagina d'archivio: niente doppioni). Per partita: due mezzi campi SVG
+  inline orizzontali (casa porta a sinistra, ospite specchiata), cerchi con i colori sociali di teams.json (`T.fanta_name` → `col/col2`),
+  ruolo Classic nel cerchio, nome e percentuale (verde ≥70, ambra 40-69, rossa <40), tratteggio = ballottaggio con le quote; sotto, meta
+  (modulo, allenatore, gare di riferimento) e paragrafo generato dai dati (reparti con percentuali, ballottaggi, "al posto di", indisponibili
+  con rientro, dubbi, panchina). In coda: indisponibili della giornata, ballottaggi da seguire, FAQ (FAQPage) e Dataset JSON-LD. Card in
+  `fantacalcio/index.html`, link nelle pagine squadra di Serie A, FAQ del fantacalcio aggiornata.
+- Cron `fanta.yml`: step "Probabili formazioni" dopo la titolarità in ogni run non live/rose/listone, più schedule `0 15 * * 5` (venerdì)
+  e `0 8 * * 6` (sabato mattina). Lancio manuale: `py scripts/fanta_titolari.py N` poi `py scripts/fanta_probabili.py N` poi `render_site.py`.
+- Limiti noti: le percentuali sono statistiche (niente notizie dagli allenamenti); i nuovi arrivi senza formazioni recenti hanno 15-40;
+  i moduli con griglie non standard dell'API (es. 3-4-1-2) si disegnano dalla griglia reale, quindi sempre coerenti; Coppe e turnover non
+  sono modellati (pending: pesare l'impegno infrasettimanale). Le probabili di altri siti restano ESCLUSE per scelta.
