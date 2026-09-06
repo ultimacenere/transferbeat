@@ -11,7 +11,9 @@ import os, html, math
 from datetime import date
 from site_common import esc, slugify, norm, load_json, DATA, SITE, SEASON, fdate_it, date_only, page, ORG, FANTA_ALIAS, badge
 
-C1, C2, C3, GRAY = "#1f6fd6", "#eb6834", "#7b46c9", "#a7b0ba"
+# Palette dei grafici: blu e viola sono i token del sito (--blue #1f6fd6, --conf #7b46c9, definiti in site_common.CSS e validi
+# anche nei fill degli SVG inline); l'arancio dataviz e il grigio di de-enfasi non hanno un token e restano fissi.
+C1, C2, C3, GRAY = "var(--blue)", "#eb6834", "var(--conf)", "#a7b0ba"
 STATS_DIR = os.path.join(DATA, "stats")
 CUR = int(SEASON[:4])                                   # 2026
 PREV_LABEL = "%d-%s" % (CUR - 1, str(CUR)[2:])           # "2025-26"
@@ -467,15 +469,15 @@ def team_stats_html(S, T, nome, tid, upd=""):
     miss_note = ""
     if sum(sf) != tot_f or sum(sa) != tot_a:   # il provider attribuisce il minuto con ritardo: lo diciamo invece di far quadrare i conti a mano
         miss_note = '<p class="small">Gol senza minuto registrato dal provider: %s fatti, %s subiti (non compaiono nel grafico).</p>' % (it(max(tot_f - sum(sf), 0)), it(max(tot_a - sum(sa), 0)))
-    tbl = (miss_note + '<table><thead><tr><th class="l">Minuti</th>' + "".join("<th>%s</th>" % esc(c) for c in cats) + "</tr></thead><tbody>"
-           '<tr><td class="l">Fatti</td>' + "".join("<td>%s</td>" % it(v) for v in sf) + '</tr><tr><td class="l">Subiti</td>' + "".join("<td>%s</td>" % it(v) for v in sa) + "</tr></tbody></table>")
+    tbl = (miss_note + '<table><thead><tr><th class="l">Minuti</th>' + "".join('<th class="num">%s</th>' %esc(c) for c in cats) + "</tr></thead><tbody>"
+           '<tr><td class="l">Fatti</td>' + "".join('<td class="num">%s</td>' %it(v) for v in sf) + '</tr><tr><td class="l">Subiti</td>' + "".join('<td class="num">%s</td>' %it(v) for v in sa) + "</tr></tbody></table>")
     g1 = card("Gol per fase di gara", chart_cols(cats, [("Fatti", sf), ("Subiti", sa)], [C1, C2], label="Gol fatti e subiti per fase di gara") + tbl, legend([("Fatti", C1), ("Subiti", C2)]))
     # casa e trasferta
     rows = []
     for lab, side in (("Casa", "home"), ("Trasferta", "away")):
         rows.append((lab, [("Vittorie", (fx.get("wins") or {}).get(side) or 0), ("Pareggi", (fx.get("draws") or {}).get(side) or 0), ("Sconfitte", (fx.get("loses") or {}).get(side) or 0)]))
-    tbl = ('<table><thead><tr><th class="l"></th><th>PG</th><th>V</th><th>N</th><th>P</th><th>GF</th><th>GS</th></tr></thead><tbody>' +
-           "".join('<tr><td class="l">%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (
+    tbl = ('<table><thead><tr><th class="l"></th><th class="num">PG</th><th class="num">V</th><th class="num">N</th><th class="num">P</th><th class="num">GF</th><th class="num">GS</th></tr></thead><tbody>' +
+           "".join('<tr><td class="l">%s</td><td class="num">%s</td><td class="num">%s</td><td class="num">%s</td><td class="num">%s</td><td class="num">%s</td><td class="num">%s</td></tr>' % (
                lab, it((fx.get("played") or {}).get(side) or 0), it((fx.get("wins") or {}).get(side) or 0), it((fx.get("draws") or {}).get(side) or 0),
                it((fx.get("loses") or {}).get(side) or 0), it((gf.get("total") or {}).get(side) or 0), it((ga.get("total") or {}).get(side) or 0)) for lab, side in (("Casa", "home"), ("Trasferta", "away"))) + "</tbody></table>")
     g2 = card("Casa e trasferta", chart_stack(rows, [C1, GRAY, C2], label="Vittorie, pareggi e sconfitte in casa e in trasferta") + tbl, legend([("Vittorie", C1), ("Pareggi", GRAY), ("Sconfitte", C2)]))
@@ -484,39 +486,39 @@ def team_stats_html(S, T, nome, tid, upd=""):
     if ms:
         cats = ["G%d" % m["round"] for m in ms]
         gols = [m["gf"] for m in ms]; xgs = [m["me"].get("xg") for m in ms]
-        tbl = ('<table><thead><tr><th class="l">Giornata</th>' + "".join("<th>%s</th>" % c for c in cats) + "</tr></thead><tbody>"
-               '<tr><td class="l">Gol fatti</td>' + "".join("<td>%s</td>" % it(v) for v in gols) + "</tr>" +
-               ('<tr><td class="l">xG</td>' + "".join("<td>%s</td>" % it(v, 2) for v in xgs) + "</tr>" if any(x is not None for x in xgs) else "") + "</tbody></table>")
+        tbl = ('<table><thead><tr><th class="l">Giornata</th>' + "".join('<th class="num">%s</th>' %c for c in cats) + "</tr></thead><tbody>"
+               '<tr><td class="l">Gol fatti</td>' + "".join('<td class="num">%s</td>' %it(v) for v in gols) + "</tr>" +
+               ('<tr><td class="l">xG</td>' + "".join('<td class="num">%s</td>' %it(v, 2) for v in xgs) + "</tr>" if any(x is not None for x in xgs) else "") + "</tbody></table>")
         series = [("Gol fatti", gols)] + ([("xG", xgs)] if any(x is not None for x in xgs) else [])
         g3 = card("Gol e xG per giornata", chart_cols(cats, series, [C1, C2], fmt=lambda v: it(v, 1 if v != int(v) else 0), label="Gol fatti ed expected goals per giornata") + tbl,
                   legend([(n, c) for (n, _), c in zip(series, [C1, C2])]) if len(series) > 1 else "")
         poss_l = [m["me"].get("possession") for m in ms]
         if any(p is not None for p in poss_l):
-            tbl = ('<table><thead><tr><th class="l">Giornata</th>' + "".join("<th>%s</th>" % c for c in cats) + "</tr></thead><tbody>"
-                   '<tr><td class="l">Possesso</td>' + "".join("<td>%s</td>" % pct(v) for v in poss_l) + "</tr></tbody></table>")
+            tbl = ('<table><thead><tr><th class="l">Giornata</th>' + "".join('<th class="num">%s</th>' %c for c in cats) + "</tr></thead><tbody>"
+                   '<tr><td class="l">Possesso</td>' + "".join('<td class="num">%s</td>' %pct(v) for v in poss_l) + "</tr></tbody></table>")
             g4 = card("Possesso palla per giornata", chart_line(cats, [("Possesso", poss_l)], [C1], fmt=lambda v: it(v) + "%", top=100, label="Possesso palla per giornata") + tbl)
         else:
             g4 = ""
         b.append('<div class="grid2"><div>%s</div><div>%s</div></div>' % (g3, g4))
         sh = [m["me"].get("shots") for m in ms]; so = [m["me"].get("shots_on") for m in ms]
         if any(v is not None for v in sh):
-            tbl = ('<table><thead><tr><th class="l">Giornata</th>' + "".join("<th>%s</th>" % c for c in cats) + "</tr></thead><tbody>"
-                   '<tr><td class="l">Tiri</td>' + "".join("<td>%s</td>" % it(v) for v in sh) + '</tr><tr><td class="l">In porta</td>' + "".join("<td>%s</td>" % it(v) for v in so) + "</tr></tbody></table>")
+            tbl = ('<table><thead><tr><th class="l">Giornata</th>' + "".join('<th class="num">%s</th>' %c for c in cats) + "</tr></thead><tbody>"
+                   '<tr><td class="l">Tiri</td>' + "".join('<td class="num">%s</td>' %it(v) for v in sh) + '</tr><tr><td class="l">In porta</td>' + "".join('<td class="num">%s</td>' %it(v) for v in so) + "</tr></tbody></table>")
             g5 = card("Tiri per giornata", chart_cols(cats, [("Tiri", sh), ("In porta", so)], [C1, C2], label="Tiri totali e in porta per giornata") + tbl, legend([("Tiri", C1), ("In porta", C2)]))
         else:
             g5 = ""
         lu = [(l["formation"] or "?", l["played"], "%s: %s partite" % (l["formation"], it(l["played"]))) for l in (TS.get("lineups") or []) if l.get("played")]
         g6 = card("Moduli usati", chart_hbars(lu, C1, label="Moduli schierati e numero di partite") +
-                  '<table><thead><tr><th class="l">Modulo</th><th>Partite</th></tr></thead><tbody>' + "".join('<tr><td class="l">%s</td><td>%s</td></tr>' % (esc(f), it(n)) for f, n, _ in sorted(lu, key=lambda x: -x[1])) + "</tbody></table>") if lu else ""
+                  '<table><thead><tr><th class="l">Modulo</th><th class="num">Partite</th></tr></thead><tbody>' + "".join('<tr><td class="l">%s</td><td class="num">%s</td></tr>' % (esc(f), it(n)) for f, n, _ in sorted(lu, key=lambda x: -x[1])) + "</tbody></table>") if lu else ""
         b.append('<div class="grid2"><div>%s</div><div>%s</div></div>' % (g5, g6))
         # partita per partita
-        b.append('<div class="card"><h3>Partita per partita</h3><div style="overflow-x:auto"><table><thead><tr><th>G</th><th class="l">Data</th><th class="l">Avversario</th><th>Risultato</th>'
-                 '<th>Possesso</th><th>Tiri (in porta)</th><th>xG</th><th>Corner</th><th>Parate</th><th>Passaggi ok</th></tr></thead><tbody>')
+        b.append('<div class="card"><h3>Partita per partita</h3><div class="tscroll"><table><thead><tr><th class="num">G</th><th class="l">Data</th><th class="l">Avversario</th><th class="c">Risultato</th>'
+                 '<th class="num">Possesso</th><th class="num">Tiri (in porta)</th><th class="num">xG</th><th class="num">Corner</th><th class="num">Parate</th><th class="num">Passaggi ok</th></tr></thead><tbody>')
         for m in ms:
             st = m["me"]
             opp = T.api_link(m["opp_id"], m["opp"]) if hasattr(T, "api_link") else esc(m["opp"])
             res = '<span class="form"><i class="%s">%s-%s</i></span>' % ({"W": "w", "D": "d", "L": "l"}[m["res"]], m["gf"], m["ga"])
-            b.append('<tr><td>%d</td><td class="l">%s</td><td class="l">%s%s</td><td>%s</td><td>%s</td><td>%s (%s)</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (
+            b.append('<tr><td class="num">%d</td><td class="l">%s</td><td class="l">%s%s</td><td class="c">%s</td><td class="num">%s</td><td class="num">%s (%s)</td><td class="num">%s</td><td class="num">%s</td><td class="num">%s</td><td class="num">%s</td></tr>' % (
                 m["round"], esc(fdate_it(m["date"], False, True)), opp, "" if m["home"] else ' <span class="small">(fuori casa)</span>', res, pct(st.get("possession")),
                 it(st.get("shots")), it(st.get("shots_on")), it(st.get("xg"), 2), it(st.get("corners")), it(st.get("saves")), pct(st.get("passes_pct"))))
         b.append("</tbody></table></div></div>")
@@ -758,28 +760,122 @@ def describe(p, team_site, a_cur, a_prev, mb, role_it, ctx, n_md):
     return " ".join(s)
 
 def cmp_table(rows, a_prev, a_cur, lab_prev, lab_cur):
-    h = ['<div style="overflow-x:auto"><table class="cmp"><thead><tr><th class="l">Voce</th><th>%s</th><th>per 90\'</th><th>%s</th><th>per 90\'</th></tr></thead><tbody>' % (esc(lab_prev), esc(lab_cur))]
+    h = ['<div class="tscroll"><table class="cmp"><thead><tr><th class="l">Voce</th><th class="num">%s</th><th class="num">per 90\'</th><th class="num">%s</th><th class="num">per 90\'</th></tr></thead><tbody>' % (esc(lab_prev), esc(lab_cur))]
     for lab, k, dec, show90 in rows:
         vp = a_prev[k] if a_prev else None; vc = a_cur[k] if a_cur else None
-        h.append('<tr><td class="l">%s</td><td>%s</td><td class="small">%s</td><td>%s</td><td class="small">%s</td></tr>' % (
+        h.append('<tr><td class="l">%s</td><td class="num">%s</td><td class="small num">%s</td><td class="num">%s</td><td class="small num">%s</td></tr>' % (
             esc(lab), it(vp, dec), it(p90(a_prev, k), 2) if show90 and a_prev and a_prev.get("min") else "", it(vc, dec), it(p90(a_cur, k), 2) if show90 and a_cur and a_cur.get("min") else ""))
-    h.append('<tr><td class="l">Rating medio</td><td>%s</td><td></td><td>%s</td><td></td></tr>' % (it(a_prev.get("rating") if a_prev else None, 2), it(a_cur.get("rating") if a_cur else None, 2)))
+    h.append('<tr><td class="l">Rating medio</td><td class="num">%s</td><td></td><td class="num">%s</td><td></td></tr>' % (it(a_prev.get("rating") if a_prev else None, 2), it(a_cur.get("rating") if a_cur else None, 2)))
     h.append("</tbody></table></div>")
     return "".join(h)
 
 def blocks_table(blocks, gk=False):
     if not blocks:
         return '<p class="small">Nessuna statistica disponibile.</p>'
-    h = ['<div style="overflow-x:auto"><table><thead><tr><th class="l">Competizione</th><th class="l">Squadra</th><th>Pres.</th><th>Tit.</th><th>Min</th>' +
-         ("<th>Gol subiti</th><th>Parate</th>" if gk else "<th>Gol</th><th>Assist</th>") + "<th>Gialli</th><th>Rossi</th><th>Rating</th></tr></thead><tbody>"]
+    h = ['<div class="tscroll"><table><thead><tr><th class="l">Competizione</th><th class="l">Squadra</th><th class="num">Pres.</th><th class="num">Tit.</th><th class="num">Min</th>' +
+         ('<th class="num">Gol subiti</th><th class="num">Parate</th>' if gk else '<th class="num">Gol</th><th class="num">Assist</th>') + '<th class="num">Gialli</th><th class="num">Rossi</th><th class="num">Rating</th></tr></thead><tbody>']
     for b in sorted(blocks, key=lambda b: -((b.get("games") or {}).get("minutes") or 0)):
         g = b.get("games") or {}; go = b.get("goals") or {}; c = b.get("cards") or {}
-        h.append('<tr><td class="l">%s</td><td class="l">%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (
+        h.append('<tr><td class="l">%s</td><td class="l">%s</td><td class="num">%s</td><td class="num">%s</td><td class="num">%s</td><td class="num">%s</td><td class="num">%s</td><td class="num">%s</td><td class="num">%s</td><td class="num">%s</td></tr>' % (
             esc((b.get("league") or {}).get("name")), esc((b.get("team") or {}).get("name")), it(g.get("appearences") or 0), it(g.get("lineups") or 0), it(g.get("minutes") or 0),
             it(go.get("conceded") or 0) if gk else it(go.get("total") or 0), it(go.get("saves") or 0) if gk else it(go.get("assists") or 0),
             it(c.get("yellow") or 0), it((c.get("red") or 0) + (c.get("yellowred") or 0)), it(g.get("rating"), 2)))
     h.append("</tbody></table></div>")
     return "".join(h)
+
+def bonus_text(bonus):
+    """Bonus e malus di una giornata come solo testo ('gol ×2 · assist · ammonizione'): stesse etichette di render_site.BONUS_IT,
+    senza le emoji (il sistema visivo non le ammette nel markup)."""
+    from render_site import BONUS_IT
+    out = []
+    for k, v in (bonus or {}).items():
+        if not v:
+            continue
+        lab = BONUS_IT.get(k, ("", k))[1]
+        out.append(lab + ((" ×%d" % v) if v > 1 else ""))
+    return " · ".join(out)
+
+# ---------- giocatori: card "Fantacalcio" in fondo alla scheda ----------
+ROLE_ANCHOR = {"P": "portieri", "D": "difensori", "C": "centrocampisti", "A": "attaccanti"}   # ancore per ruolo del listone statico
+
+def latest_probabili(D):
+    """Le probabili dell'ultima giornata disponibile (data/fanta/probabili-NN.json), o None."""
+    pr = D.get("probabili") or {}
+    return pr[max(pr)] if pr else None
+
+def player_status(st):
+    """(classe della pill, testo) dallo stato di titolarità di titolari-NN.json: prob 0 = indisponibile (infortunio o squalifica,
+    con il rientro se stimato), sotto 70 = in dubbio, da 70 in su = titolare probabile. None se non c'è un indice."""
+    if not st or st.get("prob") is None:
+        return None
+    prob = int(st["prob"])
+    if prob == 0:
+        why = (st.get("injury") or st.get("reason") or "").split(" · ")[0]
+        back = st.get("back_at")
+        return ("err", "Indisponibile" + ((" · " + why) if why else "") + ((" · rientro stimato " + data_it(back)) if back else ""))
+    if prob < 70:
+        return ("warn", "In dubbio: %d%% di probabilità di partire titolare" % prob)
+    return ("ok", "Titolare probabile: %d%%" % prob)
+
+def fanta_card(D, T, p, ctx, team_site, full, li, st, vs, n_md):
+    """Card 'Fantacalcio' con dati veri: pill di stato, frase citabile (quotazione, titolarità, data), porte verso la probabile
+    formazione della sua squadra (ancora #squadra-<slug>), la pagina squadra, il listone del suo ruolo, i voti dell'ultima
+    giornata, gli infortunati e la landing di FantaTB. Tutto nell'HTML statico."""
+    from site_common import door
+    tit = D.get("titolari") or {}
+    md_next = tit.get("matchday")
+    upd = tit.get("updated") or (D.get("listone") or {}).get("updated") or ctx["updated"]
+    role = (li or {}).get("role") or ROLE_CLASSIC.get(p.get("position") or "", "")
+    anchor = ROLE_ANCHOR.get(role, "")
+    b = []
+    status = player_status(st)
+    if status:
+        b.append('<p><span class="pill %s">%s</span></p>' % (status[0], esc(status[1])))
+    parts = []
+    if li and li.get("price") is not None:
+        n_role = sum(1 for q in ctx["listone"].values() if q.get("role") == role)
+        parts.append("%s è quotato %s %s nel listone FantaTB, che conta %s %s" % (full, it(li["price"]), plural(li["price"], "credito", "crediti"), it(n_role), anchor or "giocatori quotati"))
+    else:
+        parts.append("%s non è nel listone FantaTB" % full)
+    if st and st.get("prob") is not None and md_next:
+        parts.append("il suo indice di titolarità per la giornata %d è %d%%" % (md_next, int(st["prob"])))
+    b.append("<p>%s. Dati aggiornati %s.</p>" % (esc("; ".join(parts)), esc(fdate_it(upd, True))))
+    doors = []
+    # probabile formazione della sua squadra, con la partita se le probabili dell'ultima giornata la contengono
+    pr = latest_probabili(D); team_api = p.get("team_name") or ""
+    if team_site and pr:
+        f = next((f for f in pr.get("fixtures") or [] if team_api in (f.get("home"), f.get("away"))), None)
+        tp = (pr.get("teams") or {}).get(team_api) or {}
+        mine = next((x for x in tp.get("xi") or [] if x.get("id") == p["id"]), None)
+        sub = "Giornata %d" % pr["matchday"]
+        if f:   # nomi delle squadre come nel sito (Milan, non AC Milan) quando esiste la pagina squadra
+            sub += ": %s-%s, %s" % (T.fanta_name(f["home"]) or f["home"], T.fanta_name(f["away"]) or f["away"], fdate_it(f["date"], True))
+        if tp.get("module"):
+            sub += " · modulo " + tp["module"]
+        if mine and mine.get("prob") is not None:
+            sub += " · in campo al %d%%" % int(mine["prob"])
+        doors.append(door("Probabile formazione " + ART.get(team_site, "del " + team_site), sub, "/fantacalcio/probabili-formazioni.html#squadra-" + slugify(team_site)))
+    elif team_site:
+        doors.append(door("Probabile formazione " + ART.get(team_site, "del " + team_site), "Moduli, titolari e percentuali della prossima giornata", "/fantacalcio/probabili-formazioni.html#squadra-" + slugify(team_site)))
+    if team_site:
+        doors.append(door("Pagina " + team_site, "Notizie, statistiche, classifica e rosa", T.url(team_site)))
+    doors.append(door("Listone FantaTB" + ((": " + anchor) if anchor else ""), "%s giocatori quotati con MV, fantamedia e titolarità" % it(len(ctx["listone"])),
+                      "/fantacalcio/listone.html" + (("#" + anchor) if anchor else "")))
+    if n_md:
+        r = vs.get(n_md) or {}
+        n_rated = sum(1 for x in (D["voti"][n_md].get("ratings") or []) if x.get("voto") is not None)
+        from render_site import dec as decf
+        if r.get("voto") is not None:
+            sub = "Giornata %d: voto %s, fantavoto %s · %s giocatori con voto" % (n_md, decf(r["voto"]), decf(r["fantavoto"]) if r.get("fantavoto") is not None else "—", it(n_rated))
+        else:
+            sub = "Giornata %d: %s senza voto · %s giocatori con voto" % (n_md, full, it(n_rated))
+        doors.append(door("Voti FantaTB dell'ultima giornata", sub, "/fantacalcio/voti.html"))
+    if tit.get("status"):
+        n_out = sum(1 for s in tit["status"] if s.get("prob") == 0)
+        doors.append(door("Infortunati e squalificati", "%s indisponibili per la giornata %s" % (it(n_out), md_next or "prossima"), "/fantacalcio/titolari.html"))
+    doors.append(door("Gioca a FantaTB", "Leghe private, asta live e voti ogni 30 minuti, gratis", "/fantatb.html", dark=True))
+    b.append('<div class="grid2">' + "".join(doors) + "</div>")
+    return '<div class="card" id="fantacalcio"><h2>Fantacalcio</h2><div class="in">' + "".join(b) + "</div></div>"
 
 def render_player(D, S, T, p, ctx):
     pid = p["id"]; url = ctx["urls"][pid]; canon = SITE + url
@@ -879,19 +975,19 @@ def render_player(D, S, T, p, ctx):
         cats = ["G%d" % m for m in mds]
         voti_l = [vs[m].get("voto") for m in mds]; fv_l = [vs[m].get("fantavoto") for m in mds]
         b.append("<h2>Voti FantaTB %s</h2>" % esc(SEASON))
-        tbl = ['<table><thead><tr><th>Giornata</th><th>Min</th><th>Voto</th><th class="l">Bonus e malus</th><th>Fantavoto</th></tr></thead><tbody>']
-        from render_site import bonus_txt, dec as decf
+        tbl = ['<table><thead><tr><th class="num">Giornata</th><th class="num">Min</th><th class="num">Voto</th><th class="l">Bonus e malus</th><th class="num">Fantavoto</th></tr></thead><tbody>']
+        from render_site import dec as decf
         for m in mds:
             r = vs[m]
-            tbl.append('<tr><td><a href="/fantacalcio/voti-giornata-%d.html">%d</a></td><td>%s</td><td>%s</td><td class="l">%s</td><td class="pt">%s</td></tr>' % (
-                m, m, it(r.get("minutes") or 0), decf(r["voto"]) if r.get("voto") is not None else "s.v.", esc(bonus_txt(r.get("bonus"))), decf(r["fantavoto"]) if r.get("fantavoto") is not None else "—"))
+            tbl.append('<tr><td class="num"><a href="/fantacalcio/voti-giornata-%d.html">%d</a></td><td class="num">%s</td><td class="num">%s</td><td class="l">%s</td><td class="pt num">%s</td></tr>' % (
+                m, m, it(r.get("minutes") or 0), decf(r["voto"]) if r.get("voto") is not None else "s.v.", esc(bonus_text(r.get("bonus"))), decf(r["fantavoto"]) if r.get("fantavoto") is not None else "—"))
         tbl.append("</tbody></table>")
         b.append(card("Voto e fantavoto per giornata", chart_cols(cats, [("Voto", voti_l), ("Fantavoto", fv_l)], [C1, C2], fmt=lambda v: it(v, 1 if v != int(v) else 0), W=720, H=260, label="Voto e fantavoto FantaTB per giornata") + "".join(tbl),
                       legend([("Voto", C1), ("Fantavoto", C2)])))
     # carriera
     trs = p.get("transfers") or []
     if trs:
-        b.append("<h2>Carriera: i trasferimenti</h2><div class=\"card\"><div style=\"overflow-x:auto\"><table><thead><tr><th class=\"l\">Data</th><th class=\"l\">Da</th><th class=\"l\">A</th><th class=\"l\">Formula</th></tr></thead><tbody>")
+        b.append("<h2>Carriera: i trasferimenti</h2><div class=\"card\"><div class=\"tscroll\"><table><thead><tr><th class=\"l\">Data</th><th class=\"l\">Da</th><th class=\"l\">A</th><th class=\"l\">Formula</th></tr></thead><tbody>")
         for t in reversed(trs):
             b.append('<tr><td class="l">%s</td><td class="l">%s</td><td class="l">%s</td><td class="l">%s</td></tr>' % (esc(data_it(t["date"])), esc(t["from"].get("name") or "—"), esc(t["to"].get("name") or "—"), esc(transfer_type_it(t.get("type")) or "—")))
         b.append('</tbody></table></div></div><p class="small">Il feed trasferimenti di API-Football parte dagli anni recenti e non copre le giovanili: la carriera può essere incompleta.</p>')
@@ -908,6 +1004,8 @@ def render_player(D, S, T, p, ctx):
         links.insert(0, '<a href="%s">pagina %s</a>' % (T.url(team_site), esc(team_site)))
     b.append('<p class="small">%s</p>' % " · ".join(links))
     b.append('<div class="note"><b>Come leggere i numeri.</b> Statistiche di gioco da API-Football (tabellini ufficiali elaborati dal provider); rating = punteggio statistico 0-10 del provider, da cui nasce il voto FantaTB (rating − 0,8, arrotondato al mezzo punto). Le voci "per 90\'" dividono per i minuti giocati. Nessun dato è inventato: le frasi della scheda sono costruite dai numeri qui sopra.</div>')
+    # card "Fantacalcio" in fondo: stato, quotazione e porte verso probabili, squadra, listone, voti, infortunati (aggiunta, nulla sopra cambia)
+    b.append(fanta_card(D, T, p, ctx, team_site, full, li, st, vs, n_md))
     # "Torna al listone": se si arriva dall'app o dal listone statico usa history.back() (l'app riapre la vista o la scheda di lega grazie all'hash)
     b.append("<script>(function(){var a=document.getElementById('backLs');if(!a)return;var r=document.referrer||'';var app=r.indexOf('/fanta/')>=0;"
              "if(app){a.href='/fanta/#listone';a.textContent='\\u2190 Torna al listone FantaTB';}var back=app||r.indexOf('/fantacalcio/listone')>=0;"
@@ -964,27 +1062,55 @@ def render_players_index(D, S, T, ctx):
     teams = {}
     for p in act:
         teams.setdefault(p.get("team_name") or "?", []).append(p)
-    top = sorted([p for p in act if p["id"] in ctx["listone"]], key=lambda p: -(ctx["listone"][p["id"]].get("price") or 0))[:20]
-    b = ["<h1>Giocatori di Serie A %s: schede, statistiche e voti FantaTB</h1>" % esc(SEASON),
-         '<div class="sub">%d giocatori delle %d squadre di Serie A, una scheda ciascuno: descrizione dai dati, statistiche %s e %s a confronto, profilo per 90 minuti rispetto ai pari ruolo, carriera, voti e fantavoto giornata per giornata. Aggiornato <time>%s</time>.</div>'
-         % (len(act), len(teams), esc(PREV_LABEL), esc(SEASON), esc(fdate_it(ctx["updated"], True)))]
-    if top:
-        b.append("<h2>I più quotati nel listone FantaTB</h2><div class=\"chips\">" + "".join(plink(ctx, p["id"], "%s · %s" % (full_name(p), ctx["listone"][p["id"]].get("price"))) for p in top) + "</div>")
-    b.append("<h2>Squadra per squadra</h2>")
+    # i due numeri dichiarati sono sempre questi: schede = pagine giocatori/<slug>.html scritte, quotati = giocatori del listone FantaTB
+    n_schede = len(ctx["urls"]); n_quot = len(ctx["listone"])
+    inactive = sorted([p for p in P.values() if not p.get("active")], key=lambda p: full_name(p))
+    top = sorted([p for p in act if p["id"] in ctx["listone"]], key=lambda p: (-(ctx["listone"][p["id"]].get("price") or 0), full_name(p)))[:10]
     def site_of(api_name):
         return T.fanta_name(api_name)
+    def team_link(api_name):
+        site = site_of(api_name)
+        return ('<a href="%s">%s</a>' % (T.url(site), esc(site))) if site else esc(api_name or "")
+    b = ["<h1>Giocatori di Serie A %s: schede, statistiche e voti FantaTB</h1>" % esc(SEASON),
+         '<div class="sub">%s schede giocatore delle %d squadre di Serie A e %s giocatori quotati nel listone FantaTB. Ogni scheda: descrizione dai dati, statistiche %s e %s a confronto, profilo per 90 minuti rispetto ai pari ruolo, carriera, voti e fantavoto giornata per giornata. Aggiornato <time>%s</time>.</div>'
+         % (it(n_schede), len(teams), it(n_quot), esc(PREV_LABEL), esc(SEASON), esc(fdate_it(ctx["updated"], True)))]
+    # ricerca sul client: filtra le chip squadra per squadra; senza JS la lista resta completa
+    b.append('<div class="tools"><label class="small" for="q">Cerca</label><input id="q" type="search" placeholder="Nome del giocatore o squadra" '
+             'aria-label="Cerca un giocatore o una squadra" autocomplete="off" style="flex:1 1 280px;max-width:420px"><span class="small" id="qn" aria-live="polite"></span></div>')
+    if top:
+        b.append('<div class="card"><h2>I più quotati nel listone FantaTB</h2><div class="in"><div class="tscroll"><table><thead><tr><th class="num">#</th><th>Ruolo</th><th class="l">Giocatore</th><th class="l">Squadra</th>'
+                 '<th class="num">Quotazione</th><th class="num">Fantamedia</th><th class="num">Titolarità</th></tr></thead><tbody>')
+        for i, p in enumerate(top):
+            li = ctx["listone"][p["id"]]; s = ctx["summ"].get(p["id"]) or {}
+            role = li.get("role") or ROLE_CLASSIC.get(p.get("position") or "", "")
+            b.append('<tr><td class="num">%d</td><td><i class="rb %s">%s</i></td><td class="l">%s</td><td class="l">%s</td><td class="num pt">%s</td><td class="num">%s</td><td class="num">%s</td></tr>' % (
+                i + 1, esc(role), esc(role), plink(ctx, p["id"], full_name(p)), team_link(p.get("team_name")), it(li.get("price")), it(s.get("fmv"), 2), pct(s.get("tit"))))
+        b.append('</tbody></table></div><p class="small">Quotazione in crediti FantaTB; fantamedia e indice di titolarità dai voti e dallo stato della prossima giornata. <a href="/fantacalcio/listone.html">Listone completo</a>.</p></div></div>')
+    b.append("<h2>Squadra per squadra</h2>")
     for tn in sorted(teams, key=lambda x: site_of(x) or x):
         site = site_of(tn); tt = T.by_name.get(site) if site else None
         head = (badge(tt, 26) + '<a href="%s">%s</a>' % (T.url(site), esc(site))) if tt else esc(tn)
-        b.append('<div class="card"><h3>%s <span class="small">(%d giocatori)</span></h3><div class="in">' % (head, len(teams[tn])))
+        b.append('<div class="card tcard" data-team="%s"><h3>%s <span class="small">(%d schede)</span></h3><div class="in">' % (esc(norm(site or tn)), head, len(teams[tn])))
         for pos in ROLE_ORDER:
             grp = sorted([p for p in teams[tn] if p.get("position") == pos], key=lambda p: full_name(p))
             if grp:
-                b.append('<p class="small" style="margin:6px 0 2px"><b>%s</b></p><div class="chips">%s</div>' % (ROLE_PL[pos], "".join(plink(ctx, p["id"], full_name(p)) for p in grp)))
+                b.append('<div class="rg"><p class="small" style="margin:6px 0 2px"><b>%s</b></p><div class="chips">%s</div></div>' % (ROLE_PL[pos], "".join(plink(ctx, p["id"], full_name(p)) for p in grp)))
         b.append("</div></div>")
-    b.append('<p class="small">Dati: API-Football (statistiche e rose), FantaTB (voti, quotazioni, titolarità). Le schede si aggiornano dopo ogni giornata. <a href="/fantacalcio/">Dati aperti del fantacalcio</a> · <a href="/squadre/">pagine squadra</a>.</p>')
+    if inactive:   # hanno ancora la scheda (dati della stagione): linkate qui, così nessuna pagina resta orfana
+        b.append('<div class="card tcard" data-team=""><h3>Non più in Serie A <span class="small">(%d schede)</span></h3><div class="in"><div class="rg"><div class="chips">%s</div></div></div></div>'
+                 % (len(inactive), "".join(plink(ctx, p["id"], full_name(p)) for p in inactive)))
+    b.append('<p class="small">Dati: API-Football (statistiche e rose), FantaTB (voti, quotazioni, titolarità). Le schede si aggiornano dopo ogni giornata. <a href="/fantacalcio/">Dati aperti del fantacalcio</a> · <a href="/fantacalcio/listone.html">listone</a> · <a href="/squadre/">pagine squadra</a>.</p>')
+    # filtro: confronta nome (senza accenti) e squadra della card; nasconde le chip, i gruppi di ruolo e le card rimasti vuoti
+    b.append("<script>(function(){var q=document.getElementById('q');if(!q)return;var cards=[].slice.call(document.querySelectorAll('.tcard')),"
+             "links=[].slice.call(document.querySelectorAll('.tcard .chips a')),cnt=document.getElementById('qn');"
+             "function nrm(s){return s.toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g,'')}"
+             "links.forEach(function(a){var c=a.closest('.tcard');a.setAttribute('data-k',nrm(a.textContent+' '+(c&&c.getAttribute('data-team')||'')))});"
+             "function run(){var v=nrm(q.value.trim()),n=0;links.forEach(function(a){var ok=!v||a.getAttribute('data-k').indexOf(v)>=0;a.hidden=!ok;if(ok)n++});"
+             "cards.forEach(function(c){[].forEach.call(c.querySelectorAll('.rg'),function(g){g.hidden=!g.querySelector('.chips a:not([hidden])')});c.hidden=!c.querySelector('.chips a:not([hidden])')});"
+             "if(cnt)cnt.textContent=v?(n+(n===1?' giocatore trovato':' giocatori trovati')):''}"
+             "q.addEventListener('input',run);if(q.value)run()})();</script>")
     ld = {"@context": "https://schema.org", "@type": "ItemList", "name": "Giocatori di Serie A " + SEASON,
           "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": full_name(p), "url": SITE + ctx["urls"][p["id"]]} for i, p in enumerate(top)]}
     return page("Giocatori di Serie A %s: schede e voti" % SEASON,
-                "Tutti i giocatori di Serie A %s, una scheda ciascuno: statistiche di questa stagione e della scorsa, profilo per 90 minuti, carriera e voti FantaTB." % SEASON,
+                "%s schede dei giocatori di Serie A %s e %s quotati nel listone FantaTB: statistiche di questa stagione e della scorsa, profilo per 90 minuti, carriera e voti." % (it(n_schede), SEASON, it(n_quot)),
                 canon, "".join(b), crumbs=[("Home", SITE + "/"), ("Giocatori", canon)], ld=[ld], here="Giocatori")

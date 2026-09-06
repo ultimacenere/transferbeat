@@ -14,177 +14,260 @@
 <title>Serie A e coppe: notizie e classifiche | TransferBeat</title>
 <link rel="canonical" href="https://transferbeat.com/">
 <meta name="description" content="Notizie di Serie A e coppe squadra per squadra, con fonte e concretezza; classifiche e risultati ogni due ore; articoli e FantaTB, il fantacalcio gratis.">
-<meta property="og:type" content="website"><meta property="og:site_name" content="TransferBeat"><meta property="og:title" content="Serie A e coppe: notizie e classifiche"><meta property="og:description" content="Notizie squadra per squadra classificate per concretezza, classifiche e risultati ogni due ore, articoli e fantacalcio gratis."><meta property="og:url" content="https://transferbeat.com/"><meta name="twitter:card" content="summary">
+<meta property="og:type" content="website"><meta property="og:site_name" content="TransferBeat"><meta property="og:title" content="Serie A e coppe: notizie e classifiche"><meta property="og:description" content="Notizie squadra per squadra classificate per concretezza, classifiche e risultati ogni due ore, articoli e fantacalcio gratis."><meta property="og:url" content="https://transferbeat.com/"><meta property="og:locale" content="it_IT"><meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"TransferBeat","alternateName":"TransferBeat — Il giornale del calcio mondiale","url":"https://transferbeat.com/","inLanguage":"it","publisher":{"@type":"Organization","name":"TransferBeat","url":"https://transferbeat.com/"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"TransferBeat","url":"https://transferbeat.com/","logo":{"@type":"ImageObject","url":"https://transferbeat.com/favicon.png"},"founder":{"@type":"Person","name":"Pierluigi Cella","url":"https://transferbeat.com/chi-siamo.html","sameAs":["https://www.linkedin.com/in/pierluigi-cella-58076960/"]},"description":"Giornale di calcio: notizie di Serie A e coppe squadra per squadra classificate per concretezza, classifiche e risultati, articoli e FantaTB, il fantacalcio gratuito."}</script>
+<!--shell:css--><style>*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f6f4fb;--card:#fff;--panel:#f6f4fb;--line:#e5e1ee;--line2:#eeebf4;--txt:#161b21;--txt2:#3d4750;--muted:#5b6670;
+--brand:#ff6a00;--brand-ink:#c24d00;--ink:#1b1140;--violet:#4b1d95;--violet-bg:#ece6f7;--blue:#1f6fd6;
+--ok:#0b7a45;--ok-bg:#d6f2e1;--warn:#946200;--warn-bg:#fff4dc;--err:#c9302c;--err-bg:#fdecea;
+--rP:#9a5b00;--rD:#1f6fd6;--rC:#15804f;--rA:#c8281c;
+--grad:linear-gradient(115deg,#ff6a00 0%,#e0298a 48%,#6b2bd9 100%);
+--accent:var(--brand);--done:var(--ok);--rumor:var(--warn);--red:var(--err);--conf:#7b46c9;--font:'Segoe UI',system-ui,-apple-system,Roboto,'Helvetica Neue',Arial,sans-serif}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--font);background:var(--bg);color:var(--txt);line-height:1.5;font-size:14px}
+a{color:var(--violet);text-decoration:none}a:hover{color:var(--brand-ink)}
+img,svg{vertical-align:middle}[hidden]{display:none!important}[id]{scroll-margin-top:56px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}main.wrap{padding-top:16px;padding-bottom:48px}
+.num,td.num,th.num{font-variant-numeric:tabular-nums;text-align:right}
+/* testata 64px */
+header.site{background:#fff;border-bottom:1px solid var(--line)}
+header.site .top{display:flex;align-items:center;gap:8px;height:64px}
+.brand{font-family:Georgia,'Times New Roman',serif;font-size:26px;font-weight:700;letter-spacing:-.3px;color:var(--txt);flex:none}.brand b{color:var(--brand)}.brand:hover{color:var(--txt)}
+.tabsw{margin-left:auto;min-width:0}
+nav.tabs{display:flex;gap:2px;align-items:center}
+nav.tabs a{font-size:14px;font-weight:600;color:var(--txt2);padding:0 12px;height:64px;display:inline-flex;align-items:center;white-space:nowrap;flex:none}
+nav.tabs a:hover{color:var(--txt)}nav.tabs a.here{color:var(--txt);font-weight:700;box-shadow:inset 0 -2px 0 var(--brand)}nav.tabs a.fanta{color:var(--txt2)}
+header.site a.cta,nav.secbar a.cta,.ribbon .rb-cta{display:inline-flex;align-items:center;flex:none;background:var(--brand);color:var(--ink);font-weight:700;border-radius:8px;white-space:nowrap}
+header.site a.cta{font-size:14px;height:40px;padding:0 16px;margin-left:12px}header.site a.cta:hover,nav.secbar a.cta:hover,.ribbon .rb-cta:hover{background:#ff8226;color:var(--ink)}
+/* barra di sezione 44px */
+nav.secbar{background:#fff;border-top:1px solid var(--line);position:sticky;top:0;z-index:20}
+nav.secbar .wrap{display:flex;gap:4px;align-items:center;height:44px;overflow-x:auto;scrollbar-width:none}nav.secbar .wrap::-webkit-scrollbar{display:none}
+nav.secbar a{font-size:13px;font-weight:600;color:var(--txt2);padding:0 10px;height:44px;display:inline-flex;align-items:center;white-space:nowrap;flex:none}
+nav.secbar a:hover{color:var(--txt)}nav.secbar a.here{color:var(--violet);font-weight:700;box-shadow:inset 0 -2px 0 var(--violet)}
+nav.secbar a.cta{margin-left:auto;font-size:13px;height:32px;padding:0 12px}
+/* ribbon promo */
+.ribbon{background:var(--ink);color:#fff;font-size:13px}.ribbon .wrap{display:flex;align-items:center;gap:12px;min-height:48px}
+.ribbon p{margin:0;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ribbon .rb-cta{font-size:13px;height:32px;padding:0 12px}
+.ribbon .rb-x{background:none;border:0;color:#fff;cursor:pointer;padding:8px;margin-right:-8px;display:inline-flex;flex:none;font:inherit}.ribbon .rb-x:hover{color:var(--brand)}
+/* titoli e testo */
+.crumbs{font-size:13px;color:var(--muted);margin:0 0 12px}.crumbs a{color:var(--violet)}.crumbs span{color:var(--muted)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:36px;line-height:1.15;font-weight:700;margin:0 0 8px;letter-spacing:-.4px}
+.sub{color:var(--txt2);font-size:16px;margin:0 0 24px;max-width:760px}.sub a{font-weight:600}
+h2{font-size:22px;font-weight:700;line-height:1.25;margin:32px 0 12px}h3{font-size:16px;font-weight:600;margin:16px 0 8px}
+p{margin-bottom:12px}.lead{font-size:16px;line-height:1.65}.small{font-size:12px;color:var(--muted)}
+.status{background:var(--warn-bg);color:var(--warn);font-weight:600;font-size:13px;border-radius:8px;padding:8px 12px;margin:0 0 16px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+/* card */
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:16px}
+.card>h2,.card>h3{font-family:var(--font);font-size:18px;font-weight:600;padding:12px 16px;border-bottom:1px solid var(--line);margin:0;background:#fff}
+.card .in{padding:12px 16px}.card .in>p:last-child{margin-bottom:0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin:0 0 24px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.kpi .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+.kpi .v{font-size:28px;font-weight:700;line-height:1.25;margin-top:2px;font-variant-numeric:tabular-nums}.kpi .s{font-size:12px;color:var(--muted)}.kpi a{font-size:13px;font-weight:600}
+/* tabelle */
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}.tscroll>table{min-width:100%}
+table{width:100%;border-collapse:collapse;font-size:13px}caption{text-align:left;font-size:12px;color:var(--muted);padding:8px 12px}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:600;padding:10px 12px;text-align:left;background:#fff;border-bottom:1px solid var(--line)}
+td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line2);font-variant-numeric:tabular-nums}
+tbody tr:hover td{background:var(--panel)}tbody tr.me td{background:var(--panel)}tbody tr.me td:first-child{box-shadow:inset 2px 0 0 var(--brand)}
+td.team,th.team,td.l,th.l{text-align:left}td.c,th.c{text-align:center}
+tr.z1 td.pos{color:var(--brand-ink);font-weight:700}tr.z2 td.pos{color:var(--blue);font-weight:700}tr.z3 td.pos{color:var(--warn);font-weight:700}tr.zr td.pos{color:var(--err);font-weight:700}
+.card .in table td,.card .in table th{padding:8px 8px}
+th.sort{cursor:pointer;user-select:none}th.sort:hover{color:var(--txt)}
+.crest{width:20px;height:20px;object-fit:contain;margin-right:8px;vertical-align:-5px}.pt{font-weight:700}
+/* badge ruolo, pillole, tag */
+.rb{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;font-weight:700;font-style:normal;flex:none;line-height:1}
+.rb.P{background:var(--rP)}.rb.D{background:var(--rD)}.rb.C{background:var(--rC)}.rb.A{background:var(--rA)}
+.pill{display:inline-block;font-size:12px;font-weight:700;padding:2px 10px;border-radius:6px;background:var(--panel);color:var(--txt2);line-height:1.5;white-space:nowrap}
+.pill.ok{background:var(--ok-bg);color:#0b5d36}.pill.warn{background:var(--warn-bg);color:var(--warn)}.pill.err{background:var(--err-bg);color:#8a1f16}.pill.info{background:var(--violet-bg);color:var(--violet)}
+.pct{font-weight:700;font-variant-numeric:tabular-nums}.pct.g{color:var(--ok)}.pct.a{color:var(--warn)}.pct.r{color:var(--err)}
+.pol{color:var(--warn);font-weight:700}.pol::after{content:"*"}
+.lab{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;color:#fff;font-size:12px;font-weight:700;margin-right:8px;vertical-align:middle}
+.tag{display:inline-block;font-size:12px;text-transform:uppercase;letter-spacing:.4px;font-weight:700;padding:1px 6px;border-radius:6px;margin-right:6px;vertical-align:middle;line-height:1.5}
+.t-done{background:var(--ok-bg);color:var(--ok)}.t-conf{background:var(--violet-bg);color:var(--conf)}.t-obj{background:#e3edfb;color:var(--blue)}.t-rumor{background:var(--warn-bg);color:var(--warn)}
+.reli{display:inline-flex;gap:2px;margin-right:6px;vertical-align:middle}.reli i{width:6px;height:6px;border-radius:50%;background:#cfd6dd}.reli i.on{background:var(--brand)}
+.badge{vertical-align:middle;margin-right:8px;flex:none}h1 .badge{vertical-align:-9px;margin-right:12px}.chips a .badge{margin-right:6px;vertical-align:-7px}
+.form{display:inline-flex;gap:3px;vertical-align:middle}.form i{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 4px;border-radius:6px;color:#fff;font-size:12px;font-weight:700;font-style:normal}
+.form .w{background:var(--ok)}.form .d{background:#5b6670}.form .l{background:var(--err)}
+/* liste e notizie */
+.news{list-style:none}.news li{padding:8px 0;border-top:1px solid var(--line2);font-size:14px}.news li:first-child{border-top:0}
+.news a.t{font-weight:600;color:var(--txt)}.news a.t:hover{color:var(--brand-ink)}.news .src{font-size:12px;color:var(--muted);margin-top:2px}
+.fx{display:grid;grid-template-columns:96px 1fr auto 1fr;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--line2);font-size:13px}.fx:first-child{border-top:0}
+.fx .d{color:var(--muted);font-size:12px}.fx .h{text-align:right}.fx .r{font-weight:700;background:var(--panel);padding:2px 8px;border-radius:6px;min-width:52px;text-align:center;font-variant-numeric:tabular-nums}.fx .r.vs{color:var(--muted);font-weight:600;font-size:12px}
+.fx a{color:var(--txt)}.fx a:hover{color:var(--brand-ink)}
+.legend{font-size:12px;color:var(--muted);padding:8px 12px 12px}
+.legend2{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin:4px 0 8px}.legend2 i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.rosa{columns:3;column-gap:24px;font-size:14px;list-style:none}.rosa li{padding:4px 0;break-inside:avoid}
+.plist{list-style:none;columns:2;column-gap:24px;font-size:14px;margin-bottom:8px}.plist li{padding:4px 0;break-inside:avoid}.plist .n{display:inline-block;min-width:28px;color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
+.arts{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}.arts a{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px;color:var(--txt)}.arts a:hover{border-color:var(--violet);color:var(--txt)}
+.arts .k{font-size:12px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--violet)}.arts .h{font-size:16px;font-weight:600;line-height:1.25;margin:4px 0}.arts .m{font-size:12px;color:var(--muted)}
+/* chip, bottoni, campi */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.chips a,.chips span{display:inline-flex;align-items:center;min-height:32px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:4px 12px;font-size:13px;font-weight:600;color:var(--txt2)}
+.chips a:hover{border-color:var(--violet);color:var(--violet)}.chips a.on{background:var(--violet);color:#fff;border-color:var(--violet)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--brand);color:var(--ink);font-weight:700;font-size:14px;min-height:40px;padding:8px 16px;border-radius:8px;border:1px solid transparent;margin:4px 8px 4px 0;cursor:pointer;font-family:inherit}
+.btn:hover{background:#ff8226;color:var(--ink)}.btn.sec{background:var(--violet);color:#fff}.btn.sec:hover{background:#3b1676;color:#fff}
+.btn.ghost{background:#fff;color:var(--txt);border-color:var(--line)}.btn.ghost:hover{border-color:var(--violet);color:var(--violet)}.btn.small{min-height:32px;font-size:13px;padding:4px 12px}
+.tools{margin:0 0 16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tools input,.tools select{font:inherit;font-size:14px;height:40px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--txt)}
+.tools input:focus,.tools select:focus{outline:0;border-color:var(--blue);box-shadow:0 0 0 3px rgba(31,111,214,.25)}
+/* card speciali */
+.grad{background:var(--grad);color:#fff;border-radius:16px;padding:24px 28px}.grad h2,.grad h3{color:#fff;margin-top:0}.grad h2{font-size:28px;line-height:1.15}.grad p{opacity:.95}
+.grad a{color:#fff}.grad .btn{background:#fff;color:var(--violet);margin-top:8px}.grad .btn:hover{background:#f3eefb;color:var(--violet)}
+.grad .k{font-size:12px;text-transform:uppercase;letter-spacing:.8px;font-weight:700;opacity:.9;margin-bottom:8px}
+.door{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;color:var(--txt);margin-bottom:8px}
+.door:hover{border-color:var(--violet);color:var(--txt)}.door b{font-weight:600;display:block}.door .s{font-size:12px;color:var(--muted)}.door svg{flex:none;color:var(--muted)}
+.door.dark{background:var(--violet);border-color:var(--violet);color:#fff}.door.dark:hover{background:#3b1676;color:#fff}.door.dark .s,.door.dark svg{color:rgba(255,255,255,.85)}
+.note{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-size:13px;color:var(--muted);margin:16px 0}.note b{color:var(--txt)}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-bottom:8px}.faq summary{font-weight:600;cursor:pointer}.faq details p{margin:8px 0 0;color:var(--txt2);font-size:14px}
+.ph{margin:0 0 12px;font-size:13px;color:var(--muted)}.photo{border-radius:12px;float:right;margin:0 0 12px 16px}
+.back{margin:0 0 8px;font-size:13px;color:var(--muted)}.back a{font-weight:600}.back a#backLs{display:inline-block;border:1px solid var(--line);border-radius:8px;padding:4px 12px;background:#fff}
+.chart{width:100%;max-width:720px;height:auto;display:block;font-family:var(--font);margin:4px 0 12px}.chart .ax{fill:var(--muted);font-size:12px}.chart .lb{fill:var(--txt);font-size:12px;font-weight:600}
+.chart .grid{stroke:var(--line);stroke-width:1}.chart .base{stroke:#c3c2b7;stroke-width:1}.chart .ring{stroke:#fff;stroke-width:2}
+/* footer */
+.foot{border-top:3px solid var(--brand);background:#fff;margin-top:48px;padding:24px 0 20px;font-size:12px;color:var(--muted)}
+.foot .cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.foot .ft{font-size:12px;text-transform:uppercase;letter-spacing:.5px;font-weight:600;color:var(--txt2);margin:0 0 8px}
+.foot ul{list-style:none}.foot li{padding:3px 0}.foot li a{font-size:13px;color:var(--muted)}.foot li a:hover{color:var(--brand-ink)}
+.foot .copy{margin:20px 0 0;padding-top:12px;border-top:1px solid var(--line2)}.foot .copy a{color:var(--muted)}
+.sitelinks{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;padding:12px 24px 20px;font-size:12px}.sitelinks a{color:var(--muted)}
+/* mobile */
+@media(max-width:760px){
+.wrap{padding:0 16px}main.wrap{padding-top:12px;padding-bottom:32px}h1{font-size:28px}h2{font-size:18px;margin-top:24px}.sub{font-size:14px;margin-bottom:16px}
+header.site .top{flex-wrap:wrap;height:auto;gap:0}.brand{font-size:22px;height:56px;display:inline-flex;align-items:center}
+header.site a.cta{margin-left:auto;height:36px;font-size:13px;padding:0 12px}
+.tabsw{order:3;flex:0 0 calc(100% + 32px);margin:0 -16px;position:relative}
+nav.tabs{overflow-x:auto;scrollbar-width:none;padding:0 8px}nav.tabs::-webkit-scrollbar{display:none}nav.tabs a{height:44px;padding:0 10px}
+.tabsw::after{content:"";position:absolute;right:0;top:0;bottom:0;width:32px;background:linear-gradient(90deg,rgba(255,255,255,0),#fff);pointer-events:none}/* sfumatura al bianco della riga scorrevole: trasparenza, non un colore */
+nav.secbar .wrap{padding:0 8px}.ribbon .wrap{gap:8px}
+.grid2,.grid3,.foot .cols{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr;gap:8px}.kpi .v{font-size:22px}
+.rosa{columns:2}.plist{columns:1}.grad{padding:16px;border-radius:12px}.grad h2{font-size:22px}
+.fx{grid-template-columns:64px 1fr auto 1fr;font-size:12px}th,td{padding:8px}
+}
+@media(max-width:400px){.rosa{columns:1}.kpis{grid-template-columns:1fr 1fr}}</style><!--/shell:css-->
 <style>
-  :root{
-    --bg:#ffffff; --panel:#f7f8fa; --panel2:#eef1f5; --line:#e2e6ea;
-    --txt:#161b21; --muted:#67727e; --accent:#ff6a00; --accent2:#1f6fd6;
-    --rumor:#d98700; --conf:#7b46c9; --done:#0a9d57; --red:#e0392b;
-    --serif:'Georgia','Times New Roman',serif;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5}
-  a{color:inherit;text-decoration:none}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 18px}
-  .ticker{background:var(--red);color:#fff;font-size:13px;font-weight:600;overflow:hidden;white-space:nowrap}
-  .ticker .wrap{display:flex;align-items:center;gap:14px;height:34px}
-  .ticker .lab{background:rgba(0,0,0,.2);padding:2px 9px;border-radius:5px;font-size:11px;letter-spacing:.5px;flex-shrink:0}
-  .ticker .scrollwrap{flex:1;overflow:hidden}
-  .ticker .lab{position:relative;z-index:2}
-  .ticker .scroll{display:inline-block;animation:tick 75s linear infinite}
-  .ticker .scroll span{margin-right:40px;opacity:.97}
-  @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-  .mast{border-bottom:3px solid var(--accent);padding:18px 0 14px}
-  .mast .row{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
-  .mast .name{font-family:var(--serif);font-size:46px;font-weight:700;letter-spacing:-1px;line-height:1}
-  .mast .name b{color:var(--accent)}
-  .langsw{display:flex;gap:4px;margin-top:8px}
-  .langsw a{font-size:11px;font-weight:700;padding:4px 8px;border:1px solid var(--line);border-radius:6px;color:var(--muted);cursor:pointer}
-  .langsw a.on{background:var(--txt);color:#fff;border-color:var(--txt)}
-  .mast .date{font-size:12.5px;color:var(--muted);text-align:right}
-  .mast .date b{color:var(--txt)}
-  nav{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:14px}
-  nav .wrap{display:flex;gap:2px;overflow-x:auto}
-  nav a{padding:11px 14px;font-size:13px;font-weight:600;color:var(--muted);white-space:nowrap;border-bottom:2px solid transparent;transition:.15s}
-  nav a:hover,nav a.on{color:var(--txt);border-bottom-color:var(--accent)}
-  nav a.live{color:var(--accent);display:flex;align-items:center;gap:6px}
-  .liveDot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pl 1.6s infinite}
-  @keyframes pl{0%,100%{opacity:1}50%{opacity:.3}}
-  .main{display:grid;grid-template-columns:1fr 320px;gap:26px;padding:24px 0}
-  @media(max-width:900px){.main{grid-template-columns:1fr}}
-  .lead{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:22px;position:relative}
-  .lead .ph{aspect-ratio:16/8;border-radius:12px;background:linear-gradient(135deg,#eef1f5,#dfe5ec);position:relative;overflow:hidden;display:grid;place-items:center}
-  .hnav{position:absolute;top:0;left:0;right:0;aspect-ratio:16/8;pointer-events:none;z-index:3}
-  .harrow{position:absolute;top:50%;transform:translateY(-50%);pointer-events:auto;width:38px;height:38px;border:none;border-radius:50%;background:rgba(0,0,0,.42);color:#fff;font-size:24px;line-height:1;cursor:pointer;display:grid;place-items:center;transition:background .15s}
-  .harrow:hover{background:rgba(0,0,0,.72)}
-  .hprev{left:10px}.hnext{right:10px}
-  .hdots{position:absolute;bottom:10px;left:0;right:0;display:flex;gap:7px;justify-content:center;pointer-events:none}
-  .hdot{pointer-events:auto;width:9px;height:9px;padding:0;border:none;border-radius:50%;background:rgba(255,255,255,.55);cursor:pointer;transition:background .15s}
-  .hdot.on{background:#fff}.hdot:hover{background:rgba(255,255,255,.9)}
-  .ph .badge{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px;letter-spacing:.5px;z-index:2}
-  .ph .ico{font-size:64px;opacity:.28}
-  .ph img,.art .ph2 img{width:100%;height:100%;object-fit:cover;display:block}
-  .art .ph2link{display:block}
-  .art h3 a:hover{color:var(--accent)}
-  .lead .hh{font-family:var(--serif);font-size:32px;line-height:1.14;margin:16px 0 8px;letter-spacing:-.5px}
-  .tagl{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;font-weight:500;color:var(--muted);margin-top:6px;letter-spacing:0;line-height:1.3;max-width:520px}
-  .sqbox .sqlg{font-size:13px;line-height:1.9;padding:6px 0;border-top:1px solid var(--line)}.sqbox .sqlg:first-child{border-top:0}.sqbox .sqlg b{color:var(--txt);margin-right:4px}
-  .sqbox .sqlg a:hover{color:var(--accent)}.sqbox .sqlg a.cl{color:var(--accent2);font-weight:600}
-  .lead .by{font-size:12px;color:var(--muted);margin-top:12px}
-  .kicker{font-size:11.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}
-  .sub3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  @media(max-width:680px){.sub3{grid-template-columns:1fr;gap:0}}
-  .art{padding-bottom:16px;border-bottom:1px solid var(--line);display:block}
-  @media(max-width:680px){.art{padding:14px 0}}
-  .art .ph2{aspect-ratio:16/10;border-radius:9px;overflow:hidden;background:linear-gradient(135deg,#eef1f5,#e3e8ee);margin-bottom:10px;display:grid;place-items:center;font-size:30px}
-  .credit{font-size:10.5px;color:var(--muted);margin-top:6px}
-  .credit a{color:var(--accent2);font-weight:600}
-  .art .ph2 span{opacity:.5}
-  .art h3{font-family:var(--serif);font-size:17px;line-height:1.22;margin:6px 0 5px}
-  .art .cat{font-size:10.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--accent2)}
-  aside{display:flex;flex-direction:column;gap:22px}
-  .box{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-  .box .hd{padding:12px 15px;border-bottom:1px solid var(--line);font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;display:flex;align-items:center;gap:8px}
-  .box.live .hd{color:var(--accent)}
-  .mini{padding:6px 15px 12px}
-  .mini .r{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px}
-  .mini .r:last-child{border-bottom:none}
-  .st{font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:5px;text-transform:uppercase;letter-spacing:.4px;flex-shrink:0}
-  .s-done{background:rgba(10,157,87,.14);color:var(--done)}.s-conf{background:rgba(123,70,201,.14);color:var(--conf)}
-  .s-obj{background:rgba(31,111,214,.14);color:var(--accent2)}.s-rumor{background:rgba(217,135,0,.14);color:var(--rumor)}
-  .mini .tt{font-weight:600;line-height:1.2}
-  .cta{display:block;text-align:center;padding:11px;font-size:13px;font-weight:600;color:var(--accent);border-top:1px solid var(--line)}
-  .cta:hover{background:rgba(10,157,87,.07)}
-  .strip{border-top:3px solid var(--line);padding:22px 0}
-  .strip h2{font-family:var(--serif);font-size:22px;margin-bottom:4px}
-  .strip .sub{font-size:12.5px;color:var(--muted);margin-bottom:16px}
-  .strip h2 .flag{font-size:14px;color:var(--accent2);font-family:'Segoe UI',sans-serif;font-weight:700;letter-spacing:.5px;margin-left:6px;text-transform:uppercase}
-  .row4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-  @media(max-width:900px){.row4{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:520px){.row4{grid-template-columns:1fr}}
-  footer{border-top:3px solid var(--accent);padding:26px 0;margin-top:20px;color:var(--muted);font-size:12.5px}
-  footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-  .demo{display:inline-block;background:rgba(217,135,0,.12);color:var(--rumor);border:1px solid rgba(217,135,0,.3);padding:1px 8px;border-radius:6px;font-size:11px;vertical-align:middle;margin-left:8px}
-  .err{background:#fff6f6;border:1px solid #f3c9c9;color:#a33;border-radius:12px;padding:16px 18px;margin:20px;font-size:14px}
+/* Home: solo gli stili propri della pagina; testata, menu, footer e token sono nel blocco shell:css */
+.ticker{background:var(--err);color:#fff;font-size:13px;font-weight:600;overflow:hidden;white-space:nowrap}
+.ticker .wrap{display:flex;align-items:center;gap:12px;height:36px}
+.ticker .tk-lab{display:inline-block;background:var(--ink);color:#fff;padding:4px 8px;border-radius:6px;line-height:1;font-size:12px;letter-spacing:.5px;flex:none;position:relative;z-index:2}
+.ticker .scrollwrap{flex:1;overflow:hidden}
+.ticker .scroll{display:inline-block;animation:tick 75s linear infinite}
+.ticker .scroll span{margin-right:40px}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.mast{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:8px 0 16px;margin-bottom:16px;border-bottom:3px solid var(--brand)}
+.mast h1{margin:0;max-width:760px}
+.mast .date{font-size:13px;color:var(--muted);text-align:right}.mast .date b{color:var(--txt)}
+@media(max-width:760px){.mast .date{text-align:left}}
+.main{display:grid;grid-template-columns:1fr 320px;gap:24px;padding:8px 0 24px}
+@media(max-width:900px){.main{grid-template-columns:1fr}}
+.lead{border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:24px;position:relative}
+.lead .ph{aspect-ratio:16/8;border-radius:12px;background:var(--line2);position:relative;overflow:hidden;display:grid;place-items:center;margin:0}
+.hnav{position:absolute;top:0;left:0;right:0;aspect-ratio:16/8;pointer-events:none;z-index:3}
+.harrow{position:absolute;top:50%;transform:translateY(-50%);pointer-events:auto;width:40px;height:40px;border:none;border-radius:50%;background:rgba(0,0,0,.45);color:#fff;font-size:24px;line-height:1;cursor:pointer;display:grid;place-items:center;transition:background .15s}
+.harrow:hover{background:rgba(0,0,0,.72)}
+.hprev{left:12px}.hnext{right:12px}
+.hdots{position:absolute;bottom:12px;left:0;right:0;display:flex;gap:8px;justify-content:center;pointer-events:none}
+.hdot{pointer-events:auto;width:8px;height:8px;padding:0;border:none;border-radius:50%;background:rgba(255,255,255,.55);cursor:pointer;transition:background .15s}
+.hdot.on{background:#fff}.hdot:hover{background:rgba(255,255,255,.9)}
+.ph .badge{position:absolute;top:12px;left:12px;background:var(--err);color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:6px;letter-spacing:.5px;z-index:2;margin:0}
+.ph .ico{font-size:64px;opacity:.28}
+.ph img,.art .ph2 img{width:100%;height:100%;object-fit:cover;display:block}
+.lead .hh{font-size:28px;line-height:1.2;margin:16px 0 8px;letter-spacing:-.3px}.lead .hh a{color:var(--txt)}.lead .hh a:hover{color:var(--brand-ink)}
+.lead .by{font-size:12px;color:var(--muted);margin-top:12px}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--brand-ink)}
+.fanta{margin:0 0 24px}.fanta:empty{display:none}
+.sub3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:680px){.sub3{grid-template-columns:1fr;gap:0}}
+.art{padding-bottom:16px;border-bottom:1px solid var(--line);display:block}
+@media(max-width:680px){.art{padding:12px 0}}
+.art .ph2link{display:block}
+.art .ph2{aspect-ratio:16/10;border-radius:8px;overflow:hidden;background:var(--line2);margin-bottom:8px;display:grid;place-items:center;font-size:28px}
+.art .ph2 span{opacity:.5}
+.art h3{font-size:16px;line-height:1.25;margin:4px 0}.art h3 a{color:var(--txt)}.art h3 a:hover{color:var(--brand-ink)}
+.art .cat{font-size:12px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--blue)}
+.credit{font-size:12px;color:var(--muted);margin-top:4px}.credit a{color:var(--blue);font-weight:600}
+aside{display:flex;flex-direction:column;gap:16px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.box .hd{padding:12px 16px;border-bottom:1px solid var(--line);font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;display:flex;align-items:center;gap:8px;color:var(--txt2)}
+.box.live .hd{color:var(--brand-ink)}
+.liveDot{width:8px;height:8px;border-radius:50%;background:var(--brand);animation:pl 1.6s infinite;flex:none}
+@keyframes pl{0%,100%{opacity:1}50%{opacity:.3}}
+.mini{padding:4px 16px 8px}
+.mini .r{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--line2);font-size:13px;color:var(--txt)}
+.mini .r:last-child{border-bottom:0}.mini .r:hover .tt{color:var(--brand-ink)}
+.st{font-size:12px;font-weight:700;padding:2px 6px;border-radius:6px;text-transform:uppercase;letter-spacing:.4px;flex:none;line-height:1.5}
+.s-done{background:var(--ok-bg);color:var(--ok)}.s-conf{background:var(--violet-bg);color:var(--conf)}.s-obj{background:#e3edfb;color:var(--blue)}.s-rumor{background:var(--warn-bg);color:var(--warn)}
+.mini .tt{font-weight:600;line-height:1.25}
+.box .cta{display:block;text-align:center;padding:12px;font-size:13px;font-weight:600;color:var(--violet);border-top:1px solid var(--line)}.box .cta:hover{background:var(--panel);color:var(--brand-ink)}
+.strip{border-top:3px solid var(--line);padding:24px 0}
+.strip h2{font-size:22px;margin:0 0 4px}
+.strip .sub{font-size:13px;color:var(--muted);margin:0 0 16px;max-width:none}
+.strip h2 .flag{font-size:13px;color:var(--blue);font-weight:700;letter-spacing:.5px;margin-left:8px;text-transform:uppercase}
+.row4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:900px){.row4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.row4{grid-template-columns:1fr}}
+.sqbox .sqlg{font-size:13px;line-height:1.9;padding:4px 0;border-top:1px solid var(--line2)}.sqbox .sqlg:first-child{border-top:0}.sqbox .sqlg b{color:var(--txt);margin-right:4px}
+.sqbox .sqlg a.cl{color:var(--brand-ink);font-weight:600}
+.sqmore{font-size:14px;margin:12px 0 0}
+.err{background:var(--err-bg);border:1px solid #f3c9c9;color:var(--err);border-radius:12px;padding:16px;margin:16px 0;font-size:14px}
 </style>
 </head>
 <body>
-<div class="ticker"><div class="wrap"><span class="lab" id="tkLab">ULTIM’ORA</span><div class="scrollwrap"><div class="scroll" id="ticker"><!--static:ticker--><span>🟢 Inter-Napoli è pazzesca! Allegri scappa, la ThuLa fa tris e firma il ribaltone al 91&#x27;</span><span>🟢 Live FC Bravos - São Salvador - Liga Unitel Girabola: Punteggi &amp; Highlights Calcio - 06/09/2026</span><span>🟢 Capolavoro Mandragora e Adams: rimonta Toro, guaio Grosso per la Fiorentina</span><span>🟢 Live Arsenal - Chelsea - Premier League: Punteggi &amp; Highlights Calcio - 06/09/2026</span><span>🟢 Live Everton - Manchester United - Premier League: Punteggi &amp; Highlights Calcio - 06/09/2026</span><!--/static:ticker--></div></div></div></div>
-<header>
-  <div class="wrap mast">
-    <div class="row">
-      <div>
-        <div class="name">Transfer<b>Beat</b><span class="demo">BETA</span></div>
-        <h1 class="tagl">Notizie di Serie A e coppe squadra per squadra, classifiche, risultati e FantaTB</h1>
-      </div>
-      <div class="date" id="masthead"><!--static:masthead-->Domenica 6 settembre<br>Edizione delle <b><time>09:01</time></b> · Il giornale del calcio<!--/static:masthead--></div>
-    </div>
-  </div>
-  <nav><div class="wrap">
-    <a href="index.html" class="on" id="navHome">Home</a>
-    <a href="board.html" class="live" id="navLive"><span class="liveDot"></span>Live</a>
-    <a href="articoli/it/" id="navArticoli">Articoli</a>
-    <a href="campionati.html" id="navCampionati" style="font-weight:700">Campionati</a>
-    <a href="squadre/" id="navSquadre">Squadre</a>
-    <a href="fanta/" id="navFanta" style="color:var(--accent);font-weight:700">FantaTB</a>
-    <a href="board.html?lega=Serie%20A" id="navSA">Serie A</a><a href="board.html?lega=Premier" id="navPL">Premier</a><a href="board.html?lega=La%20Liga" id="navLL">La Liga</a>
-    <a href="#world" id="navWorld">Mondo</a>
-  </div></nav>
-</header>
+<!--shell:header--><header class="site"><div class="wrap top"><a class="brand" href="/">Transfer<b>Beat</b></a><div class="tabsw"><nav class="tabs" aria-label="Sezioni principali"><a href="/board.html">Notizie</a><a href="/campionati/">Campionati</a><a href="/squadre/">Squadre</a><a href="/giocatori/">Giocatori</a><a href="/fantacalcio/">Fantacalcio</a><a href="/articoli/it/">Articoli</a></nav></div><a class="cta" href="/fantatb.html">Gioca a FantaTB</a></div></header><div class="ribbon" id="tbRibbon"><div class="wrap"><p>FantaTB è il fantacalcio gratuito di TransferBeat: leghe private, asta live, voti ogni 30 minuti.</p><a class="rb-cta" href="/fantatb.html">Crea la tua lega</a><button type="button" class="rb-x" aria-label="Chiudi il messaggio"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div></div><script>(function(){try{var r=document.getElementById('tbRibbon'),t=Number(localStorage.getItem('tb_ribbon')||0);if(t&&6048e5>Date.now()-t){r.hidden=true;return}r.querySelector('.rb-x').addEventListener('click',function(){try{localStorage.setItem('tb_ribbon',String(Date.now()))}catch(e){}r.hidden=true})}catch(e){}})();</script><!--/shell:header-->
+<div class="ticker"><div class="wrap"><span class="tk-lab" id="tkLab">ULTIM’ORA</span><div class="scrollwrap"><div class="scroll" id="ticker"><!--static:ticker--><span>Inter-Napoli è pazzesca! Allegri scappa, la ThuLa fa tris e firma il ribaltone al 91&#x27;</span><span>Live FC Bravos - São Salvador - Liga Unitel Girabola: Punteggi &amp; Highlights Calcio - 06/09/2026</span><span>Capolavoro Mandragora e Adams: rimonta Toro, guaio Grosso per la Fiorentina</span><span>Live Arsenal - Chelsea - Premier League: Punteggi &amp; Highlights Calcio - 06/09/2026</span><span>Live Everton - Manchester United - Premier League: Punteggi &amp; Highlights Calcio - 06/09/2026</span><!--/static:ticker--></div></div></div></div>
+<main class="wrap">
+<div class="mast">
+  <h1>Notizie di Serie A e coppe squadra per squadra, classifiche, risultati e FantaTB</h1>
+  <div class="date" id="masthead"><!--static:masthead-->Domenica 6 settembre<br>Edizione delle <b><time>09:01</time></b> · Il giornale del calcio<!--/static:masthead--></div>
+</div>
+<nav class="chips" aria-label="Scorciatoie"><a href="/campionati/serie-a.html">Serie A</a><a href="/campionati/premier-league.html">Premier League</a><a href="/campionati/liga.html">Liga</a><a href="/campionati/champions-league.html">Champions League</a><a href="/board.html">Notizie squadra per squadra</a><a href="/giocatori/">Giocatori di Serie A</a><a href="/fantacalcio/">Fantacalcio</a><a href="#world">Dal mondo</a></nav>
 <div id="error"></div>
-<div class="wrap main">
+<div class="main">
   <section>
     <div class="lead" id="lead"><!--static:lead--><a class="ph" href="/articoli/it/recap-2026-09-05.html" style="display:grid"><img src="img/cover-recap.svg" alt=""><span class="badge" style="background:#0a9d57">RECAP DI GIORNATA</span></a><div class="kicker">Recap di giornata · 5 settembre 2026</div><h2 class="hh"><a href="/articoli/it/recap-2026-09-05.html">Inter a punteggio pieno, Fiorentina in crisi nera</a></h2><div class="by">Redazione TransferBeat</div><!--/static:lead--></div>
+    <section class="fanta" id="fantaHome" aria-label="Fantacalcio"><!--static:fanta--><h2><a href="/fantacalcio/">Fantacalcio Serie A 2026-27</a></h2><p>Probabili formazioni della giornata 4 (da venerdì 11 settembre); voti della giornata 3 in corso, 4 partite su 10 votate; listone di 533 giocatori; 38 indisponibili per la giornata 4. I dati originali di TransferBeat, gratis e anche in JSON.</p><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:12px 0"><a class="door" href="/fantacalcio/probabili-formazioni.html"><span><b>Probabili formazioni</b><span class="s">Giornata 4, percentuali e ballottaggi</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg></a><a class="door" href="/fantacalcio/voti.html"><span><b>Voti giornata 3</b><span class="s">Voto statistico, bonus e fantavoto</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg></a><a class="door" href="/fantacalcio/listone.html"><span><b>Listone</b><span class="s">533 giocatori quotati</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg></a><a class="door" href="/fantacalcio/titolari.html"><span><b>Infortunati e squalificati</b><span class="s">38 indisponibili, rientri previsti</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg></a></div><p><a class="btn" href="/fantatb.html">Gioca a FantaTB</a> <a class="btn ghost" href="/fantacalcio/">Tutti i dati del fantacalcio</a></p><!--/static:fanta--></section>
     <div class="sub3" id="sub3"><!--static:sub3--><div class="art"><a class="ph2link" href="https://www.gazzetta.it/Calcio/Serie-A/Roma/05-09-2026/roma-atalanta-live-diretta-serie-a-risultato-e-gol.shtml" target="_blank" rel="noopener"><div class="ph2"><img src="https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/09/05/6a9c81c18c888.jpeg" loading="lazy" alt=""></div></a><div class="cat">Serie A</div><h3><a href="https://www.gazzetta.it/Calcio/Serie-A/Roma/05-09-2026/roma-atalanta-live-diretta-serie-a-risultato-e-gol.shtml" target="_blank" rel="noopener">Malen stecca? Fa niente, la Roma è infinita: Hermoso e Soulé la ribaltano in 3&#x27;, Atalanta ko al 93&#x27;</a></h3><div class="credit">Fonte: <a href="https://www.gazzetta.it/Calcio/Serie-A/Roma/05-09-2026/roma-atalanta-live-diretta-serie-a-risultato-e-gol.shtml" target="_blank" rel="noopener">La Gazzetta dello Sport</a> · <span class="ago">8 ore fa</span></div></div><div class="art"><a class="ph2link" href="https://sport.sky.it/calcio/serie-a/video/2026/09/05/roma-atalanta-sarri-intervista-video-1122356" target="_blank" rel="noopener"><div class="ph2"><img src="https://sport.sky.it/assets/images/719c63476c78da1ffe4c4a667ebb20c43a0e512a/skysport/it/calcio/serie-a/video/2026/09/05/roma-atalanta-sarri-intervista-video-1122356/sarri_screen_3.jpg?im=Resize,width=1218" loading="lazy" alt=""></div></a><div class="cat">Serie A</div><h3><a href="https://sport.sky.it/calcio/serie-a/video/2026/09/05/roma-atalanta-sarri-intervista-video-1122356" target="_blank" rel="noopener">Roma-Atalanta, Sarri: &quot;Roma impressionante, noi stiamo crescendo&quot;</a></h3><div class="credit">Fonte: <a href="https://sport.sky.it/calcio/serie-a/video/2026/09/05/roma-atalanta-sarri-intervista-video-1122356" target="_blank" rel="noopener">Sky Sport</a> · <span class="ago">9 ore fa</span></div></div><div class="art"><a class="ph2link" href="https://sport.sky.it/calcio/serie-a/2026/09/05/juventus-milan-probabili-formazioni-3-giornata" target="_blank" rel="noopener"><div class="ph2"><img src="https://sport.sky.it/assets/images/6383e5c78dddeea94572c146365b6edca318a882/skysport/it/calcio/serie-a/2026/09/05/juventus-milan-probabili-formazioni-3-giornata/ipa_nico_gonzalez_juventus_rabiot_milan_og.jpg?im=Resize,width=1218" loading="lazy" alt=""></div></a><div class="cat">Serie A</div><h3><a href="https://sport.sky.it/calcio/serie-a/2026/09/05/juventus-milan-probabili-formazioni-3-giornata" target="_blank" rel="noopener">Le probabili formazioni di Juventus-Milan</a></h3><div class="credit">Fonte: <a href="https://sport.sky.it/calcio/serie-a/2026/09/05/juventus-milan-probabili-formazioni-3-giornata" target="_blank" rel="noopener">Sky Sport</a> · <span class="ago">10 ore fa</span></div></div><div class="art"><a class="ph2link" href="https://www.diretta.it/news/calcio-laliga-liga-le-partite-di-oggi-valencia-barcellona-guida-il-programma-domenicale/WIetJJ2e/" target="_blank" rel="noopener"><div class="ph2"><img src="https://livesport-ott-images.ssl.cdn.cra.cz/r1200xfq60/cd98bc05-8c56-4c41-9946-1a5e1e44d580.jpeg" loading="lazy" alt=""></div></a><div class="cat">La Liga</div><h3><a href="https://www.diretta.it/news/calcio-laliga-liga-le-partite-di-oggi-valencia-barcellona-guida-il-programma-domenicale/WIetJJ2e/" target="_blank" rel="noopener">Valencia-Barcellona guida la domenica della Liga: il programma completo</a></h3><div class="credit">Fonte: <a href="https://www.diretta.it/news/calcio-laliga-liga-le-partite-di-oggi-valencia-barcellona-guida-il-programma-domenicale/WIetJJ2e/" target="_blank" rel="noopener">Diretta</a> · <span class="ago">10 ore fa</span></div></div><div class="art"><a class="ph2link" href="https://www.gazzetta.it/Calcio/Serie-A/Inter/05-09-2026/chivu-dopo-inter-napoli-che-partita-bravo-l-arbitro-scontri-diretti-ero-stufo.shtml" target="_blank" rel="noopener"><div class="ph2"><img src="https://dimages2.gazzettaobjects.it/files/og_thumbnail/files/fp/uploads/2026/09/05/6a9c63ca1236a.r_d.1788-774-0.jpeg" loading="lazy" alt=""></div></a><div class="cat">Serie A</div><h3><a href="https://www.gazzetta.it/Calcio/Serie-A/Inter/05-09-2026/chivu-dopo-inter-napoli-che-partita-bravo-l-arbitro-scontri-diretti-ero-stufo.shtml" target="_blank" rel="noopener">Chivu: &quot;Uno spot per la Serie A, bravi arbitro e il Napoli. Scontri diretti? Ero stufo, e adesso...&quot;</a></h3><div class="credit">Fonte: <a href="https://www.gazzetta.it/Calcio/Serie-A/Inter/05-09-2026/chivu-dopo-inter-napoli-che-partita-bravo-l-arbitro-scontri-diretti-ero-stufo.shtml" target="_blank" rel="noopener">La Gazzetta dello Sport</a> · <span class="ago">11 ore fa</span></div></div><div class="art"><a class="ph2link" href="https://www.diretta.it/news/liga-quarta-giornata-programma-completo-e-risultati/APdhRiyI/" target="_blank" rel="noopener"><div class="ph2"><img src="https://livesport-ott-images.ssl.cdn.cra.cz/r1200xfq60/f765fc8d-939f-4abc-a7cb-5c473f136432.jpeg" loading="lazy" alt=""></div></a><div class="cat">La Liga</div><h3><a href="https://www.diretta.it/news/liga-quarta-giornata-programma-completo-e-risultati/APdhRiyI/" target="_blank" rel="noopener">Liga, quarta giornata: l&#x27;Atlético Madrid crolla a Bilbao, più tardi Rayo e Villarreal</a></h3><div class="credit">Fonte: <a href="https://www.diretta.it/news/liga-quarta-giornata-programma-completo-e-risultati/APdhRiyI/" target="_blank" rel="noopener">Diretta</a> · <span class="ago">12 ore fa</span></div></div><!--/static:sub3--></div>
   </section>
   <aside>
     <div class="box">
-      <div class="hd" style="color:var(--red)"><span class="liveDot" style="background:var(--red)"></span><span id="hdUltimora">🔴 ULTIM'ORA LIVE</span></div>
+      <div class="hd" style="color:var(--err)"><span class="liveDot" style="background:var(--err)"></span><span id="hdUltimora">Ultim’ora live</span></div>
       <div class="mini" id="liveFeed"><div style="color:var(--muted);font-size:12px;padding:6px 0">—</div></div>
     </div>
     <div class="box live">
-      <div class="hd"><span class="liveDot"></span><span id="hdLive">Campionati Live · oggi</span></div>
+      <div class="hd"><span class="liveDot"></span><span id="hdLive">Campionati live · oggi</span></div>
       <div class="mini" id="miniBoard"><!--static:miniBoard--><a class="r" href="https://www.ansa.it/sito/notizie/sport/calcio/2026/09/05/serie-a-roma-batte-atalanta-2-1-inter-rimonta-show-sul-napoli_13875323-af86-4332-ab96-7e6238be8afa.html" target="_blank" rel="noopener"><span class="st s-done">Fatto</span><span class="tt">Serie A:  Roma batte Atalanta 2-1 Inter rimonta-show sul Napoli</span></a><a class="r" href="https://www.ansa.it/sito/notizie/sport/calcio/2026/09/05/inter-vince-3-2-in-rimonta-con-il-napoli-con-una-doppietta-di-lautaro-martinez_f0786866-9862-46fc-b0c1-29d14f19c86c.html" target="_blank" rel="noopener"><span class="st s-done">Fatto</span><span class="tt">Serie A: Inter rimonta-show, Lautaro nel finale firma il 3-2 sul Napoli</span></a><a class="r" href="https://www.ansa.it/sito/notizie/sport/calcio/2026/09/05/inter-rimonta-show-lautaro-nel-finale-firma-il-3-2-sul-napoli_0a72c59a-3a55-4a1a-96cc-4b467690b4a9.html" target="_blank" rel="noopener"><span class="st s-done">Fatto</span><span class="tt">Inter rimonta-show, Lautaro nel finale firma il 3-2 sul Napoli</span></a><a class="r" href="https://www.corrieredellosport.it/news/calcio/serie-a/2026/09/05-151034730/allegri_la_beffa_totale_la_rimonta_folle_dell_inter_affonda_un_napoli_avanti_2-0_/" target="_blank" rel="noopener"><span class="st s-done">Fatto</span><span class="tt">Allegri, la beffa è totale: la rimonta folle dell&#x27;Inter affonda un Napoli avanti 2-0!</span></a><a class="r" href="https://www.corrieredellosport.it/news/calcio/serie-a/2026/09/05-151029473/inter-napoli_diretta_serie_a_segui_la_partita_di_oggi_live/" target="_blank" rel="noopener"><span class="st s-done">Fatto</span><span class="tt">Inter, una ripresa da pazzi: la doppietta di Lautaro e il gol di Thuram mandano in estasi Chivu. Al Napoli non basta un doppio vantaggio, Allegri al secondo ko di fila</span></a><a class="r" href="https://www.eurosport.it" target="_blank" rel="noopener"><span class="st s-done">Fatto</span><span class="tt">Live Juventus - Milan - Serie A: Punteggi &amp; Highlights Calcio - 06/09/2026</span></a><!--/static:miniBoard--></div>
-      <a href="board.html" class="cta" id="ctaBoard">Apri la board completa →</a>
+      <a href="/board.html" class="cta" id="ctaBoard">Tutte le notizie squadra per squadra →</a>
     </div>
     <div class="box">
-      <div class="hd" id="hdTop">🔥 Le più rilevanti</div>
+      <div class="hd" id="hdTop">Le più rilevanti</div>
       <div class="mini" id="topNews"><!--static:topNews--><a class="r" href="https://www.gazzetta.it/Calcio/Serie-A/Inter/05-09-2026/inter-napoli-live-diretta-serie-a-risultato-e-gol.shtml" target="_blank" rel="noopener"><span class="st s-obj">1</span><span class="tt">Inter-Napoli è pazzesca! Allegri scappa, la ThuLa fa tris e firma il ribaltone al 91&#x27;</span></a><a class="r" href="https://www.gazzetta.it/Calcio/Serie-A/Roma/05-09-2026/roma-atalanta-live-diretta-serie-a-risultato-e-gol.shtml" target="_blank" rel="noopener"><span class="st s-obj">2</span><span class="tt">Malen stecca? Fa niente, la Roma è infinita: Hermoso e Soulé la ribaltano in 3&#x27;, Atalanta ko al 93&#x27;</span></a><a class="r" href="https://sport.sky.it/calcio/serie-a/video/2026/09/05/roma-atalanta-sarri-intervista-video-1122356" target="_blank" rel="noopener"><span class="st s-obj">3</span><span class="tt">Roma-Atalanta, Sarri: &quot;Roma impressionante, noi stiamo crescendo&quot;</span></a><a class="r" href="https://sport.sky.it/calcio/serie-a/2026/09/05/juventus-milan-probabili-formazioni-3-giornata" target="_blank" rel="noopener"><span class="st s-obj">4</span><span class="tt">Le probabili formazioni di Juventus-Milan</span></a><a class="r" href="https://www.diretta.it/news/calcio-laliga-liga-le-partite-di-oggi-valencia-barcellona-guida-il-programma-domenicale/WIetJJ2e/" target="_blank" rel="noopener"><span class="st s-obj">5</span><span class="tt">Valencia-Barcellona guida la domenica della Liga: il programma completo</span></a><a class="r" href="https://www.gazzetta.it/Calcio/Serie-A/Inter/05-09-2026/chivu-dopo-inter-napoli-che-partita-bravo-l-arbitro-scontri-diretti-ero-stufo.shtml" target="_blank" rel="noopener"><span class="st s-obj">6</span><span class="tt">Chivu: &quot;Uno spot per la Serie A, bravi arbitro e il Napoli. Scontri diretti? Ero stufo, e adesso...&quot;</span></a><a class="r" href="https://www.diretta.it/news/liga-quarta-giornata-programma-completo-e-risultati/APdhRiyI/" target="_blank" rel="noopener"><span class="st s-obj">7</span><span class="tt">Liga, quarta giornata: l&#x27;Atlético Madrid crolla a Bilbao, più tardi Rayo e Villarreal</span></a><!--/static:topNews--></div>
     </div>
   </aside>
 </div>
-<div class="wrap">
-  <div class="strip" id="articoliStrip">
-    <h2 id="artH">📝 Articoli TransferBeat</h2>
-    <div class="sub" id="artSub"></div>
-    <div class="row4" id="articoliRow"><!--static:articoliRow--><div class="art"><a class="ph2link" href="/articoli/it/recap-2026-09-05.html"><div class="ph2" style="background:#0a9d57;display:grid;place-items:center"><span style="color:#fff;font-weight:800;font-size:22px;opacity:1">RECAP</span></div></a><div class="cat">Recap di giornata</div><h3><a href="/articoli/it/recap-2026-09-05.html">Inter a punteggio pieno, Fiorentina in crisi nera</a></h3><div class="credit">5 settembre 2026</div></div><div class="art"><a class="ph2link" href="/articoli/it/storia-liverpool-prima-vittoria.html"><div class="ph2" style="background:#c8102e;display:grid;place-items:center"><span style="color:#fff;font-weight:800;font-size:22px;opacity:1">LIV</span></div></a><div class="cat">Liverpool</div><h3><a href="/articoli/it/storia-liverpool-prima-vittoria.html">Liverpool, prima vittoria: la doppietta di Isak</a></h3><div class="credit">5 settembre 2026</div></div><div class="art"><a class="ph2link" href="/articoli/it/lunch-break-2026-09-05.html"><div class="ph2" style="background:#d98700;display:grid;place-items:center"><span style="color:#fff;font-weight:800;font-size:22px;opacity:1">LUNCH</span></div></a><div class="cat">Lunch break</div><h3><a href="/articoli/it/lunch-break-2026-09-05.html">Como in vetta, PSG ko: e stasera Inter-Napoli</a></h3><div class="credit">5 settembre 2026</div></div><div class="art"><a class="ph2link" href="/articoli/it/recap-2026-09-04.html"><div class="ph2" style="background:#0a9d57;display:grid;place-items:center"><span style="color:#fff;font-weight:800;font-size:22px;opacity:1">RECAP</span></div></a><div class="cat">Recap di giornata</div><h3><a href="/articoli/it/recap-2026-09-04.html">Ufficialità e Coppa Italia, stasera ripartono i campionati</a></h3><div class="credit">4 settembre 2026</div></div><div class="art"><a class="ph2link" href="/articoli/it/storia-roma-partenza.html"><div class="ph2" style="background:#8e1f2f;display:grid;place-items:center"><span style="color:#fff;font-weight:800;font-size:22px;opacity:1">ROM</span></div></a><div class="cat">Roma</div><h3><a href="/articoli/it/storia-roma-partenza.html">La Roma parte a razzo: prima in Serie A, Malen già a quota 5</a></h3><div class="credit">4 settembre 2026</div></div><div class="art"><a class="ph2link" href="/articoli/it/lunch-break-2026-09-04.html"><div class="ph2" style="background:#d98700;display:grid;place-items:center"><span style="color:#fff;font-weight:800;font-size:22px;opacity:1">LUNCH</span></div></a><div class="cat">Lunch break</div><h3><a href="/articoli/it/lunch-break-2026-09-04.html">Lunch Break: il campionato riparte, stasera Genoa-Como e PSG-Monaco</a></h3><div class="credit">4 settembre 2026</div></div><div class="art"><a class="ph2link" href="/articoli/it/recap-2026-09-03.html"><div class="ph2" style="background:#0a9d57;display:grid;place-items:center"><span style="color:#fff;font-weight:800;font-size:22px;opacity:1">RECAP</span></div></a><div class="cat">Recap di giornata</div><h3><a href="/articoli/it/recap-2026-09-03.html">Coppa Italia accende il giovedì, campionati pronti a ripartire</a></h3><div class="credit">3 settembre 2026</div></div><div class="art"><a class="ph2link" href="/articoli/it/lunch-break-2026-09-03.html"><div class="ph2" style="background:#d98700;display:grid;place-items:center"><span style="color:#fff;font-weight:800;font-size:22px;opacity:1">LUNCH</span></div></a><div class="cat">Lunch break</div><h3><a href="/articoli/it/lunch-break-2026-09-03.html">Lunch Break: campionati in pausa, stasera tocca a Liga e Ligue 1</a></h3><div class="credit">3 settembre 2026</div></div><!--/static:articoliRow--></div>
-  </div>
+<div class="strip" id="articoliStrip">
+  <h2 id="artH">Articoli TransferBeat</h2>
+  <div class="sub" id="artSub">Le nostre analisi su campionati e coppe, aggiornate di continuo</div>
+  <div class="row4" id="articoliRow"><!--static:articoliRow--><div class="art"><a class="ph2link" href="/articoli/it/recap-2026-09-05.html"><div class="ph2" style="background:#0a9d57;display:grid;place-items:center"><span style="color:#fff;font-weight:800;font-size:22px;opacity:1">RECAP</span></div></a><div class="cat">Recap di giornata</div><h3><a href="/articoli/it/recap-2026-09-05.html">Inter a punteggio pieno, Fiorentina in crisi nera</a></h3><div class="credit">5 settembre 2026</div></div><div class="art"><a class="ph2link" href="/articoli/it/storia-liverpool-prima-vittoria.html"><div class="ph2" style="background:#c8102e;display:grid;place-items:center"><span style="color:#fff;font-weight:800;font-size:22px;opacity:1">LIV</span></div></a><div class="cat">Liverpool</div><h3><a href="/articoli/it/storia-liverpool-prima-vittoria.html">Liverpool, prima vittoria: la doppietta di Isak</a></h3><div class="credit">5 settembre 2026</div></div><div class="art"><a class="ph2link" href="/articoli/it/lunch-break-2026-09-05.html"><div class="ph2" style="background:#d98700;display:grid;place-items:center"><span style="color:#fff;font-weight:800;font-size:22px;opacity:1">LUNCH</span></div></a><div class="cat">Lunch break</div><h3><a href="/articoli/it/lunch-break-2026-09-05.html">Como in vetta, PSG ko: e stasera Inter-Napoli</a></h3><div class="credit">5 settembre 2026</div></div><div class="art"><a class="ph2link" href="/articoli/it/recap-2026-09-04.html"><div class="ph2" style="background:#0a9d57;display:grid;place-items:center"><span style="color:#fff;font-weight:800;font-size:22px;opacity:1">RECAP</span></div></a><div class="cat">Recap di giornata</div><h3><a href="/articoli/it/recap-2026-09-04.html">Ufficialità e Coppa Italia, stasera ripartono i campionati</a></h3><div class="credit">4 settembre 2026</div></div><div class="art"><a class="ph2link" href="/articoli/it/storia-roma-partenza.html"><div class="ph2" style="background:#8e1f2f;display:grid;place-items:center"><span style="color:#fff;font-weight:800;font-size:22px;opacity:1">ROM</span></div></a><div class="cat">Roma</div><h3><a href="/articoli/it/storia-roma-partenza.html">La Roma parte a razzo: prima in Serie A, Malen già a quota 5</a></h3><div class="credit">4 settembre 2026</div></div><div class="art"><a class="ph2link" href="/articoli/it/lunch-break-2026-09-04.html"><div class="ph2" style="background:#d98700;display:grid;place-items:center"><span style="color:#fff;font-weight:800;font-size:22px;opacity:1">LUNCH</span></div></a><div class="cat">Lunch break</div><h3><a href="/articoli/it/lunch-break-2026-09-04.html">Lunch Break: il campionato riparte, stasera Genoa-Como e PSG-Monaco</a></h3><div class="credit">4 settembre 2026</div></div><div class="art"><a class="ph2link" href="/articoli/it/recap-2026-09-03.html"><div class="ph2" style="background:#0a9d57;display:grid;place-items:center"><span style="color:#fff;font-weight:800;font-size:22px;opacity:1">RECAP</span></div></a><div class="cat">Recap di giornata</div><h3><a href="/articoli/it/recap-2026-09-03.html">Coppa Italia accende il giovedì, campionati pronti a ripartire</a></h3><div class="credit">3 settembre 2026</div></div><div class="art"><a class="ph2link" href="/articoli/it/lunch-break-2026-09-03.html"><div class="ph2" style="background:#d98700;display:grid;place-items:center"><span style="color:#fff;font-weight:800;font-size:22px;opacity:1">LUNCH</span></div></a><div class="cat">Lunch break</div><h3><a href="/articoli/it/lunch-break-2026-09-03.html">Lunch Break: campionati in pausa, stasera tocca a Liga e Ligue 1</a></h3><div class="credit">3 settembre 2026</div></div><!--/static:articoliRow--></div>
 </div>
-<div class="wrap">
-  <div class="strip" id="squadre">
-    <h2>Squadre e competizioni</h2>
-    <div class="sub">Una pagina per ogni squadra con notizie, classifica, calendario e rosa; una per ogni competizione con classifica, risultati e marcatori</div>
-    <div class="sqbox"><!--static:squadre--><div class="sqlg"><b>Serie A</b> <a class="cl" href="/campionati/serie-a.html">classifica</a> · <a href="/squadre/inter.html">Inter</a> · <a href="/squadre/juventus.html">Juventus</a> · <a href="/squadre/milan.html">Milan</a> · <a href="/squadre/napoli.html">Napoli</a> · <a href="/squadre/roma.html">Roma</a> · <a href="/squadre/lazio.html">Lazio</a> · <a href="/squadre/atalanta.html">Atalanta</a> · <a href="/squadre/fiorentina.html">Fiorentina</a> · <a href="/squadre/bologna.html">Bologna</a> · <a href="/squadre/torino.html">Torino</a> · <a href="/squadre/genoa.html">Genoa</a> · <a href="/squadre/udinese.html">Udinese</a> · <a href="/squadre/cagliari.html">Cagliari</a> · <a href="/squadre/como.html">Como</a> · <a href="/squadre/lecce.html">Lecce</a> · <a href="/squadre/verona.html">Verona</a> · <a href="/squadre/parma.html">Parma</a> · <a href="/squadre/sassuolo.html">Sassuolo</a> · <a href="/squadre/cremonese.html">Cremonese</a> · <a href="/squadre/pisa.html">Pisa</a> · <a href="/squadre/frosinone.html">Frosinone</a> · <a href="/squadre/monza.html">Monza</a> · <a href="/squadre/venezia.html">Venezia</a></div><div class="sqlg"><b>Liga</b> <a class="cl" href="/campionati/liga.html">classifica</a> · <a href="/squadre/real-madrid.html">Real Madrid</a> · <a href="/squadre/barcelona.html">Barcelona</a> · <a href="/squadre/atletico-madrid.html">Atlético Madrid</a> · <a href="/squadre/athletic-club.html">Athletic Club</a> · <a href="/squadre/villarreal.html">Villarreal</a> · <a href="/squadre/real-betis.html">Real Betis</a> · <a href="/squadre/real-sociedad.html">Real Sociedad</a> · <a href="/squadre/sevilla.html">Sevilla</a> · <a href="/squadre/valencia.html">Valencia</a> · <a href="/squadre/celta-vigo.html">Celta Vigo</a> · <a href="/squadre/rayo-vallecano.html">Rayo Vallecano</a> · <a href="/squadre/osasuna.html">Osasuna</a> · <a href="/squadre/getafe.html">Getafe</a> · <a href="/squadre/espanyol.html">Espanyol</a> · <a href="/squadre/mallorca.html">Mallorca</a> · <a href="/squadre/alaves.html">Alavés</a> · <a href="/squadre/girona.html">Girona</a> · <a href="/squadre/levante.html">Levante</a> · <a href="/squadre/elche.html">Elche</a> · <a href="/squadre/real-oviedo.html">Real Oviedo</a> · <a href="/squadre/deportivo.html">Deportivo</a> · <a href="/squadre/racing-santander.html">Racing Santander</a> · <a href="/squadre/malaga.html">Málaga</a></div><div class="sqlg"><b>Premier League</b> <a class="cl" href="/campionati/premier-league.html">classifica</a> · <a href="/squadre/liverpool.html">Liverpool</a> · <a href="/squadre/arsenal.html">Arsenal</a> · <a href="/squadre/man-city.html">Man City</a> · <a href="/squadre/chelsea.html">Chelsea</a> · <a href="/squadre/man-united.html">Man United</a> · <a href="/squadre/tottenham.html">Tottenham</a> · <a href="/squadre/newcastle.html">Newcastle</a> · <a href="/squadre/aston-villa.html">Aston Villa</a> · <a href="/squadre/brighton.html">Brighton</a> · <a href="/squadre/west-ham.html">West Ham</a> · <a href="/squadre/crystal-palace.html">Crystal Palace</a> · <a href="/squadre/bournemouth.html">Bournemouth</a> · <a href="/squadre/brentford.html">Brentford</a> · <a href="/squadre/fulham.html">Fulham</a> · <a href="/squadre/wolves.html">Wolves</a> · <a href="/squadre/everton.html">Everton</a> · <a href="/squadre/nottingham-forest.html">Nottingham Forest</a> · <a href="/squadre/leeds.html">Leeds</a> · <a href="/squadre/burnley.html">Burnley</a> · <a href="/squadre/sunderland.html">Sunderland</a> · <a href="/squadre/hull-city.html">Hull City</a> · <a href="/squadre/ipswich-town.html">Ipswich Town</a> · <a href="/squadre/coventry-city.html">Coventry City</a></div><div class="sqlg"><b>Coppe e altri campionati</b> · <a href="/campionati/champions-league.html">Champions League</a> · <a href="/campionati/bundesliga.html">Bundesliga</a> · <a href="/campionati/ligue-1.html">Ligue 1</a> · <a class="cl" href="/squadre/">tutte le squadre →</a> · <a class="cl" href="/fantacalcio/">fantacalcio: listone, voti e titolari</a></div><!--/static:squadre--></div>
-  </div>
+<div class="strip" id="squadre">
+  <h2>Squadre, competizioni e giocatori</h2>
+  <div class="sub">Una pagina per ogni squadra con notizie, classifica, calendario e rosa; una per ogni competizione con classifica, risultati e marcatori; una scheda per ogni giocatore di Serie A.</div>
+  <div class="sqbox"><!--static:squadre--><div class="sqlg"><b>Serie A</b> <a class="cl" href="/campionati/serie-a.html">classifica</a> · <a href="/squadre/inter.html">Inter</a> · <a href="/squadre/juventus.html">Juventus</a> · <a href="/squadre/milan.html">Milan</a> · <a href="/squadre/napoli.html">Napoli</a> · <a href="/squadre/roma.html">Roma</a> · <a href="/squadre/lazio.html">Lazio</a> · <a href="/squadre/atalanta.html">Atalanta</a> · <a href="/squadre/fiorentina.html">Fiorentina</a> · <a href="/squadre/bologna.html">Bologna</a> · <a href="/squadre/torino.html">Torino</a> · <a href="/squadre/genoa.html">Genoa</a> · <a href="/squadre/udinese.html">Udinese</a> · <a href="/squadre/cagliari.html">Cagliari</a> · <a href="/squadre/como.html">Como</a> · <a href="/squadre/lecce.html">Lecce</a> · <a href="/squadre/verona.html">Verona</a> · <a href="/squadre/parma.html">Parma</a> · <a href="/squadre/sassuolo.html">Sassuolo</a> · <a href="/squadre/cremonese.html">Cremonese</a> · <a href="/squadre/pisa.html">Pisa</a> · <a href="/squadre/frosinone.html">Frosinone</a> · <a href="/squadre/monza.html">Monza</a> · <a href="/squadre/venezia.html">Venezia</a></div><div class="sqlg"><b>Liga</b> <a class="cl" href="/campionati/liga.html">classifica</a> · <a href="/squadre/real-madrid.html">Real Madrid</a> · <a href="/squadre/barcelona.html">Barcelona</a> · <a href="/squadre/atletico-madrid.html">Atlético Madrid</a> · <a href="/squadre/athletic-club.html">Athletic Club</a> · <a href="/squadre/villarreal.html">Villarreal</a> · <a href="/squadre/real-betis.html">Real Betis</a> · <a href="/squadre/real-sociedad.html">Real Sociedad</a> · <a href="/squadre/sevilla.html">Sevilla</a> · <a href="/squadre/valencia.html">Valencia</a> · <a href="/squadre/celta-vigo.html">Celta Vigo</a> · <a href="/squadre/rayo-vallecano.html">Rayo Vallecano</a> · <a href="/squadre/osasuna.html">Osasuna</a> · <a href="/squadre/getafe.html">Getafe</a> · <a href="/squadre/espanyol.html">Espanyol</a> · <a href="/squadre/mallorca.html">Mallorca</a> · <a href="/squadre/alaves.html">Alavés</a> · <a href="/squadre/girona.html">Girona</a> · <a href="/squadre/levante.html">Levante</a> · <a href="/squadre/elche.html">Elche</a> · <a href="/squadre/real-oviedo.html">Real Oviedo</a> · <a href="/squadre/deportivo.html">Deportivo</a> · <a href="/squadre/racing-santander.html">Racing Santander</a> · <a href="/squadre/malaga.html">Málaga</a></div><div class="sqlg"><b>Premier League</b> <a class="cl" href="/campionati/premier-league.html">classifica</a> · <a href="/squadre/liverpool.html">Liverpool</a> · <a href="/squadre/arsenal.html">Arsenal</a> · <a href="/squadre/man-city.html">Man City</a> · <a href="/squadre/chelsea.html">Chelsea</a> · <a href="/squadre/man-united.html">Man United</a> · <a href="/squadre/tottenham.html">Tottenham</a> · <a href="/squadre/newcastle.html">Newcastle</a> · <a href="/squadre/aston-villa.html">Aston Villa</a> · <a href="/squadre/brighton.html">Brighton</a> · <a href="/squadre/west-ham.html">West Ham</a> · <a href="/squadre/crystal-palace.html">Crystal Palace</a> · <a href="/squadre/bournemouth.html">Bournemouth</a> · <a href="/squadre/brentford.html">Brentford</a> · <a href="/squadre/fulham.html">Fulham</a> · <a href="/squadre/wolves.html">Wolves</a> · <a href="/squadre/everton.html">Everton</a> · <a href="/squadre/nottingham-forest.html">Nottingham Forest</a> · <a href="/squadre/leeds.html">Leeds</a> · <a href="/squadre/burnley.html">Burnley</a> · <a href="/squadre/sunderland.html">Sunderland</a> · <a href="/squadre/hull-city.html">Hull City</a> · <a href="/squadre/ipswich-town.html">Ipswich Town</a> · <a href="/squadre/coventry-city.html">Coventry City</a></div><div class="sqlg"><b>Coppe e altri campionati</b> · <a href="/campionati/champions-league.html">Champions League</a> · <a href="/campionati/bundesliga.html">Bundesliga</a> · <a href="/campionati/ligue-1.html">Ligue 1</a> · <a class="cl" href="/squadre/">tutte le squadre →</a> · <a class="cl" href="/giocatori/">schede giocatore</a> · <a class="cl" href="/fantacalcio/">fantacalcio: probabili, voti, listone e infortunati</a></div><!--/static:squadre--></div>
+  <p class="sqmore"><b>Giocatori di Serie A:</b> <a href="/giocatori/">tutte le schede con statistiche e voti</a> · <a href="/fantacalcio/listone.html">listone con le quotazioni</a> · <a href="/fantacalcio/probabili-formazioni.html">probabili formazioni</a></p>
 </div>
-<div class="wrap">
-  <div class="strip" id="world">
-    <h2 id="worldH">Dal mondo <span class="flag" id="worldFlag">🌍 Worldwide</span></h2>
-    <div class="sub" id="worldSub"></div>
-    <div class="row4" id="worldRow"><!--static:worldRow--><div class="art"><a class="ph2link" href="https://napoli.repubblica.it/sport/2026/09/06/news/mercoledi_torna_la_champions_league_al_maradona_55000_tifosi_per_l_arsenal_di_arteta-425567911/" target="_blank" rel="noopener"><div class="ph2"><img src="https://www.repstatic.it/content/localirep/img/rep-napoli/2026/09/06/081944684-3d39cf7b-c4dd-4b9b-82b6-0b53f274511e.jpg" loading="lazy" alt=""></div></a><div class="cat">Champions League</div><h3><a href="https://napoli.repubblica.it/sport/2026/09/06/news/mercoledi_torna_la_champions_league_al_maradona_55000_tifosi_per_l_arsenal_di_arteta-425567911/" target="_blank" rel="noopener">Mercoledì torna la Champions League: al Maradona 55.000 tifosi per l’Arsenal di Arteta</a></h3><div class="credit">Fonte: <a href="https://napoli.repubblica.it/sport/2026/09/06/news/mercoledi_torna_la_champions_league_al_maradona_55000_tifosi_per_l_arsenal_di_arteta-425567911/" target="_blank" rel="noopener">la Repubblica</a> · <span class="ago">poco fa</span></div></div><div class="art"><a class="ph2link" href="https://www.corrieredellosport.it/news/calcio/calcio-estero/2026/09/05-151039432/vlahovic_decisivo_in_fenerbahce-besiktas_vince_italiano_roma_spettatrice_interessata" target="_blank" rel="noopener"><div class="ph2"><img src="https://cdn.corrieredellosport.it/images/2026/09/05/190612322-186f6ae1-7691-496e-8807-d5fbfd3e80ff.jpg" loading="lazy" alt=""></div></a><div class="cat">Europa League</div><h3><a href="https://www.corrieredellosport.it/news/calcio/calcio-estero/2026/09/05-151039432/vlahovic_decisivo_in_fenerbahce-besiktas_vince_italiano_roma_spettatrice_interessata" target="_blank" rel="noopener">Vlahovic decisivo in Fenerbahce-Besiktas, vince Italiano: Roma spettatrice interessata</a></h3><div class="credit">Fonte: <a href="https://www.corrieredellosport.it/news/calcio/calcio-estero/2026/09/05-151039432/vlahovic_decisivo_in_fenerbahce-besiktas_vince_italiano_roma_spettatrice_interessata" target="_blank" rel="noopener">corrieredellosport.it</a> · <span class="ago">12 ore fa</span></div></div><div class="art"><a class="ph2link" href="https://www.tio.ch/sport/calcio/1948217/stella-rossa-punita-dall-uefa" target="_blank" rel="noopener"><div class="ph2"><img src="https://media.tio.ch/files/domains/tio.ch/images/4cc1/f_-la-stella-rossa-arrivera-a-lugano-senza-i-suoi-tifosi-1oeqp.jpg" loading="lazy" alt=""></div></a><div class="cat">Conference League</div><h3><a href="https://www.tio.ch/sport/calcio/1948217/stella-rossa-punita-dall-uefa" target="_blank" rel="noopener">Stella Rossa punita dall&#x27;Uefa</a></h3><div class="credit">Fonte: <a href="https://www.tio.ch/sport/calcio/1948217/stella-rossa-punita-dall-uefa" target="_blank" rel="noopener">Ticinonline</a> · <span class="ago">19 ore fa</span></div></div><div class="art"><a class="ph2link" href="https://www.gazzetta.it/Calcio/Serie-A/06-09-2026/le-partite-di-oggi-serie-a-serie-b-premier-league-liga-ligue-1-e-bundesliga.shtml" target="_blank" rel="noopener"><div class="ph2"><img src="https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/09/04/6a9ab3fe6fbf9.jpeg" loading="lazy" alt=""></div></a><div class="cat">Bundesliga</div><h3><a href="https://www.gazzetta.it/Calcio/Serie-A/06-09-2026/le-partite-di-oggi-serie-a-serie-b-premier-league-liga-ligue-1-e-bundesliga.shtml" target="_blank" rel="noopener">Le partite di oggi: Juve-Milan alle 20:45. Poi Serie B, Premier, Liga, Ligue 1 e Bundesliga</a></h3><div class="credit">Fonte: <a href="https://www.gazzetta.it/Calcio/Serie-A/06-09-2026/le-partite-di-oggi-serie-a-serie-b-premier-league-liga-ligue-1-e-bundesliga.shtml" target="_blank" rel="noopener">La Gazzetta dello Sport</a> · <span class="ago">poco fa</span></div></div><!--/static:worldRow--></div>
-  </div>
+<div class="strip" id="world">
+  <h2 id="worldH">Dal mondo <span class="flag" id="worldFlag">Worldwide</span></h2>
+  <div class="sub" id="worldSub">Le notizie di calcio da tutti i continenti, oltre il mercato</div>
+  <div class="row4" id="worldRow"><!--static:worldRow--><div class="art"><a class="ph2link" href="https://napoli.repubblica.it/sport/2026/09/06/news/mercoledi_torna_la_champions_league_al_maradona_55000_tifosi_per_l_arsenal_di_arteta-425567911/" target="_blank" rel="noopener"><div class="ph2"><img src="https://www.repstatic.it/content/localirep/img/rep-napoli/2026/09/06/081944684-3d39cf7b-c4dd-4b9b-82b6-0b53f274511e.jpg" loading="lazy" alt=""></div></a><div class="cat">Champions League</div><h3><a href="https://napoli.repubblica.it/sport/2026/09/06/news/mercoledi_torna_la_champions_league_al_maradona_55000_tifosi_per_l_arsenal_di_arteta-425567911/" target="_blank" rel="noopener">Mercoledì torna la Champions League: al Maradona 55.000 tifosi per l’Arsenal di Arteta</a></h3><div class="credit">Fonte: <a href="https://napoli.repubblica.it/sport/2026/09/06/news/mercoledi_torna_la_champions_league_al_maradona_55000_tifosi_per_l_arsenal_di_arteta-425567911/" target="_blank" rel="noopener">la Repubblica</a> · <span class="ago">poco fa</span></div></div><div class="art"><a class="ph2link" href="https://www.corrieredellosport.it/news/calcio/calcio-estero/2026/09/05-151039432/vlahovic_decisivo_in_fenerbahce-besiktas_vince_italiano_roma_spettatrice_interessata" target="_blank" rel="noopener"><div class="ph2"><img src="https://cdn.corrieredellosport.it/images/2026/09/05/190612322-186f6ae1-7691-496e-8807-d5fbfd3e80ff.jpg" loading="lazy" alt=""></div></a><div class="cat">Europa League</div><h3><a href="https://www.corrieredellosport.it/news/calcio/calcio-estero/2026/09/05-151039432/vlahovic_decisivo_in_fenerbahce-besiktas_vince_italiano_roma_spettatrice_interessata" target="_blank" rel="noopener">Vlahovic decisivo in Fenerbahce-Besiktas, vince Italiano: Roma spettatrice interessata</a></h3><div class="credit">Fonte: <a href="https://www.corrieredellosport.it/news/calcio/calcio-estero/2026/09/05-151039432/vlahovic_decisivo_in_fenerbahce-besiktas_vince_italiano_roma_spettatrice_interessata" target="_blank" rel="noopener">corrieredellosport.it</a> · <span class="ago">12 ore fa</span></div></div><div class="art"><a class="ph2link" href="https://www.tio.ch/sport/calcio/1948217/stella-rossa-punita-dall-uefa" target="_blank" rel="noopener"><div class="ph2"><img src="https://media.tio.ch/files/domains/tio.ch/images/4cc1/f_-la-stella-rossa-arrivera-a-lugano-senza-i-suoi-tifosi-1oeqp.jpg" loading="lazy" alt=""></div></a><div class="cat">Conference League</div><h3><a href="https://www.tio.ch/sport/calcio/1948217/stella-rossa-punita-dall-uefa" target="_blank" rel="noopener">Stella Rossa punita dall&#x27;Uefa</a></h3><div class="credit">Fonte: <a href="https://www.tio.ch/sport/calcio/1948217/stella-rossa-punita-dall-uefa" target="_blank" rel="noopener">Ticinonline</a> · <span class="ago">19 ore fa</span></div></div><div class="art"><a class="ph2link" href="https://www.gazzetta.it/Calcio/Serie-A/06-09-2026/le-partite-di-oggi-serie-a-serie-b-premier-league-liga-ligue-1-e-bundesliga.shtml" target="_blank" rel="noopener"><div class="ph2"><img src="https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2026/09/04/6a9ab3fe6fbf9.jpeg" loading="lazy" alt=""></div></a><div class="cat">Bundesliga</div><h3><a href="https://www.gazzetta.it/Calcio/Serie-A/06-09-2026/le-partite-di-oggi-serie-a-serie-b-premier-league-liga-ligue-1-e-bundesliga.shtml" target="_blank" rel="noopener">Le partite di oggi: Juve-Milan alle 20:45. Poi Serie B, Premier, Liga, Ligue 1 e Bundesliga</a></h3><div class="credit">Fonte: <a href="https://www.gazzetta.it/Calcio/Serie-A/06-09-2026/le-partite-di-oggi-serie-a-serie-b-premier-league-liga-ligue-1-e-bundesliga.shtml" target="_blank" rel="noopener">La Gazzetta dello Sport</a> · <span class="ago">poco fa</span></div></div><!--/static:worldRow--></div>
 </div>
-<footer><div class="wrap row"><div id="footL"><b style="color:var(--txt)">TransferBeat</b> — Il giornale del calcio</div><div id="footR">Aggiornamenti automatici ogni 2 ore · ultim’ora in tempo reale</div></div></footer>
-<nav class="tb-sitelinks" aria-label="Sezioni" style="border-top:1px solid #e2e6ea;margin-top:8px;padding:16px 18px;font-size:12px;display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center"><a href="https://transferbeat.com/" style="color:#67727e">Home</a><a href="https://transferbeat.com/articoli/it/" style="color:#67727e">Articoli</a><a href="https://transferbeat.com/articoli/en/" style="color:#67727e">Articles (EN)</a><a href="https://transferbeat.com/articoli/es/" style="color:#67727e">Artículos (ES)</a><a href="https://transferbeat.com/board.html" style="color:#67727e">Live board</a><a href="https://transferbeat.com/campionati.html" style="color:#67727e">Campionati</a><a href="https://transferbeat.com/squadre/" style="color:#67727e">Squadre</a><a href="https://transferbeat.com/fantacalcio/" style="color:#67727e">Fantacalcio</a><a href="https://transferbeat.com/mondiali.html" style="color:#67727e">Archivio Mondiale 2026</a><a href="https://transferbeat.com/fonti.html" style="color:#67727e">Fonti</a><a href="https://transferbeat.com/chi-siamo.html" style="color:#67727e">Chi siamo</a><a href="https://transferbeat.com/fanta/" style="color:#67727e">FantaTB</a></nav>
-
-
+</main>
+<!--shell:footer--><footer class="foot"><div class="wrap"><div class="cols"><div><p class="ft">Sezioni</p><ul><li><a href="/board.html">Notizie</a></li><li><a href="/campionati/">Campionati</a></li><li><a href="/squadre/">Squadre</a></li><li><a href="/giocatori/">Giocatori</a></li><li><a href="/fantacalcio/">Fantacalcio</a></li><li><a href="/articoli/it/">Articoli</a></li></ul></div><div><p class="ft">Fantacalcio</p><ul><li><a href="/fantacalcio/">Panoramica</a></li><li><a href="/fantacalcio/probabili-formazioni.html">Probabili formazioni</a></li><li><a href="/fantacalcio/voti.html">Voti</a></li><li><a href="/fantacalcio/listone.html">Listone</a></li><li><a href="/fantacalcio/titolari.html">Infortunati e squalificati</a></li><li><a href="/fantacalcio/regolamento.html">Regolamento</a></li><li><a href="/fantacalcio/guida-asta.html">Guida all&#x27;asta</a></li><li><a href="/fantatb.html">Gioca a FantaTB</a></li></ul></div><div><p class="ft">TransferBeat</p><ul><li><a href="/chi-siamo.html">Chi siamo</a></li><li><a href="/fonti.html">Fonti</a></li><li><a href="/fantacalcio/listone.html#dati">Dati aperti</a></li><li><a href="/articoli/en/">Articles (EN)</a></li><li><a href="/articoli/es/">Artículos (ES)</a></li><li><a href="/mondiali.html">Archivio Mondiale 2026</a></li></ul></div></div><p class="copy">© TransferBeat · le notizie citano sempre la testata originale · non affiliato a Fantacalcio®</p></div></footer><!--/shell:footer-->
 <script>
 const STRINGS={
- it:{home:'Home',live:'Live',breaking:'ULTIM’ORA',tagline:'Il giornale del calcio mondiale',edition:'Edizione delle',featured:'IN PRIMO PIANO',liveToday:'Campionati Live · oggi',openBoard:'Apri la board completa →',top:'🔥 Le più rilevanti',worldH:'Dal mondo',worldSub:'Le notizie di calcio da tutti i continenti, oltre il mercato',footL:'TransferBeat — Il giornale del calcio mondiale',footR:'Aggiornamenti automatici ogni 2 ore · ultim’ora in tempo reale',source:'Fonte',updatedAt:'aggiornato alle',champ:'Champions',nat:'Nazionali',world:'Mondo',err:'<b>Dati non caricati.</b> Apri il sito tramite un server (o GitHub/Vercel), non con doppio clic. In locale: <code>python -m http.server</code>',mini:{done:'Fatta',conf:'Conf.',obj:'Obiett.',rumor:'Rumor'}},
- en:{home:'Home',live:'Live',breaking:'BREAKING',tagline:'The home of world football',edition:'Edition of',featured:'FEATURED',liveToday:'Leagues Live · today',openBoard:'Open full board →',top:'🔥 Most relevant',worldH:'Around the world',worldSub:'Football news from every continent, beyond the transfer market',footL:'TransferBeat — The home of world football',footR:'Auto-updates every 2 hours · breaking news in real time',source:'Source',updatedAt:'updated at',champ:'Champions',nat:'National teams',world:'World',err:'<b>Data not loaded.</b> Open the site via a server (or GitHub/Vercel), not by double-clicking. Locally: <code>python -m http.server</code>',mini:{done:'Done',conf:'Agreed',obj:'Target',rumor:'Rumour'}},
- es:{home:'Inicio',live:'En vivo',breaking:'ÚLTIMA HORA',tagline:'El diario del fútbol mundial',edition:'Edición de las',featured:'DESTACADO',liveToday:'Ligas en vivo · hoy',openBoard:'Abrir la board completa →',top:'🔥 Lo más relevante',worldH:'Desde el mundo',worldSub:'Noticias de fútbol de todos los continentes, más allá del mercado',footL:'TransferBeat — El diario del fútbol mundial',footR:'Actualización automática 3×/día · 08:00 · 12:00 · 20:00',source:'Fuente',updatedAt:'actualizado a las',champ:'Champions',nat:'Selecciones',world:'Mundo',err:'<b>Datos no cargados.</b> Abre el sitio con un servidor (o GitHub/Vercel), no con doble clic. En local: <code>python -m http.server</code>',mini:{done:'Cerrado',conf:'Acuerdo',obj:'Objetivo',rumor:'Rumor'}}
+ it:{breaking:'ULTIM’ORA',tagline:'Il giornale del calcio mondiale',edition:'Edizione delle',featured:'IN PRIMO PIANO',liveToday:'Campionati live · oggi',openBoard:'Tutte le notizie squadra per squadra →',top:'Le più rilevanti',worldH:'Dal mondo',worldSub:'Le notizie di calcio da tutti i continenti, oltre il mercato',source:'Fonte',updatedAt:'aggiornato alle',err:'<b>Dati non caricati.</b> Apri il sito tramite un server (o GitHub/Vercel), non con doppio clic. In locale: <code>python -m http.server</code>',mini:{done:'Fatta',conf:'Conf.',obj:'Obiett.',rumor:'Rumor'}},
+ en:{breaking:'BREAKING',tagline:'The home of world football',edition:'Edition of',featured:'FEATURED',liveToday:'Leagues live · today',openBoard:'All the news, club by club →',top:'Most relevant',worldH:'Around the world',worldSub:'Football news from every continent, beyond the transfer market',source:'Source',updatedAt:'updated at',err:'<b>Data not loaded.</b> Open the site via a server (or GitHub/Vercel), not by double-clicking. Locally: <code>python -m http.server</code>',mini:{done:'Done',conf:'Agreed',obj:'Target',rumor:'Rumour'}},
+ es:{breaking:'ÚLTIMA HORA',tagline:'El diario del fútbol mundial',edition:'Edición de las',featured:'DESTACADO',liveToday:'Ligas en vivo · hoy',openBoard:'Todas las noticias, equipo por equipo →',top:'Lo más relevante',worldH:'Desde el mundo',worldSub:'Noticias de fútbol de todos los continentes, más allá del mercado',source:'Fuente',updatedAt:'actualizado a las',err:'<b>Datos no cargados.</b> Abre el sitio con un servidor (o GitHub/Vercel), no con doble clic. En local: <code>python -m http.server</code>',mini:{done:'Cerrado',conf:'Acuerdo',obj:'Objetivo',rumor:'Rumor'}}
 };
 const PARAMS=new URLSearchParams(location.search);
 let lang=(PARAMS.get('lang')||localStorage.getItem('tb_lang')||'it').toLowerCase();
@@ -193,33 +276,31 @@ localStorage.setItem('tb_lang',lang);
 document.documentElement.lang=lang;
 const T=STRINGS[lang];
 const stCls={done:'s-done',conf:'s-conf',obj:'s-obj',rumor:'s-rumor'};
-const stColor={rumor:'#d98700',obj:'#d98700',conf:'#7b46c9',done:'#0a9d57'};
-const RECAP_I18N={it:'RECAP DI GIORNATA',en:'DAILY RECAP',es:'RESUMEN DEL D\u00cdA'};
+const stColor={rumor:'#946200',obj:'#946200',conf:'#7b46c9',done:'#0b7a45'};
 const ART_FMT={
-  recap:{cover:'img/cover-recap.svg',col:'#0a9d57',label:{it:'RECAP DI GIORNATA',en:'DAILY RECAP',es:'RESUMEN DEL D\u00cdA'}},
-  lunch:{cover:'img/cover-lunch.svg',col:'#d98700',label:{it:'LUNCH BREAK',en:'LUNCH BREAK',es:'LUNCH BREAK'}},
-  storia:{cover:'img/cover-storia.svg',col:'#1f6fd6',label:{it:'FOCUS',en:'FOCUS',es:'FOCO'}},
-  scoop:{cover:'img/cover-scoop.svg',col:'#e0392b',label:{it:'SCOOP',en:'SCOOP',es:'SCOOP'}},
-  notti:{cover:'img/cover-notti.svg',col:'#21366e',label:{it:'NOTTI MONDIALI',en:'WORLD CUP NIGHTS',es:'NOCHES MUNDIALES'}}
+  recap:{cover:'/img/cover-recap.svg',col:'#0a9d57',label:{it:'RECAP DI GIORNATA',en:'DAILY RECAP',es:'RESUMEN DEL DÍA'}},
+  lunch:{cover:'/img/cover-lunch.svg',col:'#d98700',label:{it:'LUNCH BREAK',en:'LUNCH BREAK',es:'LUNCH BREAK'}},
+  storia:{cover:'/img/cover-storia.svg',col:'#1f6fd6',label:{it:'FOCUS',en:'FOCUS',es:'FOCO'}},
+  scoop:{cover:'/img/cover-scoop.svg',col:'#e0392b',label:{it:'SCOOP',en:'SCOOP',es:'SCOOP'}},
+  notti:{cover:'/img/cover-notti.svg',col:'#21366e',label:{it:'NOTTI MONDIALI',en:'WORLD CUP NIGHTS',es:'NOCHES MUNDIALES'}}
 };
-const NAVART_I18N={it:'Articoli',en:'Articles',es:'Art\u00edculos'};
-const MOND_I18N={it:'Mondiale',en:'World Cup',es:'Mundial'};
-(function(){const nc=document.getElementById('navCampionati');if(nc){nc.textContent={it:'Campionati',en:'Leagues',es:'Ligas'}[lang];nc.href='campionati.html';}const na=document.getElementById('navArticoli');if(na){na.textContent=NAVART_I18N[lang];na.href='articoli/'+lang+'/';}const nm=document.getElementById('navMondiale');if(nm){nm.textContent=MOND_I18N[lang];nm.href='mondiali.html';}})();
 let ART={}, ARTLIST=[];
-const ART_I18N={it:{h:'📝 Articoli TransferBeat',s:'Le nostre analisi su campionati e coppe, aggiornate di continuo'},
-                en:{h:'📝 TransferBeat Articles',s:'Our take on leagues and cups, continuously updated'},
-                es:{h:'📝 Artículos TransferBeat',s:'Nuestro análisis de ligas y copas, al día'}};
-function artUrl(slug){return 'articoli/'+lang+'/'+slug+'.html';}
+const ART_I18N={it:{h:'Articoli TransferBeat',s:'Le nostre analisi su campionati e coppe, aggiornate di continuo'},
+                en:{h:'TransferBeat Articles',s:'Our take on leagues and cups, continuously updated'},
+                es:{h:'Artículos TransferBeat',s:'Nuestro análisis de ligas y copas, al día'}};
+// imposta il testo di un elemento solo se esiste (la testata e il footer sono nel guscio statico)
+function setText(id,txt){const e=document.getElementById(id);if(e)e.textContent=txt;}
+function artUrl(slug){return '/articoli/'+lang+'/'+slug+'.html';}
 function loadArticles(){
-  fetch('data/articles/index.json?t='+Date.now()).then(r=>r.ok?r.json():null).then(d=>{
+  fetch('/data/articles/index.json?t='+Date.now()).then(r=>r.ok?r.json():null).then(d=>{
     if(!d||!d.articoli)return;
     ART={}; ARTLIST=d.articoli; d.articoli.forEach(a=>ART[a.slug]=a);
     const row=document.getElementById('articoliRow'), strip=document.getElementById('articoliStrip');
     if(ARTLIST.length&&row){
-      document.getElementById('artH').textContent=ART_I18N[lang].h;
-      document.getElementById('artSub').textContent=ART_I18N[lang].s;
+      setText('artH',ART_I18N[lang].h);
+      setText('artSub',ART_I18N[lang].s);
       row.innerHTML=ARTLIST.slice(0,8).map(a=>{
-        const col=a.smentita?'#e0392b':(stColor[a.stato]||'#67727e');
+        const col=a.smentita?'#c9302c':(stColor[a.stato]||'#5b6670');
         const titolo=(a.t&&a.t[lang])||a.giocatore||'';
         return `<div class="art"><a class="ph2link" href="${artUrl(a.slug)}"><div class="ph2" style="background:${a.col||'#0a9d57'};display:grid;place-items:center"><span style="color:#fff;font-weight:800;font-size:22px">${a.lab||'TB'}</span></div></a>
           <div class="cat">${a.team||''}</div>
@@ -233,24 +314,17 @@ function loadArticles(){
 loadArticles();
 
 function applyStatic(){
-  document.getElementById('tkLab').textContent=T.breaking;
-  document.getElementById('navHome').textContent=T.home;
-  document.getElementById('navLive').innerHTML='<span class="liveDot"></span>'+T.live;
-  const blink=(id,lega)=>{const a=document.getElementById(id);if(a)a.href='board.html?lega='+encodeURIComponent(lega);};
-  blink('navSA','Serie A'); blink('navPL','Premier'); blink('navLL','La Liga');
-  document.getElementById('navWorld').textContent=T.world;
-  document.getElementById('hdLive').textContent=T.liveToday;
-  document.getElementById('ctaBoard').textContent=T.openBoard;
-  document.getElementById('hdTop').textContent=T.top;
-  document.getElementById('worldH').innerHTML=T.worldH+' <span class="flag">🌍 Worldwide</span>';
-  document.getElementById('worldSub').textContent=T.worldSub;
-  document.getElementById('footL').innerHTML='<b style="color:var(--txt)">TransferBeat</b> — '+T.tagline;
-  document.getElementById('footR').textContent=T.footR;
+  setText('tkLab',T.breaking);
+  setText('hdLive',T.liveToday);
+  setText('ctaBoard',T.openBoard);
+  setText('hdTop',T.top);
+  const wh=document.getElementById('worldH'); if(wh)wh.innerHTML=T.worldH+' <span class="flag">Worldwide</span>';
+  setText('worldSub',T.worldSub);
 }
 applyStatic();
 Promise.all([
-  fetch('data/'+lang+'/home.json').then(r=>{if(!r.ok)throw 0;return r.json();}),
-  fetch('data/'+lang+'/board.json').then(r=>r.ok?r.json():null).catch(()=>null)
+  fetch('/data/'+lang+'/home.json').then(r=>{if(!r.ok)throw 0;return r.json();}),
+  fetch('/data/'+lang+'/board.json').then(r=>r.ok?r.json():null).catch(()=>null)
 ]).then(([home,board])=>render(home,board))
  .catch(()=>{document.getElementById('error').innerHTML='<div class="err">'+T.err+'</div>';});
 
@@ -268,17 +342,17 @@ function loadUltimora(){
       return (i.slug&&ART[i.slug])?`<a class="r" href="${artUrl(i.slug)}">${inner}</a>`:`<a class="r" href="${i.link||'#'}" target="_blank" rel="noopener">${inner}</a>`;
     }).join('');
     const tk=document.getElementById('ticker');
-    if(tk){const t=items.map(i=>`<span>🔴 ${i.fonte}: ${i.titolo}</span>`);tk.innerHTML=[...t,...t].join('');}
+    if(tk){const t=items.map(i=>`<span>${i.fonte}: ${i.titolo}</span>`);tk.innerHTML=[...t,...t].join('');}
   }).catch(()=>{});
 }
 loadUltimora(); setInterval(loadUltimora,60000);
 
 function slideNews(a){
-  const heroImg=a.img?`<img src="${a.img}" alt="" onerror="this.style.display='none'">`:`<div class="ico">⚽</div>`;
+  const heroImg=a.img?`<img src="${a.img}" alt="" onerror="this.style.display='none'">`:`<div class="ico">TB</div>`;
   return `<a class="ph" href="${a.link||'#'}" target="_blank" rel="noopener" style="display:grid">${heroImg}<span class="badge">${T.featured}</span></a>
      <div class="kicker">${a.categoria||''}</div>
      <h2 class="hh"><a href="${a.link||'#'}" target="_blank" rel="noopener">${a.titolo||''}</a></h2>
-     <div class="by">${T.updatedAt} ${window._apTime||''} · ${T.source}: <a href="${a.link||'#'}" target="_blank" rel="noopener" style="color:var(--accent2);font-weight:600">${a.fonte||'—'}</a>${a.dominio?' ('+a.dominio+')':''}</div>`;
+     <div class="by">${T.updatedAt} ${window._apTime||''} · ${T.source}: <a href="${a.link||'#'}" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600">${a.fonte||'—'}</a>${a.dominio?' ('+a.dominio+')':''}</div>`;
 }
 function slideArticle(r){
   const url=artUrl(r.slug);
@@ -305,8 +379,8 @@ function renderHero(){
     el.innerHTML=slides[i];
     if(slides.length<2)return;
     const nav=document.createElement('div'); nav.className='hnav';
-    nav.innerHTML=`<button class="harrow hprev" aria-label="precedente">\u2039</button>`
-      +`<button class="harrow hnext" aria-label="successiva">\u203a</button>`
+    nav.innerHTML=`<button class="harrow hprev" aria-label="precedente">‹</button>`
+      +`<button class="harrow hnext" aria-label="successiva">›</button>`
       +`<div class="hdots">`+slides.map((_,k)=>`<button class="hdot${k===i?' on':''}" data-k="${k}" aria-label="slide ${k+1}"></button>`).join('')+`</div>`;
     el.appendChild(nav);
     nav.querySelector('.hprev').onclick=()=>go(i-1,true);
@@ -324,21 +398,21 @@ function render(home,board){
   document.getElementById('masthead').innerHTML=
     `${home.giorno||''}<br>${T.edition} <b>${(home.aggiornato||'').slice(11,16)}</b> · ${T.tagline}`;
   document.getElementById('ticker').innerHTML=
-    [...(home.ticker||[]),...(home.ticker||[])].map(t=>`<span>🟢 ${t}</span>`).join('');
+    [...(home.ticker||[]),...(home.ticker||[])].map(t=>`<span>${t}</span>`).join('');
 
   window._ap=home.apertura||null; window._apTime=(home.aggiornato||'').slice(11,16);
   renderHero();
 
-  const ph2=(img,emoji)=>img?`<div class="ph2"><img src="${img}" loading="lazy" alt="" onerror="this.parentNode.innerHTML='<span>${emoji}</span>'"></div>`:`<div class="ph2"><span>${emoji}</span></div>`;
-  const card=(o,emoji)=>
+  const ph2=(img,lab)=>img?`<div class="ph2"><img src="${img}" loading="lazy" alt="" onerror="this.parentNode.innerHTML='<span>${lab}</span>'"></div>`:`<div class="ph2"><span>${lab}</span></div>`;
+  const card=(o,lab)=>
     `<div class="art">
-       <a class="ph2link" href="${o.link||'#'}" target="_blank" rel="noopener">${ph2(o.img,emoji)}</a>
+       <a class="ph2link" href="${o.link||'#'}" target="_blank" rel="noopener">${ph2(o.img,lab)}</a>
        <div class="cat">${o.categoria||''}</div>
        <h3><a href="${o.link||'#'}" target="_blank" rel="noopener">${o.titolo||''}</a></h3>
        <div class="credit">${T.source}: <a href="${o.link||'#'}" target="_blank" rel="noopener">${o.fonte||'—'}</a>${o.quando?' · '+o.quando:''}</div>
      </div>`;
-  document.getElementById('sub3').innerHTML=(home.secondari||[]).filter(Boolean).map(s=>card(s,'📰')).join('');
-  document.getElementById('worldRow').innerHTML=(home.mondo||[]).map(m=>card(m,'🌍')).join('');
+  document.getElementById('sub3').innerHTML=(home.secondari||[]).filter(Boolean).map(s=>card(s,'TB')).join('');
+  document.getElementById('worldRow').innerHTML=(home.mondo||[]).map(m=>card(m,'TB')).join('');
 
   let live=[];
   if(board&&board.squadre){
@@ -365,6 +439,5 @@ function render(home,board){
        <span class="st s-obj">${i+1}</span><span class="tt">${t.titolo.length>60?t.titolo.slice(0,60)+'…':t.titolo}</span></a>`).join('');
 }
 </script>
-<script src="/fanta/promo.js" defer></script>
 </body>
 </html>

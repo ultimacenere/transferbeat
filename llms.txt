@@ -1,16 +1,18 @@
 # TransferBeat
 
-> Giornale di calcio in italiano (articoli anche in inglese e spagnolo): notizie di Serie A, Premier League e Liga squadra per squadra, classificate per grado di concretezza (voce, anteprima, ufficiale, fatto) e con la fonte sempre citata; classifiche, risultati, calendario e marcatori di sei competizioni; FantaTB, fantacalcio gratuito con dati aperti (listone, voti statistici, titolarità).
+> Giornale di calcio in italiano (articoli anche in inglese e spagnolo): calciomercato e notizie di Serie A, Premier League e Liga squadra per squadra, classificate per grado di concretezza (voce, anteprima, ufficiale, fatto) e con la fonte sempre citata; classifiche, risultati, calendario e marcatori di sei competizioni; schede di tutti i giocatori di Serie A; FantaTB, fantacalcio gratuito con dati aperti (probabili formazioni, voti statistici, listone, infortunati e squalificati).
 
 Chi siamo: https://transferbeat.com/chi-siamo.html · Fonti e affidabilità: https://transferbeat.com/fonti.html · Aggiornamento automatico ogni due ore; articoli scritti con l'aiuto dell'intelligenza artificiale e supervisione editoriale.
 
 ## Sezioni
-- [Home](https://transferbeat.com/): apertura, notizie principali, ultim'ora, articoli
-- [Board live](https://transferbeat.com/board.html): notizie squadra per squadra, ordinate per concretezza
+- [Home](https://transferbeat.com/): apertura, notizie principali, ultim'ora, articoli, blocco fantacalcio
+- [Notizie](https://transferbeat.com/board.html): calciomercato e notizie squadra per squadra, ordinate per concretezza
+- [Campionati](https://transferbeat.com/campionati/): classifiche, risultati, calendario e marcatori (archivio Mondiale 2026: https://transferbeat.com/mondiali.html)
+- [Squadre](https://transferbeat.com/squadre/): una pagina per squadra con notizie, classifica, partite, rosa e blocco fantacalcio
+- [Giocatori](https://transferbeat.com/giocatori/): 677 schede giocatore di Serie A (statistiche, carriera, voti FantaTB)
+- [Fantacalcio](https://transferbeat.com/fantacalcio/): hub dei dati originali di FantaTB
 - [Articoli](https://transferbeat.com/articoli/it/): recap di giornata, lunch break e focus (EN: https://transferbeat.com/articoli/en/, ES: https://transferbeat.com/articoli/es/)
-- [Campionati](https://transferbeat.com/campionati/): classifiche, risultati, calendario e marcatori
-- [Squadre](https://transferbeat.com/squadre/): una pagina per squadra
-- [FantaTB](https://transferbeat.com/fantatb.html): il fantacalcio gratuito; app in https://transferbeat.com/fanta/
+- [Gioca a FantaTB](https://transferbeat.com/fantatb.html): cos'è e come si crea una lega nel fantacalcio gratuito di TransferBeat
 
 ## Competizioni
 - [Serie A 2026-27](https://transferbeat.com/campionati/serie-a.html): giornata 3, in testa Roma con 9 punti
@@ -20,12 +22,15 @@ Chi siamo: https://transferbeat.com/chi-siamo.html · Fonti e affidabilità: htt
 - [Bundesliga 2026-27](https://transferbeat.com/campionati/bundesliga.html): giornata 2, in testa Freiburg con 6 punti
 - [Ligue 1 2026-27](https://transferbeat.com/campionati/ligue-1.html): giornata 3, in testa Monaco con 9 punti
 
-## Dati originali di FantaTB (citabili, licenza CC BY 4.0, anche in JSON)
+## Fantacalcio: dati originali di FantaTB (citabili, licenza CC BY 4.0, anche in JSON)
+- [Probabili formazioni giornata 4](https://transferbeat.com/fantacalcio/probabili-formazioni.html): moduli, undici con percentuale, ballottaggi, indisponibili
+- [Voti giornata 3](https://transferbeat.com/fantacalcio/voti.html): voto statistico, bonus, fantavoto (JSON: https://transferbeat.com/data/fanta/voti-03.json)
+- [Voti giornata 1](https://transferbeat.com/fantacalcio/voti-giornata-1.html): archivio (JSON: https://transferbeat.com/data/fanta/voti-01.json)
+- [Voti giornata 2](https://transferbeat.com/fantacalcio/voti-giornata-2.html): archivio (JSON: https://transferbeat.com/data/fanta/voti-02.json)
 - [Listone 2026-27](https://transferbeat.com/fantacalcio/listone.html): quotazioni di 533 giocatori di Serie A (JSON: https://transferbeat.com/data/fanta/listone.json)
-- [Voti giornata 1](https://transferbeat.com/fantacalcio/voti-giornata-1.html): voto statistico, bonus, fantavoto (JSON: https://transferbeat.com/data/fanta/voti-01.json)
-- [Voti giornata 2](https://transferbeat.com/fantacalcio/voti-giornata-2.html): voto statistico, bonus, fantavoto (JSON: https://transferbeat.com/data/fanta/voti-02.json)
-- [Voti giornata 3](https://transferbeat.com/fantacalcio/voti-giornata-3.html): voto statistico, bonus, fantavoto (JSON: https://transferbeat.com/data/fanta/voti-03.json)
-- [Probabili titolari giornata 4](https://transferbeat.com/fantacalcio/titolari.html): indice di titolarità, infortunati, squalificati
+- [Infortunati e squalificati giornata 4](https://transferbeat.com/fantacalcio/titolari.html): indisponibili con rientro previsto e indice di titolarità
+- [Regolamento FantaTB](https://transferbeat.com/fantacalcio/regolamento.html): regole, bonus e malus, formula del voto
+- [Guida all'asta](https://transferbeat.com/fantacalcio/guida-asta.html): come preparare e condurre l'asta
 - [Domande frequenti sul fantacalcio FantaTB](https://transferbeat.com/fantacalcio/)
 
 ## Squadre
@@ -35,6 +40,6 @@ Chi siamo: https://transferbeat.com/chi-siamo.html · Fonti e affidabilità: htt
 
 ## Condizioni d'uso
 - Le notizie sono aggregate da fonti pubbliche e rimandano sempre alla testata originale: citare la fonte originale insieme a TransferBeat.
-- Classifiche e risultati: dati football-data.org. Voti e quotazioni FantaTB: elaborazione originale di TransferBeat su dati API-Football, riutilizzabili citando TransferBeat con un link.
+- Classifiche e risultati: dati football-data.org. Voti, quotazioni, titolarità e probabili FantaTB: elaborazione originale di TransferBeat su dati API-Football, riutilizzabili citando TransferBeat con un link.
 - Schede giocatore: https://transferbeat.com/giocatori/ (una pagina per ogni giocatore di Serie A: statistiche stagione scorsa e in corso, per 90 minuti, carriera, voti FantaTB). Statistiche di squadra con grafici nelle pagine squadra. Dati API-Football, elaborazione TransferBeat.
 - Sitemap: https://transferbeat.com/sitemap.xml

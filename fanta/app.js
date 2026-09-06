@@ -129,7 +129,7 @@ function filterPlayers(px){
 function listoneHtml(rows, sort, withStato){
   const th = (k, lab, title, num) => '<th class="srt'+(num ? ' num' : '')+(sort.k === k ? ' on' : '')+'" data-k="'+k+'"'+(title ? ' title="'+title+'"' : '')+'>'+lab+(sort.k === k ? (sort.asc ? ' ▲' : ' ▼') : '')+'</th>';
   const canTier = !!(curList && user && curList.owner_id === user.id);
-  rows = rows.slice().sort((a, b) => { const x = lsVal(a, sort.k), y = lsVal(b, sort.k); const c = typeof x === 'string' ? x.localeCompare(y) : (x - y); return sort.asc ? c : -c; }).slice(0, 400);
+  rows = rows.slice().sort((a, b) => { const x = lsVal(a, sort.k), y = lsVal(b, sort.k); const c = typeof x === 'string' ? x.localeCompare(y) : (x - y); return sort.asc ? c : -c; });   // listone completo: nessun limite silenzioso di righe
   return '<div class="tw"><table><thead><tr>'+th('role','R')+th('name','Giocatore')+th('team','Squadra')+(withStato ? th('stato','Stato','Libero o già in una rosa di questa lega') : '')+
     (curList ? th('tier','Tier','Tier nella lista attiva: '+curList.name) : '')+
     th('price','Quot.','Quotazione FantaTB',true)+th('mv','MV','Media voto FantaTB, stagione in corso',true)+th('fmv','FMV','Fantamedia: media dei fantavoti con bonus e malus',true)+
@@ -1234,7 +1234,17 @@ function leagueKpis(){
     kp('Squadre', L.members.length+'/'+(L.league.settings.max_teams || 20), phase() === 'asta' ? 'fase asta' : 'campionato') + (next ? kp('Prossima giornata', 'G'+next.number, 'formazioni entro '+fmtWhen(next.starts_at)) : '');
 }
 
+// #view-auth è l'unica vista visibile nell'HTML statico (pagina completa senza JS). Prima di qualsiasi await la nascondiamo
+// solo se sappiamo già che non servirà: sessione Supabase salvata (chiave sb-<ref>-auth-token) o hash verso una vista pubblica.
+function hideAuthIfNotNeeded(){
+  let stored = false;
+  try { stored = Object.keys(localStorage).some(k => /^sb-.*-auth-token$/.test(k)); } catch (e) { stored = false; }
+  const v = location.hash.slice(1);
+  const pub = ['listone', 'voti', 'regole', 'liste', 'strategie'].includes(v) || /^#(lista|strategia)\//.test(location.hash);
+  const el = $('#view-auth'); if (el && (stored || pub)) el.classList.add('hidden');
+}
 async function init(){
+  hideAuthIfNotNeeded();
   if (!CFG.SUPABASE_URL || CFG.SUPABASE_URL.includes('INSERISCI')) { msg('FantaTB non è ancora configurato (fanta/config.js).', 'err'); show('regole'); return; }
   sb = window.supabase.createClient(CFG.SUPABASE_URL, CFG.SUPABASE_ANON_KEY);
   const h = location.hash;   // letto PRIMA di initAuth: show() lo sovrascrive con la vista corrente
