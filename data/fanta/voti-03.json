@@ -1,231 +1,23 @@
 {
-"updated": "2026-09-07T13:27:40Z",
+"updated": "2026-09-07T23:38:28Z",
 "matchday": 3,
-"status": "live",
-"finished": 8,
+"status": "rated",
+"finished": 10,
 "total": 10,
 "ratings": [
 {
 "season": 2026,
 "matchday": 3,
-"player_id": 791,
-"minutes": 0,
-"voto": null,
-"bonus": {},
-"fantavoto": null,
-"source": "fantatb-stat",
-"raw": {
-"rating": 0.0,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 611384,
-"minutes": 0,
-"voto": null,
-"bonus": {},
-"fantavoto": null,
-"source": "fantatb-stat",
-"raw": {
-"rating": 0.0,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 387128,
-"minutes": 0,
-"voto": null,
-"bonus": {},
-"fantavoto": null,
-"source": "fantatb-stat",
-"raw": {
-"rating": 0.0,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 31057,
-"minutes": 0,
-"voto": null,
-"bonus": {},
-"fantavoto": null,
-"source": "fantatb-stat",
-"raw": {
-"rating": 0.0,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 7228,
-"minutes": 0,
-"voto": null,
-"bonus": {},
-"fantavoto": null,
-"source": "fantatb-stat",
-"raw": {
-"rating": 0.0,
-"fixture": 1550112,
-"gk": true
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 31445,
-"minutes": 0,
-"voto": null,
-"bonus": {},
-"fantavoto": null,
-"source": "fantatb-stat",
-"raw": {
-"rating": 0.0,
-"fixture": 1550112,
-"gk": true
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 362813,
-"minutes": 0,
-"voto": null,
-"bonus": {},
-"fantavoto": null,
-"source": "fantatb-stat",
-"raw": {
-"rating": 0.0,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 270613,
-"minutes": 0,
-"voto": null,
-"bonus": {},
-"fantavoto": null,
-"source": "fantatb-stat",
-"raw": {
-"rating": 0.0,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 56396,
-"minutes": 24,
-"voto": 5.5,
-"bonus": {},
-"fantavoto": 5.5,
-"source": "fantatb-stat",
-"raw": {
-"rating": 6.48,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 475672,
-"minutes": 9,
-"voto": null,
-"bonus": {},
-"fantavoto": null,
-"source": "fantatb-stat",
-"raw": {
-"rating": 5.82,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 36916,
-"minutes": 24,
-"voto": 5.0,
-"bonus": {},
-"fantavoto": 5.0,
-"source": "fantatb-stat",
-"raw": {
-"rating": 5.86,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 441134,
-"minutes": 0,
-"voto": null,
-"bonus": {},
-"fantavoto": null,
-"source": "fantatb-stat",
-"raw": {
-"rating": 0.0,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 281408,
-"minutes": 45,
-"voto": 5.5,
-"bonus": {},
-"fantavoto": 5.5,
-"source": "fantatb-stat",
-"raw": {
-"rating": 6.51,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 405239,
-"minutes": 15,
-"voto": 5.0,
-"bonus": {},
-"fantavoto": 5.0,
-"source": "fantatb-stat",
-"raw": {
-"rating": 5.97,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
 "player_id": 37137,
 "minutes": 90,
-"voto": 6.0,
-"bonus": {},
-"fantavoto": 6.0,
+"voto": 5.0,
+"bonus": {
+"gol_subito": 4
+},
+"fantavoto": 1.0,
 "source": "fantatb-stat",
 "raw": {
-"rating": 6.95,
+"rating": 6.0,
 "fixture": 1550112,
 "gk": true
 }
@@ -240,7 +32,7 @@
 "fantavoto": 4.5,
 "source": "fantatb-stat",
 "raw": {
-"rating": 5.37,
+"rating": 5.5,
 "fixture": 1550112,
 "gk": false
 }
@@ -250,14 +42,14 @@
 "matchday": 3,
 "player_id": 18967,
 "minutes": 90,
-"voto": 5.0,
+"voto": 6.0,
 "bonus": {
 "amm": 1
 },
-"fantavoto": 4.5,
+"fantavoto": 5.5,
 "source": "fantatb-stat",
 "raw": {
-"rating": 5.81,
+"rating": 6.6,
 "fixture": 1550112,
 "gk": false
 }
@@ -272,7 +64,7 @@
 "fantavoto": 5.0,
 "source": "fantatb-stat",
 "raw": {
-"rating": 6.03,
+"rating": 5.9,
 "fixture": 1550112,
 "gk": false
 }
@@ -282,27 +74,12 @@
 "matchday": 3,
 "player_id": 31137,
 "minutes": 45,
-"voto": 5.0,
-"bonus": {},
-"fantavoto": 5.0,
-"source": "fantatb-stat",
-"raw": {
-"rating": 5.66,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 15881,
-"minutes": 90,
 "voto": 5.5,
 "bonus": {},
 "fantavoto": 5.5,
 "source": "fantatb-stat",
 "raw": {
-"rating": 6.29,
+"rating": 6.2,
 "fixture": 1550112,
 "gk": false
 }
@@ -319,22 +96,7 @@
 "fantavoto": 5.0,
 "source": "fantatb-stat",
 "raw": {
-"rating": 6.32,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 89520,
-"minutes": 90,
-"voto": 5.0,
-"bonus": {},
-"fantavoto": 5.0,
-"source": "fantatb-stat",
-"raw": {
-"rating": 5.6,
+"rating": 6.5,
 "fixture": 1550112,
 "gk": false
 }
@@ -349,7 +111,7 @@
 "fantavoto": 5.5,
 "source": "fantatb-stat",
 "raw": {
-"rating": 6.39,
+"rating": 6.5,
 "fixture": 1550112,
 "gk": false
 }
@@ -357,16 +119,29 @@
 {
 "season": 2026,
 "matchday": 3,
-"player_id": 66761,
+"player_id": 89520,
 "minutes": 90,
-"voto": 7.0,
-"bonus": {
-"gol": 1
-},
-"fantavoto": 10.0,
+"voto": 6.0,
+"bonus": {},
+"fantavoto": 6.0,
 "source": "fantatb-stat",
 "raw": {
-"rating": 7.89,
+"rating": 6.6,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 15881,
+"minutes": 90,
+"voto": 6.0,
+"bonus": {},
+"fantavoto": 6.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.7,
 "fixture": 1550112,
 "gk": false
 }
@@ -383,7 +158,7 @@
 "fantavoto": 7.5,
 "source": "fantatb-stat",
 "raw": {
-"rating": 7.06,
+"rating": 7.2,
 "fixture": 1550112,
 "gk": false
 }
@@ -391,14 +166,46 @@
 {
 "season": 2026,
 "matchday": 3,
-"player_id": 659,
+"player_id": 66761,
+"minutes": 90,
+"voto": 6.5,
+"bonus": {
+"gol": 1
+},
+"fantavoto": 9.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 7.5,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 281408,
+"minutes": 45,
+"voto": 6.0,
+"bonus": {},
+"fantavoto": 6.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.6,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 36916,
 "minutes": 24,
 "voto": 5.5,
 "bonus": {},
 "fantavoto": 5.5,
 "source": "fantatb-stat",
 "raw": {
-"rating": 6.26,
+"rating": 6.3,
 "fixture": 1550112,
 "gk": false
 }
@@ -406,61 +213,14 @@
 {
 "season": 2026,
 "matchday": 3,
-"player_id": 32034,
-"minutes": 0,
-"voto": null,
-"bonus": {},
-"fantavoto": null,
-"source": "fantatb-stat",
-"raw": {
-"rating": 0.0,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 31073,
-"minutes": 0,
-"voto": null,
-"bonus": {},
-"fantavoto": null,
-"source": "fantatb-stat",
-"raw": {
-"rating": 0.0,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 288112,
-"minutes": 0,
-"voto": null,
-"bonus": {},
-"fantavoto": null,
-"source": "fantatb-stat",
-"raw": {
-"rating": 0.0,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 877,
+"player_id": 56396,
 "minutes": 24,
 "voto": 6.0,
-"bonus": {
-"assist": 1
-},
-"fantavoto": 7.0,
+"bonus": {},
+"fantavoto": 6.0,
 "source": "fantatb-stat",
 "raw": {
-"rating": 6.77,
+"rating": 6.9,
 "fixture": 1550112,
 "gk": false
 }
@@ -468,59 +228,44 @@
 {
 "season": 2026,
 "matchday": 3,
-"player_id": 26301,
+"player_id": 405239,
+"minutes": 15,
+"voto": 6.0,
+"bonus": {},
+"fantavoto": 6.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.7,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 475672,
+"minutes": 9,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.7,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 7228,
 "minutes": 0,
 "voto": null,
 "bonus": {},
 "fantavoto": null,
 "source": "fantatb-stat",
 "raw": {
-"rating": 0.0,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 459029,
-"minutes": 0,
-"voto": null,
-"bonus": {},
-"fantavoto": null,
-"source": "fantatb-stat",
-"raw": {
-"rating": 0.0,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 410396,
-"minutes": 6,
-"voto": null,
-"bonus": {},
-"fantavoto": null,
-"source": "fantatb-stat",
-"raw": {
-"rating": 6.22,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 18959,
-"minutes": 0,
-"voto": null,
-"bonus": {},
-"fantavoto": null,
-"source": "fantatb-stat",
-"raw": {
-"rating": 0.0,
+"rating": null,
 "fixture": 1550112,
 "gk": true
 }
@@ -528,74 +273,14 @@
 {
 "season": 2026,
 "matchday": 3,
-"player_id": 47085,
-"minutes": 10,
-"voto": null,
-"bonus": {},
-"fantavoto": null,
-"source": "fantatb-stat",
-"raw": {
-"rating": 6.25,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 31056,
-"minutes": 10,
-"voto": null,
-"bonus": {},
-"fantavoto": null,
-"source": "fantatb-stat",
-"raw": {
-"rating": 6.43,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 443162,
+"player_id": 31445,
 "minutes": 0,
 "voto": null,
 "bonus": {},
 "fantavoto": null,
 "source": "fantatb-stat",
 "raw": {
-"rating": 0.0,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 14266,
-"minutes": 0,
-"voto": null,
-"bonus": {},
-"fantavoto": null,
-"source": "fantatb-stat",
-"raw": {
-"rating": 0.0,
-"fixture": 1550112,
-"gk": false
-}
-},
-{
-"season": 2026,
-"matchday": 3,
-"player_id": 31719,
-"minutes": 0,
-"voto": null,
-"bonus": {},
-"fantavoto": null,
-"source": "fantatb-stat",
-"raw": {
-"rating": 0.0,
+"rating": null,
 "fixture": 1550112,
 "gk": true
 }
@@ -603,14 +288,104 @@
 {
 "season": 2026,
 "matchday": 3,
-"player_id": 309792,
+"player_id": 616216,
 "minutes": 0,
 "voto": null,
 "bonus": {},
 "fantavoto": null,
 "source": "fantatb-stat",
 "raw": {
-"rating": 0.0,
+"rating": null,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 387128,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": null,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 362813,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": null,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 270613,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": null,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 611384,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": null,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 31057,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": null,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 791,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": null,
 "fixture": 1550112,
 "gk": false
 }
@@ -620,12 +395,14 @@
 "matchday": 3,
 "player_id": 8574,
 "minutes": 90,
-"voto": 6.0,
-"bonus": {},
-"fantavoto": 6.0,
+"voto": 5.5,
+"bonus": {
+"gol_subito": 1
+},
+"fantavoto": 4.5,
 "source": "fantatb-stat",
 "raw": {
-"rating": 6.57,
+"rating": 6.5,
 "fixture": 1550112,
 "gk": true
 }
@@ -642,7 +419,7 @@
 "fantavoto": 8.0,
 "source": "fantatb-stat",
 "raw": {
-"rating": 7.91,
+"rating": 7.6,
 "fixture": 1550112,
 "gk": false
 }
@@ -652,12 +429,12 @@
 "matchday": 3,
 "player_id": 386305,
 "minutes": 90,
-"voto": 6.0,
+"voto": 6.5,
 "bonus": {},
-"fantavoto": 6.0,
+"fantavoto": 6.5,
 "source": "fantatb-stat",
 "raw": {
-"rating": 6.83,
+"rating": 7.3,
 "fixture": 1550112,
 "gk": false
 }
@@ -667,12 +444,12 @@
 "matchday": 3,
 "player_id": 19720,
 "minutes": 90,
-"voto": 6.0,
+"voto": 6.5,
 "bonus": {},
-"fantavoto": 6.0,
+"fantavoto": 6.5,
 "source": "fantatb-stat",
 "raw": {
-"rating": 6.74,
+"rating": 7.2,
 "fixture": 1550112,
 "gk": false
 }
@@ -682,14 +459,14 @@
 "matchday": 3,
 "player_id": 336560,
 "minutes": 90,
-"voto": 6.5,
+"voto": 6.0,
 "bonus": {
 "assist": 1
 },
-"fantavoto": 7.5,
+"fantavoto": 7.0,
 "source": "fantatb-stat",
 "raw": {
-"rating": 7.18,
+"rating": 6.9,
 "fixture": 1550112,
 "gk": false
 }
@@ -704,7 +481,7 @@
 "fantavoto": 6.5,
 "source": "fantatb-stat",
 "raw": {
-"rating": 7.2,
+"rating": 7.3,
 "fixture": 1550112,
 "gk": false
 }
@@ -729,14 +506,14 @@
 "matchday": 3,
 "player_id": 400948,
 "minutes": 84,
-"voto": 8.5,
+"voto": 7.5,
 "bonus": {
 "gol": 2
 },
-"fantavoto": 14.5,
+"fantavoto": 13.5,
 "source": "fantatb-stat",
 "raw": {
-"rating": 9.5,
+"rating": 8.3,
 "fixture": 1550112,
 "gk": false
 }
@@ -746,14 +523,14 @@
 "matchday": 3,
 "player_id": 350037,
 "minutes": 80,
-"voto": 7.5,
+"voto": 7.0,
 "bonus": {
 "gol": 1
 },
-"fantavoto": 10.5,
+"fantavoto": 10.0,
 "source": "fantatb-stat",
 "raw": {
-"rating": 8.2,
+"rating": 7.9,
 "fixture": 1550112,
 "gk": false
 }
@@ -763,15 +540,15 @@
 "matchday": 3,
 "player_id": 295026,
 "minutes": 66,
-"voto": 7.0,
+"voto": 6.5,
 "bonus": {
 "gol": 1,
 "amm": 1
 },
-"fantavoto": 9.5,
+"fantavoto": 9.0,
 "source": "fantatb-stat",
 "raw": {
-"rating": 7.72,
+"rating": 7.2,
 "fixture": 1550112,
 "gk": false
 }
@@ -786,7 +563,234 @@
 "fantavoto": 5.5,
 "source": "fantatb-stat",
 "raw": {
-"rating": 6.12,
+"rating": 6.3,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 659,
+"minutes": 24,
+"voto": 6.0,
+"bonus": {},
+"fantavoto": 6.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.7,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 877,
+"minutes": 24,
+"voto": 6.0,
+"bonus": {
+"assist": 1
+},
+"fantavoto": 7.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.6,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 31056,
+"minutes": 10,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.6,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 47085,
+"minutes": 10,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.3,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 410396,
+"minutes": 10,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.3,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 31719,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": null,
+"fixture": 1550112,
+"gk": true
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 18959,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": null,
+"fixture": 1550112,
+"gk": true
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 309792,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": null,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 288112,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": null,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 14266,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": null,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 32034,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": null,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 31073,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": null,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 26301,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": null,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 459029,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": null,
+"fixture": 1550112,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 443162,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": null,
 "fixture": 1550112,
 "gk": false
 }
@@ -5923,6 +5927,1496 @@
 "raw": {
 "rating": 0.0,
 "fixture": 1550114,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 126974,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 264122,
+"minutes": 90,
+"voto": 5.5,
+"bonus": {},
+"fantavoto": 5.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.43,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 455316,
+"minutes": 90,
+"voto": 6.0,
+"bonus": {},
+"fantavoto": 6.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.82,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 161702,
+"minutes": 90,
+"voto": 5.5,
+"bonus": {},
+"fantavoto": 5.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.37,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 335071,
+"minutes": 8,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.31,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 31717,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550109,
+"gk": true
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 349232,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 589789,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 345107,
+"minutes": 45,
+"voto": 5.5,
+"bonus": {},
+"fantavoto": 5.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.5,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 280431,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 6662,
+"minutes": 82,
+"voto": 5.5,
+"bonus": {},
+"fantavoto": 5.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.05,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 387537,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 23253,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 56560,
+"minutes": 24,
+"voto": 6.0,
+"bonus": {},
+"fantavoto": 6.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.91,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 19738,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 8643,
+"minutes": 24,
+"voto": 5.5,
+"bonus": {},
+"fantavoto": 5.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.33,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 446138,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550109,
+"gk": true
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 434081,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 203219,
+"minutes": 24,
+"voto": 5.0,
+"bonus": {
+"amm": 1
+},
+"fantavoto": 4.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 5.97,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 334925,
+"minutes": 45,
+"voto": 6.0,
+"bonus": {},
+"fantavoto": 6.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.59,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 277862,
+"minutes": 66,
+"voto": 5.5,
+"bonus": {},
+"fantavoto": 5.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.14,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 46170,
+"minutes": 66,
+"voto": 6.0,
+"bonus": {},
+"fantavoto": 6.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.8,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 291589,
+"minutes": 66,
+"voto": 5.5,
+"bonus": {
+"amm": 1
+},
+"fantavoto": 5.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.25,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 31543,
+"minutes": 90,
+"voto": 5.0,
+"bonus": {},
+"fantavoto": 5.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 5.84,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 1748,
+"minutes": 90,
+"voto": 5.5,
+"bonus": {},
+"fantavoto": 5.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.51,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 56459,
+"minutes": 90,
+"voto": 8.0,
+"bonus": {
+"amm": 1
+},
+"fantavoto": 7.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 8.55,
+"fixture": 1550109,
+"gk": true
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 30505,
+"minutes": 90,
+"voto": 6.0,
+"bonus": {},
+"fantavoto": 6.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.93,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 30731,
+"minutes": 90,
+"voto": 6.0,
+"bonus": {},
+"fantavoto": 6.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.62,
+"fixture": 1550109,
+"gk": true
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 30561,
+"minutes": 90,
+"voto": 6.5,
+"bonus": {
+"amm": 1
+},
+"fantavoto": 6.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 7.23,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 340700,
+"minutes": 61,
+"voto": 7.0,
+"bonus": {
+"assist": 1
+},
+"fantavoto": 8.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 7.7,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 134926,
+"minutes": 66,
+"voto": 7.5,
+"bonus": {
+"gol": 1
+},
+"fantavoto": 10.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 8.2,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 626704,
+"minutes": 74,
+"voto": 5.0,
+"bonus": {},
+"fantavoto": 5.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.0,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 321744,
+"minutes": 90,
+"voto": 6.5,
+"bonus": {},
+"fantavoto": 6.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 7.13,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 41964,
+"minutes": 90,
+"voto": 6.0,
+"bonus": {},
+"fantavoto": 6.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 7.01,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 415155,
+"minutes": 66,
+"voto": 6.5,
+"bonus": {},
+"fantavoto": 6.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 7.54,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 394183,
+"minutes": 90,
+"voto": 6.0,
+"bonus": {},
+"fantavoto": 6.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.64,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 182,
+"minutes": 90,
+"voto": 6.0,
+"bonus": {},
+"fantavoto": 6.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.73,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 31734,
+"minutes": 13,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.88,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 570129,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 264477,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 279757,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 263699,
+"minutes": 24,
+"voto": 6.5,
+"bonus": {},
+"fantavoto": 6.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 7.11,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 0,
+"minutes": 16,
+"voto": 6.0,
+"bonus": {},
+"fantavoto": 6.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 7.0,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 468711,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 377118,
+"minutes": 24,
+"voto": 6.5,
+"bonus": {},
+"fantavoto": 6.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 7.23,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 417892,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 326177,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 31601,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550109,
+"gk": true
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 3737,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550109,
+"gk": true
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 341307,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 0,
+"minutes": 16,
+"voto": 5.5,
+"bonus": {},
+"fantavoto": 5.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.39,
+"fixture": 1550109,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 30937,
+"minutes": 89,
+"voto": 7.0,
+"bonus": {
+"assist": 1
+},
+"fantavoto": 8.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 7.68,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 26644,
+"minutes": 90,
+"voto": 7.0,
+"bonus": {},
+"fantavoto": 7.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 7.99,
+"fixture": 1550116,
+"gk": true
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 333116,
+"minutes": 90,
+"voto": 6.0,
+"bonus": {},
+"fantavoto": 6.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.75,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 37117,
+"minutes": 90,
+"voto": 6.5,
+"bonus": {
+"assist": 1
+},
+"fantavoto": 7.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 7.25,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 342651,
+"minutes": 90,
+"voto": 6.0,
+"bonus": {},
+"fantavoto": 6.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.59,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 31173,
+"minutes": 80,
+"voto": 6.5,
+"bonus": {
+"gol": 1
+},
+"fantavoto": 9.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 7.36,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 135519,
+"minutes": 53,
+"voto": 5.5,
+"bonus": {
+"amm": 1
+},
+"fantavoto": 5.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.33,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 31094,
+"minutes": 53,
+"voto": 5.5,
+"bonus": {},
+"fantavoto": 5.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.29,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 350857,
+"minutes": 90,
+"voto": 5.5,
+"bonus": {},
+"fantavoto": 5.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.5,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 41577,
+"minutes": 90,
+"voto": 6.0,
+"bonus": {},
+"fantavoto": 6.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 7.04,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 38749,
+"minutes": 90,
+"voto": 6.0,
+"bonus": {},
+"fantavoto": 6.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.84,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 286474,
+"minutes": 37,
+"voto": 6.5,
+"bonus": {},
+"fantavoto": 6.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 7.2,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 616198,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 483662,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 2799,
+"minutes": 10,
+"voto": null,
+"bonus": {
+"gol": 1
+},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 7.91,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 30866,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 431413,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550116,
+"gk": true
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 133729,
+"minutes": 37,
+"voto": 5.5,
+"bonus": {},
+"fantavoto": 5.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.47,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 1702,
+"minutes": 1,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.37,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 405241,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 408625,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550116,
+"gk": true
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 436244,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 14701,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 7591,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 182560,
+"minutes": 14,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.01,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 493365,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 189,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550116,
+"gk": true
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 126896,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550116,
+"gk": true
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 343558,
+"minutes": 75,
+"voto": 6.0,
+"bonus": {
+"amm": 1
+},
+"fantavoto": 5.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.56,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 656,
+"minutes": 38,
+"voto": 5.5,
+"bonus": {},
+"fantavoto": 5.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.35,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 320335,
+"minutes": 76,
+"voto": 6.0,
+"bonus": {},
+"fantavoto": 6.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.6,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 19185,
+"minutes": 76,
+"voto": 6.5,
+"bonus": {
+"assist": 1
+},
+"fantavoto": 7.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 7.49,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 20656,
+"minutes": 90,
+"voto": 6.0,
+"bonus": {},
+"fantavoto": 6.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.79,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 541,
+"minutes": 90,
+"voto": 5.0,
+"bonus": {},
+"fantavoto": 5.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 5.89,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 332308,
+"minutes": 45,
+"voto": 5.5,
+"bonus": {},
+"fantavoto": 5.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.17,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 22007,
+"minutes": 90,
+"voto": 5.5,
+"bonus": {},
+"fantavoto": 5.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.34,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 48047,
+"minutes": 90,
+"voto": 6.5,
+"bonus": {
+"gol": 1,
+"amm": 1
+},
+"fantavoto": 9.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 7.19,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 1939,
+"minutes": 15,
+"voto": 5.0,
+"bonus": {
+"amm": 1
+},
+"fantavoto": 4.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 5.9,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 143648,
+"minutes": 90,
+"voto": 6.5,
+"bonus": {},
+"fantavoto": 6.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 7.52,
+"fixture": 1550116,
+"gk": true
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 8586,
+"minutes": 90,
+"voto": 5.5,
+"bonus": {},
+"fantavoto": 5.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.43,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 1134,
+"minutes": 45,
+"voto": 5.5,
+"bonus": {
+"amm": 1
+},
+"fantavoto": 5.0,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.25,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 315249,
+"minutes": 14,
+"voto": null,
+"bonus": {
+"amm": 1
+},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 5.75,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 8481,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 434410,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 398194,
+"minutes": 0,
+"voto": null,
+"bonus": {},
+"fantavoto": null,
+"source": "fantatb-stat",
+"raw": {
+"rating": 0.0,
+"fixture": 1550116,
+"gk": false
+}
+},
+{
+"season": 2026,
+"matchday": 3,
+"player_id": 18797,
+"minutes": 52,
+"voto": 5.5,
+"bonus": {},
+"fantavoto": 5.5,
+"source": "fantatb-stat",
+"raw": {
+"rating": 6.52,
+"fixture": 1550116,
 "gk": false
 }
 }
