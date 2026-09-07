@@ -1,5 +1,5 @@
 {
-"updated": "2026-09-06T22:57:43Z",
+"updated": "2026-09-07T13:28:24Z",
 "season": 2026,
 "matchday": 3,
 "stage": "giorno-gara",
@@ -11,7 +11,7 @@
 "away": "Como",
 "home_id": 495,
 "away_id": 895,
-"venue": "Stadio Luigi Ferraris",
+"venue": "Luigi Ferraris",
 "status": "FT"
 },
 {
@@ -31,7 +31,7 @@
 "away": "Napoli",
 "home_id": 505,
 "away_id": 492,
-"venue": null,
+"venue": "San Siro/Giuseppe Meazza",
 "status": "FT"
 },
 {
@@ -71,7 +71,7 @@
 "away": "Sassuolo",
 "home_id": 500,
 "away_id": 488,
-"venue": null,
+"venue": "Renato Dall'Ara",
 "status": "FT"
 },
 {
@@ -266,7 +266,7 @@
 "name": "R. Bellanova",
 "role": "D",
 "pos": "D",
-"prob": 14
+"prob": 21
 },
 {
 "id": 400530,
@@ -283,22 +283,23 @@
 "prob": 40
 },
 {
-"id": 1358,
-"name": "E. Elmas",
+"id": 178749,
+"name": "L. Samardžić",
 "role": "C",
 "pos": "M",
-"prob": 16
+"prob": 28
 },
 {
 "id": 66817,
 "name": "N. Krstović",
 "role": "A",
 "pos": "F",
-"prob": 16
+"prob": 22
 }
 ],
 "out": [],
-"doubt": []
+"doubt": [],
+"coppa": null
 },
 "Bologna": {
 "id": 500,
@@ -468,18 +469,18 @@
 "prob": 11
 },
 {
-"id": 606953,
-"name": "M. Libra",
+"id": 287564,
+"name": "M. Vitík",
 "role": "D",
 "pos": "D",
-"prob": 12
+"prob": 23
 },
 {
-"id": 30498,
-"name": "L. De Silvestri",
+"id": 204043,
+"name": "A. Theate",
 "role": "D",
 "pos": "D",
-"prob": 11
+"prob": 20
 },
 {
 "id": 426626,
@@ -507,11 +508,12 @@
 "name": "A. Dovbyk",
 "role": "A",
 "pos": "F",
-"prob": 16
+"prob": 28
 }
 ],
 "out": [],
-"doubt": []
+"doubt": [],
+"coppa": null
 },
 "Lecce": {
 "id": 867,
@@ -676,18 +678,18 @@
 "prob": 8
 },
 {
+"id": 126974,
+"name": "O. Gandelman",
+"role": "C",
+"pos": "M",
+"prob": 22
+},
+{
 "id": 56560,
 "name": "Y. Maleh",
 "role": "C",
 "pos": "M",
 "prob": 16
-},
-{
-"id": 126974,
-"name": "O. Gandelman",
-"role": "C",
-"pos": "M",
-"prob": 14
 },
 {
 "id": 264122,
@@ -714,7 +716,8 @@
 "back_at": null
 }
 ],
-"doubt": []
+"doubt": [],
+"coppa": null
 },
 "AS Roma": {
 "id": 497,
@@ -872,15 +875,15 @@
 "prob": 11
 },
 {
-"id": 162409,
-"name": "K. Koulierakis",
-"role": "D",
-"pos": "D",
-"prob": 14
-},
-{
 "id": 6503,
 "name": "N. Molina",
+"role": "D",
+"pos": "D",
+"prob": 26
+},
+{
+"id": 162409,
+"name": "K. Koulierakis",
 "role": "D",
 "pos": "D",
 "prob": 14
@@ -904,7 +907,7 @@
 "name": "S. Castro",
 "role": "A",
 "pos": "F",
-"prob": 16
+"prob": 25
 },
 {
 "id": 435482,
@@ -915,7 +918,8 @@
 }
 ],
 "out": [],
-"doubt": []
+"doubt": [],
+"coppa": null
 },
 "Lazio": {
 "id": 487,
@@ -1073,15 +1077,15 @@
 "prob": 11
 },
 {
-"id": 1632,
-"name": "A. Romagnoli",
+"id": 14701,
+"name": "J. Šutalo",
 "role": "D",
 "pos": "D",
-"prob": 12
+"prob": 20
 },
 {
-"id": 616198,
-"name": "R. Bordon",
+"id": 1632,
+"name": "A. Romagnoli",
 "role": "D",
 "pos": "D",
 "prob": 12
@@ -1141,7 +1145,8 @@
 "back_at": null
 }
 ],
-"doubt": []
+"doubt": [],
+"coppa": null
 },
 "Genoa": {
 "id": 495,
@@ -1327,22 +1332,23 @@
 "prob": 12
 },
 {
+"id": 66761,
+"name": "M. Osmajić",
+"role": "A",
+"pos": "F",
+"prob": 21
+},
+{
 "id": 56396,
 "name": "Junior Messias",
 "role": "C",
 "pos": "F",
 "prob": 16
-},
-{
-"id": 66761,
-"name": "M. Osmajić",
-"role": "A",
-"pos": "F",
-"prob": 11
 }
 ],
 "out": [],
-"doubt": []
+"doubt": [],
+"coppa": null
 },
 "Cagliari": {
 "id": 490,
@@ -1494,15 +1500,15 @@
 "prob": 11
 },
 {
-"id": 264477,
-"name": "G. Aurelio",
-"role": "D",
-"pos": "D",
-"prob": 14
-},
-{
 "id": 377118,
 "name": "R. Kofler",
+"role": "D",
+"pos": "D",
+"prob": 25
+},
+{
+"id": 264477,
+"name": "G. Aurelio",
 "role": "D",
 "pos": "D",
 "prob": 14
@@ -1522,21 +1528,29 @@
 "prob": 12
 },
 {
+"id": 31734,
+"name": "M. Felici",
+"role": "C",
+"pos": "F",
+"prob": 22
+},
+{
 "id": 31499,
 "name": "G. Borrelli",
 "role": "A",
 "pos": "F",
 "prob": 16
-},
-{
-"id": 263699,
-"name": "A. Fadera",
-"role": "C",
-"pos": "F",
-"prob": 14
 }
 ],
 "out": [
+{
+"id": 188319,
+"name": "Kevin Carlos",
+"role": "A",
+"pos": "F",
+"reason": "infortunio: personal reasons",
+"back_at": null
+},
 {
 "id": 2484,
 "name": "Y. Mina",
@@ -1546,7 +1560,8 @@
 "back_at": null
 }
 ],
-"doubt": []
+"doubt": [],
+"coppa": null
 },
 "Inter": {
 "id": 505,
@@ -1744,22 +1759,23 @@
 "prob": 11
 },
 {
-"id": 275651,
-"name": "A. Bonny",
-"role": "A",
-"pos": "F",
-"prob": 14
-},
-{
 "id": 21509,
 "name": "M. Thuram",
+"role": "A",
+"pos": "F",
+"prob": 25
+},
+{
+"id": 275651,
+"name": "A. Bonny",
 "role": "A",
 "pos": "F",
 "prob": 14
 }
 ],
 "out": [],
-"doubt": []
+"doubt": [],
+"coppa": null
 },
 "Napoli": {
 "id": 492,
@@ -1941,7 +1957,7 @@
 "name": "K. De Bruyne",
 "role": "C",
 "pos": "M",
-"prob": 16
+"prob": 28
 },
 {
 "id": 347395,
@@ -1966,7 +1982,8 @@
 }
 ],
 "out": [],
-"doubt": []
+"doubt": [],
+"coppa": null
 },
 "Como": {
 "id": 895,
@@ -2167,7 +2184,8 @@
 }
 ],
 "out": [],
-"doubt": []
+"doubt": [],
+"coppa": null
 },
 "Juventus": {
 "id": 496,
@@ -2352,29 +2370,30 @@
 "prob": 33
 },
 {
-"id": 36899,
-"name": "T. Koopmeiners",
+"id": 116,
+"name": "K. Thuram",
 "role": "C",
 "pos": "M",
-"prob": 16
+"prob": 18
 },
 {
 "id": 395559,
 "name": "Kerim-Sam Alajbegović",
 "role": "C",
 "pos": "F",
-"prob": 14
+"prob": 26
 },
 {
 "id": 26315,
 "name": "N. González",
 "role": "C",
 "pos": "F",
-"prob": 14
+"prob": 26
 }
 ],
 "out": [],
-"doubt": []
+"doubt": [],
+"coppa": null
 },
 "Parma": {
 "id": 523,
@@ -2531,11 +2550,11 @@
 ],
 "bench": [
 {
-"id": 637969,
-"name": "A. Mazzocchi",
+"id": 335117,
+"name": "G. Daffara",
 "role": "P",
 "pos": "G",
-"prob": 12
+"prob": 23
 },
 {
 "id": 286473,
@@ -2566,22 +2585,23 @@
 "prob": 14
 },
 {
+"id": 194905,
+"name": "D. Romero",
+"role": "A",
+"pos": "F",
+"prob": 26
+},
+{
 "id": 301924,
 "name": "N. Elphege",
 "role": "A",
 "pos": "F",
 "prob": 16
-},
-{
-"id": 48193,
-"name": "P. Almqvist",
-"role": "C",
-"pos": "F",
-"prob": 16
 }
 ],
 "out": [],
-"doubt": []
+"doubt": [],
+"coppa": null
 },
 "Sassuolo": {
 "id": 488,
@@ -2750,14 +2770,14 @@
 "name": "Rafael Obrador",
 "role": "D",
 "pos": "D",
-"prob": 14
+"prob": 26
 },
 {
 "id": 39143,
 "name": "K. Thorstvedt",
 "role": "C",
 "pos": "M",
-"prob": 16
+"prob": 28
 },
 {
 "id": 343562,
@@ -2767,22 +2787,23 @@
 "prob": 14
 },
 {
+"id": 30537,
+"name": "D. Berardi",
+"role": "A",
+"pos": "F",
+"prob": 23
+},
+{
 "id": 347265,
 "name": "B. Domínguez",
 "role": "C",
 "pos": "F",
 "prob": 16
-},
-{
-"id": 494325,
-"name": "G. Kulla",
-"role": "A",
-"pos": "F",
-"prob": 12
 }
 ],
 "out": [],
-"doubt": []
+"doubt": [],
+"coppa": null
 },
 "Torino": {
 "id": 503,
@@ -2943,7 +2964,7 @@
 "name": "A. Paleari",
 "role": "P",
 "pos": "G",
-"prob": 11
+"prob": 23
 },
 {
 "id": 598593,
@@ -2967,11 +2988,18 @@
 "prob": 30
 },
 {
-"id": 336573,
-"name": "E. İlkhan",
+"id": 161859,
+"name": "G. Oristanio",
 "role": "C",
 "pos": "M",
-"prob": 14
+"prob": 22
+},
+{
+"id": 383006,
+"name": "A. Njie",
+"role": "C",
+"pos": "F",
+"prob": 24
 },
 {
 "id": 40405,
@@ -2979,17 +3007,11 @@
 "role": "A",
 "pos": "F",
 "prob": 16
-},
-{
-"id": 243,
-"name": "Z. Aboukhlal",
-"role": "C",
-"pos": "F",
-"prob": 16
 }
 ],
 "out": [],
-"doubt": []
+"doubt": [],
+"coppa": null
 },
 "Fiorentina": {
 "id": 502,
@@ -3197,7 +3219,7 @@
 "name": "M. Kean",
 "role": "A",
 "pos": "F",
-"prob": 9
+"prob": 21
 },
 {
 "id": 498858,
@@ -3208,7 +3230,8 @@
 }
 ],
 "out": [],
-"doubt": []
+"doubt": [],
+"coppa": null
 },
 "Frosinone": {
 "id": 512,
@@ -3400,22 +3423,23 @@
 "prob": 14
 },
 {
+"id": 126892,
+"name": "D. Bîrligea",
+"role": "A",
+"pos": "F",
+"prob": 23
+},
+{
 "id": 31219,
 "name": "A. Zerbin",
 "role": "C",
 "pos": "F",
 "prob": 16
-},
-{
-"id": 126892,
-"name": "D. Bîrligea",
-"role": "A",
-"pos": "F",
-"prob": 11
 }
 ],
 "out": [],
-"doubt": []
+"doubt": [],
+"coppa": null
 },
 "Monza": {
 "id": 1579,
@@ -3585,21 +3609,21 @@
 "name": "E. Akinsanmiro",
 "role": "C",
 "pos": "M",
-"prob": 11
+"prob": 23
 },
 {
 "id": 56851,
 "name": "M. Folorunsho",
 "role": "C",
 "pos": "M",
-"prob": 11
+"prob": 23
 },
 {
 "id": 284242,
 "name": "O. Forson",
 "role": "C",
 "pos": "F",
-"prob": 16
+"prob": 22
 },
 {
 "id": 380691,
@@ -3610,7 +3634,8 @@
 }
 ],
 "out": [],
-"doubt": []
+"doubt": [],
+"coppa": null
 },
 "Udinese": {
 "id": 494,
@@ -3812,6 +3837,14 @@
 ],
 "out": [
 {
+"id": 411171,
+"name": "J. Arizala",
+"role": "D",
+"pos": "M",
+"reason": "infortunio: coscia",
+"back_at": null
+},
+{
 "id": 422156,
 "name": "M. Palma",
 "role": "D",
@@ -3828,7 +3861,8 @@
 "back_at": null
 }
 ],
-"doubt": []
+"doubt": [],
+"coppa": null
 },
 "AC Milan": {
 "id": 489,
@@ -4004,32 +4038,33 @@
 "name": "A. Rabiot",
 "role": "C",
 "pos": "M",
-"prob": 16
+"prob": 28
 },
 {
-"id": 452330,
-"name": "C. Comotto",
+"id": 17,
+"name": "C. Pulišić",
 "role": "C",
 "pos": "M",
-"prob": 11
+"prob": 23
 },
 {
 "id": 1417,
 "name": "A. Saelemaekers",
 "role": "C",
 "pos": "F",
-"prob": 16
+"prob": 28
 },
 {
 "id": 335056,
 "name": "Diego Moreira",
 "role": "C",
 "pos": "F",
-"prob": 11
+"prob": 23
 }
 ],
 "out": [],
-"doubt": []
+"doubt": [],
+"coppa": null
 },
 "Venezia": {
 "id": 517,
@@ -4191,7 +4226,7 @@
 "name": "R. Halhal",
 "role": "D",
 "pos": "D",
-"prob": 14
+"prob": 21
 },
 {
 "id": 375321,
@@ -4201,15 +4236,15 @@
 "prob": 14
 },
 {
-"id": 342025,
-"name": "M. Dagasso",
-"role": "C",
-"pos": "M",
-"prob": 14
-},
-{
 "id": 1014,
 "name": "S. Sohm",
+"role": "C",
+"pos": "M",
+"prob": 25
+},
+{
+"id": 342025,
+"name": "M. Dagasso",
 "role": "C",
 "pos": "M",
 "prob": 14
@@ -4230,8 +4265,11 @@
 }
 ],
 "out": [],
-"doubt": []
+"doubt": [],
+"coppa": null
 }
 },
-"missing": []
+"missing": [],
+"note": "Le percentuali sono una stima statistica costruita solo sui nostri dati: formazioni ufficiali delle ultime giornate, indice di titolarità, quotazioni del listone, minuti giocati. Non sono notizie dagli allenamenti e non riprendono le probabili di altre testate. Chi non è mai partito titolare nelle giornate che guardiamo non supera il 30%, perché è il tasso base che misuriamo sulle nostre formazioni ufficiali: la quotazione può alzarlo dentro quel limite, non oltre. La rotazione europea viene considerata per le coppe di cui seguiamo il calendario: al momento la Champions League. Chi gioca Europa o Conference League non riceve questa correzione.",
+"coppe": {}
 }
