@@ -55,8 +55,17 @@ create or replace function public.set_notifica_chat(
 returns text
 language plpgsql security definer set search_path = public as $$
 begin
-  -- solo lo staff puo' configurare le notifiche: chiunque altro non deve nemmeno sapere che esistono
-  if not public.is_staff() then
+  -- Chi puo' configurare le notifiche. Serve distinguere DUE strade, e la prima versione di questo file
+  -- sbagliava proprio quella che conta:
+  --   1) dall'SQL Editor di Supabase (o da psql) NON c'e' nessun utente autenticato: auth.uid() e' NULL e
+  --      is_staff() e' falso. Ma per arrivare li' servono gia' le credenziali del database, quindi il
+  --      controllo non aggiunge sicurezza: aggiunge solo un muro davanti all'unico uso previsto.
+  --   2) da una chiamata dell'app (PostgREST) il contesto della richiesta c'e' SEMPRE, anche per un
+  --      utente anonimo. Li' il controllo serve davvero, altrimenti chiunque potrebbe riscrivere
+  --      l'indirizzo a cui mandiamo le email.
+  -- Il discriminante e' quindi la presenza del contesto di richiesta, non il valore di auth.uid()
+  -- (che e' NULL in tutti e due i casi: usarlo da solo aprirebbe la porta agli anonimi).
+  if coalesce(current_setting('request.jwt.claims', true), '') <> '' and not public.is_staff() then
     raise exception 'solo lo staff puo configurare le notifiche';
   end if;
   update public.notifica_config
@@ -74,7 +83,8 @@ returns table (attiva boolean, endpoint_impostato boolean, chiave_impostata bool
                destinatario text, attesa_minuti int)
 language plpgsql security definer set search_path = public as $$
 begin
-  if not public.is_staff() then
+  -- stesso discriminante di set_notifica_chat: dall'SQL Editor si legge, dall'app solo lo staff
+  if coalesce(current_setting('request.jwt.claims', true), '') <> '' and not public.is_staff() then
     raise exception 'solo lo staff puo leggere lo stato delle notifiche';
   end if;
   return query
@@ -143,6 +153,12 @@ create trigger trg_notifica_messaggio
 
 -- =====================================================================================================
 -- VERIFICA (da lanciare a parte, dopo aver configurato):
+--
+--   Dall'SQL Editor funzionano tutte e due le strade, l'update diretto e la funzione:
+--
+--   update public.notifica_config set endpoint='https://api.<servizio>/v3/smtp/email',
+--          api_key='<CHIAVE>', mittente='noreply@transferbeat.com',
+--          destinatario='<casella dello staff>', attiva=true, attesa_minuti=15 where id = 1;
 --
 --   select public.set_notifica_chat(
 --     'https://api.<servizio>/v3/smtp/email',   -- endpoint del servizio di invio
