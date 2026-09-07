@@ -135,8 +135,9 @@ CTA = ("Gioca a FantaTB", "/fantatb.html")
 # Nomi vecchi di `here` ancora accettati dai generatori: "Live" era la board, "FantaTB" il ramo fantacalcio, "Home" nessuna voce.
 HERE_ALIAS = {"Live": "Notizie", "FantaTB": "Fantacalcio", "Home": ""}
 # Barra di sezione del ramo fantacalcio (hub, pagine dati, landing).
-FANTA_BAR = [("Panoramica", "/fantacalcio/"), ("Probabili formazioni", "/fantacalcio/probabili-formazioni.html"), ("Voti", "/fantacalcio/voti.html"),
-             ("Listone", "/fantacalcio/listone.html"), ("Infortunati e squalificati", "/fantacalcio/titolari.html"),
+FANTA_BAR = [("Panoramica", "/fantacalcio/"), ("Probabili formazioni", "/fantacalcio/probabili-formazioni.html"),
+             ("Chi schierare", "/fantacalcio/consigli.html"), ("Voti", "/fantacalcio/voti.html"),
+             ("Listone", "/fantacalcio/listone.html"), ("Infortunati e squalificati", "/fantacalcio/infortunati-e-squalificati.html"),
              ("Regolamento", "/fantacalcio/regolamento.html"), ("Guida all'asta", "/fantacalcio/guida-asta.html")]
 # Barra di sezione dei campionati: tutte, una voce per competizione, archivio del Mondiale.
 CAMP_BAR = [("Tutte", "/campionati/")] + [(c["nome"], "/campionati/" + c["slug"] + ".html") for c in COMPS] + [("Mondiale 2026", "/mondiali.html")]
@@ -149,6 +150,36 @@ FOOTER = [("Sezioni", list(NAV)),
 SITELINKS = [link for _, links in FOOTER for link in links]
 # Primi due livelli del breadcrumb del ramo fantacalcio (render_site ha la sua copia identica).
 FANTA_CRUMB = [("Home", SITE + "/"), ("Fantacalcio", SITE + "/fantacalcio/")]
+def voti_url(md, last_md=None):
+    """URL dei voti della giornata `md`. L'ULTIMA giornata disponibile vive sull'URL fissa /fantacalcio/voti.html;
+    la sua copia d'archivio voti-giornata-N.html esiste (articoli e schede vecchie la linkano) ma ha il canonical
+    su voti.html ed e' fuori sitemap. Linkare l'archivio per la giornata corrente manda utenti e motori sul doppione.
+    md o last_md mancanti -> hub del fantacalcio / archivio, che sono sempre validi."""
+    if not md:
+        return "/fantacalcio/"
+    if last_md and int(md) == int(last_md):
+        return "/fantacalcio/voti.html"
+    return "/fantacalcio/voti-giornata-%d.html" % int(md)
+
+def voti_last(D):
+    """Ultima giornata di voti presente nei dati (None se non ce ne sono). Comodo per passare `last_md` a voti_url()."""
+    v = (D or {}).get("voti") or {}
+    return max(v) if v else None
+
+# Anteprima social (og:image). Le immagini sono generate da `py scripts/make_og.py` e vivono in img/.
+# Una per sezione: condividere una pagina del fantacalcio non deve mostrare la stessa figura della home.
+# Chi non e' in tabella (Notizie, Articoli, pagine di servizio) usa quella di default.
+OG_DEFAULT = "/img/og-default.png"
+OG_BY_SECTION = {"Fantacalcio": "/img/og-fantacalcio.png", "Campionati": "/img/og-campionati.png",
+                 "Squadre": "/img/og-squadre.png", "Giocatori": "/img/og-squadre.png"}
+OG_W, OG_H = 1200, 630
+
+def og_image(here="", override=None):
+    """URL ASSOLUTA dell'anteprima social: og:image relativa non viene risolta da tutti gli scraper."""
+    if override:
+        return override if override.startswith("http") else SITE + override
+    return SITE + OG_BY_SECTION.get(_here(here), OG_DEFAULT)
+
 RIBBON_TEXT = "FantaTB è il fantacalcio gratuito di TransferBeat: leghe private, asta live, voti ogni 30 minuti."
 GA = ('<script async src="https://www.googletagmanager.com/gtag/js?id=G-RLST76W6H2"></script>'
       "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RLST76W6H2');</script>")
@@ -274,7 +305,7 @@ header.site .top{flex-wrap:wrap;height:auto;gap:0}.brand{font-size:22px;height:5
 header.site a.cta{margin-left:auto;height:36px;font-size:13px;padding:0 12px}
 .tabsw{order:3;flex:0 0 calc(100% + 32px);margin:0 -16px;position:relative}
 nav.tabs{overflow-x:auto;scrollbar-width:none;padding:0 8px}nav.tabs::-webkit-scrollbar{display:none}nav.tabs a{height:44px;padding:0 10px}
-.tabsw::after{content:"";position:absolute;right:0;top:0;bottom:0;width:32px;background:linear-gradient(90deg,rgba(255,255,255,0),#fff);pointer-events:none}/* sfumatura al bianco della riga scorrevole: trasparenza, non un colore */
+.tabsw::after{content:"";position:absolute;right:0;top:0;bottom:0;width:14px;box-shadow:inset -14px 0 10px -10px rgba(22,27,33,.28);pointer-events:none}/* bordo destro della riga scorrevole: ombra piatta, non un gradiente (kb/SEO.md 7.1: un solo gradiente per pagina, --grad) */
 nav.secbar .wrap{padding:0 8px}.ribbon .wrap{gap:8px}
 .grid2,.grid3,.foot .cols{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr;gap:8px}.kpi .v{font-size:22px}
 .rosa{columns:2}.plist{columns:1}.grad{padding:16px;border-radius:12px}.grad h2{font-size:22px}
@@ -436,13 +467,14 @@ def shell_footer():
     return ('<footer class="foot"><div class="wrap"><div class="cols">' + cols + '</div><p class="copy">© TransferBeat · le notizie citano sempre '
             "la testata originale · non affiliato a Fantacalcio®</p></div></footer>")
 
-def page(title, desc, canon, body, crumbs=None, ld=None, here="", og_type="website", extra_head="", promo=True, bar=None, bar_here=""):
+def page(title, desc, canon, body, crumbs=None, ld=None, here="", og_type="website", extra_head="", promo=True, bar=None, bar_here="", og_img=None):
     """Pagina completa in italiano. title senza suffisso: seo_title() aggiunge ' | TransferBeat' se il totale resta entro 60 caratteri
     e taglia a fine parola se serve; la description e' limitata a 155 caratteri da seo_desc() (kb/SEO.md §0.2).
     here = voce attiva del menu (anche i nomi vecchi Live/FantaTB); bar/bar_here = barra di sezione; promo = ribbon sotto la testata,
     mai sul ramo Fantacalcio."""
     full = seo_title(title)
     desc = seo_desc(desc)
+    _og = og_image(here, og_img)
     h = ['<!DOCTYPE html><html lang="it"><head><meta charset="UTF-8">', GA,
          '<meta name="viewport" content="width=device-width,initial-scale=1">',
          "<title>" + esc(full) + "</title>",
@@ -450,7 +482,10 @@ def page(title, desc, canon, body, crumbs=None, ld=None, here="", og_type="websi
          '<link rel="canonical" href="' + esc(canon) + '">',
          '<meta property="og:type" content="' + og_type + '"><meta property="og:site_name" content="TransferBeat">',
          '<meta property="og:title" content="' + esc(title) + '"><meta property="og:description" content="' + esc(desc) + '">',
-         '<meta property="og:url" content="' + esc(canon) + '"><meta property="og:locale" content="it_IT"><meta name="twitter:card" content="summary">',
+         '<meta property="og:url" content="' + esc(canon) + '"><meta property="og:locale" content="it_IT">',
+         '<meta property="og:image" content="' + esc(_og) + '"><meta property="og:image:width" content="' + str(OG_W) + '">',
+         '<meta property="og:image:height" content="' + str(OG_H) + '"><meta property="og:image:alt" content="' + esc(title) + ' — TransferBeat">',
+         '<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="' + esc(_og) + '">',
          "<style>" + CSS + "</style>", extra_head]
     if crumbs:
         h.append(ld_script(breadcrumb_ld(crumbs)))
@@ -465,7 +500,7 @@ def page(title, desc, canon, body, crumbs=None, ld=None, here="", og_type="websi
     h.append("</body></html>")
     return "".join(h)
 
-_SHELL_RX = {k: re.compile("<!--shell:" + k + "-->.*?<!--/shell:" + k + "-->", re.S) for k in ("css", "header", "footer")}
+_SHELL_RX = {k: re.compile("<!--shell:" + k + "-->.*?<!--/shell:" + k + "-->", re.S) for k in ("css", "og", "header", "footer")}
 
 def apply_shell(path, here="", bar=None, bar_here="", promo=True):
     """Pagine scritte a mano: sostituisce i blocchi fra i marcatori <!--shell:css-->, <!--shell:header--> e <!--shell:footer-->
@@ -476,7 +511,17 @@ def apply_shell(path, here="", bar=None, bar_here="", promo=True):
     except Exception as e:
         print("apply_shell: non leggo", path, e)
         return False
+    # Anteprima social: il titolo per og:image:alt si legge dal <title> gia' presente nella pagina a mano.
+    _t = re.search(r"<title>(.*?)</title>", src, re.S)
+    _alt = re.sub(r"\s+", " ", (_t.group(1) if _t else "TransferBeat")).strip()
+    _og = og_image(here)
     blocks = {"css": "<style>" + CSS + "</style>",
+              "og": ('<meta property="og:image" content="' + esc(_og) + '">'
+                     '<meta property="og:image:width" content="' + str(OG_W) + '">'
+                     '<meta property="og:image:height" content="' + str(OG_H) + '">'
+                     '<meta property="og:image:alt" content="' + esc(_alt) + '">'
+                     '<meta name="twitter:card" content="summary_large_image">'
+                     '<meta name="twitter:image" content="' + esc(_og) + '">'),
               "header": shell_header(here, bar, bar_here) + (ribbon() if promo and not _is_fanta(here) else ""),
               "footer": shell_footer()}
     out = src
@@ -492,7 +537,10 @@ def apply_shell(path, here="", bar=None, bar_here="", promo=True):
 
 # ---------- sitemap e lastmod veri ----------
 # Parti volatili escluse dall'hash: "2 ore fa", orari di aggiornamento. Cosi' il lastmod cambia solo se cambia il contenuto.
-VOLATILE = re.compile(r'<span class="ago">.*?</span>|<time\b[^>]*>.*?</time>', re.S)
+# <!--vol-->...<!--/vol--> marca un blocco che si aggiorna da solo a ogni giro (i titoli delle notizie): resta
+# FUORI dall'hash, altrimenti le pagine competizione cambierebbero lastmod ogni due ore e la sitemap direbbe
+# sempre 'aggiornata' - il modo piu' rapido per far smettere un crawler di fidarsi delle nostre date.
+VOLATILE = re.compile(r'<span class="ago">.*?</span>|<time\b[^>]*>.*?</time>|<!--vol-->.*?<!--/vol-->', re.S)
 
 class LastMod:
     """data/lastmod.json: per ogni URL l'hash del contenuto e la data dell'ultima modifica reale."""

@@ -9,7 +9,7 @@ bianco; griglia hairline; legenda sempre presente con >= 2 serie; etichette dire
 grafico c'e' sempre la tabella con i numeri."""
 import os, html, math
 from datetime import date
-from site_common import esc, slugify, norm, load_json, DATA, SITE, SEASON, fdate_it, date_only, page, ORG, FANTA_ALIAS, badge
+from site_common import esc, slugify, norm, load_json, DATA, SITE, SEASON, fdate_it, date_only, page, ORG, FANTA_ALIAS, badge, voti_url, voti_last
 
 # Palette dei grafici: blu e viola sono i token del sito (--blue #1f6fd6, --conf #7b46c9, definiti in site_common.CSS e validi
 # anche nei fill degli SVG inline); l'arancio dataviz e il grigio di de-enfasi non hanno un token e restano fissi.
@@ -77,26 +77,72 @@ def _fix_text(s):
             return s
     return s
 
+def _piu_ricco(a, b):
+    """Fra due schede dello stesso giocatore, quella da tenere come base. Ordine: chi ha la data di nascita
+    (e' l'unico dato d'identita' vero), poi chi e' attivo, poi l'id piu' basso (deterministico: senza questo
+    l'esito dipenderebbe dall'ordine delle chiavi in players.json e gli slug ballerebbero a ogni giro)."""
+    pid_a, ra = a
+    pid_b, rb = b
+    ka = (bool((ra.get("birth") or {}).get("date")), bool(ra.get("active")), -int(pid_a))
+    kb = (bool((rb.get("birth") or {}).get("date")), bool(rb.get("active")), -int(pid_b))
+    return a if ka >= kb else b
+
+def _fondi(base, altro):
+    """Versa in `base` i campi che le mancano e che l'altra scheda ha. Non sovrascrive mai un dato gia' presente:
+    la scheda base e' stata scelta perche' e' la piu' affidabile."""
+    for k, v in altro.items():
+        if k in ("id", "merged_ids"):
+            continue
+        if not v:
+            continue
+        cur = base.get(k)
+        if k == "birth":
+            if not (cur or {}).get("date") and (v or {}).get("date"):
+                base[k] = v
+        elif not cur:
+            base[k] = v
+    base["active"] = bool(base.get("active")) or bool(altro.get("active"))
+    return base
+
 def clean_players(pl):
-    """Nomi corretti e doppioni del feed rimossi: API-Football a volte ha lo stesso giocatore con due id nella stessa squadra,
-    uno vuoto (senza data di nascita, senza statistiche). Tiene quello con i dati."""
+    """Nomi corretti e doppioni del feed uniti: API-Football a volte ha lo stesso giocatore con due id nella stessa
+    squadra. Se uno dei due e' vuoto (senza data di nascita, senza statistiche) si butta; se hanno DATI ENTRAMBI si
+    FONDONO in una scheda sola, perche' altrimenti escono due pagine per la stessa persona, con lo stesso title e la
+    stessa description (kb/SEO.md 7.3 punto 3) e le statistiche spezzate a meta' fra le due.
+    Ogni fusione stampa una riga: quando ne compare una NUOVA va aggiunto il redirect 301 dalla vecchia URL in vercel.json,
+    perche' lo slug perde il suffisso -<id> e render_site cancella subito la pagina orfana."""
     P = pl.get("players") or {}
     for p in P.values():
         for k in ("name", "first", "last"):
             if p.get(k):
                 p[k] = _fix_text(p[k])
-    seen = {}
+    seen, fusi = {}, []
     for pid, p in list(P.items()):
         key = (full_name(p).lower(), p.get("team"))
         empty = not ((p.get("birth") or {}).get("date")) and not p.get("cur") and not p.get("prev")
         if key in seen:
-            other = P[seen[key]]
+            opid = seen[key]
+            other = P[opid]
             oempty = not ((other.get("birth") or {}).get("date")) and not other.get("cur") and not other.get("prev")
             if empty and not oempty:
                 del P[pid]; continue
             if oempty and not empty:
-                del P[seen[key]]
+                del P[opid]
+            else:
+                # tutti e due con dati: e' lo stesso giocatore visto due volte dal feed -> una scheda sola
+                keep_id, keep = _piu_ricco((pid, p), (opid, other))
+                drop_id = opid if keep_id == pid else pid
+                _fondi(keep, P[drop_id])
+                keep.setdefault("merged_ids", []).append(drop_id)
+                del P[drop_id]
+                P[keep_id] = keep
+                fusi.append("%s (%s + %s)" % (full_name(keep), keep_id, drop_id))
+                seen[key] = keep_id
+                continue
         seen[key] = pid
+    if fusi:
+        print("render_stats: doppioni del feed uniti ->", "; ".join(sorted(fusi)),
+              "| se e' una fusione NUOVA aggiungi il 301 della vecchia URL in vercel.json")
     return pl
 
 def load_stats():
@@ -872,7 +918,7 @@ def fanta_card(D, T, p, ctx, team_site, full, li, st, vs, n_md):
         doors.append(door("Voti FantaTB dell'ultima giornata", sub, "/fantacalcio/voti.html"))
     if tit.get("status"):
         n_out = sum(1 for s in tit["status"] if s.get("prob") == 0)
-        doors.append(door("Infortunati e squalificati", "%s indisponibili per la giornata %s" % (it(n_out), md_next or "prossima"), "/fantacalcio/titolari.html"))
+        doors.append(door("Infortunati e squalificati", "%s indisponibili per la giornata %s" % (it(n_out), md_next or "prossima"), "/fantacalcio/infortunati-e-squalificati.html"))
     doors.append(door("Gioca a FantaTB", "Leghe private, asta live e voti ogni 30 minuti, gratis", "/fantatb.html", dark=True))
     b.append('<div class="grid2">' + "".join(doors) + "</div>")
     return '<div class="card" id="fantacalcio"><h2>Fantacalcio</h2><div class="in">' + "".join(b) + "</div></div>"
@@ -977,10 +1023,11 @@ def render_player(D, S, T, p, ctx):
         b.append("<h2>Voti FantaTB %s</h2>" % esc(SEASON))
         tbl = ['<table><thead><tr><th class="num">Giornata</th><th class="num">Min</th><th class="num">Voto</th><th class="l">Bonus e malus</th><th class="num">Fantavoto</th></tr></thead><tbody>']
         from render_site import dec as decf
+        _last = voti_last(D)          # l'ultima giornata sta su voti.html, non sulla copia d'archivio
         for m in mds:
             r = vs[m]
-            tbl.append('<tr><td class="num"><a href="/fantacalcio/voti-giornata-%d.html">%d</a></td><td class="num">%s</td><td class="num">%s</td><td class="l">%s</td><td class="pt num">%s</td></tr>' % (
-                m, m, it(r.get("minutes") or 0), decf(r["voto"]) if r.get("voto") is not None else "s.v.", esc(bonus_text(r.get("bonus"))), decf(r["fantavoto"]) if r.get("fantavoto") is not None else "—"))
+            tbl.append('<tr><td class="num"><a href="%s">%d</a></td><td class="num">%s</td><td class="num">%s</td><td class="l">%s</td><td class="pt num">%s</td></tr>' % (
+                voti_url(m, _last), m, it(r.get("minutes") or 0), decf(r["voto"]) if r.get("voto") is not None else "s.v.", esc(bonus_text(r.get("bonus"))), decf(r["fantavoto"]) if r.get("fantavoto") is not None else "—"))
         tbl.append("</tbody></table>")
         b.append(card("Voto e fantavoto per giornata", chart_cols(cats, [("Voto", voti_l), ("Fantavoto", fv_l)], [C1, C2], fmt=lambda v: it(v, 1 if v != int(v) else 0), W=720, H=260, label="Voto e fantavoto FantaTB per giornata") + "".join(tbl),
                       legend([("Voto", C1), ("Fantavoto", C2)])))
@@ -999,7 +1046,7 @@ def render_player(D, S, T, p, ctx):
     mates = sorted([q for q in ctx["P"].values() if q.get("team") == p.get("team") and q.get("active") and q["id"] != pid], key=lambda q: (ROLE_ORDER.index(q.get("position")) if q.get("position") in ROLE_ORDER else 9, full_name(q)))
     if mates:
         b.append("<h2>Compagni di squadra</h2><div class=\"chips\">" + "".join(plink(ctx, q["id"], full_name(q)) for q in mates) + "</div>")
-    links = ['<a href="/giocatori/">Tutti i giocatori di Serie A</a>', '<a href="/fantacalcio/listone.html">listone FantaTB</a>', '<a href="/fantacalcio/titolari.html">probabili titolari</a>']
+    links = ['<a href="/giocatori/">Tutti i giocatori di Serie A</a>', '<a href="/fantacalcio/listone.html">listone FantaTB</a>', '<a href="/fantacalcio/infortunati-e-squalificati.html">probabili titolari</a>']
     if team_site:
         links.insert(0, '<a href="%s">pagina %s</a>' % (T.url(team_site), esc(team_site)))
     b.append('<p class="small">%s</p>' % " · ".join(links))

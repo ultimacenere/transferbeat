@@ -69,19 +69,22 @@ STORIA_LABEL = {"it": "FOCUS", "en": "FOCUS", "es": "FOCO"}
 LUNCH_LABEL = {"it": "LUNCH BREAK", "en": "LUNCH BREAK", "es": "LUNCH BREAK"}
 SCOOP_LABEL = {"it": "SCOOP", "en": "SCOOP", "es": "SCOOP"}
 NOTTI_LABEL = {"it": "NOTTI MONDIALI", "en": "WORLD CUP NIGHTS", "es": "NOCHES MUNDIALES"}
+BILANCIO_LABEL = {"it": "BILANCIO", "en": "TRANSFER REVIEW", "es": "BALANCE"}
 # pill = classe semantica della pillola (colori dai token del sito, mai testo bianco su colore pieno).
 TIPI = {"recap": {"label": RECAP_LABEL, "pill": "ok", "cover": "cover-recap.svg"},
         "lunch": {"label": LUNCH_LABEL, "pill": "warn", "cover": "cover-lunch.svg"},
         "storia": {"label": STORIA_LABEL, "pill": "blue", "cover": "cover-storia.svg"},
         "scoop": {"label": SCOOP_LABEL, "pill": "err", "cover": "cover-scoop.svg"},
-        "notti": {"label": NOTTI_LABEL, "pill": "info", "cover": "cover-notti.svg"}}
+        "notti": {"label": NOTTI_LABEL, "pill": "info", "cover": "cover-notti.svg"},
+        # bilancio: ricostruzioni di una sessione di mercato dallo storico gia' classificato della board (kb/RIPARTENZA.md 8, fase J)
+        "bilancio": {"label": BILANCIO_LABEL, "pill": "info", "cover": "cover-bilancio.svg"}}
 MONTHS = {"it": ["gen","feb","mar","apr","mag","giu","lug","ago","set","ott","nov","dic"],
           "en": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
           "es": ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"]}
 # URL fisse del ramo fantacalcio (le pagine esistono nel repo). I voti dell'ultima giornata stanno sull'URL fissa voti.html:
 # voti-giornata-N.html esiste solo per le giornate passate (archivio), quindi la card, che cita sempre l'ultima, non deve usarla.
 FANTA_URL = {"hub": "/fantacalcio/", "prob": "/fantacalcio/probabili-formazioni.html", "listone": "/fantacalcio/listone.html",
-             "tit": "/fantacalcio/titolari.html", "voti": "/fantacalcio/voti.html"}
+             "tit": "/fantacalcio/infortunati-e-squalificati.html", "voti": "/fantacalcio/voti.html"}
 ICON_PLAY = ('<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" '
              'stroke-linejoin="round" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4"/></svg>')
 
@@ -234,7 +237,8 @@ def head(title, desc, canon, alts, lang, og_img="", ld=None):
     h.append('<meta property="og:description" content="' + esc(seo_desc(desc)) + '">')
     h.append('<meta property="og:url" content="' + esc(canon) + '">')
     if og_img:
-        h.append('<meta property="og:image" content="' + esc(og_img) + '">')
+        h.append('<meta property="og:image" content="' + esc(og_img) + '">'
+                 '<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">')
     h.append('<meta name="twitter:card" content="' + ("summary_large_image" if og_img else "summary") + '">')
     h.append('<style>' + CSS + '</style>')
     for o in (ld or []):
@@ -298,7 +302,9 @@ def render_article(art, lang, site, arts=None):
     og_img = ""
     if tipo in TIPI:
         badge_txt += " · " + fdate(art.get("updated", "") or art.get("created", ""), lang)
-        og_img = site + "/img/" + TIPI[tipo]["cover"]
+        # og:image DEVE essere un raster: nessuno scraper social legge SVG (Facebook, X, LinkedIn, WhatsApp).
+        # La SVG resta per il <img class="cover"> dentro la pagina; qui si usa la gemella .png (scripts/make_og.py).
+        og_img = site + "/img/" + TIPI[tipo]["cover"].replace(".svg", ".png")
     title = c["title"]; lead = c["lead"]
     desc = lead or title
     team = art.get("team", ""); tslug = TEAM_SLUG.get(team or "")
@@ -358,7 +364,8 @@ def render_index(arts, lang, site):
     alts = {l: site + "/articoli/" + l + "/" for l in LANGS}
     meta = INDEX_META[lang]
     cr = [(UI[lang]["home"], site + "/"), (UI[lang]["list"], canon)]
-    out = [head(meta[0], meta[1], canon, alts, lang, ld=[breadcrumb_ld(cr)]), topbar(lang, alts, site)]
+    # anche l'indice degli articoli ha la sua anteprima social: senza, la condivisione della sezione resta muta
+    out = [head(meta[0], meta[1], canon, alts, lang, og_img=site + "/img/og-default.png", ld=[breadcrumb_ld(cr)]), topbar(lang, alts, site)]
     out.append('<main class="wrap">' + breadcrumb_html(cr) + '<div class="art"><h1>' + UI[lang]["list"] + '</h1><p class="sub">' + esc(meta[1]) + '</p>')
     for a in arts:
         c = a["content"].get(lang) or a["content"]["it"]

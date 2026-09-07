@@ -7,7 +7,7 @@ Genera, in italiano, tutte sul guscio unico di site_common (testata, barra di se
 - squadre/<slug>.html per ogni squadra di data/teams.json + squadre/index.html;
 - campionati/<slug>.html per le 6 competizioni di data/competizioni.json + campionati/index.html;
 - fantacalcio/index.html (hub), listone.html, voti.html (ultima giornata) + voti-giornata-N.html (archivio; per l'ultima giornata una copia
-  con canonical su voti.html, fuori sitemap, perche' la URL e' gia' linkata), titolari.html
+  con canonical su voti.html, fuori sitemap, perche' la URL e' gia' linkata), infortunati-e-squalificati.html
   (infortunati e squalificati), probabili (render_probabili), schede giocatore (render_stats), landing e pagine extra se i moduli esistono;
 - llms.txt, robots.txt, sitemap-pagine/squadre/campionati/fanta/giocatori.xml e l'indice sitemap.xml (lastmod veri: data/lastmod.json).
 Uso: python scripts/render_site.py            (in update.yml DOPO build.py e competizioni.py, PRIMA del commit)
@@ -44,6 +44,7 @@ def load_all():
          "rosters": load_json(os.path.join(DATA, "rosters.json"), {"rose": {}}) or {"rose": {}},
          "articles": load_json(os.path.join(DATA, "articles", "index.json"), {"articoli": []}) or {"articoli": []},
          "listone": load_json(os.path.join(DATA, "fanta", "listone.json"), {"players": []}) or {"players": []},
+         "sources": load_json(os.path.join(DATA, "sources.json"), {"feeds": []}) or {"feeds": []},
          "voti": {}, "titolari": None, "titolari_all": {}, "probabili": {}, "stats": RS.load_stats(), "pctx": None}
     fd = os.path.join(DATA, "fanta")
     if os.path.isdir(fd):
@@ -191,21 +192,32 @@ def zone_class(pos, n, code):
 
 LEGEND = "Arancione: zona Champions · Blu: Europa League · Oro: Conference · Rosso: retrocessione"
 
-def table_html(T, c, tbl, me=None, caption=""):
+# Colonne ordinabili della classifica: (etichetta, chiave, numerica). La Forma non e' un numero e resta fuori.
+STAND_COLS = [("#", "pos", True), ("Squadra", None, False), ("PG", "pg", True), ("V", "v", True), ("N", "n", True), ("P", "p", True),
+              ("GF", "gf", True), ("GS", "gs", True), ("DR", "dr", True), ("Pt", "pt", True)]
+
+def table_html(T, c, tbl, me=None, caption="", sortable=False):
+    """sortable=True: intestazioni cliccabili (class 'srt' + th.sort, motore in FILTER_JS) e data-v numerico sulle celle
+    il cui testo non e' un numero puro (DR ha il '+'). Il default resta False perche' la stessa funzione serve anche le
+    pagine squadra e l'hub campionati, dove FILTER_JS NON e' incluso e le intestazioni sembrerebbero cliccabili a vuoto.
+    Le fasce colorate (z1/z2/z3/zr) tingono il TESTO della cella posizione, non lo sfondo della riga: restano corrette
+    anche dopo un riordino per un'altra colonna, perche' il numero di posizione viaggia con la sua squadra."""
     rows = tbl.get("table") or []
     n = len(rows)
     has_form = any(r.get("form") for r in rows)
-    h = ['<div class="card">' + ("<h3>" + caption + "</h3>" if caption else "") + '<div class="tscroll"><table><thead><tr>'
-         '<th class="num">#</th><th class="team">Squadra</th><th class="num">PG</th><th class="num">V</th><th class="num">N</th><th class="num">P</th>'
-         '<th class="num">GF</th><th class="num">GS</th><th class="num">DR</th><th class="num">Pt</th>' +
-         ("<th>Forma</th>" if has_form else "") + "</tr></thead><tbody>"]
+    def th(lab, key, num):
+        cls = ("num" if lab != "Squadra" else "team") + (" sort" if sortable else "")
+        return "<th class=\"" + cls + "\"" + (' data-n="1"' if (sortable and num) else "") + ">" + lab + "</th>"
+    h = ['<div class="card">' + ("<h3>" + caption + "</h3>" if caption else "") + '<div class="tscroll"><table' + (' class="srt"' if sortable else "") + "><thead><tr>" +
+         "".join(th(lab, key, num) for lab, key, num in STAND_COLS) +
+         (('<th class="' + ("team" if sortable else "") + '">Forma</th>') if has_form else "") + "</tr></thead><tbody>"]
     for r in rows:
         nm = T.name_of(r["team"])
         cls = (zone_class(r.get("pos") or 0, n, c["code"]) + (" me" if me and nm == me else "")).strip()
         dr = r.get("dr") or 0
         h.append('<tr class="' + cls + '"><td class="pos num">' + str(r.get("pos")) + '</td><td class="team">' + T.link(r["team"]) + '</td><td class="num">' +
                  str(r.get("pg", 0)) + '</td><td class="num">' + str(r.get("v", 0)) + '</td><td class="num">' + str(r.get("n", 0)) + '</td><td class="num">' + str(r.get("p", 0)) + '</td><td class="num">' +
-                 str(r.get("gf", 0)) + '</td><td class="num">' + str(r.get("gs", 0)) + '</td><td class="num">' + ("+" if dr > 0 else "") + str(dr) + '</td><td class="pt num">' + str(r.get("pt", 0)) + "</td>" +
+                 str(r.get("gf", 0)) + '</td><td class="num">' + str(r.get("gs", 0)) + '</td><td class="num" data-v="' + str(dr) + '">' + ("+" if dr > 0 else "") + str(dr) + '</td><td class="pt num">' + str(r.get("pt", 0)) + "</td>" +
                  ("<td>" + esc(" ".join(x for x in (r.get("form") or "").split(",")[-5:])) + "</td>" if has_form else "") + "</tr>")
     h.append('</tbody></table></div><div class="legend">' + LEGEND + "</div></div>")
     return "".join(h)
@@ -298,7 +310,7 @@ def team_fanta_card(D, T, nome):
     links = []
     if md_p:
         links.append('<a href="/fantacalcio/probabili-formazioni.html#squadra-' + slug + '">Probabile formazione giornata ' + str(md_p) + "</a>")
-    links.append('<a href="/fantacalcio/titolari.html">Infortunati e squalificati</a>')
+    links.append('<a href="/fantacalcio/infortunati-e-squalificati.html">Infortunati e squalificati</a>')
     links.append('<a href="/fantacalcio/listone.html">Listone e quotazioni</a>')
     if D.get("voti"):
         links.append('<a href="/fantacalcio/voti.html">Voti dell\'ultima giornata</a>')
@@ -421,6 +433,43 @@ def comp_leader(c):
             return rows[0]
     return None
 
+def comp_news_html(D, T, c, limite=8):
+    """Ultime notizie della competizione: si aggregano quelle delle sue squadre (la board indicizza per squadra, non
+    per lega) e si tengono le piu' concrete. NON si ordina per tempo: il campo `quando` della board e' una stringa
+    relativa ("18 g fa") calcolata al build, non una data, quindi l'unico ordine affidabile e' quello di concretezza
+    gia' usato da team_news. Il blocco sta dentro <!--vol-->...<!--/vol--> perche' cambia da solo ogni due ore:
+    senza quel marcatore il lastmod della pagina cambierebbe a ogni giro anche senza modifiche vere (site_common.VOLATILE).
+    Il Mondiale aveva gia' una barra cosi': qui si estende a tutte le competizioni che hanno una lega nella board."""
+    lg = (COMP_BY_CODE.get(c["code"]) or {}).get("league") or ""
+    if not lg:
+        return ""            # Champions, Bundesliga e Ligue 1 non hanno una lega di board: niente da aggregare
+    per_stato = {st: [] for st in STATE_ORDER}
+    for t in T.list:
+        if t.get("league") != lg:
+            continue
+        bd = D["board_sq"].get(t["nome"])
+        if not bd:
+            continue
+        for st, it in team_news(bd, 3):
+            per_stato.setdefault(st, []).append((t["nome"], it))
+    viste, out = set(), []
+    for st in STATE_ORDER:                      # fatti, ufficiali, anteprime, voci: la scala di concretezza del sito
+        for nome, it in per_stato.get(st) or []:
+            k = (it.get("titolo") or "").strip().lower()
+            if not k or k in viste:
+                continue
+            viste.add(k)
+            li = news_li(st, it)
+            out.append("<li>" + T.link_name(nome) + " " + li[len("<li>"):])
+            if len(out) >= limite:
+                break
+        if len(out) >= limite:
+            break
+    if not out:
+        return ""
+    return ('<h2>Ultime notizie</h2><!--vol--><div class="card"><ul class="news">' + "".join(out) + "</ul>"
+            '<div class="cf"><a href="/board.html">Tutte le notizie squadra per squadra &rarr;</a></div></div><!--/vol-->')
+
 def render_comp(D, T, c):
     meta = COMP_BY_CODE[c["code"]]; canon = SITE + "/campionati/" + meta["slug"] + ".html"
     upd = D["comp"].get("aggiornato") or ""
@@ -430,11 +479,16 @@ def render_comp(D, T, c):
     b.append('<div class="sub">' + esc(meta["paese"]) + " · giornata " + str(g or "") + " · " + str(c.get("partite_giocate", 0)) + " partite giocate su " + str(c.get("partite_totali", 0)) +
              " · aggiornato <time>" + esc(fdate_it(upd, True)) + "</time> · dati football-data.org</div>")
     events = []
+    # Strumenti: una sola casella filtra squadre e marcatori insieme (FILTER_JS agisce su tutte le table.srt della pagina).
+    # Senza JS la pagina resta completa: la barra e' un miglioramento progressivo, non un requisito.
+    b.append('<div class="tools"><input id="q" type="search" placeholder="Filtra per squadra o giocatore" aria-label="Filtra la classifica e i marcatori">'
+             "<span class=\"hint\">Clicca un'intestazione per ordinare · <b id=\"cnt\"></b> righe</span></div>")
     if c.get("classifica"):
-        b.append("<h2>Classifica</h2>")
+        b.append('<h2>Classifica</h2><div data-sec="classifica">')
         for tbl in c["classifica"]:
             grp = tbl.get("group") or ""
-            b.append(table_html(T, c, tbl, caption=(esc(grp) if re.search(r"GROUP|Group|Girone", grp) else "")))
+            b.append(table_html(T, c, tbl, caption=(esc(grp) if re.search(r"GROUP|Group|Girone", grp) else ""), sortable=True))
+        b.append("</div>")
     else:
         b.append('<p class="note">La classifica compare quando inizia la fase a campionato: fino ad allora qui trovi il calendario completo delle prime giornate.</p>')
     keys = sorted(int(k) for k in (c.get("giornate") or {}).keys())
@@ -450,16 +504,29 @@ def render_comp(D, T, c):
     for st, ms in (c.get("stages") or {}).items():
         b.append('<div class="card"><h3>' + esc(st.replace("_", " ").capitalize()) + '</h3><div class="in">' + "".join(match_row(T, m) for m in ms) + "</div></div>")
     if c.get("marcatori"):
-        b.append('<h2>Marcatori</h2><div class="card"><div class="tscroll"><table><thead><tr><th class="num">#</th><th class="l">Giocatore</th><th class="l">Squadra</th><th class="num">Gol</th><th class="num">Rig.</th><th class="num">Assist</th></tr></thead><tbody>')
+        b.append('<h2>Marcatori</h2><div data-sec="marcatori"><div class="card"><div class="tscroll"><table class="srt"><thead><tr><th class="num sort" data-n="1">#</th>'
+                 '<th class="l sort">Giocatore</th><th class="l sort">Squadra</th><th class="num sort" data-n="1">Gol</th>'
+                 '<th class="num sort" data-n="1">Rig.</th><th class="num sort" data-n="1">Assist</th></tr></thead><tbody>')
         for i, s in enumerate(c["marcatori"]):
             b.append('<tr><td class="num">' + str(i + 1) + '</td><td class="l">' + esc(s.get("name")) + '</td><td class="l">' + T.link(s.get("team") or {}) + '</td><td class="pt num">' +
                      str(s.get("goals", 0)) + '</td><td class="num">' + str(s.get("pen", 0)) + '</td><td class="num">' + str(s.get("assists", 0)) + "</td></tr>")
-        b.append("</tbody></table></div></div>")
+        b.append("</tbody></table></div></div></div>")
+    nb = comp_news_html(D, T, c)
+    if nb:
+        b.append(nb)
     names = {T.name_of(r["team"]) for tbl in c.get("classifica", []) for r in tbl.get("table", [])}
     names |= {T.name_of(m[s]) for ms in (c.get("giornate") or {}).values() for m in ms for s in ("home", "away")}
     names = sorted(n for n in names if n)
     if names:
-        b.append('<h2>Le squadre</h2><div class="chips">' + "".join('<a href="' + T.url(n) + '">' + esc(n) + "</a>" for n in names) + "</div>")
+        # accanto alla pagina squadra, la scorciatoia alle sue notizie: la board si apre gia' filtrata (?team=).
+        # Il link si emette SOLO per le squadre che la board conosce davvero, altrimenti si atterra su "tutte le squadre".
+        def _chip(n):
+            a = '<a href="' + T.url(n) + '">' + esc(n) + "</a>"
+            if n in D["board_sq"]:
+                a += '<a class="cn" href="/board.html?team=' + quote(n) + '" title="Notizie su ' + esc(n) + '">notizie</a>'
+            return a
+        b.append('<h2>Le squadre</h2><p class="small">Ogni squadra ha la sua pagina con classifica, calendario e rosa; '
+                 'accanto, le sue notizie nella board.</p><div class="chips chips2">' + "".join(_chip(n) for n in names) + "</div>")
     b.append('<p class="small">Altre competizioni: ' + " · ".join('<a href="/campionati/' + m["slug"] + '.html">' + esc(m["nome"]) + "</a>" for m in COMPS if m["code"] != c["code"]) +
              ' · <a href="/campionati.html">versione interattiva</a></p>')
     lead_txt = ""
@@ -471,6 +538,7 @@ def render_comp(D, T, c):
         ld.append({"@context": "https://schema.org", "@type": "ItemList", "name": meta["nome"] + " " + SEASON + ": partite",
                    "itemListElement": [{"@type": "ListItem", "position": i + 1, "item": e} for i, e in enumerate(events[:24])]})
     crumbs = [("Home", SITE + "/"), ("Campionati", SITE + "/campionati/"), (meta["nome"], canon)]
+    b.append(FILTER_JS)   # ordinamento e filtro: la pagina resta completa anche senza JS
     return page(comp_title(meta, c), desc, canon, "".join(b), crumbs=crumbs, ld=ld, here="Campionati", bar=CAMP_BAR, bar_here=meta["nome"])
 
 def render_comp_index(D, T):
@@ -571,7 +639,11 @@ table.srt td.name{font-weight:600}table.srt td .rb{vertical-align:middle}
 .kpi.err{border-left:4px solid var(--err)}.kpi.warn{border-left:4px solid var(--warn)}.kpi.info{border-left:4px solid var(--violet)}.kpi.ok{border-left:4px solid var(--ok)}
 .rows2{display:flex;flex-direction:column;gap:6px;margin:8px 0}.rows2 div{display:flex;justify-content:space-between;gap:8px}.rows2 span.m{color:var(--muted)}.rows2 .e{color:var(--err);font-weight:600}
 .grad .lines{margin:8px 0 0;padding:0;list-style:none}.grad .lines li{padding:2px 0}
-.doors3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:24px 0}.doors3 .door{margin:0;padding:16px 18px;align-items:flex-start}.doors3 .door b{font-size:18px}
+.doors3{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:24px 0}
+/* chip squadra con la scorciatoia alle sue notizie: due link nello stesso riquadro, il secondo piu' leggero */
+.chips2 a{margin-right:0}.chips2>a+a.cn{margin-left:-2px;border-left:0;border-top-left-radius:0;border-bottom-left-radius:0;font-size:12px;color:var(--muted);padding-left:8px;padding-right:10px}
+.chips2>a:not(.cn){border-top-right-radius:0;border-bottom-right-radius:0;margin-right:0}
+.chips2 a.cn:hover{color:var(--brand-ink)}.doors3 .door{margin:0;padding:16px 18px;align-items:flex-start}.doors3 .door b{font-size:18px}
 @media(max-width:760px){.doors3{grid-template-columns:1fr}.tools .hint{display:none}}
 </style>"""
 
@@ -596,6 +668,9 @@ FILTER_JS = ("<script>(function(){var ts=[].slice.call(document.querySelectorAll
              "var ok=(!s||tr.textContent.toLowerCase().indexOf(s)>=0)&&(!ro||tr.getAttribute('data-r')===ro)&&(!tm||tr.getAttribute('data-t')===tm);tr.hidden=!ok;if(ok){k++;n++;}});"
              "var sec=t.closest('[data-sec]');if(sec)sec.hidden=(k===0);});if(cnt)cnt.textContent=n;}"
              "if(q)q.addEventListener('input',filt);if(sel)sel.addEventListener('change',filt);"
+             # contatore gia' pieno all'apertura: conta e basta, senza chiamare filt() (che nasconderebbe le sezioni vuote,
+             # cambiando il comportamento di listone, voti e titolari che usano lo stesso motore)
+             "if(cnt){var n0=0;ts.forEach(function(t){n0+=t.tBodies[0].rows.length;});cnt.textContent=n0;}"
              "chips.forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();ro=a.getAttribute('data-r')||'';chips.forEach(function(x){x.classList.toggle('on',x===a);});filt();"
              "var h=a.getAttribute('href');if(h&&h.charAt(0)==='#'&&h.length>1){var el=document.getElementById(h.slice(1));if(el&&ro)el.scrollIntoView();}});});"
              "ts.forEach(function(t){[].slice.call(t.querySelectorAll('th.sort')).forEach(function(th){th.addEventListener('click',function(){var i=th.cellIndex,tb=t.tBodies[0],rows=[].slice.call(tb.rows),"
@@ -797,7 +872,7 @@ def render_voti(D, T, md, V, latest=False, mirror=False):
     if D.get("probabili"):
         nmd = max(D["probabili"])
         nav.append('<a class="btn ghost" href="/fantacalcio/probabili-formazioni.html">Probabili formazioni giornata ' + str(nmd) + "</a>")
-    nav.append('<a class="btn ghost" href="/fantacalcio/titolari.html">Infortunati e squalificati</a>')
+    nav.append('<a class="btn ghost" href="/fantacalcio/infortunati-e-squalificati.html">Infortunati e squalificati</a>')
     nav.append('<a class="btn sec" href="/fanta/#voti">Apri nell\'app FantaTB</a>')
     b.append("<p>" + " ".join(nav) + "</p>")
     if latest:
@@ -820,7 +895,7 @@ def render_voti(D, T, md, V, latest=False, mirror=False):
                 "Versione aggiornata su /fantacalcio/voti.html.")
     return fanta_page(title, desc, canon, "".join(b), crumbs, ld, "Voti")
 
-# ---------- infortunati e squalificati (URL /fantacalcio/titolari.html invariata) ----------
+# ---------- infortunati e squalificati (URL /fantacalcio/infortunati-e-squalificati.html invariata) ----------
 STATO = {"inf": ("Fuori", "err"), "dubbio": ("In dubbio", "warn"), "squal": ("Squalificato", "info"), "rientra": ("Rientra", "ok")}
 
 def unavailable(D, T, S, md):
@@ -882,7 +957,7 @@ def unavailable(D, T, S, md):
     return out
 
 def render_titolari(D, T):
-    S = D["titolari"]; md = S.get("matchday") or 0; canon = SITE + "/fantacalcio/titolari.html"; upd = S.get("updated") or ""
+    S = D["titolari"]; md = S.get("matchday") or 0; canon = SITE + "/fantacalcio/infortunati-e-squalificati.html"; upd = S.get("updated") or ""
     fn = "titolari-%02d.json" % md; pctx = D.get("pctx")
     byid = {p["id"]: p for p in D["listone"].get("players") or []}
     rows = [(byid[s["player_id"]], s) for s in S.get("status") or [] if s.get("player_id") in byid]
@@ -998,7 +1073,7 @@ def render_fanta_index(D, T):
     if P:
         kpis.append('<div class="kpi"><div class="l">Ballottaggi</div><div class="v">' + str(n_bal) + '</div><a href="/fantacalcio/probabili-formazioni.html">Le probabili della giornata ' + str(md_p) + "</a></div>")
     if tit:
-        kpis.append('<div class="kpi"><div class="l">Indisponibili</div><div class="v">' + str(n_inj) + '</div><a href="/fantacalcio/titolari.html">Infortunati e squalificati</a></div>')
+        kpis.append('<div class="kpi"><div class="l">Indisponibili</div><div class="v">' + str(n_inj) + '</div><a href="/fantacalcio/infortunati-e-squalificati.html">Infortunati e squalificati</a></div>')
     if best:
         kpis.append('<div class="kpi"><div class="l">Miglior fantavoto G' + str(md_v) + '</div><div class="v">' + d1(best[1].get("fantavoto")) + '</div><a href="/fantacalcio/voti.html">' +
                     esc(best[0]["name"]) + " · " + esc(fanta_team_name(T, best[0].get("team"))) + "</a></div>")
@@ -1043,7 +1118,11 @@ def render_fanta_index(D, T):
     inj_sub = (str(n_inj) + " indisponibili per la giornata " + str(md_t)) if tit else "Indice di titolarità e rientri"
     if tit and inj:
         inj_sub += ": " + ", ".join(p["name"] for p, _ in inj[:3])
-    b.append('<div class="doors3">' + door("Infortunati e squalificati", inj_sub, "/fantacalcio/titolari.html") +
+    porte = []
+    if RX:                       # consigli.html la genera render_fanta_extra: senza quel modulo la porta punterebbe nel vuoto
+        porte.append(door("Chi schierare" + (" nella giornata " + str(md_p) if md_p else ""),
+                          "I titolari piu' probabili con la fantamedia migliore, ruolo per ruolo", "/fantacalcio/consigli.html"))
+    b.append('<div class="doors3">' + "".join(porte) + door("Infortunati e squalificati", inj_sub, "/fantacalcio/infortunati-e-squalificati.html") +
              door("Listone", str(n) + " giocatori quotati, aggiornato il " + fdate_it(D["listone"].get("updated")), "/fantacalcio/listone.html") +
              door("Gioca a FantaTB", "Leghe private, asta live dal telefono, voti ogni 30 minuti. Gratis.", "/fantatb.html", dark=True) + "</div>")
     b.append('<h2>Domande frequenti</h2><div class="faq">' + "".join("<details><summary>" + esc(q) + "</summary><p>" + esc(a) + "</p></details>" for q, a in FAQ) + "</div>")
@@ -1114,14 +1193,67 @@ def home_fanta_block(D, T):
     doors = []
     if P:
         doors.append(door("Probabili formazioni", "Giornata " + str(P.get("matchday")) + ", percentuali e ballottaggi", "/fantacalcio/probabili-formazioni.html"))
+        if RX:                   # la pagina "chi schierare" esiste solo se render_fanta_extra e' importabile
+            doors.append(door("Chi schierare", "I titolari probabili con la fantamedia migliore", "/fantacalcio/consigli.html"))
     if V:
         doors.append(door("Voti giornata " + str(mds[-1]), "Voto statistico, bonus e fantavoto", "/fantacalcio/voti.html"))
     doors.append(door("Listone", str(n) + " giocatori quotati", "/fantacalcio/listone.html"))
     if tit:
-        doors.append(door("Infortunati e squalificati", str(n_inj) + " indisponibili, rientri previsti", "/fantacalcio/titolari.html"))
+        doors.append(door("Infortunati e squalificati", str(n_inj) + " indisponibili, rientri previsti", "/fantacalcio/infortunati-e-squalificati.html"))
     return ('<h2><a href="/fantacalcio/">Fantacalcio Serie A ' + SEASON + "</a></h2><p>" + esc("; ".join(parts).capitalize()) + ". I dati originali di TransferBeat, gratis e anche in JSON.</p>"
-            '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:12px 0">' + "".join(doors) + "</div>"
+            '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:12px 0">' + "".join(doors) + "</div>"
             '<p><a class="btn" href="' + esc(CTA[1]) + '">' + esc(CTA[0]) + '</a> <a class="btn ghost" href="/fantacalcio/">Tutti i dati del fantacalcio</a></p>')
+
+def home_classifica_block(D, T):
+    """Blocco classifica della home (marcatore static:classifica). "Classifica Serie A" e' la ricerca piu' frequente
+    del dominio e sulla home non c'era: c'erano solo i link alle pagine competizione. Qui la tabella e' VERA, statica
+    e completa, quindi vale per i motori quanto per chi legge. Accanto, la prossima giornata: cosi' la home risponde
+    sia a "come sta andando" sia a "quando si gioca"."""
+    comps = [c for c in D["comp"].get("competizioni", []) if c["code"] == "SA"]
+    if not comps or not comps[0].get("classifica"):
+        return ""
+    c = comps[0]
+    tbl = c["classifica"][0]
+    rows = tbl.get("table") or []
+    if not rows:
+        return ""
+    n = len(rows)
+    g = c.get("giornata")
+    righe = []
+    for r in rows:
+        nm = T.name_of(r["team"])
+        cls = zone_class(r.get("pos") or 0, n, "SA")
+        righe.append('<tr class="' + cls + '"><td class="pos num">' + str(r.get("pos")) + '</td><td class="team">' + T.link(r["team"]) +
+                     '</td><td class="num">' + str(r.get("pg", 0)) + '</td><td class="num">' + str(r.get("gf", 0)) + "-" + str(r.get("gs", 0)) +
+                     '</td><td class="pt num">' + str(r.get("pt", 0)) + "</td></tr>")
+    # prossime partite: la prima giornata non ancora conclusa fra quelle presenti nel JSON
+    prossime = []
+    for k in sorted(int(x) for x in (c.get("giornate") or {}).keys()):
+        ms = c["giornate"][str(k)] or []
+        if ms and not all(m.get("status") in FINISHED for m in ms):
+            prossime = [(k, ms)]
+            break
+    lato = ""
+    if prossime:
+        k, ms = prossime[0]
+        # etichetta onesta: la giornata scelta e' quella non ancora conclusa, che puo' essere in corso o da giocare
+        fatte = sum(1 for m in ms if m.get("status") in FINISHED)
+        lab = "Giornata " + str(k) + (": in corso, " + str(fatte) + " partite su " + str(len(ms)) if fatte else ": si gioca")
+        lato = ('<div class="card"><h3>' + esc(lab) + "</h3><div class=\"in\">" +
+                "".join(match_row(T, m) for m in ms[:10]) + "</div>"
+                '<div class="cf"><a href="/campionati/serie-a.html">Tutte le giornate e i marcatori →</a></div></div>')
+    lead = comp_leader(c)
+    intro = ""
+    if lead:
+        capo = T.name_of(lead["team"]) or lead["team"].get("short") or ""
+        intro = (esc(capo) + " guida la Serie A " + SEASON + " con " + punti(lead.get("pt", 0)) +
+                 (" dopo " + str(g) + " giornate" if g else "") + ". ")
+    return ('<h2><a href="/campionati/serie-a.html">Classifica Serie A ' + SEASON + "</a></h2>"
+            '<div class="sub">' + intro + "Punti, partite giocate e gol fatti-subiti di tutte e " + str(n) +
+            ' le squadre, aggiornati ogni due ore. <a href="/campionati/">Anche Premier, Liga, Bundesliga, Ligue 1 e coppe</a>.</div>'
+            '<div class="hcls"><div class="card"><div class="tscroll"><table><thead><tr><th class="num">#</th><th class="team">Squadra</th>'
+            '<th class="num">PG</th><th class="num">Gol</th><th class="num">Pt</th></tr></thead><tbody>' + "".join(righe) +
+            '</tbody></table></div><div class="legend">' + LEGEND + "</div></div>" + lato + "</div>")
 
 def render_home(D, T, lm):
     H = D["home"]; upd = H.get("aggiornato") or ""; arts = D["arts"]
@@ -1159,8 +1291,8 @@ def render_home(D, T, lm):
                    ' · <a class="cl" href="/squadre/">tutte le squadre →</a> · <a class="cl" href="/giocatori/">schede giocatore</a> · <a class="cl" href="/fantacalcio/">fantacalcio: probabili, voti, listone e infortunati</a></div>')
     masthead = esc(H.get("giorno")) + "<br>Edizione delle <b><time>" + esc((upd or "")[11:16]) + "</time></b> · Il giornale del calcio"
     blocks = {"ticker": ticker, "lead": lead, "sub3": sub3, "miniBoard": miniboard, "topNews": topnews, "articoliRow": artrow, "worldRow": world, "squadre": "".join(squadre), "masthead": masthead,
-              "fanta": home_fanta_block(D, T)}
-    inject(os.path.join(ROOT, "index.html"), blocks, optional=("fanta",))
+              "fanta": home_fanta_block(D, T), "classifica": home_classifica_block(D, T)}
+    inject(os.path.join(ROOT, "index.html"), blocks, optional=("fanta", "classifica"))
     return lm.touch("/", "".join(blocks.values()))
 
 def render_board(D, T, lm):
@@ -1186,7 +1318,7 @@ def render_board(D, T, lm):
                 out.append('<p class="small">Nessuna notizia nelle ultime ore · <a href="' + T.url(nome) + '">pagina ' + esc(nome) + "</a></p>")
             out.append("</section>")
     html_ = "".join(out)
-    inject(os.path.join(ROOT, "board.html"), {"board": html_, "upd": esc(fdate_it(upd, True))})
+    inject(os.path.join(ROOT, "board.html"), {"board": html_, "upd": esc(fdate_it(upd, True)), "ld": _ld_blocco(board_ld(D, T))}, optional=("ld",))
     return lm.touch("/board.html", html_)
 
 def render_campionati_hub(D, T, lm):
@@ -1212,10 +1344,115 @@ def render_campionati_hub(D, T, lm):
                                for i, s in enumerate(c["marcatori"][:5])) + "</tbody></table></div>")
         out.append('<p class="legend"><a href="/campionati/' + meta["slug"] + '.html">' + esc(meta["nome"]) + ": tutte le giornate, i marcatori e le squadre →</a></p></section>")
     html_ = "".join(out)
-    inject(os.path.join(ROOT, "campionati.html"), {"view": html_, "comps": comps_html, "upd": "Aggiornato " + esc(fdate_it(upd, True))})
+    inject(os.path.join(ROOT, "campionati.html"), {"view": html_, "comps": comps_html, "upd": "Aggiornato " + esc(fdate_it(upd, True)), "ld": _ld_blocco(campionati_ld(D))}, optional=("ld",))
     return lm.touch("/campionati.html", html_)
 
 # ---------- llms.txt ----------
+
+# ---------- JSON-LD e contenuto delle pagine scritte a mano (marcatore static:ld) ----------
+# Board, campionati, fonti e l'archivio Mondiale avevano il solo BreadcrumbList: per i motori e per i modelli
+# (GEO) non dicevano di COSA parlano. Qui il grafo si costruisce dal contenuto vero della pagina, mai a mano.
+
+def _ld_blocco(objs):
+    """I marcatori static: contengono HTML, quindi il JSON-LD si consegna come <script> gia' serializzati."""
+    return "".join(ld_script(o) for o in objs if o)
+
+def _sito_ld():
+    return {"@type": "WebSite", "name": "TransferBeat", "url": SITE + "/"}
+
+def board_ld(D, T):
+    """La board e' una raccolta di notizie classificate per concretezza, squadra per squadra: si descrive come
+    CollectionPage il cui contenuto principale sono le SQUADRE coperte (dato nostro e verificabile), non le
+    notizie altrui, che non sono nostre e non vanno marcate come se lo fossero."""
+    squadre = [t for t in T.list if t["nome"] in D["board_sq"]]
+    tot = sum(sum(len(v or []) for v in (bd.get("colonne") or {}).values()) for bd in D["board_sq"].values())
+    return [{"@context": "https://schema.org", "@type": "CollectionPage", "@id": SITE + "/board.html",
+             "name": "Notizie di calcio squadra per squadra",
+             "description": ("Notizie di " + str(len(squadre)) + " squadre di Serie A, Premier League, Liga, Bundesliga e Ligue 1, "
+                             "classificate per concretezza: voce, anteprima, ufficiale, fatto. " + str(tot) + " notizie in pagina, aggiornate ogni due ore."),
+             "inLanguage": "it", "isPartOf": _sito_ld(), "publisher": ORG,
+             "dateModified": date_only(D["board"].get("aggiornato") or "") or today_iso(),
+             "mainEntity": {"@type": "ItemList", "name": "Squadre seguite", "numberOfItems": len(squadre),
+                            "itemListElement": [{"@type": "ListItem", "position": i + 1,
+                                                 "item": {"@type": "SportsTeam", "name": t["nome"], "url": SITE + T.url(t["nome"])}}
+                                                for i, t in enumerate(squadre)]}}]
+
+def campionati_ld(D):
+    """Hub campionati: elenco di competizioni, quindi ItemList di SportsOrganization con la pagina dedicata."""
+    comps = [c for c in D["comp"].get("competizioni", []) if c["code"] in COMP_BY_CODE]
+    return [{"@context": "https://schema.org", "@type": "CollectionPage", "@id": SITE + "/campionati.html",
+             "name": "Campionati: classifiche, giornata e marcatori",
+             "description": "Classifiche aggiornate, risultati della giornata e marcatori di " + str(len(comps)) + " competizioni europee.",
+             "inLanguage": "it", "isPartOf": _sito_ld(), "publisher": ORG,
+             "dateModified": date_only(D["comp"].get("aggiornato") or "") or today_iso(),
+             "mainEntity": {"@type": "ItemList", "name": "Competizioni seguite", "numberOfItems": len(comps),
+                            "itemListElement": [{"@type": "ListItem", "position": i + 1,
+                                                 "item": {"@type": "SportsOrganization", "name": COMP_BY_CODE[c["code"]]["nome"],
+                                                          "url": SITE + "/campionati/" + COMP_BY_CODE[c["code"]]["slug"] + ".html"}}
+                                                for i, c in enumerate(comps)]}}]
+
+def _dominio(url):
+    try:
+        return "https://" + url.split("/")[2]
+    except Exception:
+        return SITE
+
+def fonti_ld(feeds):
+    """Dichiarare CHI si legge e con quale peso e' il segnale di trasparenza piu' forte che il sito possa dare
+    a un motore o a un modello: ogni feed diventa un'Organization citata."""
+    return [{"@context": "https://schema.org", "@type": "WebPage", "@id": SITE + "/fonti.html",
+             "name": "Fonti e affidabilità delle notizie",
+             "description": ("Le " + str(len(feeds)) + " testate lette da TransferBeat a ogni aggiornamento, i canali live e il "
+                             "sistema dei tier di affidabilità che pesa nella classificazione di ogni notizia."),
+             "inLanguage": "it", "isPartOf": _sito_ld(), "publisher": ORG, "dateModified": today_iso(),
+             "mainEntity": {"@type": "ItemList", "name": "Testate lette a ogni aggiornamento", "numberOfItems": len(feeds),
+                            "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": f.get("nome"),
+                                                 "item": {"@type": "Organization", "name": f.get("nome"), "url": _dominio(f.get("url") or "")}}
+                                                for i, f in enumerate(feeds)]}}]
+
+def mondiali_ld():
+    """Archivio: l'edizione e' conclusa e va detto nei dati strutturati oltre che nel banner in pagina, altrimenti
+    i motori continuano a proporre la pagina come se il torneo fosse in corso."""
+    return [{"@context": "https://schema.org", "@type": "WebPage", "@id": SITE + "/mondiali.html",
+             "name": "Archivio Mondiale 2026", "inLanguage": "it", "isPartOf": _sito_ld(), "publisher": ORG,
+             "description": "Risultati, gironi e tabellone del Mondiale 2026: edizione conclusa, pagina di archivio.",
+             "about": {"@type": "SportsEvent", "name": "Coppa del Mondo FIFA 2026", "sport": "Calcio",
+                       "startDate": "2026-06-11", "endDate": "2026-07-19",
+                       "location": [{"@type": "Country", "name": n} for n in ("Stati Uniti", "Canada", "Messico")]}}]
+
+# La scala dei tier di data/sources.json va dal meno al piu' affidabile: 3 = massima affidabilità, 1 = da verificare.
+# E' lo stesso numero che dots() trasforma in pallini pieni nella board e nella home (render_site:163, campo "affidabilita").
+TIER_LAB = {3: "massima affidabilità", 2: "affidabile", 1: "da verificare"}
+LANG_LAB = {"it": "IT", "en": "EN", "es": "ES"}
+LANG_NOME = {"it": "italiano", "en": "inglese", "es": "spagnolo"}
+
+def render_fonti(D, T, lm):
+    """fonti.html: l'elenco delle testate era scritto a mano nell'HTML e poteva scostarsi da data/sources.json senza
+    che nessuno se ne accorgesse. Ora il blocco static:rssSrc si genera dal file vero - la pagina non puo' piu' mentire -
+    e static:ld dichiara le stesse fonti ai motori e ai modelli. Markup identico a quello che c'era: .src, dots(), .nm, .flag."""
+    feeds = (D.get("sources") or {}).get("feeds") or []
+    if not feeds:
+        return lm.get("/fonti.html")
+    righe = []
+    for f in sorted(feeds, key=lambda x: (-int(x.get("tier") or 0), (x.get("nome") or "").lower())):
+        tier = int(f.get("tier") or 1)
+        righe.append('<div class="src">' + dots(tier) +
+                     '<div class="nm"><b>' + esc(f.get("nome")) + '</b><div class="ty">RSS · ' + esc(TIER_LAB.get(tier, "")) + "</div></div>"
+                     '<span class="flag">' + esc(LANG_LAB.get(f.get("lang"), (f.get("lang") or "").upper())) + "</span></div>")
+    per_lingua = {}
+    for f in feeds:
+        per_lingua[f.get("lang")] = per_lingua.get(f.get("lang"), 0) + 1
+    conteggio = ", ".join("%d in %s" % (n, LANG_NOME.get(l, l)) for l, n in sorted(per_lingua.items(), key=lambda x: (-x[1], x[0])))
+    rss = ('<p>' + str(len(feeds)) + " testate lette a ogni aggiornamento del sito, ogni due ore (" + esc(conteggio) + "). "
+           'L\'elenco è generato da <a href="/data/sources.json">data/sources.json</a>, lo stesso file che usa il programma '
+           "di raccolta: se una fonte entra o esce, questa pagina cambia da sola.</p>"
+           '<div class="srcgrid">' + "".join(righe) + "</div>"
+           '<p class="small">Oltre a queste, per ogni squadra seguita interroghiamo Google News con una query dedicata: da lì '
+           "arrivano le testate che non hanno un feed diretto utilizzabile. Un feed entra solo se pubblica una data valida in ogni "
+           "articolo: senza quella il programma di raccolta scarta tutto, in silenzio, e la fonte non porterebbe nulla.</p>")
+    inject(os.path.join(ROOT, "fonti.html"), {"rssSrc": rss, "ld": _ld_blocco(fonti_ld(feeds))}, optional=("ld",))
+    return lm.touch("/fonti.html", rss)
+
 def render_llms(D, T):
     n = len(D["listone"].get("players") or []); mds = sorted(D["voti"].keys()); tit = D["titolari"]
     P = D["probabili"].get(max(D["probabili"])) if D.get("probabili") else None
@@ -1245,7 +1482,7 @@ def render_llms(D, T):
             L.append("- [Voti giornata " + str(k) + "](" + SITE + "/fantacalcio/voti-giornata-" + str(k) + ".html): archivio (JSON: " + SITE + "/data/fanta/voti-%02d.json)" % k)
     L.append("- [Listone " + SEASON + "](" + SITE + "/fantacalcio/listone.html): quotazioni di " + str(n) + " giocatori di Serie A (JSON: " + SITE + "/data/fanta/listone.json)")
     if tit:
-        L.append("- [Infortunati e squalificati giornata " + str(tit.get("matchday")) + "](" + SITE + "/fantacalcio/titolari.html): indisponibili con rientro previsto e indice di titolarità")
+        L.append("- [Infortunati e squalificati giornata " + str(tit.get("matchday")) + "](" + SITE + "/fantacalcio/infortunati-e-squalificati.html): indisponibili con rientro previsto e indice di titolarità")
     if RX:
         L.append("- [Regolamento FantaTB](" + SITE + "/fantacalcio/regolamento.html): regole, bonus e malus, formula del voto")
         L.append("- [Guida all'asta](" + SITE + "/fantacalcio/guida-asta.html): come preparare e condurre l'asta")
@@ -1290,7 +1527,9 @@ def main():
     out("chi-siamo.html", "/chi-siamo.html", render_chi_siamo(), "pagine")
     if RL:
         out("fantatb.html", "/fantatb.html", RL.render(D, T), "pagine")   # landing generata dal modulo
-    touch = [("/fonti.html", "fonti.html"), ("/mondiali.html", "mondiali.html"), ("/fanta/", "fanta/index.html")] + ([] if RL else [("/fantatb.html", "fantatb.html")])
+    pages["pagine"].append((SITE + "/fonti.html", render_fonti(D, T, lm)))
+    inject(os.path.join(ROOT, "mondiali.html"), {"ld": _ld_blocco(mondiali_ld())}, optional=("ld",))
+    touch = [("/mondiali.html", "mondiali.html"), ("/fanta/", "fanta/index.html")] + ([] if RL else [("/fantatb.html", "fantatb.html")])
     for url, fn in touch:
         p = os.path.join(ROOT, fn)
         if os.path.exists(p):
@@ -1317,7 +1556,7 @@ def main():
                 # canonical su voti.html e fuori dalla sitemap, invece di lasciare sul disco la versione vecchia
                 save_text(os.path.join(ROOT, "fantacalcio", "voti-giornata-%d.html" % md), render_voti(D, T, md, D["voti"][md], mirror=True))
         if D["titolari"]:
-            out("fantacalcio/titolari.html", "/fantacalcio/titolari.html", render_titolari(D, T), "fanta")
+            out("fantacalcio/infortunati-e-squalificati.html", "/fantacalcio/infortunati-e-squalificati.html", render_titolari(D, T), "fanta")
         if D["probabili"]:   # l'ultima giornata sull'URL fissa, le precedenti in archivio (nessun doppione: la corrente non ha pagina d'archivio)
             mds = sorted(D["probabili"]); helpers = {"plink": RS.plink, "pctx": D.get("pctx"), "fanta_team_link": fanta_team_link, "dataset_ld": dataset_ld, "crumb": FANTA_CRUMB, "others": mds}
             for md in mds:
@@ -1363,7 +1602,7 @@ def render_chi_siamo():
          "(voce, anteprima, ufficiale o fatto) e <b>quanto è affidabile la fonte</b> che l’ha data. Il link rimanda sempre alla testata originale.</p>",
          "<p>Dal settembre 2026 TransferBeat pubblica anche <a href=\"/fantatb.html\">FantaTB</a>, un fantacalcio gratuito con leghe private, asta live e voti statistici, e mette a disposizione di "
          "tutti i suoi dati originali: <a href=\"/fantacalcio/probabili-formazioni.html\">probabili formazioni</a>, <a href=\"/fantacalcio/listone.html\">listone</a>, <a href=\"/fantacalcio/voti.html\">voti</a> e "
-         "<a href=\"/fantacalcio/titolari.html\">infortunati e squalificati</a>, con formula dichiarata e licenza aperta.</p>",
+         "<a href=\"/fantacalcio/infortunati-e-squalificati.html\">infortunati e squalificati</a>, con formula dichiarata e licenza aperta.</p>",
          "<h2>Chi lo fa</h2>",
          "<p><b>" + esc(a["name"]) + "</b>, " + esc(a["jobTitle"]).lower() + ". Ha ideato TransferBeat nel 2026 e ne cura la linea editoriale, la scelta delle fonti e i criteri di classificazione delle notizie. Profilo: <a href=\"" + esc(a["sameAs"][0]) + "\" rel=\"me noopener\" target=\"_blank\">LinkedIn</a>.</p>",
          "<h2>Come produciamo le notizie</h2>",

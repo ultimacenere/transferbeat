@@ -17,6 +17,9 @@ LLM_KEY = os.environ.get("GROQ_API_KEY", "")
 LLM_URL = "https://api.groq.com/openai/v1/chat/completions"
 LLM_MODEL = os.environ.get("FAST_MODEL", os.environ.get("LLM_MODEL", "qwen/qwen3.8-27b"))  # vedi kb §1: compound-* eredita quote di modelli terzi e va in 429
 MAX_AGE_H = 12; MAX_ITEMS = 50; MAX_NEW_PER_RUN = 25
+# tetto ai trasferimenti estratti da UN solo messaggio: oltre questo numero il modello sta quasi sempre
+# riassumendo una rassegna, non annunciando affari, e le voci in piu' sarebbero rumore
+MAX_MOVIMENTI = int(os.environ.get("FASTLANE_MAX_MOVIMENTI", "6"))
 MAX_CANDIDATI = 36   # quanti messaggi al massimo mandare al modello in un giro
 LOTTO = 12           # messaggi per chiamata: ~2000 token, sotto il tetto di 8000/minuto
 
@@ -61,13 +64,44 @@ def age_h(ts):
     except Exception:
         return 999
 
+# Gli stati sono un contratto verso il front-end: board.html usa lo stato come chiave delle
+# etichette (T.tags[...]) e uno stato ignoto stamperebbe "undefined" in pagina. Inoltre lo
+# step che lancia questo script (fast.yml) non ha "|| echo", come quello di build.py in
+# update.yml: una categoria in piu' in rules/keywords.<lang>.json ucciderebbe il job e
+# fermerebbe l'ultim'ora. Quindi si rimappa sul default, avvisando una volta sola.
+STATI = ("rumor", "obj", "conf", "done")
+STATO_DEFAULT = "rumor"
+_STATI_IGNOTI = set()
+
+def norm_stato(stato):
+    if stato in STATI:
+        return stato
+    k = str(stato)
+    if k not in _STATI_IGNOTI:   # un avviso per categoria, non uno per notizia
+        _STATI_IGNOTI.add(k)
+        print("    ATTENZIONE: categoria '" + k + "' non prevista: notizie messe in '" + STATO_DEFAULT + "'")
+    return STATO_DEFAULT
+
+_REGOLE_VUOTE = set()
+
+def _controlla_regole(kw, dove="fastlane"):
+    """Regole valide come JSON ma vuote = tutte le notizie sul default, in silenzio. Vedi build.py."""
+    if not (kw.get("categorie_ordine") and kw.get("categorie")):
+        if dove not in _REGOLE_VUOTE:
+            _REGOLE_VUOTE.add(dove)
+            print("    ATTENZIONE: regole di classificazione vuote o incomplete (" + dove + "): "
+                  "TUTTE le notizie finiranno in '" + STATO_DEFAULT + "'")
+
 def classify(title, kw):
+    # stessi default con cui main() carica le regole: un file di regole senza una delle due
+    # chiavi non deve sollevare KeyError qui
+    _controlla_regole(kw)
     low = title.lower()
-    for stato in kw["categorie_ordine"]:
-        for parola in kw["categorie"][stato]:
+    for stato in kw.get("categorie_ordine") or ():
+        for parola in (kw.get("categorie") or {}).get(stato, ()):
             if parola in low:
-                return stato
-    return "rumor"
+                return norm_stato(stato)
+    return STATO_DEFAULT
 
 def match_team(s, team_names):
     sl = (s or "").lower()
@@ -173,7 +207,12 @@ def main():
     # dedup robusto: id stabile del messaggio Telegram ('tg') + titolo normalizzato
     seen = {(it.get("tg") or it.get("link")) for it in prev.get("items", [])}
     seen_titles = {_nt(it.get("titolo")) for it in prev.get("items", [])}
+    # anche gli item ereditati dal file precedente passano da norm_stato: uno stato fuori dalle quattro
+    # colonne, scritto da un run vecchio o da una modifica a mano, resterebbe in ultimora.json fino a
+    # scadere e produrrebbe "undefined" nelle etichette di board.html e index.html.
     items = list(prev.get("items", []))
+    for it in items:
+        it["stato"] = norm_stato(it.get("stato"))
     new_count = 0
 
     # --- 1) raccolta: solo filtri economici, nessuna chiamata al modello ---
@@ -232,10 +271,37 @@ def main():
         if tkey in seen_titles:
             seen.add(m["link"]); continue
         seen.add(m["link"]); seen_titles.add(tkey); new_count += 1
-        items.append({"ts": m["ts"], "fonte": ch["nome"], "tier": int(ch.get("tier", 1)),
-                      "titolo": titolo, "stato": stato, "team": team,
-                      "giocatore": giocatore, "direzione": direzione, "club": club, "smentita": smentita,
-                      "slug": slugify(giocatore), "tg": m["link"], "link": (m.get("src") or m["link"]), "lang": lang})
+        # Un messaggio puo' annunciare PIU' trasferimenti insieme ("Ufficiali: Rossi al Milan, Bianchi al Como").
+        # Lo schema a un record per messaggio ne teneva uno solo e a volte abbinava il club sbagliato.
+        # Se il modello ha compilato "movimenti" se ne emette uno per ciascuno; altrimenti tutto come prima.
+        movimenti = []
+        if d is not None and isinstance(d.get("movimenti"), list):
+            for mv in d["movimenti"][:MAX_MOVIMENTI]:
+                if not isinstance(mv, dict):
+                    continue
+                g = (mv.get("giocatore") or "").strip()
+                if not g or brain.is_coach(g):
+                    continue
+                movimenti.append({"giocatore": g,
+                                  "team": match_team(mv.get("squadra"), team_names) or team,
+                                  "direzione": mv.get("direzione") or direzione,
+                                  "club": (mv.get("club") or "").strip()})
+        if len(movimenti) < 2:
+            movimenti = [{"giocatore": giocatore, "team": team, "direzione": direzione, "club": club}]
+        base = {"ts": m["ts"], "fonte": ch["nome"], "tier": int(ch.get("tier", 1)),
+                "stato": stato, "smentita": smentita,
+                "tg": m["link"], "link": (m.get("src") or m["link"]), "lang": lang}
+        for k, mv in enumerate(movimenti):
+            it = dict(base)
+            # con piu' movimenti il titolo del messaggio e' lo stesso per tutti: si antepone il giocatore,
+            # altrimenti la pulizia finale per titolo li ricollasserebbe in una voce sola
+            it["titolo"] = titolo if len(movimenti) == 1 else (mv["giocatore"] + ": " + titolo)[:130]
+            it["team"] = mv["team"]; it["giocatore"] = mv["giocatore"]
+            it["direzione"] = mv["direzione"]; it["club"] = mv["club"]
+            it["slug"] = slugify(mv["giocatore"])
+            if k:
+                seen_titles.add(_nt(it["titolo"]))
+            items.append(it)
     items.sort(key=lambda x: x["ts"], reverse=True)
     # pulizia finale: rimuove duplicati per titolo (tiene il piu recente)
     uniq = []; _seent = set()

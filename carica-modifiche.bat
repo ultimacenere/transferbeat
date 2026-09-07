@@ -11,7 +11,9 @@ if not %errorlevel%==0 (
 
 echo Controllo anti-troncamento dei file sorgente...
 if not defined TB_FORCE (
-  python scripts\guard.py
+  rem launcher "py": "python" su questo PC risolve prima sull'alias del Microsoft Store,
+  rem che esce con codice 49 e farebbe abortire ogni caricamento senza mai eseguire il guard
+  py -X utf8 scripts\guard.py
   if errorlevel 1 (
     echo.
     echo Caricamento ANNULLATO. Nessuna modifica inviata.

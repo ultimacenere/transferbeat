@@ -8,9 +8,12 @@ indisponibili) vengono dai JSON al momento del render. Nessuna emoji: icone SVG 
 Uso da render_site: import render_landing; save_text(ROOT/fantatb.html, render_landing.render(D, T))."""
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from site_common import SITE, SEASON, ORG, esc, fdate_it, page, door
+from site_common import SITE, SEASON, ORG, esc, fdate_it, page, door, voti_url
 
 CANON = SITE + "/fantatb.html"
+# Identita' unica dell'applicazione FantaTB nel grafo del sito: solo questa pagina la DESCRIVE,
+# le altre (regolamento, hub) la citano con {"@id": APP_ID} senza ridichiararla (kb/SEO.md 7.3 punto 7).
+APP_ID = SITE + "/fantatb.html#app"
 CRUMBS = [("Home", SITE + "/"), ("Fantacalcio", SITE + "/fantacalcio/"), ("Gioca a FantaTB", CANON)]
 RUOLI = {"P": "Portiere", "D": "Difensore", "C": "Centrocampista", "A": "Attaccante"}
 
@@ -45,7 +48,7 @@ LANDING_CSS = """<style>
 .lp-hero .btn.line{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.8)}.lp-hero .btn.line:hover{background:rgba(255,255,255,.12);color:#fff}
 .lp-hero .fine{font-size:13px;opacity:.85;margin:0}
 .lp-proof{background:#fff;color:var(--txt);border-radius:16px;padding:16px 18px;box-shadow:0 24px 60px rgba(27,17,64,.35)}
-.lp-proof .h{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0 0 8px;font-size:16px;font-weight:700}
+.lp-proof .h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 8px;margin:0 0 8px;font-size:16px;font-weight:700}.lp-proof .h>span:first-child{flex:1 1 auto;min-width:0}.lp-proof .h .pill{flex:0 0 auto;font-weight:600}
 .lp-proof table{font-size:13px}.lp-proof td,.lp-proof th{padding:7px 8px}.lp-proof td.n{font-weight:600}.lp-proof td.fv{font-weight:700}
 .lp-proof .f{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--panel);border-radius:8px;padding:8px 12px;font-size:13px;margin:10px 0 0}
 .lp-proof .f a{font-weight:600}
@@ -147,7 +150,7 @@ def proof_card(D, T):
             '<div class="tscroll"><table><thead><tr><th class="num">#</th><th>R</th><th>Giocatore</th><th class="num">Voto</th><th class="num">FV</th></tr></thead><tbody>' +
             "".join(rows) + '</tbody></table></div>'
             '<div class="f"><span><b>' + esc(first[1]["name"]) + '</b>' + ((": " + esc(fb)) if fb else "") + '</span>'
-            '<a href="/fantacalcio/voti-giornata-' + str(md) + '.html">Tutti i voti</a></div></div>')
+            '<a href="' + voti_url(md, md) + '">Tutti i voti</a></div></div>')
 
 def kpis(D):
     n_players = len((D.get("listone") or {}).get("players") or [])
@@ -162,7 +165,7 @@ def kpis(D):
     if V:
         out.append('<div class="kpi"><div class="l">Con voto nella giornata ' + str(md) + '</div><div class="v">' + str(n_rated) + '</div><div class="s">giocatori con almeno 15 minuti</div></div>')
     if tit.get("matchday"):
-        out.append('<div class="kpi"><div class="l">Indisponibili giornata ' + str(tit["matchday"]) + '</div><div class="v">' + str(n_out) + '</div><a href="/fantacalcio/titolari.html">Infortunati e squalificati</a></div>')
+        out.append('<div class="kpi"><div class="l">Indisponibili giornata ' + str(tit["matchday"]) + '</div><div class="v">' + str(n_out) + '</div><a href="/fantacalcio/infortunati-e-squalificati.html">Infortunati e squalificati</a></div>')
     out.append("</div>")
     return "".join(out)
 
@@ -232,7 +235,7 @@ def render(D, T):
              door("Probabili formazioni", "Moduli, titolari e percentuali partita per partita", "/fantacalcio/probabili-formazioni.html") +
              door("Voti e fantavoti", "Voto statistico, bonus e malus dopo ogni giornata", "/fantacalcio/voti.html") +
              door("Listone " + SEASON, str(n_players) + " giocatori quotati con ruolo e squadra", "/fantacalcio/listone.html") +
-             door("Infortunati e squalificati", "Indice di titolarità e date di rientro stimate", "/fantacalcio/titolari.html") + "</div>")
+             door("Infortunati e squalificati", "Indice di titolarità e date di rientro stimate", "/fantacalcio/infortunati-e-squalificati.html") + "</div>")
 
     faq = ('<h2>Domande frequenti</h2><div class="faq">' + "".join(
         "<details><summary>" + esc(q) + "</summary><p>" + esc(a) + "</p></details>" for q, a in FAQ) + "</div>")
@@ -244,7 +247,7 @@ def render(D, T):
 
     body = hero + kpis(D) + why + steps + inside + rules + doors + faq + final
 
-    ld = [{"@context": "https://schema.org", "@type": "WebApplication", "name": "FantaTB", "url": SITE + "/fanta/",
+    ld = [{"@context": "https://schema.org", "@type": "WebApplication", "@id": APP_ID, "name": "FantaTB", "url": SITE + "/fanta/",
            "applicationCategory": "GameApplication", "operatingSystem": "Web", "browserRequirements": "Requires JavaScript",
            "inLanguage": "it", "isAccessibleForFree": True,
            "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": ORG,

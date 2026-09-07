@@ -7,6 +7,8 @@
 <meta name="description" content="Accedi a FantaTB per gestire le tue leghe private: asta live dal telefono, formazioni, liste obiettivi e voti statistici. Gratis, senza app da installare.">
 <link rel="canonical" href="https://transferbeat.com/fanta/">
 <meta name="robots" content="index,follow">
+<meta property="og:type" content="website"><meta property="og:site_name" content="TransferBeat"><meta property="og:title" content="Accedi a FantaTB: leghe, asta e formazioni"><meta property="og:description" content="Le tue leghe private di fantacalcio: asta live dal telefono, formazioni, liste obiettivi e voti statistici."><meta property="og:url" content="https://transferbeat.com/fanta/"><meta property="og:locale" content="it_IT"><meta property="og:image" content="https://transferbeat.com/img/og-fantacalcio.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="FantaTB, il fantacalcio gratuito di TransferBeat"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://transferbeat.com/img/og-fantacalcio.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://transferbeat.com/"}, {"@type": "ListItem", "position": 2, "name": "Fantacalcio", "item": "https://transferbeat.com/fantacalcio/"}, {"@type": "ListItem", "position": 3, "name": "FantaTB", "item": "https://transferbeat.com/fantatb.html"}, {"@type": "ListItem", "position": 4, "name": "Accedi", "item": "https://transferbeat.com/fanta/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Accedi a FantaTB", "url": "https://transferbeat.com/fanta/", "inLanguage": "it", "description": "Area riservata di FantaTB: leghe private, asta live, formazioni, liste obiettivi e voti statistici.", "isPartOf": {"@type": "WebSite", "name": "TransferBeat", "url": "https://transferbeat.com/"}, "about": {"@id": "https://transferbeat.com/fantatb.html#app"}, "primaryImageOfPage": {"@type": "ImageObject", "url": "https://transferbeat.com/img/og-fantacalcio.png", "width": 1200, "height": 630}, "publisher": {"@type": "Organization", "name": "TransferBeat", "url": "https://transferbeat.com/"}}</script>
 <link rel="stylesheet" href="style.css">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="config.js"></script>
@@ -57,14 +59,18 @@
     <h2 class="vh">Le mie leghe</h2>
     <div class="grid3">
       <div>
-        <ul class="list" id="leagueList"></ul>
+        <!-- una card per lega, disegnata da loadLeagues: fase, posizione e l'azione della settimana in evidenza -->
+        <div id="leagueList" class="lgcards"></div>
         <div class="card" style="margin-top:14px"><h2>Listone FantaTB</h2><p class="small">Quotazioni con media voto, fantamedia, indice di titolarità, presenze, gol e assist: sempre consultabile, anche senza una lega. Dentro la lega lo trovi anche come scheda, con lo stato libero/preso.</p><button class="sec" data-view="listone">Apri il listone</button></div>
       </div>
       <div>
         <div class="card">
           <h2>Crea una lega</h2>
+          <p class="small">Due passi: prima l'essenziale, poi (se vuoi) le regole avanzate.</p>
+          <p class="stpl">Passo 1 · l'essenziale</p>
           <label>Nome lega</label><input id="clName" placeholder="es. Lega degli amici">
           <label>Nome della tua squadra</label><input id="clTeam" placeholder="es. Real Pierluigi">
+          <!-- crediti, squadre e il passo 2 (chiuso ma sempre nel DOM) li disegna settingsFormHtml(null,'cl',true) -->
           <div id="clForm"></div>
           <div class="row" style="margin-top:12px"><button id="btnCreate">Crea lega</button></div>
         </div>
@@ -127,10 +133,10 @@
     <div id="strPane" class="hidden"><h3>Le tue strategie</h3><div id="strBar" class="strip"></div><h3>Le strategie di TransferBeat</h3><div id="strTb" class="strip"></div><details class="help"><summary>Strategie condivise dagli utenti e codice</summary><div id="strShared"></div></details><div id="strEditor"></div></div>
   </section>
 
-  <!-- MESSAGGI (staff) -->
+  <!-- MESSAGGI: la stessa chat del pulsante flottante. Lo staff vede tutte le conversazioni, gli altri la propria. -->
   <section id="view-messaggi" class="hidden">
-    <h2 class="vh">Messaggi degli utenti</h2>
-    <p class="lead">Le conversazioni aperte dal pulsante "Scrivici": suggerimenti, segnalazioni e domande. Le risposte arrivano all'utente dentro l'app.</p>
+    <h2 class="vh">Messaggi</h2>
+    <p class="lead">Suggerimenti, segnalazioni e domande: scrivici qui o dal pulsante in basso a destra, è la stessa conversazione. Quando arriva una risposta trovi il pallino rosso sulla voce Messaggi.</p>
     <div id="msgList"></div>
   </section>
 
@@ -150,7 +156,7 @@
 <button id="chatBtn" class="chatbtn" type="button"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-8 8H8l-5 3 1.2-4.2A8 8 0 1 1 21 12z"/></svg><span>Scrivici</span><b id="chatBadge" class="hidden"></b></button>
 <div id="chatPanel" class="chatpanel hidden"><div class="chathead"><b>Scrivici</b><span class="small">suggerimenti, segnalazioni, domande</span><a id="chatClose" role="button" aria-label="Chiudi la chat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a></div><div id="chatMsgs" class="chatmsgs"></div><div class="chatform"><textarea id="chatText" rows="2" placeholder="Scrivi qui… (Ctrl+Invio per inviare)"></textarea><button id="chatSend" class="small">Invia</button></div></div>
 <!-- Footer del sito: HTML statico prodotto da site_common.shell_footer() -->
-<footer class="foot"><div class="wrap"><div class="cols"><div><p class="ft">Sezioni</p><ul><li><a href="/board.html">Notizie</a></li><li><a href="/campionati/">Campionati</a></li><li><a href="/squadre/">Squadre</a></li><li><a href="/giocatori/">Giocatori</a></li><li><a href="/fantacalcio/">Fantacalcio</a></li><li><a href="/articoli/it/">Articoli</a></li></ul></div><div><p class="ft">Fantacalcio</p><ul><li><a href="/fantacalcio/">Panoramica</a></li><li><a href="/fantacalcio/probabili-formazioni.html">Probabili formazioni</a></li><li><a href="/fantacalcio/voti.html">Voti</a></li><li><a href="/fantacalcio/listone.html">Listone</a></li><li><a href="/fantacalcio/titolari.html">Infortunati e squalificati</a></li><li><a href="/fantacalcio/regolamento.html">Regolamento</a></li><li><a href="/fantacalcio/guida-asta.html">Guida all&#x27;asta</a></li><li><a href="/fantatb.html">Gioca a FantaTB</a></li></ul></div><div><p class="ft">TransferBeat</p><ul><li><a href="/chi-siamo.html">Chi siamo</a></li><li><a href="/fonti.html">Fonti</a></li><li><a href="/fantacalcio/listone.html#dati">Dati aperti</a></li><li><a href="/articoli/en/">Articles (EN)</a></li><li><a href="/articoli/es/">Artículos (ES)</a></li><li><a href="/mondiali.html">Archivio Mondiale 2026</a></li></ul></div></div><p class="copy">© TransferBeat · le notizie citano sempre la testata originale · non affiliato a Fantacalcio®</p></div></footer>
+<footer class="foot"><div class="wrap"><div class="cols"><div><p class="ft">Sezioni</p><ul><li><a href="/board.html">Notizie</a></li><li><a href="/campionati/">Campionati</a></li><li><a href="/squadre/">Squadre</a></li><li><a href="/giocatori/">Giocatori</a></li><li><a href="/fantacalcio/">Fantacalcio</a></li><li><a href="/articoli/it/">Articoli</a></li></ul></div><div><p class="ft">Fantacalcio</p><ul><li><a href="/fantacalcio/">Panoramica</a></li><li><a href="/fantacalcio/probabili-formazioni.html">Probabili formazioni</a></li><li><a href="/fantacalcio/voti.html">Voti</a></li><li><a href="/fantacalcio/listone.html">Listone</a></li><li><a href="/fantacalcio/infortunati-e-squalificati.html">Infortunati e squalificati</a></li><li><a href="/fantacalcio/regolamento.html">Regolamento</a></li><li><a href="/fantacalcio/guida-asta.html">Guida all&#x27;asta</a></li><li><a href="/fantatb.html">Gioca a FantaTB</a></li></ul></div><div><p class="ft">TransferBeat</p><ul><li><a href="/chi-siamo.html">Chi siamo</a></li><li><a href="/fonti.html">Fonti</a></li><li><a href="/fantacalcio/listone.html#dati">Dati aperti</a></li><li><a href="/articoli/en/">Articles (EN)</a></li><li><a href="/articoli/es/">Artículos (ES)</a></li><li><a href="/mondiali.html">Archivio Mondiale 2026</a></li></ul></div></div><p class="copy">© TransferBeat · le notizie citano sempre la testata originale · non affiliato a Fantacalcio®</p></div></footer>
 <script src="app.js"></script>
 </body>
 </html>

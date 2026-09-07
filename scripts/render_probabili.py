@@ -4,7 +4,7 @@ Importato da render_site.py (kb/FANTATB.md §20, kb/SEO.md §3.6). Guscio unico 
 struttura del mockup Probabili.dc.html: sub citabile, chip delle giornate, indice delle partite in griglia, una card per partita con i due
 mezzi campi SVG affiancati (uno sotto l'altro su mobile), riga modulo/allenatore/base dati, testo leggibile per squadra; legenda in fondo.
 Ancore: id="partita-<slug casa>-<slug ospite>" sulla card e id="squadra-<slug>" su ogni blocco squadra (slug di site_common.slugify sul nome di teams.json)."""
-from site_common import esc, page, fdate_it, slugify, badge, SITE, SEASON, FANTA_BAR
+from site_common import esc, page, fdate_it, slugify, badge, SITE, SEASON, FANTA_BAR, voti_url, voti_last
 
 ROW_LABEL = {"G": "in porta", "D": "in difesa", "M": "a centrocampo", "F": "in attacco"}
 # Colori del campo: erba unica (niente strisce), linee bianche al 60%, percentuali in tinta chiara con bordo scuro per restare leggibili sul verde.
@@ -245,9 +245,9 @@ def render(D, T, P, latest, helpers):
              'Cerchio tratteggiato = ballottaggio, con la quota dei due contendenti. "Al posto di" segnala chi prende il posto di un indisponibile o di uno squalificato. '
              'Sono probabili statistiche di TransferBeat, non formazioni ufficiali: vengono ricalcolate più volte a settimana fino al giorno di gara.</div>')
     # link contestuali della stessa giornata: indisponibili, voti della giornata precedente (se esiste), listone, dati aperti e archivio
-    links = ['<a href="/fantacalcio/titolari.html">infortunati e squalificati</a>']
+    links = ['<a href="/fantacalcio/infortunati-e-squalificati.html">infortunati e squalificati</a>']
     if (md - 1) in (D.get("voti") or {}):
-        links.append('<a href="/fantacalcio/voti-giornata-%d.html">voti della giornata %d</a>' % (md - 1, md - 1))
+        links.append('<a href="%s">voti della giornata %d</a>' % (voti_url(md - 1, voti_last(D)), md - 1))
     links += ['<a href="/fantacalcio/listone.html">listone</a>', '<a href="/fantacalcio/">tutti i dati del fantacalcio</a>', '<a href="/data/fanta/%s">%s</a>' % (fn, fn)]
     if others:
         links.append("altre giornate: " + " · ".join(('<a href="%s">giornata %d</a>' % (url_of(k), k)) if k != md else "<b>giornata %d</b>" % k for k in others))

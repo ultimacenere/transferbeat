@@ -1,0 +1,113 @@
+name: Palinsesto - rete di sicurezza
+
+# Riempie lo slot editoriale rimasto vuoto con un BOLLETTINO DI DATI (scripts/palinsesto.py).
+# Perche' esiste: i tre articoli quotidiani li scrivono tre pianificate Cowork che girano solo a PC
+# acceso; il 29, 30, 31 agosto e il 2 settembre 2026 il sito e' rimasto senza contenuto proprio
+# (kb/PIANIFICATE.md, "Limite noto"). Questo workflow gira su GitHub Actions, quindi anche a PC spento.
+#
+# ORARI IN UTC. L'Italia e' UTC+2 in ora legale e UTC+1 in inverno, quindi lo stesso cron cade a due
+# ore italiane diverse: 12:40 UTC = 14:40 d'estate e 13:40 d'inverno. Le pianificate scrivono alle
+# 12:00, 16:00 e 20:00 italiane; palinsesto.py calcola l'ora italiana da solo e aspetta comunque 90
+# minuti dall'orario dello slot prima di considerarlo un buco. Margine reale: 2h40 d'estate, 1h40
+# d'inverno, cioe' sempre dopo la redazione, che ha tutto il tempo di pubblicare per prima.
+# Ogni run guarda TUTTI e tre gli slot: se il run delle 12:40 salta, quello delle 16:40 recupera anche
+# il Lunch Break. Se l'articolo del giorno c'e' gia', lo script esce senza scrivere niente (uscita 0).
+#
+# ATTENZIONE: di serie NON GIRA da solo. Il cron e' scritto ma il job parte solo se esiste la variabile di
+# repository PALINSESTO_ATTIVO = true (vedi il commento sul job). Il lancio a mano funziona sempre.
+#
+# RETE DI SICUREZZA DI QUESTO WORKFLOW (un suo guasto non deve rompere nient'altro):
+# - job isolato: non tocca update.yml ne' fanta.yml e non gira mai insieme a se stesso (concurrency);
+# - lo step di commit mette nell'indice SOLO data/articles, articoli/ e le due sitemap degli articoli:
+#   qualunque altra modifica presente nel working tree non puo' finire in un push da qui;
+# - se non c'e' niente di nuovo il job finisce senza commit e senza push;
+# - timeout di 15 minuti: nessun run appeso.
+on:
+  schedule:
+    - cron: "40 12,16,20 * * *"
+  workflow_dispatch:
+    inputs:
+      slot:
+        description: "lunch | focus | recap (vuoto = tutti e tre)"
+        default: ""
+      dry:
+        description: "true = prova a vuoto, mostra il bollettino e non scrive niente"
+        default: "false"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: palinsesto
+  cancel-in-progress: false
+
+jobs:
+  bollettino:
+    # SPENTO FINCHE' IL COMMITTENTE NON LO ACCENDE. Questo workflow PUBBLICA da solo sul sito vivo: non e' una cosa
+    # che deve partire perche' un file e' finito nel repo. Il lancio a mano (workflow_dispatch, anche con dry=true)
+    # funziona sempre, cosi' si puo' provare e leggere il bollettino prima di decidere.
+    # Per accenderlo: Settings -> Secrets and variables -> Actions -> Variables -> New repository variable,
+    #   nome PALINSESTO_ATTIVO, valore true.   Per rispegnerlo: rimetterla a false (o cancellarla).
+    if: ${{ github.event_name == 'workflow_dispatch' || vars.PALINSESTO_ATTIVO == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # pubblica.sh fa rebase sul remoto quando il push viene respinto
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installa dipendenze
+        run: pip install -r requirements.txt
+
+      - name: Bollettino se lo slot e' rimasto vuoto
+        env:
+          SLOT: ${{ github.event.inputs.slot }}
+          DRY: ${{ github.event.inputs.dry }}
+        run: |
+          ARGS=""
+          if [ -n "$SLOT" ]; then ARGS="--slot $SLOT"; fi
+          if [ "$DRY" = "true" ]; then ARGS="$ARGS --dry"; fi
+          python -X utf8 scripts/palinsesto.py $ARGS
+
+      - name: Commit del bollettino (solo se c'e' qualcosa di nuovo)
+        id: commit
+        run: |
+          git config user.name  "transferbeat-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/articles articoli sitemap.xml sitemap-articoli.xml
+          if git diff --cached --quiet; then
+            echo "Nessun bollettino da pubblicare (slot gia' coperti o non ancora maturi)."
+            echo "fatto=no" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -m "Bollettino dati $(date -u +'%Y-%m-%d %H:%M UTC')"
+          echo "fatto=si" >> "$GITHUB_OUTPUT"
+
+      # pubblica.sh e' lo stesso script delle pianificate: gestisce token, push resistente con rebase e
+      # ping IndexNow (kb/SEO.md 3.6). Legge il token da un file, e TB_TOKEN_FILE ha la precedenza su
+      # tutti gli altri percorsi: qui il file lo scriviamo dal secret e lo cancelliamo sempre.
+      # Il token predefinito di Actions basta (permissions: contents write); se un giorno servisse il
+      # PAT fine-grained del progetto, basta creare il secret TB_GITHUB_TOKEN e viene usato quello.
+      # Nota: un push fatto con il token predefinito NON innesca altri workflow GitHub Actions (regola di
+      # GitHub contro i cicli). Qui va bene: update.yml e fanta.yml partono da cron, e Vercel pubblica lo
+      # stesso perche' reagisce al webhook del push, non ai workflow. Se un domani servisse un workflow
+      # innescato da questo push, creare il secret TB_GITHUB_TOKEN col PAT.
+      - name: Pubblica (pubblica.sh - token, rebase, IndexNow)
+        if: steps.commit.outputs.fatto == 'si'
+        env:
+          TB_TOKEN: ${{ secrets.TB_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
+          TB_TOKEN_FILE: ${{ runner.temp }}/tb_token.txt
+        run: |
+          umask 077
+          printf '%s\n' "$TB_TOKEN" > "$TB_TOKEN_FILE"
+          bash scripts/pubblica.sh
+
+      - name: Cancella il file del token
+        if: always()
+        run: rm -f "${{ runner.temp }}/tb_token.txt"

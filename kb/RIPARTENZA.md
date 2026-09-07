@@ -229,27 +229,47 @@ passare da un deploy, quindi un cambio di schema sarebbe in produzione prima del
 - **Push impossibile / repo locale incasinato**: il repo locale è sacrificabile! Se serve:
   ri-clonare da zero (la verità è su GitHub) e rimettere i 3 file segreti.
 
-### Difetti noti, non ancora corretti (verificati il 2026-09-03)
-- **`guard.py` — via di fuga inesistente**: il messaggio dice di sbloccare con una variabile TB_FORCE
-  ma lo script non la legge mai. Non c'è modo di forzare una riduzione voluta.
-- **`guard.py` — crash su Windows**: usa `subprocess.run(text=True)` senza `encoding`, quindi con
-  locale italiano decodifica in cp1252 e muore su un byte non mappabile. Colpisce `carica-modifiche.bat`.
+### Difetti noti — CORRETTI il 2026-09-07 (erano aperti dal 2026-09-03)
+Tutti corretti e verificati con un revisore avversariale che ha riprodotto ogni caso limite. Restano qui perché
+sono i punti fragili del progetto: chi li tocca di nuovo deve sapere perché sono scritti così.
+- ~~`guard.py` — via di fuga inesistente~~ **fatto**: legge `TB_FORCE` (basta che la variabile sia DEFINITA, come
+  fa `carica-modifiche.bat`) ed esce 0 saltando il controllo. Il corpo è dentro `main()`, quindi il modulo è importabile.
+- ~~`guard.py` — crash su Windows~~ **fatto**, ma non con l'`encoding=` che sembrava ovvio: quella correzione
+  trasformava un fallimento **fail-closed in fail-open** (un file troncato *e* corrotto passava in silenzio, mentre
+  prima il crash bloccava il caricamento). Ora **entrambi i lati contano le righe in BINARIO** (`b"\n"`): contare non
+  richiede di decodificare, e nessun contenuto corrotto può far saltare il controllo. Un file illeggibile BLOCCA
+  con un messaggio dedicato, e anche un `git diff` fallito blocca invece di dichiarare "tutto a posto".
+  **Regola generale che ne esce: su uno script di sicurezza, un errore deve sempre fermare, mai lasciar passare.**
 - ~~`brain.is_coach()` falsi positivi~~ corretto il 2026-09-03: controllo contro le rose correnti.
-- **`rosters.py` — perdita silenziosa di leghe**: ogni competizione è dentro un try/except che fa
-  continue, quindi una chiamata fallita fa sparire un'intera lega senza segnalarlo; con `_is_fresh(5)`
-  il buco resta congelato 5 giorni. Gli snapshot storici oscillano fra 165 e 36 club per questo motivo.
-- **`rosters.py` — chiamata sprecata**: il codice `CL` restituisce 36 club con **0 giocatori**.
-- **`rosters.py` — id buttato**: l'id football-data del giocatore viene scartato, quindi i confronti
-  fra rose si possono fare solo sul nome.
-- **`build.py:544-546` — trappola KeyError**: le colonne sono costruite con le quattro chiavi letterali
-  e indicizzate col risultato di `classify()`. **Una categoria nuova fa morire il job**, e siccome lo
-  step build di `update.yml` è l'unico senza rete di sicurezza, muore prima del commit e il sito si
-  congela all'ultima versione buona.
-- **`mondo_home` non è per lingua**: `fetch(m["search"])` usa la stessa stringa per it/en/es, quindi
-  con locale italiano tornano fonti inglesi. Si corregge solo toccando `build.py`.
+- ~~`rosters.py` — perdita silenziosa di leghe~~ **fatto**: le competizioni che non portano dati **ereditano** le rose
+  dallo snapshot precedente invece di far sparire i club (una rosa di qualche giorno fa vale infinitamente più di
+  una rosa assente, che avvelena in silenzio `roster_club()` e `is_coach()`). Il file registra `competizioni`
+  (ok / senza_dati / ko), `ereditati` con la data del dato, e `massimi` mai visti.
+- ~~`rosters.py` — successo misurato sull'HTTP~~ **fatto**: una competizione che risponde 200 con squad vuoto NON conta
+  come riuscita (era il guasto storico vero: la Champions con 36 club e 0 giocatori, e il calo 165→155).
+- ~~`rosters.py` — controllo solo sui club~~ **fatto**: il confronto guarda club **e** giocatori, con un riferimento
+  stabile (il massimo mai visto) oltre all'ultimo file, così l'erosione a piccoli passi non passa più
+  (nello storico: 165, 119, 105, 81, 66, 36). Scrittura **atomica** (file temporaneo + `os.replace`).
+- ~~`rosters.py` — chiamata sprecata~~ **fatto**: `CL` tolto da `CODES` (portava 36 club e 0 giocatori).
+- ~~`rosters.py` — id buttato~~ **fatto**: gli id football-data si conservano in una struttura **parallela** (`ids`),
+  perché `rose` deve restare `club → lista di stringhe`: è il contratto che leggono `build.py` e `brain.py`.
+  Nota: oggi nessuno legge `ids`, e per i club ereditati è popolato solo se c'era già nel file precedente.
+- ~~`build.py` — trappola KeyError~~ **fatto** (la riga vera era la **551**, non la 544): `classify()` normalizza alla
+  fonte su una delle quattro colonne, con un avviso **una volta sola per categoria**. Le quattro chiavi in uscita
+  restano quattro: sono un contratto verso `index.html` e `render_site.py`.
+  **La stessa causa viveva in `fastlane.py`** (una copia di `classify` sugli stessi file di regole, e anche
+  `fast.yml` è senza `|| echo`): messa in sicurezza allo stesso modo.
+  Aggiunto anche un avviso quando le regole sono **vuote**: un `categorie` svuotato mandava tutto in "rumor"
+  senza una riga di log, e la sentinella non poteva accorgersene perché le quattro chiavi esistevano lo stesso.
+- ~~`mondo_home` non è per lingua~~ **fatto**: `search_lang()` accetta sia una stringa (comportamento attuale) sia un
+  dizionario per lingua, applicata **sia** a `mondo_home` **sia** a `leghe_home` — se fosse solo su uno dei due, chi
+  arricchisse `data/teams.json` in modo naturale otterrebbe `str + dict` → TypeError nello step senza rete di sicurezza.
+  **Perché la modifica sia visibile serve arricchire `data/teams.json`**: oggi `search` è una stringa e la funzione è inerte.
 - ~~sitemap: mondiali.html e fonti.html non compaiono~~ superato il 2026-09-03: `sitemap.xml` è un indice, lastmod veri (vedi `kb/SEO.md` §6).
-- **`data/teams.json` in ritardo di una stagione**: 9 club retrocessi al posto dei 9 promossi 2026-27 (elenco in `kb/SEO.md` §6). La board non raccoglie
-  notizie su Frosinone, Monza, Venezia e gli altri promossi; le pagine squadra dei retrocessi escono senza classifica.
+- ~~`.gitignore` non copre i file di lavoro~~ **fatto**: `__probe_*`, `__trash/`, `.bak_*`, `*.tmp`, `.tb_tmp_index*`, `*.orig`, `*.rej`.
+- **`data/teams.json` in ritardo di una stagione**: ANCORA APERTO, ma è una decisione, non un difetto: le 9 promosse
+  sono state aggiunte il 2026-09-03 e le 9 retrocesse sono ancora lì (69 squadre in tutto). Toglierle manda in 404
+  URL già indicizzate: decide il committente (vedi `kb/SEO.md` §6 e `kb/FANTATB.md` §13.13).
 
 ## 6. Cosa NON è nel repo (backup su Drive, file privato)
 - `groq_key.txt` (chiave Groq)
@@ -327,24 +347,38 @@ pubblicabile. Punto di ritorno dell'intera riconversione: tag **`pre-riconversio
 Misure dopo la fase B/C, sulla board reale: colonna anteprima da 42 a 78 voci, default "rumor" dal
 65% al 51%, ANSA Calcio e Corriere dello Sport entrati come fonti dirette (26 e 31 titoli).
 
-### PENDING (in ordine consigliato)
-1. ~~Fase I — archivio Mondiale~~ fatta il 2026-09-03: via dai menu di home e board (resta "Archivio Mondiale 2026"
-   nei piè di pagina), banner "Edizione conclusa" it/en/es su `mondiali.html` con rimando ai Campionati, step
-   `mondiali.py` tolto da `update.yml` (dati congelati nel repo), URL e canonical invariati. Lo smontaggio della vista
-   "Nomi" (affare-metro) NON è stato fatto: la macchina del mercato resta sospesa, non cancellata (§7).
-2. **Fase J — bilancio mercato.** Decisione presa: **solo dalle notizie ufficiali già classificate**,
-   non dal diff fra le rose (gli snapshot riflettono le ri-registrazioni delle liste, non i trasferimenti).
-   Sorgente: lo storico di `data/it/board.json`, oltre 770 versioni dal 2026-06-03.
-3. ~~Fase K — palinsesto editoriale~~ fatta il 2026-09-03: i tre prompt riscritti sul calcio giocato (fonti: colonne della board,
-   competizioni.json per risultati e classifiche, ultim'ora), badge FOCUS al posto di FOCUS MERCATO, copie dei prompt in
-   `kb/pianificate/`. RESTA APERTO il limite di affidabilità: le pianificate girano solo a PC acceso con Cowork
-   (nessun articolo il 29-31/8 e il 2/9). Opzione: routine cloud a orario fisso. Vedi `kb/PIANIFICATE.md`.
-4. **Campionati, evoluzioni**: barra news dedicata come nel Mondiale; link alla board per squadra dalla
-   classifica; Champions: quando parte la league phase (metà settembre) la classifica compare da sola.
-5. **Freschezza: notifica.** Il fallimento della sentinella colora di rosso il workflow e GitHub manda una
-   mail al proprietario del repo: verificare che arrivi davvero al primo rosso.
-6. **SEO/GEO, punti 1-7 eseguiti e pubblicati su main il 2026-09-03** (`24c556d`): nome confermato e LinkedIn inserito; resta l'email di contatto per
-   chi-siamo, Bing Webmaster Tools, il controllo di Search Console fra due settimane. Tutto in `kb/SEO.md` §6.
+### PENDING (in ordine consigliato) — aggiornato il 2026-09-07
+1. ~~Fase I — archivio Mondiale~~ fatta il 2026-09-03. Lo smontaggio della vista "Nomi" (affare-metro) NON è stato
+   fatto, di proposito: la macchina del mercato resta sospesa, non cancellata (§7).
+2. **Fase J — bilancio mercato: SCRITTO ma NON PUBBLICATO.** `scripts/bilancio.py` ricostruisce il bilancio dell'estate
+   2026 dallo storico della board (771 snapshot fra il 2026-06-03 e il 2026-09-01), rispettando la decisione del
+   committente: solo notizie ufficiali già classificate, mai il diff fra le rose. Il metodo regge e i conteggi sono
+   riproducibili, ma **una revisione avversariale l'ha giudicato non pubblicabile** e il file dati è stato messo in
+   `data/articles/bozze/` — fuori dal percorso di render, perché `all_articles()` legge OGNI .json di `data/articles/`
+   e il primo giro delle pianificate lo avrebbe pubblicato da solo. Le tre correzioni che mancano sono elencate in
+   `data/articles/bozze/LEGGIMI.md`. **Lezione di metodo, valida oltre questo caso**: il feed contiene articoli
+   d'archivio riproposti da Google News (trovati trasferimenti del 2017, 2022, 2023 e 2025), e il filtro dei 30 giorni
+   di `build.py` non li ferma perché guarda la data del FEED, non quella dell'articolo.
+3. ~~Fase K — palinsesto editoriale~~ fatta il 2026-09-03. Il limite di affidabilità è ora **coperto da una rete di
+   sicurezza**: `scripts/palinsesto.py` + `.github/workflows/palinsesto.yml` pubblicano un BOLLETTINO DI DATI quando
+   uno slot resta vuoto oltre il margine. Costruito solo dai JSON del repo, **nessuna chiamata a un modello
+   linguistico**: un pezzo scritto da un modello con meno contesto sarebbe peggiore di quello di Cowork e potrebbe
+   inventare un risultato; un bollettino costruito dai numeri no. Si dichiara in tre punti (titolo, lead, ultimo
+   paragrafo). **È SPENTO**: parte solo se esiste la variabile di repository `PALINSESTO_ATTIVO = true`, perché
+   pubblicare da soli sul sito vivo è una decisione del committente, non un effetto di un file finito nel repo.
+   Il lancio a mano (`workflow_dispatch`, anche con `dry=true`) funziona sempre.
+4. ~~Campionati, evoluzioni~~ **fatto**: barra "Ultime notizie" per competizione (solo dove la board ha davvero una lega:
+   Champions, Bundesliga e Ligue 1 non ne hanno) e link alla board per squadra dalla sezione "Le squadre". Il blocco
+   notizie sta dentro `<!--vol-->…<!--/vol-->` ed è escluso dall'hash del lastmod: senza, tutte le pagine competizione
+   avrebbero cambiato lastmod ogni due ore e la sitemap avrebbe detto "aggiornata" sempre.
+5. **Freschezza: notifica.** Ancora da verificare che la mail del primo rosso arrivi davvero (è del committente).
+   Nel frattempo la sentinella è stata ESTESA a `data/rosters.json`, che prima non guardava nessuno: ora fallisce se le
+   rose sono vecchie, se un giro è stato rifiutato, se NESSUNA competizione ha portato giocatori, se troppi club hanno
+   rose ereditate o se il dato ereditato più vecchio supera la soglia. Tarata perché non diventi rossa nel
+   funzionamento normale (sul piano free rispondono 3 competizioni su 8: quella è la normalità, non un guasto).
+6. **SEO/GEO**: i punti 1-7 del piano sono chiusi dal 2026-09-03; le rifiniture del 2026-09-06 sono chiuse il
+   2026-09-07 (`kb/SEO.md` §7.3). Restano cose del committente: email in chi-siamo, Bing Webmaster Tools, www → apice
+   in Vercel, e le decisioni elencate in `kb/SEO.md` §7.4.
 
 ### SEO e GEO (diagnosi del 2026-09-03)
 Search Console (via GA4) da giugno: 316 impressioni, 43 clic (39 sulla home = ricerca di marca), 22 query tutte code lunghe su
@@ -358,17 +392,24 @@ niente FAQ, dati propri (listone, voti, titolarità) non pubblicati come pagine.
 competizione, lingue su URL separate o solo IT, title/description/lastmod veri, pagine dati FantaTB, correlati, llms.txt, IndexNow.
 
 ### Punti aperti minori
-- **`guard.py`**: i due difetti elencati in §5 non sono stati corretti perché il classificatore dei
-  permessi ha bloccato la modifica (è uno script di sicurezza). Serve un via libera esplicito.
-- **18 movimenti residui** in `board.json`: estratti da un build partito alle 23:54 del 2026-09-01,
+- ~~`guard.py` bloccato dal classificatore~~ **sbloccato e corretto il 2026-09-07** (§5). Nota emersa nel farlo:
+  `carica-modifiche.bat` invocava `python`, che su questo PC risolve PRIMA sull'alias del Microsoft Store
+  (esce con codice 49) e con `if errorlevel 1` avrebbe fatto abortire OGNI caricamento senza mai eseguire il guard.
+  Ora usa `py -X utf8`, come tutto il resto del progetto.
+- ~~Messaggi con più trasferimenti insieme~~ **fatto il 2026-09-07**: lo schema di `brain.py` accetta un campo
+  facoltativo `movimenti` (una voce per trasferimento) e `fastlane.py` emette **una voce di ultim'ora per
+  trasferimento** invece di una per messaggio, anteponendo il nome del giocatore al titolo — senza quello la
+  pulizia finale per titolo li ricollasserebbe in uno solo. Retrocompatibile: se il modello non compila
+  `movimenti`, il comportamento è identico a prima (verificato su quattro casi). Tetto di 6 movimenti per
+  messaggio: oltre, il modello sta riassumendo una rassegna, non annunciando affari.
+  **Impatto oggi ≈ zero** (il mercato è chiuso e lo scout è spento): serve a gennaio, vedi §7.
+- ~~`.gitignore` non copre i file di lavoro~~ **fatto il 2026-09-07**.
+- ~~`mondo_home` non è per lingua~~ **fatto il 2026-09-07** (§5), ma resta **inerte** finché `data/teams.json` non
+  viene arricchito con un `search` per lingua: il codice accetta entrambe le forme.
+- **18 movimenti residui** in `board.json`: ANCORA APERTO. Estratti da un build partito alle 23:54 del 2026-09-01,
   **un minuto prima** che venisse pubblicato lo spegnimento dello scout. Sono trasferimenti veri del
   deadline day, non allucinazioni. Decadono da soli entro 60 giorni (`merge_nomi`). Il committente
   non ha ancora deciso se lasciarli, azzerarli o congelarli per la sezione bilancio.
-- **Messaggi con più trasferimenti insieme** ("Ufficiali: Ndiaye al City, Sanchez al Como, ..."):
-  lo schema a un record per messaggio ne estrae uno solo e a volte sbaglia l'abbinamento del club.
-- **`.gitignore`**: non copre i file di lavoro nella root (`__probe_*`, `__trash/`, `.bak_*`, `*.tmp`,
-  `.tb_tmp_index*`). Con `git add -A` in `update.yml` rischiano di finire pubblicati.
-- **`mondo_home` non è per lingua** (vedi §5): con locale italiano tornano fonti inglesi.
 
 ### Decisioni del committente (2026-09-02), da non riaprire senza motivo
 1. I 429 articoli di mercato già pubblicati **restano come sono**, nessuna deindicizzazione.

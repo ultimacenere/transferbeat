@@ -20,3 +20,13 @@ apifootball_key.txt
 
 # rapporto di scripts/seo_audit.py
 seo_audit_rows.json
+
+# file di lavoro nella root: mai pubblicati da `git add -A` in update.yml
+__probe_*
+__trash/
+.bak_*
+*.tmp
+.tb_tmp_index*
+__pycache__
+*.orig
+*.rej

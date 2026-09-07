@@ -189,13 +189,13 @@ prima il desktop poi l'app. Etichetta della board nel menu: "Notizie" (default; 
 - Pagine a mano (index, board, campionati, fonti, mondiali.html): tre marcatori `<!--shell:css-->`, `<!--shell:header-->`, `<!--shell:footer-->` riempiti da
   `apply_shell` a ogni `render_site.py` (prima delle inject `static:`); lo `<style>` proprio resta DOPO il blocco shell:css. La home ha il nuovo marcatore
   `<!--static:fanta-->` (blocco Fantacalcio) e linka /giocatori/; le tab campionato puntano alle URL statiche /campionati/<slug>.html.
-### 7.2 Alberatura e URL (nessuna URL rinominata; 3 livelli, tutto entro 3 clic dalla home)
+### 7.2 Alberatura e URL (3 livelli, tutto entro 3 clic dalla home; una sola URL rinominata, vedi §7.3.13)
 - Nuove: `/fantacalcio/voti.html` (URL fissa = ultima giornata; le `voti-giornata-N.html` restano archivio, quella della giornata corrente ha canonical su voti.html
   e sta fuori sitemap), `/fantacalcio/regolamento.html` (FAQPage), `/fantacalcio/guida-asta.html` (HowTo), `/fantacalcio/consigli.html` (ItemList, "chi schierare"
   dalle probabili ≥70% × fantamedia) — generate da `scripts/render_fanta_extra.py` (`render_all(D, T)`), agganciate in `render_site.main()` con try/except.
 - `/fantatb.html` è GENERATA da `scripts/render_landing.py` (`render(D, T)`): testo statico ≥2.500 caratteri, WebApplication JSON-LD SOLO qui (tolto dall'hub),
   FAQPage, CTA a /fanta/#crea. `/fanta/` resta index,follow e in sitemap, con title distinto ("Accedi a FantaTB: le tue leghe, asta e formazioni"), senza CTA.
-- `/fantacalcio/titolari.html` riposizionata su "Infortunati e squalificati" (URL invariata). `campionati.html`: H1/title non cannibalizzano più serie-a;
+- `/fantacalcio/titolari.html` riposizionata su "Infortunati e squalificati"; dal 2026-09-07 l'URL e' `/fantacalcio/infortunati-e-squalificati.html`, con 301 dalla vecchia (§7.3.13). `campionati.html`: H1/title non cannibalizzano più serie-a;
   il 301 verso /campionati/ resta rimandato finché il committente non legge le impressioni in Search Console.
 - Redirect in `vercel.json`: `/index.html` → `/` (308 verificato) oltre a `/home.json`.
 - Ancore nelle probabili: `#partita-<slug casa>-<slug ospite>` e `#squadra-<slug>`; le schede giocatore e le pagine squadra le linkano.
@@ -203,16 +203,63 @@ prima il desktop poi l'app. Etichetta della board nel menu: "Notizie" (default; 
   contestuale; etichetta della board "Notizie/News/Noticias".
 - Esito (seo_audit + controlli): 1.359 pagine, header/footer del guscio 1/1 ovunque, promo.js 0, H1 unico e chiuso ovunque, title ≤60, description ≤155,
   JSON-LD 0 errori, link interni rotti 0, IndexNow 200 su 1.366 URL.
-### 7.3 Pending dopo il 2026-09-06 (rifiniture di bassa gravità trovate dal verificatore e non ancora fatte)
-1. `consigli.html` è linkata solo da regolamento e guida: aggiungere la porta "Chi schierare nella giornata N" nell'hub (`render_fanta_index`) e nel blocco
-   `static:fanta` della home (o una voce in `FANTA_BAR`).
-2. Per la giornata corrente `render_stats.py`, `render_landing.py`, `render_fanta_extra.py` e `render_probabili.py` linkano `voti-giornata-N.html` invece di
-   `voti.html`: introdurre `voti_url(md, last_md)` in `site_common` e usarla ovunque.
-3. Due giocatori con doppio id API-Football (Mamedi Doucouré, V. Prisco) → 4 title e 2 description duplicati: deduplicare in `stats_pull.py`.
-4. `fanta/index.html` senza BreadcrumbList e JSON-LD (canonical e robots ok).
-5. Nel CSS condiviso resta un secondo `linear-gradient` (dissolvenza `.tabsw::after` del menu su mobile): sostituire con ombra piatta o documentare l'eccezione.
-6. `render_landing.py`: titolo della card fantavoti va a capo male a 375 px (`.lp-proof .h` senza flex-wrap).
-7. `regolamento.html` emette un secondo oggetto WebApplication in `about`: usare un riferimento `@id` alla landing.
-8. Non ancora fatti dal piano dell'audit: fase 5 (tabelle interattive in /campionati/ + 301 di campionati.html dopo Search Console), home "portale" completa
-   (7 notizie, classifica Serie A, ultimi articoli), riposizionamento di `/fantacalcio/titolari.html` su URL nuova (solo se si vuole, con 301), og:image,
-   email in chi-siamo, www → apice in Vercel, verifica dal vivo su mobile, poi l'APP FantaTB (router con hashchange, viste, tabelle mobile: kb/FANTATB.md §22).
+### 7.3 Rifiniture del 2026-09-06 — TUTTE CHIUSE il 2026-09-07
+1. ~~`consigli.html` orfana~~ **fatto**: "Chi schierare" è ora una voce di `FANTA_BAR` (quindi in tutte le pagine
+   fantacalcio e nella colonna Fantacalcio del footer), una porta nell'hub e una porta nel blocco `static:fanta`
+   della home. `bar_here` impostato su entrambe le varianti della pagina.
+2. ~~i generatori linkano `voti-giornata-N.html` invece di `voti.html`~~ **fatto**: `site_common.voti_url(md, last_md)`
+   e `voti_last(D)`, usate in `render_stats`, `render_landing`, `render_fanta_extra` e `render_probabili`.
+   Zero stringhe `voti-giornata-` scritte a mano nei generatori.
+3. ~~4 title e 2 description duplicati~~ **fatto**, e meglio di come chiedeva il pending: invece di scartare uno dei
+   due gemelli, `clean_players` li **FONDE**. Mamedi Doucouré aveva la data di nascita su un id e la stagione
+   scorsa sull'altro: ora è una scheda sola con entrambe. 676 pagine (erano 678), **zero duplicati**.
+   Le 4 URL vecchie hanno un 301 in `vercel.json`; ogni fusione nuova stampa una riga che ricorda di aggiungerlo.
+4. ~~`fanta/index.html` senza BreadcrumbList e JSON-LD~~ **fatto**: BreadcrumbList a 4 livelli + WebPage che cita
+   l'applicazione per `@id`, più og:image. Resta senza breadcrumb VISIBILE (l'app non ne ha uno): da valutare.
+5. ~~secondo `linear-gradient` nel CSS condiviso~~ **fatto**: la dissolvenza `.tabsw::after` è diventata un'ombra
+   piatta. In tutto il sito resta un solo gradiente, quello firma (`--grad`).
+6. ~~card fantavoti a capo male a 375 px~~ **fatto** (`flex-wrap` + baseline su `.lp-proof .h`).
+7. ~~`regolamento.html` con un secondo WebApplication~~ **fatto**: la landing dichiara `@id` e chi la cita usa
+   `{"@id": ...}`. In tutto il sito resta **un solo** oggetto WebApplication.
+8. **og:image** ~~assente~~ **fatto**, ed era peggio di come sembrava: le pagine generate non ne avevano nessuna e
+   i **573 articoli usavano una SVG**, che nessuno scraper social legge (Facebook, X, LinkedIn, WhatsApp, Telegram).
+   Le anteprime degli articoli erano di fatto rotte. Ora `scripts/make_og.py` genera 4 anteprime di sezione
+   (`og-default`, `og-fantacalcio`, `og-campionati`, `og-squadre`) e 5 gemelle PNG delle copertine articolo;
+   `page()` sceglie l'immagine dalla sezione (`og_image(here)`), le pagine a mano la ricevono dal nuovo marcatore
+   `<!--shell:og-->`, e `twitter:card` è passata a `summary_large_image`. **0 pagine senza og:image** su 1.356.
+   Le immagini si rigenerano con `py scripts/make_og.py` se cambiano i colori del sito.
+9. ~~JSON-LD su board, campionati, fonti~~ **fatto** (più l'archivio Mondiale): nuovo marcatore `<!--static:ld-->`
+   riempito da `render_site`. Board → `CollectionPage` + `ItemList` delle 60 squadre coperte; campionati →
+   `ItemList` delle competizioni; fonti → `ItemList` delle testate lette; Mondiale → `SportsEvent` con la data di fine.
+   Scelta deliberata: si marcano **le nostre entità** (squadre, competizioni, fonti), non le notizie altrui.
+10. ~~`fonti.html` quasi tutto via JS~~ **fatto**: l'elenco delle testate è **generato da `data/sources.json`**, lo
+   stesso file che usa il programma di raccolta, quindi la pagina non può più mentire. Testo statico da 2.612 a 3.404
+   caratteri. **Attenzione alla scala dei tier: 3 = massima affidabilità, 1 = da verificare** (è il numero che
+   `dots()` trasforma in pallini pieni; l'avevo letta al contrario la prima volta).
+11. ~~tabelle interattive in `/campionati/`~~ **fatto**: `table_html(..., sortable=True)` **solo** per le pagine
+   competizione (le pagine squadra e l'hub non includono `FILTER_JS`: intestazioni cliccabili a vuoto sarebbero
+   peggio di niente). Barra con filtro unico che agisce su classifica e marcatori insieme, contatore righe.
+   Il DR con il `+` si ordina come numero grazie a `data-v`. **Le fasce colorate restano corrette dopo il riordino**
+   perché tingono il testo della cella posizione, non lo sfondo della riga.
+   Resta rimandato il **301 di `campionati.html` → `/campionati/`**: aspetta che il committente legga le impressioni in GSC.
+12. ~~home "portale"~~ **fatto**: la home aveva già notizie e articoli ma **non la classifica di Serie A**, che è la
+   cosa più cercata del dominio. Nuova fascia `static:classifica`: tutte e 20 le squadre + la giornata in corso
+   con l'etichetta onesta ("in corso, 4 partite su 10"). Va messa fra le fasce a tutta larghezza, NON dentro la
+   griglia di `div.main`, o finisce incolonnata nella colonna delle notizie.
+13. ~~`/fantacalcio/titolari.html` su URL parlante~~ **fatto**: ora `/fantacalcio/infortunati-e-squalificati.html`,
+   con 301 dalla vecchia. 23 riferimenti aggiornati in 8 file sorgente e **585 articoli rigenerati** (i link interni
+   verso un redirect sono spreco di crawl budget).
+14. ~~verifica dal vivo su mobile~~ **fatto**, in modo programmatico su 15 tipi di pagina a 375 px:
+   **zero overflow orizzontale, zero tabelle compresse, tutte 200**. Le tabelle fuori da `.tscroll` (schede
+   giocatore, pagine squadra, infortunati) stanno nei 310-347 px senza comprimersi: non serve intervenire.
+15. ~~fase J, bilancio mercato~~ vedi `kb/RIPARTENZA.md` §8.
+
+### 7.4 Restano aperti (SEO)
+- **301 di `campionati.html`** verso `/campionati/`: decisione del committente dopo Search Console.
+- **`fanta/index.html` senza breadcrumb visibile** (il JSON-LD c'è): Google preferisce che coincidano.
+- **Le 9 squadre retrocesse** in `data/teams.json` (69 in tutto): decisione del committente, le URL sono indicizzate.
+- **Titolo e H1 della board dicono "calciomercato"** ("Notizie di calciomercato squadra per squadra" /
+  "Notizie di calciomercato in tempo reale") mentre il sito è stato riconvertito al calcio giocato e lo scout è
+  spento: la pagina promette mercato e consegna campionati. Può essere una scelta di posizionamento sulla parola
+  più cercata, ma va decisa: oggi title e contenuto non coincidono.
+- **www → apice in Vercel**, **email in chi-siamo**, **Bing Webmaster Tools**: cose del committente (blocco A).

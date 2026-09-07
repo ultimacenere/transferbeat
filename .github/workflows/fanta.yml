@@ -4,6 +4,13 @@ name: FantaTB voti e listone
 # Live: nei giorni di partita (ven-lun 12-22 UTC, mar-gio 17-22 UTC) ogni 30 minuti solo voti delle partite finite e
 #       risultati provvisori delle leghe (~2-22 chiamate API per giro), senza pagine né commit.
 # Rose: ogni giovedì alle 06:00 UTC sincronizza squadre/uscite/nuovi arrivi dal feed API-Football (prezzi invariati).
+# Bot: le formazioni delle 7 squadre bot della lega Fantamarcio 26/27 (kb/FANTATB.md §19). La deadline è l'inizio della prima
+#      partita della giornata (venerdì sera o sabato, ma anche martedì/mercoledì negli infrasettimanali), quindi lo step gira
+#      in tutti i run non live/rose/listone (subito dopo le probabili, di cui legge il file) invece di avere una schedule sua: fra le schedule qui sotto c'è già almeno un run
+#      al giorno (lun 07:00, mar 07:00, ven 07:00 e 15:00, sab 08:00, più le 21:30 di sab-gio), cioè non più di ~24 ore prima
+#      di qualsiasi deadline possibile, e se una giornata slitta il run del giorno prima la prende comunque. Lo script si
+#      ferma da solo se mancano più di 36 ore alla deadline, se la deadline è passata o se le formazioni ci sono già:
+#      rilanciarlo non cambia niente, quindi non servono run in più.
 on:
   schedule:
     - cron: "30 21 * * 6,0,1,2,3,4"
@@ -58,6 +65,14 @@ jobs:
       - name: Probabili formazioni (ultime 3 formazioni ufficiali + titolarità, ~1-11 chiamate)
         if: ${{ env.LISTONE != 'true' && env.ROSE != 'true' && env.LIVE != 'true' }}
         run: python scripts/fanta_probabili.py || echo "probabili skip"
+      # DOPO titolarità e probabili, non prima: i bot leggono data/fanta/probabili-NN.json, quindi messi in testa
+      # userebbero SEMPRE le probabili del giro precedente - una perdita di qualità sistematica, a ogni run.
+      # Il rischio opposto (i voti falliscono e il job muore prima di arrivare qui) è molto più raro e comunque
+      # limitato: fra le schedule c'è più di un run al giorno e lo script agisce fino a 36 ore prima della deadline,
+      # quindi ha diverse occasioni. Se i voti restano rotti per 36 ore, le formazioni dei bot non sono il problema.
+      - name: Formazioni delle squadre bot (lega Fantamarcio 26/27, non sovrascrive mai una formazione già inviata)
+        if: ${{ env.LISTONE != 'true' && env.ROSE != 'true' && env.LIVE != 'true' }}
+        run: python scripts/fanta_bots.py || echo "bot formazioni skip"
       - name: Statistiche squadre e schede giocatore (data/stats, ~60-130 chiamate a regime)
         if: ${{ env.LIVE != 'true' }}
         run: python scripts/stats_pull.py || echo "stats_pull skip (restano i JSON precedenti)"

@@ -12,7 +12,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from site_common import esc, SITE, SEASON, ORG, page, FANTA_BAR, FANTA_CRUMB, fdate_it, date_only, today_iso
+from site_common import esc, SITE, SEASON, ORG, page, FANTA_BAR, FANTA_CRUMB, fdate_it, date_only, today_iso, voti_url
 
 try:
     import render_stats as RS   # link alle schede giocatore e riassunti (fantamedia, media voto)
@@ -180,7 +180,7 @@ def render_regolamento(D, T):
     mds, rated, n_voti = voti_stats(D)
     oggi = fdate_it(today_iso() + "T12:00:00Z")
     last_md = mds[-1] if mds else 0
-    voti_url = ("/fantacalcio/voti-giornata-%d.html" % last_md) if last_md else "/fantacalcio/"
+    voti_href = voti_url(last_md, last_md)     # last_md E' l'ultima giornata: URL fissa /fantacalcio/voti.html
     # esempi numerici calcolati con le stesse formule del motore
     ex_rating, ex_gol, ex_amm = 7.32, 1, 1
     ex_base = voto_base(ex_rating); ex_fv = ex_base + 3 * ex_gol - 0.5 * ex_amm
@@ -246,7 +246,7 @@ def render_regolamento(D, T):
              '<h3>Esempio numerico: un portiere</h3>'
              "<p>Rating " + dec(gk_rating) + " → voto base <b>" + dec(gk_base) + "</b>. Subisce " + str(gk_sub) + " gol (−1 ciascuno) e para un rigore (+3): "
              "fantavoto <b>" + dec(gk_base) + " − " + str(gk_sub) + " + 3 = " + dec(gk_fv) + "</b>. Il rigore parato non conta fra i gol subiti.</p>"
-             '<p class="small">Verifica sui voti pubblicati: <a href="' + voti_url + '">voti della giornata ' + str(last_md) + '</a>' + (" · giornate calcolate: " + ", ".join(str(m) for m in mds) if mds else "") + ".</p>")
+             '<p class="small">Verifica sui voti pubblicati: <a href="' + voti_href + '">voti della giornata ' + str(last_md) + '</a>' + (" · giornate calcolate: " + ", ".join(str(m) for m in mds) if mds else "") + ".</p>")
 
     # --- modificatori
     b.append('<h2 id="modificatori">I modificatori</h2>'
@@ -316,7 +316,7 @@ def render_regolamento(D, T):
            ("Quanto costa FantaTB e serve un'app?", "È gratuito, senza limiti di leghe e senza funzioni a pagamento. Funziona dal browser del telefono e del computer: "
             '<a href="/fanta/">apri l\'app</a> o leggi la <a href="/fantatb.html">presentazione</a>.'),
            ("Da dove vengono infortuni e probabilità di titolarità?", "Dal feed infortuni di API-Football e dalle ultime tre giornate giocate: l'indice è nella pagina "
-            '<a href="/fantacalcio/titolari.html">infortunati e squalificati</a> e accanto a ogni nome nella scheda Schiera.')]
+            '<a href="/fantacalcio/infortunati-e-squalificati.html">infortunati e squalificati</a> e accanto a ogni nome nella scheda Schiera.')]
     b.append("<h2>Domande frequenti</h2>" + faq_html(faq))
     b.append('<div class="grad"><div class="k">FantaTB</div><h2>Crea la tua lega con queste regole, o cambiale</h2>'
              '<p>Leghe private, asta live dal telefono, voti ogni 30 minuti, tutto gratis. Le regole di questa pagina sono i default: ogni lega decide le sue.</p>'
@@ -326,8 +326,8 @@ def render_regolamento(D, T):
 
     ld = [faq_ld(faq),
           {"@context": "https://schema.org", "@type": "WebPage", "name": "Regolamento FantaTB", "url": canon, "inLanguage": "it", "dateModified": today_iso(),
-           "about": {"@type": "WebApplication", "name": "FantaTB", "url": SITE + "/fanta/", "applicationCategory": "GameApplication", "operatingSystem": "Web",
-                     "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}}, "publisher": ORG}]
+           # L'applicazione e' DESCRITTA una volta sola, nella landing /fantatb.html: qui la citiamo per @id (kb/SEO.md 7.3 punto 7).
+           "about": {"@id": SITE + "/fantatb.html#app"}, "publisher": ORG}]
     return page("Regolamento FantaTB: bonus, malus e voto",
                 "Regole di FantaTB, il fantacalcio gratuito di TransferBeat: rose da " + str(ROSA) + ", asta a " + str(CREDITS) + " crediti, bonus e malus, voto statistico, "
                 "modificatori, panchina e FAQ.",
@@ -421,7 +421,7 @@ def render_guida(D, T):
              '<li><b>Tieni a parte 15 nomi da 1 credito</b>Titolari veri (titolarità 90%) di squadre medio-piccole, quasi tutti difensori e centrocampisti: servono per chiudere la rosa negli ultimi giri senza ragionare sotto pressione.</li>'
              '<li><b>Fissa i checkpoint del budget</b>A un terzo dell\'asta almeno il 60% dei crediti se non hai ancora l\'attaccante top, almeno il 35% se lo hai; a due terzi blocco portiere più difensori completo '
              'e non più del 15-20% residuo; sempre 1 credito per posto vuoto più 15-25 crediti per gli ultimi giri.</li>'
-             '<li><b>Controlla i dati della settimana</b>Il giorno dell\'asta rileggi <a href="/fantacalcio/titolari.html">infortunati e squalificati</a> e le '
+             '<li><b>Controlla i dati della settimana</b>Il giorno dell\'asta rileggi <a href="/fantacalcio/infortunati-e-squalificati.html">infortunati e squalificati</a> e le '
              '<a href="/fantacalcio/probabili-formazioni.html">probabili formazioni</a>: un titolare fermo due mesi cambia il tetto, un 45% di titolarità dopo due giornate su un titolare certo è uno sconto, non un allarme.</li></ol>')
 
     # --- ordine delle chiamate
@@ -507,7 +507,7 @@ def render_guida(D, T):
              '<div class="card"><h3>Probabili formazioni</h3><div class="in"><p>Moduli e undici con la percentuale di ogni giocatore, ballottaggi e sostituti: prima dell\'asta rivelano chi è titolare davvero e chi vive di prime pagine.</p>'
              '<a class="btn" href="/fantacalcio/probabili-formazioni.html">Le probabili della giornata</a></div></div>'
              '<div class="card"><h3>Infortunati e squalificati</h3><div class="in"><p>Indice di titolarità per ogni giocatore, infortuni con rientro stimato e squalifiche: un titolare fermo due mesi va pagato da panchina.</p>'
-             '<a class="btn" href="/fantacalcio/titolari.html">Chi gioca e chi no</a></div></div>'
+             '<a class="btn" href="/fantacalcio/infortunati-e-squalificati.html">Chi gioca e chi no</a></div></div>'
              '<div class="card"><h3>Voti e chi schierare</h3><div class="in"><p>Voto, bonus e fantavoto di ogni giornata con la formula pubblica, e la pagina dei consigli per la giornata in arrivo, generata dai dati.</p>'
              '<a class="btn" href="/fantacalcio/consigli.html">Chi schierare</a> <a class="btn sec" href="/fantacalcio/">Tutti i dati</a></div></div></div>')
     b.append('<div class="note"><b>Nota sulle regole.</b> I pesi dati qui alla difesa valgono con il modificatore difesa acceso e il voto statistico di FantaTB. In una lega con voti redazionali e senza modificatori usa la seconda ripartizione: '
@@ -663,7 +663,7 @@ def render_consigli(D, T):
                          td(esc(x["ballot"]["name"]) + " (" + str(x["ballot"].get("prob") or "") + "%)" if x.get("ballot") else "—"), td(dec(x["fmv"]), "num")] for x in doubt[:16]]))
     if not (squal or inj or doubt):
         b.append("<p>Nessun indisponibile segnalato al momento: il feed infortuni si popola a ridosso della giornata, ricontrolla alla vigilia.</p>")
-    b.append('<p class="small">Fonti: <a href="/fantacalcio/probabili-formazioni.html">probabili formazioni giornata ' + str(md) + '</a> · <a href="/fantacalcio/titolari.html">infortunati e squalificati</a> · '
+    b.append('<p class="small">Fonti: <a href="/fantacalcio/probabili-formazioni.html">probabili formazioni giornata ' + str(md) + '</a> · <a href="/fantacalcio/infortunati-e-squalificati.html">infortunati e squalificati</a> · '
              '<a href="/fantacalcio/">voti e listone</a>. Dati grezzi: <a href="/data/fanta/probabili-%02d.json">probabili-%02d.json</a>. ' % (md, md) +
              'Le probabili vengono ricalcolate più volte a settimana fino al giorno di gara: questa pagina si aggiorna con loro.</p>')
     b.append('<div class="grad"><div class="k">FantaTB</div><h2>Schiera la formazione con la percentuale accanto a ogni nome</h2>'
@@ -686,7 +686,7 @@ def render_consigli(D, T):
     return page("Chi schierare nella giornata " + str(md) + " di Serie A",
                 "Giornata " + str(md) + " di Serie A " + SEASON + ": " + str(n_picks) + " titolari probabili per fantamedia FantaTB con l'avversario, "
                 + str(n_out) + " indisponibili da evitare e i ballottaggi in dubbio.",
-                canon, "".join(b), crumbs=FANTA_CRUMB + [("Chi schierare", canon)], ld=ld, here="Fantacalcio", extra_head=EXTRA_CSS, bar=FANTA_BAR, bar_here="")
+                canon, "".join(b), crumbs=FANTA_CRUMB + [("Chi schierare", canon)], ld=ld, here="Fantacalcio", extra_head=EXTRA_CSS, bar=FANTA_BAR, bar_here="Chi schierare")
 
 def _consigli_vuoti(D, T, canon, oggi):
     """Senza probabili formazioni: la pagina spiega quando arrivano i consigli e come sono costruiti (mai una pagina vuota)."""
@@ -701,7 +701,7 @@ def _consigli_vuoti(D, T, canon, oggi):
          'poi la sezione da evitare con infortunati, squalificati e ballottaggi aperti. Le probabili si basano sulle ultime tre formazioni ufficiali di ogni squadra e sull\'indice di titolarità, '
          'e vengono ricalcolate più volte a settimana.</p>'
          '<h2>Cosa consultare intanto</h2><div class="grid2">'
-         '<div class="card"><h3>Infortunati e squalificati</h3><div class="in"><p>Indice di titolarità di ogni giocatore, infortuni con rientro stimato e squalifiche per la prossima giornata.</p><a class="btn" href="/fantacalcio/titolari.html">Chi gioca e chi no</a></div></div>'
+         '<div class="card"><h3>Infortunati e squalificati</h3><div class="in"><p>Indice di titolarità di ogni giocatore, infortuni con rientro stimato e squalifiche per la prossima giornata.</p><a class="btn" href="/fantacalcio/infortunati-e-squalificati.html">Chi gioca e chi no</a></div></div>'
          '<div class="card"><h3>Voti e fantamedie</h3><div class="in"><p>Voto, bonus e fantavoto di ogni giornata giocata, con la formula pubblica del voto statistico.</p><a class="btn" href="/fantacalcio/">Voti e listone</a></div></div>'
          '<div class="card"><h3>Schede giocatore</h3><div class="in"><p>Fantamedia, media voto, titolarità e statistiche della stagione scorsa per ogni giocatore di Serie A.</p><a class="btn" href="/giocatori/">Tutti i giocatori</a></div></div>'
          '<div class="card"><h3>Regolamento e guida all\'asta</h3><div class="in"><p>Come si calcola il voto FantaTB, i modificatori, la panchina; e la guida per l\'asta.</p><a class="btn" href="/fantacalcio/regolamento.html">Regolamento</a> <a class="btn sec" href="/fantacalcio/guida-asta.html">Guida all\'asta</a></div></div></div>'
@@ -713,7 +713,7 @@ def _consigli_vuoti(D, T, canon, oggi):
     return page("Chi schierare nel fantacalcio: consigli dai dati",
                 "I consigli di TransferBeat per la prossima giornata di Serie A " + SEASON + ": titolari probabili ordinati per fantamedia FantaTB, infortunati e squalificati da evitare. "
                 "Arrivano con le probabili formazioni.",
-                canon, "".join(b), crumbs=FANTA_CRUMB + [("Chi schierare", canon)], ld=ld, here="Fantacalcio", extra_head=EXTRA_CSS, bar=FANTA_BAR, bar_here="")
+                canon, "".join(b), crumbs=FANTA_CRUMB + [("Chi schierare", canon)], ld=ld, here="Fantacalcio", extra_head=EXTRA_CSS, bar=FANTA_BAR, bar_here="Chi schierare")
 
 # =====================================================================================================================
 def render_all(D, T):

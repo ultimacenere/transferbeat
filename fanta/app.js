@@ -22,24 +22,44 @@ let auctionTimer = null, channel = null;
 function msg(text, kind){ const m = $('#msg'); m.innerHTML = text ? '<div class="msg '+(kind||'')+'">'+esc(text)+'</div>' : ''; if (text) setTimeout(()=>{ if (m.textContent === text) m.innerHTML=''; }, 6000); }
 function err(e){ console.error(e); msg((e && (e.message || e.error_description)) || String(e), 'err'); }
 
+/* ---------- cronologia ----------
+   Regola unica: pushState quando l'utente NAVIGA (clic su una voce, apertura di una lega, cambio scheda),
+   replaceState quando la stessa vista si ridisegna da sola (realtime, polling, refresh dei dati).
+   navBack = stiamo applicando un hash arrivato dal tasto Indietro: nessuna voce nuova, solo replaceState. */
+let navHash = location.hash || '', navBack = false;
+function setHash(h, push){
+  if (h === navHash && h === (location.hash || '')) return;   // stessa posizione: niente doppioni in cronologia
+  navHash = h;
+  try { if (push && !navBack) history.pushState(null, '', h); else history.replaceState(null, '', h); }
+  catch (e) { location.hash = h; }
+}
+function onHashNav(){   // popstate = Indietro/Avanti, hashchange = hash modificato a mano nella barra degli indirizzi
+  const h = location.hash || '';
+  if (!sb || h === navHash) return;
+  navHash = h; navBack = true;
+  try { applyHash(h); } finally { navBack = false; }
+}
+window.addEventListener('popstate', onHashNav);
+window.addEventListener('hashchange', onHashNav);
+
 /* ---------- viste ---------- */
-function show(view){
+function show(view, push){
   $$('main > section').forEach(s => s.classList.add('hidden'));
   const el = $('#view-' + view); if (el) el.classList.remove('hidden');
   $$('nav a').forEach(a => a.classList.toggle('on', a.dataset.view === view));
-  if (view === 'home') { if (!$('#clForm').innerHTML) $('#clForm').innerHTML = settingsFormHtml(null, 'cl'); loadLeagues(); }
+  if (view === 'home') { ensureCreateForm(); loadLeagues(); }
   if (view === 'listone') renderListone();
   if (view === 'voti') loadVoti();
   if (view === 'liste') { renderListe(); if (lsteTab === 'strategie') renderStrategie(); }
   if (view === 'messaggi') renderMessaggi();
   document.body.dataset.sec = view;   // colore di sezione (style.css: body[data-sec=...]); NON data-view: il gestore dei clic risale agli antenati con [data-view]
-  if (['home', 'listone', 'voti', 'regole', 'messaggi'].includes(view)) history.replaceState(null, '', '#' + view);   // cosi' "indietro" dalle schede giocatore torna qui
-  if (view === 'liste') history.replaceState(null, '', '#' + (lsteTab === 'strategie' ? 'strategie' : 'liste'));
+  if (['home', 'listone', 'voti', 'regole', 'messaggi'].includes(view)) setHash('#' + view, push);   // cosi' "indietro" dalle schede giocatore torna qui
+  if (view === 'liste') setHash('#' + (lsteTab === 'strategie' ? 'strategie' : 'liste'), push);
 }
-document.addEventListener('click', e => {
-  const a = e.target.closest('[data-view]'); if (a){ e.preventDefault(); if (!user && !['listone', 'voti', 'regole', 'liste'].includes(a.dataset.view)) return show('auth'); show(a.dataset.view); }
-  const t = e.target.closest('[data-tab]'); if (t){ e.preventDefault(); renderTabs(t.dataset.tab); }
-  const lt = e.target.closest('[data-ltab]'); if (lt){ e.preventDefault(); setLsteTab(lt.dataset.ltab); }
+document.addEventListener('click', e => {   // clic su una voce del menu o su una scheda: e' navigazione dell'utente, va in cronologia
+  const a = e.target.closest('[data-view]'); if (a){ e.preventDefault(); if (!user && !['listone', 'voti', 'regole', 'liste'].includes(a.dataset.view)) return show('auth'); show(a.dataset.view, true); }
+  const t = e.target.closest('[data-tab]'); if (t){ e.preventDefault(); renderTabs(t.dataset.tab, true); }
+  const lt = e.target.closest('[data-ltab]'); if (lt){ e.preventDefault(); setLsteTab(lt.dataset.ltab, true); }
 });
 
 /* ---------- auth ---------- */
@@ -98,13 +118,15 @@ function lsVal(p, k){
   if (k === 'stato') return p._stato || ''; if (k === 'tier') { const t = tierOf(p.id); return t ? 6 - t : 0; }
   const s = schede[p.id]; return (s && s[k] != null) ? s[k] : -1;
 }
+/* Barra dei filtri: su telefono diventa una griglia (style.css, @media max-width 600px), ricerca a tutta larghezza e
+   controlli a due colonne, una sola sotto i 400 px. Ogni select ha un aria-label perche' non ha un <label> visibile. */
 function filterBarHtml(px, withList){
   const teams = [...new Set(players.filter(p => p.active).map(p => p.team))].sort();
-  return '<div class="row fbar"><input id="'+px+'Search" placeholder="Cerca giocatore o squadra">' +
-    '<select id="'+px+'Role"><option value="">Tutti i ruoli</option><option value="P">Portieri</option><option value="D">Difensori</option><option value="C">Centrocampisti</option><option value="A">Attaccanti</option></select>' +
-    '<select id="'+px+'Team"><option value="">Tutte le squadre</option>'+teams.map(t => '<option>'+esc(t)+'</option>').join('')+'</select>' +
-    '<select id="'+px+'Tier"><option value="">Lista: tutti</option><option value="in">Solo in lista</option><option value="out">Non in lista</option>'+[1,2,3,4,5].map(t => '<option value="'+t+'">Tier '+t+' · '+TIERS[t]+'</option>').join('')+'</select>' +
-    '<select id="'+px+'Voto"><option value="">Con e senza voto</option><option value="1">Solo con voto</option></select>' +
+  return '<div class="row fbar"><input id="'+px+'Search" placeholder="Cerca giocatore o squadra" aria-label="Cerca giocatore o squadra">' +
+    '<select id="'+px+'Role" aria-label="Filtra per ruolo"><option value="">Tutti i ruoli</option><option value="P">Portieri</option><option value="D">Difensori</option><option value="C">Centrocampisti</option><option value="A">Attaccanti</option></select>' +
+    '<select id="'+px+'Team" aria-label="Filtra per squadra"><option value="">Tutte le squadre</option>'+teams.map(t => '<option>'+esc(t)+'</option>').join('')+'</select>' +
+    '<select id="'+px+'Tier" aria-label="Filtra per tier della lista attiva"><option value="">Lista: tutti</option><option value="in">Solo in lista</option><option value="out">Non in lista</option>'+[1,2,3,4,5].map(t => '<option value="'+t+'">Tier '+t+' · '+TIERS[t]+'</option>').join('')+'</select>' +
+    '<select id="'+px+'Voto" aria-label="Filtra per presenza del voto"><option value="">Con e senza voto</option><option value="1">Solo con voto</option></select>' +
     (px === 'll' ? '<label class="small chk1"><input type="checkbox" id="llFree"> solo liberi</label>' : '') + '</div>' +
     (withList === false ? '' : '<div class="row fbar2"><span class="lab">🎯 Lista obiettivi attiva</span><select id="'+px+'List"></select><a data-view="liste">apri la lista →</a><span class="small" id="'+px+'ListInfo"></span></div>');
 }
@@ -172,24 +194,39 @@ function pcardShow(pid, anchor){
 }
 function pcardHide(delay){ clearTimeout(pcTimer); pcTimer = setTimeout(() => { const el = $('#pcard'); if (el) el.classList.add('hidden'); pcPid = null; }, delay || 0); }
 const pcTouch = window.matchMedia('(hover: none)').matches;
+/* Dove la riga intera serve gia' a un'altra azione (scegliere il giocatore all'asta, schierarlo in campo) la scheda NON si apre
+   sulla riga: si apre solo su questa piccola area "i", cosi' sul telefono il tocco per schierare non viene mai rubato.
+   Chi la stampa deve anche far uscire subito il proprio handler di riga (vedi renderLineup e setupPicker). */
+const PC_SEL = 'tr[data-pid], .pinfo[data-pid]';
+function infoBtn(pid){ return '<span class="pinfo" data-pid="'+pid+'" role="button" tabindex="0" title="Scheda del giocatore" aria-label="Scheda del giocatore">i</span>'; }
+function pcAnchor(el){ return el.tagName === 'TR' ? (el.querySelector('td:nth-child(2)') || el) : el; }
 document.addEventListener('mouseover', e => {
-  if (pcTouch) return; const row = e.target.closest('tr[data-pid]'); if (!row) return;
+  if (pcTouch) return; const row = e.target.closest(PC_SEL); if (!row) return;
   clearTimeout(pcTimer); const pid = +row.dataset.pid; if (pid === pcPid) return;
-  pcTimer = setTimeout(() => pcardShow(pid, row.querySelector('td:nth-child(2)') || row), 260);
+  pcTimer = setTimeout(() => pcardShow(pid, pcAnchor(row)), 260);
 });
-document.addEventListener('mouseout', e => { if (pcTouch) return; const row = e.target.closest('tr[data-pid]'); if (row && !(e.relatedTarget && (e.relatedTarget.closest('#pcard') || e.relatedTarget.closest('tr[data-pid]') === row))) pcardHide(220); });
+document.addEventListener('mouseout', e => { if (pcTouch) return; const row = e.target.closest(PC_SEL); if (row && !(e.relatedTarget && (e.relatedTarget.closest('#pcard') || e.relatedTarget.closest(PC_SEL) === row))) pcardHide(220); });
 document.addEventListener('click', e => {
+  const pin = e.target.closest('.pinfo[data-pid]');
+  if (pin) { e.preventDefault(); const pid = +pin.dataset.pid; if (pcPid === pid) pcardHide(0); else pcardShow(pid, pin); return; }
   const x = e.target.closest('a.pl'); const row = e.target.closest('tr[data-pid]');
   if (pcTouch && x && row && !e.target.closest('#pcard')) { e.preventDefault(); if (pcPid === +row.dataset.pid) pcardHide(0); else pcardShow(+row.dataset.pid, x); return; }
   if (!e.target.closest('#pcard') && !row) pcardHide(0);
 });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') pcardHide(0); });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') return pcardHide(0);
+  if ((e.key === 'Enter' || e.key === ' ') && e.target && e.target.classList && e.target.classList.contains('pinfo')) { e.preventDefault(); e.target.click(); }   // l'area "i" e' raggiungibile da tastiera
+});
 function bindSort(el, key, rerender){
   $$('th.srt', el).forEach(h => { h.onclick = () => { const k = h.dataset.k, st = lsState[key]; if (st.k === k) st.asc = !st.asc; else lsState[key] = { k: k, asc: (k === 'name' || k === 'team' || k === 'role' || k === 'stato') }; rerender(); }; });
   el.onchange = e => { const s = e.target.closest('.tierSel'); if (s) setTier(+s.dataset.pid, +s.value); };
 }
+/* Cambia FBAR_V ogni volta che cambia la struttura di filterBarHtml: la barra non si ridisegna a ogni render (perderebbe i filtri),
+   quindi senza questo timbro chi ha la pagina aperta da prima resterebbe con la barra vecchia. */
+const FBAR_V = '2';
 function ensureFilters(px, wrap, rerender, withList){
-  if (!wrap || wrap.innerHTML) return;
+  if (!wrap || (wrap.innerHTML && wrap.dataset.fbar === FBAR_V)) return;
+  wrap.dataset.fbar = FBAR_V;
   wrap.innerHTML = filterBarHtml(px, withList);
   $('#' + px + 'Search').oninput = rerender;
   ['Role', 'Team', 'Tier', 'Voto'].forEach(id => { $('#' + px + id).onchange = rerender; });
@@ -228,9 +265,9 @@ async function renderVoti(){
   const { data, error } = await sb.from('player_ratings').select('player_id,minutes,voto,bonus,fantavoto').eq('season', CFG.SEASON || 2026).eq('matchday', md).order('fantavoto', { ascending: false, nullsFirst: false }).limit(800);
   if (error) return err(error);
   const bon = b => Object.entries(b || {}).map(([k,v]) => k.replace('_',' ')+(v > 1 ? ' ×'+v : '')).join(', ');
-  $('#vtTable').innerHTML = '<table><thead><tr><th>R</th><th>Giocatore</th><th>Squadra</th><th>Min</th><th>Voto</th><th>Bonus/malus</th><th>Fantavoto</th></tr></thead><tbody>' +
+  $('#vtTable').innerHTML = '<div class="tw"><table><thead><tr><th>R</th><th>Giocatore</th><th>Squadra</th><th>Min</th><th>Voto</th><th>Bonus/malus</th><th>Fantavoto</th></tr></thead><tbody>' +
     data.map(r => { const p = playersById[r.player_id] || {name:'#'+r.player_id, team:'', role:'C'};
-      return '<tr><td>'+roleTag(p.role)+'</td><td>'+esc(p.name)+'</td><td>'+esc(p.team)+'</td><td>'+r.minutes+'</td><td>'+(r.voto == null ? 's.v.' : Number(r.voto).toFixed(1))+'</td><td class="muted">'+esc(bon(r.bonus))+'</td><td><b>'+(r.fantavoto == null ? '–' : Number(r.fantavoto).toFixed(1))+'</b></td></tr>'; }).join('') + '</tbody></table>';
+      return '<tr><td>'+roleTag(p.role)+'</td><td>'+esc(p.name)+'</td><td>'+esc(p.team)+'</td><td>'+r.minutes+'</td><td>'+(r.voto == null ? 's.v.' : Number(r.voto).toFixed(1))+'</td><td class="muted">'+esc(bon(r.bonus))+'</td><td><b>'+(r.fantavoto == null ? '–' : Number(r.fantavoto).toFixed(1))+'</b></td></tr>'; }).join('') + '</tbody></table></div>';
 }
 
 /* ---------- regole di lega: form condiviso (creazione e modifica) ---------- */
@@ -245,22 +282,37 @@ const DEFAULT_SETTINGS = { type: 'classic', phase: 'asta', credits: 500, max_tea
   bonus: Object.fromEntries(BONUS_KEYS.map(k => [k[0], k[2]])) };
 function modDefTab(s){ return (Array.isArray(s.mod_difesa_tab) && s.mod_difesa_tab.length) ? s.mod_difesa_tab : DEFAULT_SETTINGS.mod_difesa_tab; }
 function modDefText(s){ const t = modDefTab(s); return (s.mod_difesa_portiere === false ? '4 migliori difensori' : '3 migliori difensori + portiere') + ', ' + (s.mod_difesa_applica === 'avversaria' ? 'malus all\'avversario' : 'bonus alla propria squadra') + ': ' + t.map(r => '≥' + r.min + ' +' + r.v).join(' · '); }
-function settingsFormHtml(s, px){
+/* px = prefisso degli id (cl = crea lega, rg = regole della lega). Con split la creazione va in due passi:
+   passo 1 crediti e squadre, passo 2 tutto il resto dentro #<px>Adv, NASCOSTO ma sempre nel DOM,
+   perche' readSettingsForm deve continuare a leggere ogni campo: quello che non si apre parte con il suo default. */
+function settingsFormHtml(s, px, split){
   s = Object.assign({}, DEFAULT_SETTINGS, s || {}); const sl = Object.assign({}, DEFAULT_SETTINGS.slots, s.slots || {}); const bn = Object.assign({}, DEFAULT_SETTINGS.bonus, s.bonus || {});
   const num = (id, label, v, step) => '<div><label>'+label+'</label><input id="'+px+'_'+id+'" type="number" step="'+(step || 1)+'" value="'+v+'"></div>';
   const chk = (id, label, v) => '<div class="chk"><input type="checkbox" id="'+px+'_'+id+'" '+(v ? 'checked' : '')+'><label for="'+px+'_'+id+'" style="margin:0">'+label+'</label></div>';
-  return '<fieldset><legend>Lega</legend><div class="settings-grid">' + num('credits', 'Crediti', s.credits) + num('max_teams', 'Squadre max', s.max_teams) + num('timer', 'Timer asta (s)', s.timer) + num('max_subs', 'Sostituzioni max', s.max_subs) + num('bench_size', 'Panchinari', s.bench_size) + '</div></fieldset>' +
+  const base = num('credits', 'Crediti', s.credits) + num('max_teams', 'Squadre max', s.max_teams);
+  const adv = '<fieldset><legend>'+(split ? 'Asta e panchina' : 'Lega')+'</legend><div class="settings-grid">' + (split ? '' : base) + num('timer', 'Timer asta (s)', s.timer) + num('max_subs', 'Sostituzioni max', s.max_subs) + num('bench_size', 'Panchinari', s.bench_size) + '</div></fieldset>' +
     '<fieldset><legend>Rose</legend><div class="settings-grid">' + num('P', 'Portieri', sl.P) + num('D', 'Difensori', sl.D) + num('C', 'Centrocampisti', sl.C) + num('A', 'Attaccanti', sl.A) + '</div></fieldset>' +
     '<fieldset><legend>Gol e scontri</legend><div class="settings-grid">' + num('goal_base', 'Primo gol a', s.goal_base, 0.5) + num('goal_step', 'Un gol ogni', s.goal_step, 0.5) + num('bonus_casa', 'Fattore casa', s.bonus_casa, 0.5) + num('bonus_trasferta', 'Fattore trasferta', s.bonus_trasferta, 0.5) + '</div></fieldset>' +
     '<fieldset><legend>Modificatori</legend><div class="settings-grid">' + chk('mod_difesa', 'Modificatore difesa', s.mod_difesa) + chk('mod_centrocampo', 'Modificatore centrocampo', s.mod_centrocampo) + chk('mod_attacco', 'Modificatore attacco', s.mod_attacco) +
       MOD_OTHER.map(m => '<div class="chk muted"><input type="checkbox" disabled><label style="margin:0">'+m[1]+' <small>(non disponibile)</small></label></div>').join('') + '</div>' +
     '<div class="modtab"><b>Modificatore difesa</b>: si applica schierando almeno 4 difensori. Il calcolo avviene sul voto (senza bonus e malus) dei 3 migliori difensori più il portiere, oppure dei 4 migliori difensori se il portiere non è incluso.' +
-      '<table><thead><tr><th>Media voto da</th><th>Bonus</th></tr></thead><tbody>' + modDefTab(s).map((row, i) => '<tr><td><input id="'+px+'_mdt_min'+i+'" type="number" step="0.25" value="'+row.min+'"></td><td><input id="'+px+'_mdt_v'+i+'" type="number" step="0.5" value="'+row.v+'"></td></tr>').join('') + '</tbody></table>' +
+      '<div class="tw"><table><thead><tr><th>Media voto da</th><th>Bonus</th></tr></thead><tbody>' + modDefTab(s).map((row, i) => '<tr><td><input id="'+px+'_mdt_min'+i+'" type="number" step="0.25" value="'+row.min+'"></td><td><input id="'+px+'_mdt_v'+i+'" type="number" step="0.5" value="'+row.v+'"></td></tr>').join('') + '</tbody></table></div>' +
       '<div class="settings-grid">' + chk('mod_difesa_portiere', 'Includi portiere', s.mod_difesa_portiere !== false) +
       '<div><label>Applicazione bonus/malus</label><select id="'+px+'_mod_difesa_applica"><option value="propria" '+(s.mod_difesa_applica !== 'avversaria' ? 'selected' : '')+'>Propria squadra</option><option value="avversaria" '+(s.mod_difesa_applica === 'avversaria' ? 'selected' : '')+'>Squadra avversaria (malus)</option></select></div></div>' +
       '<p class="muted" style="margin:6px 0 0">Sotto la prima soglia il modificatore vale 0. Media voto inferiore a 6 non dà mai bonus.</p></div>' +
     '<p class="muted" style="margin-top:6px">Attacco: media voto degli attaccanti (almeno 2), scala fissa da +1 a +6. Centrocampo: confronto tra le medie dei centrocampisti delle due squadre, da +1 a +6 a chi ha la media più alta. Gli altri modificatori di Fantacalcio.it non sono ancora disponibili.</p></fieldset>' +
     '<fieldset><legend>Bonus e malus</legend><div class="settings-grid">' + BONUS_KEYS.map(k => num('b_' + k[0], k[1], bn[k[0]], 0.5)).join('') + '</div></fieldset>';
+  if (!split) return adv;
+  return '<div class="settings-grid">' + base + '</div>' +   // il titolo "Passo 1" e i campi nome lega e nome squadra stanno in index.html, sopra questo blocco
+    '<div class="advrow"><button type="button" class="ghost small" id="'+px+'AdvBtn" aria-expanded="false" aria-controls="'+px+'Adv">Passo 2 · regole avanzate: apri</button>' +
+    '<span class="small advhint">Facoltativo: qui sotto ci sono già i valori standard e restano validi anche se non le apri. Puoi cambiarle dopo, dalla scheda Regole della lega.</span></div>' +   // advhint e non solo small: .small e\' anche la classe del bottone accanto
+    '<div class="adv hidden" id="'+px+'Adv">' + adv + '</div>';
+}
+function ensureCreateForm(){   // una sola volta: il passo 2 resta nel DOM anche chiuso, altrimenti readSettingsForm perderebbe i suoi campi
+  const box = $('#clForm'); if (!box || box.innerHTML) return;
+  box.innerHTML = settingsFormHtml(null, 'cl', true);
+  const b = $('#clAdvBtn'), a = $('#clAdv'); if (!b || !a) return;
+  b.onclick = () => { const hid = a.classList.toggle('hidden'); b.textContent = 'Passo 2 · regole avanzate: ' + (hid ? 'apri' : 'chiudi'); b.setAttribute('aria-expanded', hid ? 'false' : 'true'); };
 }
 function readSettingsForm(px, base){
   const g = id => $('#' + px + '_' + id); const n = (id, d) => { const v = parseFloat(g(id).value); return isNaN(v) ? d : v; };
@@ -276,13 +328,60 @@ function readSettingsForm(px, base){
 }
 
 /* ---------- home: leghe ---------- */
+/* Posizione in classifica senza passare da L (qui le leghe sono piu' di una): stessa logica di renderStandings,
+   3 punti a vittoria e spareggio ai fantapunti. Torna null finche' l'utente non ha giocato nemmeno una partita. */
+function standingOf(members, fixtures, uid){
+  const t = {}; members.forEach(m => { t[m.user_id] = { uid: m.user_id, pts: 0, fp: 0, g: 0 }; });
+  fixtures.filter(f => f.home_goals != null && f.away_id).forEach(f => {
+    const h = t[f.home_id], a = t[f.away_id]; if (!h || !a) return;
+    h.g++; a.g++; h.fp += +f.home_points || 0; a.fp += +f.away_points || 0;
+    if (f.home_goals > f.away_goals) h.pts += 3; else if (f.home_goals < f.away_goals) a.pts += 3; else { h.pts++; a.pts++; }
+  });
+  const rows = Object.values(t).sort((x, y) => y.pts - x.pts || y.fp - x.fp);
+  const i = rows.findIndex(r => r.uid === uid);
+  return (i < 0 || !rows[i].g) ? null : { pos: i + 1, tot: rows.length, pts: rows[i].pts, g: rows[i].g };
+}
+/* Card della lega con l'azione della settimana in evidenza. Regola: mai un bottone per qualcosa che non si puo' piu' fare,
+   quindi a deadline scaduta si dice che le formazioni sono chiuse e si manda ai risultati. */
+function leagueCardHtml(m, ctx){
+  const s = m.leagues.settings || {}, asta = (s.phase || 'asta') === 'asta';
+  const open = '<button class="ghost" data-open="'+m.league_id+'">Apri la lega</button>';
+  const head = '<div class="lgtop"><b>'+esc(m.leagues.name)+'</b><span class="pill '+(asta ? 'warn' : 'ok')+'">'+(asta ? 'fase asta' : 'campionato')+'</span></div>' +
+    '<div class="muted">'+esc(m.team_name)+' · '+ctx.teams+' squadre su '+(s.max_teams || ctx.teams)+' · crediti '+m.credits+(m.role === 'admin' ? ' · admin' : '')+'</div>' +
+    (ctx.st ? '<div class="lgpos"><b>'+ctx.st.pos+'°</b> su '+ctx.st.tot+' <span class="muted">· '+ctx.st.pts+' punti in '+ctx.st.g+(ctx.st.g === 1 ? ' partita' : ' partite')+'</span></div>' : '');
+  let act;
+  if (asta) act = '<p class="small">L\'asta non è ancora chiusa: le formazioni si schierano quando inizia il campionato.</p>' +
+    '<div class="row"><button data-open="'+m.league_id+'" data-otab="asta">Vai all\'asta</button>'+open+'</div>';
+  else if (!ctx.open) act = '<p class="small">Giornata '+ctx.md+' già iniziata: le formazioni sono chiuse'+(ctx.sub ? ', la tua era stata inviata' : ' e non hai inviato la tua')+'.</p>' +
+    '<div class="row"><button data-open="'+m.league_id+'" data-otab="risultati">Vedi i risultati</button>'+open+'</div>';
+  else if (ctx.sub) act = '<p class="small">Formazione della giornata '+ctx.md+' inviata il '+esc(fmtDate(ctx.sub.submitted_at))+'. Puoi cambiarla fino al '+esc(fmtDate(ctx.info.starts_at))+'.</p>' +
+    '<div class="row"><button class="sec" data-open="'+m.league_id+'" data-otab="schiera">Formazione inviata · modifica</button>'+open+'</div>';
+  else act = '<p class="small">Non hai ancora schierato per la giornata '+ctx.md+'. Deadline: '+esc(fmtDate(ctx.info.starts_at))+'.</p>' +
+    '<div class="row"><button data-open="'+m.league_id+'" data-otab="schiera">Schiera giornata '+ctx.md+'</button>'+open+'</div>';
+  return '<div class="card lgcard">'+head+'<div class="lgact">'+act+'</div></div>';
+}
 async function loadLeagues(){
   const { data, error } = await sb.from('league_members').select('league_id, team_name, role, credits, leagues(id,name,invite_code,settings)').eq('user_id', user.id);
   if (error) return err(error);
-  const ul = $('#leagueList');
-  ul.innerHTML = (data && data.length) ? data.map(m => '<li><div><b>'+esc(m.leagues.name)+'</b><div class="muted">'+esc(m.team_name)+' · '+(m.role === 'admin' ? 'admin' : 'partecipante')+' · crediti '+m.credits+'</div></div><button class="small" data-open="'+m.league_id+'">Apri</button></li>').join('')
-    : '<li class="muted"><div><b>🏟️ Nessuna lega ancora.</b><div class="muted">Creane una con il modulo a destra, oppure entra con il codice invito che ti hanno mandato. Nel frattempo puoi già studiare il <a data-view="listone">listone</a> e preparare la tua <a data-view="liste">lista obiettivi</a>.</div></div></li>';
-  $$('[data-open]', ul).forEach(b => b.onclick = () => openLeague(b.dataset.open));
+  const box = $('#leagueList'); if (!box) return;
+  const mine = (data || []).filter(m => m.leagues);
+  if (!mine.length) {
+    box.innerHTML = '<div class="card"><h2>Nessuna lega ancora</h2><p class="small">Creane una con il modulo qui accanto, oppure entra con il codice invito che ti hanno mandato. Nel frattempo puoi già studiare il <a data-view="listone">listone</a> e preparare la tua <a data-view="liste">lista obiettivi</a>.</p></div>';
+    return;
+  }
+  const ids = mine.map(m => m.league_id), md = nextMatchday(), info = mdInfo(md), open = mdOpen(md);
+  const [{ data: all }, { data: fx }, { data: lus }] = await Promise.all([   // squadre, calendario e formazione della giornata corrente per tutte le mie leghe in una volta
+    sb.from('league_members').select('league_id, user_id').in('league_id', ids),
+    sb.from('league_fixtures').select('league_id, home_id, away_id, home_goals, away_goals, home_points, away_points').in('league_id', ids),
+    sb.from('lineups').select('league_id, submitted_at').eq('user_id', user.id).eq('matchday', md).in('league_id', ids)
+  ]);
+  box.innerHTML = mine.map(m => {
+    const mem = (all || []).filter(x => x.league_id === m.league_id);
+    return leagueCardHtml(m, { md: md, info: info, open: open, teams: mem.length || 1,
+      st: standingOf(mem, (fx || []).filter(f => f.league_id === m.league_id), user.id),
+      sub: (lus || []).find(x => x.league_id === m.league_id) || null });
+  }).join('');
+  $$('[data-open]', box).forEach(b => b.onclick = () => openLeague(b.dataset.open, b.dataset.otab || null, true));   // data-otab, non data-tab: quest'ultimo lo intercetta il gestore globale dei clic e chiamerebbe renderTabs senza lega
 }
 $('#btnCreate').onclick = async () => {
   const name = $('#clName').value.trim(), team = $('#clTeam').value.trim();
@@ -290,7 +389,7 @@ $('#btnCreate').onclick = async () => {
   const settings = readSettingsForm('cl', {});
   const { data, error } = await sb.rpc('create_league', { p_name: name, p_team: team, p_settings: settings });
   if (error) return err(error);
-  msg('Lega creata', 'ok'); openLeague(data);
+  msg('Lega creata', 'ok'); openLeague(data, null, true);
 };
 $('#btnJoin').onclick = async () => {
   const code = $('#jnCode').value.trim(), team = $('#jnTeam').value.trim();
@@ -298,7 +397,7 @@ $('#btnJoin').onclick = async () => {
   if (!code || (!team && !pick)) return msg('Servono codice e nome squadra (o una squadra da reclamare)', 'err');
   const { data, error } = pick ? await sb.rpc('join_league_claim', { p_code: code, p_team: pick }) : await sb.rpc('join_league', { p_code: code, p_team: team });
   if (error) return err(error);
-  msg(pick ? 'Sei dentro: la squadra "'+pick+'" con la sua rosa è tua' : 'Sei dentro!', 'ok'); openLeague(data);
+  msg(pick ? 'Sei dentro: la squadra "'+pick+'" con la sua rosa è tua' : 'Sei dentro!', 'ok'); openLeague(data, null, true);
 };
 $('#jnCode').oninput = () => { clearTimeout(window._jnT); window._jnT = setTimeout(checkPendingForCode, 400); };
 
@@ -311,20 +410,26 @@ async function attachProfiles(members){
   members.forEach(m => m.profiles = by[m.user_id] || { username: '' });
   return members;
 }
-async function openLeague(id, tab){
+let leagueSeq = 0;   // due Indietro rapidi lancerebbero due openLeague concorrenti: vince l'ultima, le precedenti si fermano al primo controllo
+async function openLeague(id, tab, push){
+  const seq = ++leagueSeq;
   const [{ data: league, error: e1 }, { data: members, error: e2 }] = await Promise.all([
     sb.from('leagues').select('*').eq('id', id).single(),
     sb.from('league_members').select(MEMBER_SEL).eq('league_id', id).order('call_order')
   ]);
+  if (seq !== leagueSeq) return;   // nel frattempo e' partita un'altra apertura di lega: questa si ferma qui
   if (e1 || e2) return err(e1 || e2);
   await attachProfiles(members);
+  if (seq !== leagueSeq) return;
+  if (!L || L.league.id !== league.id) S = { fixtures: [], results: [], lineup: null, md: null, rmd: null };   // cambio lega: giornata, formazione e cache di un'altra lega non devono sopravvivere
   L = { league, members, rosters: [], auction: null, bids: [] };
   L.me = members.find(m => m.user_id === user.id); L.isAdmin = !!(L.me && L.me.role === 'admin');
-  history.replaceState(null, '', '#lega/' + id + (tab ? '/' + tab : ''));
+  setHash('#lega/' + id + (tab ? '/' + tab : ''), push);   // aprire una lega e' navigazione; renderTabs qui sotto rifinisce lo stesso hash con la scheda attiva
   $$('main > section').forEach(s => s.classList.add('hidden')); $('#view-league').classList.remove('hidden');
   $('#lgName').textContent = league.name;
   $('#lgSub').innerHTML = esc(L.me.team_name)+' · '+members.length+'/'+(league.settings.max_teams || 20)+' squadre · codice invito <span class="code">'+esc(league.invite_code)+'</span>';
   await refreshLeagueData();
+  if (seq !== leagueSeq) return;
   document.body.dataset.sec = 'league';
   renderTabs(tab); renderRules(); renderAuction(); subscribe(); loadSeasonData(); leagueKpis();
 }
@@ -345,7 +450,7 @@ function slotsLeft(uid, role){ return slotsOf()[role] - L.rosters.filter(r => r.
 
 /* ---------- lega: schede, partecipanti e rose, regole ---------- */
 function phase(){ return (L.league.settings && L.league.settings.phase) || 'asta'; }
-function renderTabs(active){
+function renderTabs(active, push){
   const tabs = [];
   if (phase() === 'asta') tabs.push(['asta', 'Asta']);
   tabs.push(['listone', 'Listone'], ['schiera', 'Schiera'], ['classifica', 'Classifica'], ['calendario', 'Calendario'], ['risultati', 'Risultati'], ['regole', 'Regole'], ['membri', 'Partecipanti']);
@@ -353,13 +458,13 @@ function renderTabs(active){
   $('#lgTabs').innerHTML = tabs.map(t => '<a data-tab="'+t[0]+'" class="'+(t[0] === active ? 'on' : '')+'">'+t[1]+'</a>').join('');
   $$('#view-league [id^=tab-]').forEach(el => el.classList.toggle('hidden', el.id !== 'tab-' + active));
   if (active === 'listone') renderLeagueListone();
-  if (L) history.replaceState(null, '', '#lega/' + L.league.id + '/' + active);   // ricaricando o tornando indietro si riapre la stessa scheda
+  if (L) setHash('#lega/' + L.league.id + '/' + active, push);   // ricaricando o tornando indietro si riapre la stessa scheda
 }
 function renderMembers(){
   const byUser = {}; L.rosters.forEach(r => (byUser[r.user_id] = byUser[r.user_id] || []).push(r));
   const slots = slotsOf();
-  const table = '<table><thead><tr><th>#</th><th>Squadra</th><th>Utente</th><th></th><th>Crediti</th><th>Rosa</th></tr></thead><tbody>' +
-    L.members.map(m => '<tr class="'+(m.user_id === user.id ? 'me' : '')+'"><td>'+(m.call_order || '')+'</td><td><b>'+esc(m.team_name)+'</b></td><td>'+esc(m.profiles && m.profiles.username)+'</td><td>'+(m.role === 'admin' ? '<span class="pill">admin</span>' : '')+'</td><td>'+m.credits+'</td><td>'+(byUser[m.user_id] || []).length+'</td></tr>').join('') + '</tbody></table>';
+  const table = '<div class="tw"><table><thead><tr><th>#</th><th>Squadra</th><th>Utente</th><th></th><th>Crediti</th><th>Rosa</th></tr></thead><tbody>' +
+    L.members.map(m => '<tr class="'+(m.user_id === user.id ? 'me' : '')+'"><td>'+(m.call_order || '')+'</td><td><b>'+esc(m.team_name)+'</b></td><td>'+esc(m.profiles && m.profiles.username)+'</td><td>'+(m.role === 'admin' ? '<span class="pill">admin</span>' : '')+'</td><td>'+m.credits+'</td><td>'+(byUser[m.user_id] || []).length+'</td></tr>').join('') + '</tbody></table></div>';
   const cards = '<h3 style="margin-top:18px">Rose</h3><div class="grid">' + L.members.map(m => {
     const rs = (byUser[m.user_id] || []).map(r => Object.assign({}, r, { p: playersById[r.player_id] || { name: '#'+r.player_id, role: 'C', team: '' } }))
       .sort((a, b) => ROLES.indexOf(a.p.role) - ROLES.indexOf(b.p.role) || b.price - a.price);
@@ -367,7 +472,7 @@ function renderMembers(){
     const rows = rs.map(r => '<tr><td>'+roleTag(r.p.role)+'</td><td>'+esc(r.p.name)+'</td><td class="muted">'+esc(r.p.team)+'</td><td><b>'+r.price+'</b></td>' +
       (L.isAdmin ? '<td><button class="small sec" data-release="'+r.player_id+'" title="Rimuovi e rimborsa">✕</button></td>' : '') + '</tr>').join('');
     return '<div class="card'+(m.user_id === user.id ? ' hi' : '')+'"><h2>'+esc(m.team_name)+' <span class="muted">crediti '+m.credits+' · '+head+'</span></h2>' +
-      (rs.length ? '<table><tbody>'+rows+'</tbody></table>' : '<div class="muted">Rosa vuota</div>') + '</div>';
+      (rs.length ? '<div class="tw"><table><tbody>'+rows+'</tbody></table></div>' : '<div class="muted">Rosa vuota</div>') + '</div>';
   }).join('') + '</div>';
   $('#tab-membri').innerHTML = table + cards + '<div id="pendingBox"></div>' + (L.isAdmin ? importHtml() : '');
   bindImport(); loadPending();
@@ -380,7 +485,7 @@ function renderMembers(){
 function renderRosters(){ renderMembers(); leagueKpis(); const t = $('#tab-listone'); if (t && !t.classList.contains('hidden')) renderLeagueListone(); }
 function renderRules(){
   const s = Object.assign({}, DEFAULT_SETTINGS, L.league.settings || {}), bn = Object.assign({}, DEFAULT_SETTINGS.bonus, s.bonus || {}), sl = Object.assign({}, DEFAULT_SETTINGS.slots, s.slots || {});
-  const view = '<div class="card"><h2>Regole in vigore <span class="pill '+(phase() === 'asta' ? '' : 'live')+'">'+(phase() === 'asta' ? 'fase asta' : 'campionato')+'</span></h2><table><tbody>' +
+  const view = '<div class="card"><h2>Regole in vigore <span class="pill '+(phase() === 'asta' ? '' : 'live')+'">'+(phase() === 'asta' ? 'fase asta' : 'campionato')+'</span></h2><div class="tw"><table><tbody>' +
     '<tr><td>Crediti</td><td>'+s.credits+'</td><td>Squadre max</td><td>'+s.max_teams+'</td></tr>' +
     '<tr><td>Rose</td><td colspan="3">'+ROLES.map(r => r+' '+sl[r]).join(' · ')+'</td></tr>' +
     '<tr><td>Sostituzioni</td><td>'+s.max_subs+'</td><td>Panchinari</td><td>'+s.bench_size+'</td></tr><tr><td>Timer asta</td><td colspan="3">'+s.timer+' s</td></tr>' +
@@ -388,7 +493,7 @@ function renderRules(){
     '<tr><td>Fattore casa / trasferta</td><td colspan="3">'+s.bonus_casa+' / '+s.bonus_trasferta+'</td></tr>' +
     '<tr><td>Modificatori</td><td colspan="3">'+[s.mod_difesa && ('difesa (' + modDefText(s) + ')'), s.mod_centrocampo && 'centrocampo', s.mod_attacco && 'attacco'].filter(Boolean).join(' · ') + (s.mod_difesa || s.mod_centrocampo || s.mod_attacco ? '' : 'nessuno')+'</td></tr>' +
     '<tr><td>Bonus e malus</td><td colspan="3">'+BONUS_KEYS.map(k => k[1].toLowerCase()+' '+(bn[k[0]] > 0 ? '+' : '')+bn[k[0]]).join(' · ')+'</td></tr>' +
-    '</tbody></table></div>';
+    '</tbody></table></div></div>';
   if (!L.isAdmin) { $('#tab-regole').innerHTML = view; return; }
   $('#tab-regole').innerHTML = view + '<div class="card" style="margin-top:14px"><h2>Modifica regole (admin)</h2>' + settingsFormHtml(s, 'rg') +
     '<div class="row" style="margin-top:12px"><button id="rgSave">Salva regole</button><button id="rgPhase" class="sec">'+(phase() === 'asta' ? 'Chiudi l\'asta e inizia il campionato' : 'Riapri l\'asta')+'</button></div>' +
@@ -412,7 +517,7 @@ function renderAuction(){
   let html = stratDashHtml() + '<div class="grid3"><div>';
   if (live && p) {
     const bidder = a.bidder_id ? memberName(a.bidder_id) : null;
-    html += '<div class="auction"><div class="row" style="justify-content:space-between"><div><div class="pl">'+roleTag(p.role)+' '+esc(p.name)+'</div><div class="team">'+esc(p.team)+' · quotazione '+p.price+'</div></div><div class="timer" id="auTimer">--</div></div>' +
+    html += '<div class="auction"><div class="row" style="justify-content:space-between"><div><div class="pl">'+roleTag(p.role)+' '+esc(p.name)+' '+infoBtn(p.id)+'</div><div class="team">'+esc(p.team)+' · quotazione '+p.price+'</div></div><div class="timer" id="auTimer">--</div></div>' +
       '<div style="margin-top:14px"><div class="bid">'+a.current_bid+'</div><div class="who">'+(bidder ? 'miglior offerta di <b>'+esc(bidder)+'</b>' : 'base d\'asta, nessuna offerta')+'</div></div>';
     const mine = a.bidder_id === user.id, canBid = slotsLeft(user.id, p.role) > 0;
     if (!canBid) html += '<div class="who" style="margin-top:10px">Hai già completato il ruolo '+p.role+'.</div>';
@@ -423,8 +528,8 @@ function renderAuction(){
     html += '<div class="card"><h2>Nessuna asta in corso</h2><p class="muted">' + (L.isAdmin ? 'Cerca un giocatore a destra e apri l\'asta.' : 'Aspetta che l\'admin chiami un giocatore. La pagina si aggiorna da sola.') + '</p>' +
       (a.status === 'closed' && p ? '<p style="margin-top:8px">Ultimo: <b>'+esc(p.name)+'</b> → '+(a.bidder_id ? esc(memberName(a.bidder_id))+' per '+a.current_bid : 'non assegnato')+'</p>' : '') + '</div>';
   }
-  html += '<h3>Ultime offerte</h3><table><tbody>' + (L.bids.length ? L.bids.map(b => '<tr><td>'+esc((playersById[b.player_id] || {}).name || '#'+b.player_id)+'</td><td>'+esc(memberName(b.user_id))+'</td><td><b>'+b.amount+'</b></td></tr>').join('') : '<tr><td class="muted">Ancora nessuna offerta</td></tr>') + '</tbody></table>';
-  html += '<h3>Crediti e slot</h3><table><tbody>' + L.members.map(m => '<tr class="'+(m.user_id === user.id ? 'me' : '')+'"><td>'+esc(m.team_name)+'</td><td><b>'+m.credits+'</b></td><td class="muted">'+ROLES.map(r => r+' '+slotsLeft(m.user_id, r)).join(' · ')+' liberi</td></tr>').join('') + '</tbody></table>';
+  html += '<h3>Ultime offerte</h3><div class="tw"><table><tbody>' + (L.bids.length ? L.bids.map(b => '<tr data-pid="'+b.player_id+'"><td>'+esc((playersById[b.player_id] || {}).name || '#'+b.player_id)+'</td><td>'+esc(memberName(b.user_id))+'</td><td><b>'+b.amount+'</b></td></tr>').join('') : '<tr><td class="muted">Ancora nessuna offerta</td></tr>') + '</tbody></table></div>';
+  html += '<h3>Crediti e slot</h3><div class="tw"><table><tbody>' + L.members.map(m => '<tr class="'+(m.user_id === user.id ? 'me' : '')+'"><td>'+esc(m.team_name)+'</td><td><b>'+m.credits+'</b></td><td class="muted">'+ROLES.map(r => r+' '+slotsLeft(m.user_id, r)).join(' · ')+' liberi</td></tr>').join('') + '</tbody></table></div>';
   html += '</div><div>';
   if (L.isAdmin) {
     html += '<div class="card"><h2>Banditore</h2><div class="row"><input id="auSearch" placeholder="Cerca giocatore" '+(live ? 'disabled' : '')+'><select id="auRole" style="max-width:110px"><option value="">Tutti</option>'+ROLES.map(r => '<option value="'+r+'">'+r+'</option>').join('')+'</select></div>' +
@@ -448,8 +553,9 @@ function setupPicker(live){
     picker.q = inp.value || ''; picker.role = sel.value;
     const q = picker.q.toLowerCase(), r = picker.role;
     const rows = players.filter(p => p.active && !taken.has(p.id) && (!r || p.role === r) && (!q || p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q))).slice(0, 60);
-    list.innerHTML = rows.map(p => '<div data-pick="'+p.id+'">'+roleTag(p.role)+' '+esc(p.name)+' <span class="muted">'+esc(p.team)+'</span><span class="price">'+p.price+'</span></div>').join('') || '<div class="muted">Nessun risultato</div>';
-    $$('[data-pick]', list).forEach(d => d.onclick = () => { picked = playersById[+d.dataset.pick]; $('#auPick').innerHTML = 'Selezionato: <b>'+esc(picked.name)+'</b> ('+picked.team+')'; $('#auStart').value = Math.max(1, picked.price); });
+    list.innerHTML = rows.map(p => '<div data-pick="'+p.id+'">'+roleTag(p.role)+' '+esc(p.name)+' <span class="muted">'+esc(p.team)+'</span><span class="price">'+p.price+'</span>'+infoBtn(p.id)+'</div>').join('') || '<div class="muted">Nessun risultato</div>';
+    $$('[data-pick]', list).forEach(d => d.onclick = e => { if (e.target.closest('.pinfo')) return;   // il clic sulla "i" apre la scheda, non seleziona il giocatore da chiamare
+      picked = playersById[+d.dataset.pick]; $('#auPick').innerHTML = 'Selezionato: <b>'+esc(picked.name)+'</b> ('+esc(picked.team)+')'; $('#auStart').value = Math.max(1, picked.price); });
   };
   inp.oninput = draw; sel.onchange = draw; draw();
   $('#auOpen').onclick = async () => {
@@ -533,7 +639,7 @@ function pitchHtml(cur){
     const slots = [];
     for (let i = 0; i < want[r]; i++) {
       const p = ids[i] ? playersById[ids[i]] : null;
-      slots.push(p ? '<div class="slot '+r+'" data-out="'+p.id+'" title="Togli dal campo"><div class="shirt"'+shirtStyle(p.team)+'>'+r+'</div><span class="nm">'+esc(shortName(p.name))+'</span><span class="tm">'+esc(p.team)+'</span></div>'
+      slots.push(p ? '<div class="slot '+r+'" data-out="'+p.id+'" title="Togli dal campo">'+infoBtn(p.id)+'<div class="shirt"'+shirtStyle(p.team)+'>'+r+'</div><span class="nm">'+esc(shortName(p.name))+'</span><span class="tm">'+esc(p.team)+'</span></div>'
                    : '<div class="slot '+r+' empty"><div class="shirt">'+r+'</div><span class="nm">&nbsp;</span></div>');
     }
     return '<div class="prow">'+slots.join('')+'</div>';
@@ -561,13 +667,13 @@ async function renderLineup(force){
     '<div><label>&nbsp;</label><span class="row"><button id="luSave" '+(open ? '' : 'disabled')+'>Salva formazione</button><button id="luClear" class="sec">Svuota</button></span></div></div>' +
     '<p class="muted" style="margin:8px 0">Deadline: '+fmtDate(info.starts_at)+' · '+(open ? 'formazioni aperte' : 'giornata iniziata, formazioni chiuse')+(lu ? ' · salvata il '+fmtDate(lu.submitted_at) : ' · nessuna formazione salvata')+' · in campo '+cur.starters.length+'/11 · panchina '+cur.bench.length+'/'+bmax+'</p>';
   const benchStrip = '<div class="bench"><div class="bt">Panchina <span class="muted">(ordine di ingresso)</span></div><div class="brow">' + Array.from({ length: bmax }, (_, i) => { const p = cur.bench[i] ? playersById[cur.bench[i]] : null;
-    return p ? '<div class="slot '+p.role+'" data-bout="'+p.id+'" title="Togli dalla panchina"><div class="shirt"'+shirtStyle(p.team)+'>'+(i + 1)+'</div><span class="nm">'+esc(shortName(p.name))+'</span><span class="tm">'+p.role+' · '+esc(p.team)+'</span><span class="mv"><button class="small sec" data-bl="'+p.id+'">◀</button><button class="small sec" data-br="'+p.id+'">▶</button></span></div>'
+    return p ? '<div class="slot '+p.role+'" data-bout="'+p.id+'" title="Togli dalla panchina">'+infoBtn(p.id)+'<div class="shirt"'+shirtStyle(p.team)+'>'+(i + 1)+'</div><span class="nm">'+esc(shortName(p.name))+'</span><span class="tm">'+p.role+' · '+esc(p.team)+'</span><span class="mv"><button class="small sec" data-bl="'+p.id+'">◀</button><button class="small sec" data-br="'+p.id+'">▶</button></span></div>'
              : '<div class="slot empty"><div class="shirt">'+(i + 1)+'</div><span class="nm">&nbsp;</span></div>'; }).join('') + '</div></div>';
   const roster = '<div class="card"><h2>La tua rosa <span class="muted">clicca: prima in campo, poi in panchina · % = probabilità di giocare titolare</span></h2><div class="roster">' + ROLES.map(r => {
     const list = mine.filter(p => p.role === r).sort((a, b) => b.price - a.price);
     return '<h3>'+ROLE_NAME[r]+' <span class="pill">'+count(r)+'/'+want[r]+'</span></h3>' + list.map(p => {
       const on = cur.starters.includes(p.id), bi = cur.bench.indexOf(p.id);
-      return '<div class="pl'+(on || bi >= 0 ? ' on' : '')+'" data-in="'+p.id+'">'+roleTag(r)+'<span class="who">'+esc(p.name)+' '+statusTag(prob[p.id])+' <span class="muted">'+esc(p.team)+'</span></span><span class="muted">'+(on ? 'in campo' : (bi >= 0 ? 'panchina '+(bi + 1) : ''))+'</span></div>'; }).join('');
+      return '<div class="pl'+(on || bi >= 0 ? ' on' : '')+'" data-in="'+p.id+'">'+roleTag(r)+'<span class="who">'+esc(p.name)+' '+statusTag(prob[p.id])+' <span class="muted">'+esc(p.team)+'</span></span><span class="muted">'+(on ? 'in campo' : (bi >= 0 ? 'panchina '+(bi + 1) : ''))+'</span>'+infoBtn(p.id)+'</div>'; }).join('');
   }).join('') + '</div></div>';
   const others = '<div class="card" style="margin-top:14px"><h2>Formazioni giornata '+md+'</h2><ul class="list">' + L.members.map(m => { const l2 = (all || []).find(x => x.user_id === m.user_id);
     return '<li><span>'+esc(m.team_name)+'</span><span class="muted">'+(l2 ? 'inviata ('+l2.module+')' : 'non inviata')+'</span></li>'; }).join('') + '</ul><p class="muted">Il dettaglio è nella scheda Risultati.</p></div>';
@@ -578,14 +684,16 @@ async function renderLineup(force){
   $('#luMod').onchange = e => { cur.module = e.target.value; const w = wantOf(cur.module), cnt = { P: 0, D: 0, C: 0, A: 0 };
     cur.starters = cur.starters.filter(id => { const r = (playersById[id] || {}).role; cnt[r]++; return cnt[r] <= w[r]; }); redraw(); };
   $('#luClear').onclick = () => { cur.starters = []; cur.bench = []; redraw(); };
-  $$('[data-in]', box).forEach(el => el.onclick = () => {
+  // il clic sulla "i" apre la scheda rapida e non deve mai schierare o togliere il giocatore (sul telefono e' lo stesso tocco)
+  $$('[data-in]', box).forEach(el => el.onclick = e => {
+    if (e.target.closest('.pinfo')) return;
     const p = playersById[+el.dataset.in]; if (!p || cur.starters.includes(p.id) || cur.bench.includes(p.id)) return;
     if (count(p.role) < want[p.role]) { cur.starters.push(p.id); return redraw(); }
     if (cur.bench.length < bmax) { cur.bench.push(p.id); return redraw(); }
     msg('Campo pieno per il ruolo '+p.role+' e panchina completa ('+bmax+')', 'err');
   });
-  $$('[data-out]', box).forEach(el => el.onclick = () => { cur.starters = cur.starters.filter(x => x !== +el.dataset.out); redraw(); });
-  $$('[data-bout]', box).forEach(el => el.onclick = e => { if (e.target.closest('button')) return; cur.bench = cur.bench.filter(x => x !== +el.dataset.bout); redraw(); });
+  $$('[data-out]', box).forEach(el => el.onclick = e => { if (e.target.closest('.pinfo')) return; cur.starters = cur.starters.filter(x => x !== +el.dataset.out); redraw(); });
+  $$('[data-bout]', box).forEach(el => el.onclick = e => { if (e.target.closest('button') || e.target.closest('.pinfo')) return; cur.bench = cur.bench.filter(x => x !== +el.dataset.bout); redraw(); });
   $$('[data-bl]', box).forEach(b => b.onclick = e => { e.stopPropagation(); moveBench(cur, +b.dataset.bl, -1); redraw(); });
   $$('[data-br]', box).forEach(b => b.onclick = e => { e.stopPropagation(); moveBench(cur, +b.dataset.br, 1); redraw(); });
   $('#luSave').onclick = async () => {
@@ -604,9 +712,9 @@ function renderCalendar(){
   const rounds = {}; S.fixtures.forEach(f => (rounds[f.round] = rounds[f.round] || []).push(f));
   html += Object.keys(rounds).sort((a, b) => a - b).map(r => {
     const fs = rounds[r], md = fs[0].matchday, done = fs.some(f => f.home_goals != null);
-    return '<h3>Turno '+r+' · giornata '+md+' di Serie A '+(L.isAdmin ? '<button class="small sec" data-calc="'+md+'">'+(done ? 'Ricalcola' : 'Calcola')+'</button>' : '')+'</h3><table><tbody>' + fs.map(f => f.away_id
+    return '<h3>Turno '+r+' · giornata '+md+' di Serie A '+(L.isAdmin ? '<button class="small sec" data-calc="'+md+'">'+(done ? 'Ricalcola' : 'Calcola')+'</button>' : '')+'</h3><div class="tw"><table><tbody>' + fs.map(f => f.away_id
       ? '<tr><td style="text-align:right;width:40%">'+esc(memberName(f.home_id))+'</td><td style="text-align:center"><b>'+(f.home_goals != null ? f.home_goals+' - '+f.away_goals : 'vs')+'</b>'+(f.home_points != null ? '<div class="muted">'+Number(f.home_points).toFixed(1)+' · '+Number(f.away_points).toFixed(1)+'</div>' : '')+'</td><td style="width:40%">'+esc(memberName(f.away_id))+'</td></tr>'
-      : '<tr><td style="text-align:right;width:40%">'+esc(memberName(f.home_id))+'</td><td style="text-align:center" class="muted">riposa'+(f.home_points != null ? ' · '+Number(f.home_points).toFixed(1) : '')+'</td><td></td></tr>').join('') + '</tbody></table>';
+      : '<tr><td style="text-align:right;width:40%">'+esc(memberName(f.home_id))+'</td><td style="text-align:center" class="muted">riposa'+(f.home_points != null ? ' · '+Number(f.home_points).toFixed(1) : '')+'</td><td></td></tr>').join('') + '</tbody></table></div>';
   }).join('');
   box.innerHTML = html;
   const g = $('#calGen'); if (g) g.onclick = async () => {
@@ -629,15 +737,36 @@ function renderStandings(){
     if (f.home_goals > f.away_goals) { h.v++; a.p++; h.pts += 3; } else if (f.home_goals < f.away_goals) { a.v++; h.p++; a.pts += 3; } else { h.n++; a.n++; h.pts++; a.pts++; }
   });
   const rows = Object.values(t).sort((x, y) => y.pts - x.pts || y.fp - x.fp);
-  $('#tab-classifica').innerHTML = '<table><thead><tr><th>#</th><th>Squadra</th><th>Pt</th><th>G</th><th>V</th><th>N</th><th>P</th><th>GF</th><th>GS</th><th>Fantapunti</th></tr></thead><tbody>' +
-    rows.map((r, i) => '<tr><td>'+(i + 1)+'</td><td><b>'+esc(r.name)+'</b></td><td><b>'+r.pts+'</b></td><td>'+r.g+'</td><td>'+r.v+'</td><td>'+r.n+'</td><td>'+r.p+'</td><td>'+r.gf+'</td><td>'+r.gs+'</td><td>'+r.fp.toFixed(1)+'</td></tr>').join('') + '</tbody></table>' +
+  $('#tab-classifica').innerHTML = '<div class="tw"><table><thead><tr><th>#</th><th>Squadra</th><th>Pt</th><th>G</th><th>V</th><th>N</th><th>P</th><th>GF</th><th>GS</th><th>Fantapunti</th></tr></thead><tbody>' +
+    rows.map((r, i) => '<tr><td>'+(i + 1)+'</td><td><b>'+esc(r.name)+'</b></td><td><b>'+r.pts+'</b></td><td>'+r.g+'</td><td>'+r.v+'</td><td>'+r.n+'</td><td>'+r.p+'</td><td>'+r.gf+'</td><td>'+r.gs+'</td><td>'+r.fp.toFixed(1)+'</td></tr>').join('') + '</tbody></table></div>' +
     (S.results.length ? '' : '<p class="muted" style="margin-top:8px">La classifica si popola quando l\'admin calcola le giornate.</p>');
 }
 
 /* ---------- risultati ---------- */
-const EMOJI = { gol: '⚽', assist: '👟', amm: '🟨', esp: '🟥', gol_subito: '🥅', autogol: '🙈', rig_sbagliato: '❌', rig_parato: '🧤' };
-const EMOJI_LABEL = { gol: 'gol', assist: 'assist', amm: 'ammonizione', esp: 'espulsione', gol_subito: 'gol subito', autogol: 'autogol', rig_sbagliato: 'rigore sbagliato', rig_parato: 'rigore parato' };
-function emojis(b){ return Object.entries(b || {}).filter(([k, v]) => EMOJI[k] && v).map(([k, v]) => '<span title="'+EMOJI_LABEL[k]+(v > 1 ? ' ×'+v : '')+'">'+EMOJI[k].repeat(Math.min(v, 3))+'</span>').join(''); }
+/* Bonus e malus: icone SVG monocrome inline al posto delle emoji (che cambiano disegno da telefono a telefono e non hanno
+   un significato leggibile). Ereditano il colore del testo con currentColor, cosi' nelle righe del 6 politico diventano arancioni.
+   Uniche eccezioni i due cartellini: giallo (--warn) e rosso (--err) via le classi .bi.amm e .bi.esp, perche' li' il colore E' il
+   segnale; il title/aria-label resta per chi il colore non lo vede.
+   Le chiavi sono le stesse di detail.players[].bonus prodotte da compute_matchday: non toccarle. */
+const BONUS_LABEL = { gol: 'gol', assist: 'assist', amm: 'ammonizione', esp: 'espulsione', gol_subito: 'gol subito', autogol: 'autogol', rig_sbagliato: 'rigore sbagliato', rig_parato: 'rigore parato' };
+const ICO = {
+  gol: '<circle cx="8" cy="8" r="6.3" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.1l3 2.2-1.15 3.55h-3.7L5 6.3z" fill="currentColor"/>',
+  assist: '<path d="M2 2.4h4.6v4L13.6 9.8c.7.35 1 .9 1 1.6v.8H2z" fill="currentColor"/><path d="M1.2 13.6h13.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>',
+  amm: '<rect x="4.4" y="2.3" width="7.2" height="11.4" rx="1.3" fill="currentColor"/>',
+  esp: '<rect x="4.4" y="2.3" width="7.2" height="11.4" rx="1.3" fill="currentColor"/>',
+  gol_subito: '<path d="M1.6 12.6V4.4h12.8v8.2" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M.8 13.4h14.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="9.6" r="2.4" fill="currentColor"/>',
+  autogol: '<circle cx="11" cy="10.4" r="3.6" fill="currentColor"/><path d="M2.6 6.2h6.6M5.4 3.4 2.6 6.2l2.8 2.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>',
+  rig_sbagliato: '<circle cx="8" cy="8" r="5.6" stroke="currentColor" stroke-width="1.5"/><path d="M4 12l8-8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>',
+  rig_parato: '<rect x="5.2" y="2.6" width="1.9" height="6" rx=".95" fill="currentColor"/><rect x="7.5" y="1.8" width="1.9" height="6.8" rx=".95" fill="currentColor"/><rect x="9.8" y="2.6" width="1.9" height="6" rx=".95" fill="currentColor"/><rect x="4.6" y="6.6" width="7.8" height="7.2" rx="2.4" fill="currentColor"/><rect x="2.1" y="7.4" width="2.8" height="4.2" rx="1.4" fill="currentColor"/>'
+};
+const ICO_SUB = '<path d="M2.6 5.4h9.2M9.4 2.8l2.6 2.6-2.6 2.6M13.4 10.6H4.2M6.8 8l-2.6 2.6 2.6 2.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>';
+const icoSvg = d => '<svg viewBox="0 0 16 16" width="15" height="15" fill="none" aria-hidden="true" focusable="false">' + d + '</svg>';
+function icoGroup(d, label, n, cls){   // il gruppo porta title e aria-label: il significato non e' piu' affidato solo al disegno
+  return '<span class="bi'+(cls ? ' ' + cls : '')+'" role="img" title="'+esc(label)+'" aria-label="'+esc(label)+'">' + icoSvg(d).repeat(Math.max(1, Math.min(n || 1, 3))) + '</span>';
+}
+const SUB_ICON = icoGroup(ICO_SUB, 'subentrato', 1);
+const ICO_CLS = { amm: 'amm', esp: 'esp' };   // solo i due cartellini portano un colore proprio: giallo e rosso sono il segnale piu' riconoscibile di un tabellino
+function bonusIcons(b){ return Object.entries(b || {}).filter(([k, v]) => ICO[k] && v).map(([k, v]) => icoGroup(ICO[k], BONUS_LABEL[k] + (v > 1 ? ' ×'+v : ''), v, ICO_CLS[k])).join(''); }
 function f1(x){ return x == null ? '–' : Number(x).toFixed(1); }
 function sheetOpts(list){
   // unione ordinata delle voci extra e lunghezza massima della panchina, per allineare le colonne di una partita
@@ -652,24 +781,24 @@ function teamSheet(r, name, opts){
   const nm = id => injCross((S.rstatus || {})[id]) + shortName((playersById[id] || { name: '#'+id }).name);
   const empty = '<tr><td>&nbsp;</td><td class="muted">–</td><td></td><td></td></tr>';
   // p.pending (fix 012): giornata live e partita del giocatore non ancora finita -> "6 politico" in arancione, niente sostituzione
-  let rows = pl.map(p => '<tr'+(p.pending ? ' class="pol"' : '')+'><td>'+roleTag(p.role)+'</td><td>'+(p.sub ? '<span class="muted" style="text-decoration:line-through">'+esc(nm(p.player_id))+'</span> 🔁 '+esc(nm(p.sub)) : esc(nm(p.player_id)))+' <span class="em">'+emojis(p.bonus)+'</span></td><td>'+(p.pending ? '<span class="pol" title="6 politico: deve ancora giocare">6*</span>' : (p.voto == null ? 's.v.' : f1(p.voto)))+'</td><td><b>'+(p.pending ? '<span class="pol">6.0*</span>' : f1(p.fv))+'</b></td></tr>').join('');
+  let rows = pl.map(p => '<tr'+(p.pending ? ' class="pol"' : '')+'><td>'+roleTag(p.role)+'</td><td>'+(p.sub ? '<span class="muted" style="text-decoration:line-through">'+esc(nm(p.player_id))+'</span> '+SUB_ICON+' '+esc(nm(p.sub)) : esc(nm(p.player_id)))+' <span class="em">'+bonusIcons(p.bonus)+'</span></td><td>'+(p.pending ? '<span class="pol" title="6 politico: deve ancora giocare">6*</span>' : (p.voto == null ? 's.v.' : f1(p.voto)))+'</td><td><b>'+(p.pending ? '<span class="pol">6.0*</span>' : f1(p.fv))+'</b></td></tr>').join('');
   for (let i = pl.length; i < 11; i++) rows += empty;
   const labels = opts.labels.length ? opts.labels : (!extras.length && d.mod_difesa ? ['Modificatore difesa'] : []);
   const exRows = labels.map(lb => { const e = extras.find(x => x.label === lb) || (lb === 'Modificatore difesa' && d.mod_difesa ? { v: d.mod_difesa } : { v: 0 });
     return '<tr class="ex"><td></td><td>'+esc(lb)+'</td><td></td><td>'+(e.v > 0 ? '+' : '')+f1(e.v)+'</td></tr>'; }).join('');
-  let brows = bench.map((p, i) => '<tr class="'+(p.used ? '' : 'ex')+'"><td><span class="pill">'+(i + 1)+'</span></td><td>'+roleTag(p.role)+' '+esc(nm(p.player_id))+(p.used ? ' 🔁' : '')+' <span class="em">'+emojis(p.bonus)+'</span></td><td>'+(p.voto == null ? 's.v.' : f1(p.voto))+'</td><td>'+(p.fv == null ? '–' : f1(p.fv))+'</td></tr>').join('');
+  let brows = bench.map((p, i) => '<tr class="'+(p.used ? '' : 'ex')+'"><td><span class="pill">'+(i + 1)+'</span></td><td>'+roleTag(p.role)+' '+esc(nm(p.player_id))+(p.used ? ' '+SUB_ICON : '')+' <span class="em">'+bonusIcons(p.bonus)+'</span></td><td>'+(p.voto == null ? 's.v.' : f1(p.voto))+'</td><td>'+(p.fv == null ? '–' : f1(p.fv))+'</td></tr>').join('');
   for (let i = bench.length; i < opts.benchN; i++) brows += empty;
   const base = d.base != null ? d.base : pl.reduce((a, p) => a + (+p.fv || 0), 0);
-  return '<div><h3>'+esc(name)+(missing ? ' <span class="pill">formazione non inviata</span>' : '')+(d.live ? ' <span class="pill live">provvisorio</span>' : '')+'</h3><table><thead><tr><th></th><th>Giocatore</th><th>V</th><th>FV</th></tr></thead><tbody>' + rows +
+  return '<div class="sheet"><h3>'+esc(name)+(missing ? ' <span class="pill">formazione non inviata</span>' : '')+(d.live ? ' <span class="pill live">provvisorio</span>' : '')+'</h3><div class="tw"><table><thead><tr><th></th><th>Giocatore</th><th>V</th><th>FV</th></tr></thead><tbody>' + rows +
     '<tr class="tot"><td></td><td>Totale parziale</td><td></td><td>'+f1(missing ? 0 : base)+'</td></tr>' + exRows +
     '<tr class="grand"><td></td><td>Totale</td><td></td><td>'+f1(r ? r.total : 0)+'</td></tr>' +
-    (opts.benchN ? '<tr><td colspan="4" class="muted" style="padding-top:10px"><b>Panchina</b></td></tr>' + brows : '') + '</tbody></table></div>';
+    (opts.benchN ? '<tr><td colspan="4" class="muted" style="padding-top:10px"><b>Panchina</b></td></tr>' + brows : '') + '</tbody></table></div></div>';
 }
 function lineupSheet(lu, name){
-  if (!lu) return '<div><h3>'+esc(name)+'</h3><div class="muted">Formazione non ancora schierata</div></div>';
+  if (!lu) return '<div class="sheet"><h3>'+esc(name)+'</h3><div class="muted">Formazione non ancora schierata</div></div>';
   const nm = id => { const p = playersById[id] || { name: '#'+id, role: 'C', team: '' }; return '<tr><td>'+roleTag(p.role)+'</td><td>'+injCross((S.rstatus || {})[id])+esc(shortName(p.name))+' <span class="muted">'+esc(p.team)+'</span></td></tr>'; };
-  return '<div><h3>'+esc(name)+' <span class="muted">'+lu.module+' · inviata '+fmtDate(lu.submitted_at)+'</span></h3><table><tbody>' + lu.starters.map(nm).join('') +
-    '<tr><td colspan="2" class="muted" style="padding-top:10px"><b>Panchina</b></td></tr>' + lu.bench.map(nm).join('') + '</tbody></table></div>';
+  return '<div class="sheet"><h3>'+esc(name)+' <span class="muted">'+lu.module+' · inviata '+fmtDate(lu.submitted_at)+'</span></h3><div class="tw"><table><tbody>' + lu.starters.map(nm).join('') +
+    '<tr><td colspan="2" class="muted" style="padding-top:10px"><b>Panchina</b></td></tr>' + lu.bench.map(nm).join('') + '</tbody></table></div></div>';
 }
 async function renderResults(){
   const box = $('#tab-risultati');
@@ -748,14 +877,14 @@ async function renderListe(){
   bar.innerHTML = (user ? '<span class="newbox"><input id="lsteNew" placeholder="Nome della nuova lista, es. Asta 2026"><button id="lsteCreateBtn">＋ Crea</button></span>' : '<a data-view="auth" class="btn">Entra per creare la tua lista</a>') +
     lists.map(l => '<a class="chip'+(on(l) ? ' on' : '')+'" data-list="'+l.id+'" data-name="'+esc(l.name)+'" title="'+(l.is_public ? 'condivisa · codice '+esc(l.share_code) : 'privata')+'">'+(on(l) ? '✓ ' : '')+esc(l.name)+(l.is_public ? ' 🔗' : '')+'</a>').join('') +
     (user && !lists.length ? '<span class="small" style="align-self:center">Nessuna lista ancora: creane una e assegna i tier dal listone qui sotto.</span>' : '');
-  $$('[data-list]', bar).forEach(b => { b.onclick = async () => { sharedList = null; await selectList(b.dataset.list); history.replaceState(null, '', '#liste'); await renderListe(); msg('Lista "'+b.dataset.name+'" attiva: assegna i tier dal listone qui sotto o dal Listone', 'ok'); }; });
+  $$('[data-list]', bar).forEach(b => { b.onclick = async () => { sharedList = null; await selectList(b.dataset.list); setHash('#liste'); await renderListe(); msg('Lista "'+b.dataset.name+'" attiva: assegna i tier dal listone qui sotto o dal Listone', 'ok'); }; });
   const cb = $('#lsteCreateBtn');
   if (cb) cb.onclick = async () => { const name = (($('#lsteNew') || {}).value || '').trim(); if (!name) { msg('Scrivi il nome della nuova lista nel campo accanto al pulsante', 'err'); return; }
     const { data, error } = await sb.from('lists').insert({ owner_id: user.id, name: name.trim(), author: (user.user_metadata && user.user_metadata.username) || '' }).select().single();
     if (error) return err(error); sharedList = null; await loadLists(); await selectList(data.id); renderListe(); };
   const tb = $('#lsteTb'); const feat = sharedLists.filter(l => l.featured);
   if (tb) { tb.innerHTML = feat.length ? feat.map(l => '<div class="tcard"><b>⭐ '+esc(l.name)+'</b><div class="small">'+esc(l.description || '')+'</div><div class="row" style="margin-top:6px"><button class="small sec" data-shared="'+esc(l.share_code)+'">Apri</button></div></div>').join('') : '<span class="small">Le liste obiettivi di TransferBeat compariranno qui.</span>';
-    $$('[data-shared]', tb).forEach(b => { b.onclick = () => openSharedList(b.dataset.shared); }); }
+    $$('[data-shared]', tb).forEach(b => { b.onclick = () => openSharedList(b.dataset.shared, true); }); }
   renderFeatured();
   renderListEditor();
 }
@@ -804,7 +933,7 @@ function renderListEditor(){
   if (!own && user && $('#lsteCopy')) {
     $('#lsteCopy').onclick = async () => {
       const { data, error } = await sb.rpc('copy_list', { p_code: l.share_code, p_name: null }); if (error) return err(error);
-      sharedList = null; history.replaceState(null, '', '#liste'); await loadLists(); await selectList(data); msg('Lista copiata fra le tue', 'ok'); renderListe();
+      sharedList = null; setHash('#liste'); await loadLists(); await selectList(data); msg('Lista copiata fra le tue', 'ok'); renderListe();
     };
   }
 }
@@ -836,16 +965,16 @@ async function renderFeatured(){
   const rows = sharedLists.filter(l => !l.featured);
   box.innerHTML = (rows.length ? '<ul class="list">' + rows.map(l => '<li><div><b>'+esc(l.name)+'</b><div class="muted">'+(l.author ? 'di '+esc(l.author) : 'lista condivisa')+(l.description ? ' · '+esc(l.description) : '')+'</div></div><button class="small sec" data-shared="'+esc(l.share_code)+'">Apri</button></li>').join('') + '</ul>' : '<div class="muted small">Nessuna lista condivisa dagli utenti al momento. Chi condivide la sua lista compare qui.</div>') +
     '<div class="row" style="margin-top:10px"><input id="lsteCode" placeholder="Codice di una lista condivisa" style="text-transform:uppercase"><button id="lsteOpen" class="sec" style="flex:0 0 auto">Apri</button></div>';
-  $$('[data-shared]', box).forEach(b => { b.onclick = () => openSharedList(b.dataset.shared); });
-  $('#lsteOpen').onclick = () => openSharedList($('#lsteCode').value.trim());
+  $$('[data-shared]', box).forEach(b => { b.onclick = () => openSharedList(b.dataset.shared, true); });
+  $('#lsteOpen').onclick = () => openSharedList($('#lsteCode').value.trim(), true);
 }
-async function openSharedList(code){
+async function openSharedList(code, push){
   if (!code) return;
   const { data, error } = await sb.from('lists').select('*').eq('share_code', code.toUpperCase()).maybeSingle();
   if (error || !data) return msg('Lista non trovata o non condivisa', 'err');
   const { data: items } = await sb.from('list_items').select('player_id,tier,note').eq('list_id', data.id);
   sharedList = Object.assign({ items: {} }, data); (items || []).forEach(it => { sharedList.items[it.player_id] = { tier: it.tier, note: it.note || '' }; });
-  show('liste'); history.replaceState(null, '', '#lista/' + data.share_code);
+  show('liste'); setHash('#lista/' + data.share_code, push);
 }
 
 /* ---------- import rose da Excel/CSV (admin di lega) e squadre in attesa (fix-008) ---------- */
@@ -977,12 +1106,15 @@ async function initChat(){
   isStaff = false;
   if (chatChannel) { try { sb.removeChannel(chatChannel); } catch (e) {} chatChannel = null; }
   if (!user) { $$('nav a[data-view=messaggi]').forEach(a => a.classList.add('hidden')); return; }
+  $$('nav a[data-view=messaggi]').forEach(a => a.classList.remove('hidden'));   // la voce Messaggi vale per tutti: allo staff le conversazioni, agli altri la propria chat con lo staff
   const { data } = await sb.from('staff').select('user_id').eq('user_id', user.id).maybeSingle();
   isStaff = !!data;
-  $$('nav a[data-view=messaggi]').forEach(a => a.classList.toggle('hidden', !isStaff));
   await refreshUnread();
   chatChannel = sb.channel('chat-' + user.id).on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'messages' }, () => {
-    refreshUnread(); if (chatOpen) loadChat(); const v = $('#view-messaggi'); if (isStaff && v && !v.classList.contains('hidden')) renderMessaggi(); }).subscribe();
+    refreshUnread(); if (chatOpen) loadChat(); const v = $('#view-messaggi'); if (v && !v.classList.contains('hidden')) renderMessaggi(); }).subscribe();
+}
+function cmHtml(m, who){   // bolla di un messaggio, condivisa fra il pannello flottante e la vista Messaggi
+  return '<div class="cm '+(m.from_staff ? 'staff' : 'user')+'"><div>'+esc(m.text).replace(/\n/g, '<br>')+'</div><span>'+(m.from_staff ? 'TransferBeat · ' : (who ? esc(who)+' · ' : ''))+fmtWhen(m.created_at)+'</span></div>';
 }
 async function refreshUnread(){
   if (!user) return;
@@ -996,8 +1128,8 @@ async function loadChat(){
   const box = $('#chatMsgs'); if (!box || !user) return;
   const { data, error } = await sb.from('messages').select('id,from_staff,text,created_at,read_by_user').eq('user_id', user.id).order('created_at');
   if (error) { box.innerHTML = '<div class="msg err">Chat non disponibile: '+esc(error.message)+'</div>'; return; }
-  box.innerHTML = (data && data.length) ? data.map(m => '<div class="cm '+(m.from_staff ? 'staff' : 'user')+'"><div>'+esc(m.text).replace(/\n/g, '<br>')+'</div><span>'+(m.from_staff ? 'TransferBeat · ' : '')+fmtWhen(m.created_at)+'</span></div>').join('')
-    : '<div class="msg hint">👋 Scrivici un suggerimento, una segnalazione o una domanda: rispondiamo qui, e vedrai un pallino sul pulsante quando c\'è una risposta.</div>';
+  box.innerHTML = (data && data.length) ? data.map(m => cmHtml(m)).join('')
+    : '<div class="msg hint">Scrivici un suggerimento, una segnalazione o una domanda: rispondiamo qui, e vedrai un pallino sul pulsante quando c\'è una risposta.</div>';
   box.scrollTop = box.scrollHeight;
   const unread = (data || []).filter(m => m.from_staff && !m.read_by_user).map(m => m.id);
   if (unread.length) { await sb.from('messages').update({ read_by_user: true }).in('id', unread); refreshUnread(); }
@@ -1008,9 +1140,34 @@ async function sendChat(){
   if (error) return err(error);
   t.value = ''; loadChat();
 }
+/* La stessa chat del pulsante flottante, dentro la voce di menu Messaggi: chi non e' staff vede la propria conversazione
+   e il pulsante "Scrivici". Il badge dei non letti e' lo stesso di refreshUnread (#chatBadge e .nbadge della secbar). */
+async function renderMyChat(box){
+  const { data, error } = await sb.from('messages').select('id,from_staff,text,created_at,read_by_user').eq('user_id', user.id).order('created_at');
+  if (error) { box.innerHTML = '<div class="msg err">Chat non disponibile: '+esc(error.message)+'</div>'; return; }
+  if (!$('#mgMsgs') || !$('#mgText')) {   // il guscio si costruisce una volta sola: se ogni ridisegno ricreasse l'input, all'arrivo di una risposta la bozza dell'utente sparirebbe
+    box.innerHTML = '<div class="card conv"><h2>La tua conversazione con lo staff</h2>' +
+      '<div class="cmlist mine" id="mgMsgs"></div>' +
+      '<div class="row"><input id="mgText" placeholder="Scrivi qui il tuo messaggio…"><button id="mgSend" style="flex:0 0 auto">Scrivici</button></div></div>';
+  }
+  const el = $('#mgMsgs'); if (!el) return;
+  el.innerHTML = (data && data.length) ? data.map(m => cmHtml(m)).join('') : '<div class="msg hint">Non ci hai ancora scritto. Suggerimenti, segnalazioni e domande: rispondiamo qui dentro e vedrai il pallino rosso sulla voce Messaggi.</div>';   // si ridisegnano solo le bolle: casella e pulsante restano quelli di prima
+  el.scrollTop = el.scrollHeight;
+  const send = async () => {
+    const t = $('#mgText'), text = (t.value || '').trim(); if (!text) return;
+    const { error: e2 } = await sb.from('messages').insert({ user_id: user.id, author: user.id, from_staff: false, text: text, page: location.hash || '#messaggi' });
+    if (e2) return err(e2);
+    t.value = ''; if (chatOpen) loadChat(); renderMessaggi();
+  };
+  $('#mgSend').onclick = send;
+  $('#mgText').onkeydown = e => { if (e.key === 'Enter') send(); };
+  const unread = (data || []).filter(m => m.from_staff && !m.read_by_user).map(m => m.id);
+  if (unread.length) { await sb.from('messages').update({ read_by_user: true }).in('id', unread); refreshUnread(); }
+}
 async function renderMessaggi(){
   const box = $('#msgList'); if (!box) return;
-  if (!isStaff) { box.innerHTML = '<div class="msg">Questa vista è riservata allo staff.</div>'; return; }
+  if (!user) { box.innerHTML = '<div class="msg">Entra o crea un account per scriverci: le risposte arrivano qui dentro.</div>'; return; }
+  if (!isStaff) return renderMyChat(box);
   const { data, error } = await sb.from('messages').select('id,user_id,from_staff,text,page,created_at,read_by_staff').order('created_at', { ascending: false }).limit(500);
   if (error) return err(error);
   const conv = {}; (data || []).forEach(m => { (conv[m.user_id] = conv[m.user_id] || []).push(m); });
@@ -1033,11 +1190,11 @@ let strategies = [], sharedStrategies = [], curStrat = null, sharedStrat = null,
 const TIER_W = { 1: 1.0, 2: 0.6, 3: 0.38, 4: 0.22, 5: 0.1 };
 const DEF_STRAT = { name: 'La mia strategia', teams: 8, credits: 500, slots: { P: 3, D: 8, C: 8, A: 6 }, budget: { P: 8, D: 22, C: 25, A: 45 },
   targets: { P: { 1: 1 }, D: { 1: 1, 2: 2, 3: 2 }, C: { 1: 1, 2: 2, 3: 2 }, A: { 1: 1, 2: 1, 3: 2 } }, list_id: null, description: '' };
-function setLsteTab(t){
+function setLsteTab(t, push){
   lsteTab = t;
   $$('#lsteTabs a').forEach(a => a.classList.toggle('on', a.dataset.ltab === t));
   const lp = $('#lstePane'), sp = $('#strPane'); if (lp) lp.classList.toggle('hidden', t !== 'liste'); if (sp) sp.classList.toggle('hidden', t !== 'strategie');
-  history.replaceState(null, '', '#' + (t === 'strategie' ? 'strategie' : 'liste'));
+  setHash('#' + (t === 'strategie' ? 'strategie' : 'liste'), push);
   if (t === 'strategie') renderStrategie();
 }
 async function loadStrategies(){
@@ -1140,7 +1297,7 @@ async function renderStrategie(){
   bar.innerHTML = (user ? '<span class="newbox"><input id="strNewName" placeholder="Nome della nuova strategia"><button id="strNew">＋ Crea</button></span>' : '<a data-view="auth" class="btn">Entra per creare la tua strategia</a>') +
     strategies.map(s => '<a class="chip'+(on(s) ? ' on' : '')+'" data-strat="'+s.id+'" title="'+s.teams+' squadre · '+s.credits+' crediti'+(s.is_public ? ' · condivisa '+esc(s.share_code) : '')+'">'+(on(s) ? '✓ ' : '')+esc(s.name)+(s.is_public ? ' 🔗' : '')+'</a>').join('') +
     (user && !strategies.length ? '<span class="small" style="align-self:center">Nessuna strategia ancora: creane una o parti da una di TransferBeat con "Usa".</span>' : '');
-  $$('[data-strat]', bar).forEach(b => { b.onclick = async () => { sharedStrat = null; await selectStrategy(b.dataset.strat); history.replaceState(null, '', '#strategie'); renderStrategie(); }; });
+  $$('[data-strat]', bar).forEach(b => { b.onclick = async () => { sharedStrat = null; await selectStrategy(b.dataset.strat); setHash('#strategie'); renderStrategie(); }; });
   const nb = $('#strNew');
   if (nb) nb.onclick = async () => { const name = (($('#strNewName') || {}).value || '').trim(); if (!name) { msg('Scrivi il nome della nuova strategia nel campo accanto al pulsante', 'err'); return; }
     const { data, error } = await sb.from('strategies').insert(Object.assign({}, DEF_STRAT, { name: name.trim(), owner_id: user.id, author: (user.user_metadata && user.user_metadata.username) || '', list_id: curList ? curList.id : null })).select().single();
@@ -1148,11 +1305,11 @@ async function renderStrategie(){
   const feat = sharedStrategies.filter(s => s.featured), pub = sharedStrategies.filter(s => !s.featured);
   tb.innerHTML = feat.length ? feat.map(s => '<div class="tcard"><b>⭐ '+esc(s.name)+'</b><div class="small">'+esc(s.description || '')+'</div><div class="small" style="margin-top:4px">'+s.teams+' squadre · '+s.credits+' crediti · budget '+ROLES.map(r => r+' '+(s.budget[r] || 0)+'%').join(' ')+'</div><div class="row" style="margin-top:6px"><button class="small" data-sharedstrat="'+esc(s.share_code)+'">Usa</button></div></div>').join('')
     : '<span class="small">Le strategie di TransferBeat compariranno qui (le crea lo staff con fanta_strategie.py).</span>';
-  $$('[data-sharedstrat]', tb).forEach(b => { b.onclick = () => openSharedStrategy(b.dataset.sharedstrat); });
+  $$('[data-sharedstrat]', tb).forEach(b => { b.onclick = () => openSharedStrategy(b.dataset.sharedstrat, true); });
   sh.innerHTML = (pub.length ? '<ul class="list">' + pub.map(s => '<li><div><b>'+esc(s.name)+'</b><div class="muted">'+s.teams+' squadre · '+s.credits+' crediti'+(s.author ? ' · di '+esc(s.author) : '')+(s.description ? ' · '+esc(s.description) : '')+'</div></div><button class="small sec" data-sharedstrat="'+esc(s.share_code)+'">Apri</button></li>').join('') + '</ul>' : '<div class="muted small">Nessuna strategia condivisa dagli utenti al momento: chi preme "Condividi" sulla sua compare qui.</div>') +
     '<div class="row" style="margin-top:10px"><input id="strCode" placeholder="Codice di una strategia condivisa" style="text-transform:uppercase"><button id="strOpen" class="sec" style="flex:0 0 auto">Apri</button></div>';
-  $$('[data-sharedstrat]', sh).forEach(b => { b.onclick = () => openSharedStrategy(b.dataset.sharedstrat); });
-  $('#strOpen').onclick = () => openSharedStrategy($('#strCode').value.trim());
+  $$('[data-sharedstrat]', sh).forEach(b => { b.onclick = () => openSharedStrategy(b.dataset.sharedstrat, true); });
+  $('#strOpen').onclick = () => openSharedStrategy($('#strCode').value.trim(), true);
   const st = sharedStrat || curStrat;
   if (!st) { ed.innerHTML = '<div class="msg hint">📐 <b>Crea la tua strategia</b> con il pulsante qui sopra, oppure parti da una di TransferBeat con "Usa" e poi copiala per modificarla. Scegli il formato, le percentuali di budget per ruolo e quanti giocatori per tier vuoi prendere: il piano ti dà il tetto di spesa per ogni obiettivo e il prezzo atteso con l\'inflazione della tua lega.</div>' + PLAN_HELP; return; }
   const own = !!(user && st.owner_id === user.id && !sharedStrat);
@@ -1169,7 +1326,7 @@ async function renderStrategie(){
     $('#strShare').onclick = async () => { const { error } = await sb.from('strategies').update({ is_public: !st.is_public }).eq('id', st.id); if (error) return err(error); await loadStrategies(); await selectStrategy(st.id); renderStrategie(); };
     $('#strDelete').onclick = async () => { const b = $('#strDelete'); if (b.dataset.sure !== '1') { b.dataset.sure = '1'; b.textContent = 'Sicuro? Elimina davvero'; return; } const { error } = await sb.from('strategies').delete().eq('id', st.id); if (error) return err(error); curStrat = null; localStorage.removeItem('fantatb_strategy'); await loadStrategies(); renderStrategie(); };
   } else if (user && $('#strCopy')) {
-    $('#strCopy').onclick = async () => { const { data, error } = await sb.rpc('copy_strategy', { p_code: st.share_code, p_name: null }); if (error) return err(error); sharedStrat = null; await loadLists(); await loadStrategies(); await selectStrategy(data); msg('Strategia copiata fra le tue: ora puoi modificarla', 'ok'); history.replaceState(null, '', '#strategie'); renderStrategie(); };
+    $('#strCopy').onclick = async () => { const { data, error } = await sb.rpc('copy_strategy', { p_code: st.share_code, p_name: null }); if (error) return err(error); sharedStrat = null; await loadLists(); await loadStrategies(); await selectStrategy(data); msg('Strategia copiata fra le tue: ora puoi modificarla', 'ok'); setHash('#strategie'); renderStrategie(); };
   }
 }
 async function exportStrategyXlsx(st){
@@ -1207,12 +1364,12 @@ async function exportStrategyXlsx(st){
   try { XLSX.writeFile(wb, fname); } catch (e) { console.warn('download automatico fallito', e); }
   msg('Excel pronto: se il download non è partito, usa il pulsante "File pronto: clicca qui"', 'ok');
 }
-async function openSharedStrategy(code){
+async function openSharedStrategy(code, push){
   if (!code) return;
   const { data, error } = await sb.from('strategies').select('*').eq('share_code', code.toUpperCase()).maybeSingle();
   if (error || !data) return msg('Strategia non trovata o non condivisa', 'err');
   sharedStrat = Object.assign({}, data); sharedStrat.list = await stratList(data);
-  show('liste'); setLsteTab('strategie'); history.replaceState(null, '', '#strategia/' + data.share_code);
+  show('liste'); setLsteTab('strategie'); setHash('#strategia/' + data.share_code, push);
 }
 function stratDashHtml(){   // cruscotto nella scheda Asta: pianificato contro speso per ruolo, obiettivi ancora liberi
   if (!curStrat || !L) return '';
@@ -1243,6 +1400,43 @@ function hideAuthIfNotNeeded(){
   const pub = ['listone', 'voti', 'regole', 'liste', 'strategie'].includes(v) || /^#(lista|strategia)\//.test(location.hash);
   const el = $('#view-auth'); if (el && (stored || pub)) el.classList.add('hidden');
 }
+/* Riporta l'app allo stato descritto dall'hash. La chiamano init() (deep link all'apertura) e onHashNav (tasto Indietro):
+   una sola funzione, cosi' i due percorsi non possono divergere. Non scrive mai in cronologia: i setHash qui dentro
+   partono senza push e, se arriviamo da Indietro, navBack li tiene comunque su replaceState. */
+function applyHash(h){
+  h = h || '';
+  const v = h.slice(1);
+  const mg = h.match(/^#lega\/([0-9a-f-]{36})(?:\/([a-z]+))?$/);
+  if (mg) {
+    if (!user) { show('auth'); return; }
+    if (L && L.league.id === mg[1] && document.body.dataset.sec === 'league') {
+      // lega gia' aperta: solo cambio di scheda, niente query e soprattutto nessuna risottoscrizione
+      // (il realtime dell'asta non deve avere buchi).
+      renderTabs(mg[2]);
+      // Le schede che vivono su S (fixtures, results, lineup) prima si aggiornavano per effetto
+      // collaterale di openLeague; qui non passiamo piu' di li', e il poll a 7 s rinfresca solo
+      // rosters/asta/membri. Senza questa riga, tornando su Classifica si vedrebbero numeri vecchi.
+      if (['classifica', 'calendario', 'risultati', 'schiera'].indexOf(mg[2] || '') >= 0) loadSeasonData();
+      return;
+    }
+    openLeague(mg[1], mg[2]);
+    return;
+  }
+  const ml = h.match(/^#lista\/([A-Za-z0-9]{6,12})$/);
+  if (ml) { openSharedList(ml[1]); return; }
+  const ms = h.match(/^#strategia\/([A-Za-z0-9]{6,12})$/);
+  if (ms) { openSharedStrategy(ms[1]); return; }
+  if (['listone', 'voti', 'regole', 'liste'].includes(v)) { sharedList = null; if (v === 'liste') { sharedStrat = null; setLsteTab('liste'); } show(v); return; }   // viste pubbliche raggiungibili anche senza login; #liste rimette la scheda su Liste, altrimenti l'Indietro da #strategie non cambierebbe nulla
+  if (v === 'strategie') { sharedStrat = null; show('liste'); setLsteTab('strategie'); return; }
+  if (v === 'messaggi') { if (user) show('messaggi'); return; }
+  if (v === 'crea') {
+    if (user) { show('home'); setTimeout(() => { const f = $('#clName'); if (f) { f.scrollIntoView({ behavior: 'smooth', block: 'center' }); f.focus(); } }, 300); }
+    else msg('Entra o crea un account: poi "Crea una lega" è nella tua pagina.', 'ok');
+    return;
+  }
+  const want = user ? 'home' : 'auth';   // hash vuoto, #home o sconosciuto: la vista di partenza, ma solo se non ci siamo già (evita ricariche inutili)
+  if (document.body.dataset.sec !== want) show(want);
+}
 async function init(){
   hideAuthIfNotNeeded();
   if (!CFG.SUPABASE_URL || CFG.SUPABASE_URL.includes('INSERISCI')) { msg('FantaTB non è ancora configurato (fanta/config.js).', 'err'); show('regole'); return; }
@@ -1250,18 +1444,8 @@ async function init(){
   const h = location.hash;   // letto PRIMA di initAuth: show() lo sovrascrive con la vista corrente
   await Promise.all([loadPlayers(), loadMatchdays()]);
   await initAuth();
-  const m = h.match(/^#lega\/([0-9a-f-]{36})(?:\/([a-z]+))?$/);
-  if (m && user) openLeague(m[1], m[2]);
   await loadLists(); await loadSharedLists(); await restoreActiveList(); await loadStrategies(); initChat();
-  const v = h.slice(1);
-  if (['listone', 'voti', 'regole', 'liste'].includes(v)) show(v);   // viste pubbliche raggiungibili anche senza login
-  if (v === 'strategie') { show('liste'); setLsteTab('strategie'); }
-  if (v === 'messaggi' && user) show('messaggi');
-  const ml = h.match(/^#lista\/([A-Za-z0-9]{6,12})$/);
-  if (ml) openSharedList(ml[1]);
-  const ms = h.match(/^#strategia\/([A-Za-z0-9]{6,12})$/);
-  if (ms) openSharedStrategy(ms[1]);
-  if (h === '#crea') { if (user) { show('home'); setTimeout(() => { const f = $('#clName'); if (f) { f.scrollIntoView({ behavior: 'smooth', block: 'center' }); f.focus(); } }, 300); } else msg('Entra o crea un account: poi "Crea una lega" è nella tua pagina.', 'ok'); }
+  applyHash(h);   // stessa logica di deep link usata dal tasto Indietro
 }
 init().catch(err);
 })();

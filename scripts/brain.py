@@ -80,7 +80,11 @@ def classify_system(langname="italiano"):
         "- giocatore: nome del calciatore (vuoto se non chiaro).\n"
         "- direzione: 'in' se arriva alla 'squadra', 'out' se la lascia.\n"
         "- club: l'altra squadra coinvolta (vuoto se non citata).\n"
-        "- smentita: true se annulla un affare gia' dato; false altrimenti."
+        "- smentita: true se annulla un affare gia' dato; false altrimenti.\n"
+        "- movimenti: SOLO se il messaggio annuncia PIU' trasferimenti insieme (per esempio \"Ufficiali: Rossi al Milan, "
+        "Bianchi al Como\"), una lista di oggetti {giocatore, squadra, direzione, club}, UNO PER TRASFERIMENTO, "
+        "nell'ordine in cui compaiono. Con un solo trasferimento OMETTI del tutto questo campo e usa i campi singoli "
+        "qui sopra. I campi singoli vanno compilati SEMPRE, anche quando c'e' la lista: in quel caso descrivono il primo."
     )
 
 def classify_batch_messages(testi, langname="italiano", n_examples=4):
@@ -94,7 +98,9 @@ def classify_batch_messages(testi, langname="italiano", n_examples=4):
         "LOTTO: l'utente invia PIU' messaggi numerati. Rispondi SOLO con JSON valido nella forma" + NL +
         '{"items":[{...},{...}]} con ESATTAMENTE un oggetto per messaggio ricevuto, nello STESSO' + NL +
         "ORDINE e con gli stessi campi descritti sopra. Nessun commento, nessun testo fuori dal JSON." + NL +
-        'Ogni oggetto DEVE includere anche il campo "n" con il numero del messaggio a cui si riferisce.')
+        'Ogni oggetto DEVE includere anche il campo "n" con il numero del messaggio a cui si riferisce.' + NL +
+        "Un messaggio con PIU' trasferimenti resta UN SOLO oggetto: i trasferimenti in piu' vanno nella sua lista "
+        '"movimenti", mai in oggetti separati, altrimenti si perde l\'allineamento con i messaggi inviati.')
     msgs = [{"role": "system", "content": sistema}]
     for ex_in, ex_out in CLASSIFY_EXAMPLES[:n_examples]:
         msgs.append({"role": "user", "content": "1. " + ex_in})

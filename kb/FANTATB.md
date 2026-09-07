@@ -255,18 +255,38 @@ Claude esegue questi comandi a richiesta man mano che l'utente avanza (crea lega
 3b. **Copie locali del repo** (2026-09-04): Drive riallineata (backup `backup/drive-2026-09-04`); Desktop: backup pushato in
     `backup/desktop-2026-09-04` (b063c8f, lock stantio del 3/9 rimosso), il reset a origin/main + pulizia dei file spuri lo lancia
     l'utente fuori dagli orari delle pianificate (12:40, 16:10, 20:40); poi eliminare la cartella Drive (memoria e chiavi già copiate sul Desktop).
-3c. **Chat: notifica email** allo staff (pg_net + servizio di invio) ancora da fare: oggi solo badge in app.
-4. Correzione voti dall'interfaccia admin (`rating_overrides` esiste, manca la UI).
-5. Probabili formazioni dalle notizie (LLM, stesso motore degli articoli) per affinare la % titolarità; alert deadline formazioni.
-6. Opzione di lega "formazioni nascoste fino alla deadline".
-7. ~~`/fanta/` in `sitemap.xml`; meta/SEO della pagina~~ fatto il 2026-09-03 (title nuovo, sitemap, pagine `fantacalcio/`). Resta: pagina pubblica "classifica di lega" condivisibile.
-8. Scambi/mercato di riparazione tra squadre; svincoli con rimborso parziale.
-9. Mantra (ruoli manuali + moduli Mantra); poi Premier/Liga (API-Football copre entrambe con lo stesso schema).
+3c. ~~**Chat: notifica email** allo staff~~ SQL SCRITTO il 2026-09-07: `fix-015-notifiche-chat.sql` (pg_net, trigger su
+    `messages`, silenzio configurabile per utente, chiave in una tabella con RLS senza policy). **Da eseguire dall'utente**,
+    che deve anche abilitare pg_net e incollare endpoint e chiave del servizio di invio con `set_notifica_chat(...)`.
+    Il trigger non puo' MAI far fallire l'inserimento del messaggio: la chat viene prima della notifica.
+4. Correzione voti dall'interfaccia admin: **SQL FATTO** il 2026-09-07 (`fix-013-lega.sql`: `league_overrides`,
+   `set_rating_override`, `delete_rating_override`). **Manca la UI in `fanta/app.js`.**
+5. Probabili formazioni dalle notizie: **impegno infrasettimanale (coppe) e stima per i nuovi arrivi FATTI** il 2026-09-07
+   in `fanta_probabili.py`. Resta l'alert deadline formazioni. Vedi §20 per i limiti che restano.
+6. Opzione di lega "formazioni nascoste fino alla deadline": **SQL FATTO** (`fix-013`, applicata lato server con RLS +
+   trigger, SPENTA di default perche' la visibilita' e' una scelta esplicita dell'utente, §9). **Manca la UI.**
+7. ~~`/fanta/` in `sitemap.xml`; meta/SEO della pagina~~ fatto il 2026-09-03. La **classifica di lega pubblica e
+   condivisibile**: **SQL FATTO** (`fix-013`: `league_shares`, `set_standings_share`, `public_standings`, con codice non
+   indovinabile sul modello delle liste obiettivi; espone SOLO nome squadra, punti e fantapunti — mai email, mai id
+   utente, mai le rose). **Manca la UI.**
+8. Scambi fra squadre e svincoli con rimborso parziale: **SQL FATTO** (`fix-013`: `propose_trade`, `respond_trade`,
+   `admin_trade`, `cancel_trade`, `release_own_player`; tutto in una transazione, rimborso al 50% di default,
+   VIETATI a giornata in corso perche' falserebbero i punti di entrambe le squadre). **Manca la UI.**
+9. **Mantra: la premessa di questo pending era SUPERATA.** Diceva "i ruoli Mantra non esistono in nessuna API,
+   assegnazione manuale di ~650 giocatori": non e' piu' vero dal 2026-09-04, perche' `fanta_quotazioni.py` legge gia'
+   la colonna RM del listone ufficiale e la scrive in `players.role_mantra[]` (§16). Mancava solo il modo di gioco:
+   **SQL FATTO** il 2026-09-07 (`fix-014-mantra.sql`: 11 ruoli ufficiali, 17 moduli con i loro slot, validazione della
+   formazione lato server, sostituzioni dalla panchina per slot Mantra, opzione di lega `modalita` con default CLASSIC
+   — nessuna lega esistente cambia comportamento). **Manca la UI** (`fanta/app.js` ha ancora i soli 7 moduli Classic).
+   **Da verificare in un minuto**: che `players.role_mantra` sia davvero popolato oggi (le chiavi Supabase non sono nel
+   worktree, quindi nessuno ha potuto controllarlo). Poi Premier/Liga, che restano da fare.
 10. Rigenerare la service key Supabase prima dell'apertura al pubblico; valutare Supabase Pro se le leghe crescono.
 11. Listone da rifare dopo il mercato di gennaio (`fanta_players.py --prezzi`, o `task=listone` dal workflow); a fine mercato `--check` e sincronizzazione.
 12. Statistiche e schede (§14): verificare la licenza di foto e loghi API-Football prima di attivare `PHOTOS` in `render_stats.py`; heatmap/mappa
     posizioni rinviate a un collegamento con Opta o StatsBomb (API-Football non ha coordinate); schede giocatore per Premier e Liga solo se si accetta
-    il peso nel repo (~18 MB per campionato, rigenerati a ogni giornata); carriera per stagione (`/players?id&season` per ogni anno) come backfill futuro.
+    il peso nel repo (~18 MB per campionato, rigenerati a ogni giornata); carriera per stagione: **backfill IMPLEMENTATO** il 2026-09-07 (`stats_pull.py --carriera`, esplicito e mai automatico,
+    con tetto di chiamate, ripresa e cache definitiva). Da lanciare quando conviene, tenendo conto che il piano API scade
+    intorno al 2026-10-02. La resa grafica nella scheda giocatore e' ancora da fare.
 13. `teams.json` aveva ancora le retrocesse 2025-26 (Verona, Cremonese, Pisa; West Ham, Wolves, Burnley; Girona, Mallorca, Real Oviedo) e non le promosse:
     il 2026-09-03 sono state AGGIUNTE le 9 promosse (Frosinone, Monza, Venezia, Hull City, Ipswich Town, Coventry City, Deportivo, Racing Santander, Málaga);
     le retrocesse restano con pagina e notizie ma senza classifica e statistiche. Decidere se toglierle (le URL già indicizzate andrebbero in 404).
@@ -565,10 +585,41 @@ statico pubblico (`fantacalcio/listone.html`); filtri del listone su mobile.
 - `fanta/promo.js` eliminato (sostituito dal ribbon di site_common, mai mostrato nel ramo Fantacalcio).
 - Il listone statico `fantacalcio/listone.html` ha ora la scheda rapida al mouseover (stessa logica di `pcardHtml`, dati da `/data/fanta/schede.json` scaricato al
   primo hover) e le colonne Quot./MV/FMV/Titolare/Pres./Gol/Assist (FVM tolta perché assente per molti).
-### 22.1 Pending app (da fare DOPO il desktop, decisione del committente)
-1. Router con `hashchange` + `pushState` (oggi solo `replaceState`: il tasto Indietro non funziona sui deep link).
-2. Home leghe con card e bottone principale "Schiera giornata N"; crea lega in 2 passi; tabelle che reggono a 375 px (contenitore `.tscroll`).
-3. Icone SVG monocrome al posto delle emoji nei bonus dei risultati; chat "Scrivici" nella voce Messaggi con badge non letti.
-4. BreadcrumbList e JSON-LD in `fanta/index.html`; stessa scheda rapida nella lista dell'asta e in Schiera; filtri del listone su mobile.
-5. Bot formazioni nel cron, turni del calendario dal 5° in poi (§19), statistiche combinate e consiglio AI, nuova scheda giocatore stile FantaLab
-   (specifica in scratchpad `specifica_scheda_giocatore.json` della sessione del 2026-09-05/06), voti delle redazioni (5 decisioni aperte), articoli fase 1.
+### 22.1 Pending app — LAVORATI il 2026-09-07
+**ATTENZIONE, errore che era in questa KB**: il pending 2 parlava di contenitore `.tscroll`. In `fanta/` quella
+classe NON ESISTE: `.tscroll` è la convenzione del guscio del sito (`scripts/site_common.py`), mentre nel CSS
+dell'app la classe equivalente è **`.tw`** (`fanta/style.css` riga 91). Chi legge la KB e cerca `.tscroll` in
+`fanta/style.css` non trova niente.
+
+1. ~~Router con `hashchange` + `pushState`~~ **FATTO**: `history.*` compare ora in UN SOLO punto (`setHash`), con
+   listener su `popstate` E `hashchange`, e la logica di deep link di `init()` estratta in `applyHash(h)`, usata da
+   entrambi. **Regola operativa introdotta**: `push=true` si passa SOLO dai gestori dei clic. Se lo si passa da un
+   ridisegno automatico, ogni aggiornamento realtime dell'asta (che gira in continuo, più il polling a 7 s)
+   aggiunge una voce di cronologia e il tasto Indietro torna inutile. Chi aggiunge una vista deve toccare `setHash`
+   **e** `applyHash`, altrimenti il deep link non si riapre.
+2. ~~Home leghe con card e "Schiera giornata N"; crea lega in 2 passi; tabelle a 375 px~~ **FATTO**: card per lega con
+   fase, posizione e l'azione della settimana (quattro rami, nessuno dei quali promette cose non più possibili:
+   asta / deadline scaduta / formazione già inviata con la data / da schierare); creazione in due passi con il passo 2
+   saltabile — **verificato eseguendo il codice che nessun campo di `DEFAULT_SETTINGS` si perde**, altrimenti la lega
+   nascerebbe con regole sbagliate senza che nessuno se ne accorga; 11 tabelle avvolte in `.tw` (16 su 16 ora).
+3. ~~Icone SVG al posto delle emoji nei bonus; chat "Scrivici" nella voce Messaggi con badge~~ **FATTO**.
+   Nota: giallo e rosso dei cartellini sono rimasti a colori. Non è decorazione — è l'unico caso, in un tabellino di
+   calcio, in cui il colore PORTA il significato, e renderli entrambi monocromi li rendeva indistinguibili a colpo
+   d'occhio (contorno contro pieno), soprattutto in una riga del 6 politico dove tutto è già arancione.
+4. ~~BreadcrumbList e JSON-LD in `fanta/index.html`~~ **FATTO** (vedi kb/SEO.md §7.3.4). ~~Scheda rapida nella lista
+   dell'asta e in Schiera; filtri del listone su mobile~~ **FATTO**: in Schiera e nell'asta la scheda si apre da una
+   piccola area "i", non dalla riga intera, perché sul telefono avrebbe rubato il tocco che serve a schierare.
+5. **Bot formazioni nel cron**: FATTO (`scripts/fanta_bots.py` + step in `fanta.yml`, dopo le probabili di cui legge
+   il file). **Turni del calendario dal 5° in poi**: ancora bloccato, servono i dati dall'utente (§19).
+   **Statistiche combinate e consiglio AI, nuova scheda giocatore stile FantaLab, voti delle redazioni (5 decisioni
+   aperte), articoli fase 1**: da fare.
+
+### 22.2 Resta da fare sull'app (dopo il 2026-09-07)
+- **Le UI delle quattro funzioni il cui SQL è pronto** (§13 punti 4, 6, 7, 8): correzione voti admin, formazioni
+  nascoste, classifica pubblica condivisibile, scambi e svincoli. Le RPC sono documentate in testa a
+  `fix-013-lega.sql` con nome, parametri e valore di ritorno.
+- **La UI del Mantra** (§13 punto 9): `fanta/app.js` ha ancora i soli 7 moduli Classic (`MODULES`, riga ~598) e
+  `wantOf` che divide su tre numeri. I 17 moduli Mantra e i loro slot stanno in `fix-014-mantra.sql`.
+- **`standingOf` è una seconda copia della logica di classifica** (accanto a `renderStandings`): due sorgenti di
+  verità per lo stesso numero, che possono già divergere sull'ordine dei pari merito. Da unificare.
+- Alert deadline formazioni.

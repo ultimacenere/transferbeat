@@ -68,18 +68,55 @@ def clean_title(t):
             t, fonte = parts[0].strip(), parts[1].strip()
     return t, fonte
 
+# Le 4 colonne sono un contratto verso il front-end (index.html, render_site.py): non se ne
+# aggiungono altre. Ma lo step che lancia build.py (update.yml) non ha "|| echo" - come non
+# ce l'ha quello di fastlane.py in fast.yml - quindi una categoria in piu' in
+# rules/keywords.<lang>.json non deve far esplodere il job e congelare il sito: la si rimappa
+# sul default di classify, avvisando una volta sola. Stessa messa in sicurezza in fastlane.py.
+COLONNE = ("rumor", "obj", "conf", "done")
+STATO_DEFAULT = "rumor"
+_STATI_IGNOTI = set()
+
+def norm_stato(stato):
+    """Riporta una categoria qualsiasi su una delle 4 colonne. L'avviso e' uno per categoria,
+    non uno per notizia (sarebbero migliaia di righe di log)."""
+    if stato in COLONNE:
+        return stato
+    k = str(stato)
+    if k not in _STATI_IGNOTI:
+        _STATI_IGNOTI.add(k)
+        print("    ATTENZIONE: categoria '" + k + "' non prevista: notizie messe in '" + STATO_DEFAULT + "'")
+    return STATO_DEFAULT
+
+_REGOLE_VUOTE = set()
+
+def _controlla_regole(kw, dove="build"):
+    """Un file di regole valido come JSON ma con "categorie" (o "categorie_ordine") VUOTA fa ricadere OGNI
+    notizia sul default: la board esce tutta in una colonna, il job resta verde e nessuno se ne accorge.
+    norm_stato non puo' intercettarlo, perche' avvisa solo per categorie SCONOSCIUTE, non per l'assenza di
+    categorie. L'avviso e' uno solo per lingua, non uno per notizia."""
+    if not (kw.get("categorie_ordine") and kw.get("categorie")):
+        if dove not in _REGOLE_VUOTE:
+            _REGOLE_VUOTE.add(dove)
+            print("    ATTENZIONE: regole di classificazione vuote o incomplete (" + dove + "): "
+                  "TUTTE le notizie finiranno in '" + STATO_DEFAULT + "'")
+
 def classify(title, kw):
+    # rules/keywords.*.json si modifica a mano: se manca (o e' vuota) una delle due chiavi la
+    # classificazione ricade sul default invece di sollevare KeyError e fermare il job.
+    # fastlane.py, che legge gli stessi file, gia' li carica con questi default.
+    _controlla_regole(kw)
     low = title.lower()
-    for stato in kw["categorie_ordine"]:
-        for parola in kw["categorie"][stato]:
+    for stato in kw.get("categorie_ordine") or ():
+        for parola in (kw.get("categorie") or {}).get(stato, ()):   # categoria elencata nell'ordine ma senza parole: inerte, non un crash
             if parola in low:
-                return stato
-    return "rumor"
+                return norm_stato(stato)
+    return STATO_DEFAULT
 
 def reliability(fonte, kw):
     f = (fonte or "").lower()
     for liv in ("3", "2"):
-        for testata in kw["affidabilita"].get(liv, []):
+        for testata in (kw.get("affidabilita") or {}).get(liv, []):   # stesso file di regole di classify: nessun accesso nudo
             if testata in f:
                 return int(liv)
     return kw.get("_default_affidabilita", 1)
@@ -302,7 +339,7 @@ def assign_movements(movs, teams):
         cl = match_club(entry.get("club", ""), rows)
         if cl and cl == team:
             return  # club di provenienza/destinazione = stessa squadra: non e' un movimento
-        per.setdefault(team, {"rumor": [], "obj": [], "conf": [], "done": []})[st].append(entry)
+        per.setdefault(team, {"rumor": [], "obj": [], "conf": [], "done": []})[norm_stato(st)].append(entry)
     for m in movs:
         rc = roster_club(m["giocatore"])
         if rc:
@@ -407,7 +444,7 @@ def merge_nomi(old, new, today, max_age=60):
                 cur = m[key]; cur["_seen"] = today
                 if st in ("conf", "done"):
                     cur["_strong"] = today
-                if STATE_RANK[st] > STATE_RANK[cur["stato"]]:
+                if STATE_RANK.get(st, 0) > STATE_RANK.get(cur["stato"], 0):
                     cur["stato"] = st; cur["direzione"] = it.get("direzione", cur["direzione"])
                     if it.get("club"):
                         cur["club"] = it["club"]
@@ -438,7 +475,7 @@ def merge_nomi(old, new, today, max_age=60):
             same_move = bool(a.get("club")) and a.get("club") == b.get("club") and a.get("direzione") == b.get("direzione")
             if k == last or k in base or base in k or _same_first(base, k) or same_move:
                 b = m.pop(k)
-                if STATE_RANK[b["stato"]] > STATE_RANK[a["stato"]]:
+                if STATE_RANK.get(b["stato"], 0) > STATE_RANK.get(a["stato"], 0):
                     a["stato"] = b["stato"]; a["direzione"] = b["direzione"]
                 if b.get("club") and not a.get("club"):
                     a["club"] = b["club"]
@@ -463,9 +500,9 @@ def merge_nomi(old, new, today, max_age=60):
             strong = it.get("_strong")
             if (not strong) or _days_since(strong) >= STRONG_TTL:
                 st_cur = "obj"                         # done/conf non riconfermati da prove: declassa a obiettivo
-        out[st_cur].append({"giocatore": it["giocatore"], "direzione": it["direzione"],
-                            "club": it["club"], "_first": it["_first"], "_seen": it["_seen"],
-                            "_strong": it.get("_strong", "")})
+        out[norm_stato(st_cur)].append({"giocatore": it["giocatore"], "direzione": it["direzione"],
+                                        "club": it["club"], "_first": it["_first"], "_seen": it["_seen"],
+                                        "_strong": it.get("_strong", "")})
     for st in out:
         out[st].sort(key=lambda x: x["_seen"], reverse=True)
     return out
@@ -549,7 +586,7 @@ def build_board(teams, kw, lang, loc, direct_items=None, today=""):
         items.sort(key=lambda x: (x["affidabilita"], x["pub"] or ()), reverse=True)
         colonne = {"rumor": [], "obj": [], "conf": [], "done": []}
         for it in items:
-            col = colonne[it["stato"]]
+            col = colonne[norm_stato(it["stato"])]
             if len(col) < MAX_PER_COL:
                 col.append({"titolo": it["titolo"], "fonte": it["fonte"],
                             "link": it["src_href"] or it["gn_link"],
@@ -579,11 +616,22 @@ def build_board(teams, kw, lang, loc, direct_items=None, today=""):
                          "colonne": colonne, "feed": feed, "nomi": nomi}
     return squadre
 
+def search_lang(val, lang):
+    """Query di ricerca per lingua: "search" puo' essere una stringa (uguale per tutte le
+    lingue, forma attuale di teams.json) o un dizionario {"it":..,"en":..,"es":..}, cosi'
+    teams.json si arricchisce senza rimettere mano al codice.
+    La usano ENTRAMBI i blocchi di teams.json (leghe_home e mondo_home): sono adiacenti e
+    chi documenta la forma a dizionario la applicherebbe a tutti e due, e un accesso nudo
+    lascerebbe "stringa + dict" -> TypeError dentro build_home."""
+    if isinstance(val, dict):
+        val = val.get(lang) or val.get("it") or next((v for v in val.values() if v), "")
+    return (val or "").strip()
+
 def build_home(teams, kw, lang, loc):
     base_kw = teams["kw"][lang]
     pool = []
     for lega in teams.get("leghe_home", []):
-        for r in fetch(base_kw + " " + lega["search"], 8, loc):
+        for r in fetch((base_kw + " " + search_lang(lega.get("search"), lang)).strip(), 8, loc):
             r["categoria"] = lega["label"][lang]
             pool.append(r)
     for it in pool:
@@ -605,7 +653,9 @@ def build_home(teams, kw, lang, loc):
     secondari = [slim(e) for e in pick[1:7]]
     mondo = []
     for m in teams.get("mondo_home", []):
-        got = fetch(m["search"], 8, loc)
+        # come per le leghe: la query va nella lingua della pagina, altrimenti il solo
+        # parametro di localizzazione non basta e con locale IT/ES tornano fonti inglesi
+        got = fetch((base_kw + " " + search_lang(m.get("search"), lang)).strip(), 8, loc)
         for g in got:
             g["quando"] = time_ago(g.get("pub"), lang)
         cand = [g for g in got if age_days(g.get("pub")) <= 10]

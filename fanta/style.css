@@ -90,6 +90,11 @@ tr.me td{background:var(--panel)}tr.me td:first-child{box-shadow:inset 2px 0 0 v
 td.num,th.num{text-align:right;white-space:nowrap}
 .tw{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:12px;background:#fff}
 .tw table{min-width:100%}
+/* .tw dentro una card, nelle regole o in un tabellino: serve solo lo scroll, non una seconda cornice */
+.card:not(.plan)>.tw,.modtab .tw,.sheet .tw{border:0;border-radius:0;background:transparent}
+.modtab .tw table{min-width:0}
+/* colonne affiancate: senza min-width:0 una tabella larga allarga la griglia invece di far scorrere il suo .tw */
+.grid>*,.grid3>*,.match .sides>*{min-width:0}
 a.pl{font-weight:600;color:var(--txt);border-bottom:1px dotted #b7c0ca}a.pl:hover{color:var(--brand-ink);border-bottom-color:var(--brand-ink)}
 th.srt{cursor:pointer;white-space:nowrap;user-select:none}th.srt:hover,th.srt.on{color:var(--txt)}th.srt.on{background:var(--panel)}
 /* badge ruolo (stesso disegno di .rb del sito) */
@@ -179,7 +184,7 @@ div.tabs a.on{background:var(--violet);border-color:var(--violet);color:#fff}
 .match .sides{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:760px){.match .sides{grid-template-columns:1fr}}
 .match table td{padding:4px 6px}
-.match .em{font-size:13px;letter-spacing:1px}
+.match .em{display:inline-flex;gap:4px;align-items:center;vertical-align:middle}
 .match tr.tot td{font-weight:700;border-top:2px solid var(--line)}
 .match tr.ex td{color:var(--muted)}
 .match tr.grand td{font-weight:700;font-size:15px;background:var(--panel)}
@@ -240,6 +245,36 @@ details.help{margin:8px 0 12px;border:1px solid var(--line);border-radius:12px;p
 .pc-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px 10px;padding:10px 12px}.pc-grid .lab,.pc-row .lab{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:600}.pc-grid b{font-size:16px}
 .pc-row{padding:2px 12px 8px}.pc-row .lab{display:inline-block;margin-right:4px}.pc-inj{color:var(--err);font-weight:600}
 .pc-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 12px;border-top:1px solid var(--line)}.pc-foot a.pl{font-weight:700;color:var(--violet);border-bottom:0}
+/* ---- icone monocrome dei bonus nei tabellini (al posto delle emoji): ereditano il colore del testo, quindi nelle righe
+   del 6 politico diventano arancioni come il resto della riga ---- */
+.bi{display:inline-flex;align-items:center;gap:2px;vertical-align:-3px}
+.bi svg{width:15px;height:15px;display:block;flex:none}
+.bi.amm{color:var(--warn)}.bi.esp{color:var(--err)}   /* cartellino giallo e rosso: qui il colore porta il significato, non e' decorazione */
+/* ---- piccola area "i": apre la scheda rapida dove la riga intera serve gia' a un'altra azione (asta, Schiera) ---- */
+.pinfo{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--muted);font:italic 700 11px/1 Georgia,'Times New Roman',serif;cursor:pointer;flex:none;user-select:none}
+.pinfo:hover{border-color:var(--violet);color:var(--violet)}
+.pinfo:focus-visible{border-color:var(--violet);color:var(--violet);outline:2px solid var(--violet);outline-offset:2px}
+.slot{position:relative}
+.slot .pinfo{position:absolute;top:-3px;right:4px;width:17px;height:17px;border-color:rgba(0,0,0,.18);box-shadow:0 1px 3px rgba(0,0,0,.35);z-index:2}
+.auction .pinfo{background:transparent;border-color:rgba(255,255,255,.55);color:#fff;vertical-align:middle}
+.auction .pinfo:hover,.auction .pinfo:focus-visible{border-color:#fff;color:#fff;outline-color:#fff}
+.search .pinfo{margin-left:6px}
+@media(hover:none){.pinfo{width:24px;height:24px;font-size:13px}.slot .pinfo{width:20px;height:20px;font-size:12px;top:-4px;right:2px}}   /* sul telefono e' un bersaglio da dito */
+/* ---- home: una card per lega, con l'azione della settimana in evidenza ---- */
+.lgcards{display:grid;gap:12px}
+.lgcard{border-left:4px solid var(--brand)}
+.lgcard .lgtop{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.lgcard .lgtop b{font-size:17px}
+.lgcard .lgpos{margin-top:6px;font-size:14px}
+.lgcard .lgact{margin-top:10px;padding-top:10px;border-top:1px solid var(--line2)}
+.lgcard .lgact p{margin-bottom:8px}
+.lgcard .lgact .row>button{flex:0 1 auto}
+/* ---- crea lega in due passi: il passo 2 resta nel DOM anche chiuso (readSettingsForm legge tutti i campi) ---- */
+.stpl{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--violet);margin:14px 0 0}
+.advrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0 0}
+.advrow button{flex:0 0 auto}.advrow .advhint{flex:1 1 180px}
+/* ---- la chat dentro la voce Messaggi: i miei messaggi a destra, quelli dello staff a sinistra ---- */
+#msgList .mine .cm.staff{align-self:flex-start;background:var(--panel)}
+#msgList .mine .cm.user{align-self:flex-end;background:var(--violet-bg)}
 /* ---- mobile ---- */
 @media(max-width:760px){
   .wrap{padding:0 16px}main.wrap{padding-top:12px;padding-bottom:32px}h1{font-size:28px}h2{font-size:18px}.vh{font-size:22px}.card h2{font-size:16px}.card{padding:14px}
@@ -263,5 +298,15 @@ details.help{margin:8px 0 12px;border:1px solid var(--line);border-radius:12px;p
   .slot .nm{font-size:13px}.slot .tm{font-size:11px}
   .bench .brow{gap:6px}.bench .slot{flex:0 0 72px}.bench .slot .shirt{width:38px;height:38px;line-height:38px;font-size:14px}
   div.tabs a{padding:4px 10px}
+  /* filtri del listone sul telefono: griglia invece di flex, ricerca a tutta larghezza, controlli a due colonne, niente overflow */
+  .fbar{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .fbar>*{flex:none;width:100%;min-width:0}
+  .fbar>input{grid-column:1 / -1}
+  .fbar .chk1{grid-column:1 / -1;width:auto}
+  .fbar2{gap:6px}.fbar2>*{flex:1 1 auto;min-width:0}
+  .fbar2 .lab,.fbar2 .small{flex:1 1 100%}
+  .fbar2 select{max-width:none;width:100%}
+  .lgcard .lgact .row{gap:6px}.lgcard .lgact .row>button{flex:1 1 100%}
 }
+@media(max-width:360px){.fbar{grid-template-columns:1fr}}   /* schermi molto stretti: un controllo per riga */
 .chatpanel.hidden{display:none}
