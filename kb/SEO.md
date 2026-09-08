@@ -89,7 +89,7 @@ Da `data/fanta/*.json` (committati dal workflow `fanta.yml`), generate da `rende
   sui nomi dei giocatori (unico traffico organico attuale, §2) ora hanno una pagina dedicata.
 - Pagine squadra: sezione "Statistiche" (title e description aggiornati: "notizie, statistiche, classifica…"), rosa con link alle schede,
   stemma con i colori sociali. Listone, voti e titolari linkano i nomi alle schede (maglia interna a tre livelli: squadra → giocatore → voti).
-- Dati `data/stats/*.json` da `scripts/stats_pull.py` (API-Football), rigenerazione in `fanta.yml`; niente foto finché non è verificata la licenza.
+- Dati `data/stats/*.json` da `scripts/stats_pull.py` (API-Football), rigenerazione in `fanta.yml`. Foto dei giocatori ATTIVE dal 2026-09-08 (licenza ancora da verificare, decisione di Pierluigi): 570 schede su 681, le altre 111 restano senza perché il CDN serve una sagoma anonima al posto del ritratto (vedi kb/FANTATB.md §14 e scripts/foto_check.py).
 
 ## 4. Verifica dopo ogni intervento
 - `py -X utf8 scripts/render_site.py` deve finire con `render_site OK`; poi `node --check` sugli script inline delle hub e `grep -c '&lt;p&gt;'` a zero.
@@ -179,16 +179,65 @@ prima il desktop poi l'app. Etichetta della board nel menu: "Notizie" (default; 
   `FANTA_BAR` (Panoramica, Probabili formazioni, Voti /fantacalcio/voti.html, Listone, Infortunati e squalificati /fantacalcio/titolari.html, Regolamento,
   Guida all'asta); `CAMP_BAR` (Tutte + 6 competizioni + Mondiale 2026); `FOOTER` a 3 colonne (Sezioni, Fantacalcio, TransferBeat: chi siamo, fonti, dati aperti,
   EN/ES, archivio Mondiale) da cui deriva `SITELINKS`.
-- Funzioni: `shell_header(here, bar, bar_here, cta)`, `section_bar`, `shell_footer`, `ribbon()` (48 px blu notte, CTA + X, memoria 7 giorni in localStorage
+- Funzioni: `shell_header(here, bar, bar_here, cta)`, `section_bar`, `shell_footer`, `ribbon()` (48 px viola pieno --ink, CTA + X bianchi dal 2026-09-08, memoria 7 giorni in localStorage
   `tb_ribbon`; MAI nel ramo Fantacalcio), `breadcrumb_html`, `page(..., bar=, bar_here=)`, `apply_shell(path, here, bar, bar_here, promo)` per le pagine a mano.
   `here` accetta anche i nomi vecchi ("Live"→Notizie, "FantaTB"→Fantacalcio). `fanta/promo.js` ELIMINATO: nessuna pagina lo include più.
-- Token CSS (`:root`): --bg #f6f4fb, --card #fff, --line #e5e1ee, --txt #161b21, --txt2 #3d4750, --muted #5b6670, --brand #ff6a00 (mai testo bianco sopra:
+- Token CSS (`:root`, valori del 6 settembre, SUPERATI dalla variante calda del 2026-09-08: vedi §7.1b): --bg #f6f4fb, --card #fff, --line #e5e1ee, --txt #161b21, --txt2 #3d4750, --muted #5b6670, --brand #ff6a00 (mai testo bianco sopra:
   testo --ink #1b1140), --brand-ink #c24d00, --violet #4b1d95, --ok/--warn/--err, badge ruolo --rP/--rD/--rC/--rA, --grad (gradiente firma, al massimo uno per
   pagina); alias vecchi (--accent, --done, --rumor, --red) mantenuti. Componenti: .secbar, .kpis/.kpi, .rb (badge ruolo), .pill, .pol (6 politico), .door, .grad,
   .status, .tscroll (tabelle su mobile). Niente emoji nel markup generato.
 - Pagine a mano (index, board, campionati, fonti, mondiali.html): tre marcatori `<!--shell:css-->`, `<!--shell:header-->`, `<!--shell:footer-->` riempiti da
   `apply_shell` a ogni `render_site.py` (prima delle inject `static:`); lo `<style>` proprio resta DOPO il blocco shell:css. La home ha il nuovo marcatore
   `<!--static:fanta-->` (blocco Fantacalcio) e linka /giocatori/; le tab campionato puntano alle URL statiche /campionati/<slug>.html.
+### 7.1b Variante calda (2026-09-08, approvata da Pierluigi sulla tela di design)
+Le superfici bianche sono diventate grigio chiaro e le superfici scure hanno preso un gradiente caldo. Token nuovi in `:root`:
+- superfici: `--bg #e8e8ed` (fondo), `--card #f7f7f9` (schede), `--panel #eeeef2`, `--line #d8d8e0`, `--line2 #e3e3e9`.
+  Lo stacco scheda/fondo sale da 1,09 a 1,14: le schede si distinguono un po' più di prima, non solo per il bordo.
+- `--grad-bar: linear-gradient(100deg,#2c0f57,#5c1878 30%,#9c2743 62%,#a83a1a)` su `header.site` e `.foot`.
+  La coda si ferma su un arancio bruciato per una ragione misurata: con `#c2410c` le voci del menu (#e7dcf9), il testo
+  del footer (#e6dbf5) e il suo hover (#ffd7a8) stavano fra 3,83 e 4,32, cioè sotto 4,5. Con `#a83a1a` il peggiore è 4,73.
+- `--grad` (blocchi promozionali `.grad` e `.lp-final`) RIDEFINITO: prima andava da arancio a viola e il bianco sopra
+  l'arancio faceva 2,6. Ora `linear-gradient(105deg,#5b21b6,#a21caf 32%,#e11d48 62%,#c24d07)`: il testo bianco parte dal
+  viola e nel punto peggiore fa 4,82.
+- Sul caldo i pulsanti arancioni sparivano (arancio su arancio): `header.site a.cta` e `.ribbon .rb-cta` sono bianchi con
+  testo `#2c0f57`. Nella barra di sezione, che resta chiara, il CTA arancione è rimasto.
+- Il ribbon è rimasto viola pieno (`--ink`) e NON ha preso il gradiente: testata + ribbon + striscia rossa dell'ultim'ora
+  facevano tre bande calde di fila. Il viola in mezzo fa da respiro. La barra di sezione resta chiara perché è sticky e
+  non deve fare una seconda banda quando si attacca in alto.
+- Il testo dentro la testata: logo `#fff` con la B `#ffb673`, voci `#e7dcf9`, voce attiva `#fff` con la sottolineatura
+  `#ffb673`. Footer: titoli `#fff`, testo `#e6dbf5`, link `#f0e7fa`, hover `#ffd7a8`, riga del copyright `rgba(255,255,255,.22)`.
+- Applicata anche fuori dal guscio: `.pcard` (render_site), `.lcard` (render_articles), `.pf-idx a` (render_probabili),
+  `.lp-proof` e `.lp-final` (render_landing), e il CSS locale di index/board/campionati/fonti (17 superfici).
+  Restano bianchi solo i pulsanti che stanno SOPRA una superficie scura: `.grad .btn`, `.lp-hero .btn`, i due CTA di cui sopra.
+- Tutti i contrasti sono stati calcolati, non stimati: testo sulle schede 16,2; attenuato 5,5; link viola 10,3; hover 4,5;
+  i quattro colori ruolo fra 4,56 e 5,20; ok/warn/err sui rispettivi fondi fra 4,54 e 4,80.
+
+#### 7.1c Cosa è emerso dalla revisione (stesso giorno, 48 agenti in due passate)
+- **594 pagine su 1375 erano rimaste alla veste vecchia**: tutti gli articoli (197 × 3 lingue + 3 indici). Causa: dopo un
+  cambio del guscio va rilanciato OGNI generatore, e `render_articles.py` è a parte — nessun workflow lo chiama
+  (`update.yml` e `fanta.yml` lanciano solo `render_site.py`). Nessun errore da nessuna parte, `git status` mostrava
+  807 file cambiati senza il minimo segnale che ne mancasse un'intera sezione.
+  **Rimedio strutturale**: `scripts/guard.py` ora estrae la riga `:root{--bg:…}` da `site_common.py` e BLOCCA il commit
+  se una pagina non ce l'ha, elencando le cartelle indietro e il comando da lanciare. Escluse `fanta/` (guscio proprio,
+  ora allineato a mano) e `kb/`. La guardia è testata in entrambe le direzioni: riconosce la pagina vecchia e, se non
+  riesce a leggere il guscio, lo dichiara invece di approvare.
+- **L'app FantaTB** (`fanta/style.css`) teneva una copia a mano dei token: allineata (superfici, `--brand-ink`, `--grad`
+  invertito, `--grad-bar`, testata a gradiente con logo e voci schiariti, pulsante utente bianco).
+- **Regressioni di contrasto chiuse**: `.lp-final .btn` era arancione sulla coda arancione del gradiente (2,23 → bianco);
+  `nav.secbar` sticky aveva **esattamente** il colore delle schede che le scorrono sotto (1,00: aggiunti bordo inferiore
+  e ombra); il ticker rosso della home si fondeva con la testata a ribbon chiuso (1,20: filetto chiaro sopra);
+  `--brand-ink` #c24d00 → **#ad4400** (hover dei link: 3,95 → 4,77); serie dei grafici #a7b0ba → **#828d9a** (2,05 → 3,15)
+  e #eb6834 → **#d4551f** (2,99 → 3,83), asse #c3c2b7 → #9a9a8f.
+- **`<meta name="theme-color" content="#2c0f57">` e `<link rel="icon">`** su tutte le pagine (guscio, articoli, app):
+  con la testata scura la barra del browser su mobile restava bianca.
+- **`/favicon.png` non esisteva** ed era citato dal JSON-LD `Organization` di 608 pagine: 404. Ora lo genera
+  `scripts/make_og.py` (gradiente della testata + "TB" in Georgia, 512px), insieme alle og:image.
+- **Nota sul lastmod**: un cambio di guscio sposta il `lastmod` di tutte le pagine, perché `LastMod.touch` fa l'hash
+  dell'HTML intero e il CSS è inline. È il comportamento voluto per un restyling (le pagine sono davvero cambiate),
+  ma va saputo: non è "il contenuto è cambiato", è "la pagina è cambiata".
+- Resta aperto e NON è colpa della veste: il pulsante arancione `--brand` non si stacca da nessuna delle due superfici
+  (2,68 sulle schede, 2,35 sul fondo) — era 2,79 sul bianco. Serve un bordo o un arancio più scuro, da decidere.
+
 ### 7.2 Alberatura e URL (3 livelli, tutto entro 3 clic dalla home; una sola URL rinominata, vedi §7.3.13)
 - Nuove: `/fantacalcio/voti.html` (URL fissa = ultima giornata; le `voti-giornata-N.html` restano archivio, quella della giornata corrente ha canonical su voti.html
   e sta fuori sitemap), `/fantacalcio/regolamento.html` (FAQPage), `/fantacalcio/guida-asta.html` (HowTo), `/fantacalcio/consigli.html` (ItemList, "chi schierare"

@@ -37,6 +37,51 @@ def cur_lines(path):
     with open(path, "rb") as f:
         return f.read().count(b"\n")
 
+# Pagine che NON usano il guscio del sito e che quindi non devono avere i suoi token:
+# l'app FantaTB ha un CSS proprio, i report in kb/ non sono pagine pubblicate.
+SENZA_GUSCIO = ("fanta/", "kb/")
+
+def riga_token():
+    """La riga ':root{...}' del guscio: e' l'impronta della veste corrente."""
+    qui = os.path.dirname(os.path.abspath(__file__))
+    with open(os.path.join(qui, "site_common.py"), encoding="utf-8") as f:
+        css = f.read()
+    i = css.find(":root{--bg:")
+    if i < 0:
+        return None
+    return css[i:css.index("\n", i)]
+
+def veste_disallineata(radice):
+    """Le pagine che non hanno i token del guscio corrente, cioe' quelle rimaste a una veste vecchia.
+
+    Perche' serve: l'8 settembre il guscio e' cambiato, sono stati rigenerati giocatori, squadre,
+    campionati e fantacalcio, ma NON gli articoli - render_articles.py e' un generatore a parte e
+    nessuno lo ha rilanciato. Risultato: 594 pagine su 1375 con la testata di ieri, nessun errore da
+    nessuna parte, e `git status` che mostrava 807 file cambiati senza il minimo segnale che ne
+    mancasse un'intera sezione. Un cambio di veste non e' finito finche' OGNI pagina non lo porta.
+    """
+    impronta = riga_token()
+    if impronta is None:
+        return None, []          # non so qual e' la veste corrente: lo dice il chiamante
+    indietro = []
+    for cartella, sub, files in os.walk(radice):
+        sub[:] = [d for d in sub if d not in (".git", "node_modules", ".claude")]
+        for nome in files:
+            if not nome.endswith(".html"):
+                continue
+            p = os.path.join(cartella, nome)
+            rel = os.path.relpath(p, radice).replace(os.sep, "/")
+            if rel.startswith(SENZA_GUSCIO):
+                continue
+            try:
+                with open(p, encoding="utf-8", errors="replace") as f:
+                    testo = f.read()
+            except OSError:
+                continue
+            if ":root{--bg:" in testo and impronta not in testo:
+                indietro.append(rel)
+    return impronta, indietro
+
 def main():
     # via di fuga annunciata dal messaggio di stop piu' sotto: basta la DEFINIZIONE della variabile,
     # come in carica-modifiche.bat ("if not defined TB_FORCE"), altrimenti lo stesso comando darebbe
@@ -93,7 +138,32 @@ def main():
         print("  (Se la riduzione e' voluta, rilancia con:  set TB_FORCE=1 )")
         print("  ======================================================================")
         return 1
-    print("guard: nessun troncamento sospetto.")
+    radice = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    impronta, indietro = veste_disallineata(radice)
+    if impronta is None:
+        print("STOP: non trovo la riga ':root{--bg:' in site_common.py.")
+        print("Non posso sapere qual e' la veste corrente, quindi non posso dire se le pagine sono allineate.")
+        print("Caricamento ANNULLATO: meglio fermarsi che pubblicare al buio.")
+        return 1
+    if indietro:
+        per_cartella = {}
+        for rel in indietro:
+            c = rel.rsplit("/", 1)[0] if "/" in rel else "(radice)"
+            per_cartella[c] = per_cartella.get(c, 0) + 1
+        print("")
+        print("  ==================  STOP: pagine con una VESTE VECCHIA  ==================")
+        for c in sorted(per_cartella):
+            print("   " + c + ": " + str(per_cartella[c]) + " pagine")
+        print("   totale: " + str(len(indietro)) + " pagine non rigenerate dopo l'ultimo cambio del guscio.")
+        print("  Ogni generatore va rilanciato, non solo render_site.py. Gli articoli hanno il loro:")
+        print("     cd scripts")
+        print("     py -X utf8 -c \"import articles, render_articles; render_articles.render_all("
+              "articles.all_articles(), 'https://transferbeat.com', articles.PAGES, articles.DATA)\"")
+        print("     py -X utf8 render_site.py")
+        print("  Commit ANNULLATO: pubblicare adesso darebbe un sito con due vesti diverse.")
+        print("  =========================================================================")
+        return 1
+    print("guard: nessun troncamento sospetto; veste uniforme su tutte le pagine.")
     return 0
 
 # corpo in main(): cosi' guard.py resta importabile (prima l'uscita anticipata su TB_FORCE

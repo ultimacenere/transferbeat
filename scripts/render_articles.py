@@ -216,7 +216,7 @@ ART_CSS = """.art{max-width:760px}
 .ytwrap{position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;background:#000}.ytwrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
 a.hllink{display:inline-flex;align-items:center;gap:4px;font-size:14px;font-weight:600}
 .hlnote{font-size:12px;color:var(--muted);margin-top:8px}.hlnote a{font-weight:600}
-.lcard{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-bottom:8px;color:var(--txt)}
+.lcard{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-bottom:8px;color:var(--txt)}
 .lcard:hover{border-color:var(--violet);color:var(--txt)}.lcard .h{font-size:18px;font-weight:600;line-height:1.25;margin:4px 0}.lcard .m{font-size:12px;color:var(--muted)}
 @media(max-width:760px){.fanta ul{grid-template-columns:1fr}.art .lead{font-size:16px}}"""
 CSS = SHELL_CSS + "\n" + ART_CSS
@@ -225,6 +225,9 @@ def head(title, desc, canon, alts, lang, og_img="", ld=None):
     """<head> completo: title/description entro i limiti (seo_title/seo_desc), canonical, hreflang (x-default = IT), og, CSS condiviso + regole articolo, JSON-LD."""
     h = ['<!DOCTYPE html><html lang="' + lang + '"><head><meta charset="UTF-8">', GA,
          '<meta name="viewport" content="width=device-width,initial-scale=1">',
+         # come nelle altre pagine: la barra del browser su mobile segue la testata
+         '<meta name="theme-color" content="#2c0f57">',
+         '<link rel="icon" href="/favicon.png" sizes="any">',
          '<title>' + esc(seo_title(title)) + '</title>',
          '<meta name="description" content="' + esc(seo_desc(desc)) + '">',
          '<link rel="canonical" href="' + esc(canon) + '">']

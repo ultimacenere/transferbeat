@@ -13,11 +13,16 @@ from site_common import esc, slugify, norm, load_json, DATA, SITE, SEASON, fdate
 
 # Palette dei grafici: blu e viola sono i token del sito (--blue #1f6fd6, --conf #7b46c9, definiti in site_common.CSS e validi
 # anche nei fill degli SVG inline); l'arancio dataviz e il grigio di de-enfasi non hanno un token e restano fissi.
-C1, C2, C3, GRAY = "var(--blue)", "#eb6834", "var(--conf)", "#a7b0ba"
+# il grigio di de-enfasi e l'arancio dataviz sono stati scuriti l'8 settembre: sulla superficie
+# grigia delle schede stavano a 2.05 e 2.99, sotto la soglia di 3.0 degli elementi grafici
+C1, C2, C3, GRAY = "var(--blue)", "#d4551f", "var(--conf)", "#828d9a"
 STATS_DIR = os.path.join(DATA, "stats")
 CUR = int(SEASON[:4])                                   # 2026
 PREV_LABEL = "%d-%s" % (CUR - 1, str(CUR)[2:])           # "2025-26"
-PHOTOS = False        # foto dal CDN di API-Football: da attivare solo dopo aver verificato la licenza d'uso
+PHOTOS = True         # foto dal CDN di API-Football (media.api-sports.io): attivate l'8 settembre su
+                      # decisione di Pierluigi, in attesa della verifica di licenza. Se la licenza non
+                      # dovesse consentirle basta rimettere False e rigenerare: nessun file locale da
+                      # cancellare, le immagini sono servite dal CDN e non copiate nel repo.
 API_ALIAS = {"AC Milan": "Milan", "AS Roma": "Roma", "Manchester City": "Man City", "Manchester United": "Man United",
              "Atletico Madrid": "Atlético Madrid", "Alaves": "Alavés", "Malaga": "Málaga", "Deportivo La Coruna": "Deportivo",
              "Hellas Verona": "Verona", "Ipswich": "Ipswich Town", "Coventry": "Coventry City", "Hull": "Hull City"}
@@ -658,8 +663,18 @@ def build_ctx(D, S, T):
             voti.setdefault(r["player_id"], {})[md] = r
     tit = {s["player_id"]: s for s in ((D.get("titolari") or {}).get("status") or [])}
     listone = {p["id"]: p for p in (D.get("listone") or {}).get("players") or []}
+    # API-Football risponde 200 anche quando la foto non ce l'ha: manda una sagoma grigia, sempre lo stesso
+    # file, per 115 giocatori su 685. Metterla in pagina significherebbe spacciare un segnaposto per un
+    # ritratto. L'elenco lo produce scripts/foto_check.py scaricando davvero le immagini e confrontandole.
+    _fp = load_json(os.path.join(STATS_DIR, "foto-placeholder.json"))
+    senza_foto = set(str(x) for x in ((_fp or {}).get("senza_foto_vera") or []))
+    if PHOTOS and not senza_foto:
+        # non e' un dettaglio da tacere: senza l'elenco le sagome tornano in pagina e nessuno se ne accorge
+        print("render_stats: ATTENZIONE, data/stats/foto-placeholder.json manca o e' vuoto. "
+              "Lancia py -X utf8 scripts/foto_check.py, altrimenti i giocatori senza ritratto "
+              "mostrano la sagoma anonima di API-Football come se fosse la loro foto.")
     ctx = {"P": P, "urls": player_urls(P), "voti": voti, "tit": tit, "listone": listone, "ref": role_reference(P),
-           "updated": (S.get("players") or {}).get("updated") or "", "summ": {}}
+           "updated": (S.get("players") or {}).get("updated") or "", "summ": {}, "senza_foto": senza_foto}
     ctx["summ"] = {int(pid): player_summary(ctx, int(pid), p) for pid, p in P.items()}
     return ctx
 
@@ -940,6 +955,11 @@ def render_player(D, S, T, p, ctx):
     vs = ctx["voti"].get(pid) or {}
     b = ['<p class="back"><a id="backLs" href="/fantacalcio/listone.html">← Torna al listone</a> · <a href="/fanta/#listone">listone nell\'app FantaTB</a> · <a href="/giocatori/">tutti i giocatori</a></p>']
     team_html = (badge(tteam, 26) + '<a href="%s">%s</a>' % (T.url(team_site), esc(team_site))) if tteam else esc(p.get("team_name") or "")
+    mostra_foto = PHOTOS and p.get("photo") and str(pid) not in (ctx.get("senza_foto") or set())
+    if mostra_foto:
+        # niente loading="lazy": questa immagine sta sopra la piega ed e' l'LCP della scheda,
+        # rimandarla peggiorerebbe proprio la misura che conta
+        b.append('<img class="photo" src="%s" alt="Foto di %s" width="120" height="120" fetchpriority="high" decoding="async" referrerpolicy="no-referrer">' % (esc(p["photo"]), esc(full)))
     b.append("<h1>%s</h1>" % esc(full))
     age = age_of((p.get("birth") or {}).get("date"))
     sub = [team_html, esc(role_it)]
@@ -956,8 +976,6 @@ def render_player(D, S, T, p, ctx):
     if not p.get("active"):
         sub.append('<span class="tag t-rumor">non più in Serie A</span>')
     b.append('<div class="sub">' + " · ".join(sub) + " · scheda aggiornata <time>%s</time></div>" % esc(fdate_it(ctx["updated"], True)))
-    if PHOTOS and p.get("photo"):
-        b.append('<img class="photo" src="%s" alt="%s" width="120" height="120" loading="lazy">' % (esc(p["photo"]), esc(full)))
     b.append('<p class="lead">%s</p>' % esc(desc))
     # KPI stagione in corso
     k = []
@@ -1060,6 +1078,8 @@ def render_player(D, S, T, p, ctx):
     # JSON-LD
     bd = p.get("birth") or {}
     ld = {"@context": "https://schema.org", "@type": "Person", "name": full, "url": canon, "jobTitle": "Calciatore, " + role_it, "description": desc[:500]}
+    if mostra_foto:
+        ld["image"] = p["photo"]
     if p.get("first"):
         ld["givenName"] = p["first"]
     if p.get("last"):

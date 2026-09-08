@@ -47,7 +47,7 @@ LANDING_CSS = """<style>
 .lp-hero .btn{background:#fff;color:var(--ink);margin:0}.lp-hero .btn:hover{background:#f3eefb;color:var(--ink)}
 .lp-hero .btn.line{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.8)}.lp-hero .btn.line:hover{background:rgba(255,255,255,.12);color:#fff}
 .lp-hero .fine{font-size:13px;opacity:.85;margin:0}
-.lp-proof{background:#fff;color:var(--txt);border-radius:16px;padding:16px 18px;box-shadow:0 24px 60px rgba(27,17,64,.35)}
+.lp-proof{background:var(--card);color:var(--txt);border-radius:16px;padding:16px 18px;box-shadow:0 24px 60px rgba(27,17,64,.35)}
 .lp-proof .h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 8px;margin:0 0 8px;font-size:16px;font-weight:700}.lp-proof .h>span:first-child{flex:1 1 auto;min-width:0}.lp-proof .h .pill{flex:0 0 auto;font-weight:600}
 .lp-proof table{font-size:13px}.lp-proof td,.lp-proof th{padding:7px 8px}.lp-proof td.n{font-weight:600}.lp-proof td.fv{font-weight:700}
 .lp-proof .f{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--panel);border-radius:8px;padding:8px 12px;font-size:13px;margin:10px 0 0}
@@ -63,8 +63,10 @@ LANDING_CSS = """<style>
 .lp-rules{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:0 0 8px}.lp-rules .card{margin:0}
 .lp-rules ul{margin:0;padding-left:18px;font-size:14px;color:var(--txt2)}.lp-rules li{margin:0 0 6px}
 .lp-doors{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 8px}.lp-doors .door{margin:0}
-.lp-final{background:var(--ink);color:#fff;border-radius:16px;padding:24px 28px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin:32px 0 0}
-.lp-final h2{color:#fff;margin:0 0 4px;font-size:22px}.lp-final p{margin:0;opacity:.9;font-size:14px}.lp-final .btn{margin:0}
+.lp-final{background:var(--grad-bar);color:#fff;border-radius:16px;padding:24px 28px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin:32px 0 0}
+.lp-final h2{color:#fff;margin:0 0 4px;font-size:22px}.lp-final p{margin:0;opacity:.9;font-size:14px}
+/* il bottone arancione finiva sulla coda arancione del gradiente (2.23): sul caldo diventa bianco */
+.lp-final .btn{margin:0;background:#fff;color:#2c0f57}.lp-final .btn:hover{background:#f3eefb;color:#2c0f57}
 @media(max-width:760px){.lp-hero{grid-template-columns:1fr;padding:20px 16px;border-radius:12px}.lp-hero h1{font-size:28px}.lp-hero .lead{font-size:16px}
 .lp-steps,.lp-feat,.lp-rules,.lp-doors{grid-template-columns:1fr}.lp-final{padding:20px 16px}}
 </style>"""

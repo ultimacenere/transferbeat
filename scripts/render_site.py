@@ -648,7 +648,7 @@ table.srt td.name{font-weight:600}table.srt td .rb{vertical-align:middle}
 </style>"""
 
 PCARD_CSS = """<style>
-.pcard{position:fixed;z-index:70;width:380px;max-width:calc(100vw - 16px);background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 16px 48px rgba(27,17,64,.18);font-size:13px;overflow:hidden}
+.pcard{position:fixed;z-index:70;width:380px;max-width:calc(100vw - 16px);background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 16px 48px rgba(27,17,64,.18);font-size:13px;overflow:hidden}
 .pcard .hd{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--panel);border-left:6px solid var(--violet)}
 .pcard .av{width:48px;height:48px;border-radius:50%;display:inline-grid;place-items:center;font-weight:700;font-size:16px;flex:none}
 .pcard .hd b{font-size:16px}.pcard .hd .m{font-size:12px;color:var(--muted)}.pcard .hd .rb{vertical-align:middle;margin-left:4px}

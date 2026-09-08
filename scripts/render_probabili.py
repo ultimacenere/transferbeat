@@ -15,7 +15,7 @@ FONT_SVG = "'Segoe UI',system-ui,-apple-system,Roboto,'Helvetica Neue',Arial,san
 PITCH_CSS = """
 .chips .pf-hint{border:0;background:none;padding:0 0 0 4px;font-weight:400;color:var(--muted)}
 .pf-idx{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:0 0 24px}
-.pf-idx a{display:flex;flex-direction:column;gap:4px;min-width:0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 10px;color:var(--txt);font-size:13px}
+.pf-idx a{display:flex;flex-direction:column;gap:4px;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 10px;color:var(--txt);font-size:13px}
 .pf-idx a:hover{border-color:var(--violet);color:var(--txt)}
 .pf-idx .t{display:flex;align-items:center;gap:5px;font-weight:600;min-width:0}.pf-idx .t .badge{margin:0}.pf-idx .t .vs{color:var(--muted);font-weight:400}
 .pf-idx .t span.n{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}

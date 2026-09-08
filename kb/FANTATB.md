@@ -246,6 +246,13 @@ Claude esegue questi comandi a richiesta man mano che l'utente avanza (crea lega
   `sitemap-pagine.xml`. Se si cambia una formula (§5-7) va aggiornato anche il testo delle pagine in `render_site.py` (VOTO_NOTE, FAQ, note del listone e dei titolari).
 
 ## 13. PENDING (in ordine di priorità)
+**Stato SQL al 2026-09-07 (sera): i fix 012, 013, 014 e 015 sono TUTTI ESEGUITI dall'utente su Supabase**,
+in quest'ordine e senza errori (il 015 verificato anche dal vivo: l'email allo staff arriva). Quindi il 6
+politico, i modificatori configurabili, le quattro funzioni di lega e le regole Mantra sono ATTIVE sul database.
+Cio' che resta di quei quattro fix e' solo l'INTERFACCIA in `fanta/app.js` (vedi §22.2).
+**Da fare subito dopo l'esecuzione del 012 e del 014**: ricalcolare le giornate 1-3 dalla scheda Calendario
+(pulsante Ricalcola), altrimenti i punteggi restano quelli della formula precedente.
+
 0. ~~Sincronizzare le rose~~ FATTO il 2026-09-03 alle 10:16 UTC (lanciato dall'utente): 16 disattivati (Leão, Nkunku, Kostić, Prati,
    Zappa, Petagna…), 2 cambi (Ricci → Como, Giacomone → Bologna), 11 rientrati e 5 nuovi quotati; ora 651 attivi e 34 inattivi.
    Nella lega test 9 usciti restano in rosa (Leão a "real" per 30): svincolarli o eliminare la lega. Ripetere `--check` prima dell'asta vera.
@@ -255,34 +262,42 @@ Claude esegue questi comandi a richiesta man mano che l'utente avanza (crea lega
 3b. **Copie locali del repo** (2026-09-04): Drive riallineata (backup `backup/drive-2026-09-04`); Desktop: backup pushato in
     `backup/desktop-2026-09-04` (b063c8f, lock stantio del 3/9 rimosso), il reset a origin/main + pulizia dei file spuri lo lancia
     l'utente fuori dagli orari delle pianificate (12:40, 16:10, 20:40); poi eliminare la cartella Drive (memoria e chiavi già copiate sul Desktop).
-3c. ~~**Chat: notifica email** allo staff~~ SQL SCRITTO il 2026-09-07: `fix-015-notifiche-chat.sql` (pg_net, trigger su
-    `messages`, silenzio configurabile per utente, chiave in una tabella con RLS senza policy). **Da eseguire dall'utente**,
-    che deve anche abilitare pg_net e incollare endpoint e chiave del servizio di invio con `set_notifica_chat(...)`.
+3c. ~~**Chat: notifica email** allo staff~~ **FATTO E FUNZIONANTE il 2026-09-07**: `fix-015-notifiche-chat.sql`
+    eseguito dall'utente, configurato e **verificato dal vivo (l'email arriva)**. pg_net era gia' abilitato e nello
+    schema `extensions`, come il trigger si aspetta. Silenzio configurabile fra due email per lo stesso utente
+    (default 15 minuti); la chiave sta in `notifica_config`, tabella con RLS senza policy, e non e' mai nel repo.
     Il trigger non puo' MAI far fallire l'inserimento del messaggio: la chat viene prima della notifica.
-4. Correzione voti dall'interfaccia admin: **SQL FATTO** il 2026-09-07 (`fix-013-lega.sql`: `league_overrides`,
+    **Trappola incontrata**, da ricordare per i prossimi file SQL: la prima versione proteggeva le due funzioni con
+    `is_staff()`, che si basa sull'utente autenticato. Dall'SQL Editor non ce n'e' nessuno, quindi la guardia bloccava
+    proprio l'unico uso previsto. E non basta accettare `auth.uid()` nullo: e' nullo anche per un utente ANONIMO
+    dell'app. Il discriminante corretto e' la presenza del contesto di richiesta di PostgREST
+    (`current_setting('request.jwt.claims', true)`), che c'e' per ogni chiamata dell'app e non c'e' dall'editor.
+4. Correzione voti dall'interfaccia admin: **FATTO ED ESEGUITO** il 2026-09-07 (`fix-013-lega.sql`: `league_overrides`,
    `set_rating_override`, `delete_rating_override`). **Manca la UI in `fanta/app.js`.**
 5. Probabili formazioni dalle notizie: **impegno infrasettimanale (coppe) e stima per i nuovi arrivi FATTI** il 2026-09-07
    in `fanta_probabili.py`. Resta l'alert deadline formazioni. Vedi §20 per i limiti che restano.
-6. Opzione di lega "formazioni nascoste fino alla deadline": **SQL FATTO** (`fix-013`, applicata lato server con RLS +
+6. Opzione di lega "formazioni nascoste fino alla deadline": **FATTO ED ESEGUITO** (`fix-013`, applicata lato server con RLS +
    trigger, SPENTA di default perche' la visibilita' e' una scelta esplicita dell'utente, §9). **Manca la UI.**
 7. ~~`/fanta/` in `sitemap.xml`; meta/SEO della pagina~~ fatto il 2026-09-03. La **classifica di lega pubblica e
-   condivisibile**: **SQL FATTO** (`fix-013`: `league_shares`, `set_standings_share`, `public_standings`, con codice non
+   condivisibile**: **FATTO ED ESEGUITO** (`fix-013`: `league_shares`, `set_standings_share`, `public_standings`, con codice non
    indovinabile sul modello delle liste obiettivi; espone SOLO nome squadra, punti e fantapunti — mai email, mai id
    utente, mai le rose). **Manca la UI.**
-8. Scambi fra squadre e svincoli con rimborso parziale: **SQL FATTO** (`fix-013`: `propose_trade`, `respond_trade`,
+8. Scambi fra squadre e svincoli con rimborso parziale: **FATTO ED ESEGUITO** (`fix-013`: `propose_trade`, `respond_trade`,
    `admin_trade`, `cancel_trade`, `release_own_player`; tutto in una transazione, rimborso al 50% di default,
    VIETATI a giornata in corso perche' falserebbero i punti di entrambe le squadre). **Manca la UI.**
 9. **Mantra: la premessa di questo pending era SUPERATA.** Diceva "i ruoli Mantra non esistono in nessuna API,
    assegnazione manuale di ~650 giocatori": non e' piu' vero dal 2026-09-04, perche' `fanta_quotazioni.py` legge gia'
    la colonna RM del listone ufficiale e la scrive in `players.role_mantra[]` (§16). Mancava solo il modo di gioco:
-   **SQL FATTO** il 2026-09-07 (`fix-014-mantra.sql`: 11 ruoli ufficiali, 17 moduli con i loro slot, validazione della
+   **FATTO ED ESEGUITO** il 2026-09-07 (`fix-014-mantra.sql`: 11 ruoli ufficiali, 17 moduli con i loro slot, validazione della
    formazione lato server, sostituzioni dalla panchina per slot Mantra, opzione di lega `modalita` con default CLASSIC
    — nessuna lega esistente cambia comportamento). **Manca la UI** (`fanta/app.js` ha ancora i soli 7 moduli Classic).
-   **Da verificare in un minuto**: che `players.role_mantra` sia davvero popolato oggi (le chiavi Supabase non sono nel
-   worktree, quindi nessuno ha potuto controllarlo). Poi Premier/Liga, che restano da fare.
+   **VERIFICATO il 2026-09-07: 533 giocatori su 533 hanno i ruoli Mantra popolati.** Quindi per il Mantra NON manca
+   nessun dato: manca solo l'interfaccia in `fanta/app.js`, che ha ancora i soli 7 moduli Classic (`MODULES`) e
+   `wantOf` che divide su tre numeri. I 17 moduli Mantra e i loro slot stanno nel database dal fix-014.
+   Poi Premier/Liga, che restano da fare.
 10. Rigenerare la service key Supabase prima dell'apertura al pubblico; valutare Supabase Pro se le leghe crescono.
 11. Listone da rifare dopo il mercato di gennaio (`fanta_players.py --prezzi`, o `task=listone` dal workflow); a fine mercato `--check` e sincronizzazione.
-12. Statistiche e schede (§14): verificare la licenza di foto e loghi API-Football prima di attivare `PHOTOS` in `render_stats.py`; heatmap/mappa
+12. Statistiche e schede (§14): la licenza di foto e loghi API-Football resta **da verificare** (le foto sono state comunque attivate l'8 settembre, vedi §14); heatmap/mappa
     posizioni rinviate a un collegamento con Opta o StatsBomb (API-Football non ha coordinate); schede giocatore per Premier e Liga solo se si accetta
     il peso nel repo (~18 MB per campionato, rigenerati a ogni giornata); carriera per stagione: **backfill IMPLEMENTATO** il 2026-09-07 (`stats_pull.py --carriera`, esplicito e mai automatico,
     con tetto di chiamate, ripresa e cache definitiva). Da lanciare quando conviene, tenendo conto che il piano API scade
@@ -317,7 +332,18 @@ barre ≤24px con punta arrotondata e 2px d'aria, linee 2px, marcatori con anell
 solo sui massimi, sempre una tabella accanto. I grafici sono `viewBox` 480 (720 a tutta larghezza, `max-width:720px`) così il testo non si rimpicciolisce.
 **Lancio manuale**: `py scripts/stats_pull.py` (o `--squadre` / `--giocatori`), poi `py scripts/render_site.py`. `render_site` cancella le schede
 non più generate (giocatori rinominati o usciti). Peso: `giocatori/` ~18 MB, `data/stats` ~3 MB; le schede cambiano a ogni giornata (voti).
-`PHOTOS = False` in `render_stats.py`: le foto del CDN API-Football restano spente finché non si verifica la licenza.
+**Foto dei giocatori (2026-09-08, decisione di Pierluigi).** `PHOTOS = True` in `render_stats.py`: tutte le schede di `/giocatori/`
+aprono con la foto del giocatore, tonda e a destra del titolo (`.photo` in `site_common.py`), servita dal CDN di API-Football
+(`media.api-sports.io`). Nessuna immagine viene copiata nel repo: sono hotlink con `fetchpriority="high"` (NON lazy: la foto
+sta sopra la piega ed è l'LCP della scheda), `decoding="async"`, `width`/`height` dichiarati e `referrerpolicy="no-referrer"`.
+La foto finisce anche nel JSON-LD `Person` (campo `image`), ma solo quando è una foto vera.
+**Il CDN risponde 200 anche quando la foto non ce l'ha**: manda una sagoma grigia anonima, sempre lo stesso file da 5.192 byte,
+per 115 giocatori su 685. Controllare lo stato HTTP non lo rivela: `scripts/foto_check.py` scarica tutte le immagini e le
+confronta per contenuto (md5), poi scrive `data/stats/foto-placeholder.json`; `render_stats` lo legge e per quegli id NON mette
+la foto — meglio nessun ritratto che un segnaposto spacciato per tale. Esito: **570 schede su 681 con foto vera**, 111 senza.
+Il file va rigenerato ogni tanto (`py -X utf8 scripts/foto_check.py`): API-Football aggiunge ritratti nel tempo, e senza
+rilanciarlo l'elenco invecchia e qualche foto vera resta nascosta. Se il file manca, `render_stats` lo dice a voce alta.
+La licenza d'uso **non è ancora verificata**: se dovesse risultare incompatibile basta rimettere `PHOTOS = False` e rigenerare.
 **Listone con MV, FMV, titolarità, presenze, gol, assist (2026-09-03, richiesta dell'utente).** `render_stats.player_summary` calcola per ogni giocatore
 MV (media dei voti FantaTB della stagione), FMV (media dei fantavoti), % titolarità (`player_status`), presenze/gol/assist di Serie A (blocchi `cur` di
 players.json, in mancanza dai voti). Compaiono: nella pagina statica `fantacalcio/listone.html` (colonne ordinabili, nome linkato alla scheda) e nella

@@ -165,8 +165,42 @@ def cover(c1, c2, parole, claim, piede):
     d.text((70, H - 62), "transferbeat.com · " + piede, font=fp, fill=(255, 255, 255))
     return im
 
+GRAD_BAR = [(44, 15, 87), (92, 24, 120), (156, 39, 67), (168, 58, 26)]   # --grad-bar del guscio
+
+
+def favicon(lato=512):
+    """L'icona del sito: il gradiente della testata con le iniziali in Georgia, come il logo.
+
+    Serviva davvero: /favicon.png era citato dal JSON-LD Organization di 608 pagine e non esisteva,
+    quindi ogni motore che andava a prenderlo trovava un 404. E con la testata diventata scura,
+    la scheda del browser senza icona stonava.
+    """
+    im = Image.new("RGB", (lato, lato), GRAD_BAR[0])
+    d = ImageDraw.Draw(im)
+    # gradiente diagonale a quattro fermate, riga per riga (stesso arco della testata)
+    for y in range(lato):
+        for seg in range(3):
+            a, b = GRAD_BAR[seg], GRAD_BAR[seg + 1]
+            y0, y1 = seg * lato / 3.0, (seg + 1) * lato / 3.0
+            if y0 <= y < y1:
+                k = (y - y0) / (y1 - y0)
+                d.line([(0, y), (lato, y)],
+                       fill=tuple(int(a[i] + (b[i] - a[i]) * k) for i in range(3)))
+                break
+    fl = font("georgiab.ttf", int(lato * 0.44))
+    testo = "TB"
+    larg = w_of(d, testo, fl)
+    cassa = d.textbbox((0, 0), testo, font=fl)
+    d.text(((lato - larg) / 2.0, (lato - (cassa[3] - cassa[1])) / 2.0 - cassa[1]), testo, font=fl, fill=WHITE)
+    return im
+
+
 def main():
     os.makedirs(IMG, exist_ok=True)
+    ico = favicon()
+    out = os.path.join(ROOT, "favicon.png")
+    ico.save(out, "PNG", optimize=True)
+    print("%-22s %6.1f KB" % ("favicon.png", os.path.getsize(out) / 1024.0))
     for nome, t, s, k in CARDS:
         im = card(t, s, k)
         out = os.path.join(IMG, nome)
