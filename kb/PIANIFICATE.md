@@ -16,6 +16,20 @@ con lo stesso nome, lo stesso orario e lo stesso prompt, copiato dal `.md` di qu
 
 ## Calendario (ora italiana)
 
+> **STATO REALE AL 2026-09-08 (verificato).** Delle nove pianificate qui sotto, in Cowork
+> (`C:/Users/User/Documents/Claude/Scheduled/`) ne esistono **solo TRE**: `recap-mattina-transferbeat`,
+> `focus-mercato-transferbeat`, `recap-serale-transferbeat`. Le sei nuove — `giocatore-del-giorno`,
+> `migliori-e-peggiori`, `confronto-x-o-y`, `partita-di-cartello`, `sorprese`, `rigoristi` — hanno il
+> prompt in `kb/pianificate/` ma **non sono mai state create come attività pianificate**: non sono mai
+> girate e non gireranno finché qualcuno non le crea in Cowork con il nome e il cron di questa tabella.
+> Lo dimostrano i tipi di articolo prodotti finora: solo `recap`, `lunch`, `storia`, `notti`, `scoop`.
+>
+> Le tre esistenti avevano ancora il **prompt vecchio**, senza la protezione anti-cancellazione scritta
+> il 7 settembre: allineate il 2026-09-08 copiando `kb/pianificate/<nome>.md` su
+> `Documents/Claude/Scheduled/<nome>/SKILL.md` (copie precedenti in `backup/pianificate-2026-09-08/`).
+> Regola da non dimenticare: **il prompt vive in due copie**, e modificarne una sola non ha alcun effetto
+> sul comportamento reale.
+
 | Ora | Giorni | Pianificata | Badge | Legge |
 |---|---|---|---|---|
 | 09:00 | ogni giorno | `giocatore-del-giorno` | FOCUS | dossier `giocatore` |

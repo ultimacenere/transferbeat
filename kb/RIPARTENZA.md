@@ -35,6 +35,22 @@ aggiornarsi da solo.** Il computer serve solo per: modifiche al codice, articoli
 - **Feed 2 (Telegram esperti, ogni 5 min)**: `fast.yml` → `scripts/fastlane.py` legge t.me/s/<canale>,
   classifica con Groq → `data/ultimora.json` sul **branch `live`** (niente deploy: il front-end lo legge
   da raw.githubusercontent con auto-refresh 60s).
+  **DIFETTO APERTO, misurato il 2026-09-08.** Il workflow dice `success` ogni 5 minuti e committa sempre
+  (il campo `aggiornato` cambia a ogni run, quindi git vede una modifica anche quando le notizie sono
+  identiche): dall'esterno sembra vivo, ma l'8 settembre alle 06:40 il log diceva `ultim'ora: 0 nuove,
+  50 totali` e la voce più recente era ferma alle 20:22 del giorno prima, dieci ore.
+  Due cause, entrambe verificate leggendo i canali:
+  1. **Dimarzio è muto**: il messaggio più recente ha 39 ore, tutti oltre `MAX_AGE_H = 12`. Dei due
+     canali di `data/experts.json` ne resta di fatto uno.
+  2. **Il filtro `transfer` scarta tutto il resto**: in `fastlane.main` c'è
+     `if not d.get("transfer"): continue`. A mercato CHIUSO i messaggi di Calciomercato.com sono
+     formazioni, gol e risultati, non trasferimenti: il modello li marca `transfer: false` e spariscono.
+     Le notizie che oggi si vedono nel feed (risultati, gol) sono entrate solo quando il modello NON
+     ha risposto e il codice è ripiegato sulle regole, che si accontentano del nome di una squadra.
+     Cioè: **quando il classificatore funziona il feed si svuota, quando fallisce si riempie.**
+  Il sito non è più solo di mercato ("il giornale del calcio"): il gate va allargato da "è un
+  trasferimento" a "è una notizia di calcio rilevante", oppure va aggiunta una seconda categoria
+  accanto a `transfer`. È una scelta editoriale, non solo tecnica: da decidere con il proprietario.
 - **Articoli**: li scrive **Claude** (non Groq). `data/articles/*.json` → `scripts/render_articles.py`
   genera `articoli/<lang>/*.html` + index.json + sitemap. Tre pianificate: 12:00, 16:00, 20:00 (vedi
   `kb/PIANIFICATE.md`).
