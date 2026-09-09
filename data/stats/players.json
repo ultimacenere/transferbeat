@@ -16740,6 +16740,18 @@
 }
 },
 {
+"date": "2026-08-24",
+"type": "Transfer",
+"from": {
+"id": 496,
+"name": "Juventus"
+},
+"to": {
+"id": 522,
+"name": "Palermo"
+}
+},
+{
 "date": "2026-08-25",
 "type": "Transfer",
 "from": {
@@ -19623,9 +19635,9 @@
 "weight": 67,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/877.png",
-"team": 502,
-"team_name": "Fiorentina",
-"number": 9,
+"team": 895,
+"team_name": "Como",
+"number": 90,
 "position": "Attacker",
 "active": true,
 "cur": [
@@ -39310,7 +39322,7 @@
 "team_name": "Juventus",
 "number": 30,
 "position": "Attacker",
-"active": true,
+"active": false,
 "cur": [
 {
 "team": {
@@ -39826,6 +39838,18 @@
 "id": 496,
 "name": "Juventus"
 }
+},
+{
+"date": "2026-08-31",
+"type": "Loan",
+"from": {
+"id": 496,
+"name": "Juventus"
+},
+"to": {
+"id": 530,
+"name": "Atletico Madrid"
+}
 }
 ]
 },
@@ -40172,7 +40196,7 @@
 "team": 494,
 "team_name": "Udinese",
 "number": 23,
-"position": "Midfielder",
+"position": "Defender",
 "active": true,
 "cur": [
 {
@@ -40592,7 +40616,7 @@
 "team": 867,
 "team_name": "Lecce",
 "number": 11,
-"position": "Attacker",
+"position": "Midfielder",
 "active": true,
 "cur": [
 {
@@ -43572,7 +43596,7 @@
 "team": 517,
 "team_name": "Venezia",
 "number": 4,
-"position": "Defender",
+"position": "Midfielder",
 "active": true,
 "cur": [
 {
@@ -47570,7 +47594,7 @@
 "team": 867,
 "team_name": "Lecce",
 "number": 3,
-"position": "Midfielder",
+"position": "Defender",
 "active": true,
 "cur": [
 {
@@ -48974,6 +48998,18 @@
 "to": {
 "id": 85,
 "name": "Paris Saint Germain"
+}
+},
+{
+"date": "2026-07-31",
+"type": "Transfer",
+"from": {
+"id": 85,
+"name": "Paris Saint Germain"
+},
+"to": {
+"id": 496,
+"name": "Juventus"
 }
 },
 {
@@ -50509,6 +50545,18 @@
 }
 },
 {
+"date": "2026-06-29",
+"type": "Transfer",
+"from": {
+"id": 514,
+"name": "Salernitana"
+},
+"to": {
+"id": 487,
+"name": "Lazio"
+}
+},
+{
 "date": "2026-06-30",
 "type": "Transfer",
 "from": {
@@ -50518,6 +50566,18 @@
 "to": {
 "id": 487,
 "name": "Lazio"
+}
+},
+{
+"date": "2026-08-31",
+"type": "Loan",
+"from": {
+"id": 487,
+"name": "Lazio"
+},
+"to": {
+"id": 94,
+"name": "Rennes"
 }
 }
 ]
@@ -53432,7 +53492,7 @@
 "team_name": "Genoa",
 "number": 3,
 "position": "Defender",
-"active": true,
+"active": false,
 "cur": [
 {
 "team": {
@@ -69532,7 +69592,7 @@
 "team_name": "Fiorentina",
 "number": 8,
 "position": "Midfielder",
-"active": true,
+"active": false,
 "cur": [
 {
 "team": {
@@ -75170,7 +75230,7 @@
 "team": 495,
 "team_name": "Genoa",
 "number": 20,
-"position": "Midfielder",
+"position": "Defender",
 "active": true,
 "cur": [
 {
@@ -83779,7 +83839,7 @@
 "team": 495,
 "team_name": "Genoa",
 "number": 22,
-"position": "Midfielder",
+"position": "Defender",
 "active": true,
 "cur": [
 {
@@ -85320,6 +85380,18 @@
 ],
 "prev_season": 2025,
 "transfers": [
+{
+"date": "2026-07-12",
+"type": "Free agent",
+"from": {
+"id": 182,
+"name": "Union Berlin"
+},
+"to": {
+"id": 487,
+"name": "Lazio"
+}
+},
 {
 "date": "2026-07-13",
 "type": "Free agent",
@@ -90085,6 +90157,18 @@
 "type": "Loan",
 "from": {
 "id": 228,
+"name": "Sporting CP"
+},
+"to": {
+"id": 1579,
+"name": "Monza"
+}
+},
+{
+"date": "2026-07-23",
+"type": "Loan",
+"from": {
+"id": null,
 "name": "Sporting CP"
 },
 "to": {
@@ -103153,7 +103237,7 @@
 "team": 495,
 "team_name": "Genoa",
 "number": 77,
-"position": "Defender",
+"position": "Midfielder",
 "active": true,
 "cur": [
 {
@@ -112837,7 +112921,7 @@
 "team_name": "Parma",
 "number": 24,
 "position": "Midfielder",
-"active": true,
+"active": false,
 "cur": [
 {
 "team": {
@@ -114321,7 +114405,7 @@
 "team": 867,
 "team_name": "Lecce",
 "number": 17,
-"position": "Midfielder",
+"position": "Defender",
 "active": true,
 "cur": [
 {
@@ -131487,7 +131571,7 @@
 "team_name": "Venezia",
 "number": 11,
 "position": "Attacker",
-"active": true,
+"active": false,
 "cur": [
 {
 "team": {
@@ -136781,7 +136865,7 @@
 "team": 867,
 "team_name": "Lecce",
 "number": 8,
-"position": "Midfielder",
+"position": "Defender",
 "active": true,
 "cur": [
 {
@@ -137794,7 +137878,7 @@
 "team_name": "Sassuolo",
 "number": 44,
 "position": "Midfielder",
-"active": true,
+"active": false,
 "cur": [
 {
 "team": {
@@ -139012,7 +139096,7 @@
 "team_name": "Genoa",
 "number": 15,
 "position": "Midfielder",
-"active": true,
+"active": false,
 "cur": [
 {
 "team": {
@@ -146135,6 +146219,30 @@
 "id": 487,
 "name": "Lazio"
 }
+},
+{
+"date": "2026-08-31",
+"type": "Loan",
+"from": {
+"id": 487,
+"name": "Lazio"
+},
+"to": {
+"id": null,
+"name": "Levante"
+}
+},
+{
+"date": "2026-08-31",
+"type": "Loan",
+"from": {
+"id": 487,
+"name": "Lazio"
+},
+"to": {
+"id": 539,
+"name": "Levante"
+}
 }
 ]
 },
@@ -151646,8 +151754,8 @@
 "weight": 82,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/318053.png",
-"team": 494,
-"team_name": "Udinese",
+"team": 1579,
+"team_name": "Monza",
 "number": 2,
 "position": "Defender",
 "active": true,
@@ -153831,7 +153939,7 @@
 "team": 523,
 "team_name": "Parma",
 "number": 80,
-"position": "Midfielder",
+"position": "Attacker",
 "active": true,
 "cur": [
 {
@@ -156950,7 +157058,7 @@
 "team": 494,
 "team_name": "Udinese",
 "number": 46,
-"position": "Attacker",
+"position": "Midfielder",
 "active": true,
 "cur": [
 {
@@ -165619,7 +165727,7 @@
 "team_name": "Sassuolo",
 "number": 2,
 "position": "Defender",
-"active": true,
+"active": false,
 "cur": [
 {
 "team": {
@@ -170491,7 +170599,7 @@
 "team": 497,
 "team_name": "AS Roma",
 "number": 43,
-"position": "Defender",
+"position": "Midfielder",
 "active": true,
 "cur": [
 {
@@ -172764,11 +172872,11 @@
 "weight": 72,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/353609.png",
-"team": 499,
-"team_name": "Atalanta",
-"number": 6,
+"team": 488,
+"team_name": "Sassuolo",
+"number": 55,
 "position": "Midfielder",
-"active": false,
+"active": true,
 "cur": [
 {
 "team": {
@@ -184747,6 +184855,18 @@
 "prev_season": 2025,
 "transfers": [
 {
+"date": "2026-07-31",
+"type": "Transfer",
+"from": {
+"id": 168,
+"name": "Bayer Leverkusen"
+},
+"to": {
+"id": 496,
+"name": "Juventus"
+}
+},
+{
 "date": "2026-08-01",
 "type": "Transfer",
 "from": {
@@ -185628,7 +185748,7 @@
 "team": 895,
 "team_name": "Como",
 "number": 11,
-"position": "Attacker",
+"position": "Midfielder",
 "active": true,
 "cur": [
 {
@@ -186166,7 +186286,7 @@
 "team": 497,
 "team_name": "AS Roma",
 "number": 86,
-"position": "Midfielder",
+"position": "Attacker",
 "active": true,
 "cur": [
 {
@@ -192589,15 +192709,27 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2024-09-02",
-"type": "N/A",
+"date": "2026-06-29",
+"type": "Transfer",
 "from": {
-"id": 105,
-"name": "Valenciennes"
-},
-"to": {
 "id": 230,
 "name": "Estoril"
+},
+"to": {
+"id": 1579,
+"name": "Monza"
+}
+},
+{
+"date": "2026-06-30",
+"type": "Transfer",
+"from": {
+"id": 230,
+"name": "Estoril"
+},
+"to": {
+"id": 1579,
+"name": "Monza"
 }
 }
 ]
@@ -198288,7 +198420,7 @@
 "team": 895,
 "team_name": "Como",
 "number": 17,
-"position": "Midfielder",
+"position": "Attacker",
 "active": true,
 "cur": [
 {
@@ -205208,7 +205340,7 @@
 "active": true,
 "team": 867,
 "team_name": "Lecce",
-"position": "Attacker",
+"position": "Midfielder",
 "cur": [
 {
 "team": {
@@ -207108,7 +207240,7 @@
 "team_name": "Udinese",
 "number": 22,
 "position": "Midfielder",
-"active": true,
+"active": false,
 "cur": [
 {
 "team": {
@@ -209380,7 +209512,20 @@
 }
 ],
 "prev_season": 2025,
-"transfers": []
+"transfers": [
+{
+"date": "2026-08-31",
+"type": "Loan",
+"from": {
+"id": 503,
+"name": "Torino"
+},
+"to": {
+"id": 1578,
+"name": "Sudtirol"
+}
+}
+]
 },
 "598615": {
 "id": 598615,
@@ -209400,7 +209545,7 @@
 "team": 497,
 "team_name": "AS Roma",
 "number": 77,
-"position": "Defender",
+"position": "Midfielder",
 "active": true,
 "cur": [
 {
@@ -210104,7 +210249,7 @@
 "team": 502,
 "team_name": "Fiorentina",
 "number": 72,
-"position": "Midfielder",
+"position": "Attacker",
 "active": true,
 "cur": [
 {
@@ -210215,7 +210360,7 @@
 "team": 495,
 "team_name": "Genoa",
 "number": 71,
-"position": "Midfielder",
+"position": "Attacker",
 "active": true,
 "cur": [
 {
@@ -210411,7 +210556,7 @@
 "team_name": "Sassuolo",
 "number": 31,
 "position": "Defender",
-"active": true,
+"active": false,
 "cur": [
 {
 "team": {
@@ -210607,6 +210752,18 @@
 "to": {
 "id": 488,
 "name": "Sassuolo"
+}
+},
+{
+"date": "2026-08-30",
+"type": "Loan",
+"from": {
+"id": 488,
+"name": "Sassuolo"
+},
+"to": {
+"id": 1581,
+"name": "Carrarese"
 }
 }
 ]
@@ -210912,79 +211069,7 @@
 "number": 74,
 "position": "Defender",
 "active": true,
-"cur": [
-{
-"team": {
-"id": 495,
-"name": "Genoa"
-},
-"league": {
-"id": 135,
-"name": "Serie A",
-"country": "Italy",
-"season": 2026
-},
-"games": {
-"appearences": 0,
-"lineups": 0,
-"minutes": null,
-"number": 74,
-"position": "Defender",
-"rating": null,
-"captain": false
-},
-"substitutes": {
-"in": 0,
-"out": 0,
-"bench": 0
-},
-"shots": {
-"total": null,
-"on": null
-},
-"goals": {
-"total": 0,
-"conceded": 0,
-"assists": 0,
-"saves": null
-},
-"passes": {
-"total": null,
-"key": null,
-"accuracy": null
-},
-"tackles": {
-"total": null,
-"blocks": null,
-"interceptions": null
-},
-"duels": {
-"total": null,
-"won": null
-},
-"dribbles": {
-"attempts": null,
-"success": null,
-"past": null
-},
-"fouls": {
-"drawn": null,
-"committed": null
-},
-"cards": {
-"yellow": 0,
-"yellowred": 0,
-"red": 0
-},
-"penalty": {
-"won": null,
-"commited": null,
-"scored": 0,
-"missed": 0,
-"saved": null
-}
-}
-],
+"cur": [],
 "cur_season": 2026,
 "prev": [
 {
@@ -212241,7 +212326,7 @@
 "id": 675847,
 "team": 867,
 "team_name": "Lecce",
-"number": 70,
+"number": null,
 "position": "Midfielder",
 "active": true,
 "photo": "https://media.api-sports.io/football/players/675847.png",
@@ -223118,11 +223203,11 @@
 },
 "31390": {
 "id": 31390,
-"team": 492,
-"team_name": "Napoli",
-"number": 30,
+"team": 517,
+"team_name": "Venezia",
+"number": 70,
 "position": "Defender",
-"active": false,
+"active": true,
 "photo": "https://media.api-sports.io/football/players/31390.png",
 "name": "P. Mazzocchi",
 "cur": [
@@ -224305,7 +224390,7 @@
 "team_name": "Lecce",
 "number": 40,
 "position": "Defender",
-"active": true,
+"active": false,
 "photo": "https://media.api-sports.io/football/players/547527.png",
 "name": "E. Larsen",
 "cur": [],
@@ -224719,6 +224804,18 @@
 "prev": [],
 "prev_season": 2025,
 "transfers": [
+{
+"date": "2026-07-15",
+"type": "Transfer",
+"from": {
+"id": 541,
+"name": "Real Madrid"
+},
+"to": {
+"id": 487,
+"name": "Lazio"
+}
+},
 {
 "date": "2026-07-16",
 "type": "Transfer",
@@ -232053,6 +232150,18 @@
 "prev_season": 2025,
 "transfers": [
 {
+"date": "2026-06-29",
+"type": "Transfer",
+"from": {
+"id": 96,
+"name": "Toulouse"
+},
+"to": {
+"id": 496,
+"name": "Juventus"
+}
+},
+{
 "date": "2026-06-30",
 "type": "Transfer",
 "from": {
@@ -232439,6 +232548,18 @@
 "type": "Transfer",
 "from": {
 "id": 228,
+"name": "Sporting CP"
+},
+"to": {
+"id": 867,
+"name": "Lecce"
+}
+},
+{
+"date": "2026-07-09",
+"type": "Transfer",
+"from": {
+"id": null,
 "name": "Sporting CP"
 },
 "to": {
@@ -242624,7 +242745,7 @@
 "weight": 72,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/791.png",
-"active": false,
+"active": true,
 "team": 495,
 "team_name": "Genoa",
 "position": "Attacker",
@@ -243027,7 +243148,8 @@
 "name": "Genoa"
 }
 }
-]
+],
+"number": 92
 },
 "18959": {
 "id": 18959,
@@ -243582,7 +243704,7 @@
 "weight": 78,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/36916.png",
-"active": false,
+"active": true,
 "team": 495,
 "team_name": "Genoa",
 "position": "Defender",
@@ -243842,7 +243964,8 @@
 "name": "Genoa"
 }
 }
-]
+],
+"number": 3
 },
 "408625": {
 "id": 408625,
@@ -244325,7 +244448,7 @@
 "team_name": "Genoa",
 "number": 6,
 "position": "Defender",
-"active": true,
+"active": false,
 "photo": "https://media.api-sports.io/football/players/451505.png",
 "name": "M. Barbini",
 "cur": [],
@@ -244761,7 +244884,7 @@
 "weight": 70,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/18748.png",
-"active": false,
+"active": true,
 "team": 502,
 "team_name": "Fiorentina",
 "position": "Midfielder",
@@ -245138,8 +245261,21 @@
 "id": 502,
 "name": "Fiorentina"
 }
+},
+{
+"date": "2026-08-31",
+"type": "Loan",
+"from": {
+"id": null,
+"name": "Sporting CP"
+},
+"to": {
+"id": 502,
+"name": "Fiorentina"
 }
-]
+}
+],
+"number": 28
 },
 "41892": {
 "id": 41892,
@@ -245533,6 +245669,18 @@
 "id": 503,
 "name": "Torino"
 }
+},
+{
+"date": "2026-08-31",
+"type": "Loan",
+"from": {
+"id": null,
+"name": "Sporting CP"
+},
+"to": {
+"id": 503,
+"name": "Torino"
+}
 }
 ]
 },
@@ -245551,7 +245699,7 @@
 "weight": 88,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/125743.png",
-"active": false,
+"active": true,
 "team": 502,
 "team_name": "Fiorentina",
 "position": "Attacker",
@@ -246107,7 +246255,8 @@
 "name": "Fiorentina"
 }
 }
-]
+],
+"number": 23
 },
 "138417": {
 "id": 138417,
@@ -246661,7 +246810,7 @@
 "weight": 65,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/162128.png",
-"active": false,
+"active": true,
 "team": 502,
 "team_name": "Fiorentina",
 "position": "Attacker",
@@ -247181,7 +247330,8 @@
 "name": "Fiorentina"
 }
 }
-]
+],
+"number": 29
 },
 "303362": {
 "id": 303362,
@@ -248131,7 +248281,7 @@
 "weight": 90,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/158054.png",
-"active": false,
+"active": true,
 "team": 496,
 "team_name": "Juventus",
 "position": "Attacker",
@@ -248924,66 +249074,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2022-08-30",
-"type": "Loan",
-"from": {
-"id": 162,
-"name": "Werder Bremen"
-},
-"to": {
-"id": 1660,
-"name": "SV Elversberg"
-}
-},
-{
-"date": "2023-07-01",
-"type": "N/A",
-"from": {
-"id": 1660,
-"name": "SV Elversberg"
-},
-"to": {
-"id": 162,
-"name": "Werder Bremen"
-}
-},
-{
-"date": "2024-07-01",
-"type": "Free",
-"from": {
-"id": 162,
-"name": "Werder Bremen"
-},
-"to": {
-"id": 172,
-"name": "VfB Stuttgart"
-}
-},
-{
-"date": "2025-08-30",
-"type": "Transfer",
-"from": {
-"id": null,
-"name": "Stuttgart"
-},
-"to": {
-"id": 34,
-"name": "Newcastle"
-}
-},
-{
-"date": "2025-08-30",
-"type": "Transfer",
-"from": {
-"id": 172,
-"name": "VfB Stuttgart"
-},
-"to": {
-"id": 34,
-"name": "Newcastle"
-}
-},
-{
 "date": "2026-08-31",
 "type": "Loan",
 "from": {
@@ -248995,7 +249085,8 @@
 "name": "Juventus"
 }
 }
-]
+],
+"number": 27
 },
 "264739": {
 "id": 264739,
@@ -249012,7 +249103,7 @@
 "weight": 81,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/264739.png",
-"active": false,
+"active": true,
 "team": 488,
 "team_name": "Sassuolo",
 "position": "Attacker",
@@ -249414,7 +249505,8 @@
 "name": "Sassuolo"
 }
 }
-]
+],
+"number": 19
 },
 "284428": {
 "id": 284428,
@@ -250993,10 +251085,10 @@
 "weight": 73,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/445973.png",
-"active": false,
+"active": true,
 "team": 517,
 "team_name": "Venezia",
-"position": "Attacker",
+"position": "Midfielder",
 "cur": [
 {
 "team": {
@@ -251371,7 +251463,8 @@
 "name": "Venezia"
 }
 }
-]
+],
+"number": 77
 },
 "1902": {
 "id": 1902,
@@ -251388,7 +251481,7 @@
 "weight": 89,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/1902.png",
-"active": false,
+"active": true,
 "team": 488,
 "team_name": "Sassuolo",
 "position": "Defender",
@@ -251636,7 +251729,8 @@
 "name": "Sassuolo"
 }
 }
-]
+],
+"number": 15
 },
 "21090": {
 "id": 21090,
@@ -251653,7 +251747,7 @@
 "weight": 79,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/21090.png",
-"active": false,
+"active": true,
 "team": 523,
 "team_name": "Parma",
 "position": "Defender",
@@ -252055,7 +252149,8 @@
 "name": "Parma"
 }
 }
-]
+],
+"number": 34
 },
 "30392": {
 "id": 30392,
@@ -252072,7 +252167,7 @@
 "weight": 81,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/30392.png",
-"active": false,
+"active": true,
 "team": 523,
 "team_name": "Parma",
 "position": "Goalkeeper",
@@ -252404,7 +252499,8 @@
 "name": "Parma"
 }
 }
-]
+],
+"number": 22
 },
 "277862": {
 "id": 277862,
@@ -252421,7 +252517,7 @@
 "weight": 81,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/277862.png",
-"active": false,
+"active": true,
 "team": 867,
 "team_name": "Lecce",
 "position": "Midfielder",
@@ -252811,7 +252907,8 @@
 "name": "Lecce"
 }
 }
-]
+],
+"number": 11
 },
 "326177": {
 "id": 326177,
@@ -253118,10 +253215,10 @@
 "weight": 76,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/398194.png",
-"active": false,
+"active": true,
 "team": 494,
 "team_name": "Udinese",
-"position": "Attacker",
+"position": "Midfielder",
 "cur": [
 {
 "team": {
@@ -253579,7 +253676,8 @@
 "name": "Udinese"
 }
 }
-]
+],
+"number": 45
 },
 "558758": {
 "id": 558758,
@@ -254864,9 +254962,1933 @@
 }
 }
 ]
+},
+"525018": {
+"id": 525018,
+"team": 867,
+"team_name": "Lecce",
+"number": 40,
+"position": "Defender",
+"active": true,
+"photo": "https://media.api-sports.io/football/players/525018.png",
+"name": "E. Larsen",
+"cur": [],
+"cur_season": 2026,
+"first": "Emil",
+"last": "Larsen",
+"birth": {
+"date": "2007-10-08",
+"place": null,
+"country": "Denmark"
+},
+"nationality": "Denmark",
+"height": 185,
+"weight": null,
+"injured": false,
+"prev": [
+{
+"team": {
+"id": 403,
+"name": "Esbjerg"
+},
+"league": {
+"id": 120,
+"name": "1. Division",
+"country": "Denmark",
+"season": 2025
+},
+"games": {
+"appearences": null,
+"lineups": null,
+"minutes": null,
+"number": null,
+"position": "Defender",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": null,
+"out": null,
+"bench": null
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": null,
+"conceded": null,
+"assists": null,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": null,
+"yellowred": null,
+"red": null
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": null,
+"missed": null,
+"saved": null
 }
 },
-"updated": "2026-09-08T23:32:08Z",
+{
+"team": {
+"id": 403,
+"name": "Esbjerg"
+},
+"league": {
+"id": 121,
+"name": "DBU Pokalen",
+"country": "Denmark",
+"season": 2025
+},
+"games": {
+"appearences": null,
+"lineups": null,
+"minutes": null,
+"number": null,
+"position": "Defender",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": null,
+"out": null,
+"bench": null
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": null,
+"conceded": null,
+"assists": null,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": null,
+"yellowred": null,
+"red": null
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": null,
+"missed": null,
+"saved": null
+}
+}
+],
+"prev_season": 2025,
+"transfers": [
+{
+"date": "2026-07-23",
+"type": "Transfer",
+"from": {
+"id": 403,
+"name": "Esbjerg"
+},
+"to": {
+"id": 867,
+"name": "Lecce"
+}
+},
+{
+"date": "2026-07-24",
+"type": "Transfer",
+"from": {
+"id": 403,
+"name": "Esbjerg"
+},
+"to": {
+"id": 867,
+"name": "Lecce"
+}
+}
+]
+},
+"774": {
+"id": 774,
+"team": 517,
+"team_name": "Venezia",
+"number": 15,
+"position": "Defender",
+"active": true,
+"photo": "https://media.api-sports.io/football/players/774.png",
+"name": "Juan Jesus",
+"cur": [],
+"cur_season": 2026,
+"first": "Juan Guilherme",
+"last": "Nunes Jesus",
+"birth": {
+"date": "1991-06-10",
+"place": "Belo Horizonte",
+"country": "Brazil"
+},
+"nationality": "Brazil",
+"height": 185,
+"weight": 83,
+"injured": false,
+"prev": [
+{
+"team": {
+"id": 492,
+"name": "Napoli"
+},
+"league": {
+"id": 547,
+"name": "Super Cup",
+"country": "Italy",
+"season": 2025
+},
+"games": {
+"appearences": 2,
+"lineups": 2,
+"minutes": 174,
+"number": 5,
+"position": "Defender",
+"rating": 7.4,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 1,
+"bench": 0
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 90,
+"key": null,
+"accuracy": 42
+},
+"tackles": {
+"total": 6,
+"blocks": 1,
+"interceptions": 3
+},
+"duels": {
+"total": 18,
+"won": 10
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": 1,
+"committed": 3
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+},
+{
+"team": {
+"id": 492,
+"name": "Napoli"
+},
+"league": {
+"id": 137,
+"name": "Coppa Italia",
+"country": "Italy",
+"season": 2025
+},
+"games": {
+"appearences": 2,
+"lineups": 2,
+"minutes": 180,
+"number": 5,
+"position": "Defender",
+"rating": 7.3,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 0
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 184,
+"key": null,
+"accuracy": 93
+},
+"tackles": {
+"total": 10,
+"blocks": 1,
+"interceptions": 1
+},
+"duels": {
+"total": 16,
+"won": 11
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": 1,
+"committed": 4
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+},
+{
+"team": {
+"id": 492,
+"name": "Napoli"
+},
+"league": {
+"id": 2,
+"name": "UEFA Champions League",
+"country": "World",
+"season": 2025
+},
+"games": {
+"appearences": 7,
+"lineups": 3,
+"minutes": 347,
+"number": 5,
+"position": "Defender",
+"rating": 6.35,
+"captain": false
+},
+"substitutes": {
+"in": 4,
+"out": 1,
+"bench": 5
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 265,
+"key": null,
+"accuracy": 88
+},
+"tackles": {
+"total": 9,
+"blocks": 2,
+"interceptions": 7
+},
+"duels": {
+"total": 26,
+"won": 11
+},
+"dribbles": {
+"attempts": 1,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": 7
+},
+"cards": {
+"yellow": 1,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": 1,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+},
+{
+"team": {
+"id": 492,
+"name": "Napoli"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2025
+},
+"games": {
+"appearences": 24,
+"lineups": 19,
+"minutes": 1682,
+"number": 5,
+"position": "Defender",
+"rating": 6.78,
+"captain": false
+},
+"substitutes": {
+"in": 5,
+"out": 5,
+"bench": 15
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 1382,
+"key": 4,
+"accuracy": 91
+},
+"tackles": {
+"total": 40,
+"blocks": 12,
+"interceptions": 27
+},
+"duels": {
+"total": 157,
+"won": 77
+},
+"dribbles": {
+"attempts": 1,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": 2,
+"committed": 39
+},
+"cards": {
+"yellow": 9,
+"yellowred": 1,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": 1,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+}
+],
+"prev_season": 2025,
+"transfers": [
+{
+"date": "2012-01-26",
+"type": "€ 3.8M",
+"from": {
+"id": 119,
+"name": "Internacional"
+},
+"to": {
+"id": 505,
+"name": "Inter"
+}
+},
+{
+"date": "2016-07-14",
+"type": "Loan",
+"from": {
+"id": 505,
+"name": "Inter"
+},
+"to": {
+"id": 497,
+"name": "AS Roma"
+}
+},
+{
+"date": "2017-07-01",
+"type": "€ 8M",
+"from": {
+"id": 505,
+"name": "Inter"
+},
+"to": {
+"id": 497,
+"name": "AS Roma"
+}
+},
+{
+"date": "2021-08-18",
+"type": "Free",
+"from": {
+"id": 497,
+"name": "AS Roma"
+},
+"to": {
+"id": 492,
+"name": "Napoli"
+}
+},
+{
+"date": "2026-06-29",
+"type": "Free agent",
+"from": {
+"id": 492,
+"name": "Napoli"
+},
+"to": {
+"id": null,
+"name": "Juan Jesus"
+}
+},
+{
+"date": "2026-08-29",
+"type": "Free agent",
+"from": {
+"id": 492,
+"name": "Napoli"
+},
+"to": {
+"id": 517,
+"name": "Venezia"
+}
+},
+{
+"date": "2026-08-30",
+"type": "Free agent",
+"from": {
+"id": 492,
+"name": "Napoli"
+},
+"to": {
+"id": 517,
+"name": "Venezia"
+}
+}
+]
+},
+"197500": {
+"id": 197500,
+"team": 495,
+"team_name": "Genoa",
+"number": 7,
+"position": "Midfielder",
+"active": true,
+"photo": "https://media.api-sports.io/football/players/197500.png",
+"name": "Nikita Solodchenko",
+"cur": [],
+"cur_season": 2026,
+"first": "Nikita",
+"last": "Solodchenko",
+"birth": {
+"date": "1997-10-01",
+"place": null,
+"country": "Russia"
+},
+"nationality": "Russia",
+"height": null,
+"weight": null,
+"injured": false,
+"prev": [
+{
+"team": {
+"id": 13055,
+"name": "Santos U20"
+},
+"league": {
+"id": 740,
+"name": "Brasileiro U20 A",
+"country": "Brazil",
+"season": 2025
+},
+"games": {
+"appearences": 7,
+"lineups": 0,
+"minutes": 280,
+"number": 7,
+"position": "Midfielder",
+"rating": 6.98,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 0
+},
+"shots": {
+"total": 11,
+"on": 5
+},
+"goals": {
+"total": 3,
+"conceded": 0,
+"assists": 2,
+"saves": 0
+},
+"passes": {
+"total": 85,
+"key": 6,
+"accuracy": 76
+},
+"tackles": {
+"total": 1,
+"blocks": 0,
+"interceptions": 6
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": 12,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": null,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": null,
+"missed": null,
+"saved": null
+}
+},
+{
+"team": {
+"id": 13055,
+"name": "Santos U20"
+},
+"league": {
+"id": 1086,
+"name": "Paulista - U20",
+"country": "Brazil",
+"season": 2025
+},
+"games": {
+"appearences": 6,
+"lineups": 0,
+"minutes": 231,
+"number": 7,
+"position": "Midfielder",
+"rating": 6.75,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 0
+},
+"shots": {
+"total": 6,
+"on": 4
+},
+"goals": {
+"total": 1,
+"conceded": 4,
+"assists": 1,
+"saves": 0
+},
+"passes": {
+"total": 49,
+"key": 8,
+"accuracy": 79
+},
+"tackles": {
+"total": 0,
+"blocks": 0,
+"interceptions": 1
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": 7,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": null,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": null,
+"missed": null,
+"saved": null
+}
+},
+{
+"team": {
+"id": 13055,
+"name": "Santos U20"
+},
+"league": {
+"id": 618,
+"name": "São Paulo Youth Cup",
+"country": "Brazil",
+"season": 2025
+},
+"games": {
+"appearences": 2,
+"lineups": 0,
+"minutes": 71,
+"number": 7,
+"position": "Midfielder",
+"rating": 6.88,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 0
+},
+"shots": {
+"total": 4,
+"on": 2
+},
+"goals": {
+"total": 1,
+"conceded": 2,
+"assists": 0,
+"saves": 0
+},
+"passes": {
+"total": 11,
+"key": 1,
+"accuracy": 81
+},
+"tackles": {
+"total": 1,
+"blocks": 0,
+"interceptions": 2
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": 4,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": null,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": null,
+"missed": null,
+"saved": null
+}
+},
+{
+"team": {
+"id": 128,
+"name": "Santos"
+},
+"league": {
+"id": 71,
+"name": "Serie A",
+"country": "Brazil",
+"season": 2025
+},
+"games": {
+"appearences": 15,
+"lineups": 2,
+"minutes": 382,
+"number": 7,
+"position": "Midfielder",
+"rating": 6.74,
+"captain": false
+},
+"substitutes": {
+"in": 13,
+"out": 2,
+"bench": 24
+},
+"shots": {
+"total": 5,
+"on": 3
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 1,
+"saves": null
+},
+"passes": {
+"total": 123,
+"key": 9,
+"accuracy": null
+},
+"tackles": {
+"total": 8,
+"blocks": null,
+"interceptions": 1
+},
+"duels": {
+"total": 46,
+"won": 23
+},
+"dribbles": {
+"attempts": 18,
+"success": 10,
+"past": null
+},
+"fouls": {
+"drawn": 5,
+"committed": 3
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+}
+],
+"prev_season": 2025,
+"transfers": [
+{
+"date": "2026-08-31",
+"type": "Loan",
+"from": {
+"id": 128,
+"name": "Santos"
+},
+"to": {
+"id": 495,
+"name": "Genoa"
+}
+}
+]
+},
+"466346": {
+"id": 466346,
+"team": 517,
+"team_name": "Venezia",
+"number": 2,
+"position": "Defender",
+"active": true,
+"photo": "https://media.api-sports.io/football/players/466346.png",
+"name": "R. Mohammed",
+"cur": [],
+"cur_season": 2026,
+"first": "Rufai",
+"last": "Mohammed",
+"birth": {
+"date": "2006-03-15",
+"place": null,
+"country": "Ghana"
+},
+"nationality": "Ghana",
+"height": null,
+"weight": null,
+"injured": false,
+"prev": [
+{
+"team": {
+"id": 372,
+"name": "IF Elfsborg"
+},
+"league": {
+"id": 113,
+"name": "Allsvenskan",
+"country": "Sweden",
+"season": 2025
+},
+"games": {
+"appearences": 0,
+"lineups": 0,
+"minutes": 0,
+"number": null,
+"position": "Defender",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 0
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+},
+{
+"team": {
+"id": 2163,
+"name": "IFK Varnamo"
+},
+"league": {
+"id": 113,
+"name": "Allsvenskan",
+"country": "Sweden",
+"season": 2025
+},
+"games": {
+"appearences": 16,
+"lineups": 15,
+"minutes": 1283,
+"number": 4,
+"position": "Defender",
+"rating": 7.02,
+"captain": false
+},
+"substitutes": {
+"in": 1,
+"out": 0,
+"bench": 12
+},
+"shots": {
+"total": 12,
+"on": 5
+},
+"goals": {
+"total": 2,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 803,
+"key": 7,
+"accuracy": 44
+},
+"tackles": {
+"total": 22,
+"blocks": 21,
+"interceptions": 34
+},
+"duels": {
+"total": 170,
+"won": 111
+},
+"dribbles": {
+"attempts": 16,
+"success": 13,
+"past": null
+},
+"fouls": {
+"drawn": 2,
+"committed": 19
+},
+"cards": {
+"yellow": 3,
+"yellowred": 0,
+"red": 1
+},
+"penalty": {
+"won": null,
+"commited": 1,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+}
+],
+"prev_season": 2025,
+"transfers": [
+{
+"date": "2026-08-31",
+"type": "Loan",
+"from": {
+"id": 372,
+"name": "IF Elfsborg"
+},
+"to": {
+"id": 517,
+"name": "Venezia"
+}
+}
+]
+},
+"237129": {
+"id": 237129,
+"team": 496,
+"team_name": "Juventus",
+"number": 29,
+"position": "Midfielder",
+"active": true,
+"photo": "https://media.api-sports.io/football/players/237129.png",
+"name": "P. Sarr",
+"cur": [],
+"cur_season": 2026,
+"first": "Pape Matar",
+"last": "Sarr",
+"birth": {
+"date": "2002-09-14",
+"place": "Thiaroye",
+"country": "Senegal"
+},
+"nationality": "Senegal",
+"height": 185,
+"weight": 70,
+"injured": false,
+"prev": [
+{
+"team": {
+"id": 47,
+"name": "Tottenham"
+},
+"league": {
+"id": 531,
+"name": "UEFA Super Cup",
+"country": "World",
+"season": 2025
+},
+"games": {
+"appearences": 1,
+"lineups": 1,
+"minutes": 90,
+"number": 29,
+"position": "Midfielder",
+"rating": 7,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 1,
+"bench": 0
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 15,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": 3,
+"blocks": null,
+"interceptions": 4
+},
+"duels": {
+"total": 14,
+"won": 9
+},
+"dribbles": {
+"attempts": 2,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": 2,
+"committed": 1
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+},
+{
+"team": {
+"id": 13,
+"name": "Senegal"
+},
+"league": {
+"id": null,
+"name": "Africa Cup of Nations Qualification",
+"country": null,
+"season": 2025
+},
+"games": {
+"appearences": 5,
+"lineups": 3,
+"minutes": 247,
+"number": null,
+"position": "Midfielder",
+"rating": 7.22,
+"captain": false
+},
+"substitutes": {
+"in": 2,
+"out": 2,
+"bench": 3
+},
+"shots": {
+"total": 3,
+"on": 2
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 152,
+"key": 4,
+"accuracy": null
+},
+"tackles": {
+"total": 12,
+"blocks": null,
+"interceptions": 5
+},
+"duels": {
+"total": 52,
+"won": 31
+},
+"dribbles": {
+"attempts": 17,
+"success": 8,
+"past": null
+},
+"fouls": {
+"drawn": 4,
+"committed": 6
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+},
+{
+"team": {
+"id": 13,
+"name": "Senegal"
+},
+"league": {
+"id": 10,
+"name": "Friendlies",
+"country": "World",
+"season": 2025
+},
+"games": {
+"appearences": 1,
+"lineups": 1,
+"minutes": 49,
+"number": 17,
+"position": "Midfielder",
+"rating": 6.6,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 1,
+"bench": 0
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 19,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": 3,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": 6,
+"won": 5
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": 2,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+},
+{
+"team": {
+"id": 13,
+"name": "Senegal"
+},
+"league": {
+"id": 6,
+"name": "Africa Cup of Nations",
+"country": "World",
+"season": 2025
+},
+"games": {
+"appearences": 1,
+"lineups": 1,
+"minutes": 81,
+"number": 17,
+"position": "Midfielder",
+"rating": 6.3,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 1,
+"bench": 6
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 34,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": 2
+},
+"duels": {
+"total": 6,
+"won": 2
+},
+"dribbles": {
+"attempts": 1,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": 1,
+"committed": 3
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+},
+{
+"team": {
+"id": 47,
+"name": "Tottenham"
+},
+"league": {
+"id": 48,
+"name": "League Cup",
+"country": "England",
+"season": 2025
+},
+"games": {
+"appearences": 1,
+"lineups": 1,
+"minutes": 90,
+"number": 29,
+"position": "Midfielder",
+"rating": 6.6,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 0
+},
+"shots": {
+"total": 1,
+"on": 1
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 51,
+"key": null,
+"accuracy": 84
+},
+"tackles": {
+"total": 2,
+"blocks": null,
+"interceptions": 2
+},
+"duels": {
+"total": 7,
+"won": 4
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": 1
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+},
+{
+"team": {
+"id": 47,
+"name": "Tottenham"
+},
+"league": {
+"id": 39,
+"name": "Premier League",
+"country": "England",
+"season": 2025
+},
+"games": {
+"appearences": 26,
+"lineups": 13,
+"minutes": 1410,
+"number": 29,
+"position": "Midfielder",
+"rating": 6.82,
+"captain": false
+},
+"substitutes": {
+"in": 13,
+"out": 2,
+"bench": 16
+},
+"shots": {
+"total": 10,
+"on": 6
+},
+"goals": {
+"total": 2,
+"conceded": 0,
+"assists": 4,
+"saves": null
+},
+"passes": {
+"total": 631,
+"key": 11,
+"accuracy": 84
+},
+"tackles": {
+"total": 33,
+"blocks": 10,
+"interceptions": 18
+},
+"duels": {
+"total": 188,
+"won": 86
+},
+"dribbles": {
+"attempts": 22,
+"success": 13,
+"past": null
+},
+"fouls": {
+"drawn": 13,
+"committed": 29
+},
+"cards": {
+"yellow": 3,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+},
+{
+"team": {
+"id": 47,
+"name": "Tottenham"
+},
+"league": {
+"id": 2,
+"name": "UEFA Champions League",
+"country": "World",
+"season": 2025
+},
+"games": {
+"appearences": 9,
+"lineups": 7,
+"minutes": 643,
+"number": 29,
+"position": "Midfielder",
+"rating": 6.66,
+"captain": false
+},
+"substitutes": {
+"in": 2,
+"out": 3,
+"bench": 2
+},
+"shots": {
+"total": 8,
+"on": 3
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 307,
+"key": 2,
+"accuracy": 85
+},
+"tackles": {
+"total": 14,
+"blocks": 4,
+"interceptions": 12
+},
+"duels": {
+"total": 63,
+"won": 32
+},
+"dribbles": {
+"attempts": 10,
+"success": 4,
+"past": null
+},
+"fouls": {
+"drawn": 6,
+"committed": 5
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+}
+],
+"prev_season": 2025,
+"transfers": [
+{
+"date": "2026-08-31",
+"type": "Loan",
+"from": {
+"id": 47,
+"name": "Tottenham"
+},
+"to": {
+"id": 496,
+"name": "Juventus"
+}
+}
+]
+},
+"153411": {
+"id": 153411,
+"team": 495,
+"team_name": "Genoa",
+"number": 18,
+"position": "Defender",
+"active": true,
+"photo": "https://media.api-sports.io/football/players/153411.png",
+"name": "C. Drameh",
+"cur": [],
+"cur_season": 2026,
+"first": "Cody Callum Pierre",
+"last": "Drameh",
+"birth": {
+"date": "2001-12-08",
+"place": "London",
+"country": "England"
+},
+"nationality": "England",
+"height": 175,
+"weight": 73,
+"injured": false,
+"prev": [
+{
+"team": {
+"id": 64,
+"name": "Hull City"
+},
+"league": {
+"id": 48,
+"name": "League Cup",
+"country": "England",
+"season": 2025
+},
+"games": {
+"appearences": 1,
+"lineups": 1,
+"minutes": 90,
+"number": 18,
+"position": "Defender",
+"rating": 6.5,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 0
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 1,
+"saves": null
+},
+"passes": {
+"total": 63,
+"key": 1,
+"accuracy": 85
+},
+"tackles": {
+"total": 1,
+"blocks": null,
+"interceptions": 1
+},
+"duels": {
+"total": 6,
+"won": 4
+},
+"dribbles": {
+"attempts": 1,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+},
+{
+"team": {
+"id": 64,
+"name": "Hull City"
+},
+"league": {
+"id": 45,
+"name": "FA Cup",
+"country": "England",
+"season": 2025
+},
+"games": {
+"appearences": 2,
+"lineups": 1,
+"minutes": 124,
+"number": 18,
+"position": "Defender",
+"rating": 7.15,
+"captain": false
+},
+"substitutes": {
+"in": 1,
+"out": 1,
+"bench": 1
+},
+"shots": {
+"total": 1,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 55,
+"key": null,
+"accuracy": 74
+},
+"tackles": {
+"total": 7,
+"blocks": null,
+"interceptions": 1
+},
+"duels": {
+"total": 16,
+"won": 9
+},
+"dribbles": {
+"attempts": 1,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 1,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+},
+{
+"team": {
+"id": 64,
+"name": "Hull City"
+},
+"league": {
+"id": 40,
+"name": "Championship",
+"country": "England",
+"season": 2025
+},
+"games": {
+"appearences": 23,
+"lineups": 16,
+"minutes": 1458,
+"number": 18,
+"position": "Defender",
+"rating": 6.66,
+"captain": false
+},
+"substitutes": {
+"in": 7,
+"out": 5,
+"bench": 15
+},
+"shots": {
+"total": 7,
+"on": 3
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 1,
+"saves": null
+},
+"passes": {
+"total": 607,
+"key": 10,
+"accuracy": 77
+},
+"tackles": {
+"total": 43,
+"blocks": 5,
+"interceptions": 14
+},
+"duels": {
+"total": 141,
+"won": 87
+},
+"dribbles": {
+"attempts": 33,
+"success": 16,
+"past": null
+},
+"fouls": {
+"drawn": 12,
+"committed": 4
+},
+"cards": {
+"yellow": 1,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+}
+],
+"prev_season": 2025,
+"transfers": [
+{
+"date": "2026-08-30",
+"type": "Transfer",
+"from": {
+"id": 64,
+"name": "Hull City"
+},
+"to": {
+"id": 495,
+"name": "Genoa"
+}
+},
+{
+"date": "2026-08-31",
+"type": "Transfer",
+"from": {
+"id": 64,
+"name": "Hull City"
+},
+"to": {
+"id": 495,
+"name": "Genoa"
+}
+}
+]
+},
+"595812": {
+"id": 595812,
+"team": 523,
+"team_name": "Parma",
+"number": 71,
+"position": "Defender",
+"active": true,
+"photo": "https://media.api-sports.io/football/players/595812.png",
+"name": "Karlo Pajsar",
+"cur": [],
+"cur_season": 2026,
+"first": null,
+"last": null,
+"birth": {
+"date": null,
+"place": null,
+"country": null
+},
+"nationality": null,
+"height": null,
+"weight": null,
+"injured": false,
+"prev": [],
+"prev_season": 2025,
+"transfers": []
+}
+},
+"updated": "2026-09-09T23:26:04Z",
 "season": 2026,
 "league": 135
 }

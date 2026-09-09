@@ -1,5 +1,5 @@
 {
-"updated": "2026-09-08T23:30:56Z",
+"updated": "2026-09-09T23:24:55Z",
 "season": 2026,
 "matchday": 4,
 "stage": "vigilia",
@@ -407,14 +407,8 @@
 "grid": "3:2",
 "prob": 62,
 "why": "titolare nelle ultime 1 su 3",
-"ballot": {
-"id": 30784,
-"name": "N. Rovella",
-"prob": 48,
-"share": 44
-},
-"out_for": null,
-"share": 56
+"ballot": null,
+"out_for": null
 },
 {
 "id": 38749,
@@ -436,41 +430,41 @@
 "prob": 58,
 "why": "titolare nelle ultime 1 su 3",
 "ballot": {
-"id": 286474,
-"name": "M. Cancellieri",
-"prob": 55,
-"share": 49
-},
-"out_for": null,
-"share": 51
-},
-{
-"id": 31094,
-"name": "A. Pinamonti",
-"role": "A",
-"pos": "F",
-"grid": "4:2",
-"prob": 56,
-"why": "titolare nelle ultime 1 su 3",
-"ballot": {
 "id": 22015,
 "name": "B. Dia",
 "prob": 50,
-"share": 47
+"share": 46
 },
 "out_for": null,
-"share": 53
+"share": 54
 },
 {
 "id": 30937,
 "name": "M. Zaccagni",
 "role": "C",
 "pos": "F",
-"grid": "4:1",
+"grid": "4:2",
 "prob": 94,
 "why": "titolare nelle ultime 3 su 3",
 "ballot": null,
-"out_for": null
+"out_for": "A. Pinamonti"
+},
+{
+"id": 286474,
+"name": "M. Cancellieri",
+"role": "C",
+"pos": "F",
+"grid": "4:1",
+"prob": 55,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": {
+"id": 2799,
+"name": "A. Guðmundsson",
+"prob": 30,
+"share": 35
+},
+"out_for": "M. Zaccagni",
+"share": 65
 }
 ],
 "bench": [
@@ -496,13 +490,6 @@
 "prob": 23
 },
 {
-"id": 144740,
-"name": "F. Dele-Bashiru",
-"role": "C",
-"pos": "M",
-"prob": 20
-},
-{
 "id": 30866,
 "name": "M. Lazzari",
 "role": "D",
@@ -510,11 +497,11 @@
 "prob": 16
 },
 {
-"id": 2799,
-"name": "A. Guðmundsson",
+"id": 483662,
+"name": "V. Farcomeni",
 "role": "C",
-"pos": "F",
-"prob": 30
+"pos": "M",
+"prob": 15
 },
 {
 "id": 133729,
@@ -522,9 +509,49 @@
 "role": "A",
 "pos": "F",
 "prob": 18
+},
+{
+"id": 436244,
+"name": "F. Serra",
+"role": "A",
+"pos": "F",
+"prob": 12
 }
 ],
-"out": [],
+"out": [
+{
+"id": 1844,
+"name": "A. Marušić",
+"role": "D",
+"pos": "D",
+"reason": "infortunio: muscolare",
+"back_at": null
+},
+{
+"id": 31094,
+"name": "A. Pinamonti",
+"role": "A",
+"pos": "F",
+"reason": "infortunio: infortunio",
+"back_at": null
+},
+{
+"id": 144740,
+"name": "F. Dele-Bashiru",
+"role": "C",
+"pos": "M",
+"reason": "infortunio: muscolare",
+"back_at": null
+},
+{
+"id": 30784,
+"name": "N. Rovella",
+"role": "C",
+"pos": "M",
+"reason": "infortunio: infortunio",
+"back_at": null
+}
+],
 "doubt": [],
 "coppa": null
 },
@@ -691,11 +718,11 @@
 "prob": 25
 },
 {
-"id": 2484,
-"name": "Y. Mina",
+"id": 264477,
+"name": "G. Aurelio",
 "role": "D",
 "pos": "D",
-"prob": 17
+"prob": 16
 },
 {
 "id": 203,
@@ -712,21 +739,46 @@
 "prob": 15
 },
 {
+"id": 263699,
+"name": "A. Fadera",
+"role": "C",
+"pos": "F",
+"prob": 18
+},
+{
+"id": 279757,
+"name": "R. Ciervo",
+"role": "C",
+"pos": "F",
+"prob": 16
+}
+],
+"out": [
+{
 "id": 188319,
 "name": "Kevin Carlos",
 "role": "A",
 "pos": "F",
-"prob": 23
+"reason": "infortunio: personal reasons",
+"back_at": null
 },
 {
 "id": 31734,
 "name": "M. Felici",
 "role": "C",
 "pos": "F",
-"prob": 22
+"reason": "infortunio: ginocchio",
+"back_at": null
+},
+{
+"id": 2484,
+"name": "Y. Mina",
+"role": "D",
+"pos": "D",
+"reason": "infortunio: polpaccio",
+"back_at": null
 }
 ],
-"out": [],
 "doubt": [],
 "coppa": null
 },
@@ -1374,7 +1426,16 @@
 "prob": 8
 }
 ],
-"out": [],
+"out": [
+{
+"id": 56473,
+"name": "M. Gabbia",
+"role": "D",
+"pos": "D",
+"reason": "infortunio: caviglia",
+"back_at": null
+}
+],
 "doubt": [],
 "coppa": null
 },
@@ -2056,32 +2117,26 @@
 "out_for": null
 },
 {
-"id": 25061,
-"name": "A. Bella-Kotchap",
-"role": "D",
-"pos": "D",
-"grid": "2:2",
-"prob": 88,
-"why": "titolare nelle ultime 3 su 3",
-"ballot": null,
-"out_for": null
-},
-{
 "id": 326183,
 "name": "R. Halhal",
 "role": "D",
 "pos": "D",
-"grid": "2:1",
+"grid": "2:2",
 "prob": 62,
 "why": "titolare nelle ultime 1 su 3",
-"ballot": {
-"id": 14704,
-"name": "B. Franjić",
-"prob": 48,
-"share": 44
+"ballot": null,
+"out_for": "A. Bella-Kotchap"
 },
-"out_for": null,
-"share": 56
+{
+"id": 1482,
+"name": "Thierry Correia",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 36,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": null,
+"out_for": "R. Halhal"
 },
 {
 "id": 275394,
@@ -2124,14 +2179,8 @@
 "grid": "3:2",
 "prob": 56,
 "why": "titolare nelle ultime 1 su 3",
-"ballot": {
-"id": 1266,
-"name": "T. Bašić",
-"prob": 54,
-"share": 49
-},
-"out_for": null,
-"share": 51
+"ballot": null,
+"out_for": null
 },
 {
 "id": 37144,
@@ -2182,18 +2231,18 @@
 "prob": 14
 },
 {
-"id": 1482,
-"name": "Thierry Correia",
-"role": "D",
-"pos": "D",
-"prob": 36
-},
-{
 "id": 375321,
 "name": "R. Sagrado",
 "role": "D",
 "pos": "D",
 "prob": 24
+},
+{
+"id": 421807,
+"name": "M. Moreno",
+"role": "D",
+"pos": "D",
+"prob": 23
 },
 {
 "id": 342025,
@@ -2224,7 +2273,32 @@
 "prob": 10
 }
 ],
-"out": [],
+"out": [
+{
+"id": 25061,
+"name": "A. Bella-Kotchap",
+"role": "D",
+"pos": "D",
+"reason": "infortunio: infortunio",
+"back_at": null
+},
+{
+"id": 14704,
+"name": "B. Franjić",
+"role": "D",
+"pos": "D",
+"reason": "infortunio: infortunio",
+"back_at": null
+},
+{
+"id": 1266,
+"name": "T. Bašić",
+"role": "C",
+"pos": "M",
+"reason": "infortunio: piede",
+"back_at": null
+}
+],
 "doubt": [],
 "coppa": null
 },
@@ -3103,7 +3177,7 @@
 "name": "G. Gaetano",
 "role": "C",
 "pos": "M",
-"reason": "squalifica: espulso nell'ultima giornata",
+"reason": "infortunio: infortunio",
 "back_at": null
 }
 ],
@@ -4200,7 +4274,16 @@
 "prob": 8
 }
 ],
-"out": [],
+"out": [
+{
+"id": 162561,
+"name": "E. Havel",
+"role": "A",
+"pos": "F",
+"reason": "infortunio: coscia",
+"back_at": null
+}
+],
 "doubt": [],
 "coppa": null
 },
