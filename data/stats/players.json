@@ -27042,6 +27042,18 @@
 "id": 487,
 "name": "Lazio"
 }
+},
+{
+"date": "2026-09-01",
+"type": "Transfer",
+"from": {
+"id": 487,
+"name": "Lazio"
+},
+"to": {
+"id": 2895,
+"name": "Al Sadd"
+}
 }
 ]
 },
@@ -69588,11 +69600,11 @@
 "weight": 76,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/30810.png",
-"team": 502,
-"team_name": "Fiorentina",
+"team": 503,
+"team_name": "Torino",
 "number": 8,
 "position": "Midfielder",
-"active": false,
+"active": true,
 "cur": [
 {
 "team": {
@@ -194977,6 +194989,18 @@
 "id": 500,
 "name": "Bologna"
 }
+},
+{
+"date": "2026-07-28",
+"type": "Transfer",
+"from": {
+"id": null,
+"name": "Estudiantes L.P."
+},
+"to": {
+"id": 500,
+"name": "Bologna"
+}
 }
 ]
 },
@@ -203679,7 +203703,7 @@
 "team": 503,
 "team_name": "Torino",
 "number": 77,
-"position": "Defender",
+"position": "Attacker",
 "active": true,
 "cur": [
 {
@@ -209292,7 +209316,7 @@
 "team_name": "Torino",
 "number": 25,
 "position": "Defender",
-"active": true,
+"active": false,
 "cur": [
 {
 "team": {
@@ -218783,7 +218807,7 @@
 "team_name": "Atalanta",
 "number": 21,
 "position": "Midfielder",
-"active": true,
+"active": false,
 "photo": "https://media.api-sports.io/football/players/553341.png",
 "name": "F. Steffanoni",
 "cur": [],
@@ -227067,7 +227091,7 @@
 "team_name": "Torino",
 "number": 84,
 "position": "Attacker",
-"active": true,
+"active": false,
 "photo": "https://media.api-sports.io/football/players/437088.png",
 "name": "T. Gabellini",
 "cur": [],
@@ -242178,7 +242202,7 @@
 "team_name": "Torino",
 "number": 2,
 "position": "Defender",
-"active": true,
+"active": false,
 "photo": "https://media.api-sports.io/football/players/438215.png",
 "name": "C. Bianay Balcot",
 "cur": [],
@@ -244333,15 +244357,15 @@
 },
 "441134": {
 "id": 441134,
-"name": "M. Doucoure",
-"first": "Mamedi",
-"last": "Doucouré",
+"name": "Mamedi Doucoure",
+"first": null,
+"last": null,
 "birth": {
-"date": "2007-01-19",
+"date": null,
 "place": null,
-"country": "France"
+"country": null
 },
-"nationality": "France",
+"nationality": null,
 "height": null,
 "weight": null,
 "injured": false,
@@ -244420,6 +244444,77 @@
 "commited": null,
 "scored": 0,
 "missed": null,
+"saved": null
+}
+},
+{
+"team": {
+"id": 495,
+"name": "Genoa"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 0,
+"lineups": 0,
+"minutes": null,
+"number": 74,
+"position": "Defender",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 0
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
 "saved": null
 }
 }
@@ -245292,7 +245387,7 @@
 "weight": 71,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/41892.png",
-"active": false,
+"active": true,
 "team": 503,
 "team_name": "Torino",
 "position": "Midfielder",
@@ -245682,7 +245777,8 @@
 "name": "Torino"
 }
 }
-]
+],
+"number": 21
 },
 "125743": {
 "id": 125743,
@@ -246273,7 +246369,7 @@
 "weight": 83,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/138417.png",
-"active": false,
+"active": true,
 "team": 503,
 "team_name": "Torino",
 "position": "Defender",
@@ -246793,7 +246889,8 @@
 "name": "Torino"
 }
 }
-]
+],
+"number": 2
 },
 "162128": {
 "id": 162128,
@@ -247348,7 +247445,7 @@
 "weight": 73,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/303362.png",
-"active": false,
+"active": true,
 "team": 503,
 "team_name": "Torino",
 "position": "Defender",
@@ -247797,7 +247894,8 @@
 "name": "Torino"
 }
 }
-]
+],
+"number": 45
 },
 "48491": {
 "id": 48491,
@@ -253805,7 +253903,7 @@
 "weight": null,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/616233.png",
-"active": false,
+"active": true,
 "team": 503,
 "team_name": "Torino",
 "position": "Defender",
@@ -253898,7 +253996,8 @@
 "name": "Torino U20"
 }
 }
-]
+],
+"number": 63
 },
 "679113": {
 "id": 679113,
@@ -256886,9 +256985,244 @@
 "prev": [],
 "prev_season": 2025,
 "transfers": []
+},
+"485609": {
+"id": 485609,
+"team": 499,
+"team_name": "Atalanta",
+"number": 21,
+"position": "Midfielder",
+"active": true,
+"photo": "https://media.api-sports.io/football/players/485609.png",
+"name": "F. Steffanoni",
+"cur": [],
+"cur_season": 2026,
+"first": "Federico Alessandro",
+"last": "Steffanoni",
+"birth": {
+"date": "2008-09-04",
+"place": null,
+"country": "Italy"
+},
+"nationality": "Italy",
+"height": null,
+"weight": null,
+"injured": false,
+"prev": [
+{
+"team": {
+"id": 12510,
+"name": "Italy U17"
+},
+"league": {
+"id": 886,
+"name": "UEFA U17 Championship - Qualification",
+"country": "World",
+"season": 2025
+},
+"games": {
+"appearences": 6,
+"lineups": 4,
+"minutes": 334,
+"number": null,
+"position": "Midfielder",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": 2,
+"out": 2,
+"bench": 2
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": null,
+"assists": null,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": null,
+"missed": null,
+"saved": null
+}
+}
+],
+"prev_season": 2025,
+"transfers": []
+},
+"611399": {
+"id": 611399,
+"team": 503,
+"team_name": "Torino",
+"number": 45,
+"position": "Attacker",
+"active": true,
+"photo": "https://media.api-sports.io/football/players/611399.png",
+"name": "O. Banse",
+"cur": [],
+"cur_season": 2026,
+"first": null,
+"last": null,
+"birth": {
+"date": null,
+"place": null,
+"country": null
+},
+"nationality": null,
+"height": null,
+"weight": null,
+"injured": false,
+"prev": [],
+"prev_season": 2025,
+"transfers": [
+{
+"date": "2026-08-27",
+"type": "Transfer",
+"from": {
+"id": 880,
+"name": "Reggiana"
+},
+"to": {
+"id": 503,
+"name": "Torino"
+}
+}
+]
+},
+"616236": {
+"id": 616236,
+"team": 503,
+"team_name": "Torino",
+"number": 96,
+"position": "Midfielder",
+"active": true,
+"photo": "https://media.api-sports.io/football/players/616236.png",
+"name": "Zalan Kugyela",
+"cur": [],
+"cur_season": 2026,
+"first": null,
+"last": null,
+"birth": {
+"date": null,
+"place": null,
+"country": null
+},
+"nationality": null,
+"height": null,
+"weight": null,
+"injured": false,
+"prev": [
+{
+"team": {
+"id": 503,
+"name": "Torino"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2025
+},
+"games": {
+"appearences": 0,
+"lineups": 0,
+"minutes": null,
+"number": 95,
+"position": "Midfielder",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 1
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+}
+],
+"prev_season": 2025,
+"transfers": []
 }
 },
-"updated": "2026-09-09T23:26:04Z",
+"updated": "2026-09-10T10:38:41Z",
 "season": 2026,
 "league": 135
 }
