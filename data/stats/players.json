@@ -177824,7 +177824,7 @@
 "team": 490,
 "team_name": "Cagliari",
 "number": 22,
-"position": "Midfielder",
+"position": "Defender",
 "active": true,
 "cur": [
 {
@@ -192567,7 +192567,7 @@
 "weight": null,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/421859.png",
-"active": false,
+"active": true,
 "team": 1579,
 "team_name": "Monza",
 "position": "Midfielder",
@@ -192744,7 +192744,8 @@
 "name": "Monza"
 }
 }
-]
+],
+"number": 8
 },
 "422109": {
 "id": 422109,
@@ -226942,7 +226943,7 @@
 "team_name": "Monza",
 "number": 8,
 "position": "Midfielder",
-"active": true,
+"active": false,
 "photo": "https://media.api-sports.io/football/players/550912.png",
 "name": "F. Ondoa",
 "cur": [],
@@ -240826,7 +240827,7 @@
 "team_name": "Lazio",
 "number": 3,
 "position": "Defender",
-"active": true,
+"active": false,
 "photo": "https://media.api-sports.io/football/players/544574.png",
 "name": "F. Bordon",
 "cur": [],
@@ -244376,77 +244377,6 @@
 "position": "Defender",
 "active": true,
 "cur": [
-{
-"team": {
-"id": 495,
-"name": "Genoa"
-},
-"league": {
-"id": 135,
-"name": "Serie A",
-"country": "Italy",
-"season": 2026
-},
-"games": {
-"appearences": 0,
-"lineups": 0,
-"minutes": 0,
-"number": 74,
-"position": "Defender",
-"rating": 0,
-"captain": false
-},
-"substitutes": {
-"in": 0,
-"out": 0,
-"bench": 3
-},
-"shots": {
-"total": 0,
-"on": 0
-},
-"goals": {
-"total": 0,
-"conceded": 0,
-"assists": 0,
-"saves": 0
-},
-"passes": {
-"total": 0,
-"key": 0,
-"accuracy": null
-},
-"tackles": {
-"total": 0,
-"blocks": 0,
-"interceptions": 0
-},
-"duels": {
-"total": 0,
-"won": 0
-},
-"dribbles": {
-"attempts": 0,
-"success": 0,
-"past": null
-},
-"fouls": {
-"drawn": 0,
-"committed": 0
-},
-"cards": {
-"yellow": 0,
-"yellowred": 0,
-"red": 0
-},
-"penalty": {
-"won": null,
-"commited": null,
-"scored": 0,
-"missed": null,
-"saved": null
-}
-},
 {
 "team": {
 "id": 495,
@@ -257220,9 +257150,298 @@
 ],
 "prev_season": 2025,
 "transfers": []
+},
+"407916": {
+"id": 407916,
+"team": 487,
+"team_name": "Lazio",
+"number": 3,
+"position": "Defender",
+"active": true,
+"photo": "https://media.api-sports.io/football/players/407916.png",
+"name": "Filipe Bordon",
+"cur": [],
+"cur_season": 2026,
+"first": "Filipe",
+"last": "Bordon",
+"birth": {
+"date": "2005-06-24",
+"place": null,
+"country": "Brazil"
+},
+"nationality": "Brazil",
+"height": 195,
+"weight": 85,
+"injured": false,
+"prev": [
+{
+"team": {
+"id": 16200,
+"name": "Brazil U20"
+},
+"league": {
+"id": 773,
+"name": "Sudamericano U20",
+"country": "World",
+"season": 2025
+},
+"games": {
+"appearences": null,
+"lineups": null,
+"minutes": null,
+"number": null,
+"position": "Defender",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": null,
+"out": null,
+"bench": null
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": null,
+"conceded": null,
+"assists": null,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": null,
+"yellowred": null,
+"red": null
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": null,
+"missed": null,
+"saved": null
 }
 },
-"updated": "2026-09-10T10:38:41Z",
+{
+"team": {
+"id": 1578,
+"name": "Sudtirol"
+},
+"league": {
+"id": 137,
+"name": "Coppa Italia",
+"country": "Italy",
+"season": 2025
+},
+"games": {
+"appearences": 0,
+"lineups": 0,
+"minutes": 88,
+"number": 3,
+"position": "Defender",
+"rating": 6.2,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 0
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 7,
+"key": null,
+"accuracy": 42
+},
+"tackles": {
+"total": 1,
+"blocks": 2,
+"interceptions": 2
+},
+"duels": {
+"total": 4,
+"won": 1
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": 2
+},
+"cards": {
+"yellow": 1,
+"yellowred": 1,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+},
+{
+"team": {
+"id": 1578,
+"name": "Sudtirol"
+},
+"league": {
+"id": 136,
+"name": "Serie B",
+"country": "Italy",
+"season": 2025
+},
+"games": {
+"appearences": 0,
+"lineups": 0,
+"minutes": 465,
+"number": 3,
+"position": "Defender",
+"rating": 6.65,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 0
+},
+"shots": {
+"total": 3,
+"on": 1
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 111,
+"key": null,
+"accuracy": 57
+},
+"tackles": {
+"total": 13,
+"blocks": 9,
+"interceptions": 9
+},
+"duels": {
+"total": 77,
+"won": 43
+},
+"dribbles": {
+"attempts": 3,
+"success": 3,
+"past": null
+},
+"fouls": {
+"drawn": 6,
+"committed": 14
+},
+"cards": {
+"yellow": 5,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": 1,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+}
+],
+"prev_season": 2025,
+"transfers": [
+{
+"date": "2024-07-01",
+"type": "€ 500K",
+"from": {
+"id": 7826,
+"name": "Ferroviária"
+},
+"to": {
+"id": 487,
+"name": "Lazio"
+}
+},
+{
+"date": "2025-07-09",
+"type": "Loan",
+"from": {
+"id": 487,
+"name": "Lazio"
+},
+"to": {
+"id": 1578,
+"name": "Sudtirol"
+}
+},
+{
+"date": "2025-07-10",
+"type": "Loan",
+"from": {
+"id": 487,
+"name": "Lazio"
+},
+"to": {
+"id": 1578,
+"name": "Sudtirol"
+}
+},
+{
+"date": "2026-06-29",
+"type": "Return from loan",
+"from": {
+"id": 1578,
+"name": "Sudtirol"
+},
+"to": {
+"id": 487,
+"name": "Lazio"
+}
+}
+]
+}
+},
+"updated": "2026-09-10T23:19:49Z",
 "season": 2026,
 "league": 135
 }
