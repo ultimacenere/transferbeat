@@ -1,5 +1,5 @@
 {
-"updated": "2026-09-11T12:10:32Z",
+"updated": "2026-09-11T17:58:30Z",
 "season": 2026,
 "matchday": 4,
 "stage": "giorno-gara",
@@ -710,11 +710,11 @@
 "prob": 25
 },
 {
-"id": 264477,
-"name": "G. Aurelio",
+"id": 2484,
+"name": "Y. Mina",
 "role": "D",
 "pos": "D",
-"prob": 16
+"prob": 17
 },
 {
 "id": 203,
@@ -752,14 +752,6 @@
 "role": "C",
 "pos": "F",
 "reason": "infortunio: ginocchio",
-"back_at": null
-},
-{
-"id": 2484,
-"name": "Y. Mina",
-"role": "D",
-"pos": "D",
-"reason": "infortunio: polpaccio",
 "back_at": null
 }
 ],
@@ -994,7 +986,7 @@
 "name": "W. Geubbels",
 "role": "A",
 "pos": "F",
-"reason": "infortunio: infortunio",
+"reason": "infortunio: caviglia",
 "back_at": null
 }
 ],
@@ -2749,13 +2741,13 @@
 "prob": 58,
 "why": "titolare nelle ultime 1 su 3",
 "ballot": {
-"id": 1649,
-"name": "P. Cutrone",
-"prob": 37,
-"share": 39
+"id": 340547,
+"name": "Gustavo Varela",
+"prob": 54,
+"share": 48
 },
 "out_for": null,
-"share": 61
+"share": 52
 },
 {
 "id": 380691,
@@ -2765,8 +2757,14 @@
 "grid": "4:1",
 "prob": 62,
 "why": "titolare nelle ultime 1 su 3",
-"ballot": null,
-"out_for": null
+"ballot": {
+"id": 1649,
+"name": "P. Cutrone",
+"prob": 37,
+"share": 37
+},
+"out_for": null,
+"share": 63
 },
 {
 "id": 30603,
@@ -2824,16 +2822,7 @@
 "prob": 5
 }
 ],
-"out": [
-{
-"id": 340547,
-"name": "Gustavo Varela",
-"role": "A",
-"pos": "F",
-"reason": "infortunio: coscia",
-"back_at": null
-}
-],
+"out": [],
 "doubt": [],
 "coppa": null
 },
