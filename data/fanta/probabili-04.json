@@ -1,5 +1,5 @@
 {
-"updated": "2026-09-10T23:18:43Z",
+"updated": "2026-09-11T12:10:32Z",
 "season": 2026,
 "matchday": 4,
 "stage": "giorno-gara",
@@ -1082,37 +1082,37 @@
 "out_for": null
 },
 {
-"id": 30533,
-"name": "M. Locatelli",
+"id": 47522,
+"name": "Douglas Luiz",
 "role": "C",
 "pos": "M",
 "grid": "3:2",
 "prob": 94,
 "why": "titolare nelle ultime 3 su 3",
 "ballot": null,
-"out_for": null
-},
-{
-"id": 47522,
-"name": "Douglas Luiz",
-"role": "C",
-"pos": "M",
-"grid": "3:1",
-"prob": 94,
-"why": "titolare nelle ultime 3 su 3",
-"ballot": null,
-"out_for": null
+"out_for": "M. Locatelli"
 },
 {
 "id": 161585,
 "name": "Francisco Conceição",
 "role": "C",
 "pos": "M",
-"grid": "4:3",
+"grid": "3:1",
 "prob": 94,
 "why": "titolare nelle ultime 3 su 3",
 "ballot": null,
-"out_for": null
+"out_for": "Douglas Luiz"
+},
+{
+"id": 395559,
+"name": "Kerim-Sam Alajbegović",
+"role": "C",
+"pos": "M",
+"grid": "4:3",
+"prob": 62,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": null,
+"out_for": "Francisco Conceição"
 },
 {
 "id": 26315,
@@ -1126,15 +1126,15 @@
 "out_for": null
 },
 {
-"id": 395559,
-"name": "Kerim-Sam Alajbegović",
+"id": 36899,
+"name": "T. Koopmeiners",
 "role": "C",
 "pos": "M",
 "grid": "4:1",
-"prob": 62,
-"why": "titolare nelle ultime 1 su 3",
+"prob": 20,
+"why": "titolare nelle ultime 0 su 3",
 "ballot": null,
-"out_for": null
+"out_for": "Kerim-Sam Alajbegović"
 },
 {
 "id": 21104,
@@ -1171,25 +1171,18 @@
 "prob": 14
 },
 {
-"id": 339883,
-"name": "K. Yıldız",
-"role": "A",
-"pos": "M",
-"prob": 26
-},
-{
-"id": 415,
-"name": "W. McKennie",
+"id": 436927,
+"name": "A. Owusu",
 "role": "C",
 "pos": "M",
-"prob": 26
+"prob": 8
 },
 {
-"id": 30531,
-"name": "J. Boga",
-"role": "A",
-"pos": "F",
-"prob": 37
+"id": 181808,
+"name": "F. Miretti",
+"role": "C",
+"pos": "M",
+"prob": 5
 },
 {
 "id": 8489,
@@ -1197,9 +1190,89 @@
 "role": "A",
 "pos": "F",
 "prob": 33
+},
+{
+"id": 48392,
+"name": "E. Zhegrova",
+"role": "C",
+"pos": "F",
+"prob": 15
 }
 ],
-"out": [],
+"out": [
+{
+"id": 127011,
+"name": "A. Cambiaso",
+"role": "D",
+"pos": "D",
+"reason": "infortunio: caviglia",
+"back_at": null
+},
+{
+"id": 333,
+"name": "A. Milik",
+"role": "A",
+"pos": "F",
+"reason": "infortunio: inactive",
+"back_at": null
+},
+{
+"id": 30531,
+"name": "J. Boga",
+"role": "A",
+"pos": "F",
+"reason": "infortunio: muscolare",
+"back_at": null
+},
+{
+"id": 125674,
+"name": "J. Cabal",
+"role": "D",
+"pos": "D",
+"reason": "infortunio: coscia",
+"back_at": null
+},
+{
+"id": 451504,
+"name": "J. Ekhator",
+"role": "A",
+"pos": "F",
+"reason": "infortunio: muscolare",
+"back_at": null
+},
+{
+"id": 116,
+"name": "K. Thuram",
+"role": "C",
+"pos": "M",
+"reason": "infortunio: ginocchio",
+"back_at": null
+},
+{
+"id": 339883,
+"name": "K. Yıldız",
+"role": "A",
+"pos": "M",
+"reason": "infortunio: piede",
+"back_at": null
+},
+{
+"id": 30533,
+"name": "M. Locatelli",
+"role": "C",
+"pos": "M",
+"reason": "infortunio: ginocchio",
+"back_at": null
+},
+{
+"id": 415,
+"name": "W. McKennie",
+"role": "C",
+"pos": "M",
+"reason": "infortunio: muscolare",
+"back_at": null
+}
+],
 "doubt": [],
 "coppa": null
 },
@@ -1764,25 +1837,19 @@
 "grid": "3:1",
 "prob": 62,
 "why": "titolare nelle ultime 1 su 3",
-"ballot": {
-"id": 455245,
-"name": "D. Bakola",
-"prob": 54,
-"share": 47
-},
-"out_for": null,
-"share": 53
-},
-{
-"id": 342035,
-"name": "C. Volpato",
-"role": "C",
-"pos": "F",
-"grid": "4:3",
-"prob": 88,
-"why": "titolare nelle ultime 3 su 3",
 "ballot": null,
 "out_for": null
+},
+{
+"id": 2215,
+"name": "A. Laurienté",
+"role": "A",
+"pos": "F",
+"grid": "4:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": "C. Volpato"
 },
 {
 "id": 126690,
@@ -1796,15 +1863,15 @@
 "out_for": null
 },
 {
-"id": 2215,
-"name": "A. Laurienté",
+"id": 30537,
+"name": "D. Berardi",
 "role": "A",
 "pos": "F",
 "grid": "4:1",
-"prob": 94,
-"why": "titolare nelle ultime 3 su 3",
+"prob": 28,
+"why": "titolare nelle ultime 0 su 3",
 "ballot": null,
-"out_for": null
+"out_for": "A. Laurienté"
 }
 ],
 "bench": [
@@ -1844,21 +1911,38 @@
 "prob": 16
 },
 {
-"id": 30537,
-"name": "D. Berardi",
-"role": "A",
-"pos": "F",
-"prob": 28
-},
-{
 "id": 347265,
 "name": "B. Domínguez",
 "role": "C",
 "pos": "F",
 "prob": 18
+},
+{
+"id": 30849,
+"name": "N. Pierini",
+"role": "A",
+"pos": "F",
+"prob": 14
 }
 ],
-"out": [],
+"out": [
+{
+"id": 342035,
+"name": "C. Volpato",
+"role": "C",
+"pos": "F",
+"reason": "infortunio: coscia",
+"back_at": null
+},
+{
+"id": 455245,
+"name": "D. Bakola",
+"role": "C",
+"pos": "M",
+"reason": "infortunio: muscolare",
+"back_at": null
+}
+],
 "doubt": [],
 "coppa": null
 },
@@ -2246,15 +2330,15 @@
 "prob": 23
 },
 {
-"id": 342025,
-"name": "M. Dagasso",
-"role": "C",
-"pos": "M",
-"prob": 16
-},
-{
 "id": 415517,
 "name": "Lamine Dabo",
+"role": "C",
+"pos": "M",
+"prob": 14
+},
+{
+"id": 162010,
+"name": "S. Panada",
 "role": "C",
 "pos": "M",
 "prob": 14
@@ -2289,6 +2373,14 @@
 "role": "D",
 "pos": "D",
 "reason": "infortunio: infortunio",
+"back_at": null
+},
+{
+"id": 342025,
+"name": "M. Dagasso",
+"role": "C",
+"pos": "M",
+"reason": "infortunio: inactive",
 "back_at": null
 },
 {
