@@ -1,5 +1,5 @@
 {
-"updated": "2026-09-11T17:58:33Z",
+"updated": "2026-09-12T12:04:28Z",
 "season": 2026,
 "leagues": {
 "135": {
@@ -470,6 +470,39 @@
 },
 {
 "rank": 15,
+"team_id": 502,
+"name": "Fiorentina",
+"points": 3,
+"gd": -6,
+"form": "WLLL",
+"description": "",
+"all": {
+"played": 4,
+"win": 1,
+"draw": 0,
+"lose": 3,
+"gf": 5,
+"ga": 11
+},
+"home": {
+"played": 2,
+"win": 0,
+"draw": 0,
+"lose": 2,
+"gf": 1,
+"ga": 5
+},
+"away": {
+"played": 2,
+"win": 1,
+"draw": 0,
+"lose": 1,
+"gf": 4,
+"ga": 6
+}
+},
+{
+"rank": 16,
 "team_id": 500,
 "name": "Bologna",
 "points": 1,
@@ -502,7 +535,7 @@
 }
 },
 {
-"rank": 16,
+"rank": 17,
 "team_id": 523,
 "name": "Parma",
 "points": 1,
@@ -535,13 +568,13 @@
 }
 },
 {
-"rank": 17,
+"rank": 18,
 "team_id": 1579,
 "name": "Monza",
 "points": 1,
 "gd": -4,
 "form": "DLL",
-"description": "",
+"description": "Relegation",
 "all": {
 "played": 3,
 "win": 0,
@@ -563,39 +596,6 @@
 "win": 0,
 "draw": 1,
 "lose": 1,
-"gf": 2,
-"ga": 5
-}
-},
-{
-"rank": 18,
-"team_id": 517,
-"name": "Venezia",
-"points": 0,
-"gd": -5,
-"form": "LLL",
-"description": "Relegation",
-"all": {
-"played": 3,
-"win": 0,
-"draw": 0,
-"lose": 3,
-"gf": 2,
-"ga": 7
-},
-"home": {
-"played": 1,
-"win": 0,
-"draw": 0,
-"lose": 1,
-"gf": 0,
-"ga": 2
-},
-"away": {
-"played": 2,
-"win": 0,
-"draw": 0,
-"lose": 2,
 "gf": 2,
 "ga": 5
 }
@@ -635,35 +635,35 @@
 },
 {
 "rank": 20,
-"team_id": 502,
-"name": "Fiorentina",
+"team_id": 517,
+"name": "Venezia",
 "points": 0,
-"gd": -8,
-"form": "LLL",
+"gd": -7,
+"form": "LLLL",
 "description": "Relegation",
 "all": {
-"played": 3,
+"played": 4,
 "win": 0,
 "draw": 0,
-"lose": 3,
-"gf": 1,
-"ga": 9
+"lose": 4,
+"gf": 4,
+"ga": 11
 },
 "home": {
 "played": 2,
 "win": 0,
 "draw": 0,
 "lose": 2,
-"gf": 1,
-"ga": 5
+"gf": 2,
+"ga": 6
 },
 "away": {
-"played": 1,
+"played": 2,
 "win": 0,
 "draw": 0,
-"lose": 1,
-"gf": 0,
-"ga": 4
+"lose": 2,
+"gf": 2,
+"ga": 5
 }
 }
 ]
@@ -1406,6 +1406,39 @@
 },
 {
 "rank": 3,
+"team_id": 536,
+"name": "Sevilla",
+"points": 10,
+"gd": 2,
+"form": "WDLWW",
+"description": "Champions League league stage",
+"all": {
+"played": 5,
+"win": 3,
+"draw": 1,
+"lose": 1,
+"gf": 8,
+"ga": 6
+},
+"home": {
+"played": 3,
+"win": 2,
+"draw": 0,
+"lose": 1,
+"gf": 4,
+"ga": 4
+},
+"away": {
+"played": 2,
+"win": 1,
+"draw": 1,
+"lose": 0,
+"gf": 4,
+"ga": 2
+}
+},
+{
+"rank": 4,
 "team_id": 541,
 "name": "Real Madrid",
 "points": 9,
@@ -1438,13 +1471,13 @@
 }
 },
 {
-"rank": 4,
+"rank": 5,
 "team_id": 543,
 "name": "Real Betis",
 "points": 9,
 "gd": 0,
 "form": "WLWW",
-"description": "Champions League league stage",
+"description": "Europa League league stage",
 "all": {
 "played": 4,
 "win": 3,
@@ -1471,13 +1504,13 @@
 }
 },
 {
-"rank": 5,
+"rank": 6,
 "team_id": 544,
 "name": "Deportivo La Coruna",
 "points": 8,
 "gd": 3,
 "form": "WWDD",
-"description": "Europa League league stage",
+"description": "ECL Playoffs",
 "all": {
 "played": 4,
 "win": 2,
@@ -1501,39 +1534,6 @@
 "lose": 0,
 "gf": 4,
 "ga": 3
-}
-},
-{
-"rank": 6,
-"team_id": 536,
-"name": "Sevilla",
-"points": 7,
-"gd": 1,
-"form": "DLWW",
-"description": "ECL Playoffs",
-"all": {
-"played": 4,
-"win": 2,
-"draw": 1,
-"lose": 1,
-"gf": 7,
-"ga": 6
-},
-"home": {
-"played": 2,
-"win": 1,
-"draw": 0,
-"lose": 1,
-"gf": 3,
-"ga": 4
-},
-"away": {
-"played": 2,
-"win": 1,
-"draw": 1,
-"lose": 0,
-"gf": 4,
-"ga": 2
 }
 },
 {
@@ -1970,16 +1970,16 @@
 "team_id": 532,
 "name": "Valencia",
 "points": 1,
-"gd": -8,
-"form": "LLLD",
+"gd": -9,
+"form": "LLLLD",
 "description": "Relegation",
 "all": {
-"played": 4,
+"played": 5,
 "win": 0,
 "draw": 1,
-"lose": 3,
+"lose": 4,
 "gf": 1,
-"ga": 9
+"ga": 10
 },
 "home": {
 "played": 3,
@@ -1990,12 +1990,12 @@
 "ga": 6
 },
 "away": {
-"played": 1,
+"played": 2,
 "win": 0,
 "draw": 0,
-"lose": 1,
+"lose": 2,
 "gf": 1,
-"ga": 3
+"ga": 4
 }
 }
 ]
@@ -3990,6 +3990,154 @@
 }
 }
 },
+"502": {
+"id": 502,
+"name": "Fiorentina",
+"league": 135,
+"form": "LLLW",
+"fixtures": {
+"played": {
+"home": 2,
+"away": 2,
+"total": 4
+},
+"wins": {
+"home": 0,
+"away": 1,
+"total": 1
+},
+"draws": {
+"home": 0,
+"away": 0,
+"total": 0
+},
+"loses": {
+"home": 2,
+"away": 1,
+"total": 3
+}
+},
+"goals_for": {
+"total": {
+"home": 1,
+"away": 4,
+"total": 5
+},
+"avg": {
+"home": 0.5,
+"away": 2.0,
+"total": 1.3
+},
+"minute": {
+"0-15": 0,
+"16-30": 2,
+"31-45": 0,
+"46-60": 1,
+"61-75": 1,
+"76-90": 1,
+"91-105": 0,
+"106-120": 0
+}
+},
+"goals_against": {
+"total": {
+"home": 5,
+"away": 6,
+"total": 11
+},
+"avg": {
+"home": 2.5,
+"away": 3.0,
+"total": 2.8
+},
+"minute": {
+"0-15": 0,
+"16-30": 3,
+"31-45": 1,
+"46-60": 2,
+"61-75": 2,
+"76-90": 3,
+"91-105": 0,
+"106-120": 0
+}
+},
+"biggest": {
+"streak": {
+"wins": 0,
+"draws": 0,
+"loses": 3
+},
+"wins": {
+"home": null,
+"away": "2-4"
+},
+"loses": {
+"home": "0-3",
+"away": "4-0"
+},
+"goals": {
+"for": {
+"home": 1,
+"away": 4
+},
+"against": {
+"home": 3,
+"away": 4
+}
+}
+},
+"clean_sheet": {
+"home": 0,
+"away": 0,
+"total": 0
+},
+"failed_to_score": {
+"home": 1,
+"away": 1,
+"total": 2
+},
+"penalty": {
+"scored": 0,
+"missed": 0,
+"total": 0
+},
+"lineups": [
+{
+"formation": "4-3-2-1",
+"played": 1
+},
+{
+"formation": "4-3-3",
+"played": 1
+},
+{
+"formation": "4-2-3-1",
+"played": 1
+}
+],
+"cards": {
+"yellow": {
+"0-15": 0,
+"16-30": 2,
+"31-45": 0,
+"46-60": 1,
+"61-75": 2,
+"76-90": 1,
+"91-105": 0,
+"106-120": 0
+},
+"red": {
+"0-15": 0,
+"16-30": 0,
+"31-45": 0,
+"46-60": 0,
+"61-75": 0,
+"76-90": 0,
+"91-105": 0,
+"106-120": 0
+}
+}
+},
 "500": {
 "id": 500,
 "name": "Bologna",
@@ -4422,146 +4570,6 @@
 }
 }
 },
-"517": {
-"id": 517,
-"name": "Venezia",
-"league": 135,
-"form": "LLL",
-"fixtures": {
-"played": {
-"home": 1,
-"away": 2,
-"total": 3
-},
-"wins": {
-"home": 0,
-"away": 0,
-"total": 0
-},
-"draws": {
-"home": 0,
-"away": 0,
-"total": 0
-},
-"loses": {
-"home": 1,
-"away": 2,
-"total": 3
-}
-},
-"goals_for": {
-"total": {
-"home": 0,
-"away": 2,
-"total": 2
-},
-"avg": {
-"home": 0.0,
-"away": 1.0,
-"total": 0.7
-},
-"minute": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 0,
-"46-60": 0,
-"61-75": 2,
-"76-90": 1,
-"91-105": 0,
-"106-120": 0
-}
-},
-"goals_against": {
-"total": {
-"home": 2,
-"away": 5,
-"total": 7
-},
-"avg": {
-"home": 2.0,
-"away": 2.5,
-"total": 2.3
-},
-"minute": {
-"0-15": 0,
-"16-30": 1,
-"31-45": 1,
-"46-60": 1,
-"61-75": 1,
-"76-90": 2,
-"91-105": 0,
-"106-120": 0
-}
-},
-"biggest": {
-"streak": {
-"wins": 0,
-"draws": 0,
-"loses": 3
-},
-"wins": {
-"home": null,
-"away": null
-},
-"loses": {
-"home": "0-2",
-"away": "2-0"
-},
-"goals": {
-"for": {
-"home": 0,
-"away": 2
-},
-"against": {
-"home": 2,
-"away": 3
-}
-}
-},
-"clean_sheet": {
-"home": 0,
-"away": 0,
-"total": 0
-},
-"failed_to_score": {
-"home": 1,
-"away": 1,
-"total": 2
-},
-"penalty": {
-"scored": 0,
-"missed": 0,
-"total": 0
-},
-"lineups": [
-{
-"formation": "3-5-2",
-"played": 3
-}
-],
-"cards": {
-"yellow": {
-"0-15": 0,
-"16-30": 1,
-"31-45": 3,
-"46-60": 2,
-"61-75": 0,
-"76-90": 2,
-"91-105": 0,
-"106-120": 0
-},
-"red": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 0,
-"46-60": 0,
-"61-75": 0,
-"76-90": 0,
-"91-105": 0,
-"106-120": 0
-}
-}
-},
 "495": {
 "id": 495,
 "name": "Genoa",
@@ -4707,16 +4715,16 @@
 }
 }
 },
-"502": {
-"id": 502,
-"name": "Fiorentina",
+"517": {
+"id": 517,
+"name": "Venezia",
 "league": 135,
-"form": "LLL",
+"form": "LLLL",
 "fixtures": {
 "played": {
 "home": 2,
-"away": 1,
-"total": 3
+"away": 2,
+"total": 4
 },
 "wins": {
 "home": 0,
@@ -4730,50 +4738,50 @@
 },
 "loses": {
 "home": 2,
-"away": 1,
-"total": 3
+"away": 2,
+"total": 4
 }
 },
 "goals_for": {
 "total": {
-"home": 1,
-"away": 0,
-"total": 1
+"home": 2,
+"away": 2,
+"total": 4
 },
 "avg": {
-"home": 0.5,
-"away": 0.0,
-"total": 0.3
+"home": 1.0,
+"away": 1.0,
+"total": 1.0
 },
 "minute": {
 "0-15": 0,
-"16-30": 0,
+"16-30": 1,
 "31-45": 0,
-"46-60": 1,
-"61-75": 0,
-"76-90": 0,
+"46-60": 0,
+"61-75": 2,
+"76-90": 2,
 "91-105": 0,
 "106-120": 0
 }
 },
 "goals_against": {
 "total": {
-"home": 5,
-"away": 4,
-"total": 9
+"home": 6,
+"away": 5,
+"total": 11
 },
 "avg": {
-"home": 2.5,
-"away": 4.0,
-"total": 3.0
+"home": 3.0,
+"away": 2.5,
+"total": 2.8
 },
 "minute": {
 "0-15": 0,
-"16-30": 2,
+"16-30": 3,
 "31-45": 1,
-"46-60": 2,
+"46-60": 1,
 "61-75": 2,
-"76-90": 2,
+"76-90": 3,
 "91-105": 0,
 "106-120": 0
 }
@@ -4782,24 +4790,24 @@
 "streak": {
 "wins": 0,
 "draws": 0,
-"loses": 3
+"loses": 4
 },
 "wins": {
 "home": null,
 "away": null
 },
 "loses": {
-"home": "0-3",
-"away": "4-0"
+"home": "2-4",
+"away": "2-0"
 },
 "goals": {
 "for": {
-"home": 1,
-"away": 0
+"home": 2,
+"away": 2
 },
 "against": {
-"home": 3,
-"away": 4
+"home": 4,
+"away": 3
 }
 }
 },
@@ -4820,22 +4828,18 @@
 },
 "lineups": [
 {
-"formation": "4-3-2-1",
-"played": 1
-},
-{
-"formation": "4-3-3",
-"played": 1
+"formation": "3-5-2",
+"played": 4
 }
 ],
 "cards": {
 "yellow": {
 "0-15": 0,
-"16-30": 2,
-"31-45": 0,
-"46-60": 1,
+"16-30": 1,
+"31-45": 4,
+"46-60": 2,
 "61-75": 1,
-"76-90": 1,
+"76-90": 2,
 "91-105": 0,
 "106-120": 0
 },
@@ -7951,6 +7955,154 @@
 }
 }
 },
+"536": {
+"id": 536,
+"name": "Sevilla",
+"league": 140,
+"form": "WWLDW",
+"fixtures": {
+"played": {
+"home": 3,
+"away": 2,
+"total": 5
+},
+"wins": {
+"home": 2,
+"away": 1,
+"total": 3
+},
+"draws": {
+"home": 0,
+"away": 1,
+"total": 1
+},
+"loses": {
+"home": 1,
+"away": 0,
+"total": 1
+}
+},
+"goals_for": {
+"total": {
+"home": 4,
+"away": 4,
+"total": 8
+},
+"avg": {
+"home": 1.3,
+"away": 2.0,
+"total": 1.6
+},
+"minute": {
+"0-15": 1,
+"16-30": 0,
+"31-45": 0,
+"46-60": 3,
+"61-75": 1,
+"76-90": 3,
+"91-105": 0,
+"106-120": 0
+}
+},
+"goals_against": {
+"total": {
+"home": 4,
+"away": 2,
+"total": 6
+},
+"avg": {
+"home": 1.3,
+"away": 1.0,
+"total": 1.2
+},
+"minute": {
+"0-15": 2,
+"16-30": 1,
+"31-45": 1,
+"46-60": 0,
+"61-75": 1,
+"76-90": 1,
+"91-105": 0,
+"106-120": 0
+}
+},
+"biggest": {
+"streak": {
+"wins": 2,
+"draws": 1,
+"loses": 1
+},
+"wins": {
+"home": "2-1",
+"away": "1-3"
+},
+"loses": {
+"home": "1-3",
+"away": null
+},
+"goals": {
+"for": {
+"home": 2,
+"away": 3
+},
+"against": {
+"home": 3,
+"away": 1
+}
+}
+},
+"clean_sheet": {
+"home": 1,
+"away": 0,
+"total": 1
+},
+"failed_to_score": {
+"home": 0,
+"away": 0,
+"total": 0
+},
+"penalty": {
+"scored": 2,
+"missed": 0,
+"total": 2
+},
+"lineups": [
+{
+"formation": "4-2-3-1",
+"played": 3
+},
+{
+"formation": "4-3-3",
+"played": 1
+},
+{
+"formation": "4-4-2",
+"played": 1
+}
+],
+"cards": {
+"yellow": {
+"0-15": 1,
+"16-30": 3,
+"31-45": 2,
+"46-60": 2,
+"61-75": 1,
+"76-90": 3,
+"91-105": 3,
+"106-120": 0
+},
+"red": {
+"0-15": 0,
+"16-30": 0,
+"31-45": 0,
+"46-60": 1,
+"61-75": 0,
+"76-90": 1,
+"91-105": 0,
+"106-120": 0
+}
+}
+},
 "541": {
 "id": 541,
 "name": "Real Madrid",
@@ -8371,150 +8523,6 @@
 "61-75": 0,
 "76-90": 0,
 "91-105": 1,
-"106-120": 0
-}
-}
-},
-"536": {
-"id": 536,
-"name": "Sevilla",
-"league": 140,
-"form": "WWLD",
-"fixtures": {
-"played": {
-"home": 2,
-"away": 2,
-"total": 4
-},
-"wins": {
-"home": 1,
-"away": 1,
-"total": 2
-},
-"draws": {
-"home": 0,
-"away": 1,
-"total": 1
-},
-"loses": {
-"home": 1,
-"away": 0,
-"total": 1
-}
-},
-"goals_for": {
-"total": {
-"home": 3,
-"away": 4,
-"total": 7
-},
-"avg": {
-"home": 1.5,
-"away": 2.0,
-"total": 1.8
-},
-"minute": {
-"0-15": 1,
-"16-30": 0,
-"31-45": 0,
-"46-60": 3,
-"61-75": 1,
-"76-90": 2,
-"91-105": 0,
-"106-120": 0
-}
-},
-"goals_against": {
-"total": {
-"home": 4,
-"away": 2,
-"total": 6
-},
-"avg": {
-"home": 2.0,
-"away": 1.0,
-"total": 1.5
-},
-"minute": {
-"0-15": 2,
-"16-30": 1,
-"31-45": 1,
-"46-60": 0,
-"61-75": 1,
-"76-90": 1,
-"91-105": 0,
-"106-120": 0
-}
-},
-"biggest": {
-"streak": {
-"wins": 2,
-"draws": 0,
-"loses": 1
-},
-"wins": {
-"home": "2-1",
-"away": "1-3"
-},
-"loses": {
-"home": "1-3",
-"away": null
-},
-"goals": {
-"for": {
-"home": 2,
-"away": 3
-},
-"against": {
-"home": 3,
-"away": 1
-}
-}
-},
-"clean_sheet": {
-"home": 0,
-"away": 0,
-"total": 0
-},
-"failed_to_score": {
-"home": 0,
-"away": 0,
-"total": 0
-},
-"penalty": {
-"scored": 2,
-"missed": 0,
-"total": 2
-},
-"lineups": [
-{
-"formation": "4-2-3-1",
-"played": 3
-},
-{
-"formation": "4-3-3",
-"played": 1
-}
-],
-"cards": {
-"yellow": {
-"0-15": 1,
-"16-30": 3,
-"31-45": 2,
-"46-60": 2,
-"61-75": 0,
-"76-90": 3,
-"91-105": 3,
-"106-120": 0
-},
-"red": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 0,
-"46-60": 1,
-"61-75": 0,
-"76-90": 1,
-"91-105": 0,
 "106-120": 0
 }
 }
@@ -10400,12 +10408,12 @@
 "id": 532,
 "name": "Valencia",
 "league": 140,
-"form": "DLLL",
+"form": "DLLLL",
 "fixtures": {
 "played": {
 "home": 3,
-"away": 1,
-"total": 4
+"away": 2,
+"total": 5
 },
 "wins": {
 "home": 0,
@@ -10419,8 +10427,8 @@
 },
 "loses": {
 "home": 2,
-"away": 1,
-"total": 3
+"away": 2,
+"total": 4
 }
 },
 "goals_for": {
@@ -10431,8 +10439,8 @@
 },
 "avg": {
 "home": 0.0,
-"away": 1.0,
-"total": 0.3
+"away": 0.5,
+"total": 0.2
 },
 "minute": {
 "0-15": 1,
@@ -10448,13 +10456,13 @@
 "goals_against": {
 "total": {
 "home": 6,
-"away": 3,
-"total": 9
+"away": 4,
+"total": 10
 },
 "avg": {
 "home": 2.0,
-"away": 3.0,
-"total": 2.3
+"away": 2.0,
+"total": 2.0
 },
 "minute": {
 "0-15": 1,
@@ -10462,7 +10470,7 @@
 "31-45": 0,
 "46-60": 1,
 "61-75": 0,
-"76-90": 3,
+"76-90": 4,
 "91-105": 0,
 "106-120": 0
 }
@@ -10499,8 +10507,8 @@
 },
 "failed_to_score": {
 "home": 3,
-"away": 0,
-"total": 3
+"away": 1,
+"total": 4
 },
 "penalty": {
 "scored": 0,
@@ -10511,16 +10519,20 @@
 {
 "formation": "5-4-1",
 "played": 4
+},
+{
+"formation": "4-4-1-1",
+"played": 1
 }
 ],
 "cards": {
 "yellow": {
 "0-15": 0,
-"16-30": 1,
+"16-30": 2,
 "31-45": 2,
 "46-60": 0,
 "61-75": 1,
-"76-90": 2,
+"76-90": 3,
 "91-105": 0,
 "106-120": 0
 },

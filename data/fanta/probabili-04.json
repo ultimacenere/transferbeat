@@ -1,5 +1,5 @@
 {
-"updated": "2026-09-11T17:58:30Z",
+"updated": "2026-09-12T12:04:26Z",
 "season": 2026,
 "matchday": 4,
 "stage": "giorno-gara",
@@ -12,7 +12,7 @@
 "home_id": 517,
 "away_id": 502,
 "venue": "Stadio Pierluigi Penzo",
-"status": "NS"
+"status": "FT"
 },
 {
 "id": 1550119,
@@ -154,26 +154,26 @@
 "out_for": null
 },
 {
-"id": 656,
-"name": "O. Solet",
-"role": "D",
-"pos": "D",
-"grid": "2:2",
-"prob": 88,
-"why": "titolare nelle ultime 3 su 3",
-"ballot": null,
-"out_for": null
-},
-{
 "id": 20656,
 "name": "E. Ebosse",
 "role": "D",
 "pos": "D",
-"grid": "2:1",
+"grid": "2:2",
 "prob": 79,
 "why": "titolare nelle ultime 2 su 3",
 "ballot": null,
-"out_for": null
+"out_for": "O. Solet"
+},
+{
+"id": 315249,
+"name": "N. Bertola",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 18,
+"why": "titolare nelle ultime 0 su 3",
+"ballot": null,
+"out_for": "E. Ebosse"
 },
 {
 "id": 8586,
@@ -198,48 +198,48 @@
 "out_for": null
 },
 {
-"id": 1939,
-"name": "J. Piotrowski",
-"role": "C",
-"pos": "M",
-"grid": "3:2",
-"prob": 88,
-"why": "titolare nelle ultime 3 su 3",
-"ballot": null,
-"out_for": null
-},
-{
 "id": 22007,
 "name": "H. Kamara",
 "role": "D",
 "pos": "M",
-"grid": "3:1",
+"grid": "3:2",
 "prob": 94,
 "why": "titolare nelle ultime 3 su 3",
 "ballot": null,
-"out_for": null
+"out_for": "J. Piotrowski"
 },
 {
 "id": 541,
 "name": "J. Ekkelenkamp",
 "role": "C",
 "pos": "M",
-"grid": "4:2",
+"grid": "3:1",
 "prob": 94,
 "why": "titolare nelle ultime 3 su 3",
 "ballot": null,
-"out_for": null
+"out_for": "H. Kamara"
 },
 {
 "id": 332308,
 "name": "Unai Gómez",
 "role": "C",
 "pos": "M",
-"grid": "4:1",
+"grid": "4:2",
 "prob": 73,
 "why": "titolare nelle ultime 2 su 3",
 "ballot": null,
-"out_for": null
+"out_for": "J. Ekkelenkamp"
+},
+{
+"id": 343558,
+"name": "L. Miller",
+"role": "C",
+"pos": "M",
+"grid": "4:1",
+"prob": 26,
+"why": "titolare nelle ultime 0 su 3",
+"ballot": null,
+"out_for": "Unai Gómez"
 },
 {
 "id": 19185,
@@ -262,25 +262,18 @@
 "prob": 14
 },
 {
-"id": 422156,
-"name": "M. Palma",
+"id": 18797,
+"name": "C. Kabasele",
 "role": "D",
 "pos": "D",
-"prob": 20
+"prob": 11
 },
 {
-"id": 315249,
-"name": "N. Bertola",
+"id": 318053,
+"name": "S. Goglichidze",
 "role": "D",
 "pos": "D",
-"prob": 18
-},
-{
-"id": 343558,
-"name": "L. Miller",
-"role": "C",
-"pos": "M",
-"prob": 26
+"prob": 8
 },
 {
 "id": 7591,
@@ -290,6 +283,13 @@
 "prob": 26
 },
 {
+"id": 182560,
+"name": "Oier Zarraga",
+"role": "C",
+"pos": "M",
+"prob": 20
+},
+{
 "id": 434410,
 "name": "I. Gueye",
 "role": "A",
@@ -297,14 +297,55 @@
 "prob": 36
 },
 {
+"id": 1134,
+"name": "V. Bayo",
+"role": "A",
+"pos": "F",
+"prob": 18
+}
+],
+"out": [
+{
+"id": 411171,
+"name": "J. Arizala",
+"role": "D",
+"pos": "M",
+"reason": "infortunio: coscia",
+"back_at": null
+},
+{
+"id": 1939,
+"name": "J. Piotrowski",
+"role": "C",
+"pos": "M",
+"reason": "infortunio: heart problems",
+"back_at": null
+},
+{
+"id": 422156,
+"name": "M. Palma",
+"role": "D",
+"pos": "D",
+"reason": "infortunio: muscolare",
+"back_at": null
+},
+{
 "id": 786,
 "name": "N. Zaniolo",
 "role": "C",
 "pos": "F",
-"prob": 26
+"reason": "infortunio: coscia",
+"back_at": null
+},
+{
+"id": 656,
+"name": "O. Solet",
+"role": "D",
+"pos": "D",
+"reason": "infortunio: infortunio",
+"back_at": null
 }
 ],
-"out": [],
 "doubt": [],
 "coppa": null
 },
@@ -2194,26 +2235,32 @@
 "out_for": null
 },
 {
+"id": 25061,
+"name": "A. Bella-Kotchap",
+"role": "D",
+"pos": "D",
+"grid": "2:2",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
 "id": 326183,
 "name": "R. Halhal",
 "role": "D",
 "pos": "D",
-"grid": "2:2",
+"grid": "2:1",
 "prob": 62,
 "why": "titolare nelle ultime 1 su 3",
-"ballot": null,
-"out_for": "A. Bella-Kotchap"
+"ballot": {
+"id": 14704,
+"name": "B. Franjić",
+"prob": 48,
+"share": 44
 },
-{
-"id": 1482,
-"name": "Thierry Correia",
-"role": "D",
-"pos": "D",
-"grid": "2:1",
-"prob": 36,
-"why": "titolare nelle ultime 1 su 3",
-"ballot": null,
-"out_for": "R. Halhal"
+"out_for": null,
+"share": 56
 },
 {
 "id": 275394,
@@ -2256,8 +2303,14 @@
 "grid": "3:2",
 "prob": 56,
 "why": "titolare nelle ultime 1 su 3",
-"ballot": null,
-"out_for": null
+"ballot": {
+"id": 1266,
+"name": "T. Bašić",
+"prob": 54,
+"share": 49
+},
+"out_for": null,
+"share": 51
 },
 {
 "id": 37144,
@@ -2308,6 +2361,13 @@
 "prob": 14
 },
 {
+"id": 1482,
+"name": "Thierry Correia",
+"role": "D",
+"pos": "D",
+"prob": 36
+},
+{
 "id": 375321,
 "name": "R. Sagrado",
 "role": "D",
@@ -2315,22 +2375,15 @@
 "prob": 24
 },
 {
-"id": 421807,
-"name": "M. Moreno",
-"role": "D",
-"pos": "D",
-"prob": 23
+"id": 342025,
+"name": "M. Dagasso",
+"role": "C",
+"pos": "M",
+"prob": 16
 },
 {
 "id": 415517,
 "name": "Lamine Dabo",
-"role": "C",
-"pos": "M",
-"prob": 14
-},
-{
-"id": 162010,
-"name": "S. Panada",
 "role": "C",
 "pos": "M",
 "prob": 14
@@ -2350,40 +2403,7 @@
 "prob": 10
 }
 ],
-"out": [
-{
-"id": 25061,
-"name": "A. Bella-Kotchap",
-"role": "D",
-"pos": "D",
-"reason": "infortunio: infortunio",
-"back_at": null
-},
-{
-"id": 14704,
-"name": "B. Franjić",
-"role": "D",
-"pos": "D",
-"reason": "infortunio: infortunio",
-"back_at": null
-},
-{
-"id": 342025,
-"name": "M. Dagasso",
-"role": "C",
-"pos": "M",
-"reason": "infortunio: inactive",
-"back_at": null
-},
-{
-"id": 1266,
-"name": "T. Bašić",
-"role": "C",
-"pos": "M",
-"reason": "infortunio: piede",
-"back_at": null
-}
-],
+"out": [],
 "doubt": [],
 "coppa": null
 },
@@ -2470,14 +2490,8 @@
 "grid": "3:4",
 "prob": 76,
 "why": "titolare nelle ultime 2 su 3",
-"ballot": {
-"id": 628,
-"name": "Adrián Bernabé",
-"prob": 54,
-"share": 42
-},
-"out_for": null,
-"share": 58
+"ballot": null,
+"out_for": null
 },
 {
 "id": 362752,
@@ -2603,7 +2617,24 @@
 "prob": 18
 }
 ],
-"out": [],
+"out": [
+{
+"id": 628,
+"name": "Adrián Bernabé",
+"role": "C",
+"pos": "M",
+"reason": "infortunio: inactive",
+"back_at": null
+},
+{
+"id": 432610,
+"name": "Ousmane Diallo",
+"role": "A",
+"pos": "F",
+"reason": "infortunio: infortunio",
+"back_at": null
+}
+],
 "doubt": [],
 "coppa": null
 },
@@ -3355,14 +3386,8 @@
 "grid": "3:5",
 "prob": 72,
 "why": "titolare nelle ultime 2 su 3",
-"ballot": {
-"id": 1640,
-"name": "H. Çalhanoğlu",
-"prob": 55,
-"share": 43
-},
-"out_for": null,
-"share": 57
+"ballot": null,
+"out_for": null
 },
 {
 "id": 30558,
@@ -3398,15 +3423,15 @@
 "out_for": null
 },
 {
-"id": 31010,
-"name": "F. Dimarco",
-"role": "D",
+"id": 1640,
+"name": "H. Çalhanoğlu",
+"role": "C",
 "pos": "M",
 "grid": "3:1",
-"prob": 94,
-"why": "titolare nelle ultime 3 su 3",
+"prob": 55,
+"why": "titolare nelle ultime 2 su 3",
 "ballot": null,
-"out_for": null
+"out_for": "F. Dimarco"
 },
 {
 "id": 345808,
@@ -3482,7 +3507,16 @@
 "prob": 25
 }
 ],
-"out": [],
+"out": [
+{
+"id": 31010,
+"name": "F. Dimarco",
+"role": "D",
+"pos": "M",
+"reason": "infortunio: ginocchio",
+"back_at": null
+}
+],
 "doubt": [],
 "coppa": null
 },
@@ -4014,26 +4048,26 @@
 "out_for": null
 },
 {
-"id": 122468,
-"name": "Saúl Coco",
-"role": "D",
-"pos": "D",
-"grid": "2:2",
-"prob": 88,
-"why": "titolare nelle ultime 3 su 3",
-"ballot": null,
-"out_for": null
-},
-{
 "id": 396637,
 "name": "P. Comuzzo",
 "role": "D",
 "pos": "D",
-"grid": "2:1",
+"grid": "2:2",
 "prob": 94,
 "why": "titolare nelle ultime 3 su 3",
 "ballot": null,
-"out_for": null
+"out_for": "Saúl Coco"
+},
+{
+"id": 14329,
+"name": "A. Ismajli",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 37,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": null,
+"out_for": "P. Comuzzo"
 },
 {
 "id": 30810,
@@ -4128,18 +4162,18 @@
 "prob": 14
 },
 {
-"id": 14329,
-"name": "A. Ismajli",
-"role": "D",
-"pos": "D",
-"prob": 37
-},
-{
 "id": 303362,
 "name": "R. Belghali",
 "role": "D",
 "pos": "D",
 "prob": 23
+},
+{
+"id": 138417,
+"name": "N. Patterson",
+"role": "D",
+"pos": "D",
+"prob": 11
 },
 {
 "id": 41892,
@@ -4156,21 +4190,38 @@
 "prob": 22
 },
 {
-"id": 270507,
-"name": "C. Casadei",
-"role": "C",
-"pos": "F",
-"prob": 26
-},
-{
 "id": 383006,
 "name": "A. Njie",
 "role": "C",
 "pos": "F",
 "prob": 19
+},
+{
+"id": 40405,
+"name": "S. Kulenović",
+"role": "A",
+"pos": "F",
+"prob": 18
 }
 ],
-"out": [],
+"out": [
+{
+"id": 270507,
+"name": "C. Casadei",
+"role": "C",
+"pos": "F",
+"reason": "infortunio: rest",
+"back_at": null
+},
+{
+"id": 122468,
+"name": "Saúl Coco",
+"role": "D",
+"pos": "D",
+"reason": "infortunio: infortunio",
+"back_at": null
+}
+],
 "doubt": [],
 "coppa": null
 },
