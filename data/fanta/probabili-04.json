@@ -1,5 +1,5 @@
 {
-"updated": "2026-09-12T12:04:26Z",
+"updated": "2026-09-12T23:08:46Z",
 "season": 2026,
 "matchday": 4,
 "stage": "giorno-gara",
@@ -21,8 +21,8 @@
 "away": "Frosinone",
 "home_id": 495,
 "away_id": 512,
-"venue": "Stadio Luigi Ferraris",
-"status": "NS"
+"venue": "Luigi Ferraris",
+"status": "FT"
 },
 {
 "id": 1550121,
@@ -32,7 +32,7 @@
 "home_id": 487,
 "away_id": 489,
 "venue": "Stadio Olimpico",
-"status": "NS"
+"status": "FT"
 },
 {
 "id": 1550117,
@@ -42,7 +42,7 @@
 "home_id": 499,
 "away_id": 490,
 "venue": "New Balance Arena",
-"status": "NS"
+"status": "FT"
 },
 {
 "id": 1550122,
@@ -448,8 +448,14 @@
 "grid": "3:2",
 "prob": 62,
 "why": "titolare nelle ultime 1 su 3",
-"ballot": null,
-"out_for": null
+"ballot": {
+"id": 30784,
+"name": "N. Rovella",
+"prob": 48,
+"share": 44
+},
+"out_for": null,
+"share": 56
 },
 {
 "id": 38749,
@@ -531,18 +537,18 @@
 "prob": 23
 },
 {
+"id": 144740,
+"name": "F. Dele-Bashiru",
+"role": "C",
+"pos": "M",
+"prob": 20
+},
+{
 "id": 30866,
 "name": "M. Lazzari",
 "role": "D",
 "pos": "M",
 "prob": 16
-},
-{
-"id": 405241,
-"name": "A. Przyborek",
-"role": "C",
-"pos": "M",
-"prob": 14
 },
 {
 "id": 2799,
@@ -559,32 +565,7 @@
 "prob": 18
 }
 ],
-"out": [
-{
-"id": 1844,
-"name": "A. Marušić",
-"role": "D",
-"pos": "D",
-"reason": "infortunio: muscolare",
-"back_at": null
-},
-{
-"id": 144740,
-"name": "F. Dele-Bashiru",
-"role": "C",
-"pos": "M",
-"reason": "infortunio: muscolare",
-"back_at": null
-},
-{
-"id": 30784,
-"name": "N. Rovella",
-"role": "C",
-"pos": "M",
-"reason": "infortunio: infortunio",
-"back_at": null
-}
-],
+"out": [],
 "doubt": [],
 "coppa": null
 },
@@ -779,23 +760,14 @@
 "prob": 23
 },
 {
-"id": 263699,
-"name": "A. Fadera",
-"role": "C",
-"pos": "F",
-"prob": 18
-}
-],
-"out": [
-{
 "id": 31734,
 "name": "M. Felici",
 "role": "C",
 "pos": "F",
-"reason": "infortunio: ginocchio",
-"back_at": null
+"prob": 22
 }
 ],
+"out": [],
 "doubt": [],
 "coppa": null
 },
@@ -1022,6 +994,14 @@
 }
 ],
 "out": [
+{
+"id": 335071,
+"name": "M. Berisha",
+"role": "C",
+"pos": "M",
+"reason": "infortunio: rest",
+"back_at": null
+},
 {
 "id": 120,
 "name": "W. Geubbels",
@@ -1697,18 +1677,18 @@
 "prob": 14
 },
 {
-"id": 128461,
-"name": "N. Zortea",
-"role": "D",
-"pos": "D",
-"prob": 36
-},
-{
 "id": 287564,
 "name": "M. Vitík",
 "role": "D",
 "pos": "D",
 "prob": 25
+},
+{
+"id": 606953,
+"name": "M. Libra",
+"role": "D",
+"pos": "D",
+"prob": 16
 },
 {
 "id": 426626,
@@ -1725,21 +1705,37 @@
 "prob": 18
 },
 {
-"id": 15811,
-"name": "A. Dovbyk",
-"role": "A",
-"pos": "F",
-"prob": 30
-},
-{
 "id": 346866,
 "name": "S. Mbangula",
 "role": "C",
 "pos": "F",
 "prob": 22
+},
+{
+"id": 278095,
+"name": "J. Rowe",
+"role": "C",
+"pos": "F",
+"prob": 20
 }
 ],
 "out": [
+{
+"id": 15811,
+"name": "A. Dovbyk",
+"role": "A",
+"pos": "F",
+"reason": "infortunio: muscolare",
+"back_at": null
+},
+{
+"id": 128461,
+"name": "N. Zortea",
+"role": "D",
+"pos": "D",
+"reason": "infortunio: anca",
+"back_at": null
+},
 {
 "id": 319919,
 "name": "O. El Azzouzi",
@@ -3302,7 +3298,7 @@
 "name": "G. Gaetano",
 "role": "C",
 "pos": "M",
-"reason": "infortunio: infortunio",
+"reason": "squalifica: espulso nell'ultima giornata",
 "back_at": null
 }
 ],
@@ -4435,16 +4431,7 @@
 "prob": 8
 }
 ],
-"out": [
-{
-"id": 162561,
-"name": "E. Havel",
-"role": "A",
-"pos": "F",
-"reason": "infortunio: caviglia",
-"back_at": null
-}
-],
+"out": [],
 "doubt": [],
 "coppa": null
 },
