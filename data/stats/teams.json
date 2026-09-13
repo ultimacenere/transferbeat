@@ -1,5 +1,5 @@
 {
-"updated": "2026-09-12T23:08:46Z",
+"updated": "2026-09-13T23:17:41Z",
 "season": 2026,
 "leagues": {
 "135": {
@@ -206,39 +206,6 @@
 },
 {
 "rank": 7,
-"team_id": 496,
-"name": "Juventus",
-"points": 7,
-"gd": 3,
-"form": "DWW",
-"description": "",
-"all": {
-"played": 3,
-"win": 2,
-"draw": 1,
-"lose": 0,
-"gf": 4,
-"ga": 1
-},
-"home": {
-"played": 2,
-"win": 1,
-"draw": 1,
-"lose": 0,
-"gf": 3,
-"ga": 1
-},
-"away": {
-"played": 1,
-"win": 1,
-"draw": 0,
-"lose": 0,
-"gf": 1,
-"ga": 0
-}
-},
-{
-"rank": 8,
 "team_id": 512,
 "name": "Frosinone",
 "points": 7,
@@ -271,7 +238,106 @@
 }
 },
 {
+"rank": 8,
+"team_id": 496,
+"name": "Juventus",
+"points": 7,
+"gd": 2,
+"form": "LDWW",
+"description": "",
+"all": {
+"played": 4,
+"win": 2,
+"draw": 1,
+"lose": 1,
+"gf": 6,
+"ga": 4
+},
+"home": {
+"played": 2,
+"win": 1,
+"draw": 1,
+"lose": 0,
+"gf": 3,
+"ga": 1
+},
+"away": {
+"played": 2,
+"win": 1,
+"draw": 0,
+"lose": 1,
+"gf": 3,
+"ga": 3
+}
+},
+{
 "rank": 9,
+"team_id": 488,
+"name": "Sassuolo",
+"points": 7,
+"gd": 1,
+"form": "WDWL",
+"description": "",
+"all": {
+"played": 4,
+"win": 2,
+"draw": 1,
+"lose": 1,
+"gf": 8,
+"ga": 7
+},
+"home": {
+"played": 2,
+"win": 2,
+"draw": 0,
+"lose": 0,
+"gf": 5,
+"ga": 3
+},
+"away": {
+"played": 2,
+"win": 0,
+"draw": 1,
+"lose": 1,
+"gf": 3,
+"ga": 4
+}
+},
+{
+"rank": 10,
+"team_id": 492,
+"name": "Napoli",
+"points": 6,
+"gd": 1,
+"form": "WLLW",
+"description": "",
+"all": {
+"played": 4,
+"win": 2,
+"draw": 0,
+"lose": 2,
+"gf": 6,
+"ga": 5
+},
+"home": {
+"played": 2,
+"win": 1,
+"draw": 0,
+"lose": 1,
+"gf": 2,
+"ga": 2
+},
+"away": {
+"played": 2,
+"win": 1,
+"draw": 0,
+"lose": 1,
+"gf": 4,
+"ga": 3
+}
+},
+{
+"rank": 11,
 "team_id": 499,
 "name": "Atalanta",
 "points": 6,
@@ -304,40 +370,40 @@
 }
 },
 {
-"rank": 10,
-"team_id": 488,
-"name": "Sassuolo",
-"points": 4,
-"gd": 0,
-"form": "DWL",
+"rank": 12,
+"team_id": 867,
+"name": "Lecce",
+"points": 6,
+"gd": -2,
+"form": "WLLW",
 "description": "",
 "all": {
-"played": 3,
-"win": 1,
-"draw": 1,
-"lose": 1,
+"played": 4,
+"win": 2,
+"draw": 0,
+"lose": 2,
 "gf": 5,
-"ga": 5
+"ga": 7
 },
 "home": {
-"played": 1,
+"played": 2,
 "win": 1,
 "draw": 0,
-"lose": 0,
-"gf": 2,
-"ga": 1
+"lose": 1,
+"gf": 3,
+"ga": 6
 },
 "away": {
 "played": 2,
-"win": 0,
-"draw": 1,
+"win": 1,
+"draw": 0,
 "lose": 1,
-"gf": 3,
-"ga": 4
+"gf": 2,
+"ga": 1
 }
 },
 {
-"rank": 11,
+"rank": 13,
 "team_id": 494,
 "name": "Udinese",
 "points": 4,
@@ -370,40 +436,7 @@
 }
 },
 {
-"rank": 12,
-"team_id": 492,
-"name": "Napoli",
-"points": 3,
-"gd": 0,
-"form": "LLW",
-"description": "",
-"all": {
-"played": 3,
-"win": 1,
-"draw": 0,
-"lose": 2,
-"gf": 5,
-"ga": 5
-},
-"home": {
-"played": 1,
-"win": 0,
-"draw": 0,
-"lose": 1,
-"gf": 1,
-"ga": 2
-},
-"away": {
-"played": 2,
-"win": 1,
-"draw": 0,
-"lose": 1,
-"gf": 4,
-"ga": 3
-}
-},
-{
-"rank": 13,
+"rank": 14,
 "team_id": 503,
 "name": "Torino",
 "points": 3,
@@ -433,39 +466,6 @@
 "lose": 1,
 "gf": 3,
 "ga": 3
-}
-},
-{
-"rank": 14,
-"team_id": 867,
-"name": "Lecce",
-"points": 3,
-"gd": -3,
-"form": "LLW",
-"description": "",
-"all": {
-"played": 3,
-"win": 1,
-"draw": 0,
-"lose": 2,
-"gf": 2,
-"ga": 5
-},
-"home": {
-"played": 1,
-"win": 0,
-"draw": 0,
-"lose": 1,
-"gf": 0,
-"ga": 4
-},
-"away": {
-"played": 2,
-"win": 1,
-"draw": 0,
-"lose": 1,
-"gf": 2,
-"ga": 1
 }
 },
 {
@@ -503,39 +503,6 @@
 },
 {
 "rank": 16,
-"team_id": 500,
-"name": "Bologna",
-"points": 1,
-"gd": -2,
-"form": "DLL",
-"description": "",
-"all": {
-"played": 3,
-"win": 0,
-"draw": 1,
-"lose": 2,
-"gf": 2,
-"ga": 4
-},
-"home": {
-"played": 2,
-"win": 0,
-"draw": 1,
-"lose": 1,
-"gf": 2,
-"ga": 3
-},
-"away": {
-"played": 1,
-"win": 0,
-"draw": 0,
-"lose": 1,
-"gf": 0,
-"ga": 1
-}
-},
-{
-"rank": 17,
 "team_id": 523,
 "name": "Parma",
 "points": 1,
@@ -568,20 +535,53 @@
 }
 },
 {
+"rank": 17,
+"team_id": 500,
+"name": "Bologna",
+"points": 1,
+"gd": -3,
+"form": "LDLL",
+"description": "",
+"all": {
+"played": 4,
+"win": 0,
+"draw": 1,
+"lose": 3,
+"gf": 2,
+"ga": 5
+},
+"home": {
+"played": 2,
+"win": 0,
+"draw": 1,
+"lose": 1,
+"gf": 2,
+"ga": 3
+},
+"away": {
+"played": 2,
+"win": 0,
+"draw": 0,
+"lose": 2,
+"gf": 0,
+"ga": 2
+}
+},
+{
 "rank": 18,
 "team_id": 1579,
 "name": "Monza",
 "points": 1,
-"gd": -4,
-"form": "DLL",
+"gd": -5,
+"form": "LDLL",
 "description": "Relegation",
 "all": {
-"played": 3,
+"played": 4,
 "win": 0,
 "draw": 1,
-"lose": 2,
-"gf": 4,
-"ga": 8
+"lose": 3,
+"gf": 6,
+"ga": 11
 },
 "home": {
 "played": 1,
@@ -592,12 +592,12 @@
 "ga": 3
 },
 "away": {
-"played": 2,
+"played": 3,
 "win": 0,
 "draw": 1,
-"lose": 1,
-"gf": 2,
-"ga": 5
+"lose": 2,
+"gf": 4,
+"ga": 8
 }
 },
 {
@@ -709,16 +709,16 @@
 "rank": 2,
 "team_id": 50,
 "name": "Manchester City",
-"points": 9,
-"gd": 5,
-"form": "WWW",
+"points": 12,
+"gd": 6,
+"form": "WWWW",
 "description": "Promotion - Champions League (League phase)",
 "all": {
-"played": 3,
-"win": 3,
+"played": 4,
+"win": 4,
 "draw": 0,
 "lose": 0,
-"gf": 7,
+"gf": 8,
 "ga": 2
 },
 "home": {
@@ -730,11 +730,11 @@
 "ga": 1
 },
 "away": {
-"played": 1,
-"win": 1,
+"played": 2,
+"win": 2,
 "draw": 0,
 "lose": 0,
-"gf": 4,
+"gf": 5,
 "ga": 1
 }
 },
@@ -773,12 +773,45 @@
 },
 {
 "rank": 4,
+"team_id": 51,
+"name": "Brighton",
+"points": 7,
+"gd": 8,
+"form": "WDLW",
+"description": "Promotion - Champions League (League phase)",
+"all": {
+"played": 4,
+"win": 2,
+"draw": 1,
+"lose": 1,
+"gf": 13,
+"ga": 5
+},
+"home": {
+"played": 2,
+"win": 1,
+"draw": 1,
+"lose": 0,
+"gf": 5,
+"ga": 1
+},
+"away": {
+"played": 2,
+"win": 1,
+"draw": 0,
+"lose": 1,
+"gf": 8,
+"ga": 4
+}
+},
+{
+"rank": 5,
 "team_id": 49,
 "name": "Chelsea",
 "points": 7,
 "gd": 1,
 "form": "DLWW",
-"description": "Promotion - Champions League (League phase)",
+"description": "Promotion - Europa League (League phase)",
 "all": {
 "played": 4,
 "win": 2,
@@ -805,13 +838,13 @@
 }
 },
 {
-"rank": 5,
+"rank": 6,
 "team_id": 55,
 "name": "Brentford",
 "points": 6,
 "gd": 3,
 "form": "DDDW",
-"description": "Promotion - Europa League (League phase)",
+"description": "",
 "all": {
 "played": 4,
 "win": 1,
@@ -838,7 +871,7 @@
 }
 },
 {
-"rank": 6,
+"rank": 7,
 "team_id": 40,
 "name": "Liverpool",
 "points": 6,
@@ -871,7 +904,7 @@
 }
 },
 {
-"rank": 7,
+"rank": 8,
 "team_id": 45,
 "name": "Everton",
 "points": 6,
@@ -904,7 +937,7 @@
 }
 },
 {
-"rank": 8,
+"rank": 9,
 "team_id": 57,
 "name": "Ipswich",
 "points": 6,
@@ -937,7 +970,7 @@
 }
 },
 {
-"rank": 9,
+"rank": 10,
 "team_id": 34,
 "name": "Newcastle",
 "points": 5,
@@ -970,7 +1003,7 @@
 }
 },
 {
-"rank": 10,
+"rank": 11,
 "team_id": 63,
 "name": "Leeds",
 "points": 5,
@@ -1003,7 +1036,7 @@
 }
 },
 {
-"rank": 11,
+"rank": 12,
 "team_id": 65,
 "name": "Nottingham Forest",
 "points": 5,
@@ -1036,61 +1069,28 @@
 }
 },
 {
-"rank": 12,
-"team_id": 51,
-"name": "Brighton",
-"points": 4,
-"gd": 3,
-"form": "DLW",
-"description": "",
-"all": {
-"played": 3,
-"win": 1,
-"draw": 1,
-"lose": 1,
-"gf": 8,
-"ga": 5
-},
-"home": {
-"played": 2,
-"win": 1,
-"draw": 1,
-"lose": 0,
-"gf": 5,
-"ga": 1
-},
-"away": {
-"played": 1,
-"win": 0,
-"draw": 0,
-"lose": 1,
-"gf": 3,
-"ga": 4
-}
-},
-{
 "rank": 13,
 "team_id": 33,
 "name": "Manchester United",
 "points": 4,
-"gd": 1,
-"form": "DWL",
+"gd": 0,
+"form": "LDWL",
 "description": "",
 "all": {
-"played": 3,
+"played": 4,
 "win": 1,
 "draw": 1,
-"lose": 1,
+"lose": 2,
 "gf": 7,
-"ga": 6
+"ga": 7
 },
 "home": {
-"played": 1,
+"played": 2,
 "win": 1,
 "draw": 0,
-"lose": 0,
+"lose": 1,
 "gf": 5,
-"ga": 2
+"ga": 3
 },
 "away": {
 "played": 2,
@@ -1304,24 +1304,24 @@
 "team_id": 1346,
 "name": "Coventry",
 "points": 0,
-"gd": -5,
-"form": "LLL",
+"gd": -10,
+"form": "LLLL",
 "description": "Relegation - Championship",
 "all": {
-"played": 3,
+"played": 4,
 "win": 0,
 "draw": 0,
-"lose": 3,
+"lose": 4,
 "gf": 0,
-"ga": 5
+"ga": 10
 },
 "home": {
-"played": 1,
+"played": 2,
 "win": 0,
 "draw": 0,
-"lose": 1,
+"lose": 2,
 "gf": 0,
-"ga": 1
+"ga": 6
 },
 "away": {
 "played": 2,
@@ -1342,17 +1342,17 @@
 "rank": 1,
 "team_id": 529,
 "name": "Barcelona",
-"points": 12,
-"gd": 15,
-"form": "WWWW",
+"points": 15,
+"gd": 17,
+"form": "WWWWW",
 "description": "Champions League league stage",
 "all": {
-"played": 4,
-"win": 4,
+"played": 5,
+"win": 5,
 "draw": 0,
 "lose": 0,
-"gf": 17,
-"ga": 2
+"gf": 21,
+"ga": 4
 },
 "home": {
 "played": 2,
@@ -1363,12 +1363,12 @@
 "ga": 2
 },
 "away": {
-"played": 2,
-"win": 2,
+"played": 3,
+"win": 3,
 "draw": 0,
 "lose": 0,
-"gf": 10,
-"ga": 0
+"gf": 14,
+"ga": 2
 }
 },
 {
@@ -1439,12 +1439,45 @@
 },
 {
 "rank": 4,
+"team_id": 530,
+"name": "Atletico Madrid",
+"points": 10,
+"gd": 4,
+"form": "WLWDW",
+"description": "Champions League league stage",
+"all": {
+"played": 5,
+"win": 3,
+"draw": 1,
+"lose": 1,
+"gf": 10,
+"ga": 6
+},
+"home": {
+"played": 2,
+"win": 1,
+"draw": 1,
+"lose": 0,
+"gf": 4,
+"ga": 2
+},
+"away": {
+"played": 3,
+"win": 2,
+"draw": 0,
+"lose": 1,
+"gf": 6,
+"ga": 4
+}
+},
+{
+"rank": 5,
 "team_id": 536,
 "name": "Sevilla",
 "points": 10,
 "gd": 2,
 "form": "WDLWW",
-"description": "Champions League league stage",
+"description": "Europa League league stage",
 "all": {
 "played": 5,
 "win": 3,
@@ -1471,13 +1504,46 @@
 }
 },
 {
-"rank": 5,
+"rank": 6,
+"team_id": 544,
+"name": "Deportivo La Coruna",
+"points": 9,
+"gd": 3,
+"form": "DWWDD",
+"description": "ECL Playoffs",
+"all": {
+"played": 5,
+"win": 2,
+"draw": 3,
+"lose": 0,
+"gf": 9,
+"ga": 6
+},
+"home": {
+"played": 2,
+"win": 1,
+"draw": 1,
+"lose": 0,
+"gf": 4,
+"ga": 2
+},
+"away": {
+"played": 3,
+"win": 1,
+"draw": 2,
+"lose": 0,
+"gf": 5,
+"ga": 4
+}
+},
+{
+"rank": 7,
 "team_id": 543,
 "name": "Real Betis",
 "points": 9,
 "gd": 0,
 "form": "WLWW",
-"description": "Europa League league stage",
+"description": "",
 "all": {
 "played": 4,
 "win": 3,
@@ -1504,40 +1570,7 @@
 }
 },
 {
-"rank": 6,
-"team_id": 544,
-"name": "Deportivo La Coruna",
-"points": 8,
-"gd": 3,
-"form": "WWDD",
-"description": "ECL Playoffs",
-"all": {
-"played": 4,
-"win": 2,
-"draw": 2,
-"lose": 0,
-"gf": 8,
-"ga": 5
-},
-"home": {
-"played": 2,
-"win": 1,
-"draw": 1,
-"lose": 0,
-"gf": 4,
-"ga": 2
-},
-"away": {
-"played": 2,
-"win": 1,
-"draw": 1,
-"lose": 0,
-"gf": 4,
-"ga": 3
-}
-},
-{
-"rank": 7,
+"rank": 8,
 "team_id": 540,
 "name": "Espanyol",
 "points": 7,
@@ -1567,39 +1600,6 @@
 "lose": 1,
 "gf": 3,
 "ga": 2
-}
-},
-{
-"rank": 8,
-"team_id": 530,
-"name": "Atletico Madrid",
-"points": 7,
-"gd": 1,
-"form": "LWDW",
-"description": "",
-"all": {
-"played": 4,
-"win": 2,
-"draw": 1,
-"lose": 1,
-"gf": 7,
-"ga": 6
-},
-"home": {
-"played": 2,
-"win": 1,
-"draw": 1,
-"lose": 0,
-"gf": 4,
-"ga": 2
-},
-"away": {
-"played": 2,
-"win": 1,
-"draw": 0,
-"lose": 1,
-"gf": 3,
-"ga": 4
 }
 },
 {
@@ -1670,39 +1670,6 @@
 },
 {
 "rank": 11,
-"team_id": 548,
-"name": "Real Sociedad",
-"points": 7,
-"gd": -2,
-"form": "WDWLL",
-"description": "",
-"all": {
-"played": 5,
-"win": 2,
-"draw": 1,
-"lose": 2,
-"gf": 6,
-"ga": 8
-},
-"home": {
-"played": 2,
-"win": 1,
-"draw": 1,
-"lose": 0,
-"gf": 2,
-"ga": 1
-},
-"away": {
-"played": 3,
-"win": 1,
-"draw": 0,
-"lose": 2,
-"gf": 4,
-"ga": 7
-}
-},
-{
-"rank": 12,
 "team_id": 727,
 "name": "Osasuna",
 "points": 7,
@@ -1735,28 +1702,61 @@
 }
 },
 {
+"rank": 12,
+"team_id": 548,
+"name": "Real Sociedad",
+"points": 7,
+"gd": -5,
+"form": "LWDWL",
+"description": "",
+"all": {
+"played": 6,
+"win": 2,
+"draw": 1,
+"lose": 3,
+"gf": 6,
+"ga": 11
+},
+"home": {
+"played": 3,
+"win": 1,
+"draw": 1,
+"lose": 1,
+"gf": 2,
+"ga": 4
+},
+"away": {
+"played": 3,
+"win": 1,
+"draw": 0,
+"lose": 2,
+"gf": 4,
+"ga": 7
+}
+},
+{
 "rank": 13,
 "team_id": 539,
 "name": "Levante",
 "points": 5,
-"gd": 0,
-"form": "DWDL",
+"gd": -2,
+"form": "LDWDL",
 "description": "",
 "all": {
-"played": 4,
+"played": 5,
 "win": 1,
 "draw": 2,
-"lose": 1,
-"gf": 5,
-"ga": 5
+"lose": 2,
+"gf": 7,
+"ga": 9
 },
 "home": {
-"played": 1,
+"played": 2,
 "win": 1,
 "draw": 0,
-"lose": 0,
-"gf": 5,
-"ga": 2
+"lose": 1,
+"gf": 7,
+"ga": 6
 },
 "away": {
 "played": 3,
@@ -1771,25 +1771,25 @@
 "rank": 14,
 "team_id": 546,
 "name": "Getafe",
-"points": 4,
+"points": 5,
 "gd": -3,
-"form": "DLWL",
+"form": "DDLWL",
 "description": "",
 "all": {
-"played": 4,
+"played": 5,
 "win": 1,
-"draw": 1,
+"draw": 2,
 "lose": 2,
-"gf": 2,
-"ga": 5
+"gf": 3,
+"ga": 6
 },
 "home": {
-"played": 2,
+"played": 3,
 "win": 1,
-"draw": 1,
+"draw": 2,
 "lose": 0,
-"gf": 2,
-"ga": 1
+"gf": 3,
+"ga": 2
 },
 "away": {
 "played": 2,
@@ -1802,6 +1802,39 @@
 },
 {
 "rank": 15,
+"team_id": 538,
+"name": "Celta Vigo",
+"points": 4,
+"gd": -3,
+"form": "DDDLL",
+"description": "",
+"all": {
+"played": 6,
+"win": 0,
+"draw": 4,
+"lose": 2,
+"gf": 3,
+"ga": 6
+},
+"home": {
+"played": 3,
+"win": 0,
+"draw": 1,
+"lose": 2,
+"gf": 2,
+"ga": 5
+},
+"away": {
+"played": 3,
+"win": 0,
+"draw": 3,
+"lose": 0,
+"gf": 1,
+"ga": 1
+}
+},
+{
+"rank": 16,
 "team_id": 728,
 "name": "Rayo Vallecano",
 "points": 4,
@@ -1834,12 +1867,12 @@
 }
 },
 {
-"rank": 16,
-"team_id": 538,
-"name": "Celta Vigo",
+"rank": 17,
+"team_id": 535,
+"name": "Malaga",
 "points": 3,
-"gd": -3,
-"form": "DDLLD",
+"gd": -6,
+"form": "DDLDL",
 "description": "",
 "all": {
 "played": 5,
@@ -1847,33 +1880,33 @@
 "draw": 3,
 "lose": 2,
 "gf": 2,
-"ga": 5
+"ga": 8
 },
 "home": {
 "played": 2,
 "win": 0,
-"draw": 0,
-"lose": 2,
+"draw": 2,
+"lose": 0,
 "gf": 1,
-"ga": 4
+"ga": 1
 },
 "away": {
 "played": 3,
 "win": 0,
-"draw": 3,
-"lose": 0,
+"draw": 1,
+"lose": 2,
 "gf": 1,
-"ga": 1
+"ga": 7
 }
 },
 {
-"rank": 17,
+"rank": 18,
 "team_id": 533,
 "name": "Villarreal",
 "points": 2,
 "gd": -2,
 "form": "LLDD",
-"description": "",
+"description": "Relegation",
 "all": {
 "played": 4,
 "win": 0,
@@ -1897,39 +1930,6 @@
 "lose": 1,
 "gf": 4,
 "ga": 5
-}
-},
-{
-"rank": 18,
-"team_id": 535,
-"name": "Malaga",
-"points": 2,
-"gd": -6,
-"form": "DLDL",
-"description": "Relegation",
-"all": {
-"played": 4,
-"win": 0,
-"draw": 2,
-"lose": 2,
-"gf": 1,
-"ga": 7
-},
-"home": {
-"played": 2,
-"win": 0,
-"draw": 2,
-"lose": 0,
-"gf": 1,
-"ga": 1
-},
-"away": {
-"played": 2,
-"win": 0,
-"draw": 0,
-"lose": 2,
-"gf": 0,
-"ga": 6
 }
 },
 {
@@ -2006,12 +2006,12 @@
 "id": 487,
 "name": "Lazio",
 "league": 135,
-"form": "WWW",
+"form": "WWWD",
 "fixtures": {
 "played": {
-"home": 1,
+"home": 2,
 "away": 2,
-"total": 3
+"total": 4
 },
 "wins": {
 "home": 1,
@@ -2019,9 +2019,9 @@
 "total": 3
 },
 "draws": {
-"home": 0,
+"home": 1,
 "away": 0,
-"total": 0
+"total": 1
 },
 "loses": {
 "home": 0,
@@ -2031,19 +2031,19 @@
 },
 "goals_for": {
 "total": {
-"home": 1,
+"home": 3,
 "away": 3,
-"total": 4
+"total": 6
 },
 "avg": {
-"home": 1.0,
+"home": 1.5,
 "away": 1.5,
-"total": 1.3
+"total": 1.5
 },
 "minute": {
-"0-15": 0,
+"0-15": 1,
 "16-30": 1,
-"31-45": 0,
+"31-45": 1,
 "46-60": 1,
 "61-75": 1,
 "76-90": 1,
@@ -2053,21 +2053,21 @@
 },
 "goals_against": {
 "total": {
-"home": 0,
+"home": 2,
 "away": 1,
-"total": 1
+"total": 3
 },
 "avg": {
-"home": 0.0,
+"home": 1.0,
 "away": 0.5,
-"total": 0.3
+"total": 0.8
 },
 "minute": {
 "0-15": 0,
 "16-30": 0,
 "31-45": 0,
 "46-60": 1,
-"61-75": 0,
+"61-75": 2,
 "76-90": 0,
 "91-105": 0,
 "106-120": 0
@@ -2089,11 +2089,11 @@
 },
 "goals": {
 "for": {
-"home": 1,
+"home": 2,
 "away": 2
 },
 "against": {
-"home": 0,
+"home": 2,
 "away": 1
 }
 }
@@ -2116,7 +2116,7 @@
 "lineups": [
 {
 "formation": "4-3-3",
-"played": 3
+"played": 4
 }
 ],
 "cards": {
@@ -2125,8 +2125,8 @@
 "16-30": 2,
 "31-45": 2,
 "46-60": 0,
-"61-75": 0,
-"76-90": 0,
+"61-75": 1,
+"76-90": 1,
 "91-105": 2,
 "106-120": 0
 },
@@ -2578,12 +2578,12 @@
 "id": 489,
 "name": "AC Milan",
 "league": 135,
-"form": "WWD",
+"form": "WWDD",
 "fixtures": {
 "played": {
 "home": 1,
-"away": 2,
-"total": 3
+"away": 3,
+"total": 4
 },
 "wins": {
 "home": 1,
@@ -2592,8 +2592,8 @@
 },
 "draws": {
 "home": 0,
-"away": 1,
-"total": 1
+"away": 2,
+"total": 2
 },
 "loses": {
 "home": 0,
@@ -2604,20 +2604,20 @@
 "goals_for": {
 "total": {
 "home": 2,
-"away": 3,
-"total": 5
+"away": 5,
+"total": 7
 },
 "avg": {
 "home": 2.0,
-"away": 1.5,
-"total": 1.7
+"away": 1.7,
+"total": 1.8
 },
 "minute": {
 "0-15": 0,
 "16-30": 0,
 "31-45": 0,
 "46-60": 0,
-"61-75": 4,
+"61-75": 6,
 "76-90": 0,
 "91-105": 0,
 "106-120": 0
@@ -2626,18 +2626,18 @@
 "goals_against": {
 "total": {
 "home": 0,
-"away": 2,
-"total": 2
+"away": 4,
+"total": 4
 },
 "avg": {
 "home": 0.0,
-"away": 1.0,
-"total": 0.7
+"away": 1.3,
+"total": 1.0
 },
 "minute": {
-"0-15": 0,
+"0-15": 1,
 "16-30": 0,
-"31-45": 0,
+"31-45": 1,
 "46-60": 0,
 "61-75": 0,
 "76-90": 3,
@@ -2666,7 +2666,7 @@
 },
 "against": {
 "home": 0,
-"away": 1
+"away": 2
 }
 }
 },
@@ -2688,7 +2688,7 @@
 "lineups": [
 {
 "formation": "3-4-2-1",
-"played": 3
+"played": 4
 }
 ],
 "cards": {
@@ -2696,9 +2696,9 @@
 "0-15": 0,
 "16-30": 0,
 "31-45": 0,
-"46-60": 1,
-"61-75": 1,
-"76-90": 1,
+"46-60": 2,
+"61-75": 2,
+"76-90": 2,
 "91-105": 2,
 "106-120": 0
 },
@@ -2840,6 +2840,146 @@
 "61-75": 0,
 "76-90": 0,
 "91-105": 0,
+"106-120": 0
+},
+"red": {
+"0-15": 0,
+"16-30": 0,
+"31-45": 0,
+"46-60": 0,
+"61-75": 0,
+"76-90": 0,
+"91-105": 0,
+"106-120": 0
+}
+}
+},
+"512": {
+"id": 512,
+"name": "Frosinone",
+"league": 135,
+"form": "LWWD",
+"fixtures": {
+"played": {
+"home": 2,
+"away": 2,
+"total": 4
+},
+"wins": {
+"home": 1,
+"away": 1,
+"total": 2
+},
+"draws": {
+"home": 0,
+"away": 1,
+"total": 1
+},
+"loses": {
+"home": 1,
+"away": 0,
+"total": 1
+}
+},
+"goals_for": {
+"total": {
+"home": 3,
+"away": 4,
+"total": 7
+},
+"avg": {
+"home": 1.5,
+"away": 2.0,
+"total": 1.8
+},
+"minute": {
+"0-15": 1,
+"16-30": 2,
+"31-45": 2,
+"46-60": 0,
+"61-75": 1,
+"76-90": 1,
+"91-105": 0,
+"106-120": 0
+}
+},
+"goals_against": {
+"total": {
+"home": 3,
+"away": 1,
+"total": 4
+},
+"avg": {
+"home": 1.5,
+"away": 0.5,
+"total": 1.0
+},
+"minute": {
+"0-15": 0,
+"16-30": 1,
+"31-45": 0,
+"46-60": 1,
+"61-75": 2,
+"76-90": 0,
+"91-105": 0,
+"106-120": 0
+}
+},
+"biggest": {
+"streak": {
+"wins": 2,
+"draws": 0,
+"loses": 1
+},
+"wins": {
+"home": "3-2",
+"away": "0-3"
+},
+"loses": {
+"home": "0-1",
+"away": null
+},
+"goals": {
+"for": {
+"home": 3,
+"away": 3
+},
+"against": {
+"home": 2,
+"away": 1
+}
+}
+},
+"clean_sheet": {
+"home": 0,
+"away": 1,
+"total": 1
+},
+"failed_to_score": {
+"home": 1,
+"away": 0,
+"total": 1
+},
+"penalty": {
+"scored": 0,
+"missed": 0,
+"total": 0
+},
+"lineups": [
+{
+"formation": "4-2-3-1",
+"played": 4
+}
+],
+"cards": {
+"yellow": {
+"0-15": 1,
+"16-30": 2,
+"31-45": 2,
+"46-60": 1,
+"61-75": 2,
+"76-90": 0,
+"91-105": 1,
 "106-120": 0
 },
 "red": {
@@ -2998,11 +3138,151 @@
 }
 }
 },
-"512": {
-"id": 512,
-"name": "Frosinone",
+"488": {
+"id": 488,
+"name": "Sassuolo",
 "league": 135,
-"form": "LWWD",
+"form": "LWD",
+"fixtures": {
+"played": {
+"home": 1,
+"away": 2,
+"total": 3
+},
+"wins": {
+"home": 1,
+"away": 0,
+"total": 1
+},
+"draws": {
+"home": 0,
+"away": 1,
+"total": 1
+},
+"loses": {
+"home": 0,
+"away": 1,
+"total": 1
+}
+},
+"goals_for": {
+"total": {
+"home": 2,
+"away": 3,
+"total": 5
+},
+"avg": {
+"home": 2.0,
+"away": 1.5,
+"total": 1.7
+},
+"minute": {
+"0-15": 0,
+"16-30": 1,
+"31-45": 1,
+"46-60": 2,
+"61-75": 0,
+"76-90": 1,
+"91-105": 0,
+"106-120": 0
+}
+},
+"goals_against": {
+"total": {
+"home": 1,
+"away": 4,
+"total": 5
+},
+"avg": {
+"home": 1.0,
+"away": 2.0,
+"total": 1.7
+},
+"minute": {
+"0-15": 1,
+"16-30": 0,
+"31-45": 1,
+"46-60": 1,
+"61-75": 1,
+"76-90": 1,
+"91-105": 0,
+"106-120": 0
+}
+},
+"biggest": {
+"streak": {
+"wins": 1,
+"draws": 0,
+"loses": 1
+},
+"wins": {
+"home": "2-1",
+"away": null
+},
+"loses": {
+"home": null,
+"away": "2-1"
+},
+"goals": {
+"for": {
+"home": 2,
+"away": 2
+},
+"against": {
+"home": 1,
+"away": 2
+}
+}
+},
+"clean_sheet": {
+"home": 0,
+"away": 0,
+"total": 0
+},
+"failed_to_score": {
+"home": 0,
+"away": 0,
+"total": 0
+},
+"penalty": {
+"scored": 0,
+"missed": 0,
+"total": 0
+},
+"lineups": [
+{
+"formation": "4-3-3",
+"played": 3
+}
+],
+"cards": {
+"yellow": {
+"0-15": 0,
+"16-30": 0,
+"31-45": 1,
+"46-60": 2,
+"61-75": 1,
+"76-90": 0,
+"91-105": 0,
+"106-120": 0
+},
+"red": {
+"0-15": 0,
+"16-30": 0,
+"31-45": 0,
+"46-60": 0,
+"61-75": 0,
+"76-90": 0,
+"91-105": 0,
+"106-120": 0
+}
+}
+},
+"492": {
+"id": 492,
+"name": "Napoli",
+"league": 135,
+"form": "WLLW",
 "fixtures": {
 "played": {
 "home": 2,
@@ -3016,93 +3296,93 @@
 },
 "draws": {
 "home": 0,
-"away": 1,
-"total": 1
+"away": 0,
+"total": 0
 },
 "loses": {
 "home": 1,
-"away": 0,
-"total": 1
+"away": 1,
+"total": 2
 }
 },
 "goals_for": {
 "total": {
-"home": 3,
+"home": 2,
 "away": 4,
-"total": 7
+"total": 6
 },
 "avg": {
-"home": 1.5,
+"home": 1.0,
 "away": 2.0,
-"total": 1.8
+"total": 1.5
 },
 "minute": {
-"0-15": 1,
-"16-30": 2,
-"31-45": 2,
-"46-60": 0,
+"0-15": 0,
+"16-30": 1,
+"31-45": 0,
+"46-60": 2,
 "61-75": 1,
-"76-90": 1,
+"76-90": 2,
 "91-105": 0,
 "106-120": 0
 }
 },
 "goals_against": {
 "total": {
-"home": 3,
-"away": 1,
-"total": 4
+"home": 2,
+"away": 3,
+"total": 5
 },
 "avg": {
-"home": 1.5,
-"away": 0.5,
-"total": 1.0
+"home": 1.0,
+"away": 1.5,
+"total": 1.3
 },
 "minute": {
 "0-15": 0,
 "16-30": 1,
-"31-45": 0,
+"31-45": 1,
 "46-60": 1,
-"61-75": 2,
-"76-90": 0,
+"61-75": 0,
+"76-90": 2,
 "91-105": 0,
 "106-120": 0
 }
 },
 "biggest": {
 "streak": {
-"wins": 2,
+"wins": 1,
 "draws": 0,
-"loses": 1
+"loses": 2
 },
 "wins": {
-"home": "3-2",
-"away": "0-3"
+"home": "1-0",
+"away": "0-2"
 },
 "loses": {
-"home": "0-1",
-"away": null
+"home": "1-2",
+"away": "3-2"
 },
 "goals": {
 "for": {
-"home": 3,
-"away": 3
+"home": 1,
+"away": 2
 },
 "against": {
 "home": 2,
-"away": 1
+"away": 3
 }
 }
 },
 "clean_sheet": {
-"home": 0,
+"home": 1,
 "away": 1,
-"total": 1
+"total": 2
 },
 "failed_to_score": {
-"home": 1,
+"home": 0,
 "away": 0,
-"total": 1
+"total": 0
 },
 "penalty": {
 "scored": 0,
@@ -3111,19 +3391,23 @@
 },
 "lineups": [
 {
+"formation": "4-3-3",
+"played": 3
+},
+{
 "formation": "4-2-3-1",
-"played": 4
+"played": 1
 }
 ],
 "cards": {
 "yellow": {
-"0-15": 1,
-"16-30": 2,
+"0-15": 0,
+"16-30": 0,
 "31-45": 2,
 "46-60": 1,
-"61-75": 2,
-"76-90": 0,
-"91-105": 1,
+"61-75": 0,
+"76-90": 1,
+"91-105": 0,
 "106-120": 0
 },
 "red": {
@@ -3278,49 +3562,49 @@
 }
 }
 },
-"488": {
-"id": 488,
-"name": "Sassuolo",
+"867": {
+"id": 867,
+"name": "Lecce",
 "league": 135,
-"form": "LWD",
+"form": "WLLW",
 "fixtures": {
 "played": {
-"home": 1,
+"home": 2,
 "away": 2,
-"total": 3
+"total": 4
 },
 "wins": {
 "home": 1,
-"away": 0,
-"total": 1
+"away": 1,
+"total": 2
 },
 "draws": {
 "home": 0,
-"away": 1,
-"total": 1
+"away": 0,
+"total": 0
 },
 "loses": {
-"home": 0,
+"home": 1,
 "away": 1,
-"total": 1
+"total": 2
 }
 },
 "goals_for": {
 "total": {
-"home": 2,
-"away": 3,
+"home": 3,
+"away": 2,
 "total": 5
 },
 "avg": {
-"home": 2.0,
-"away": 1.5,
-"total": 1.7
+"home": 1.5,
+"away": 1.0,
+"total": 1.3
 },
 "minute": {
-"0-15": 0,
+"0-15": 2,
 "16-30": 1,
-"31-45": 1,
-"46-60": 2,
+"31-45": 0,
+"46-60": 1,
 "61-75": 0,
 "76-90": 1,
 "91-105": 0,
@@ -3329,20 +3613,20 @@
 },
 "goals_against": {
 "total": {
-"home": 1,
-"away": 4,
-"total": 5
+"home": 6,
+"away": 1,
+"total": 7
 },
 "avg": {
-"home": 1.0,
-"away": 2.0,
-"total": 1.7
+"home": 3.0,
+"away": 0.5,
+"total": 1.8
 },
 "minute": {
 "0-15": 1,
-"16-30": 0,
-"31-45": 1,
-"46-60": 1,
+"16-30": 4,
+"31-45": 0,
+"46-60": 0,
 "61-75": 1,
 "76-90": 1,
 "91-105": 0,
@@ -3353,36 +3637,36 @@
 "streak": {
 "wins": 1,
 "draws": 0,
-"loses": 1
+"loses": 2
 },
 "wins": {
-"home": "2-1",
-"away": null
+"home": "3-2",
+"away": "0-2"
 },
 "loses": {
-"home": null,
-"away": "2-1"
+"home": "0-4",
+"away": "1-0"
 },
 "goals": {
 "for": {
-"home": 2,
+"home": 3,
 "away": 2
 },
 "against": {
-"home": 1,
-"away": 2
+"home": 4,
+"away": 1
 }
 }
 },
 "clean_sheet": {
 "home": 0,
-"away": 0,
-"total": 0
+"away": 1,
+"total": 1
 },
 "failed_to_score": {
-"home": 0,
-"away": 0,
-"total": 0
+"home": 1,
+"away": 1,
+"total": 2
 },
 "penalty": {
 "scored": 0,
@@ -3392,18 +3676,26 @@
 "lineups": [
 {
 "formation": "4-3-3",
-"played": 3
+"played": 2
+},
+{
+"formation": "3-5-2",
+"played": 1
+},
+{
+"formation": "4-2-3-1",
+"played": 1
 }
 ],
 "cards": {
 "yellow": {
-"0-15": 0,
+"0-15": 1,
 "16-30": 0,
-"31-45": 1,
-"46-60": 2,
+"31-45": 2,
+"46-60": 1,
 "61-75": 1,
-"76-90": 0,
-"91-105": 0,
+"76-90": 2,
+"91-105": 2,
 "106-120": 0
 },
 "red": {
@@ -3544,146 +3836,6 @@
 "61-75": 1,
 "76-90": 1,
 "91-105": 1,
-"106-120": 0
-},
-"red": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 0,
-"46-60": 0,
-"61-75": 0,
-"76-90": 0,
-"91-105": 0,
-"106-120": 0
-}
-}
-},
-"492": {
-"id": 492,
-"name": "Napoli",
-"league": 135,
-"form": "WLL",
-"fixtures": {
-"played": {
-"home": 1,
-"away": 2,
-"total": 3
-},
-"wins": {
-"home": 0,
-"away": 1,
-"total": 1
-},
-"draws": {
-"home": 0,
-"away": 0,
-"total": 0
-},
-"loses": {
-"home": 1,
-"away": 1,
-"total": 2
-}
-},
-"goals_for": {
-"total": {
-"home": 1,
-"away": 4,
-"total": 5
-},
-"avg": {
-"home": 1.0,
-"away": 2.0,
-"total": 1.7
-},
-"minute": {
-"0-15": 0,
-"16-30": 1,
-"31-45": 0,
-"46-60": 2,
-"61-75": 0,
-"76-90": 2,
-"91-105": 0,
-"106-120": 0
-}
-},
-"goals_against": {
-"total": {
-"home": 2,
-"away": 3,
-"total": 5
-},
-"avg": {
-"home": 2.0,
-"away": 1.5,
-"total": 1.7
-},
-"minute": {
-"0-15": 0,
-"16-30": 1,
-"31-45": 1,
-"46-60": 1,
-"61-75": 0,
-"76-90": 2,
-"91-105": 0,
-"106-120": 0
-}
-},
-"biggest": {
-"streak": {
-"wins": 1,
-"draws": 0,
-"loses": 0
-},
-"wins": {
-"home": null,
-"away": "0-2"
-},
-"loses": {
-"home": "1-2",
-"away": "3-2"
-},
-"goals": {
-"for": {
-"home": 1,
-"away": 2
-},
-"against": {
-"home": 2,
-"away": 3
-}
-}
-},
-"clean_sheet": {
-"home": 0,
-"away": 1,
-"total": 1
-},
-"failed_to_score": {
-"home": 0,
-"away": 0,
-"total": 0
-},
-"penalty": {
-"scored": 0,
-"missed": 0,
-"total": 0
-},
-"lineups": [
-{
-"formation": "4-3-3",
-"played": 3
-}
-],
-"cards": {
-"yellow": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 2,
-"46-60": 1,
-"61-75": 0,
-"76-90": 1,
-"91-105": 0,
 "106-120": 0
 },
 "red": {
@@ -3846,154 +3998,6 @@
 }
 }
 },
-"867": {
-"id": 867,
-"name": "Lecce",
-"league": 135,
-"form": "WLL",
-"fixtures": {
-"played": {
-"home": 1,
-"away": 2,
-"total": 3
-},
-"wins": {
-"home": 0,
-"away": 1,
-"total": 1
-},
-"draws": {
-"home": 0,
-"away": 0,
-"total": 0
-},
-"loses": {
-"home": 1,
-"away": 1,
-"total": 2
-}
-},
-"goals_for": {
-"total": {
-"home": 0,
-"away": 2,
-"total": 2
-},
-"avg": {
-"home": 0.0,
-"away": 1.0,
-"total": 0.7
-},
-"minute": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 0,
-"46-60": 1,
-"61-75": 0,
-"76-90": 1,
-"91-105": 0,
-"106-120": 0
-}
-},
-"goals_against": {
-"total": {
-"home": 4,
-"away": 1,
-"total": 5
-},
-"avg": {
-"home": 4.0,
-"away": 0.5,
-"total": 1.7
-},
-"minute": {
-"0-15": 1,
-"16-30": 3,
-"31-45": 0,
-"46-60": 0,
-"61-75": 1,
-"76-90": 0,
-"91-105": 0,
-"106-120": 0
-}
-},
-"biggest": {
-"streak": {
-"wins": 1,
-"draws": 0,
-"loses": 0
-},
-"wins": {
-"home": null,
-"away": "0-2"
-},
-"loses": {
-"home": "0-4",
-"away": "1-0"
-},
-"goals": {
-"for": {
-"home": 0,
-"away": 2
-},
-"against": {
-"home": 4,
-"away": 1
-}
-}
-},
-"clean_sheet": {
-"home": 0,
-"away": 1,
-"total": 1
-},
-"failed_to_score": {
-"home": 1,
-"away": 1,
-"total": 2
-},
-"penalty": {
-"scored": 0,
-"missed": 0,
-"total": 0
-},
-"lineups": [
-{
-"formation": "4-3-3",
-"played": 1
-},
-{
-"formation": "3-5-2",
-"played": 1
-},
-{
-"formation": "4-2-3-1",
-"played": 1
-}
-],
-"cards": {
-"yellow": {
-"0-15": 1,
-"16-30": 0,
-"31-45": 1,
-"46-60": 1,
-"61-75": 1,
-"76-90": 1,
-"91-105": 2,
-"106-120": 0
-},
-"red": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 0,
-"46-60": 0,
-"61-75": 0,
-"76-90": 0,
-"91-105": 0,
-"106-120": 0
-}
-}
-},
 "502": {
 "id": 502,
 "name": "Fiorentina",
@@ -4128,146 +4132,6 @@
 "61-75": 2,
 "76-90": 1,
 "91-105": 0,
-"106-120": 0
-},
-"red": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 0,
-"46-60": 0,
-"61-75": 0,
-"76-90": 0,
-"91-105": 0,
-"106-120": 0
-}
-}
-},
-"500": {
-"id": 500,
-"name": "Bologna",
-"league": 135,
-"form": "LLD",
-"fixtures": {
-"played": {
-"home": 2,
-"away": 1,
-"total": 3
-},
-"wins": {
-"home": 0,
-"away": 0,
-"total": 0
-},
-"draws": {
-"home": 1,
-"away": 0,
-"total": 1
-},
-"loses": {
-"home": 1,
-"away": 1,
-"total": 2
-}
-},
-"goals_for": {
-"total": {
-"home": 2,
-"away": 0,
-"total": 2
-},
-"avg": {
-"home": 1.0,
-"away": 0.0,
-"total": 0.7
-},
-"minute": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 0,
-"46-60": 1,
-"61-75": 0,
-"76-90": 1,
-"91-105": 0,
-"106-120": 0
-}
-},
-"goals_against": {
-"total": {
-"home": 3,
-"away": 1,
-"total": 4
-},
-"avg": {
-"home": 1.5,
-"away": 1.0,
-"total": 1.3
-},
-"minute": {
-"0-15": 0,
-"16-30": 1,
-"31-45": 0,
-"46-60": 2,
-"61-75": 0,
-"76-90": 1,
-"91-105": 0,
-"106-120": 0
-}
-},
-"biggest": {
-"streak": {
-"wins": 0,
-"draws": 0,
-"loses": 2
-},
-"wins": {
-"home": null,
-"away": null
-},
-"loses": {
-"home": "0-1",
-"away": "1-0"
-},
-"goals": {
-"for": {
-"home": 2,
-"away": 0
-},
-"against": {
-"home": 2,
-"away": 1
-}
-}
-},
-"clean_sheet": {
-"home": 0,
-"away": 0,
-"total": 0
-},
-"failed_to_score": {
-"home": 1,
-"away": 1,
-"total": 2
-},
-"penalty": {
-"scored": 0,
-"missed": 0,
-"total": 0
-},
-"lineups": [
-{
-"formation": "4-2-3-1",
-"played": 3
-}
-],
-"cards": {
-"yellow": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 2,
-"46-60": 2,
-"61-75": 0,
-"76-90": 2,
-"91-105": 1,
 "106-120": 0
 },
 "red": {
@@ -4430,15 +4294,15 @@
 }
 }
 },
-"1579": {
-"id": 1579,
-"name": "Monza",
+"500": {
+"id": 500,
+"name": "Bologna",
 "league": 135,
 "form": "LLD",
 "fixtures": {
 "played": {
-"home": 1,
-"away": 2,
+"home": 2,
+"away": 1,
 "total": 3
 },
 "wins": {
@@ -4447,8 +4311,8 @@
 "total": 0
 },
 "draws": {
-"home": 0,
-"away": 1,
+"home": 1,
+"away": 0,
 "total": 1
 },
 "loses": {
@@ -4460,21 +4324,21 @@
 "goals_for": {
 "total": {
 "home": 2,
-"away": 2,
-"total": 4
+"away": 0,
+"total": 2
 },
 "avg": {
-"home": 2.0,
-"away": 1.0,
-"total": 1.3
+"home": 1.0,
+"away": 0.0,
+"total": 0.7
 },
 "minute": {
 "0-15": 0,
-"16-30": 1,
-"31-45": 2,
-"46-60": 0,
-"61-75": 1,
-"76-90": 0,
+"16-30": 0,
+"31-45": 0,
+"46-60": 1,
+"61-75": 0,
+"76-90": 1,
 "91-105": 0,
 "106-120": 0
 }
@@ -4482,21 +4346,21 @@
 "goals_against": {
 "total": {
 "home": 3,
-"away": 5,
-"total": 8
+"away": 1,
+"total": 4
 },
 "avg": {
-"home": 3.0,
-"away": 2.5,
-"total": 2.7
+"home": 1.5,
+"away": 1.0,
+"total": 1.3
 },
 "minute": {
-"0-15": 1,
-"16-30": 0,
-"31-45": 3,
-"46-60": 3,
-"61-75": 1,
-"76-90": 0,
+"0-15": 0,
+"16-30": 1,
+"31-45": 0,
+"46-60": 2,
+"61-75": 0,
+"76-90": 1,
 "91-105": 0,
 "106-120": 0
 }
@@ -4512,13 +4376,153 @@
 "away": null
 },
 "loses": {
+"home": "0-1",
+"away": "1-0"
+},
+"goals": {
+"for": {
+"home": 2,
+"away": 0
+},
+"against": {
+"home": 2,
+"away": 1
+}
+}
+},
+"clean_sheet": {
+"home": 0,
+"away": 0,
+"total": 0
+},
+"failed_to_score": {
+"home": 1,
+"away": 1,
+"total": 2
+},
+"penalty": {
+"scored": 0,
+"missed": 0,
+"total": 0
+},
+"lineups": [
+{
+"formation": "4-2-3-1",
+"played": 3
+}
+],
+"cards": {
+"yellow": {
+"0-15": 0,
+"16-30": 0,
+"31-45": 2,
+"46-60": 2,
+"61-75": 0,
+"76-90": 2,
+"91-105": 1,
+"106-120": 0
+},
+"red": {
+"0-15": 0,
+"16-30": 0,
+"31-45": 0,
+"46-60": 0,
+"61-75": 0,
+"76-90": 0,
+"91-105": 0,
+"106-120": 0
+}
+}
+},
+"1579": {
+"id": 1579,
+"name": "Monza",
+"league": 135,
+"form": "LLDL",
+"fixtures": {
+"played": {
+"home": 1,
+"away": 3,
+"total": 4
+},
+"wins": {
+"home": 0,
+"away": 0,
+"total": 0
+},
+"draws": {
+"home": 0,
+"away": 1,
+"total": 1
+},
+"loses": {
+"home": 1,
+"away": 2,
+"total": 3
+}
+},
+"goals_for": {
+"total": {
+"home": 2,
+"away": 4,
+"total": 6
+},
+"avg": {
+"home": 2.0,
+"away": 1.3,
+"total": 1.5
+},
+"minute": {
+"0-15": 0,
+"16-30": 2,
+"31-45": 2,
+"46-60": 0,
+"61-75": 1,
+"76-90": 1,
+"91-105": 0,
+"106-120": 0
+}
+},
+"goals_against": {
+"total": {
+"home": 3,
+"away": 8,
+"total": 11
+},
+"avg": {
+"home": 3.0,
+"away": 2.7,
+"total": 2.8
+},
+"minute": {
+"0-15": 3,
+"16-30": 1,
+"31-45": 3,
+"46-60": 3,
+"61-75": 1,
+"76-90": 0,
+"91-105": 0,
+"106-120": 0
+}
+},
+"biggest": {
+"streak": {
+"wins": 0,
+"draws": 1,
+"loses": 2
+},
+"wins": {
+"home": null,
+"away": null
+},
+"loses": {
 "home": "2-3",
 "away": "4-1"
 },
 "goals": {
 "for": {
 "home": 2,
-"away": 1
+"away": 2
 },
 "against": {
 "home": 3,
@@ -4544,7 +4548,7 @@
 "lineups": [
 {
 "formation": "3-4-2-1",
-"played": 2
+"played": 3
 },
 {
 "formation": "3-4-3",
@@ -4867,17 +4871,17 @@
 "id": 42,
 "name": "Arsenal",
 "league": 39,
-"form": "WWW",
+"form": "WWWW",
 "fixtures": {
 "played": {
 "home": 2,
-"away": 1,
-"total": 3
+"away": 2,
+"total": 4
 },
 "wins": {
 "home": 2,
-"away": 1,
-"total": 3
+"away": 2,
+"total": 4
 },
 "draws": {
 "home": 0,
@@ -4893,22 +4897,22 @@
 "goals_for": {
 "total": {
 "home": 5,
-"away": 1,
-"total": 6
+"away": 3,
+"total": 8
 },
 "avg": {
 "home": 2.5,
-"away": 1.0,
+"away": 1.5,
 "total": 2.0
 },
 "minute": {
 "0-15": 1,
 "16-30": 2,
 "31-45": 0,
-"46-60": 3,
+"46-60": 4,
 "61-75": 0,
 "76-90": 0,
-"91-105": 0,
+"91-105": 1,
 "106-120": 0
 }
 },
@@ -4936,13 +4940,13 @@
 },
 "biggest": {
 "streak": {
-"wins": 3,
+"wins": 4,
 "draws": 0,
 "loses": 0
 },
 "wins": {
 "home": "3-0",
-"away": "0-1"
+"away": "0-2"
 },
 "loses": {
 "home": null,
@@ -4951,7 +4955,7 @@
 "goals": {
 "for": {
 "home": 3,
-"away": 1
+"away": 2
 },
 "against": {
 "home": 1,
@@ -4961,8 +4965,8 @@
 },
 "clean_sheet": {
 "home": 1,
-"away": 1,
-"total": 2
+"away": 2,
+"total": 3
 },
 "failed_to_score": {
 "home": 0,
@@ -4970,25 +4974,25 @@
 "total": 0
 },
 "penalty": {
-"scored": 0,
+"scored": 1,
 "missed": 0,
-"total": 0
+"total": 1
 },
 "lineups": [
 {
 "formation": "4-2-3-1",
-"played": 3
+"played": 4
 }
 ],
 "cards": {
 "yellow": {
 "0-15": 0,
 "16-30": 1,
-"31-45": 1,
+"31-45": 2,
 "46-60": 1,
 "61-75": 0,
 "76-90": 0,
-"91-105": 1,
+"91-105": 3,
 "106-120": 0
 },
 "red": {
@@ -5007,17 +5011,17 @@
 "id": 50,
 "name": "Manchester City",
 "league": 39,
-"form": "WWW",
+"form": "WWWW",
 "fixtures": {
 "played": {
 "home": 2,
-"away": 1,
-"total": 3
+"away": 2,
+"total": 4
 },
 "wins": {
 "home": 2,
-"away": 1,
-"total": 3
+"away": 2,
+"total": 4
 },
 "draws": {
 "home": 0,
@@ -5033,19 +5037,19 @@
 "goals_for": {
 "total": {
 "home": 3,
-"away": 4,
-"total": 7
+"away": 5,
+"total": 8
 },
 "avg": {
 "home": 1.5,
-"away": 4.0,
-"total": 2.3
+"away": 2.5,
+"total": 2.0
 },
 "minute": {
 "0-15": 0,
 "16-30": 2,
 "31-45": 0,
-"46-60": 3,
+"46-60": 4,
 "61-75": 0,
 "76-90": 3,
 "91-105": 0,
@@ -5060,8 +5064,8 @@
 },
 "avg": {
 "home": 0.5,
-"away": 1.0,
-"total": 0.7
+"away": 0.5,
+"total": 0.5
 },
 "minute": {
 "0-15": 0,
@@ -5076,7 +5080,7 @@
 },
 "biggest": {
 "streak": {
-"wins": 3,
+"wins": 4,
 "draws": 0,
 "loses": 0
 },
@@ -5101,8 +5105,8 @@
 },
 "clean_sheet": {
 "home": 1,
-"away": 0,
-"total": 1
+"away": 1,
+"total": 2
 },
 "failed_to_score": {
 "home": 0,
@@ -5117,7 +5121,7 @@
 "lineups": [
 {
 "formation": "4-2-3-1",
-"played": 3
+"played": 4
 }
 ],
 "cards": {
@@ -5125,15 +5129,15 @@
 "0-15": 0,
 "16-30": 0,
 "31-45": 1,
-"46-60": 1,
+"46-60": 2,
 "61-75": 0,
-"76-90": 1,
+"76-90": 3,
 "91-105": 1,
 "106-120": 0
 },
 "red": {
 "0-15": 0,
-"16-30": 0,
+"16-30": 1,
 "31-45": 0,
 "46-60": 0,
 "61-75": 0,
@@ -5269,6 +5273,146 @@
 "61-75": 2,
 "76-90": 1,
 "91-105": 2,
+"106-120": 0
+},
+"red": {
+"0-15": 0,
+"16-30": 0,
+"31-45": 0,
+"46-60": 0,
+"61-75": 0,
+"76-90": 0,
+"91-105": 0,
+"106-120": 0
+}
+}
+},
+"51": {
+"id": 51,
+"name": "Brighton",
+"league": 39,
+"form": "WLDW",
+"fixtures": {
+"played": {
+"home": 2,
+"away": 2,
+"total": 4
+},
+"wins": {
+"home": 1,
+"away": 1,
+"total": 2
+},
+"draws": {
+"home": 1,
+"away": 0,
+"total": 1
+},
+"loses": {
+"home": 0,
+"away": 1,
+"total": 1
+}
+},
+"goals_for": {
+"total": {
+"home": 5,
+"away": 8,
+"total": 13
+},
+"avg": {
+"home": 2.5,
+"away": 4.0,
+"total": 3.3
+},
+"minute": {
+"0-15": 0,
+"16-30": 2,
+"31-45": 3,
+"46-60": 1,
+"61-75": 2,
+"76-90": 2,
+"91-105": 1,
+"106-120": 0
+}
+},
+"goals_against": {
+"total": {
+"home": 1,
+"away": 4,
+"total": 5
+},
+"avg": {
+"home": 0.5,
+"away": 2.0,
+"total": 1.3
+},
+"minute": {
+"0-15": 4,
+"16-30": 0,
+"31-45": 1,
+"46-60": 0,
+"61-75": 2,
+"76-90": 0,
+"91-105": 0,
+"106-120": 0
+}
+},
+"biggest": {
+"streak": {
+"wins": 1,
+"draws": 1,
+"loses": 1
+},
+"wins": {
+"home": "4-0",
+"away": "0-5"
+},
+"loses": {
+"home": null,
+"away": "4-3"
+},
+"goals": {
+"for": {
+"home": 4,
+"away": 5
+},
+"against": {
+"home": 1,
+"away": 4
+}
+}
+},
+"clean_sheet": {
+"home": 1,
+"away": 1,
+"total": 2
+},
+"failed_to_score": {
+"home": 0,
+"away": 0,
+"total": 0
+},
+"penalty": {
+"scored": 1,
+"missed": 0,
+"total": 1
+},
+"lineups": [
+{
+"formation": "4-2-3-1",
+"played": 4
+}
+],
+"cards": {
+"yellow": {
+"0-15": 2,
+"16-30": 0,
+"31-45": 1,
+"46-60": 1,
+"61-75": 1,
+"76-90": 2,
+"91-105": 1,
 "106-120": 0
 },
 "red": {
@@ -5711,12 +5855,12 @@
 "id": 45,
 "name": "Everton",
 "league": 39,
-"form": "WDD",
+"form": "WDDD",
 "fixtures": {
 "played": {
 "home": 2,
-"away": 1,
-"total": 3
+"away": 2,
+"total": 4
 },
 "wins": {
 "home": 1,
@@ -5725,8 +5869,8 @@
 },
 "draws": {
 "home": 1,
-"away": 1,
-"total": 2
+"away": 2,
+"total": 3
 },
 "loses": {
 "home": 0,
@@ -5742,8 +5886,8 @@
 },
 "avg": {
 "home": 2.0,
-"away": 1.0,
-"total": 1.7
+"away": 0.5,
+"total": 1.3
 },
 "minute": {
 "0-15": 0,
@@ -5764,8 +5908,8 @@
 },
 "avg": {
 "home": 1.0,
-"away": 1.0,
-"total": 1.0
+"away": 0.5,
+"total": 0.8
 },
 "minute": {
 "0-15": 0,
@@ -5805,13 +5949,13 @@
 },
 "clean_sheet": {
 "home": 1,
-"away": 0,
-"total": 1
+"away": 1,
+"total": 2
 },
 "failed_to_score": {
 "home": 0,
-"away": 0,
-"total": 0
+"away": 1,
+"total": 1
 },
 "penalty": {
 "scored": 0,
@@ -5821,7 +5965,7 @@
 "lineups": [
 {
 "formation": "4-2-3-1",
-"played": 3
+"played": 4
 }
 ],
 "cards": {
@@ -5830,8 +5974,8 @@
 "16-30": 0,
 "31-45": 1,
 "46-60": 1,
-"61-75": 1,
-"76-90": 0,
+"61-75": 2,
+"76-90": 1,
 "91-105": 1,
 "106-120": 0
 },
@@ -6411,156 +6555,16 @@
 }
 }
 },
-"51": {
-"id": 51,
-"name": "Brighton",
-"league": 39,
-"form": "WLD",
-"fixtures": {
-"played": {
-"home": 2,
-"away": 1,
-"total": 3
-},
-"wins": {
-"home": 1,
-"away": 0,
-"total": 1
-},
-"draws": {
-"home": 1,
-"away": 0,
-"total": 1
-},
-"loses": {
-"home": 0,
-"away": 1,
-"total": 1
-}
-},
-"goals_for": {
-"total": {
-"home": 5,
-"away": 3,
-"total": 8
-},
-"avg": {
-"home": 2.5,
-"away": 3.0,
-"total": 2.7
-},
-"minute": {
-"0-15": 0,
-"16-30": 2,
-"31-45": 2,
-"46-60": 0,
-"61-75": 1,
-"76-90": 1,
-"91-105": 0,
-"106-120": 0
-}
-},
-"goals_against": {
-"total": {
-"home": 1,
-"away": 4,
-"total": 5
-},
-"avg": {
-"home": 0.5,
-"away": 4.0,
-"total": 1.7
-},
-"minute": {
-"0-15": 4,
-"16-30": 0,
-"31-45": 1,
-"46-60": 0,
-"61-75": 2,
-"76-90": 0,
-"91-105": 0,
-"106-120": 0
-}
-},
-"biggest": {
-"streak": {
-"wins": 1,
-"draws": 0,
-"loses": 1
-},
-"wins": {
-"home": "4-0",
-"away": null
-},
-"loses": {
-"home": null,
-"away": "4-3"
-},
-"goals": {
-"for": {
-"home": 4,
-"away": 3
-},
-"against": {
-"home": 1,
-"away": 4
-}
-}
-},
-"clean_sheet": {
-"home": 1,
-"away": 0,
-"total": 1
-},
-"failed_to_score": {
-"home": 0,
-"away": 0,
-"total": 0
-},
-"penalty": {
-"scored": 0,
-"missed": 0,
-"total": 0
-},
-"lineups": [
-{
-"formation": "4-2-3-1",
-"played": 3
-}
-],
-"cards": {
-"yellow": {
-"0-15": 2,
-"16-30": 0,
-"31-45": 1,
-"46-60": 1,
-"61-75": 1,
-"76-90": 2,
-"91-105": 1,
-"106-120": 0
-},
-"red": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 0,
-"46-60": 0,
-"61-75": 0,
-"76-90": 0,
-"91-105": 0,
-"106-120": 0
-}
-}
-},
 "33": {
 "id": 33,
 "name": "Manchester United",
 "league": 39,
-"form": "LWD",
+"form": "LWDL",
 "fixtures": {
 "played": {
-"home": 1,
+"home": 2,
 "away": 2,
-"total": 3
+"total": 4
 },
 "wins": {
 "home": 1,
@@ -6573,9 +6577,9 @@
 "total": 1
 },
 "loses": {
-"home": 0,
+"home": 1,
 "away": 1,
-"total": 1
+"total": 2
 }
 },
 "goals_for": {
@@ -6585,9 +6589,9 @@
 "total": 7
 },
 "avg": {
-"home": 5.0,
+"home": 2.5,
 "away": 1.0,
-"total": 2.3
+"total": 1.8
 },
 "minute": {
 "0-15": 0,
@@ -6602,20 +6606,20 @@
 },
 "goals_against": {
 "total": {
-"home": 2,
+"home": 3,
 "away": 4,
-"total": 6
+"total": 7
 },
 "avg": {
-"home": 2.0,
+"home": 1.5,
 "away": 2.0,
-"total": 2.0
+"total": 1.8
 },
 "minute": {
 "0-15": 0,
 "16-30": 2,
 "31-45": 1,
-"46-60": 1,
+"46-60": 2,
 "61-75": 0,
 "76-90": 3,
 "91-105": 0,
@@ -6625,7 +6629,7 @@
 "biggest": {
 "streak": {
 "wins": 1,
-"draws": 0,
+"draws": 1,
 "loses": 1
 },
 "wins": {
@@ -6633,7 +6637,7 @@
 "away": null
 },
 "loses": {
-"home": null,
+"home": "0-1",
 "away": "2-0"
 },
 "goals": {
@@ -6653,9 +6657,9 @@
 "total": 0
 },
 "failed_to_score": {
-"home": 0,
+"home": 1,
 "away": 1,
-"total": 1
+"total": 2
 },
 "penalty": {
 "scored": 1,
@@ -6665,7 +6669,7 @@
 "lineups": [
 {
 "formation": "4-2-3-1",
-"played": 3
+"played": 4
 }
 ],
 "cards": {
@@ -6675,7 +6679,7 @@
 "31-45": 1,
 "46-60": 0,
 "61-75": 1,
-"76-90": 2,
+"76-90": 3,
 "91-105": 1,
 "106-120": 0
 },
@@ -6695,12 +6699,12 @@
 "id": 746,
 "name": "Sunderland",
 "league": 39,
-"form": "LWD",
+"form": "LWDL",
 "fixtures": {
 "played": {
-"home": 1,
+"home": 2,
 "away": 2,
-"total": 3
+"total": 4
 },
 "wins": {
 "home": 1,
@@ -6713,9 +6717,9 @@
 "total": 1
 },
 "loses": {
-"home": 0,
+"home": 1,
 "away": 1,
-"total": 1
+"total": 2
 }
 },
 "goals_for": {
@@ -6725,9 +6729,9 @@
 "total": 3
 },
 "avg": {
-"home": 1.0,
+"home": 0.5,
 "away": 1.0,
-"total": 1.0
+"total": 0.8
 },
 "minute": {
 "0-15": 0,
@@ -6742,30 +6746,30 @@
 },
 "goals_against": {
 "total": {
-"home": 0,
+"home": 2,
 "away": 3,
-"total": 3
+"total": 5
 },
 "avg": {
-"home": 0.0,
+"home": 1.0,
 "away": 1.5,
-"total": 1.0
+"total": 1.3
 },
 "minute": {
 "0-15": 0,
 "16-30": 1,
 "31-45": 0,
-"46-60": 1,
+"46-60": 2,
 "61-75": 0,
 "76-90": 1,
-"91-105": 0,
+"91-105": 1,
 "106-120": 0
 }
 },
 "biggest": {
 "streak": {
 "wins": 1,
-"draws": 0,
+"draws": 1,
 "loses": 1
 },
 "wins": {
@@ -6773,7 +6777,7 @@
 "away": null
 },
 "loses": {
-"home": null,
+"home": "0-2",
 "away": "2-1"
 },
 "goals": {
@@ -6782,7 +6786,7 @@
 "away": 1
 },
 "against": {
-"home": 0,
+"home": 2,
 "away": 2
 }
 }
@@ -6793,30 +6797,30 @@
 "total": 1
 },
 "failed_to_score": {
-"home": 0,
+"home": 1,
 "away": 0,
-"total": 0
+"total": 1
 },
 "penalty": {
 "scored": 1,
-"missed": 0,
-"total": 1
+"missed": 1,
+"total": 2
 },
 "lineups": [
 {
 "formation": "4-2-3-1",
-"played": 3
+"played": 4
 }
 ],
 "cards": {
 "yellow": {
 "0-15": 1,
-"16-30": 0,
+"16-30": 1,
 "31-45": 1,
 "46-60": 1,
-"61-75": 1,
-"76-90": 1,
-"91-105": 0,
+"61-75": 3,
+"76-90": 2,
+"91-105": 1,
 "106-120": 0
 },
 "red": {
@@ -6826,7 +6830,7 @@
 "46-60": 0,
 "61-75": 0,
 "76-90": 0,
-"91-105": 0,
+"91-105": 1,
 "106-120": 0
 }
 }
@@ -6975,12 +6979,12 @@
 "id": 52,
 "name": "Crystal Palace",
 "league": 39,
-"form": "LLW",
+"form": "LLWL",
 "fixtures": {
 "played": {
-"home": 1,
+"home": 2,
 "away": 2,
-"total": 3
+"total": 4
 },
 "wins": {
 "home": 0,
@@ -6993,28 +6997,28 @@
 "total": 0
 },
 "loses": {
-"home": 1,
+"home": 2,
 "away": 1,
-"total": 2
+"total": 3
 }
 },
 "goals_for": {
 "total": {
-"home": 1,
+"home": 3,
 "away": 3,
-"total": 4
+"total": 6
 },
 "avg": {
-"home": 1.0,
+"home": 1.5,
 "away": 1.5,
-"total": 1.3
+"total": 1.5
 },
 "minute": {
-"0-15": 0,
+"0-15": 1,
 "16-30": 0,
 "31-45": 1,
 "46-60": 1,
-"61-75": 0,
+"61-75": 1,
 "76-90": 1,
 "91-105": 0,
 "106-120": 0
@@ -7022,29 +7026,29 @@
 },
 "goals_against": {
 "total": {
-"home": 4,
+"home": 7,
 "away": 4,
-"total": 8
+"total": 11
 },
 "avg": {
-"home": 4.0,
+"home": 3.5,
 "away": 2.0,
-"total": 2.7
+"total": 2.8
 },
 "minute": {
 "0-15": 1,
-"16-30": 1,
-"31-45": 2,
+"16-30": 2,
+"31-45": 3,
 "46-60": 4,
 "61-75": 0,
-"76-90": 1,
+"76-90": 2,
 "91-105": 0,
 "106-120": 0
 }
 },
 "biggest": {
 "streak": {
-"wins": 0,
+"wins": 1,
 "draws": 0,
 "loses": 2
 },
@@ -7058,7 +7062,7 @@
 },
 "goals": {
 "for": {
-"home": 1,
+"home": 2,
 "away": 3
 },
 "against": {
@@ -7085,7 +7089,7 @@
 "lineups": [
 {
 "formation": "3-4-2-1",
-"played": 3
+"played": 4
 }
 ],
 "cards": {
@@ -7096,13 +7100,13 @@
 "46-60": 0,
 "61-75": 1,
 "76-90": 0,
-"91-105": 0,
+"91-105": 1,
 "106-120": 0
 },
 "red": {
 "0-15": 0,
 "16-30": 0,
-"31-45": 0,
+"31-45": 1,
 "46-60": 0,
 "61-75": 0,
 "76-90": 0,
@@ -7115,12 +7119,12 @@
 "id": 47,
 "name": "Tottenham",
 "league": 39,
-"form": "LLD",
+"form": "LLDD",
 "fixtures": {
 "played": {
-"home": 1,
+"home": 2,
 "away": 2,
-"total": 3
+"total": 4
 },
 "wins": {
 "home": 0,
@@ -7128,9 +7132,9 @@
 "total": 0
 },
 "draws": {
-"home": 0,
+"home": 1,
 "away": 1,
-"total": 1
+"total": 2
 },
 "loses": {
 "home": 1,
@@ -7167,9 +7171,9 @@
 "total": 5
 },
 "avg": {
-"home": 2.0,
+"home": 1.0,
 "away": 1.5,
-"total": 1.7
+"total": 1.3
 },
 "minute": {
 "0-15": 1,
@@ -7208,14 +7212,14 @@
 }
 },
 "clean_sheet": {
-"home": 0,
+"home": 1,
 "away": 1,
-"total": 1
+"total": 2
 },
 "failed_to_score": {
-"home": 1,
+"home": 2,
 "away": 2,
-"total": 3
+"total": 4
 },
 "penalty": {
 "scored": 0,
@@ -7225,7 +7229,7 @@
 "lineups": [
 {
 "formation": "4-2-3-1",
-"played": 3
+"played": 4
 }
 ],
 "cards": {
@@ -7235,7 +7239,7 @@
 "31-45": 1,
 "46-60": 1,
 "61-75": 0,
-"76-90": 1,
+"76-90": 2,
 "91-105": 0,
 "106-120": 0
 },
@@ -7535,12 +7539,12 @@
 "id": 1346,
 "name": "Coventry",
 "league": 39,
-"form": "LLL",
+"form": "LLLL",
 "fixtures": {
 "played": {
-"home": 1,
+"home": 2,
 "away": 2,
-"total": 3
+"total": 4
 },
 "wins": {
 "home": 0,
@@ -7553,9 +7557,9 @@
 "total": 0
 },
 "loses": {
-"home": 1,
+"home": 2,
 "away": 2,
-"total": 3
+"total": 4
 }
 },
 "goals_for": {
@@ -7582,23 +7586,23 @@
 },
 "goals_against": {
 "total": {
-"home": 1,
+"home": 6,
 "away": 4,
-"total": 5
+"total": 10
 },
 "avg": {
-"home": 1.0,
+"home": 3.0,
 "away": 2.0,
-"total": 1.7
+"total": 2.5
 },
 "minute": {
 "0-15": 1,
 "16-30": 2,
-"31-45": 0,
-"46-60": 1,
-"61-75": 0,
-"76-90": 1,
-"91-105": 0,
+"31-45": 1,
+"46-60": 2,
+"61-75": 1,
+"76-90": 2,
+"91-105": 1,
 "106-120": 0
 }
 },
@@ -7606,14 +7610,14 @@
 "streak": {
 "wins": 0,
 "draws": 0,
-"loses": 3
+"loses": 4
 },
 "wins": {
 "home": null,
 "away": null
 },
 "loses": {
-"home": "0-1",
+"home": "0-5",
 "away": "3-0"
 },
 "goals": {
@@ -7622,7 +7626,7 @@
 "away": 0
 },
 "against": {
-"home": 1,
+"home": 5,
 "away": 3
 }
 }
@@ -7633,9 +7637,9 @@
 "total": 0
 },
 "failed_to_score": {
-"home": 1,
+"home": 2,
 "away": 2,
-"total": 3
+"total": 4
 },
 "penalty": {
 "scored": 0,
@@ -7644,15 +7648,15 @@
 },
 "lineups": [
 {
+"formation": "3-4-2-1",
+"played": 2
+},
+{
 "formation": "4-1-4-1",
 "played": 1
 },
 {
 "formation": "4-2-3-1",
-"played": 1
-},
-{
-"formation": "3-4-2-1",
 "played": 1
 }
 ],
@@ -7671,7 +7675,7 @@
 "0-15": 0,
 "16-30": 0,
 "31-45": 0,
-"46-60": 0,
+"46-60": 1,
 "61-75": 0,
 "76-90": 0,
 "91-105": 0,
@@ -8107,6 +8111,150 @@
 }
 }
 },
+"530": {
+"id": 530,
+"name": "Atletico Madrid",
+"league": 140,
+"form": "WDWL",
+"fixtures": {
+"played": {
+"home": 2,
+"away": 2,
+"total": 4
+},
+"wins": {
+"home": 1,
+"away": 1,
+"total": 2
+},
+"draws": {
+"home": 1,
+"away": 0,
+"total": 1
+},
+"loses": {
+"home": 0,
+"away": 1,
+"total": 1
+}
+},
+"goals_for": {
+"total": {
+"home": 4,
+"away": 3,
+"total": 7
+},
+"avg": {
+"home": 2.0,
+"away": 1.5,
+"total": 1.8
+},
+"minute": {
+"0-15": 1,
+"16-30": 1,
+"31-45": 1,
+"46-60": 1,
+"61-75": 1,
+"76-90": 2,
+"91-105": 0,
+"106-120": 0
+}
+},
+"goals_against": {
+"total": {
+"home": 2,
+"away": 4,
+"total": 6
+},
+"avg": {
+"home": 1.0,
+"away": 2.0,
+"total": 1.5
+},
+"minute": {
+"0-15": 0,
+"16-30": 0,
+"31-45": 0,
+"46-60": 2,
+"61-75": 2,
+"76-90": 2,
+"91-105": 0,
+"106-120": 0
+}
+},
+"biggest": {
+"streak": {
+"wins": 1,
+"draws": 1,
+"loses": 0
+},
+"wins": {
+"home": "2-0",
+"away": "1-3"
+},
+"loses": {
+"home": null,
+"away": "3-0"
+},
+"goals": {
+"for": {
+"home": 2,
+"away": 3
+},
+"against": {
+"home": 2,
+"away": 3
+}
+}
+},
+"clean_sheet": {
+"home": 1,
+"away": 0,
+"total": 1
+},
+"failed_to_score": {
+"home": 0,
+"away": 1,
+"total": 1
+},
+"penalty": {
+"scored": 0,
+"missed": 0,
+"total": 0
+},
+"lineups": [
+{
+"formation": "4-4-2",
+"played": 3
+},
+{
+"formation": "4-1-4-1",
+"played": 1
+}
+],
+"cards": {
+"yellow": {
+"0-15": 1,
+"16-30": 0,
+"31-45": 2,
+"46-60": 2,
+"61-75": 0,
+"76-90": 1,
+"91-105": 2,
+"106-120": 0
+},
+"red": {
+"0-15": 0,
+"16-30": 0,
+"31-45": 0,
+"46-60": 0,
+"61-75": 0,
+"76-90": 1,
+"91-105": 0,
+"106-120": 0
+}
+}
+},
 "536": {
 "id": 536,
 "name": "Sevilla",
@@ -8250,146 +8398,6 @@
 "46-60": 1,
 "61-75": 0,
 "76-90": 1,
-"91-105": 0,
-"106-120": 0
-}
-}
-},
-"543": {
-"id": 543,
-"name": "Real Betis",
-"league": 140,
-"form": "WWLW",
-"fixtures": {
-"played": {
-"home": 2,
-"away": 2,
-"total": 4
-},
-"wins": {
-"home": 2,
-"away": 1,
-"total": 3
-},
-"draws": {
-"home": 0,
-"away": 0,
-"total": 0
-},
-"loses": {
-"home": 0,
-"away": 1,
-"total": 1
-}
-},
-"goals_for": {
-"total": {
-"home": 2,
-"away": 3,
-"total": 5
-},
-"avg": {
-"home": 1.0,
-"away": 1.5,
-"total": 1.3
-},
-"minute": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 2,
-"46-60": 0,
-"61-75": 1,
-"76-90": 2,
-"91-105": 0,
-"106-120": 0
-}
-},
-"goals_against": {
-"total": {
-"home": 0,
-"away": 5,
-"total": 5
-},
-"avg": {
-"home": 0.0,
-"away": 2.5,
-"total": 1.3
-},
-"minute": {
-"0-15": 0,
-"16-30": 1,
-"31-45": 1,
-"46-60": 1,
-"61-75": 1,
-"76-90": 1,
-"91-105": 0,
-"106-120": 0
-}
-},
-"biggest": {
-"streak": {
-"wins": 2,
-"draws": 0,
-"loses": 1
-},
-"wins": {
-"home": "1-0",
-"away": "0-1"
-},
-"loses": {
-"home": null,
-"away": "5-2"
-},
-"goals": {
-"for": {
-"home": 1,
-"away": 2
-},
-"against": {
-"home": 0,
-"away": 5
-}
-}
-},
-"clean_sheet": {
-"home": 2,
-"away": 1,
-"total": 3
-},
-"failed_to_score": {
-"home": 0,
-"away": 0,
-"total": 0
-},
-"penalty": {
-"scored": 0,
-"missed": 0,
-"total": 0
-},
-"lineups": [
-{
-"formation": "4-2-3-1",
-"played": 4
-}
-],
-"cards": {
-"yellow": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 1,
-"46-60": 0,
-"61-75": 2,
-"76-90": 3,
-"91-105": 2,
-"106-120": 0
-},
-"red": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 0,
-"46-60": 0,
-"61-75": 0,
-"76-90": 0,
 "91-105": 0,
 "106-120": 0
 }
@@ -8539,6 +8547,146 @@
 }
 }
 },
+"543": {
+"id": 543,
+"name": "Real Betis",
+"league": 140,
+"form": "WWLW",
+"fixtures": {
+"played": {
+"home": 2,
+"away": 2,
+"total": 4
+},
+"wins": {
+"home": 2,
+"away": 1,
+"total": 3
+},
+"draws": {
+"home": 0,
+"away": 0,
+"total": 0
+},
+"loses": {
+"home": 0,
+"away": 1,
+"total": 1
+}
+},
+"goals_for": {
+"total": {
+"home": 2,
+"away": 3,
+"total": 5
+},
+"avg": {
+"home": 1.0,
+"away": 1.5,
+"total": 1.3
+},
+"minute": {
+"0-15": 0,
+"16-30": 0,
+"31-45": 2,
+"46-60": 0,
+"61-75": 1,
+"76-90": 2,
+"91-105": 0,
+"106-120": 0
+}
+},
+"goals_against": {
+"total": {
+"home": 0,
+"away": 5,
+"total": 5
+},
+"avg": {
+"home": 0.0,
+"away": 2.5,
+"total": 1.3
+},
+"minute": {
+"0-15": 0,
+"16-30": 1,
+"31-45": 1,
+"46-60": 1,
+"61-75": 1,
+"76-90": 1,
+"91-105": 0,
+"106-120": 0
+}
+},
+"biggest": {
+"streak": {
+"wins": 2,
+"draws": 0,
+"loses": 1
+},
+"wins": {
+"home": "1-0",
+"away": "0-1"
+},
+"loses": {
+"home": null,
+"away": "5-2"
+},
+"goals": {
+"for": {
+"home": 1,
+"away": 2
+},
+"against": {
+"home": 0,
+"away": 5
+}
+}
+},
+"clean_sheet": {
+"home": 2,
+"away": 1,
+"total": 3
+},
+"failed_to_score": {
+"home": 0,
+"away": 0,
+"total": 0
+},
+"penalty": {
+"scored": 0,
+"missed": 0,
+"total": 0
+},
+"lineups": [
+{
+"formation": "4-2-3-1",
+"played": 4
+}
+],
+"cards": {
+"yellow": {
+"0-15": 0,
+"16-30": 0,
+"31-45": 1,
+"46-60": 0,
+"61-75": 2,
+"76-90": 3,
+"91-105": 2,
+"106-120": 0
+},
+"red": {
+"0-15": 0,
+"16-30": 0,
+"31-45": 0,
+"46-60": 0,
+"61-75": 0,
+"76-90": 0,
+"91-105": 0,
+"106-120": 0
+}
+}
+},
 "540": {
 "id": 540,
 "name": "Espanyol",
@@ -8678,150 +8826,6 @@
 "46-60": 0,
 "61-75": 0,
 "76-90": 0,
-"91-105": 0,
-"106-120": 0
-}
-}
-},
-"530": {
-"id": 530,
-"name": "Atletico Madrid",
-"league": 140,
-"form": "WDWL",
-"fixtures": {
-"played": {
-"home": 2,
-"away": 2,
-"total": 4
-},
-"wins": {
-"home": 1,
-"away": 1,
-"total": 2
-},
-"draws": {
-"home": 1,
-"away": 0,
-"total": 1
-},
-"loses": {
-"home": 0,
-"away": 1,
-"total": 1
-}
-},
-"goals_for": {
-"total": {
-"home": 4,
-"away": 3,
-"total": 7
-},
-"avg": {
-"home": 2.0,
-"away": 1.5,
-"total": 1.8
-},
-"minute": {
-"0-15": 1,
-"16-30": 1,
-"31-45": 1,
-"46-60": 1,
-"61-75": 1,
-"76-90": 2,
-"91-105": 0,
-"106-120": 0
-}
-},
-"goals_against": {
-"total": {
-"home": 2,
-"away": 4,
-"total": 6
-},
-"avg": {
-"home": 1.0,
-"away": 2.0,
-"total": 1.5
-},
-"minute": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 0,
-"46-60": 2,
-"61-75": 2,
-"76-90": 2,
-"91-105": 0,
-"106-120": 0
-}
-},
-"biggest": {
-"streak": {
-"wins": 1,
-"draws": 1,
-"loses": 0
-},
-"wins": {
-"home": "2-0",
-"away": "1-3"
-},
-"loses": {
-"home": null,
-"away": "3-0"
-},
-"goals": {
-"for": {
-"home": 2,
-"away": 3
-},
-"against": {
-"home": 2,
-"away": 3
-}
-}
-},
-"clean_sheet": {
-"home": 1,
-"away": 0,
-"total": 1
-},
-"failed_to_score": {
-"home": 0,
-"away": 1,
-"total": 1
-},
-"penalty": {
-"scored": 0,
-"missed": 0,
-"total": 0
-},
-"lineups": [
-{
-"formation": "4-4-2",
-"played": 3
-},
-{
-"formation": "4-1-4-1",
-"played": 1
-}
-],
-"cards": {
-"yellow": {
-"0-15": 1,
-"16-30": 0,
-"31-45": 2,
-"46-60": 2,
-"61-75": 0,
-"76-90": 1,
-"91-105": 2,
-"106-120": 0
-},
-"red": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 0,
-"46-60": 0,
-"61-75": 0,
-"76-90": 1,
 "91-105": 0,
 "106-120": 0
 }
@@ -9107,150 +9111,6 @@
 }
 }
 },
-"548": {
-"id": 548,
-"name": "Real Sociedad",
-"league": 140,
-"form": "LLWDW",
-"fixtures": {
-"played": {
-"home": 2,
-"away": 3,
-"total": 5
-},
-"wins": {
-"home": 1,
-"away": 1,
-"total": 2
-},
-"draws": {
-"home": 1,
-"away": 0,
-"total": 1
-},
-"loses": {
-"home": 0,
-"away": 2,
-"total": 2
-}
-},
-"goals_for": {
-"total": {
-"home": 2,
-"away": 4,
-"total": 6
-},
-"avg": {
-"home": 1.0,
-"away": 1.3,
-"total": 1.2
-},
-"minute": {
-"0-15": 2,
-"16-30": 0,
-"31-45": 2,
-"46-60": 0,
-"61-75": 1,
-"76-90": 1,
-"91-105": 0,
-"106-120": 0
-}
-},
-"goals_against": {
-"total": {
-"home": 1,
-"away": 7,
-"total": 8
-},
-"avg": {
-"home": 0.5,
-"away": 2.3,
-"total": 1.6
-},
-"minute": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 2,
-"46-60": 1,
-"61-75": 4,
-"76-90": 1,
-"91-105": 0,
-"106-120": 0
-}
-},
-"biggest": {
-"streak": {
-"wins": 1,
-"draws": 1,
-"loses": 2
-},
-"wins": {
-"home": "2-1",
-"away": "2-3"
-},
-"loses": {
-"home": null,
-"away": "4-1"
-},
-"goals": {
-"for": {
-"home": 2,
-"away": 3
-},
-"against": {
-"home": 1,
-"away": 4
-}
-}
-},
-"clean_sheet": {
-"home": 1,
-"away": 0,
-"total": 1
-},
-"failed_to_score": {
-"home": 1,
-"away": 1,
-"total": 2
-},
-"penalty": {
-"scored": 0,
-"missed": 0,
-"total": 0
-},
-"lineups": [
-{
-"formation": "4-2-3-1",
-"played": 3
-},
-{
-"formation": "4-4-2",
-"played": 2
-}
-],
-"cards": {
-"yellow": {
-"0-15": 1,
-"16-30": 2,
-"31-45": 1,
-"46-60": 3,
-"61-75": 2,
-"76-90": 1,
-"91-105": 1,
-"106-120": 0
-},
-"red": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 0,
-"46-60": 0,
-"61-75": 1,
-"76-90": 0,
-"91-105": 0,
-"106-120": 0
-}
-}
-},
 "727": {
 "id": 727,
 "name": "Osasuna",
@@ -9403,16 +9263,160 @@
 }
 }
 },
+"548": {
+"id": 548,
+"name": "Real Sociedad",
+"league": 140,
+"form": "LLWDW",
+"fixtures": {
+"played": {
+"home": 2,
+"away": 3,
+"total": 5
+},
+"wins": {
+"home": 1,
+"away": 1,
+"total": 2
+},
+"draws": {
+"home": 1,
+"away": 0,
+"total": 1
+},
+"loses": {
+"home": 0,
+"away": 2,
+"total": 2
+}
+},
+"goals_for": {
+"total": {
+"home": 2,
+"away": 4,
+"total": 6
+},
+"avg": {
+"home": 1.0,
+"away": 1.3,
+"total": 1.2
+},
+"minute": {
+"0-15": 2,
+"16-30": 0,
+"31-45": 2,
+"46-60": 0,
+"61-75": 1,
+"76-90": 1,
+"91-105": 0,
+"106-120": 0
+}
+},
+"goals_against": {
+"total": {
+"home": 1,
+"away": 7,
+"total": 8
+},
+"avg": {
+"home": 0.5,
+"away": 2.3,
+"total": 1.6
+},
+"minute": {
+"0-15": 0,
+"16-30": 0,
+"31-45": 2,
+"46-60": 1,
+"61-75": 4,
+"76-90": 1,
+"91-105": 0,
+"106-120": 0
+}
+},
+"biggest": {
+"streak": {
+"wins": 1,
+"draws": 1,
+"loses": 2
+},
+"wins": {
+"home": "2-1",
+"away": "2-3"
+},
+"loses": {
+"home": null,
+"away": "4-1"
+},
+"goals": {
+"for": {
+"home": 2,
+"away": 3
+},
+"against": {
+"home": 1,
+"away": 4
+}
+}
+},
+"clean_sheet": {
+"home": 1,
+"away": 0,
+"total": 1
+},
+"failed_to_score": {
+"home": 1,
+"away": 1,
+"total": 2
+},
+"penalty": {
+"scored": 0,
+"missed": 0,
+"total": 0
+},
+"lineups": [
+{
+"formation": "4-2-3-1",
+"played": 3
+},
+{
+"formation": "4-4-2",
+"played": 2
+}
+],
+"cards": {
+"yellow": {
+"0-15": 1,
+"16-30": 2,
+"31-45": 1,
+"46-60": 3,
+"61-75": 2,
+"76-90": 1,
+"91-105": 1,
+"106-120": 0
+},
+"red": {
+"0-15": 0,
+"16-30": 0,
+"31-45": 0,
+"46-60": 0,
+"61-75": 1,
+"76-90": 0,
+"91-105": 0,
+"106-120": 0
+}
+}
+},
 "539": {
 "id": 539,
 "name": "Levante",
 "league": 140,
-"form": "LDWD",
+"form": "LDWDL",
 "fixtures": {
 "played": {
-"home": 1,
+"home": 2,
 "away": 3,
-"total": 4
+"total": 5
 },
 "wins": {
 "home": 1,
@@ -9425,21 +9429,21 @@
 "total": 2
 },
 "loses": {
-"home": 0,
+"home": 1,
 "away": 1,
-"total": 1
+"total": 2
 }
 },
 "goals_for": {
 "total": {
-"home": 5,
+"home": 7,
 "away": 0,
-"total": 5
+"total": 7
 },
 "avg": {
-"home": 5.0,
+"home": 3.5,
 "away": 0.0,
-"total": 1.3
+"total": 1.4
 },
 "minute": {
 "0-15": 0,
@@ -9447,30 +9451,30 @@
 "31-45": 1,
 "46-60": 1,
 "61-75": 1,
-"76-90": 1,
+"76-90": 3,
 "91-105": 0,
 "106-120": 0
 }
 },
 "goals_against": {
 "total": {
-"home": 2,
+"home": 6,
 "away": 3,
-"total": 5
+"total": 9
 },
 "avg": {
-"home": 2.0,
+"home": 3.0,
 "away": 1.0,
-"total": 1.3
+"total": 1.8
 },
 "minute": {
-"0-15": 1,
-"16-30": 0,
+"0-15": 2,
+"16-30": 1,
 "31-45": 3,
-"46-60": 0,
+"46-60": 1,
 "61-75": 0,
 "76-90": 1,
-"91-105": 0,
+"91-105": 1,
 "106-120": 0
 }
 },
@@ -9485,7 +9489,7 @@
 "away": null
 },
 "loses": {
-"home": null,
+"home": "2-4",
 "away": "3-0"
 },
 "goals": {
@@ -9494,7 +9498,7 @@
 "away": 0
 },
 "against": {
-"home": 2,
+"home": 4,
 "away": 3
 }
 }
@@ -9522,6 +9526,10 @@
 {
 "formation": "4-2-3-1",
 "played": 1
+},
+{
+"formation": "4-4-2",
+"played": 1
 }
 ],
 "cards": {
@@ -9529,7 +9537,7 @@
 "0-15": 0,
 "16-30": 0,
 "31-45": 1,
-"46-60": 0,
+"46-60": 1,
 "61-75": 1,
 "76-90": 1,
 "91-105": 1,
@@ -9551,12 +9559,12 @@
 "id": 546,
 "name": "Getafe",
 "league": 140,
-"form": "LWLD",
+"form": "LWLDD",
 "fixtures": {
 "played": {
-"home": 2,
+"home": 3,
 "away": 2,
-"total": 4
+"total": 5
 },
 "wins": {
 "home": 1,
@@ -9564,9 +9572,9 @@
 "total": 1
 },
 "draws": {
-"home": 1,
+"home": 2,
 "away": 0,
-"total": 1
+"total": 2
 },
 "loses": {
 "home": 0,
@@ -9576,21 +9584,21 @@
 },
 "goals_for": {
 "total": {
-"home": 2,
+"home": 3,
 "away": 0,
-"total": 2
+"total": 3
 },
 "avg": {
 "home": 1.0,
 "away": 0.0,
-"total": 0.5
+"total": 0.6
 },
 "minute": {
 "0-15": 0,
 "16-30": 1,
 "31-45": 0,
 "46-60": 0,
-"61-75": 0,
+"61-75": 1,
 "76-90": 1,
 "91-105": 0,
 "106-120": 0
@@ -9598,14 +9606,14 @@
 },
 "goals_against": {
 "total": {
-"home": 1,
+"home": 2,
 "away": 4,
-"total": 5
+"total": 6
 },
 "avg": {
-"home": 0.5,
+"home": 0.7,
 "away": 2.0,
-"total": 1.3
+"total": 1.2
 },
 "minute": {
 "0-15": 0,
@@ -9613,7 +9621,7 @@
 "31-45": 1,
 "46-60": 1,
 "61-75": 1,
-"76-90": 2,
+"76-90": 3,
 "91-105": 0,
 "106-120": 0
 }
@@ -9665,7 +9673,7 @@
 },
 {
 "formation": "4-4-2",
-"played": 1
+"played": 2
 },
 {
 "formation": "5-3-2",
@@ -9675,12 +9683,12 @@
 "cards": {
 "yellow": {
 "0-15": 2,
-"16-30": 1,
-"31-45": 1,
+"16-30": 2,
+"31-45": 2,
 "46-60": 4,
 "61-75": 2,
 "76-90": 2,
-"91-105": 0,
+"91-105": 1,
 "106-120": 0
 },
 "red": {
@@ -9689,6 +9697,146 @@
 "31-45": 1,
 "46-60": 0,
 "61-75": 1,
+"76-90": 0,
+"91-105": 0,
+"106-120": 0
+}
+}
+},
+"538": {
+"id": 538,
+"name": "Celta Vigo",
+"league": 140,
+"form": "DLLDDD",
+"fixtures": {
+"played": {
+"home": 3,
+"away": 3,
+"total": 6
+},
+"wins": {
+"home": 0,
+"away": 0,
+"total": 0
+},
+"draws": {
+"home": 1,
+"away": 3,
+"total": 4
+},
+"loses": {
+"home": 2,
+"away": 0,
+"total": 2
+}
+},
+"goals_for": {
+"total": {
+"home": 2,
+"away": 1,
+"total": 3
+},
+"avg": {
+"home": 0.7,
+"away": 0.3,
+"total": 0.5
+},
+"minute": {
+"0-15": 1,
+"16-30": 0,
+"31-45": 1,
+"46-60": 1,
+"61-75": 0,
+"76-90": 0,
+"91-105": 0,
+"106-120": 0
+}
+},
+"goals_against": {
+"total": {
+"home": 5,
+"away": 1,
+"total": 6
+},
+"avg": {
+"home": 1.7,
+"away": 0.3,
+"total": 1.0
+},
+"minute": {
+"0-15": 0,
+"16-30": 3,
+"31-45": 0,
+"46-60": 1,
+"61-75": 1,
+"76-90": 1,
+"91-105": 0,
+"106-120": 0
+}
+},
+"biggest": {
+"streak": {
+"wins": 0,
+"draws": 1,
+"loses": 2
+},
+"wins": {
+"home": null,
+"away": null
+},
+"loses": {
+"home": "0-2",
+"away": null
+},
+"goals": {
+"for": {
+"home": 1,
+"away": 1
+},
+"against": {
+"home": 2,
+"away": 1
+}
+}
+},
+"clean_sheet": {
+"home": 0,
+"away": 2,
+"total": 2
+},
+"failed_to_score": {
+"home": 1,
+"away": 2,
+"total": 3
+},
+"penalty": {
+"scored": 0,
+"missed": 0,
+"total": 0
+},
+"lineups": [
+{
+"formation": "3-4-3",
+"played": 6
+}
+],
+"cards": {
+"yellow": {
+"0-15": 0,
+"16-30": 1,
+"31-45": 0,
+"46-60": 3,
+"61-75": 1,
+"76-90": 4,
+"91-105": 0,
+"106-120": 0
+},
+"red": {
+"0-15": 0,
+"16-30": 0,
+"31-45": 0,
+"46-60": 1,
+"61-75": 0,
 "76-90": 0,
 "91-105": 0,
 "106-120": 0
@@ -9844,11 +9992,11 @@
 }
 }
 },
-"538": {
-"id": 538,
-"name": "Celta Vigo",
+"535": {
+"id": 535,
+"name": "Malaga",
 "league": 140,
-"form": "DLLDD",
+"form": "LDLDD",
 "fixtures": {
 "played": {
 "home": 2,
@@ -9861,13 +10009,13 @@
 "total": 0
 },
 "draws": {
-"home": 0,
-"away": 3,
+"home": 2,
+"away": 1,
 "total": 3
 },
 "loses": {
-"home": 2,
-"away": 0,
+"home": 0,
+"away": 2,
 "total": 2
 }
 },
@@ -9883,34 +10031,34 @@
 "total": 0.4
 },
 "minute": {
-"0-15": 1,
-"16-30": 0,
-"31-45": 0,
-"46-60": 1,
+"0-15": 0,
+"16-30": 1,
+"31-45": 1,
+"46-60": 0,
 "61-75": 0,
-"76-90": 0,
+"76-90": 1,
 "91-105": 0,
 "106-120": 0
 }
 },
 "goals_against": {
 "total": {
-"home": 4,
-"away": 1,
-"total": 5
+"home": 1,
+"away": 7,
+"total": 8
 },
 "avg": {
-"home": 2.0,
-"away": 0.3,
-"total": 1.0
+"home": 0.5,
+"away": 2.3,
+"total": 1.6
 },
 "minute": {
 "0-15": 0,
 "16-30": 3,
-"31-45": 0,
-"46-60": 1,
+"31-45": 1,
+"46-60": 0,
 "61-75": 1,
-"76-90": 0,
+"76-90": 2,
 "91-105": 0,
 "106-120": 0
 }
@@ -9919,15 +10067,15 @@
 "streak": {
 "wins": 0,
 "draws": 1,
-"loses": 2
+"loses": 1
 },
 "wins": {
 "home": null,
 "away": null
 },
 "loses": {
-"home": "0-2",
-"away": null
+"home": null,
+"away": "4-0"
 },
 "goals": {
 "for": {
@@ -9935,15 +10083,15 @@
 "away": 1
 },
 "against": {
-"home": 2,
-"away": 1
+"home": 1,
+"away": 4
 }
 }
 },
 "clean_sheet": {
-"home": 0,
-"away": 2,
-"total": 2
+"home": 1,
+"away": 0,
+"total": 1
 },
 "failed_to_score": {
 "home": 1,
@@ -9951,32 +10099,40 @@
 "total": 3
 },
 "penalty": {
-"scored": 0,
-"missed": 0,
-"total": 0
+"scored": 1,
+"missed": 1,
+"total": 2
 },
 "lineups": [
 {
-"formation": "3-4-3",
-"played": 5
+"formation": "4-1-4-1",
+"played": 2
+},
+{
+"formation": "4-4-2",
+"played": 2
+},
+{
+"formation": "4-3-3",
+"played": 1
 }
 ],
 "cards": {
 "yellow": {
 "0-15": 0,
-"16-30": 0,
-"31-45": 0,
-"46-60": 3,
-"61-75": 1,
-"76-90": 4,
-"91-105": 0,
+"16-30": 2,
+"31-45": 1,
+"46-60": 2,
+"61-75": 2,
+"76-90": 2,
+"91-105": 2,
 "106-120": 0
 },
 "red": {
 "0-15": 0,
 "16-30": 0,
 "31-45": 0,
-"46-60": 1,
+"46-60": 0,
 "61-75": 0,
 "76-90": 0,
 "91-105": 0,
@@ -10124,164 +10280,16 @@
 }
 }
 },
-"535": {
-"id": 535,
-"name": "Malaga",
-"league": 140,
-"form": "LDLD",
-"fixtures": {
-"played": {
-"home": 2,
-"away": 2,
-"total": 4
-},
-"wins": {
-"home": 0,
-"away": 0,
-"total": 0
-},
-"draws": {
-"home": 2,
-"away": 0,
-"total": 2
-},
-"loses": {
-"home": 0,
-"away": 2,
-"total": 2
-}
-},
-"goals_for": {
-"total": {
-"home": 1,
-"away": 0,
-"total": 1
-},
-"avg": {
-"home": 0.5,
-"away": 0.0,
-"total": 0.3
-},
-"minute": {
-"0-15": 0,
-"16-30": 1,
-"31-45": 1,
-"46-60": 0,
-"61-75": 0,
-"76-90": 0,
-"91-105": 0,
-"106-120": 0
-}
-},
-"goals_against": {
-"total": {
-"home": 1,
-"away": 6,
-"total": 7
-},
-"avg": {
-"home": 0.5,
-"away": 3.0,
-"total": 1.8
-},
-"minute": {
-"0-15": 0,
-"16-30": 3,
-"31-45": 0,
-"46-60": 0,
-"61-75": 1,
-"76-90": 2,
-"91-105": 0,
-"106-120": 0
-}
-},
-"biggest": {
-"streak": {
-"wins": 0,
-"draws": 1,
-"loses": 1
-},
-"wins": {
-"home": null,
-"away": null
-},
-"loses": {
-"home": null,
-"away": "4-0"
-},
-"goals": {
-"for": {
-"home": 1,
-"away": 0
-},
-"against": {
-"home": 1,
-"away": 4
-}
-}
-},
-"clean_sheet": {
-"home": 1,
-"away": 0,
-"total": 1
-},
-"failed_to_score": {
-"home": 1,
-"away": 2,
-"total": 3
-},
-"penalty": {
-"scored": 1,
-"missed": 1,
-"total": 2
-},
-"lineups": [
-{
-"formation": "4-1-4-1",
-"played": 2
-},
-{
-"formation": "4-4-2",
-"played": 1
-},
-{
-"formation": "4-3-3",
-"played": 1
-}
-],
-"cards": {
-"yellow": {
-"0-15": 0,
-"16-30": 1,
-"31-45": 1,
-"46-60": 2,
-"61-75": 2,
-"76-90": 2,
-"91-105": 2,
-"106-120": 0
-},
-"red": {
-"0-15": 0,
-"16-30": 0,
-"31-45": 0,
-"46-60": 0,
-"61-75": 0,
-"76-90": 0,
-"91-105": 0,
-"106-120": 0
-}
-}
-},
 "797": {
 "id": 797,
 "name": "Elche",
 "league": 140,
-"form": "DLLL",
+"form": "DLLLD",
 "fixtures": {
 "played": {
 "home": 2,
-"away": 2,
-"total": 4
+"away": 3,
+"total": 5
 },
 "wins": {
 "home": 0,
@@ -10290,8 +10298,8 @@
 },
 "draws": {
 "home": 0,
-"away": 1,
-"total": 1
+"away": 2,
+"total": 2
 },
 "loses": {
 "home": 2,
@@ -10302,19 +10310,19 @@
 "goals_for": {
 "total": {
 "home": 2,
-"away": 3,
-"total": 5
+"away": 4,
+"total": 6
 },
 "avg": {
 "home": 1.0,
-"away": 1.5,
-"total": 1.3
+"away": 1.3,
+"total": 1.2
 },
 "minute": {
 "0-15": 0,
 "16-30": 0,
 "31-45": 0,
-"46-60": 0,
+"46-60": 1,
 "61-75": 2,
 "76-90": 3,
 "91-105": 0,
@@ -10324,13 +10332,13 @@
 "goals_against": {
 "total": {
 "home": 8,
-"away": 4,
-"total": 12
+"away": 5,
+"total": 13
 },
 "avg": {
 "home": 4.0,
-"away": 2.0,
-"total": 3.0
+"away": 1.7,
+"total": 2.6
 },
 "minute": {
 "0-15": 3,
@@ -10338,7 +10346,7 @@
 "31-45": 3,
 "46-60": 0,
 "61-75": 2,
-"76-90": 2,
+"76-90": 3,
 "91-105": 0,
 "106-120": 0
 }
@@ -10347,7 +10355,7 @@
 "streak": {
 "wins": 0,
 "draws": 1,
-"loses": 0
+"loses": 3
 },
 "wins": {
 "home": null,
@@ -10379,9 +10387,9 @@
 "total": 1
 },
 "penalty": {
-"scored": 0,
+"scored": 1,
 "missed": 0,
-"total": 0
+"total": 1
 },
 "lineups": [
 {
@@ -10391,6 +10399,10 @@
 {
 "formation": "3-5-2",
 "played": 1
+},
+{
+"formation": "4-4-1-1",
+"played": 1
 }
 ],
 "cards": {
@@ -10398,10 +10410,10 @@
 "0-15": 0,
 "16-30": 0,
 "31-45": 2,
-"46-60": 1,
-"61-75": 3,
+"46-60": 2,
+"61-75": 4,
 "76-90": 1,
-"91-105": 1,
+"91-105": 2,
 "106-120": 0
 },
 "red": {

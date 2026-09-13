@@ -1,5 +1,5 @@
 {
-"updated": "2026-09-12T23:08:46Z",
+"updated": "2026-09-13T23:17:40Z",
 "season": 2026,
 "matchday": 4,
 "stage": "giorno-gara",
@@ -51,8 +51,8 @@
 "away": "Monza",
 "home_id": 867,
 "away_id": 1579,
-"venue": "Stadio Via del Mare",
-"status": "NS"
+"venue": "Via del Mare",
+"status": "FT"
 },
 {
 "id": 1550123,
@@ -62,7 +62,7 @@
 "home_id": 492,
 "away_id": 500,
 "venue": "Stadio Diego Armando Maradona",
-"status": "NS"
+"status": "FT"
 },
 {
 "id": 1550124,
@@ -71,8 +71,8 @@
 "away": "Juventus",
 "home_id": 488,
 "away_id": 496,
-"venue": null,
-"status": "NS"
+"venue": "Mapei Stadium",
+"status": "FT"
 },
 {
 "id": 1550125,
@@ -933,13 +933,13 @@
 "prob": 64,
 "why": "titolare nelle ultime 1 su 3",
 "ballot": {
-"id": 8643,
-"name": "K. N’Dri",
-"prob": 37,
-"share": 37
+"id": 120,
+"name": "W. Geubbels",
+"prob": 48,
+"share": 43
 },
 "out_for": null,
-"share": 63
+"share": 57
 }
 ],
 "bench": [
@@ -979,38 +979,21 @@
 "prob": 16
 },
 {
+"id": 8643,
+"name": "K. N’Dri",
+"role": "A",
+"pos": "F",
+"prob": 37
+},
+{
 "id": 345107,
 "name": "A. Ahmed Fatah",
 "role": "A",
 "pos": "F",
 "prob": 16
-},
-{
-"id": 589789,
-"name": "Paco Esteban",
-"role": "A",
-"pos": "F",
-"prob": 14
 }
 ],
-"out": [
-{
-"id": 335071,
-"name": "M. Berisha",
-"role": "C",
-"pos": "M",
-"reason": "infortunio: rest",
-"back_at": null
-},
-{
-"id": 120,
-"name": "W. Geubbels",
-"role": "A",
-"pos": "F",
-"reason": "infortunio: caviglia",
-"back_at": null
-}
-],
+"out": [],
 "doubt": [],
 "coppa": null
 },
@@ -1095,37 +1078,37 @@
 "out_for": null
 },
 {
-"id": 47522,
-"name": "Douglas Luiz",
+"id": 30533,
+"name": "M. Locatelli",
 "role": "C",
 "pos": "M",
 "grid": "3:2",
 "prob": 94,
 "why": "titolare nelle ultime 3 su 3",
 "ballot": null,
-"out_for": "M. Locatelli"
+"out_for": null
 },
 {
-"id": 161585,
-"name": "Francisco Conceição",
+"id": 47522,
+"name": "Douglas Luiz",
 "role": "C",
 "pos": "M",
 "grid": "3:1",
 "prob": 94,
 "why": "titolare nelle ultime 3 su 3",
 "ballot": null,
-"out_for": "Douglas Luiz"
+"out_for": null
 },
 {
-"id": 395559,
-"name": "Kerim-Sam Alajbegović",
+"id": 161585,
+"name": "Francisco Conceição",
 "role": "C",
 "pos": "M",
 "grid": "4:3",
-"prob": 62,
-"why": "titolare nelle ultime 1 su 3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
 "ballot": null,
-"out_for": "Francisco Conceição"
+"out_for": null
 },
 {
 "id": 26315,
@@ -1139,15 +1122,15 @@
 "out_for": null
 },
 {
-"id": 36899,
-"name": "T. Koopmeiners",
+"id": 395559,
+"name": "Kerim-Sam Alajbegović",
 "role": "C",
 "pos": "M",
 "grid": "4:1",
-"prob": 20,
-"why": "titolare nelle ultime 0 su 3",
+"prob": 62,
+"why": "titolare nelle ultime 1 su 3",
 "ballot": null,
-"out_for": "Kerim-Sam Alajbegović"
+"out_for": null
 },
 {
 "id": 21104,
@@ -1184,18 +1167,25 @@
 "prob": 14
 },
 {
-"id": 436927,
-"name": "A. Owusu",
-"role": "C",
+"id": 339883,
+"name": "K. Yıldız",
+"role": "A",
 "pos": "M",
-"prob": 8
+"prob": 26
 },
 {
-"id": 181808,
-"name": "F. Miretti",
+"id": 415,
+"name": "W. McKennie",
 "role": "C",
 "pos": "M",
-"prob": 5
+"prob": 26
+},
+{
+"id": 30531,
+"name": "J. Boga",
+"role": "A",
+"pos": "F",
+"prob": 37
 },
 {
 "id": 8489,
@@ -1203,89 +1193,9 @@
 "role": "A",
 "pos": "F",
 "prob": 33
-},
-{
-"id": 48392,
-"name": "E. Zhegrova",
-"role": "C",
-"pos": "F",
-"prob": 15
 }
 ],
-"out": [
-{
-"id": 127011,
-"name": "A. Cambiaso",
-"role": "D",
-"pos": "D",
-"reason": "infortunio: caviglia",
-"back_at": null
-},
-{
-"id": 333,
-"name": "A. Milik",
-"role": "A",
-"pos": "F",
-"reason": "infortunio: inactive",
-"back_at": null
-},
-{
-"id": 30531,
-"name": "J. Boga",
-"role": "A",
-"pos": "F",
-"reason": "infortunio: muscolare",
-"back_at": null
-},
-{
-"id": 125674,
-"name": "J. Cabal",
-"role": "D",
-"pos": "D",
-"reason": "infortunio: coscia",
-"back_at": null
-},
-{
-"id": 451504,
-"name": "J. Ekhator",
-"role": "A",
-"pos": "F",
-"reason": "infortunio: muscolare",
-"back_at": null
-},
-{
-"id": 116,
-"name": "K. Thuram",
-"role": "C",
-"pos": "M",
-"reason": "infortunio: ginocchio",
-"back_at": null
-},
-{
-"id": 339883,
-"name": "K. Yıldız",
-"role": "A",
-"pos": "M",
-"reason": "infortunio: piede",
-"back_at": null
-},
-{
-"id": 30533,
-"name": "M. Locatelli",
-"role": "C",
-"pos": "M",
-"reason": "infortunio: ginocchio",
-"back_at": null
-},
-{
-"id": 415,
-"name": "W. McKennie",
-"role": "C",
-"pos": "M",
-"reason": "infortunio: muscolare",
-"back_at": null
-}
-],
+"out": [],
 "doubt": [],
 "coppa": null
 },
@@ -1677,6 +1587,13 @@
 "prob": 14
 },
 {
+"id": 128461,
+"name": "N. Zortea",
+"role": "D",
+"pos": "D",
+"prob": 36
+},
+{
 "id": 287564,
 "name": "M. Vitík",
 "role": "D",
@@ -1684,11 +1601,11 @@
 "prob": 25
 },
 {
-"id": 606953,
-"name": "M. Libra",
-"role": "D",
-"pos": "D",
-"prob": 16
+"id": 319919,
+"name": "O. El Azzouzi",
+"role": "C",
+"pos": "M",
+"prob": 26
 },
 {
 "id": 426626,
@@ -1698,61 +1615,21 @@
 "prob": 18
 },
 {
-"id": 1322,
-"name": "N. Moro",
-"role": "C",
-"pos": "M",
-"prob": 18
-},
-{
-"id": 346866,
-"name": "S. Mbangula",
+"id": 30488,
+"name": "R. Orsolini",
 "role": "C",
 "pos": "F",
-"prob": 22
+"prob": 31
 },
-{
-"id": 278095,
-"name": "J. Rowe",
-"role": "C",
-"pos": "F",
-"prob": 20
-}
-],
-"out": [
 {
 "id": 15811,
 "name": "A. Dovbyk",
 "role": "A",
 "pos": "F",
-"reason": "infortunio: muscolare",
-"back_at": null
-},
-{
-"id": 128461,
-"name": "N. Zortea",
-"role": "D",
-"pos": "D",
-"reason": "infortunio: anca",
-"back_at": null
-},
-{
-"id": 319919,
-"name": "O. El Azzouzi",
-"role": "C",
-"pos": "M",
-"reason": "infortunio: coscia",
-"back_at": null
-},
-{
-"id": 30488,
-"name": "R. Orsolini",
-"role": "C",
-"pos": "F",
-"reason": "infortunio: infortunio",
-"back_at": null
+"prob": 30
 }
 ],
+"out": [],
 "doubt": [],
 "coppa": null
 },
@@ -1866,19 +1743,25 @@
 "grid": "3:1",
 "prob": 62,
 "why": "titolare nelle ultime 1 su 3",
-"ballot": null,
-"out_for": null
+"ballot": {
+"id": 455245,
+"name": "D. Bakola",
+"prob": 54,
+"share": 47
+},
+"out_for": null,
+"share": 53
 },
 {
-"id": 2215,
-"name": "A. Laurienté",
-"role": "A",
+"id": 342035,
+"name": "C. Volpato",
+"role": "C",
 "pos": "F",
 "grid": "4:3",
-"prob": 94,
+"prob": 88,
 "why": "titolare nelle ultime 3 su 3",
 "ballot": null,
-"out_for": "C. Volpato"
+"out_for": null
 },
 {
 "id": 126690,
@@ -1892,15 +1775,15 @@
 "out_for": null
 },
 {
-"id": 30537,
-"name": "D. Berardi",
+"id": 2215,
+"name": "A. Laurienté",
 "role": "A",
 "pos": "F",
 "grid": "4:1",
-"prob": 28,
-"why": "titolare nelle ultime 0 su 3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
 "ballot": null,
-"out_for": "A. Laurienté"
+"out_for": null
 }
 ],
 "bench": [
@@ -1940,38 +1823,21 @@
 "prob": 16
 },
 {
+"id": 30537,
+"name": "D. Berardi",
+"role": "A",
+"pos": "F",
+"prob": 28
+},
+{
 "id": 347265,
 "name": "B. Domínguez",
 "role": "C",
 "pos": "F",
 "prob": 18
-},
-{
-"id": 30849,
-"name": "N. Pierini",
-"role": "A",
-"pos": "F",
-"prob": 14
 }
 ],
-"out": [
-{
-"id": 342035,
-"name": "C. Volpato",
-"role": "C",
-"pos": "F",
-"reason": "infortunio: coscia",
-"back_at": null
-},
-{
-"id": 455245,
-"name": "D. Bakola",
-"role": "C",
-"pos": "M",
-"reason": "infortunio: muscolare",
-"back_at": null
-}
-],
+"out": [],
 "doubt": [],
 "coppa": null
 },
@@ -2479,15 +2345,15 @@
 "out_for": null
 },
 {
-"id": 499380,
-"name": "S. Britschgi",
+"id": 91358,
+"name": "E. Valeri",
 "role": "D",
 "pos": "M",
 "grid": "3:4",
-"prob": 76,
-"why": "titolare nelle ultime 2 su 3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
 "ballot": null,
-"out_for": null
+"out_for": "S. Britschgi"
 },
 {
 "id": 362752,
@@ -2512,15 +2378,15 @@
 "out_for": null
 },
 {
-"id": 91358,
-"name": "E. Valeri",
-"role": "D",
+"id": 595817,
+"name": "Abdou Konate",
+"role": "C",
 "pos": "M",
 "grid": "3:1",
-"prob": 94,
-"why": "titolare nelle ultime 3 su 3",
+"prob": 36,
+"why": "titolare nelle ultime 1 su 3",
 "ballot": null,
-"out_for": null
+"out_for": "E. Valeri"
 },
 {
 "id": 322630,
@@ -2585,18 +2451,18 @@
 "prob": 16
 },
 {
-"id": 595817,
-"name": "Abdou Konate",
-"role": "C",
-"pos": "M",
-"prob": 36
-},
-{
 "id": 362061,
 "name": "B. Cremaschi",
 "role": "C",
 "pos": "M",
 "prob": 18
+},
+{
+"id": 161569,
+"name": "O. Sorensen",
+"role": "C",
+"pos": "M",
+"prob": 8
 },
 {
 "id": 48193,
@@ -2628,6 +2494,14 @@
 "role": "A",
 "pos": "F",
 "reason": "infortunio: infortunio",
+"back_at": null
+},
+{
+"id": 499380,
+"name": "S. Britschgi",
+"role": "D",
+"pos": "M",
+"reason": "infortunio: inactive",
 "back_at": null
 }
 ],
@@ -2911,7 +2785,7 @@
 "ballot": {
 "id": 342019,
 "name": "D. Ghilardi",
-"prob": 54,
+"prob": 53,
 "share": 45
 },
 "out_for": null,
@@ -3057,16 +2931,7 @@
 "prob": 26
 }
 ],
-"out": [
-{
-"id": 384543,
-"name": "J. Ziółkowski",
-"role": "D",
-"pos": "D",
-"reason": "infortunio: piede",
-"back_at": null
-}
-],
+"out": [],
 "doubt": [],
 "coppa": {
 "data": "2026-09-10T16:45:00Z",
@@ -3542,15 +3407,15 @@
 ],
 "xi": [
 {
-"id": 32172,
-"name": "N. Contini",
+"id": 312,
+"name": "A. Meret",
 "role": "P",
 "pos": "G",
 "grid": "1:1",
-"prob": 14,
-"why": "titolare nelle ultime 0 su 3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
 "ballot": null,
-"out_for": "A. Meret"
+"out_for": null
 },
 {
 "id": 31042,
@@ -3603,37 +3468,43 @@
 "share": 60
 },
 {
-"id": 47439,
-"name": "S. Lobotka",
+"id": 3406,
+"name": "A. Zambo Anguissa",
 "role": "C",
 "pos": "M",
 "grid": "3:3",
 "prob": 86,
 "why": "titolare nelle ultime 3 su 3 · Champions League il 2026-09-09: possibile turnover",
 "ballot": null,
-"out_for": "A. Zambo Anguissa"
+"out_for": null
+},
+{
+"id": 47439,
+"name": "S. Lobotka",
+"role": "C",
+"pos": "M",
+"grid": "3:2",
+"prob": 86,
+"why": "titolare nelle ultime 3 su 3 · Champions League il 2026-09-09: possibile turnover",
+"ballot": null,
+"out_for": null
 },
 {
 "id": 347395,
 "name": "A. Vergara",
 "role": "C",
 "pos": "M",
-"grid": "3:2",
+"grid": "3:1",
 "prob": 61,
 "why": "titolare nelle ultime 1 su 3 · Champions League il 2026-09-09: possibile turnover",
-"ballot": null,
-"out_for": "S. Lobotka"
+"ballot": {
+"id": 903,
+"name": "S. McTominay",
+"prob": 55,
+"share": 47
 },
-{
-"id": 629,
-"name": "K. De Bruyne",
-"role": "C",
-"pos": "M",
-"grid": "3:1",
-"prob": 30,
-"why": "titolare nelle ultime 0 su 3 · Champions League il 2026-09-09: possibile turnover",
-"ballot": null,
-"out_for": "A. Vergara"
+"out_for": null,
+"share": 53
 },
 {
 "id": 219,
@@ -3658,21 +3529,27 @@
 "out_for": null
 },
 {
-"id": 544,
-"name": "N. Lang",
+"id": 310943,
+"name": "Alisson Santos",
 "role": "A",
 "pos": "F",
 "grid": "4:1",
+"prob": 70,
+"why": "titolare nelle ultime 2 su 3 · Champions League il 2026-09-09: possibile turnover",
+"ballot": {
+"id": 544,
+"name": "N. Lang",
 "prob": 46,
-"why": "titolare nelle ultime 1 su 3 · Champions League il 2026-09-09: possibile turnover",
-"ballot": null,
-"out_for": "Alisson Santos"
+"share": 40
+},
+"out_for": null,
+"share": 60
 }
 ],
 "bench": [
 {
-"id": 31156,
-"name": "V. Milinković-Savić",
+"id": 32172,
+"name": "N. Contini",
 "role": "P",
 "pos": "G",
 "prob": 14
@@ -3692,6 +3569,13 @@
 "prob": 18
 },
 {
+"id": 629,
+"name": "K. De Bruyne",
+"role": "C",
+"pos": "M",
+"prob": 30
+},
+{
 "id": 130423,
 "name": "B. Gilmour",
 "role": "C",
@@ -3703,7 +3587,7 @@
 "name": "L. Lucca",
 "role": "A",
 "pos": "F",
-"prob": 25
+"prob": 26
 },
 {
 "id": 552,
@@ -3713,48 +3597,7 @@
 "prob": 23
 }
 ],
-"out": [
-{
-"id": 312,
-"name": "A. Meret",
-"role": "P",
-"pos": "G",
-"reason": "infortunio: muscolare",
-"back_at": null
-},
-{
-"id": 3406,
-"name": "A. Zambo Anguissa",
-"role": "C",
-"pos": "M",
-"reason": "infortunio: muscolare",
-"back_at": null
-},
-{
-"id": 310943,
-"name": "Alisson Santos",
-"role": "A",
-"pos": "F",
-"reason": "infortunio: muscolare",
-"back_at": null
-},
-{
-"id": 312615,
-"name": "Giovane",
-"role": "A",
-"pos": "F",
-"reason": "infortunio: inguine",
-"back_at": null
-},
-{
-"id": 903,
-"name": "S. McTominay",
-"role": "C",
-"pos": "M",
-"reason": "infortunio: heart problems",
-"back_at": null
-}
-],
+"out": [],
 "doubt": [],
 "coppa": {
 "data": "2026-09-09T19:00:00Z",
