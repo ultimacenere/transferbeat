@@ -44,8 +44,11 @@ Per i tre slot quotidiani c'è la rete di sicurezza `palinsesto.yml` su GitHub A
 | 23:00 | ogni giorno, esce solo se c'è una partita della sera | `dopopartita` | DOPOPARTITA | `scripts/dopopartita.py` (API-Football, al momento) |
 
 Nello scheduler l'orario ha qualche minuto di ritardo casuale fisso per pianificata (registrate il 14 settembre: 09:08, 10:36, 12:07,
-14:01, 14:00, 14:03, 15:01, 16:08, 20:05, 23:08). Al primo giro una pianificata può fermarsi a chiedere l'approvazione dei comandi:
-le approvazioni date restano salvate sulla pianificata, e un giro "Esegui ora" con il committente presente le raccoglie.
+14:01, 14:00, 14:03, 15:01, 16:08, 20:05, 23:08). **Permessi: modalità Auto su tutte e dieci (decisione del committente, 14 settembre).** Senza, una pianificata si ferma al primo
+comando ad aspettare un'approvazione che di notte nessuno dà, e resta lì in silenzio: è successo al primo giro di prova del Lunch
+Break (sessione ferma 4 secondi dopo l'avvio). Né le impostazioni utente né quelle della cartella del sito hanno regole di permesso,
+quindi la modalità va impostata sulla pianificata, dalla sezione Pianificate della app. Una pianificata aggiunta in futuro va
+messa in Auto prima del suo primo giro.
 Cron: `0 9 * * *` · `30 10 * * 2` · `0 12 * * *` · `0 14 * * 3` · `0 14 * * 4` · `0 14 * * 6` · `0 15 * * 5` · `0 16 * * *` · `0 20 * * *` · `0 23 * * *`.
 Fra due pianificate passano almeno un'ora e mezza; se una sfora, la successiva aspetta il turno (vedi sotto).
 
