@@ -380,8 +380,9 @@ def cmd_prepara(a):
     _scrivi_turno(file_turno(repo), turno)
     # la grafica delle pagine gia' su main: il controllo gira in un processo nuovo, con i moduli appena riallineati
     r = subprocess.run([sys.executable, "-X", "utf8", "-c",
-                        "import sys; sys.path.insert(0, 'scripts'); import guard; i, p = guard.veste_disallineata('.');"
-                        "print('NO_IMPRONTA' if i is None else len(p))"], cwd=repo, capture_output=True, text=True)
+                        "import sys, subprocess; sys.path.insert(0, 'scripts'); import guard; i, p = guard.veste_disallineata('.');"
+                        "t = set(subprocess.run(['git', 'ls-files', '--', '*.html'], capture_output=True, text=True).stdout.splitlines());"
+                        "print('NO_IMPRONTA' if i is None else len([x for x in p if x in t]))"], cwd=repo, capture_output=True, text=True)
     esito = (r.stdout or "").strip()
     print("PRONTO: copia allineata a origin/%s %s, turno di '%s', giorno di redazione %s." % (RAMO, testa[:10], a.pianificata, oggi))
     print("Da qui in poi i file locali coincidono con origin/main.")
@@ -457,6 +458,11 @@ def cmd_rigenera(a):
     res["rigenerati"] = render_articles.render_all(tutti, SITO, articles.PAGES, articles.DATA)
     impronta = impronta_origine(repo)
     _, indietro = guard.veste_disallineata(repo)
+    # contano le pagine che il sito serve davvero: quelle tracciate in git e quelle degli articoli di questo giro.
+    # Una copia locale puo' avere vecchie pagine non tracciate (schede di giocatori poi rinominati, pagine rinominate):
+    # non sono su main, non vengono pubblicate, e non devono bloccare ogni pubblicazione con un 6 che non esiste.
+    tracciate = set(sh(["git", "ls-files", "--", "*.html"], repo).splitlines())
+    indietro = [p for p in indietro if p in tracciate or p.startswith("articoli/")]
     pagina = open(os.path.join(repo, "articoli", "it", a.slug + ".html"), encoding="utf-8").read() \
         if os.path.exists(os.path.join(repo, "articoli", "it", a.slug + ".html")) else ""
     if impronta is None:
