@@ -122,6 +122,7 @@ COVERS = [
     ("cover-scoop.png",  ("#e0392b", "#8e1810"), ["SCOOP!"],         "La notizia, prima degli altri",              "Serie A · La Liga · Premier League"),
     ("cover-notti.png",  ("#16285a", "#0a1738"), ["NOTTI", "MONDIALI"], "La notte di Coppa, raccontata all'alba",  "Mondiale 2026"),
     ("cover-bilancio.png", ("#4b1d95", "#2a1055"), ["BILANCIO"], "Il mercato, rifatto con i numeri",         "Serie A · La Liga · Premier League"),
+    ("cover-dopopartita.png", ("#2c0f57", "#12062b"), ["DOPO", "PARTITA"], "Le partite della sera, a fischio finale", "Serie A · Champions League"),
 ]
 
 def hex2rgb(h):

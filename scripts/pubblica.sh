@@ -34,9 +34,14 @@ read_token(){ tr -d '\n\r ' < "$1" 2>/dev/null; }
 # Ritorna il codice HTTP dell'API con quel token (000 = rete/curl assente)
 check_token(){
   command -v curl >/dev/null 2>&1 || { echo "000"; return; }
-  curl -s -o /dev/null -w '%{http_code}' --max-time 15 \
+  # senza rete curl stampa gia' "000" ED esce con errore: il vecchio `|| echo 000` ne aggiungeva un secondo ("000000"),
+  # il caso "non verificabile" non scattava mai e il messaggio mandava a rigenerare un token che era valido
+  local code
+  code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 \
     -H "Authorization: Bearer $1" -H "User-Agent: transferbeat-pubblica" \
-    "https://api.github.com/repos/$REPO_SLUG" 2>/dev/null || echo "000"
+    "https://api.github.com/repos/$REPO_SLUG" 2>/dev/null)
+  [ ${#code} -eq 3 ] || code="000"
+  echo "$code"
 }
 
 TOKEN=""; TOKEN_FROM=""; REPORT=""

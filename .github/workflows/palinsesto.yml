@@ -13,8 +13,8 @@ name: Palinsesto - rete di sicurezza
 # Ogni run guarda TUTTI e tre gli slot: se il run delle 12:40 salta, quello delle 16:40 recupera anche
 # il Lunch Break. Se l'articolo del giorno c'e' gia', lo script esce senza scrivere niente (uscita 0).
 #
-# ATTENZIONE: di serie NON GIRA da solo. Il cron e' scritto ma il job parte solo se esiste la variabile di
-# repository PALINSESTO_ATTIVO = true (vedi il commento sul job). Il lancio a mano funziona sempre.
+# ACCESO dal 14 settembre 2026: gira a ogni cron. Si spegne con la variabile di repository PALINSESTO_ATTIVO = false
+# (vedi il commento sul job). Il lancio a mano funziona sempre.
 #
 # RETE DI SICUREZZA DI QUESTO WORKFLOW (un suo guasto non deve rompere nient'altro):
 # - job isolato: non tocca update.yml ne' fanta.yml e non gira mai insieme a se stesso (concurrency);
@@ -43,12 +43,13 @@ concurrency:
 
 jobs:
   bollettino:
-    # SPENTO FINCHE' IL COMMITTENTE NON LO ACCENDE. Questo workflow PUBBLICA da solo sul sito vivo: non e' una cosa
-    # che deve partire perche' un file e' finito nel repo. Il lancio a mano (workflow_dispatch, anche con dry=true)
-    # funziona sempre, cosi' si puo' provare e leggere il bollettino prima di decidere.
-    # Per accenderlo: Settings -> Secrets and variables -> Actions -> Variables -> New repository variable,
-    #   nome PALINSESTO_ATTIVO, valore true.   Per rispegnerlo: rimetterla a false (o cancellarla).
-    if: ${{ github.event_name == 'workflow_dispatch' || vars.PALINSESTO_ATTIVO == 'true' }}
+    # ACCESO dal 14 settembre 2026 su decisione del committente ("attiva tutto il palinsesto articoli"). Questo workflow
+    # PUBBLICA da solo sul sito vivo un bollettino di dati quando uno dei tre slot quotidiani resta vuoto.
+    # Per SPEGNERLO: Settings -> Secrets and variables -> Actions -> Variables -> New repository variable,
+    #   nome PALINSESTO_ATTIVO, valore false.   Per riaccenderlo: cancellarla o metterla a true.
+    # (Prima era spento di serie e si accendeva con la variabile a true; il token delle sessioni non puo' scrivere
+    #  le variabili del repository, quindi l'interruttore e' stato invertito nel codice.)
+    if: ${{ github.event_name == 'workflow_dispatch' || vars.PALINSESTO_ATTIVO != 'false' }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:

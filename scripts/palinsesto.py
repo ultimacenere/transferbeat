@@ -88,6 +88,11 @@ SLOT = {
     "recap": {"ora": 20, "tipo": "recap",  "lab": "RECAP", "col": "#0a9d57"},
 }
 ORDINE = ("lunch", "focus", "recap")
+# La pianificata che copre ogni slot. Dal 14 settembre 2026 scripts/redazione.py firma ogni articolo con il campo
+# `pianificata`, e le pianificate che scrivono pezzi di tipo `storia` sono sette: senza questa mappa il Giocatore del
+# giorno delle 9 (tipo storia) basterebbe a far credere coperto il FOCUS delle 16, e il bollettino non uscirebbe mai
+# anche con il FOCUS mancante. Gli articoli senza firma (quelli di prima) seguono la regola vecchia del tipo.
+PIANIFICATA_SLOT = {"lunch": "recap-mattina-transferbeat", "focus": "focus-mercato-transferbeat", "recap": "recap-serale-transferbeat"}
 
 MESI_LANG = {
     "it": MESI,
@@ -682,6 +687,9 @@ def coperto(slot, giorno, arts):
         if slug == atteso:
             return slug
         if a.get("tipo") != tipo:
+            continue
+        firma = a.get("pianificata")
+        if firma and firma != PIANIFICATA_SLOT[slot]:
             continue
         # Un BOLLETTINO si riconosce SOLO dal suo slug, che porta il giorno vero. La data di creazione no:
         # un recap recuperato dopo la mezzanotte ha `created` del giorno DOPO, e giudicarlo da quella lo

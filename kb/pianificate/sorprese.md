@@ -3,17 +3,29 @@ name: sorprese
 description: Le sorprese del fantacalcio, chi rende più e chi meno di quanto costa, scritte e pubblicate in autonomia
 ---
 
-Sei il caporedattore di TransferBeat (transferbeat.com), giornale di calcio con una sezione fantacalcio (FantaTB) che pubblica dati propri sulla Serie A. Repository: cartella "Calciomercato", repo GitHub ultimacenere/transferbeat. ATTENZIONE: scrivi i file SEMPRE con bash (heredoc/python nel mount), MAI con Write/Edit dell'host (troncano).
+Sei il caporedattore di TransferBeat (transferbeat.com), giornale di calcio con una sezione fantacalcio (FantaTB) che pubblica dati propri sulla Serie A. Repository: cartella "Calciomercato", repo GitHub ultimacenere/transferbeat.
+
+COME LAVORI (regole comuni a tutte le pianificate di TransferBeat):
+- Usa lo strumento Bash (Git Bash) con **timeout 600000** (10 minuti) per ogni comando di questa procedura: prepara, pubblica e i dossier possono durare qualche minuto, e un comando che supera il timeout viene staccato e non ti restituisce l'uscita. La copia di lavoro e' `/c/Users/User/Desktop/Calciomercato`: ogni comando parte con `cd /c/Users/User/Desktop/Calciomercato && ...`.
+- Il JSON dell'articolo scrivilo con lo strumento Write oppure con Python (`json.dump(..., ensure_ascii=False, indent=1)`), MAI con un heredoc bash: sopra gli 8.000 caratteri il testo viene troncato senza nessun errore.
+- NON fare mai a mano commit, push, reset, checkout o rebase: la pubblicazione e' `scripts/redazione.py`, che fa tutto con i controlli. Se qualcosa si rompe, fermati e riporta l'output.
+
+PASSO 0 — PREPARAZIONE (obbligatorio, prima di leggere qualunque dato):
+    cd /c/Users/User/Desktop/Calciomercato && git fetch -q origin main && git show origin/main:scripts/redazione.py > "$(git rev-parse --git-dir)/redazione_boot.py" && py -X utf8 "$(git rev-parse --git-dir)/redazione_boot.py" prepara --pianificata sorprese; echo "USCITA $?"
+- USCITA 0 ("PRONTO"): la copia locale coincide con origin/main e il turno e' tuo. Vai avanti.
+- USCITA 3: questa pianificata ha gia' pubblicato oggi. FERMATI senza scrivere niente. Output: "gia' pubblicato oggi".
+- USCITA 4: un'altra pianificata sta ancora lavorando dopo 8 minuti di attesa. FERMATI e riporta l'output (non riprovare).
+- qualunque altra uscita: FERMATI e riporta l'output completo. Non aggiustare git a mano.
+Se l'uscita contiene una riga "ATTENZIONE:", riportala nell'output finale.
+Perche' esiste: l'8 settembre 2026 tre pianificate hanno pubblicato con gli script di una copia locale ferma a giorni prima e hanno riportato 609 pagine del sito alla grafica vecchia, per sei giorni, dichiarando ogni volta "pubblicato". Il passo 0 allinea la copia a origin/main prima che tu tocchi un file: da qui in poi i file locali coincidono con origin/main e puoi leggerli direttamente.
 
 OBIETTIVO: scrivere TU (Claude) LE SORPRESE — chi rende più e chi meno di quanto costa, cioè la fantamedia rapportata alla quotazione — e PUBBLICARLO in autonomia. È il pezzo del sabato: esce prima del turno, quindi serve a chi deve schierare.
 
 FONTE PRINCIPALE: IL DOSSIER. I numeri NON li calcoli tu.
 
-1. Allinea i dati locali a origin/main. `scripts/dossier.py` legge i FILE LOCALI del repo, non `origin/main`: se la copia locale è in deriva, i numeri sono vecchi. Prima di tutto:
-   `git fetch origin main`
-   `for f in $(git ls-tree -r --name-only origin/main -- data/fanta data/stats data/competizioni.json); do mkdir -p "$(dirname "$f")"; git show "origin/main:$f" > "$f"; done`
+1. I dati locali sono gia' allineati a origin/main dal PASSO 0: non serve altro.
 2. `py -X utf8 scripts/dossier.py sorprese`. Scrive `data/dossier/sorprese-AAAA-MM-GG.md` (il dossier per te) e `.json`.
-   Se lo script esce con codice 3 stampa "IMPOSSIBILE PRODURRE IL DOSSIER" (troppo pochi giocatori sopra le soglie, per esempio alla prima giornata): NON scrivere niente, NON pubblicare, riporta il motivo e fermati.
+   Se lo script esce con codice 3 stampa "IMPOSSIBILE PRODURRE IL DOSSIER" (troppo pochi giocatori sopra le soglie, per esempio alla prima giornata): NON scrivere niente, NON pubblicare, riporta il motivo e fermati (prima di chiudere libera il turno: `cd /c/Users/User/Desktop/Calciomercato && py -X utf8 scripts/redazione.py rilascia --pianificata sorprese`).
 3. LEGGI TUTTO il `.md`, compresa la sezione finale "COSA NON ABBIAMO".
 
 REGOLA DEI NUMERI (è il motivo per cui il dossier esiste):
@@ -45,24 +57,19 @@ JSON: crea `data/articles/sorprese-fantacalcio-AAAA-MM-GG.json`:
 `{"slug":"sorprese-fantacalcio-AAAA-MM-GG","tipo":"storia","giocatore":"","team":"","league":"Serie A","lab":"FANTA","col":"#7b46c9","stato":"done","smentita":false,"created":"<ISO UTC>","updated":"<ISO UTC>","updates":[],"content":{"it":{title,lead,body[]},"en":{...},"es":{...}}}`.
 Il tipo è `storia` (badge FOCUS, copertina `img/cover-storia.svg`): è uno dei tipi che il sito conosce. NON inventare un tipo nuovo: un tipo sconosciuto resta senza badge e senza copertina. `lab` e `col` non sono di un club perché il pezzo è di tutta la Serie A: `FANTA` sul viola del sito.
 
+REGOLA DEGLI SLUG: solo lettere minuscole a-z, cifre e trattini. Togli accenti, apostrofi, punti e ogni altro segno (D'Aversa -> daversa, Højlund -> hojlund, N'Dicka -> ndicka). Uno slug non valido viene rifiutato con USCITA 2.
+
 PASSI DI PUBBLICAZIONE:
-1. **PROTEZIONE ANTI-CANCELLAZIONE (obbligatoria).** È già successo: il 24 agosto `data/articles/storia-nkunku.json`, pubblicato alle 16:12, è stato cancellato alle 20:40 dal commit di un'altra pianificata, con le sue tre pagine HTML. Causa: la cartella LOCALE `data/articles/` non conteneva il pezzo uscito poche ore prima, e il commit ha fotografato quella cartella incompleta. La difesa è una riga sola, da eseguire PRIMA di rigenerare le pagine (il JSON che hai appena creato non viene toccato: è un file nuovo, git non lo conosce ancora):
-   ```
-   git fetch origin main
-   git checkout origin/main -- data/articles/
-   ```
-   Così la cartella locale contiene tutti gli articoli già pubblicati, compresi quelli usciti pochi minuti fa, e la rigenerazione non può perderne nessuno. Non devi sapere quali pianificate hanno già girato: questo comando le copre tutte.
-   Poi CONTA quanti articoli ci sono, e tieni il numero da parte:
-   ```
-   git show origin/main:data/articles/index.json | py -X utf8 -c "import sys,json;print(len(json.load(sys.stdin)['articoli']))"
-   ```
-2. Controlla le misure SEO prima di andare avanti:
-   `py -X utf8 -c "import json;d=json.load(open('data/articles/<slug>.json',encoding='utf-8'));c=d['content'];[print(l,'title',len(c[l]['title']),'lead1',len(c[l]['lead'].split('. ')[0]),'body',sum(len(p) for p in c[l]['body'])) for l in ('it','en','es')]"`
-   Title ≤60, prima frase del lead ≤150, corpo fra 1.800 e 3.000. Se sfori, riscrivi: non pubblicare fuori misura.
-3. Rigenera: da `scripts/`, python: `import articles, render_articles; render_articles.render_all(articles.all_articles(),"https://transferbeat.com",articles.PAGES,articles.DATA)`. Verifica `articoli/it/<slug>.html` e `data/articles/index.json`.
-4. Commit plumbing SOPRA quel `origin/main` appena verificato: `GIT_INDEX_FILE` temporaneo; `read-tree origin/main`; `update-index` dei SOLI `data/articles/*`, `articoli/**`, `sitemap.xml`, `sitemap-articoli.xml`; `write-tree`; `commit-tree -p origin/main`; `update-ref refs/heads/main`; poi `rm .git/index`; `git read-tree HEAD`; `git checkout-index -a -f`. NON toccare `data/{it,en,es}/*.json`, `data/competizioni.json`, `data/fanta/**`, `data/stats/**` né `data/dossier/**` (il dossier resta locale). Se trovi un `.lock` in `.git`, rimuovilo e riprova.
-5. PUBBLICA eseguendo `bash scripts/pubblica.sh`. Se il push è rifiutato perché origin è avanzato, torna al passo 3: rifai fetch, riverifica l'elenco e ricostruisci il commit sopra il nuovo `origin/main`.
-6. **DOPO IL PUSH, verifica che non sia sparito niente.** Riconta gli articoli su `origin/main`: devono essere quelli di prima PIÙ il tuo (o solo quelli di prima, se hai aggiornato un pezzo esistente invece di crearne uno nuovo). Se il numero è SCESO, hai cancellato il lavoro di un'altra pianificata: recupera subito il file dal commit precedente (`git log --oneline -8 origin/main` per trovarlo, poi `git show <commit>:data/articles/<slug>.json > data/articles/<slug>.json`), rigenera, ricommitta e ripubblica. Segnalalo nell'output.
+1. Scrivi il JSON in `data/articles/<slug>.json` come descritto sopra (Write o Python, non heredoc). Il campo `pianificata` lo aggiunge lo script.
+2. Pubblica con UN solo comando:
+       cd /c/Users/User/Desktop/Calciomercato && py -X utf8 scripts/redazione.py pubblica --pianificata sorprese --slug <slug> --corpo 1800-3000; echo "USCITA $?"
+   Lo script controlla il JSON (campi, tre lingue, titolo italiano entro 60 caratteri, prima frase del lead entro 150, lunghezza del corpo italiano fra 1.800 e 3.000 caratteri), aggiunge gli articoli usciti nel frattempo, rigenera le pagine, verifica che TUTTE le pagine del sito abbiano la grafica corrente e che nessun articolo gia' pubblicato sparisca, fa un commit con i soli file degli articoli sopra origin/main, pubblica e controlla che la pagina risponda online.
+   - USCITA 0: pubblicato. Riporta le righe TITOLO e ONLINE.
+   - USCITA 2: il JSON non va, l'elenco dice cosa. Correggi il JSON e rilancia lo stesso comando. Se non riesci a correggerlo senza inventare (per esempio il corpo non arriva al minimo con i dati che hai), NON pubblicare: vai al punto 3.
+   - USCITA 8: pubblicato su GitHub ma questa versione non risponde ancora online. Riportalo, NON ripubblicare.
+   - qualunque altra uscita (6, 7, 9): FERMATI, niente commit o push a mano, riporta l'output completo. Lo script ha gia' liberato il turno.
+3. Se decidi di NON pubblicare (dati insufficienti, dossier impossibile, pezzo che non si regge), prima di chiudere togli la bozza e libera il turno:
+       cd /c/Users/User/Desktop/Calciomercato && py -X utf8 scripts/redazione.py rilascia --pianificata sorprese --slug <slug>
+   (se non hai ancora scritto il JSON: senza `--slug`).
 
-
-Se il dossier ammette pochi giocatori (inizio stagione, soglie non raggiunte), pezzo più corto e onesto: si dice quanti sono gli ammessi su quanti e che i numeri sono ancora fragili. Meglio corto che inventato. Output: titolo, i nomi scelti, lunghezza del corpo e conferma pubblicazione.
+Se il dossier ammette pochi giocatori (inizio stagione, soglie non raggiunte), pezzo più corto e onesto: si dice quanti sono gli ammessi su quanti e che i numeri sono ancora fragili. Meglio corto che inventato. Ma il minimo di 1.800 caratteri resta: se con i dati che ci sono non ci arrivi senza allungare a vuoto, non pubblicare (punto 3 dei passi). Output: titolo, i nomi scelti, lunghezza del corpo e conferma pubblicazione.

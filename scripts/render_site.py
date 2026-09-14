@@ -249,7 +249,8 @@ def match_ld(m, comp_name):
         ev["eventStatus"] = "https://schema.org/EventScheduled"
     return ev
 
-TIPO_LABEL = {"recap": "Recap di giornata", "lunch": "Lunch break", "storia": "Focus", "scoop": "Scoop", "notti": "Notti mondiali"}
+TIPO_LABEL = {"recap": "Recap di giornata", "lunch": "Lunch break", "storia": "Focus", "scoop": "Scoop", "notti": "Notti mondiali",
+              "dopopartita": "Dopopartita"}
 
 def art_card(a):
     k = a.get("team") or TIPO_LABEL.get(a.get("tipo") or "", "Articolo")
@@ -1163,7 +1164,8 @@ def home_card(o, icon=ICON_NEWS):
             esct(o.get("titolo")) + '</a></h3><div class="credit">Fonte: <a ' + ext(o.get("link")) + ">" + esc(o.get("fonte") or "—") + "</a>" + when + "</div></div>")
 
 COVER = {"recap": ("img/cover-recap.svg", "#0a9d57"), "lunch": ("img/cover-lunch.svg", "#d98700"), "storia": ("img/cover-storia.svg", "#1f6fd6"),
-         "scoop": ("img/cover-scoop.svg", "#e0392b"), "notti": ("img/cover-notti.svg", "#21366e")}
+         "scoop": ("img/cover-scoop.svg", "#e0392b"), "notti": ("img/cover-notti.svg", "#21366e"),
+         "dopopartita": ("img/cover-dopopartita.svg", "#2c0f57")}
 
 def art_home_card(a):
     url = "/articoli/it/" + esc(a["slug"]) + ".html"

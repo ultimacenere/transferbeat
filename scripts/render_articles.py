@@ -70,6 +70,7 @@ LUNCH_LABEL = {"it": "LUNCH BREAK", "en": "LUNCH BREAK", "es": "LUNCH BREAK"}
 SCOOP_LABEL = {"it": "SCOOP", "en": "SCOOP", "es": "SCOOP"}
 NOTTI_LABEL = {"it": "NOTTI MONDIALI", "en": "WORLD CUP NIGHTS", "es": "NOCHES MUNDIALES"}
 BILANCIO_LABEL = {"it": "BILANCIO", "en": "TRANSFER REVIEW", "es": "BALANCE"}
+DOPOPARTITA_LABEL = {"it": "DOPOPARTITA", "en": "FULL TIME", "es": "POSPARTIDO"}
 # pill = classe semantica della pillola (colori dai token del sito, mai testo bianco su colore pieno).
 TIPI = {"recap": {"label": RECAP_LABEL, "pill": "ok", "cover": "cover-recap.svg"},
         "lunch": {"label": LUNCH_LABEL, "pill": "warn", "cover": "cover-lunch.svg"},
@@ -77,7 +78,9 @@ TIPI = {"recap": {"label": RECAP_LABEL, "pill": "ok", "cover": "cover-recap.svg"
         "scoop": {"label": SCOOP_LABEL, "pill": "err", "cover": "cover-scoop.svg"},
         "notti": {"label": NOTTI_LABEL, "pill": "info", "cover": "cover-notti.svg"},
         # bilancio: ricostruzioni di una sessione di mercato dallo storico gia' classificato della board (kb/RIPARTENZA.md 8, fase J)
-        "bilancio": {"label": BILANCIO_LABEL, "pill": "info", "cover": "cover-bilancio.svg"}}
+        "bilancio": {"label": BILANCIO_LABEL, "pill": "info", "cover": "cover-bilancio.svg"},
+        # dopopartita: le partite della sera, alle 23, dai dati di scripts/dopopartita.py (kb/PIANIFICATE.md)
+        "dopopartita": {"label": DOPOPARTITA_LABEL, "pill": "info", "cover": "cover-dopopartita.svg"}}
 MONTHS = {"it": ["gen","feb","mar","apr","mag","giu","lug","ago","set","ott","nov","dic"],
           "en": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
           "es": ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"]}
