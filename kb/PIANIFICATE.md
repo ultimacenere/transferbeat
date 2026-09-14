@@ -6,8 +6,11 @@ per articolo. Regola comune: risultati mai dai titoli, voci chiamate voci, **meg
 **SEO (`kb/SEO.md` §0.2)**: titolo ≤60 caratteri (diventa il `<title>` così com'è) e prima frase del lead ≤150 (diventa la meta
 description). Dal 2026-09-14 non è più una raccomandazione: `scripts/redazione.py` rifiuta il JSON che sfora.
 
-**I prompt completi sono in `kb/pianificate/*.md`: sono la fonte.** Il nome del file (senza `.md`) è anche l'id della pianificata e
-il valore di `--pianificata`. Se si modifica un prompt, va aggiornata anche la pianificata registrata (vedi sotto dove vive).
+**I prompt completi sono in `kb/pianificate/*.md` e sono l'UNICA copia.** Il nome del file (senza `.md`) è anche l'id della pianificata
+e il valore di `--pianificata`. Le pianificate registrate nello scheduler contengono solo un lanciatore di poche righe: fanno
+`git show origin/main:kb/pianificate/<nome>.md` e seguono quel testo alla lettera. **Modificare il file su main cambia il
+comportamento dal giro successivo**, senza toccare lo scheduler. Motivo: con due copie (repo e Cowork) le copie operative erano
+rimaste alla procedura del 5 settembre anche dopo che il repo era stato corretto, e nessuno se n'era accorto.
 
 ## Dove girano (dal 2026-09-14)
 
@@ -17,7 +20,8 @@ compito serale (9, 10, 11 e 14 settembre). In più lo scheduler della app si pu�
 (`list_scheduled_tasks`, e per ogni pianificata lo storico delle esecuzioni con esito), cosa che per Cowork non è possibile.
 Vivono in `C:/Users/User/.claude/scheduled-tasks/<nome>/SKILL.md`; il cron è in ora LOCALE del PC.
 Le tre copie Cowork (`C:/Users/User/Documents/Claude/Scheduled/<nome>/SKILL.md`) sono state **dismesse**: il loro prompt ora dice
-solo di non fare niente (originali in `backup/pianificate-2026-09-14/`). Se tornassero a girare con il prompt vecchio, il controllo
+solo di non fare niente (originali in `backup/pianificate-2026-09-14/`). In Cowork restano anche `notti-mondiali` e
+`notti-mondiali-transferbeat`, chiuse dal 17 agosto: vanno eliminate dall'interfaccia insieme alle tre. Se tornassero a girare con il prompt vecchio, il controllo
 «già pubblicato oggi» di `redazione.py` non le fermerebbe (non lo usano): per questo il prompt è stato svuotato. Vanno comunque
 eliminate dall'interfaccia di Cowork.
 
@@ -39,6 +43,9 @@ Per i tre slot quotidiani c'è la rete di sicurezza `palinsesto.yml` su GitHub A
 | 20:00 | ogni giorno | `recap-serale-transferbeat` (RECAP) | RECAP DI GIORNATA | board, competizioni, ultimora |
 | 23:00 | ogni giorno, esce solo se c'è una partita della sera | `dopopartita` | DOPOPARTITA | `scripts/dopopartita.py` (API-Football, al momento) |
 
+Nello scheduler l'orario ha qualche minuto di ritardo casuale fisso per pianificata (registrate il 14 settembre: 09:08, 10:36, 12:07,
+14:01, 14:00, 14:03, 15:01, 16:08, 20:05, 23:08). Al primo giro una pianificata può fermarsi a chiedere l'approvazione dei comandi:
+le approvazioni date restano salvate sulla pianificata, e un giro "Esegui ora" con il committente presente le raccoglie.
 Cron: `0 9 * * *` · `30 10 * * 2` · `0 12 * * *` · `0 14 * * 3` · `0 14 * * 4` · `0 14 * * 6` · `0 15 * * 5` · `0 16 * * *` · `0 20 * * *` · `0 23 * * *`.
 Fra due pianificate passano almeno un'ora e mezza; se una sfora, la successiva aspetta il turno (vedi sotto).
 

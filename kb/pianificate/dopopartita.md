@@ -10,8 +10,8 @@ COME LAVORI (regole comuni a tutte le pianificate di TransferBeat):
 - Il JSON dell'articolo scrivilo con lo strumento Write oppure con Python (`json.dump(..., ensure_ascii=False, indent=1)`), MAI con un heredoc bash: sopra gli 8.000 caratteri il testo viene troncato senza nessun errore.
 - NON fare mai a mano commit, push, reset, checkout o rebase: la pubblicazione e' `scripts/redazione.py`, che fa tutto con i controlli. Se qualcosa si rompe, fermati e riporta l'output.
 
-PASSO 0 — PREPARAZIONE (obbligatorio, prima di leggere qualunque dato):
-    cd /c/Users/User/Desktop/Calciomercato && git fetch -q origin main && git show origin/main:scripts/redazione.py > "$(git rev-parse --git-dir)/redazione_boot.py" && py -X utf8 "$(git rev-parse --git-dir)/redazione_boot.py" prepara --pianificata dopopartita; echo "USCITA $?"
+PASSO 0 — PREPARAZIONE (obbligatorio, prima di leggere qualunque dato). L'USCITA la mostra lo strumento Bash come "Exit code N"; se non la mostra, e' 0:
+    cd /c/Users/User/Desktop/Calciomercato && git fetch -q origin main && git show origin/main:scripts/redazione.py > .git/redazione_boot.py && py -X utf8 .git/redazione_boot.py prepara --pianificata dopopartita
 - USCITA 0 ("PRONTO"): la copia locale coincide con origin/main e il turno e' tuo. Vai avanti.
 - USCITA 3: il Dopopartita di oggi e' gia' uscito. FERMATI senza scrivere niente. Output: "gia' pubblicato oggi".
 - USCITA 4: un'altra pianificata sta ancora lavorando dopo 8 minuti di attesa. FERMATI e riporta l'output (non riprovare).
@@ -23,7 +23,7 @@ OBIETTIVO: scrivere TU (Claude) il DOPOPARTITA — la partita o le partite della
 
 FONTE: IL DOSSIER. I numeri NON li cerchi e NON li calcoli tu.
 
-1. `cd /c/Users/User/Desktop/Calciomercato && py -X utf8 scripts/dopopartita.py --attendi 8; echo "USCITA $?"` (timeout 600000)
+1. `cd /c/Users/User/Desktop/Calciomercato && py -X utf8 scripts/dopopartita.py --attendi 8` (timeout 600000)
    Lo script prende i dati da API-Football in quel momento (NON da `data/competizioni.json`, che alle 23 e' fermo a prima della fine delle partite delle 20:45). Il giorno raccontato e' quello del turno preso al passo 0, anche se rilanci dopo mezzanotte.
    - USCITA 12: partite ancora in corso. RILANCIA LO STESSO COMANDO, finche' l'uscita non e' 0, 10 o 11 (lo script sa da solo quando smettere di aspettare: calcio d'inizio piu' 2 ore e 45).
    - USCITA 10: oggi nessuna partita della sera nelle competizioni seguite. NON scrivere niente, libera il turno (`cd /c/Users/User/Desktop/Calciomercato && py -X utf8 scripts/redazione.py rilascia --pianificata dopopartita`) e fermati. Output: "nessuna partita serale".
@@ -68,7 +68,7 @@ REGOLA DEGLI SLUG: solo lettere minuscole a-z, cifre e trattini. Togli accenti, 
 PASSI DI PUBBLICAZIONE:
 1. Scrivi il JSON in `data/articles/<slug>.json` come descritto sopra (Write o Python, non heredoc). Il campo `pianificata` lo aggiunge lo script.
 2. Pubblica con UN solo comando:
-       cd /c/Users/User/Desktop/Calciomercato && py -X utf8 scripts/redazione.py pubblica --pianificata dopopartita --slug <slug> --corpo 2000-3500; echo "USCITA $?"
+       cd /c/Users/User/Desktop/Calciomercato && py -X utf8 scripts/redazione.py pubblica --pianificata dopopartita --slug <slug> --corpo 2000-3500
    Lo script controlla il JSON (campi, tre lingue, titolo italiano entro 60 caratteri, prima frase del lead entro 150, lunghezza del corpo italiano fra 2.000 e 3.500 caratteri), aggiunge gli articoli usciti nel frattempo, rigenera le pagine, verifica che TUTTE le pagine del sito abbiano la grafica corrente e che nessun articolo gia' pubblicato sparisca, fa un commit con i soli file degli articoli sopra origin/main, pubblica e controlla che la pagina risponda online.
    - USCITA 0: pubblicato. Riporta le righe TITOLO e ONLINE.
    - USCITA 2: il JSON non va, l'elenco dice cosa. Correggi il JSON e rilancia lo stesso comando. Se non riesci a correggerlo senza inventare (per esempio il corpo non arriva al minimo con i dati che hai), NON pubblicare: vai al punto 3.
