@@ -1,0 +1,4400 @@
+{
+"updated": "2026-09-14T23:55:56Z",
+"season": 2026,
+"matchday": 5,
+"stage": "settimana",
+"fixtures": [
+{
+"id": 1550133,
+"date": "2026-09-18T18:45:00+00:00",
+"home": "Monza",
+"away": "Sassuolo",
+"home_id": 1579,
+"away_id": 488,
+"venue": null,
+"status": "NS"
+},
+{
+"id": 1550135,
+"date": "2026-09-19T13:00:00+00:00",
+"home": "Udinese",
+"away": "Cagliari",
+"home_id": 494,
+"away_id": 490,
+"venue": "Bluenergy Stadium - Stadio Friuli",
+"status": "NS"
+},
+{
+"id": 1550129,
+"date": "2026-09-19T13:00:00+00:00",
+"home": "Bologna",
+"away": "Torino",
+"home_id": 500,
+"away_id": 503,
+"venue": null,
+"status": "NS"
+},
+{
+"id": 1550128,
+"date": "2026-09-19T16:00:00+00:00",
+"home": "AS Roma",
+"away": "Inter",
+"home_id": 497,
+"away_id": 505,
+"venue": "Stadio Olimpico",
+"status": "NS"
+},
+{
+"id": 1550136,
+"date": "2026-09-19T18:45:00+00:00",
+"home": "Venezia",
+"away": "Lazio",
+"home_id": 517,
+"away_id": 487,
+"venue": "Stadio Pierluigi Penzo",
+"status": "NS"
+},
+{
+"id": 1550130,
+"date": "2026-09-20T10:30:00+00:00",
+"home": "Fiorentina",
+"away": "Napoli",
+"home_id": 502,
+"away_id": 492,
+"venue": "Stadio Artemio Franchi",
+"status": "NS"
+},
+{
+"id": 1550131,
+"date": "2026-09-20T13:00:00+00:00",
+"home": "Frosinone",
+"away": "Como",
+"home_id": 512,
+"away_id": 895,
+"venue": "Stadio Benito Stirpe",
+"status": "NS"
+},
+{
+"id": 1550134,
+"date": "2026-09-20T13:00:00+00:00",
+"home": "Parma",
+"away": "Genoa",
+"home_id": 523,
+"away_id": 495,
+"venue": "Stadio Ennio Tardini",
+"status": "NS"
+},
+{
+"id": 1550132,
+"date": "2026-09-20T16:00:00+00:00",
+"home": "Juventus",
+"away": "Atalanta",
+"home_id": 496,
+"away_id": 499,
+"venue": "Allianz Stadium",
+"status": "NS"
+},
+{
+"id": 1550127,
+"date": "2026-09-20T18:45:00+00:00",
+"home": "AC Milan",
+"away": "Lecce",
+"home_id": 489,
+"away_id": 867,
+"venue": null,
+"status": "NS"
+}
+],
+"teams": {
+"Inter": {
+"id": 505,
+"coach": "Cristian Chivu",
+"module": "3-5-2",
+"based_on": [
+{
+"fixture": 1550120,
+"date": "2026-09-14",
+"opponent": "Udinese",
+"formation": "3-5-2"
+},
+{
+"fixture": 1550113,
+"date": "2026-09-05",
+"opponent": "Napoli",
+"formation": "3-5-2"
+},
+{
+"fixture": 1550099,
+"date": "2026-08-30",
+"opponent": "Cagliari",
+"formation": "3-5-2"
+}
+],
+"xi": [
+{
+"id": 46988,
+"name": "Josep Martínez",
+"role": "P",
+"pos": "G",
+"grid": "1:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 5,
+"name": "M. Akanji",
+"role": "D",
+"pos": "D",
+"grid": "2:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 626,
+"name": "J. Stones",
+"role": "D",
+"pos": "D",
+"grid": "2:2",
+"prob": 62,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 31010,
+"name": "F. Dimarco",
+"prob": 61,
+"share": 50
+},
+"out_for": null,
+"share": 50
+},
+{
+"id": 31009,
+"name": "A. Bastoni",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 270509,
+"name": "A. Diouf",
+"role": "C",
+"pos": "M",
+"grid": "3:5",
+"prob": 78,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": {
+"id": 348205,
+"name": "P. Sučić",
+"prob": 54,
+"share": 41
+},
+"out_for": null,
+"share": 59
+},
+{
+"id": 30558,
+"name": "N. Barella",
+"role": "C",
+"pos": "M",
+"grid": "3:4",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 329,
+"name": "P. Zieliński",
+"role": "C",
+"pos": "M",
+"grid": "3:3",
+"prob": 79,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 1457,
+"name": "H. Mkhitaryan",
+"role": "C",
+"pos": "M",
+"grid": "3:2",
+"prob": 61,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 1640,
+"name": "H. Çalhanoğlu",
+"prob": 31,
+"share": 34
+},
+"out_for": null,
+"share": 66
+},
+{
+"id": 10238,
+"name": "Carlos Augusto",
+"role": "D",
+"pos": "M",
+"grid": "3:1",
+"prob": 62,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 21509,
+"name": "M. Thuram",
+"role": "A",
+"pos": "F",
+"grid": "4:2",
+"prob": 64,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 217,
+"name": "Lautaro Martínez",
+"prob": 60,
+"share": 48
+},
+"out_for": null,
+"share": 52
+},
+{
+"id": 345808,
+"name": "F. Esposito",
+"role": "A",
+"pos": "F",
+"grid": "4:1",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+}
+],
+"bench": [
+{
+"id": 31037,
+"name": "I. Provedel",
+"role": "P",
+"pos": "G",
+"prob": 14
+},
+{
+"id": 24953,
+"name": "Y. Bisseck",
+"role": "D",
+"pos": "D",
+"prob": 42
+},
+{
+"id": 2725,
+"name": "B. Pavard",
+"role": "D",
+"pos": "D",
+"prob": 36
+},
+{
+"id": 293,
+"name": "C. Jones",
+"role": "C",
+"pos": "M",
+"prob": 30
+},
+{
+"id": 342230,
+"name": "A. Stanković",
+"role": "C",
+"pos": "M",
+"prob": 16
+},
+{
+"id": 10077,
+"name": "Luis Henrique",
+"role": "C",
+"pos": "F",
+"prob": 34
+},
+{
+"id": 275651,
+"name": "A. Bonny",
+"role": "A",
+"pos": "F",
+"prob": 18
+}
+],
+"out": [],
+"doubt": [],
+"coppa": null
+},
+"Udinese": {
+"id": 494,
+"coach": "Kosta Runjaic",
+"module": "3-4-2-1",
+"based_on": [
+{
+"fixture": 1550120,
+"date": "2026-09-14",
+"opponent": "Inter",
+"formation": "3-4-2-1"
+},
+{
+"fixture": 1550116,
+"date": "2026-09-07",
+"opponent": "Lazio",
+"formation": "3-4-2-1"
+},
+{
+"fixture": 1550104,
+"date": "2026-08-29",
+"opponent": "Monza",
+"formation": "3-4-2-1"
+}
+],
+"xi": [
+{
+"id": 143648,
+"name": "M. Okoye",
+"role": "P",
+"pos": "G",
+"grid": "1:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 320335,
+"name": "J. Abankwah",
+"role": "D",
+"pos": "D",
+"grid": "2:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 18797,
+"name": "C. Kabasele",
+"role": "D",
+"pos": "D",
+"grid": "2:2",
+"prob": 62,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 656,
+"name": "O. Solet",
+"prob": 48,
+"share": 44
+},
+"out_for": null,
+"share": 56
+},
+{
+"id": 20656,
+"name": "E. Ebosse",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 8586,
+"name": "M. Vojvoda",
+"role": "D",
+"pos": "M",
+"grid": "3:4",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 48047,
+"name": "J. Karlström",
+"role": "C",
+"pos": "M",
+"grid": "3:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 343558,
+"name": "L. Miller",
+"role": "C",
+"pos": "M",
+"grid": "3:2",
+"prob": 70,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 1939,
+"name": "J. Piotrowski",
+"prob": 48,
+"share": 41
+},
+"out_for": null,
+"share": 59
+},
+{
+"id": 22007,
+"name": "H. Kamara",
+"role": "D",
+"pos": "M",
+"grid": "3:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 332308,
+"name": "Unai Gómez",
+"role": "C",
+"pos": "F",
+"grid": "4:2",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 541,
+"name": "J. Ekkelenkamp",
+"role": "C",
+"pos": "F",
+"grid": "4:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 19185,
+"name": "K. Davis",
+"role": "A",
+"pos": "F",
+"grid": "5:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+}
+],
+"bench": [
+{
+"id": 126896,
+"name": "B. Mrozek",
+"role": "P",
+"pos": "G",
+"prob": 14
+},
+{
+"id": 315249,
+"name": "N. Bertola",
+"role": "D",
+"pos": "D",
+"prob": 25
+},
+{
+"id": 318053,
+"name": "S. Goglichidze",
+"role": "D",
+"pos": "D",
+"prob": 5
+},
+{
+"id": 7591,
+"name": "S. Lovrić",
+"role": "C",
+"pos": "M",
+"prob": 28
+},
+{
+"id": 411171,
+"name": "J. Arizala",
+"role": "D",
+"pos": "M",
+"prob": 20
+},
+{
+"id": 434410,
+"name": "I. Gueye",
+"role": "A",
+"pos": "F",
+"prob": 18
+},
+{
+"id": 1134,
+"name": "V. Bayo",
+"role": "A",
+"pos": "F",
+"prob": 18
+}
+],
+"out": [],
+"doubt": [],
+"coppa": null
+},
+"Torino": {
+"id": 503,
+"coach": "Ignazio Abate",
+"module": "5-3-2",
+"based_on": [
+{
+"fixture": 1550125,
+"date": "2026-09-14",
+"opponent": "AS Roma",
+"formation": "5-3-2"
+},
+{
+"fixture": 1550110,
+"date": "2026-09-05",
+"opponent": "Fiorentina",
+"formation": "3-1-4-2"
+},
+{
+"fixture": 1550106,
+"date": "2026-08-29",
+"opponent": "Sassuolo",
+"formation": "5-3-2"
+}
+],
+"xi": [
+{
+"id": 80296,
+"name": "Lucas Perri",
+"role": "P",
+"pos": "G",
+"grid": "1:1",
+"prob": 76,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 303362,
+"name": "R. Belghali",
+"role": "D",
+"pos": "D",
+"grid": "2:5",
+"prob": 56,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 48372,
+"name": "E. Cömert",
+"role": "D",
+"pos": "D",
+"grid": "2:4",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 122468,
+"name": "Saúl Coco",
+"role": "D",
+"pos": "D",
+"grid": "2:3",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 396637,
+"name": "P. Comuzzo",
+"role": "D",
+"pos": "D",
+"grid": "2:2",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 437093,
+"name": "N. Fortini",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 343189,
+"name": "G. Gineitis",
+"role": "C",
+"pos": "M",
+"grid": "3:3",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 30810,
+"name": "R. Mandragora",
+"role": "C",
+"pos": "M",
+"grid": "3:2",
+"prob": 77,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": {
+"id": 471040,
+"name": "A. Cacciamani",
+"prob": 55,
+"share": 42
+},
+"out_for": null,
+"share": 58
+},
+{
+"id": 36895,
+"name": "K. Fitz-Jim",
+"role": "C",
+"pos": "M",
+"grid": "3:1",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 30414,
+"name": "G. Simeone",
+"role": "A",
+"pos": "F",
+"grid": "4:2",
+"prob": 73,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": {
+"id": 19524,
+"name": "C. Adams",
+"prob": 54,
+"share": 43
+},
+"out_for": null,
+"share": 57
+},
+{
+"id": 842,
+"name": "N. Vlašić",
+"role": "C",
+"pos": "F",
+"grid": "4:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+}
+],
+"bench": [
+{
+"id": 419871,
+"name": "D. Mascardi",
+"role": "P",
+"pos": "G",
+"prob": 34
+},
+{
+"id": 14329,
+"name": "A. Ismajli",
+"role": "D",
+"pos": "D",
+"prob": 27
+},
+{
+"id": 138417,
+"name": "N. Patterson",
+"role": "D",
+"pos": "D",
+"prob": 14
+},
+{
+"id": 41892,
+"name": "Daniel Bragança",
+"role": "C",
+"pos": "M",
+"prob": 25
+},
+{
+"id": 336573,
+"name": "E. İlkhan",
+"role": "C",
+"pos": "M",
+"prob": 18
+},
+{
+"id": 383006,
+"name": "A. Njie",
+"role": "C",
+"pos": "F",
+"prob": 22
+},
+{
+"id": 2495,
+"name": "D. Zapata",
+"role": "A",
+"pos": "F",
+"prob": 18
+}
+],
+"out": [],
+"doubt": [],
+"coppa": null
+},
+"AS Roma": {
+"id": 497,
+"coach": "Piero Gasperini Gian",
+"module": "3-4-2-1",
+"based_on": [
+{
+"fixture": 1550125,
+"date": "2026-09-14",
+"opponent": "Torino",
+"formation": "3-4-2-1"
+},
+{
+"fixture": 1550107,
+"date": "2026-09-05",
+"opponent": "Atalanta",
+"formation": "3-4-1-2"
+},
+{
+"fixture": 1550103,
+"date": "2026-08-31",
+"opponent": "Lecce",
+"formation": "3-4-2-1"
+}
+],
+"xi": [
+{
+"id": 556,
+"name": "M. Svilar",
+"role": "P",
+"pos": "G",
+"grid": "1:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 30425,
+"name": "G. Mancini",
+"role": "D",
+"pos": "D",
+"grid": "2:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 6,
+"name": "L. Balerdi",
+"role": "D",
+"pos": "D",
+"grid": "2:2",
+"prob": 62,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 349001,
+"name": "Wesley",
+"prob": 60,
+"share": 49
+},
+"out_for": null,
+"share": 51
+},
+{
+"id": 2669,
+"name": "Hermoso",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 598615,
+"name": "E. Lulli",
+"role": "D",
+"pos": "M",
+"grid": "3:4",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": {
+"id": 22147,
+"name": "M. Koné",
+"prob": 61,
+"share": 41
+},
+"out_for": null,
+"share": 59
+},
+{
+"id": 778,
+"name": "B. Cristante",
+"role": "C",
+"pos": "M",
+"grid": "3:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 356888,
+"name": "N. Pisilli",
+"role": "C",
+"pos": "M",
+"grid": "3:2",
+"prob": 62,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 404097,
+"name": "Rodrigo Mora",
+"prob": 37,
+"share": 37
+},
+"out_for": null,
+"share": 63
+},
+{
+"id": 6503,
+"name": "N. Molina",
+"role": "D",
+"pos": "M",
+"grid": "3:1",
+"prob": 64,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 875,
+"name": "P. Dybala",
+"role": "A",
+"pos": "F",
+"grid": "4:2",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 323936,
+"name": "M. Soulé",
+"role": "A",
+"pos": "F",
+"grid": "4:1",
+"prob": 67,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 249,
+"name": "D. Malen",
+"role": "A",
+"pos": "F",
+"grid": "5:1",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+}
+],
+"bench": [
+{
+"id": 483676,
+"name": "G. De Marzi",
+"role": "P",
+"pos": "G",
+"prob": 14
+},
+{
+"id": 342019,
+"name": "D. Ghilardi",
+"role": "D",
+"pos": "D",
+"prob": 36
+},
+{
+"id": 1807,
+"name": "E. Ndicka",
+"role": "D",
+"pos": "D",
+"prob": 33
+},
+{
+"id": 782,
+"name": "L. Pellegrini",
+"role": "C",
+"pos": "M",
+"prob": 20
+},
+{
+"id": 30432,
+"name": "M. de Roon",
+"role": "C",
+"pos": "M",
+"prob": 18
+},
+{
+"id": 311067,
+"name": "S. Castro",
+"role": "A",
+"pos": "F",
+"prob": 25
+},
+{
+"id": 484027,
+"name": "A. Arena",
+"role": "A",
+"pos": "F",
+"prob": 6
+}
+],
+"out": [],
+"doubt": [],
+"coppa": null
+},
+"Como": {
+"id": 895,
+"coach": "Cesc Fabregas",
+"module": "4-2-3-1",
+"based_on": [
+{
+"fixture": 1550118,
+"date": "2026-09-14",
+"opponent": "Parma",
+"formation": "4-2-3-1"
+},
+{
+"fixture": 1550112,
+"date": "2026-09-04",
+"opponent": "Genoa",
+"formation": "4-2-3-1"
+},
+{
+"fixture": 1550105,
+"date": "2026-08-30",
+"opponent": "Napoli",
+"formation": "4-2-3-1"
+}
+],
+"xi": [
+{
+"id": 18959,
+"name": "Robert Sánchez",
+"role": "P",
+"pos": "G",
+"grid": "1:1",
+"prob": 61,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 8574,
+"name": "J. Butez",
+"prob": 60,
+"share": 50
+},
+"out_for": null,
+"share": 50
+},
+{
+"id": 197448,
+"name": "Yan Couto",
+"role": "D",
+"pos": "D",
+"grid": "2:4",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": {
+"id": 336560,
+"name": "Álex Valle",
+"prob": 60,
+"share": 41
+},
+"out_for": null,
+"share": 59
+},
+{
+"id": 386305,
+"name": "Jacobo Ramón Naveros",
+"role": "D",
+"pos": "D",
+"grid": "2:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 26301,
+"name": "M. Kempf",
+"role": "D",
+"pos": "D",
+"grid": "2:2",
+"prob": 62,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 19720,
+"name": "T. Chalobah",
+"prob": 60,
+"share": 49
+},
+"out_for": null,
+"share": 51
+},
+{
+"id": 309792,
+"name": "Kaiki",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 62,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 288699,
+"name": "M. Perrone",
+"role": "C",
+"pos": "M",
+"grid": "3:2",
+"prob": 79,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 162266,
+"name": "L. da Cunha",
+"role": "C",
+"pos": "M",
+"grid": "3:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 400948,
+"name": "Assane Diao",
+"role": "A",
+"pos": "M",
+"grid": "4:3",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 350037,
+"name": "N. Paz",
+"role": "C",
+"pos": "M",
+"grid": "4:2",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 295026,
+"name": "M. Baturina",
+"role": "C",
+"pos": "M",
+"grid": "4:1",
+"prob": 82,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 877,
+"name": "M. Kean",
+"role": "A",
+"pos": "F",
+"grid": "5:1",
+"prob": 62,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 26845,
+"name": "T. Douvikas",
+"prob": 61,
+"share": 50
+},
+"out_for": null,
+"share": 50
+}
+],
+"bench": [
+{
+"id": 31719,
+"name": "M. Vigorito",
+"role": "P",
+"pos": "G",
+"prob": 14
+},
+{
+"id": 14266,
+"name": "I. Smolčić",
+"role": "D",
+"pos": "D",
+"prob": 16
+},
+{
+"id": 32034,
+"name": "A. Dossena",
+"role": "D",
+"pos": "D",
+"prob": 14
+},
+{
+"id": 47085,
+"name": "Luis Milla",
+"role": "C",
+"pos": "M",
+"prob": 37
+},
+{
+"id": 659,
+"name": "M. Caqueret",
+"role": "C",
+"pos": "M",
+"prob": 20
+},
+{
+"id": 443162,
+"name": "Jesús Rodríguez",
+"role": "C",
+"pos": "F",
+"prob": 16
+},
+{
+"id": 161590,
+"name": "I. Azon",
+"role": "A",
+"pos": "F",
+"prob": 5
+}
+],
+"out": [],
+"doubt": [],
+"coppa": null
+},
+"Parma": {
+"id": 523,
+"coach": "Carlos Cuesta",
+"module": "3-4-2-1",
+"based_on": [
+{
+"fixture": 1550118,
+"date": "2026-09-14",
+"opponent": "Como",
+"formation": "3-4-2-1"
+},
+{
+"fixture": 1550115,
+"date": "2026-09-06",
+"opponent": "Monza",
+"formation": "3-4-2-1"
+},
+{
+"fixture": 1550101,
+"date": "2026-08-29",
+"opponent": "Juventus",
+"formation": "4-4-2"
+}
+],
+"xi": [
+{
+"id": 180762,
+"name": "E. Corvi",
+"role": "P",
+"pos": "G",
+"grid": "1:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 21090,
+"name": "Diego Carlos",
+"role": "D",
+"pos": "D",
+"grid": "2:3",
+"prob": 70,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 428237,
+"name": "M. Troilo",
+"role": "D",
+"pos": "D",
+"grid": "2:2",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 30420,
+"name": "E. Del Prato",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 499380,
+"name": "S. Britschgi",
+"role": "D",
+"pos": "M",
+"grid": "3:4",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 48491,
+"name": "Vincent Sierro",
+"role": "C",
+"pos": "M",
+"grid": "3:3",
+"prob": 70,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 362752,
+"name": "C. Ordoñez",
+"prob": 54,
+"share": 44
+},
+"out_for": null,
+"share": 56
+},
+{
+"id": 308836,
+"name": "M. Keita",
+"role": "C",
+"pos": "M",
+"grid": "3:2",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 91358,
+"name": "E. Valeri",
+"role": "D",
+"pos": "M",
+"grid": "3:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 194750,
+"name": "E. Touré",
+"role": "A",
+"pos": "F",
+"grid": "4:2",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 483670,
+"name": "S. Lontani",
+"role": "A",
+"pos": "F",
+"grid": "4:1",
+"prob": 73,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 301924,
+"name": "N. Elphege",
+"role": "A",
+"pos": "F",
+"grid": "5:1",
+"prob": 62,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 194905,
+"name": "D. Romero",
+"prob": 37,
+"share": 37
+},
+"out_for": null,
+"share": 63
+}
+],
+"bench": [
+{
+"id": 335117,
+"name": "G. Daffara",
+"role": "P",
+"pos": "G",
+"prob": 26
+},
+{
+"id": 576948,
+"name": "D. Drobnic",
+"role": "D",
+"pos": "D",
+"prob": 34
+},
+{
+"id": 6221,
+"name": "L. Valenti",
+"role": "D",
+"pos": "D",
+"prob": 16
+},
+{
+"id": 322630,
+"name": "G. Fabbian",
+"role": "C",
+"pos": "M",
+"prob": 36
+},
+{
+"id": 628,
+"name": "Adrián Bernabé",
+"role": "C",
+"pos": "M",
+"prob": 33
+},
+{
+"id": 292543,
+"name": "M. Frigan",
+"role": "A",
+"pos": "F",
+"prob": 24
+},
+{
+"id": 48193,
+"name": "P. Almqvist",
+"role": "C",
+"pos": "F",
+"prob": 20
+}
+],
+"out": [],
+"doubt": [],
+"coppa": null
+},
+"Sassuolo": {
+"id": 488,
+"coach": "Alberto Aquilani",
+"module": "4-2-3-1",
+"based_on": [
+{
+"fixture": 1550124,
+"date": "2026-09-13",
+"opponent": "Juventus",
+"formation": "4-2-3-1"
+},
+{
+"fixture": 1550108,
+"date": "2026-09-06",
+"opponent": "Bologna",
+"formation": "4-3-3"
+},
+{
+"fixture": 1550106,
+"date": "2026-08-29",
+"opponent": "Torino",
+"formation": "4-3-3"
+}
+],
+"xi": [
+{
+"id": 616,
+"name": "A. Murić",
+"role": "P",
+"pos": "G",
+"grid": "1:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 382448,
+"name": "S. Cinquegrano",
+"role": "D",
+"pos": "D",
+"grid": "2:4",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 37651,
+"name": "J. Idzes",
+"role": "D",
+"pos": "D",
+"grid": "2:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 290546,
+"name": "F. Leysen",
+"role": "D",
+"pos": "D",
+"grid": "2:2",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 135526,
+"name": "J. Doig",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 902,
+"name": "N. Matić",
+"role": "C",
+"pos": "M",
+"grid": "3:2",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 343562,
+"name": "L. Lipani",
+"role": "C",
+"pos": "M",
+"grid": "3:1",
+"prob": 73,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": {
+"id": 339872,
+"name": "Vasilije Adžić",
+"prob": 61,
+"share": 46
+},
+"out_for": null,
+"share": 54
+},
+{
+"id": 30537,
+"name": "D. Berardi",
+"role": "A",
+"pos": "M",
+"grid": "4:3",
+"prob": 64,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 39143,
+"name": "K. Thorstvedt",
+"role": "C",
+"pos": "M",
+"grid": "4:2",
+"prob": 64,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 2215,
+"name": "A. Laurienté",
+"role": "A",
+"pos": "M",
+"grid": "4:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 215,
+"name": "S. Esposito",
+"role": "A",
+"pos": "F",
+"grid": "5:1",
+"prob": 61,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 126690,
+"name": "K. Bowie",
+"prob": 61,
+"share": 50
+},
+"out_for": null,
+"share": 50
+}
+],
+"bench": [
+{
+"id": 30519,
+"name": "S. Turati",
+"role": "P",
+"pos": "G",
+"prob": 14
+},
+{
+"id": 265722,
+"name": "Rafael Obrador",
+"role": "D",
+"pos": "D",
+"prob": 30
+},
+{
+"id": 1902,
+"name": "D. Ćaleta-Car",
+"role": "D",
+"pos": "D",
+"prob": 26
+},
+{
+"id": 455245,
+"name": "D. Bakola",
+"role": "C",
+"pos": "M",
+"prob": 33
+},
+{
+"id": 68407,
+"name": "A. Ghion",
+"role": "C",
+"pos": "M",
+"prob": 16
+},
+{
+"id": 342035,
+"name": "C. Volpato",
+"role": "C",
+"pos": "F",
+"prob": 48
+},
+{
+"id": 347265,
+"name": "B. Domínguez",
+"role": "C",
+"pos": "F",
+"prob": 18
+}
+],
+"out": [],
+"doubt": [],
+"coppa": null
+},
+"Juventus": {
+"id": 496,
+"coach": "Luciano Spalletti",
+"module": "4-2-3-1",
+"based_on": [
+{
+"fixture": 1550124,
+"date": "2026-09-13",
+"opponent": "Sassuolo",
+"formation": "4-2-3-1"
+},
+{
+"fixture": 1550114,
+"date": "2026-09-06",
+"opponent": "AC Milan",
+"formation": "4-2-3-1"
+},
+{
+"fixture": 1550101,
+"date": "2026-08-29",
+"opponent": "Parma",
+"formation": "4-4-2"
+}
+],
+"xi": [
+{
+"id": 31354,
+"name": "G. Vicario",
+"role": "P",
+"pos": "G",
+"grid": "1:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 162188,
+"name": "P. Kalulu",
+"role": "D",
+"pos": "D",
+"grid": "2:4",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 30497,
+"name": "Bremer",
+"role": "D",
+"pos": "D",
+"grid": "2:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 1929,
+"name": "J. Lucumí",
+"role": "D",
+"pos": "D",
+"grid": "2:2",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 22222,
+"name": "Z. Çelik",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 47522,
+"name": "Douglas Luiz",
+"role": "C",
+"pos": "M",
+"grid": "3:2",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 36899,
+"name": "T. Koopmeiners",
+"role": "C",
+"pos": "M",
+"grid": "3:1",
+"prob": 64,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 30533,
+"name": "M. Locatelli",
+"prob": 54,
+"share": 46
+},
+"out_for": null,
+"share": 54
+},
+{
+"id": 161585,
+"name": "Francisco Conceição",
+"role": "C",
+"pos": "M",
+"grid": "4:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 26315,
+"name": "N. González",
+"role": "C",
+"pos": "M",
+"grid": "4:2",
+"prob": 79,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 395559,
+"name": "Kerim-Sam Alajbegović",
+"role": "C",
+"pos": "M",
+"grid": "4:1",
+"prob": 79,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 21104,
+"name": "R. Kolo Muani",
+"role": "A",
+"pos": "F",
+"grid": "5:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+}
+],
+"bench": [
+{
+"id": 850,
+"name": "C. Pinsoglio",
+"role": "P",
+"pos": "G",
+"prob": 14
+},
+{
+"id": 19263,
+"name": "L. Kelly",
+"role": "D",
+"pos": "D",
+"prob": 18
+},
+{
+"id": 268341,
+"name": "F. Gatti",
+"role": "D",
+"pos": "D",
+"prob": 16
+},
+{
+"id": 436927,
+"name": "A. Owusu",
+"role": "C",
+"pos": "M",
+"prob": 12
+},
+{
+"id": 237129,
+"name": "P. Sarr",
+"role": "C",
+"pos": "M",
+"prob": 11
+},
+{
+"id": 30531,
+"name": "J. Boga",
+"role": "A",
+"pos": "F",
+"prob": 25
+},
+{
+"id": 8489,
+"name": "J. David",
+"role": "A",
+"pos": "F",
+"prob": 20
+}
+],
+"out": [],
+"doubt": [],
+"coppa": null
+},
+"Napoli": {
+"id": 492,
+"coach": "Massimiliano Allegri",
+"module": "4-2-3-1",
+"based_on": [
+{
+"fixture": 1550123,
+"date": "2026-09-13",
+"opponent": "Bologna",
+"formation": "4-2-3-1"
+},
+{
+"fixture": 1550113,
+"date": "2026-09-05",
+"opponent": "Inter",
+"formation": "4-3-3"
+},
+{
+"fixture": 1550105,
+"date": "2026-08-30",
+"opponent": "Como",
+"formation": "4-3-3"
+}
+],
+"xi": [
+{
+"id": 31156,
+"name": "V. Milinković-Savić",
+"role": "P",
+"pos": "G",
+"grid": "1:1",
+"prob": 61,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 312,
+"name": "A. Meret",
+"prob": 54,
+"share": 47
+},
+"out_for": null,
+"share": 53
+},
+{
+"id": 31042,
+"name": "G. Di Lorenzo",
+"role": "D",
+"pos": "D",
+"grid": "2:4",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 1314,
+"name": "Amir Rrahmani",
+"role": "D",
+"pos": "D",
+"grid": "2:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 237066,
+"name": "Rafa Marín",
+"role": "D",
+"pos": "D",
+"grid": "2:2",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 862,
+"name": "L. Spinazzola",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 79,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 130423,
+"name": "B. Gilmour",
+"role": "C",
+"pos": "M",
+"grid": "3:2",
+"prob": 62,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 3406,
+"name": "A. Zambo Anguissa",
+"prob": 54,
+"share": 47
+},
+"out_for": null,
+"share": 53
+},
+{
+"id": 47439,
+"name": "S. Lobotka",
+"role": "C",
+"pos": "M",
+"grid": "3:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 219,
+"name": "M. Politano",
+"role": "C",
+"pos": "M",
+"grid": "4:3",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 629,
+"name": "K. De Bruyne",
+"role": "C",
+"pos": "M",
+"grid": "4:2",
+"prob": 64,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 347395,
+"name": "A. Vergara",
+"role": "C",
+"pos": "M",
+"grid": "4:1",
+"prob": 72,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 288006,
+"name": "R. Højlund",
+"role": "A",
+"pos": "F",
+"grid": "5:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+}
+],
+"bench": [
+{
+"id": 32172,
+"name": "N. Contini",
+"role": "P",
+"pos": "G",
+"prob": 14
+},
+{
+"id": 47254,
+"name": "M. Olivera",
+"role": "D",
+"pos": "D",
+"prob": 30
+},
+{
+"id": 348532,
+"name": "C. Favasuli",
+"role": "D",
+"pos": "D",
+"prob": 16
+},
+{
+"id": 903,
+"name": "S. McTominay",
+"role": "C",
+"pos": "M",
+"prob": 20
+},
+{
+"id": 310943,
+"name": "Alisson Santos",
+"role": "A",
+"pos": "F",
+"prob": 37
+},
+{
+"id": 544,
+"name": "N. Lang",
+"role": "A",
+"pos": "F",
+"prob": 30
+}
+],
+"out": [],
+"doubt": [],
+"coppa": null
+},
+"Bologna": {
+"id": 500,
+"coach": "Domenico Tedesco",
+"module": "4-2-3-1",
+"based_on": [
+{
+"fixture": 1550123,
+"date": "2026-09-13",
+"opponent": "Napoli",
+"formation": "4-2-3-1"
+},
+{
+"fixture": 1550108,
+"date": "2026-09-06",
+"opponent": "Sassuolo",
+"formation": "4-2-3-1"
+},
+{
+"fixture": 1550098,
+"date": "2026-08-31",
+"opponent": "Atalanta",
+"formation": "4-2-3-1"
+}
+],
+"xi": [
+{
+"id": 446089,
+"name": "M. Pessina",
+"role": "P",
+"pos": "G",
+"grid": "1:1",
+"prob": 61,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 2998,
+"name": "Ł. Skorupski",
+"prob": 60,
+"share": 50
+},
+"out_for": null,
+"share": 50
+},
+{
+"id": 47985,
+"name": "E. Holm",
+"role": "D",
+"pos": "D",
+"grid": "2:4",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 39254,
+"name": "T. Heggem",
+"role": "D",
+"pos": "D",
+"grid": "2:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 204043,
+"name": "A. Theate",
+"role": "D",
+"pos": "D",
+"grid": "2:2",
+"prob": 78,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": {
+"id": 295223,
+"name": "R. Alhassane",
+"prob": 54,
+"share": 41
+},
+"out_for": null,
+"share": 59
+},
+{
+"id": 134,
+"name": "Juan Miranda",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 62,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 416062,
+"name": "E. Helland",
+"prob": 34,
+"share": 35
+},
+"out_for": null,
+"share": 65
+},
+{
+"id": 44814,
+"name": "L. Ferguson",
+"role": "C",
+"pos": "M",
+"grid": "3:2",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 31273,
+"name": "T. Pobega",
+"role": "C",
+"pos": "M",
+"grid": "3:1",
+"prob": 82,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 873,
+"name": "F. Bernardeschi",
+"role": "C",
+"pos": "M",
+"grid": "4:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 426626,
+"name": "M. Amondarain",
+"role": "C",
+"pos": "M",
+"grid": "4:2",
+"prob": 62,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 30438,
+"name": "N. Cambiaghi",
+"role": "C",
+"pos": "M",
+"grid": "4:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 30440,
+"name": "R. Piccoli",
+"role": "A",
+"pos": "F",
+"grid": "5:1",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+}
+],
+"bench": [
+{
+"id": 616142,
+"name": "Matteo Franceschelli",
+"role": "P",
+"pos": "G",
+"prob": 20
+},
+{
+"id": 606953,
+"name": "M. Libra",
+"role": "D",
+"pos": "D",
+"prob": 18
+},
+{
+"id": 30498,
+"name": "L. De Silvestri",
+"role": "D",
+"pos": "D",
+"prob": 14
+},
+{
+"id": 1322,
+"name": "N. Moro",
+"role": "C",
+"pos": "M",
+"prob": 20
+},
+{
+"id": 30542,
+"name": "J. Odgaard",
+"role": "C",
+"pos": "F",
+"prob": 55
+},
+{
+"id": 15811,
+"name": "A. Dovbyk",
+"role": "A",
+"pos": "F",
+"prob": 25
+}
+],
+"out": [],
+"doubt": [],
+"coppa": null
+},
+"Lecce": {
+"id": 867,
+"coach": "Eusebio Di Francesco",
+"module": "4-3-3",
+"based_on": [
+{
+"fixture": 1550122,
+"date": "2026-09-13",
+"opponent": "Monza",
+"formation": "4-3-3"
+},
+{
+"fixture": 1550109,
+"date": "2026-09-07",
+"opponent": "Cagliari",
+"formation": "4-1-4-1"
+},
+{
+"fixture": 1550103,
+"date": "2026-08-31",
+"opponent": "AS Roma",
+"formation": "3-5-2"
+}
+],
+"xi": [
+{
+"id": 56459,
+"name": "W. Falcone",
+"role": "P",
+"pos": "G",
+"grid": "1:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 161702,
+"name": "Danilo Veiga",
+"role": "D",
+"pos": "D",
+"grid": "2:4",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 203219,
+"name": "J. Siebert",
+"role": "D",
+"pos": "D",
+"grid": "2:3",
+"prob": 73,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": {
+"id": 291589,
+"name": "Kialonda Gaspar",
+"prob": 60,
+"share": 45
+},
+"out_for": null,
+"share": 55
+},
+{
+"id": 455316,
+"name": "Tiago Gabriel",
+"role": "D",
+"pos": "D",
+"grid": "2:2",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 31543,
+"name": "A. Gallo",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 78,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 1748,
+"name": "L. Coulibaly",
+"role": "C",
+"pos": "M",
+"grid": "3:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 46170,
+"name": "I. Ilić",
+"role": "C",
+"pos": "M",
+"grid": "3:2",
+"prob": 79,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": {
+"id": 334925,
+"name": "O. Ngom",
+"prob": 55,
+"share": 41
+},
+"out_for": null,
+"share": 59
+},
+{
+"id": 56560,
+"name": "Y. Maleh",
+"role": "C",
+"pos": "M",
+"grid": "3:1",
+"prob": 64,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 8643,
+"name": "K. N’Dri",
+"role": "A",
+"pos": "F",
+"grid": "4:3",
+"prob": 58,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 6662,
+"name": "S. Pierotti",
+"prob": 61,
+"share": 51
+},
+"out_for": null,
+"share": 49
+},
+{
+"id": 264122,
+"name": "N. Štulić",
+"role": "A",
+"pos": "F",
+"grid": "4:2",
+"prob": 79,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 277862,
+"name": "Joël Monteiro",
+"role": "C",
+"pos": "F",
+"grid": "4:1",
+"prob": 76,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+}
+],
+"bench": [
+{
+"id": 31717,
+"name": "M. Bleve",
+"role": "P",
+"pos": "G",
+"prob": 14
+},
+{
+"id": 19738,
+"name": "C. Ndaba",
+"role": "D",
+"pos": "D",
+"prob": 34
+},
+{
+"id": 616194,
+"name": "Elijah Scott",
+"role": "D",
+"pos": "D",
+"prob": 16
+},
+{
+"id": 387537,
+"name": "Olaf Gorter",
+"role": "C",
+"pos": "M",
+"prob": 28
+},
+{
+"id": 126974,
+"name": "O. Gandelman",
+"role": "C",
+"pos": "M",
+"prob": 20
+},
+{
+"id": 345107,
+"name": "A. Ahmed Fatah",
+"role": "A",
+"pos": "F",
+"prob": 20
+},
+{
+"id": 120,
+"name": "W. Geubbels",
+"role": "A",
+"pos": "F",
+"prob": 20
+}
+],
+"out": [],
+"doubt": [],
+"coppa": null
+},
+"Monza": {
+"id": 1579,
+"coach": "Ivan Juric",
+"module": "3-4-2-1",
+"based_on": [
+{
+"fixture": 1550122,
+"date": "2026-09-13",
+"opponent": "Lecce",
+"formation": "3-4-2-1"
+},
+{
+"fixture": 1550115,
+"date": "2026-09-06",
+"opponent": "Parma",
+"formation": "3-4-2-1"
+},
+{
+"fixture": 1550104,
+"date": "2026-08-29",
+"opponent": "Udinese",
+"formation": "3-4-2-1"
+}
+],
+"xi": [
+{
+"id": 31191,
+"name": "D. Thiam",
+"role": "P",
+"pos": "G",
+"grid": "1:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 448977,
+"name": "E. Kouadio",
+"role": "D",
+"pos": "D",
+"grid": "2:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 342018,
+"name": "L. Lucchesi",
+"role": "D",
+"pos": "D",
+"grid": "2:2",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 193270,
+"name": "A. Carboni",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 30708,
+"name": "S. Birindelli",
+"role": "D",
+"pos": "M",
+"grid": "3:4",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 56851,
+"name": "M. Folorunsho",
+"role": "C",
+"pos": "M",
+"grid": "3:3",
+"prob": 79,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 408635,
+"name": "E. Akinsanmiro",
+"role": "C",
+"pos": "M",
+"grid": "3:2",
+"prob": 79,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 41324,
+"name": "Ricardo Mangas",
+"role": "D",
+"pos": "M",
+"grid": "3:1",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 30431,
+"name": "A. Colpani",
+"role": "C",
+"pos": "F",
+"grid": "4:2",
+"prob": 73,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 380691,
+"name": "Jay Robinson",
+"role": "A",
+"pos": "F",
+"grid": "4:1",
+"prob": 78,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 340547,
+"name": "Gustavo Varela",
+"role": "A",
+"pos": "F",
+"grid": "5:1",
+"prob": 68,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": {
+"id": 30603,
+"name": "Dany Mota",
+"prob": 42,
+"share": 38
+},
+"out_for": null,
+"share": 62
+}
+],
+"bench": [
+{
+"id": 388883,
+"name": "A. Strajnar",
+"role": "P",
+"pos": "G",
+"prob": 14
+},
+{
+"id": 384423,
+"name": "A. Bakoune",
+"role": "D",
+"pos": "D",
+"prob": 18
+},
+{
+"id": 436239,
+"name": "Y. Maye",
+"role": "D",
+"pos": "D",
+"prob": 16
+},
+{
+"id": 613450,
+"name": "M. Mout",
+"role": "C",
+"pos": "M",
+"prob": 31
+},
+{
+"id": 550912,
+"name": "F. Ondoa",
+"role": "C",
+"pos": "M",
+"prob": 28
+},
+{
+"id": 284242,
+"name": "O. Forson",
+"role": "C",
+"pos": "F",
+"prob": 37
+},
+{
+"id": 1649,
+"name": "P. Cutrone",
+"role": "A",
+"pos": "F",
+"prob": 33
+}
+],
+"out": [],
+"doubt": [],
+"coppa": null
+},
+"Atalanta": {
+"id": 499,
+"coach": "Maurizio Sarri",
+"module": "4-3-3",
+"based_on": [
+{
+"fixture": 1550117,
+"date": "2026-09-12",
+"opponent": "Cagliari",
+"formation": "4-3-3"
+},
+{
+"fixture": 1550107,
+"date": "2026-09-05",
+"opponent": "AS Roma",
+"formation": "4-3-3"
+},
+{
+"fixture": 1550098,
+"date": "2026-08-31",
+"opponent": "Bologna",
+"formation": "4-3-3"
+}
+],
+"xi": [
+{
+"id": 30417,
+"name": "M. Carnesecchi",
+"role": "P",
+"pos": "G",
+"grid": "1:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 91422,
+"name": "R. Bellanova",
+"role": "D",
+"pos": "D",
+"grid": "2:4",
+"prob": 79,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 48119,
+"name": "O. Kossounou",
+"role": "D",
+"pos": "D",
+"grid": "2:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 289761,
+"name": "G. Scalvini",
+"role": "D",
+"pos": "D",
+"grid": "2:2",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 1442,
+"name": "S. Kolašinac",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 178749,
+"name": "L. Samardžić",
+"role": "C",
+"pos": "M",
+"grid": "3:3",
+"prob": 79,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": {
+"id": 325,
+"name": "G. Gaetano",
+"prob": 54,
+"share": 41
+},
+"out_for": null,
+"share": 59
+},
+{
+"id": 1642,
+"name": "F. Kessié",
+"role": "C",
+"pos": "M",
+"grid": "3:2",
+"prob": 62,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 1358,
+"name": "E. Elmas",
+"prob": 42,
+"share": 40
+},
+"out_for": null,
+"share": 60
+},
+{
+"id": 10097,
+"name": "Éderson",
+"role": "C",
+"pos": "M",
+"grid": "3:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 147859,
+"name": "C. De Ketelaere",
+"role": "A",
+"pos": "F",
+"grid": "4:3",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 30544,
+"name": "G. Scamacca",
+"role": "A",
+"pos": "F",
+"grid": "4:2",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 278095,
+"name": "J. Rowe",
+"role": "C",
+"pos": "F",
+"grid": "4:1",
+"prob": 61,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": null,
+"out_for": null
+}
+],
+"bench": [
+{
+"id": 31069,
+"name": "M. Sportiello",
+"role": "P",
+"pos": "G",
+"prob": 14
+},
+{
+"id": 2286,
+"name": "D. Zappacosta",
+"role": "D",
+"pos": "D",
+"prob": 36
+},
+{
+"id": 264857,
+"name": "L. Bernasconi",
+"role": "D",
+"pos": "D",
+"prob": 21
+},
+{
+"id": 2763,
+"name": "Mario Pasalic",
+"role": "C",
+"pos": "M",
+"prob": 37
+},
+{
+"id": 203474,
+"name": "N. Zalewski",
+"role": "C",
+"pos": "M",
+"prob": 18
+},
+{
+"id": 30543,
+"name": "G. Raspadori",
+"role": "A",
+"pos": "F",
+"prob": 30
+},
+{
+"id": 66817,
+"name": "N. Krstović",
+"role": "A",
+"pos": "F",
+"prob": 20
+}
+],
+"out": [],
+"doubt": [],
+"coppa": null
+},
+"Cagliari": {
+"id": 490,
+"coach": "Fabio Pisacane",
+"module": "4-4-1-1",
+"based_on": [
+{
+"fixture": 1550117,
+"date": "2026-09-12",
+"opponent": "Atalanta",
+"formation": "4-4-1-1"
+},
+{
+"fixture": 1550109,
+"date": "2026-09-07",
+"opponent": "Lecce",
+"formation": "4-3-2-1"
+},
+{
+"fixture": 1550099,
+"date": "2026-08-30",
+"opponent": "Inter",
+"formation": "4-2-3-1"
+}
+],
+"xi": [
+{
+"id": 30731,
+"name": "E. Caprile",
+"role": "P",
+"pos": "G",
+"grid": "1:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 41964,
+"name": "Zé Pedro",
+"role": "D",
+"pos": "D",
+"grid": "2:4",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 30561,
+"name": "A. Deiola",
+"role": "C",
+"pos": "D",
+"grid": "2:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 415155,
+"name": "J. Rodríguez",
+"role": "D",
+"pos": "D",
+"grid": "2:2",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 321744,
+"name": "A. Obert",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 30505,
+"name": "M. Adopo",
+"role": "C",
+"pos": "M",
+"grid": "3:4",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 394183,
+"name": "A. Romano",
+"role": "C",
+"pos": "M",
+"grid": "3:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 182,
+"name": "H. Winks",
+"role": "C",
+"pos": "M",
+"grid": "3:2",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 340700,
+"name": "J. Fazzini",
+"role": "C",
+"pos": "M",
+"grid": "3:1",
+"prob": 82,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 134926,
+"name": "D. Maldini",
+"role": "A",
+"pos": "F",
+"grid": "4:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 626704,
+"name": "P. Mendy",
+"role": "A",
+"pos": "F",
+"grid": "5:1",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+}
+],
+"bench": [
+{
+"id": 3737,
+"name": "A. Sherri",
+"role": "P",
+"pos": "G",
+"prob": 14
+},
+{
+"id": 377118,
+"name": "R. Kofler",
+"role": "D",
+"pos": "D",
+"prob": 25
+},
+{
+"id": 2484,
+"name": "Y. Mina",
+"role": "D",
+"pos": "D",
+"prob": 20
+},
+{
+"id": 203,
+"name": "R. Gagliardini",
+"role": "C",
+"pos": "M",
+"prob": 18
+},
+{
+"id": 570129,
+"name": "A. Akarakiri",
+"role": "C",
+"pos": "M",
+"prob": 14
+},
+{
+"id": 188319,
+"name": "Kevin Carlos",
+"role": "A",
+"pos": "F",
+"prob": 27
+},
+{
+"id": 31734,
+"name": "M. Felici",
+"role": "C",
+"pos": "F",
+"prob": 22
+}
+],
+"out": [],
+"doubt": [],
+"coppa": null
+},
+"Lazio": {
+"id": 487,
+"coach": "Gennaro Gattuso",
+"module": "4-3-3",
+"based_on": [
+{
+"fixture": 1550121,
+"date": "2026-09-12",
+"opponent": "AC Milan",
+"formation": "4-3-3"
+},
+{
+"fixture": 1550116,
+"date": "2026-09-07",
+"opponent": "Udinese",
+"formation": "4-3-3"
+},
+{
+"fixture": 1550102,
+"date": "2026-08-30",
+"opponent": "Genoa",
+"formation": "4-3-3"
+}
+],
+"xi": [
+{
+"id": 26644,
+"name": "C. Mandas",
+"role": "P",
+"pos": "G",
+"grid": "1:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 342651,
+"name": "R. Floriani Mussolini",
+"role": "D",
+"pos": "D",
+"grid": "2:4",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 14701,
+"name": "J. Šutalo",
+"role": "D",
+"pos": "D",
+"grid": "2:3",
+"prob": 61,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 37117,
+"name": "D. Doekhi",
+"prob": 54,
+"share": 47
+},
+"out_for": null,
+"share": 53
+},
+{
+"id": 350857,
+"name": "O. Provstgaard",
+"role": "D",
+"pos": "D",
+"grid": "2:2",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 41577,
+"name": "Nuno Tavares",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 31173,
+"name": "D. Frattesi",
+"role": "C",
+"pos": "M",
+"grid": "3:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 333116,
+"name": "R. Belahyane",
+"role": "C",
+"pos": "M",
+"grid": "3:2",
+"prob": 79,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 38749,
+"name": "K. Taylor",
+"role": "C",
+"pos": "M",
+"grid": "3:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 286474,
+"name": "M. Cancellieri",
+"role": "C",
+"pos": "F",
+"grid": "4:3",
+"prob": 67,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": {
+"id": 31094,
+"name": "A. Pinamonti",
+"prob": 37,
+"share": 36
+},
+"out_for": null,
+"share": 64
+},
+{
+"id": 133729,
+"name": "T. Noslin",
+"role": "A",
+"pos": "F",
+"grid": "4:2",
+"prob": 56,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 135519,
+"name": "G. Isaksen",
+"prob": 37,
+"share": 40
+},
+"out_for": null,
+"share": 60
+},
+{
+"id": 30937,
+"name": "M. Zaccagni",
+"role": "C",
+"pos": "F",
+"grid": "4:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+}
+],
+"bench": [
+{
+"id": 408625,
+"name": "D. Renzetti",
+"role": "P",
+"pos": "G",
+"prob": 14
+},
+{
+"id": 1702,
+"name": "Pedraza",
+"role": "D",
+"pos": "D",
+"prob": 30
+},
+{
+"id": 616198,
+"name": "Ricardo Bordon",
+"role": "D",
+"pos": "D",
+"prob": 14
+},
+{
+"id": 30784,
+"name": "N. Rovella",
+"role": "C",
+"pos": "M",
+"prob": 20
+},
+{
+"id": 30866,
+"name": "M. Lazzari",
+"role": "D",
+"pos": "M",
+"prob": 18
+},
+{
+"id": 2799,
+"name": "A. Guðmundsson",
+"role": "C",
+"pos": "F",
+"prob": 25
+},
+{
+"id": 22015,
+"name": "B. Dia",
+"role": "A",
+"pos": "F",
+"prob": 20
+}
+],
+"out": [],
+"doubt": [],
+"coppa": null
+},
+"AC Milan": {
+"id": 489,
+"coach": "Ruben Amorim",
+"module": "3-4-2-1",
+"based_on": [
+{
+"fixture": 1550121,
+"date": "2026-09-12",
+"opponent": "Lazio",
+"formation": "3-4-2-1"
+},
+{
+"fixture": 1550114,
+"date": "2026-09-06",
+"opponent": "Juventus",
+"formation": "3-4-2-1"
+},
+{
+"fixture": 1550097,
+"date": "2026-08-28",
+"opponent": "Venezia",
+"formation": "3-4-2-1"
+}
+],
+"xi": [
+{
+"id": 22221,
+"name": "M. Maignan",
+"role": "P",
+"pos": "G",
+"grid": "1:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 162952,
+"name": "Mario Gila",
+"role": "D",
+"pos": "D",
+"grid": "2:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 162141,
+"name": "K. De Winter",
+"role": "D",
+"pos": "D",
+"grid": "2:2",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 45826,
+"name": "S. Pavlović",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 1696,
+"name": "S. Chukwueze",
+"role": "C",
+"pos": "M",
+"grid": "3:4",
+"prob": 73,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": {
+"id": 162106,
+"name": "Y. Musah",
+"prob": 61,
+"share": 46
+},
+"out_for": null,
+"share": 54
+},
+{
+"id": 754,
+"name": "L. Modrić",
+"role": "C",
+"pos": "M",
+"grid": "3:3",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 272,
+"name": "A. Rabiot",
+"role": "C",
+"pos": "M",
+"grid": "3:2",
+"prob": 79,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 46731,
+"name": "P. Estupiñán",
+"role": "D",
+"pos": "M",
+"grid": "3:1",
+"prob": 73,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 2292,
+"name": "R. Loftus-Cheek",
+"role": "C",
+"pos": "F",
+"grid": "4:2",
+"prob": 61,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": {
+"id": 1417,
+"name": "A. Saelemaekers",
+"prob": 42,
+"share": 41
+},
+"out_for": null,
+"share": 59
+},
+{
+"id": 359100,
+"name": "A. Cissè",
+"role": "C",
+"pos": "F",
+"grid": "4:1",
+"prob": 67,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": {
+"id": 335056,
+"name": "Diego Moreira",
+"prob": 42,
+"share": 39
+},
+"out_for": null,
+"share": 61
+},
+{
+"id": 41585,
+"name": "Gonçalo Ramos",
+"role": "A",
+"pos": "F",
+"grid": "5:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+}
+],
+"bench": [
+{
+"id": 386298,
+"name": "L. Torriani",
+"role": "P",
+"pos": "G",
+"prob": 14
+},
+{
+"id": 374359,
+"name": "D. Bartesaghi",
+"role": "D",
+"pos": "D",
+"prob": 34
+},
+{
+"id": 264472,
+"name": "F. Terracciano",
+"role": "D",
+"pos": "D",
+"prob": 16
+},
+{
+"id": 17,
+"name": "C. Pulišić",
+"role": "C",
+"pos": "M",
+"prob": 28
+},
+{
+"id": 264705,
+"name": "A. Jashari",
+"role": "C",
+"pos": "M",
+"prob": 18
+},
+{
+"id": 284428,
+"name": "O. Hutchinson",
+"role": "C",
+"pos": "F",
+"prob": 26
+},
+{
+"id": 436260,
+"name": "F. Camarda",
+"role": "A",
+"pos": "F",
+"prob": 16
+}
+],
+"out": [],
+"doubt": [],
+"coppa": null
+},
+"Genoa": {
+"id": 495,
+"coach": "Daniele De Rossi",
+"module": "3-5-2",
+"based_on": [
+{
+"fixture": 1550119,
+"date": "2026-09-12",
+"opponent": "Frosinone",
+"formation": "3-5-2"
+},
+{
+"fixture": 1550112,
+"date": "2026-09-04",
+"opponent": "Como",
+"formation": "3-4-1-2"
+},
+{
+"fixture": 1550102,
+"date": "2026-08-30",
+"opponent": "Lazio",
+"formation": "3-4-2-1"
+}
+],
+"xi": [
+{
+"id": 37137,
+"name": "J. Bijlow",
+"role": "P",
+"pos": "G",
+"grid": "1:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 281826,
+"name": "A. Marcandalli",
+"role": "D",
+"pos": "D",
+"grid": "2:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 18967,
+"name": "L. Østigård",
+"role": "D",
+"pos": "D",
+"grid": "2:2",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 31137,
+"name": "S. Sabelli",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 34,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": null,
+"out_for": "J. Vásquez"
+},
+{
+"id": 36916,
+"name": "K. Ehizibue",
+"role": "D",
+"pos": "M",
+"grid": "3:5",
+"prob": 62,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 15881,
+"name": "M. Frendrup",
+"role": "C",
+"pos": "M",
+"grid": "3:4",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 288769,
+"name": "T. Baldanzi",
+"role": "C",
+"pos": "M",
+"grid": "3:3",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 957,
+"name": "D. Sow",
+"role": "C",
+"pos": "M",
+"grid": "3:2",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 89520,
+"name": "M. Ellertsson",
+"role": "C",
+"pos": "M",
+"grid": "3:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 263481,
+"name": "L. Colombo",
+"role": "A",
+"pos": "F",
+"grid": "4:2",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 66761,
+"name": "M. Osmajić",
+"role": "A",
+"pos": "F",
+"grid": "4:1",
+"prob": 79,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+}
+],
+"bench": [
+{
+"id": 31445,
+"name": "D. Sommariva",
+"role": "P",
+"pos": "G",
+"prob": 14
+},
+{
+"id": 362813,
+"name": "D. Puczka",
+"role": "D",
+"pos": "D",
+"prob": 14
+},
+{
+"id": 270613,
+"name": "M. Mitaj",
+"role": "D",
+"pos": "D",
+"prob": 14
+},
+{
+"id": 405239,
+"name": "Alexsandro Amorim",
+"role": "C",
+"pos": "M",
+"prob": 20
+},
+{
+"id": 284570,
+"name": "B. Norton-Cuffy",
+"role": "C",
+"pos": "M",
+"prob": 20
+},
+{
+"id": 281408,
+"name": "Vítinha",
+"role": "A",
+"pos": "F",
+"prob": 37
+},
+{
+"id": 56396,
+"name": "Junior Messias",
+"role": "C",
+"pos": "F",
+"prob": 20
+}
+],
+"out": [
+{
+"id": 35544,
+"name": "J. Vásquez",
+"role": "D",
+"pos": "D",
+"reason": "squalifica: espulso nell'ultima giornata",
+"back_at": null
+}
+],
+"doubt": [],
+"coppa": null
+},
+"Frosinone": {
+"id": 512,
+"coach": "Massimiliano Alvini",
+"module": "4-2-3-1",
+"based_on": [
+{
+"fixture": 1550119,
+"date": "2026-09-12",
+"opponent": "Genoa",
+"formation": "4-2-3-1"
+},
+{
+"fixture": 1550111,
+"date": "2026-09-06",
+"opponent": "Venezia",
+"formation": "4-2-3-1"
+},
+{
+"fixture": 1550100,
+"date": "2026-08-29",
+"opponent": "Fiorentina",
+"formation": "4-2-3-1"
+}
+],
+"xi": [
+{
+"id": 327774,
+"name": "L. Palmisani",
+"role": "P",
+"pos": "G",
+"grid": "1:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 191417,
+"name": "A. Oyono",
+"role": "D",
+"pos": "D",
+"grid": "2:4",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 353613,
+"name": "G. Calvani",
+"role": "D",
+"pos": "D",
+"grid": "2:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 162570,
+"name": "G. Cittadini",
+"role": "D",
+"pos": "D",
+"grid": "2:2",
+"prob": 73,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 379504,
+"name": "G. Bracaglia",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 32011,
+"name": "G. Calò",
+"role": "C",
+"pos": "M",
+"grid": "3:2",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 281096,
+"name": "P. Masini",
+"role": "C",
+"pos": "M",
+"grid": "3:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 334915,
+"name": "F. Ghedjemis",
+"role": "A",
+"pos": "M",
+"grid": "4:3",
+"prob": 62,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 7562,
+"name": "R. Schmid",
+"role": "C",
+"pos": "M",
+"grid": "4:2",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 311251,
+"name": "G. Kvernadze",
+"role": "A",
+"pos": "M",
+"grid": "4:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 314254,
+"name": "A. Raimondo",
+"role": "A",
+"pos": "F",
+"grid": "5:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+}
+],
+"bench": [
+{
+"id": 30882,
+"name": "M. Pisseri",
+"role": "P",
+"pos": "G",
+"prob": 14
+},
+{
+"id": 180586,
+"name": "I. Monterisi",
+"role": "D",
+"pos": "D",
+"prob": 37
+},
+{
+"id": 25366,
+"name": "K. Akpoguma",
+"role": "D",
+"pos": "D",
+"prob": 22
+},
+{
+"id": 335102,
+"name": "L. Hasa",
+"role": "C",
+"pos": "M",
+"prob": 16
+},
+{
+"id": 422153,
+"name": "Matteo Cichella",
+"role": "C",
+"pos": "M",
+"prob": 16
+},
+{
+"id": 348533,
+"name": "S. Fini",
+"role": "C",
+"pos": "F",
+"prob": 49
+},
+{
+"id": 61211,
+"name": "T. Bobček",
+"role": "A",
+"pos": "F",
+"prob": 25
+}
+],
+"out": [],
+"doubt": [],
+"coppa": null
+},
+"Venezia": {
+"id": 517,
+"coach": "Giovanni Stroppa",
+"module": "3-5-2",
+"based_on": [
+{
+"fixture": 1550126,
+"date": "2026-09-11",
+"opponent": "Fiorentina",
+"formation": "3-5-2"
+},
+{
+"fixture": 1550111,
+"date": "2026-09-06",
+"opponent": "Frosinone",
+"formation": "3-5-2"
+},
+{
+"fixture": 1550097,
+"date": "2026-08-28",
+"opponent": "AC Milan",
+"formation": "3-5-2"
+}
+],
+"xi": [
+{
+"id": 162445,
+"name": "F. Stanković",
+"role": "P",
+"pos": "G",
+"grid": "1:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 373825,
+"name": "J. Schingtienne",
+"role": "D",
+"pos": "D",
+"grid": "2:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 421807,
+"name": "M. Moreno",
+"role": "D",
+"pos": "D",
+"grid": "2:2",
+"prob": 62,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 25061,
+"name": "A. Bella-Kotchap",
+"prob": 48,
+"share": 44
+},
+"out_for": null,
+"share": 56
+},
+{
+"id": 37144,
+"name": "R. Haps",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 275394,
+"name": "A. Hainaut",
+"role": "D",
+"pos": "M",
+"grid": "3:5",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 107153,
+"name": "Kike Pérez",
+"role": "C",
+"pos": "M",
+"grid": "3:4",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 51266,
+"name": "G. Busio",
+"role": "C",
+"pos": "M",
+"grid": "3:3",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 1014,
+"name": "S. Sohm",
+"role": "C",
+"pos": "M",
+"grid": "3:2",
+"prob": 73,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 375321,
+"name": "R. Sagrado",
+"role": "D",
+"pos": "M",
+"grid": "3:1",
+"prob": 68,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 25414,
+"name": "J. Yeboah",
+"role": "A",
+"pos": "F",
+"grid": "4:2",
+"prob": 73,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 57446,
+"name": "A. Adams",
+"role": "A",
+"pos": "F",
+"grid": "4:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+}
+],
+"bench": [
+{
+"id": 30611,
+"name": "L. Montipò",
+"role": "P",
+"pos": "G",
+"prob": 14
+},
+{
+"id": 326183,
+"name": "R. Halhal",
+"role": "D",
+"pos": "D",
+"prob": 42
+},
+{
+"id": 1482,
+"name": "Thierry Correia",
+"role": "D",
+"pos": "D",
+"prob": 30
+},
+{
+"id": 1266,
+"name": "T. Bašić",
+"role": "C",
+"pos": "M",
+"prob": 26
+},
+{
+"id": 445973,
+"name": "Toni Fernández",
+"role": "C",
+"pos": "M",
+"prob": 16
+},
+{
+"id": 318546,
+"name": "A. Rrahmani",
+"role": "A",
+"pos": "F",
+"prob": 36
+},
+{
+"id": 26438,
+"name": "L. Lauberbach",
+"role": "A",
+"pos": "F",
+"prob": 20
+}
+],
+"out": [],
+"doubt": [],
+"coppa": null
+},
+"Fiorentina": {
+"id": 502,
+"coach": "Paolo Vanoli",
+"module": "4-2-3-1",
+"based_on": [
+{
+"fixture": 1550126,
+"date": "2026-09-11",
+"opponent": "Venezia",
+"formation": "4-2-3-1"
+},
+{
+"fixture": 1550110,
+"date": "2026-09-05",
+"opponent": "Torino",
+"formation": "4-3-3"
+},
+{
+"fixture": 1550100,
+"date": "2026-08-29",
+"opponent": "Frosinone",
+"formation": "4-3-3"
+}
+],
+"xi": [
+{
+"id": 882,
+"name": "David de Gea",
+"role": "P",
+"pos": "G",
+"grid": "1:1",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 330437,
+"name": "Álex Jiménez",
+"role": "D",
+"pos": "D",
+"grid": "2:4",
+"prob": 72,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": {
+"id": 490779,
+"name": "Valde",
+"prob": 60,
+"share": 45
+},
+"out_for": null,
+"share": 55
+},
+{
+"id": 162498,
+"name": "R. Drăgușin",
+"role": "D",
+"pos": "D",
+"grid": "2:3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 31642,
+"name": "L. Ranieri",
+"role": "D",
+"pos": "D",
+"grid": "2:2",
+"prob": 61,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 41734,
+"name": "João Mário",
+"prob": 42,
+"share": 41
+},
+"out_for": null,
+"share": 59
+},
+{
+"id": 424277,
+"name": "Viery",
+"role": "D",
+"pos": "D",
+"grid": "2:1",
+"prob": 79,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 311083,
+"name": "C. Ndour",
+"role": "C",
+"pos": "M",
+"grid": "3:2",
+"prob": 79,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": {
+"id": 474591,
+"name": "C. Inao OulaÃ¯",
+"prob": 54,
+"share": 41
+},
+"out_for": null,
+"share": 59
+},
+{
+"id": 876,
+"name": "N. Fagioli",
+"role": "C",
+"pos": "M",
+"grid": "3:1",
+"prob": 79,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 449249,
+"name": "Franco Mastantuono",
+"role": "C",
+"pos": "M",
+"grid": "4:3",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 347644,
+"name": "A. Atta",
+"role": "C",
+"pos": "M",
+"grid": "4:2",
+"prob": 73,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 383006,
+"name": "A. Njie",
+"role": "C",
+"pos": "M",
+"grid": "4:1",
+"prob": 76,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": null,
+"out_for": null
+},
+{
+"id": 125743,
+"name": "Beto",
+"role": "A",
+"pos": "F",
+"grid": "5:1",
+"prob": 62,
+"why": "titolare nelle ultime 1 su 3",
+"ballot": {
+"id": 292172,
+"name": "Mateo Pellegrino",
+"prob": 61,
+"share": 50
+},
+"out_for": null,
+"share": 50
+}
+],
+"bench": [
+{
+"id": 31352,
+"name": "L. Lezzerini",
+"role": "P",
+"pos": "G",
+"prob": 14
+},
+{
+"id": 1084,
+"name": "M. Pongračić",
+"role": "D",
+"pos": "D",
+"prob": 36
+},
+{
+"id": 41144,
+"name": "Dodô",
+"role": "D",
+"pos": "D",
+"prob": 26
+},
+{
+"id": 1639,
+"name": "M. Brescianini",
+"role": "C",
+"pos": "M",
+"prob": 37
+},
+{
+"id": 18748,
+"name": "Pote",
+"role": "C",
+"pos": "M",
+"prob": 28
+},
+{
+"id": 2799,
+"name": "A. Guðmundsson",
+"role": "C",
+"pos": "F",
+"prob": 29
+},
+{
+"id": 162128,
+"name": "W. Gnonto",
+"role": "A",
+"pos": "F",
+"prob": 16
+}
+],
+"out": [],
+"doubt": [],
+"coppa": null
+}
+},
+"missing": [],
+"note": "Le percentuali sono una stima statistica costruita solo sui nostri dati: formazioni ufficiali delle ultime giornate, indice di titolarità, quotazioni del listone, minuti giocati. Non sono notizie dagli allenamenti e non riprendono le probabili di altre testate. Chi non è mai partito titolare nelle giornate che guardiamo non supera il 30%, perché è il tasso base che misuriamo sulle nostre formazioni ufficiali: la quotazione può alzarlo dentro quel limite, non oltre. La rotazione europea viene considerata per le coppe di cui seguiamo il calendario: al momento la Champions League. Chi gioca Europa o Conference League non riceve questa correzione.",
+"coppe": {}
+}
