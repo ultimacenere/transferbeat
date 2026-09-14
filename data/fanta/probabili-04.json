@@ -1,5 +1,5 @@
 {
-"updated": "2026-09-13T23:17:40Z",
+"updated": "2026-09-14T13:52:44Z",
 "season": 2026,
 "matchday": 4,
 "stage": "giorno-gara",
@@ -2345,15 +2345,21 @@
 "out_for": null
 },
 {
-"id": 91358,
-"name": "E. Valeri",
+"id": 499380,
+"name": "S. Britschgi",
 "role": "D",
 "pos": "M",
 "grid": "3:4",
-"prob": 94,
-"why": "titolare nelle ultime 3 su 3",
-"ballot": null,
-"out_for": "S. Britschgi"
+"prob": 76,
+"why": "titolare nelle ultime 2 su 3",
+"ballot": {
+"id": 628,
+"name": "Adrián Bernabé",
+"prob": 54,
+"share": 42
+},
+"out_for": null,
+"share": 58
 },
 {
 "id": 362752,
@@ -2378,15 +2384,15 @@
 "out_for": null
 },
 {
-"id": 595817,
-"name": "Abdou Konate",
-"role": "C",
+"id": 91358,
+"name": "E. Valeri",
+"role": "D",
 "pos": "M",
 "grid": "3:1",
-"prob": 36,
-"why": "titolare nelle ultime 1 su 3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
 "ballot": null,
-"out_for": "E. Valeri"
+"out_for": null
 },
 {
 "id": 322630,
@@ -2451,18 +2457,18 @@
 "prob": 16
 },
 {
+"id": 595817,
+"name": "Abdou Konate",
+"role": "C",
+"pos": "M",
+"prob": 36
+},
+{
 "id": 362061,
 "name": "B. Cremaschi",
 "role": "C",
 "pos": "M",
 "prob": 18
-},
-{
-"id": 161569,
-"name": "O. Sorensen",
-"role": "C",
-"pos": "M",
-"prob": 8
 },
 {
 "id": 48193,
@@ -2479,32 +2485,7 @@
 "prob": 18
 }
 ],
-"out": [
-{
-"id": 628,
-"name": "Adrián Bernabé",
-"role": "C",
-"pos": "M",
-"reason": "infortunio: inactive",
-"back_at": null
-},
-{
-"id": 432610,
-"name": "Ousmane Diallo",
-"role": "A",
-"pos": "F",
-"reason": "infortunio: infortunio",
-"back_at": null
-},
-{
-"id": 499380,
-"name": "S. Britschgi",
-"role": "D",
-"pos": "M",
-"reason": "infortunio: inactive",
-"back_at": null
-}
-],
+"out": [],
 "doubt": [],
 "coppa": null
 },
@@ -3247,8 +3228,14 @@
 "grid": "3:5",
 "prob": 72,
 "why": "titolare nelle ultime 2 su 3",
-"ballot": null,
-"out_for": null
+"ballot": {
+"id": 1640,
+"name": "H. Çalhanoğlu",
+"prob": 55,
+"share": 43
+},
+"out_for": null,
+"share": 57
 },
 {
 "id": 30558,
@@ -3284,15 +3271,15 @@
 "out_for": null
 },
 {
-"id": 1640,
-"name": "H. Çalhanoğlu",
-"role": "C",
+"id": 31010,
+"name": "F. Dimarco",
+"role": "D",
 "pos": "M",
 "grid": "3:1",
-"prob": 55,
-"why": "titolare nelle ultime 2 su 3",
+"prob": 94,
+"why": "titolare nelle ultime 3 su 3",
 "ballot": null,
-"out_for": "F. Dimarco"
+"out_for": null
 },
 {
 "id": 345808,
@@ -3368,16 +3355,7 @@
 "prob": 25
 }
 ],
-"out": [
-{
-"id": 31010,
-"name": "F. Dimarco",
-"role": "D",
-"pos": "M",
-"reason": "infortunio: ginocchio",
-"back_at": null
-}
-],
+"out": [],
 "doubt": [],
 "coppa": null
 },
@@ -3887,26 +3865,26 @@
 "out_for": null
 },
 {
+"id": 122468,
+"name": "Saúl Coco",
+"role": "D",
+"pos": "D",
+"grid": "2:2",
+"prob": 88,
+"why": "titolare nelle ultime 3 su 3",
+"ballot": null,
+"out_for": null
+},
+{
 "id": 396637,
 "name": "P. Comuzzo",
 "role": "D",
 "pos": "D",
-"grid": "2:2",
+"grid": "2:1",
 "prob": 94,
 "why": "titolare nelle ultime 3 su 3",
 "ballot": null,
-"out_for": "Saúl Coco"
-},
-{
-"id": 14329,
-"name": "A. Ismajli",
-"role": "D",
-"pos": "D",
-"grid": "2:1",
-"prob": 37,
-"why": "titolare nelle ultime 1 su 3",
-"ballot": null,
-"out_for": "P. Comuzzo"
+"out_for": null
 },
 {
 "id": 30810,
@@ -3964,32 +3942,26 @@
 "out_for": null
 },
 {
-"id": 19524,
-"name": "C. Adams",
-"role": "A",
-"pos": "F",
-"grid": "5:2",
-"prob": 79,
-"why": "titolare nelle ultime 2 su 3",
-"ballot": {
-"id": 30414,
-"name": "G. Simeone",
-"prob": 61,
-"share": 44
-},
-"out_for": null,
-"share": 56
-},
-{
 "id": 842,
 "name": "N. Vlašić",
 "role": "C",
 "pos": "F",
-"grid": "5:1",
+"grid": "5:2",
 "prob": 94,
 "why": "titolare nelle ultime 3 su 3",
 "ballot": null,
-"out_for": null
+"out_for": "C. Adams"
+},
+{
+"id": 383006,
+"name": "A. Njie",
+"role": "C",
+"pos": "F",
+"grid": "5:1",
+"prob": 19,
+"why": "titolare nelle ultime 0 su 3",
+"ballot": null,
+"out_for": "N. Vlašić"
 }
 ],
 "bench": [
@@ -4001,18 +3973,18 @@
 "prob": 14
 },
 {
+"id": 14329,
+"name": "A. Ismajli",
+"role": "D",
+"pos": "D",
+"prob": 37
+},
+{
 "id": 303362,
 "name": "R. Belghali",
 "role": "D",
 "pos": "D",
 "prob": 23
-},
-{
-"id": 138417,
-"name": "N. Patterson",
-"role": "D",
-"pos": "D",
-"prob": 11
 },
 {
 "id": 41892,
@@ -4029,21 +4001,29 @@
 "prob": 22
 },
 {
-"id": 383006,
-"name": "A. Njie",
-"role": "C",
-"pos": "F",
-"prob": 19
-},
-{
 "id": 40405,
 "name": "S. Kulenović",
 "role": "A",
 "pos": "F",
 "prob": 18
+},
+{
+"id": 243,
+"name": "Z. Aboukhlal",
+"role": "C",
+"pos": "F",
+"prob": 18
 }
 ],
 "out": [
+{
+"id": 19524,
+"name": "C. Adams",
+"role": "A",
+"pos": "F",
+"reason": "infortunio: muscolare",
+"back_at": null
+},
 {
 "id": 270507,
 "name": "C. Casadei",
@@ -4053,11 +4033,11 @@
 "back_at": null
 },
 {
-"id": 122468,
-"name": "Saúl Coco",
-"role": "D",
-"pos": "D",
-"reason": "infortunio: infortunio",
+"id": 30414,
+"name": "G. Simeone",
+"role": "A",
+"pos": "F",
+"reason": "infortunio: schiena",
 "back_at": null
 }
 ],

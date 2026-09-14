@@ -3015,18 +3015,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-07-31",
-"type": "Transfer",
-"from": {
-"id": 114,
-"name": "Paris FC"
-},
-"to": {
-"id": 867,
-"name": "Lecce"
-}
-},
-{
 "date": "2026-08-01",
 "type": "Transfer",
 "from": {
@@ -3818,18 +3806,6 @@
 ],
 "prev_season": 2025,
 "transfers": [
-{
-"date": "2026-07-13",
-"type": "Transfer",
-"from": {
-"id": 46,
-"name": "Leicester"
-},
-"to": {
-"id": 490,
-"name": "Cagliari"
-}
-},
 {
 "date": "2026-07-14",
 "type": "Transfer",
@@ -5062,7 +5038,7 @@
 "team": 492,
 "team_name": "Napoli",
 "number": 21,
-"position": "Attacker",
+"position": "Midfielder",
 "active": true,
 "cur": [
 {
@@ -7688,18 +7664,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-08-19",
-"type": "Transfer",
-"from": {
-"id": 40,
-"name": "Liverpool"
-},
-"to": {
-"id": 505,
-"name": "Inter"
-}
-},
-{
 "date": "2026-08-20",
 "type": "Transfer",
 "from": {
@@ -9743,18 +9707,6 @@
 }
 },
 {
-"date": "2026-08-12",
-"type": "Transfer",
-"from": {
-"id": 571,
-"name": "Red Bull Salzburg"
-},
-"to": {
-"id": 512,
-"name": "Frosinone"
-}
-},
-{
 "date": "2026-08-13",
 "type": "Transfer",
 "from": {
@@ -10629,21 +10581,21 @@
 "season": 2026
 },
 "games": {
-"appearences": 2,
+"appearences": 3,
 "lineups": 1,
-"minutes": 80,
+"minutes": 125,
 "number": 70,
 "position": "Attacker",
-"rating": 6.6,
+"rating": 6.73,
 "captain": false
 },
 "substitutes": {
-"in": 1,
+"in": 2,
 "out": 1,
-"bench": 2
+"bench": 3
 },
 "shots": {
-"total": 1,
+"total": 2,
 "on": null
 },
 "goals": {
@@ -10653,22 +10605,22 @@
 "saves": null
 },
 "passes": {
-"total": 24,
-"key": 1,
-"accuracy": 91
+"total": 53,
+"key": 2,
+"accuracy": 92
 },
 "tackles": {
-"total": 2,
+"total": 3,
 "blocks": null,
 "interceptions": null
 },
 "duels": {
-"total": 8,
-"won": 4
+"total": 14,
+"won": 6
 },
 "dribbles": {
-"attempts": 4,
-"success": 1,
+"attempts": 7,
+"success": 2,
 "past": null
 },
 "fouls": {
@@ -11356,7 +11308,7 @@
 "substitutes": {
 "in": 2,
 "out": 0,
-"bench": 3
+"bench": 4
 },
 "shots": {
 "total": 1,
@@ -12137,12 +12089,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 270,
+"appearences": 4,
+"lineups": 4,
+"minutes": 365,
 "number": 49,
 "position": "Goalkeeper",
-"rating": 7.27,
+"rating": 7.53,
 "captain": false
 },
 "substitutes": {
@@ -12156,14 +12108,14 @@
 },
 "goals": {
 "total": 0,
-"conceded": 5,
+"conceded": 7,
 "assists": 0,
-"saves": 11
+"saves": 17
 },
 "passes": {
-"total": 76,
+"total": 110,
 "key": null,
-"accuracy": 72
+"accuracy": 76
 },
 "tackles": {
 "total": null,
@@ -12171,8 +12123,8 @@
 "interceptions": null
 },
 "duels": {
-"total": 2,
-"won": 2
+"total": 3,
+"won": 3
 },
 "dribbles": {
 "attempts": null,
@@ -13432,21 +13384,21 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 0,
-"minutes": 85,
+"appearences": 4,
+"lineups": 1,
+"minutes": 173,
 "number": 11,
 "position": "Midfielder",
-"rating": 7.13,
+"rating": 7.35,
 "captain": false
 },
 "substitutes": {
 "in": 3,
-"out": 0,
+"out": 1,
 "bench": 3
 },
 "shots": {
-"total": 2,
+"total": 4,
 "on": 1
 },
 "goals": {
@@ -13456,9 +13408,9 @@
 "saves": null
 },
 "passes": {
-"total": 59,
-"key": 7,
-"accuracy": 76
+"total": 120,
+"key": 11,
+"accuracy": 80
 },
 "tackles": {
 "total": 3,
@@ -13466,17 +13418,17 @@
 "interceptions": 1
 },
 "duels": {
-"total": 10,
-"won": 5
+"total": 16,
+"won": 7
 },
 "dribbles": {
-"attempts": 1,
-"success": 1,
+"attempts": 4,
+"success": 3,
 "past": null
 },
 "fouls": {
 "drawn": 1,
-"committed": 1
+"committed": 2
 },
 "cards": {
 "yellow": 0,
@@ -14722,18 +14674,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-08-10",
-"type": "Free agent",
-"from": {
-"id": 217,
-"name": "SC Braga"
-},
-"to": {
-"id": 512,
-"name": "Frosinone"
-}
-},
-{
 "date": "2026-08-11",
 "type": "Free agent",
 "from": {
@@ -14804,7 +14744,7 @@
 "saves": null
 },
 "passes": {
-"total": 195,
+"total": 194,
 "key": 4,
 "accuracy": 90
 },
@@ -16740,18 +16680,6 @@
 }
 },
 {
-"date": "2026-08-24",
-"type": "Transfer",
-"from": {
-"id": 496,
-"name": "Juventus"
-},
-"to": {
-"id": 522,
-"name": "Palermo"
-}
-},
-{
 "date": "2026-08-25",
 "type": "Transfer",
 "from": {
@@ -16809,7 +16737,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 3
+"bench": 4
 },
 "shots": {
 "total": null,
@@ -17206,7 +17134,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 3
+"bench": 4
 },
 "shots": {
 "total": null,
@@ -17699,12 +17627,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 2,
-"minutes": 214,
+"appearences": 4,
+"lineups": 3,
+"minutes": 304,
 "number": 37,
 "position": "Defender",
-"rating": 6.6,
+"rating": 6.95,
 "captain": false
 },
 "substitutes": {
@@ -17713,7 +17641,7 @@
 "bench": 1
 },
 "shots": {
-"total": 1,
+"total": 2,
 "on": 1
 },
 "goals": {
@@ -17723,27 +17651,27 @@
 "saves": null
 },
 "passes": {
-"total": 129,
-"key": 3,
-"accuracy": 86
+"total": 190,
+"key": 5,
+"accuracy": 87
 },
 "tackles": {
-"total": null,
+"total": 3,
 "blocks": 1,
 "interceptions": 1
 },
 "duels": {
-"total": 8,
-"won": null
+"total": 18,
+"won": 5
 },
 "dribbles": {
-"attempts": 3,
-"success": null,
+"attempts": 5,
+"success": 1,
 "past": null
 },
 "fouls": {
 "drawn": null,
-"committed": null
+"committed": 2
 },
 "cards": {
 "yellow": 0,
@@ -18215,21 +18143,21 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 2,
-"minutes": 206,
+"appearences": 4,
+"lineups": 3,
+"minutes": 288,
 "number": 10,
 "position": "Attacker",
-"rating": 7.13,
+"rating": 7.08,
 "captain": false
 },
 "substitutes": {
 "in": 1,
-"out": 1,
+"out": 2,
 "bench": 1
 },
 "shots": {
-"total": 6,
+"total": 7,
 "on": 4
 },
 "goals": {
@@ -18239,27 +18167,27 @@
 "saves": null
 },
 "passes": {
-"total": 97,
+"total": 123,
 "key": 6,
-"accuracy": 90
+"accuracy": 89
 },
 "tackles": {
-"total": null,
+"total": 2,
 "blocks": null,
-"interceptions": null
+"interceptions": 1
 },
 "duels": {
-"total": 13,
-"won": 6
+"total": 23,
+"won": 11
 },
 "dribbles": {
-"attempts": 6,
-"success": 2,
+"attempts": 7,
+"success": 3,
 "past": null
 },
 "fouls": {
-"drawn": 3,
-"committed": 1
+"drawn": 4,
+"committed": 3
 },
 "cards": {
 "yellow": 0,
@@ -20517,12 +20445,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 243,
+"appearences": 4,
+"lineups": 4,
+"minutes": 338,
 "number": 18,
 "position": "Midfielder",
-"rating": 6.93,
+"rating": 7.13,
 "captain": false
 },
 "substitutes": {
@@ -20537,26 +20465,26 @@
 "goals": {
 "total": 0,
 "conceded": 0,
-"assists": 0,
+"assists": 1,
 "saves": null
 },
 "passes": {
-"total": 148,
-"key": 6,
-"accuracy": 85
+"total": 216,
+"key": 7,
+"accuracy": 86
 },
 "tackles": {
-"total": 4,
-"blocks": 1,
+"total": 8,
+"blocks": 2,
 "interceptions": 5
 },
 "duels": {
-"total": 17,
-"won": 10
+"total": 25,
+"won": 15
 },
 "dribbles": {
-"attempts": 6,
-"success": 5,
+"attempts": 7,
+"success": 6,
 "past": null
 },
 "fouls": {
@@ -21298,9 +21226,9 @@
 "saves": null
 },
 "passes": {
-"total": 117,
+"total": 118,
 "key": 5,
-"accuracy": 88
+"accuracy": 87
 },
 "tackles": {
 "total": 3,
@@ -21552,18 +21480,6 @@
 ],
 "prev_season": 2025,
 "transfers": [
-{
-"date": "2026-08-04",
-"type": "Transfer",
-"from": {
-"id": 536,
-"name": "Sevilla"
-},
-"to": {
-"id": 495,
-"name": "Genoa"
-}
-},
 {
 "date": "2026-08-05",
 "type": "Transfer",
@@ -23611,12 +23527,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 270,
+"appearences": 4,
+"lineups": 4,
+"minutes": 360,
 "number": 13,
 "position": "Defender",
-"rating": 7.07,
+"rating": 7.23,
 "captain": false
 },
 "substitutes": {
@@ -23625,7 +23541,7 @@
 "bench": 0
 },
 "shots": {
-"total": 1,
+"total": 2,
 "on": null
 },
 "goals": {
@@ -23635,18 +23551,18 @@
 "saves": null
 },
 "passes": {
-"total": 188,
+"total": 256,
 "key": 1,
-"accuracy": 87
+"accuracy": 89
 },
 "tackles": {
-"total": 8,
+"total": 9,
 "blocks": 3,
-"interceptions": 2
+"interceptions": 3
 },
 "duels": {
-"total": 38,
-"won": 25
+"total": 48,
+"won": 34
 },
 "dribbles": {
 "attempts": null,
@@ -23654,8 +23570,8 @@
 "past": null
 },
 "fouls": {
-"drawn": 1,
-"committed": 5
+"drawn": 3,
+"committed": 7
 },
 "cards": {
 "yellow": 0,
@@ -24424,7 +24340,7 @@
 "team": 499,
 "team_name": "Atalanta",
 "number": 99,
-"position": "Attacker",
+"position": "Midfielder",
 "active": true,
 "cur": [
 {
@@ -27044,7 +26960,7 @@
 }
 },
 {
-"date": "2026-09-01",
+"date": "2026-09-02",
 "type": "Transfer",
 "from": {
 "id": 487,
@@ -31795,18 +31711,6 @@
 }
 },
 {
-"date": "2026-08-15",
-"type": "Transfer",
-"from": {
-"id": 500,
-"name": "Bologna"
-},
-"to": {
-"id": 496,
-"name": "Juventus"
-}
-},
-{
 "date": "2026-08-16",
 "type": "Transfer",
 "from": {
@@ -32178,9 +32082,9 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 270,
+"appearences": 4,
+"lineups": 4,
+"minutes": 365,
 "number": 45,
 "position": "Attacker",
 "rating": 7,
@@ -32198,26 +32102,26 @@
 "goals": {
 "total": 0,
 "conceded": 0,
-"assists": 0,
+"assists": 1,
 "saves": null
 },
 "passes": {
-"total": 95,
-"key": 4,
-"accuracy": 92
+"total": 124,
+"key": 6,
+"accuracy": 90
 },
 "tackles": {
-"total": 1,
+"total": 2,
 "blocks": null,
 "interceptions": null
 },
 "duels": {
-"total": 26,
-"won": 9
+"total": 31,
+"won": 13
 },
 "dribbles": {
-"attempts": 14,
-"success": 5,
+"attempts": 17,
+"success": 7,
 "past": null
 },
 "fouls": {
@@ -32846,7 +32750,7 @@
 "minutes": 189,
 "number": 8,
 "position": "Attacker",
-"rating": 6.38,
+"rating": 6.48,
 "captain": false
 },
 "substitutes": {
@@ -32865,9 +32769,9 @@
 "saves": null
 },
 "passes": {
-"total": 74,
+"total": 73,
 "key": 8,
-"accuracy": 94
+"accuracy": 95
 },
 "tackles": {
 "total": null,
@@ -35863,7 +35767,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 0
+"bench": 1
 },
 "shots": {
 "total": null,
@@ -37894,18 +37798,6 @@
 }
 },
 {
-"date": "2026-08-10",
-"type": "Transfer",
-"from": {
-"id": 530,
-"name": "Atletico Madrid"
-},
-"to": {
-"id": 497,
-"name": "AS Roma"
-}
-},
-{
 "date": "2026-08-11",
 "type": "Transfer",
 "from": {
@@ -37952,18 +37844,18 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
+"appearences": 4,
 "lineups": 3,
-"minutes": 243,
+"minutes": 288,
 "number": 50,
 "position": "Attacker",
-"rating": 6.57,
+"rating": 6.5,
 "captain": false
 },
 "substitutes": {
-"in": 0,
+"in": 1,
 "out": 3,
-"bench": 0
+"bench": 1
 },
 "shots": {
 "total": 3,
@@ -37976,27 +37868,27 @@
 "saves": null
 },
 "passes": {
-"total": 78,
+"total": 87,
 "key": 2,
 "accuracy": 80
 },
 "tackles": {
-"total": 8,
+"total": 11,
 "blocks": null,
 "interceptions": 2
 },
 "duels": {
-"total": 35,
-"won": 17
+"total": 46,
+"won": 22
 },
 "dribbles": {
-"attempts": 7,
-"success": 3,
+"attempts": 10,
+"success": 4,
 "past": null
 },
 "fouls": {
 "drawn": null,
-"committed": 4
+"committed": 7
 },
 "cards": {
 "yellow": 0,
@@ -38615,7 +38507,7 @@
 "saves": null
 },
 "passes": {
-"total": 94,
+"total": 95,
 "key": 1,
 "accuracy": 72
 },
@@ -38625,12 +38517,12 @@
 "interceptions": null
 },
 "duels": {
-"total": 25,
-"won": 9
+"total": 26,
+"won": 10
 },
 "dribbles": {
-"attempts": 4,
-"success": 1,
+"attempts": 5,
+"success": 2,
 "past": null
 },
 "fouls": {
@@ -38869,18 +38761,6 @@
 ],
 "prev_season": 2025,
 "transfers": [
-{
-"date": "2026-08-10",
-"type": "Transfer",
-"from": {
-"id": 162,
-"name": "Werder Bremen"
-},
-"to": {
-"id": 512,
-"name": "Frosinone"
-}
-},
 {
 "date": "2026-08-11",
 "type": "Transfer",
@@ -40643,17 +40523,17 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 1,
-"minutes": 143,
+"appearences": 4,
+"lineups": 2,
+"minutes": 188,
 "number": 11,
 "position": "Attacker",
-"rating": 6.67,
+"rating": 6.55,
 "captain": false
 },
 "substitutes": {
 "in": 2,
-"out": 1,
+"out": 2,
 "bench": 2
 },
 "shots": {
@@ -40667,30 +40547,30 @@
 "saves": null
 },
 "passes": {
-"total": 31,
+"total": 38,
 "key": null,
-"accuracy": 64
+"accuracy": 60
 },
 "tackles": {
-"total": 4,
+"total": 7,
 "blocks": null,
-"interceptions": null
+"interceptions": 1
 },
 "duels": {
-"total": 21,
-"won": 10
+"total": 32,
+"won": 13
 },
 "dribbles": {
-"attempts": 8,
+"attempts": 10,
 "success": 4,
 "past": null
 },
 "fouls": {
 "drawn": 2,
-"committed": 1
+"committed": 4
 },
 "cards": {
-"yellow": 0,
+"yellow": 1,
 "yellowred": 0,
 "red": 0
 },
@@ -41461,7 +41341,7 @@
 "games": {
 "appearences": 4,
 "lineups": 4,
-"minutes": 333,
+"minutes": 327,
 "number": 13,
 "position": "Midfielder",
 "rating": 6.93,
@@ -41483,7 +41363,7 @@
 "saves": null
 },
 "passes": {
-"total": 185,
+"total": 184,
 "key": 2,
 "accuracy": 88
 },
@@ -41493,7 +41373,7 @@
 "interceptions": 2
 },
 "duels": {
-"total": 23,
+"total": 24,
 "won": 12
 },
 "dribbles": {
@@ -42274,7 +42154,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 3
+"bench": 4
 },
 "shots": {
 "total": null,
@@ -43232,7 +43112,7 @@
 "minutes": 84,
 "number": 37,
 "position": "Defender",
-"rating": 6,
+"rating": 6.2,
 "captain": false
 },
 "substitutes": {
@@ -43251,9 +43131,9 @@
 "saves": null
 },
 "passes": {
-"total": 24,
+"total": 23,
 "key": null,
-"accuracy": 87
+"accuracy": 91
 },
 "tackles": {
 "total": null,
@@ -43261,12 +43141,12 @@
 "interceptions": 1
 },
 "duels": {
-"total": 2,
-"won": null
+"total": 3,
+"won": 1
 },
 "dribbles": {
-"attempts": null,
-"success": null,
+"attempts": 1,
+"success": 1,
 "past": null
 },
 "fouls": {
@@ -43983,7 +43863,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 2
+"bench": 3
 },
 "shots": {
 "total": null,
@@ -45386,9 +45266,9 @@
 "saves": null
 },
 "passes": {
-"total": 193,
+"total": 192,
 "key": 4,
-"accuracy": 89
+"accuracy": 90
 },
 "tackles": {
 "total": 7,
@@ -45396,8 +45276,8 @@
 "interceptions": 14
 },
 "duels": {
-"total": 28,
-"won": 16
+"total": 29,
+"won": 17
 },
 "dribbles": {
 "attempts": 5,
@@ -45782,9 +45662,9 @@
 "saves": null
 },
 "passes": {
-"total": 210,
+"total": 209,
 "key": 1,
-"accuracy": 88
+"accuracy": 89
 },
 "tackles": {
 "total": 5,
@@ -45792,7 +45672,7 @@
 "interceptions": 4
 },
 "duels": {
-"total": 31,
+"total": 32,
 "won": 19
 },
 "dribbles": {
@@ -46409,18 +46289,18 @@
 "season": 2026
 },
 "games": {
-"appearences": 2,
+"appearences": 3,
 "lineups": 1,
-"minutes": 105,
+"minutes": 155,
 "number": 6,
 "position": "Defender",
-"rating": 6.3,
+"rating": 6.2,
 "captain": false
 },
 "substitutes": {
-"in": 1,
+"in": 2,
 "out": 0,
-"bench": 2
+"bench": 3
 },
 "shots": {
 "total": 1,
@@ -46433,9 +46313,9 @@
 "saves": null
 },
 "passes": {
-"total": 73,
+"total": 109,
 "key": null,
-"accuracy": 84
+"accuracy": 86
 },
 "tackles": {
 "total": null,
@@ -46443,17 +46323,17 @@
 "interceptions": null
 },
 "duels": {
-"total": 6,
-"won": 1
+"total": 8,
+"won": 2
 },
 "dribbles": {
-"attempts": null,
-"success": null,
+"attempts": 1,
+"success": 1,
 "past": null
 },
 "fouls": {
 "drawn": 1,
-"committed": 1
+"committed": 2
 },
 "cards": {
 "yellow": 0,
@@ -47632,7 +47512,7 @@
 "substitutes": {
 "in": 1,
 "out": 0,
-"bench": 2
+"bench": 3
 },
 "shots": {
 "total": null,
@@ -48544,12 +48424,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 270,
+"appearences": 4,
+"lineups": 4,
+"minutes": 365,
 "number": 9,
 "position": "Attacker",
-"rating": 5.9,
+"rating": 5.98,
 "captain": false
 },
 "substitutes": {
@@ -48564,31 +48444,31 @@
 "goals": {
 "total": 0,
 "conceded": 0,
-"assists": 0,
+"assists": 1,
 "saves": null
 },
 "passes": {
-"total": 68,
-"key": 1,
-"accuracy": 66
+"total": 80,
+"key": 3,
+"accuracy": 67
 },
 "tackles": {
-"total": 1,
+"total": 2,
 "blocks": null,
 "interceptions": null
 },
 "duels": {
-"total": 40,
-"won": 11
+"total": 52,
+"won": 14
 },
 "dribbles": {
-"attempts": 8,
+"attempts": 12,
 "success": 2,
 "past": null
 },
 "fouls": {
-"drawn": 5,
-"committed": 9
+"drawn": 6,
+"committed": 10
 },
 "cards": {
 "yellow": 0,
@@ -49010,18 +48890,6 @@
 "to": {
 "id": 85,
 "name": "Paris Saint Germain"
-}
-},
-{
-"date": "2026-07-31",
-"type": "Transfer",
-"from": {
-"id": 85,
-"name": "Paris Saint Germain"
-},
-"to": {
-"id": 496,
-"name": "Juventus"
 }
 },
 {
@@ -50557,18 +50425,6 @@
 }
 },
 {
-"date": "2026-06-29",
-"type": "Transfer",
-"from": {
-"id": 514,
-"name": "Salernitana"
-},
-"to": {
-"id": 487,
-"name": "Lazio"
-}
-},
-{
 "date": "2026-06-30",
 "type": "Transfer",
 "from": {
@@ -51111,7 +50967,7 @@
 "minutes": 360,
 "number": 16,
 "position": "Goalkeeper",
-"rating": 7.23,
+"rating": 7.18,
 "captain": false
 },
 "substitutes": {
@@ -51502,12 +51358,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 247,
+"appearences": 4,
+"lineups": 4,
+"minutes": 342,
 "number": 2,
 "position": "Defender",
-"rating": 6.7,
+"rating": 6.65,
 "captain": false
 },
 "substitutes": {
@@ -51526,21 +51382,21 @@
 "saves": null
 },
 "passes": {
-"total": 106,
-"key": 2,
-"accuracy": 87
+"total": 129,
+"key": 4,
+"accuracy": 86
 },
 "tackles": {
-"total": 7,
+"total": 10,
 "blocks": null,
 "interceptions": 5
 },
 "duels": {
-"total": 23,
-"won": 11
+"total": 29,
+"won": 16
 },
 "dribbles": {
-"attempts": 4,
+"attempts": 5,
 "success": 1,
 "past": null
 },
@@ -53738,18 +53594,6 @@
 }
 },
 {
-"date": "2026-08-30",
-"type": "Transfer",
-"from": {
-"id": 495,
-"name": "Genoa"
-},
-"to": {
-"id": 4665,
-"name": "Racing Santander"
-}
-},
-{
 "date": "2026-08-31",
 "type": "Transfer",
 "from": {
@@ -54121,21 +53965,21 @@
 "season": 2026
 },
 "games": {
-"appearences": 2,
-"lineups": 1,
-"minutes": 97,
+"appearences": 3,
+"lineups": 2,
+"minutes": 157,
 "number": 31,
 "position": "Attacker",
-"rating": 7.1,
+"rating": 6.93,
 "captain": false
 },
 "substitutes": {
 "in": 1,
-"out": 1,
+"out": 2,
 "bench": 2
 },
 "shots": {
-"total": 5,
+"total": 6,
 "on": 3
 },
 "goals": {
@@ -54145,26 +53989,26 @@
 "saves": null
 },
 "passes": {
-"total": 38,
-"key": 2,
-"accuracy": 81
+"total": 60,
+"key": 3,
+"accuracy": 80
 },
 "tackles": {
-"total": 2,
+"total": 4,
 "blocks": null,
 "interceptions": 4
 },
 "duels": {
-"total": 13,
-"won": 8
+"total": 17,
+"won": 11
 },
 "dribbles": {
-"attempts": 5,
+"attempts": 6,
 "success": 3,
 "past": null
 },
 "fouls": {
-"drawn": 3,
+"drawn": 4,
 "committed": null
 },
 "cards": {
@@ -55068,9 +54912,9 @@
 "saves": 14
 },
 "passes": {
-"total": 135,
+"total": 136,
 "key": null,
-"accuracy": 70
+"accuracy": 69
 },
 "tackles": {
 "total": null,
@@ -57367,7 +57211,7 @@
 "games": {
 "appearences": 4,
 "lineups": 4,
-"minutes": 366,
+"minutes": 360,
 "number": 29,
 "position": "Goalkeeper",
 "rating": 7.83,
@@ -58763,22 +58607,22 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 2,
-"minutes": 190,
+"appearences": 4,
+"lineups": 3,
+"minutes": 254,
 "number": 28,
 "position": "Attacker",
-"rating": 7,
+"rating": 6.88,
 "captain": false
 },
 "substitutes": {
 "in": 1,
-"out": 2,
+"out": 3,
 "bench": 1
 },
 "shots": {
-"total": 3,
-"on": 2
+"total": 6,
+"on": 4
 },
 "goals": {
 "total": 1,
@@ -58787,9 +58631,9 @@
 "saves": null
 },
 "passes": {
-"total": 43,
-"key": 5,
-"accuracy": 81
+"total": 58,
+"key": 6,
+"accuracy": 82
 },
 "tackles": {
 "total": null,
@@ -58797,12 +58641,12 @@
 "interceptions": 2
 },
 "duels": {
-"total": 8,
-"won": 3
+"total": 16,
+"won": 6
 },
 "dribbles": {
-"attempts": 3,
-"success": 1,
+"attempts": 5,
+"success": 2,
 "past": null
 },
 "fouls": {
@@ -59546,18 +59390,6 @@
 }
 },
 {
-"date": "2026-08-28",
-"type": "Free agent",
-"from": {
-"id": 499,
-"name": "Atalanta"
-},
-"to": {
-"id": 497,
-"name": "AS Roma"
-}
-},
-{
 "date": "2026-08-29",
 "type": "Free agent",
 "from": {
@@ -59604,17 +59436,17 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 216,
+"appearences": 4,
+"lineups": 4,
+"minutes": 298,
 "number": 28,
 "position": "Midfielder",
-"rating": 6.5,
+"rating": 6.43,
 "captain": false
 },
 "substitutes": {
 "in": 0,
-"out": 2,
+"out": 3,
 "bench": 0
 },
 "shots": {
@@ -59628,9 +59460,9 @@
 "saves": null
 },
 "passes": {
-"total": 77,
-"key": 3,
-"accuracy": 85
+"total": 104,
+"key": 4,
+"accuracy": 86
 },
 "tackles": {
 "total": 4,
@@ -59638,16 +59470,16 @@
 "interceptions": 2
 },
 "duels": {
-"total": 34,
-"won": 16
+"total": 39,
+"won": 18
 },
 "dribbles": {
-"attempts": 5,
+"attempts": 6,
 "success": 4,
 "past": null
 },
 "fouls": {
-"drawn": 8,
+"drawn": 10,
 "committed": 8
 },
 "cards": {
@@ -60119,17 +59951,17 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 210,
+"appearences": 4,
+"lineups": 4,
+"minutes": 268,
 "number": 91,
 "position": "Attacker",
-"rating": 6.9,
+"rating": 6.75,
 "captain": false
 },
 "substitutes": {
 "in": 0,
-"out": 2,
+"out": 3,
 "bench": 0
 },
 "shots": {
@@ -60143,26 +59975,26 @@
 "saves": null
 },
 "passes": {
-"total": 19,
+"total": 27,
 "key": 1,
-"accuracy": 94
+"accuracy": 85
 },
 "tackles": {
-"total": null,
+"total": 1,
 "blocks": null,
 "interceptions": 1
 },
 "duels": {
-"total": 16,
-"won": 7
+"total": 27,
+"won": 12
 },
 "dribbles": {
-"attempts": 2,
-"success": 2,
+"attempts": 6,
+"success": 3,
 "past": null
 },
 "fouls": {
-"drawn": 4,
+"drawn": 6,
 "committed": 3
 },
 "cards": {
@@ -61701,12 +61533,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 270,
+"appearences": 4,
+"lineups": 4,
+"minutes": 365,
 "number": 3,
 "position": "Defender",
-"rating": 7.37,
+"rating": 7.1,
 "captain": false
 },
 "substitutes": {
@@ -61725,18 +61557,18 @@
 "saves": null
 },
 "passes": {
-"total": 137,
-"key": 4,
-"accuracy": 89
+"total": 203,
+"key": 5,
+"accuracy": 90
 },
 "tackles": {
-"total": 5,
+"total": 6,
 "blocks": 1,
-"interceptions": 5
+"interceptions": 7
 },
 "duels": {
-"total": 26,
-"won": 15
+"total": 34,
+"won": 20
 },
 "dribbles": {
 "attempts": 2,
@@ -61744,8 +61576,8 @@
 "past": null
 },
 "fouls": {
-"drawn": null,
-"committed": 4
+"drawn": 1,
+"committed": 6
 },
 "cards": {
 "yellow": 0,
@@ -62191,7 +62023,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 3
+"bench": 4
 },
 "shots": {
 "total": null,
@@ -62591,7 +62423,7 @@
 "games": {
 "appearences": 4,
 "lineups": 4,
-"minutes": 366,
+"minutes": 360,
 "number": 8,
 "position": "Midfielder",
 "rating": 6.75,
@@ -62623,7 +62455,7 @@
 "interceptions": 1
 },
 "duels": {
-"total": 22,
+"total": 23,
 "won": 8
 },
 "dribbles": {
@@ -63323,7 +63155,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 3
+"bench": 4
 },
 "shots": {
 "total": null,
@@ -64881,22 +64713,22 @@
 "season": 2026
 },
 "games": {
-"appearences": 2,
-"lineups": 0,
-"minutes": 70,
+"appearences": 3,
+"lineups": 1,
+"minutes": 141,
 "number": 10,
 "position": "Attacker",
-"rating": 7.55,
+"rating": 7.43,
 "captain": false
 },
 "substitutes": {
 "in": 2,
-"out": 0,
+"out": 1,
 "bench": 2
 },
 "shots": {
-"total": 3,
-"on": 3
+"total": 6,
+"on": 6
 },
 "goals": {
 "total": 1,
@@ -64905,26 +64737,26 @@
 "saves": null
 },
 "passes": {
-"total": 31,
+"total": 59,
 "key": 2,
-"accuracy": 93
+"accuracy": 86
 },
 "tackles": {
-"total": 2,
+"total": 4,
 "blocks": 1,
-"interceptions": 1
+"interceptions": 2
 },
 "duels": {
-"total": 10,
-"won": 6
+"total": 16,
+"won": 9
 },
 "dribbles": {
-"attempts": 1,
+"attempts": 2,
 "success": null,
 "past": null
 },
 "fouls": {
-"drawn": 3,
+"drawn": 4,
 "committed": null
 },
 "cards": {
@@ -65144,7 +64976,7 @@
 "team": 500,
 "team_name": "Bologna",
 "number": 21,
-"position": "Midfielder",
+"position": "Attacker",
 "active": true,
 "cur": [
 {
@@ -65159,18 +64991,18 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
+"appearences": 4,
 "lineups": 3,
-"minutes": 195,
+"minutes": 227,
 "number": 21,
 "position": "Midfielder",
-"rating": 6.53,
+"rating": 6.45,
 "captain": false
 },
 "substitutes": {
-"in": 0,
+"in": 1,
 "out": 2,
-"bench": 0
+"bench": 1
 },
 "shots": {
 "total": 5,
@@ -65183,7 +65015,7 @@
 "saves": null
 },
 "passes": {
-"total": 45,
+"total": 50,
 "key": 2,
 "accuracy": 80
 },
@@ -65193,17 +65025,17 @@
 "interceptions": 1
 },
 "duels": {
-"total": 25,
-"won": 10
+"total": 30,
+"won": 11
 },
 "dribbles": {
-"attempts": 8,
+"attempts": 10,
 "success": 3,
 "past": null
 },
 "fouls": {
 "drawn": 6,
-"committed": 4
+"committed": 5
 },
 "cards": {
 "yellow": 1,
@@ -65677,7 +65509,7 @@
 "games": {
 "appearences": 3,
 "lineups": 2,
-"minutes": 158,
+"minutes": 152,
 "number": 18,
 "position": "Attacker",
 "rating": 7.27,
@@ -67246,10 +67078,10 @@
 "games": {
 "appearences": 4,
 "lineups": 4,
-"minutes": 359,
+"minutes": 353,
 "number": 14,
 "position": "Defender",
-"rating": 7.15,
+"rating": 6.98,
 "captain": false
 },
 "substitutes": {
@@ -67278,8 +67110,8 @@
 "interceptions": 4
 },
 "duels": {
-"total": 18,
-"won": 11
+"total": 17,
+"won": 10
 },
 "dribbles": {
 "attempts": null,
@@ -67287,7 +67119,7 @@
 "past": null
 },
 "fouls": {
-"drawn": 2,
+"drawn": 1,
 "committed": 3
 },
 "cards": {
@@ -67296,7 +67128,7 @@
 "red": 0
 },
 "penalty": {
-"won": 1,
+"won": null,
 "commited": null,
 "scored": 0,
 "missed": 0,
@@ -67593,7 +67425,7 @@
 "substitutes": {
 "in": 1,
 "out": 1,
-"bench": 1
+"bench": 2
 },
 "shots": {
 "total": 4,
@@ -68068,18 +67900,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-08-17",
-"type": "Transfer",
-"from": {
-"id": 504,
-"name": "Hellas Verona"
-},
-"to": {
-"id": 517,
-"name": "Venezia"
-}
-},
-{
 "date": "2026-08-18",
 "type": "Transfer",
 "from": {
@@ -68392,6 +68212,18 @@
 "id": 503,
 "name": "Torino"
 }
+},
+{
+"date": "2026-09-03",
+"type": "Free agent",
+"from": {
+"id": 503,
+"name": "Torino"
+},
+"to": {
+"id": 614,
+"name": "AEK Larnaca"
+}
 }
 ]
 },
@@ -68428,12 +68260,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 264,
+"appearences": 4,
+"lineups": 4,
+"minutes": 354,
 "number": 19,
 "position": "Midfielder",
-"rating": 6.6,
+"rating": 6.75,
 "captain": false
 },
 "substitutes": {
@@ -68442,28 +68274,28 @@
 "bench": 0
 },
 "shots": {
-"total": 3,
-"on": 2
+"total": 4,
+"on": 3
 },
 "goals": {
 "total": 0,
 "conceded": 0,
-"assists": 0,
+"assists": 1,
 "saves": null
 },
 "passes": {
-"total": 74,
-"key": 3,
-"accuracy": 81
+"total": 105,
+"key": 6,
+"accuracy": 82
 },
 "tackles": {
-"total": 3,
+"total": 4,
 "blocks": null,
 "interceptions": 2
 },
 "duels": {
-"total": 15,
-"won": 6
+"total": 22,
+"won": 9
 },
 "dribbles": {
 "attempts": 3,
@@ -68471,7 +68303,7 @@
 "past": null
 },
 "fouls": {
-"drawn": 2,
+"drawn": 4,
 "committed": 2
 },
 "cards": {
@@ -68755,7 +68587,7 @@
 "games": {
 "appearences": 4,
 "lineups": 4,
-"minutes": 366,
+"minutes": 360,
 "number": 1,
 "position": "Goalkeeper",
 "rating": 7.8,
@@ -68777,9 +68609,9 @@
 "saves": 13
 },
 "passes": {
-"total": 133,
+"total": 134,
 "key": null,
-"accuracy": 75
+"accuracy": 76
 },
 "tackles": {
 "total": null,
@@ -69981,18 +69813,6 @@
 }
 },
 {
-"date": "2026-08-30",
-"type": "Transfer",
-"from": {
-"id": 502,
-"name": "Fiorentina"
-},
-"to": {
-"id": 503,
-"name": "Torino"
-}
-},
-{
 "date": "2026-08-31",
 "type": "Transfer",
 "from": {
@@ -70050,7 +69870,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 3
+"bench": 4
 },
 "shots": {
 "total": null,
@@ -71164,7 +70984,7 @@
 "minutes": 359,
 "number": 10,
 "position": "Attacker",
-"rating": 7.33,
+"rating": 7.28,
 "captain": false
 },
 "substitutes": {
@@ -71183,14 +71003,14 @@
 "saves": null
 },
 "passes": {
-"total": 138,
+"total": 137,
 "key": 8,
 "accuracy": 77
 },
 "tackles": {
 "total": 6,
 "blocks": 1,
-"interceptions": 7
+"interceptions": 8
 },
 "duels": {
 "total": 36,
@@ -72640,18 +72460,6 @@
 }
 },
 {
-"date": "2026-07-06",
-"type": "Transfer",
-"from": {
-"id": 487,
-"name": "Lazio"
-},
-"to": {
-"id": 505,
-"name": "Inter"
-}
-},
-{
 "date": "2026-07-07",
 "type": "Transfer",
 "from": {
@@ -72698,12 +72506,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 270,
+"appearences": 4,
+"lineups": 4,
+"minutes": 360,
 "number": 22,
 "position": "Defender",
-"rating": 6.7,
+"rating": 6.6,
 "captain": false
 },
 "substitutes": {
@@ -72722,18 +72530,18 @@
 "saves": null
 },
 "passes": {
-"total": 130,
+"total": 179,
 "key": 2,
-"accuracy": 89
+"accuracy": 88
 },
 "tackles": {
-"total": 9,
+"total": 10,
 "blocks": 2,
 "interceptions": 2
 },
 "duels": {
-"total": 24,
-"won": 16
+"total": 29,
+"won": 17
 },
 "dribbles": {
 "attempts": 4,
@@ -72742,7 +72550,7 @@
 },
 "fouls": {
 "drawn": 2,
-"committed": 1
+"committed": 3
 },
 "cards": {
 "yellow": 1,
@@ -74826,18 +74634,6 @@
 }
 },
 {
-"date": "2026-08-25",
-"type": "Transfer",
-"from": {
-"id": 488,
-"name": "Sassuolo"
-},
-"to": {
-"id": 487,
-"name": "Lazio"
-}
-},
-{
 "date": "2026-08-26",
 "type": "Transfer",
 "from": {
@@ -74895,7 +74691,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 1
+"bench": 2
 },
 "shots": {
 "total": null,
@@ -75559,12 +75355,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 0,
-"lineups": 0,
-"minutes": null,
+"appearences": 1,
+"lineups": 1,
+"minutes": 90,
 "number": 32,
 "position": "Goalkeeper",
-"rating": null,
+"rating": 7.2,
 "captain": false
 },
 "substitutes": {
@@ -75580,12 +75376,12 @@
 "total": 0,
 "conceded": 0,
 "assists": 0,
-"saves": null
+"saves": 2
 },
 "passes": {
-"total": null,
+"total": 34,
 "key": null,
-"accuracy": null
+"accuracy": 73
 },
 "tackles": {
 "total": null,
@@ -75615,7 +75411,7 @@
 "commited": null,
 "scored": 0,
 "missed": 0,
-"saved": null
+"saved": 0
 }
 }
 ],
@@ -76614,12 +76410,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 2,
-"lineups": 2,
-"minutes": 180,
+"appearences": 3,
+"lineups": 3,
+"minutes": 270,
 "number": 20,
 "position": "Goalkeeper",
-"rating": 6.5,
+"rating": 6.23,
 "captain": false
 },
 "substitutes": {
@@ -76633,14 +76429,14 @@
 },
 "goals": {
 "total": 0,
-"conceded": 4,
+"conceded": 7,
 "assists": 0,
 "saves": 4
 },
 "passes": {
-"total": 62,
+"total": 86,
 "key": 1,
-"accuracy": 59
+"accuracy": 60
 },
 "tackles": {
 "total": null,
@@ -77408,22 +77204,22 @@
 "season": 2026
 },
 "games": {
-"appearences": 2,
-"lineups": 2,
-"minutes": 117,
+"appearences": 3,
+"lineups": 3,
+"minutes": 175,
 "number": 4,
 "position": "Midfielder",
-"rating": 6.5,
+"rating": 6.63,
 "captain": false
 },
 "substitutes": {
 "in": 0,
-"out": 2,
+"out": 3,
 "bench": 1
 },
 "shots": {
-"total": 1,
-"on": null
+"total": 3,
+"on": 1
 },
 "goals": {
 "total": 0,
@@ -77432,18 +77228,18 @@
 "saves": null
 },
 "passes": {
-"total": 75,
+"total": 96,
 "key": 2,
-"accuracy": 90
+"accuracy": 92
 },
 "tackles": {
-"total": 1,
+"total": 2,
 "blocks": null,
 "interceptions": 2
 },
 "duels": {
-"total": 6,
-"won": 1
+"total": 9,
+"won": 3
 },
 "dribbles": {
 "attempts": null,
@@ -77451,8 +77247,8 @@
 "past": null
 },
 "fouls": {
-"drawn": null,
-"committed": 2
+"drawn": 1,
+"committed": 3
 },
 "cards": {
 "yellow": 0,
@@ -78404,12 +78200,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 269,
+"appearences": 4,
+"lineups": 4,
+"minutes": 364,
 "number": 25,
 "position": "Goalkeeper",
-"rating": 7,
+"rating": 6.83,
 "captain": false
 },
 "substitutes": {
@@ -78423,14 +78219,14 @@
 },
 "goals": {
 "total": 0,
-"conceded": 1,
+"conceded": 4,
 "assists": 0,
-"saves": 5
+"saves": 8
 },
 "passes": {
-"total": 66,
+"total": 87,
 "key": null,
-"accuracy": 72
+"accuracy": 78
 },
 "tackles": {
 "total": null,
@@ -78438,8 +78234,8 @@
 "interceptions": null
 },
 "duels": {
-"total": 1,
-"won": 1
+"total": 2,
+"won": 2
 },
 "dribbles": {
 "attempts": null,
@@ -79582,6 +79378,18 @@
 "id": 490,
 "name": "Cagliari"
 }
+},
+{
+"date": "2026-09-03",
+"type": "Loan",
+"from": {
+"id": 490,
+"name": "Cagliari"
+},
+"to": {
+"id": 1007,
+"name": "Rizespor"
+}
 }
 ]
 },
@@ -79618,12 +79426,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 2,
-"lineups": 2,
-"minutes": 135,
+"appearences": 3,
+"lineups": 3,
+"minutes": 225,
 "number": 25,
 "position": "Defender",
-"rating": 6.45,
+"rating": 6.73,
 "captain": false
 },
 "substitutes": {
@@ -79642,21 +79450,21 @@
 "saves": null
 },
 "passes": {
-"total": 40,
+"total": 76,
 "key": 1,
-"accuracy": 65
+"accuracy": 61
 },
 "tackles": {
-"total": 1,
-"blocks": 1,
+"total": 4,
+"blocks": 3,
 "interceptions": 1
 },
 "duels": {
-"total": 4,
-"won": 1
+"total": 14,
+"won": 6
 },
 "dribbles": {
-"attempts": null,
+"attempts": 1,
 "success": null,
 "past": null
 },
@@ -81398,7 +81206,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 3
+"bench": 4
 },
 "shots": {
 "total": null,
@@ -81736,18 +81544,6 @@
 "to": {
 "id": 1581,
 "name": "Carrarese"
-}
-},
-{
-"date": "2026-08-17",
-"type": "Transfer",
-"from": {
-"id": 1581,
-"name": "Carrarese"
-},
-"to": {
-"id": 867,
-"name": "Lecce"
 }
 },
 {
@@ -82544,22 +82340,22 @@
 "saves": null
 },
 "passes": {
-"total": 181,
+"total": 180,
 "key": 15,
 "accuracy": 80
 },
 "tackles": {
 "total": 3,
-"blocks": 4,
+"blocks": 5,
 "interceptions": 1
 },
 "duels": {
-"total": 21,
-"won": 14
+"total": 23,
+"won": 15
 },
 "dribbles": {
-"attempts": 2,
-"success": 2,
+"attempts": 3,
+"success": 3,
 "past": null
 },
 "fouls": {
@@ -83361,7 +83157,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 3
+"bench": 4
 },
 "shots": {
 "total": null,
@@ -83871,7 +83667,7 @@
 "minutes": 341,
 "number": 22,
 "position": "Defender",
-"rating": 6.58,
+"rating": 6.53,
 "captain": false
 },
 "substitutes": {
@@ -83890,8 +83686,8 @@
 "saves": null
 },
 "passes": {
-"total": 226,
-"key": null,
+"total": 227,
+"key": 1,
 "accuracy": 82
 },
 "tackles": {
@@ -83900,8 +83696,8 @@
 "interceptions": 1
 },
 "duels": {
-"total": 28,
-"won": 17
+"total": 29,
+"won": 18
 },
 "dribbles": {
 "attempts": 3,
@@ -84648,18 +84444,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-07-29",
-"type": "Transfer",
-"from": {
-"id": 194,
-"name": "Ajax"
-},
-"to": {
-"id": 503,
-"name": "Torino"
-}
-},
-{
 "date": "2026-07-30",
 "type": "Transfer",
 "from": {
@@ -84706,9 +84490,9 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 0,
-"minutes": 46,
+"appearences": 4,
+"lineups": 1,
+"minutes": 117,
 "number": 8,
 "position": "Midfielder",
 "rating": 6.93,
@@ -84716,12 +84500,12 @@
 },
 "substitutes": {
 "in": 3,
-"out": 0,
+"out": 1,
 "bench": 3
 },
 "shots": {
-"total": 1,
-"on": 1
+"total": 2,
+"on": 2
 },
 "goals": {
 "total": 1,
@@ -84730,7 +84514,7 @@
 "saves": null
 },
 "passes": {
-"total": 26,
+"total": 71,
 "key": 1,
 "accuracy": 88
 },
@@ -84740,17 +84524,17 @@
 "interceptions": 1
 },
 "duels": {
-"total": 5,
-"won": 1
+"total": 8,
+"won": 3
 },
 "dribbles": {
-"attempts": null,
-"success": null,
+"attempts": 1,
+"success": 1,
 "past": null
 },
 "fouls": {
 "drawn": null,
-"committed": 3
+"committed": 4
 },
 "cards": {
 "yellow": 0,
@@ -85392,18 +85176,6 @@
 ],
 "prev_season": 2025,
 "transfers": [
-{
-"date": "2026-07-12",
-"type": "Free agent",
-"from": {
-"id": 182,
-"name": "Union Berlin"
-},
-"to": {
-"id": 487,
-"name": "Lazio"
-}
-},
 {
 "date": "2026-07-13",
 "type": "Free agent",
@@ -86349,7 +86121,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 3
+"bench": 4
 },
 "shots": {
 "total": null,
@@ -86746,21 +86518,21 @@
 "season": 2026
 },
 "games": {
-"appearences": 2,
-"lineups": 2,
-"minutes": 180,
+"appearences": 3,
+"lineups": 3,
+"minutes": 261,
 "number": 21,
 "position": "Defender",
-"rating": 6.5,
+"rating": 6.63,
 "captain": false
 },
 "substitutes": {
 "in": 0,
-"out": 0,
+"out": 1,
 "bench": 1
 },
 "shots": {
-"total": null,
+"total": 1,
 "on": null
 },
 "goals": {
@@ -86770,27 +86542,27 @@
 "saves": null
 },
 "passes": {
-"total": 63,
+"total": 99,
 "key": 1,
-"accuracy": 92
+"accuracy": 90
 },
 "tackles": {
 "total": null,
 "blocks": 3,
-"interceptions": 1
+"interceptions": 2
 },
 "duels": {
-"total": 8,
-"won": 3
+"total": 12,
+"won": 6
 },
 "dribbles": {
-"attempts": null,
-"success": null,
+"attempts": 1,
+"success": 1,
 "past": null
 },
 "fouls": {
-"drawn": 1,
-"committed": 2
+"drawn": 3,
+"committed": 3
 },
 "cards": {
 "yellow": 1,
@@ -87692,17 +87464,17 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 0,
-"minutes": 86,
+"appearences": 4,
+"lineups": 1,
+"minutes": 157,
 "number": 42,
 "position": "Midfielder",
-"rating": 6.8,
+"rating": 6.83,
 "captain": false
 },
 "substitutes": {
 "in": 3,
-"out": 0,
+"out": 1,
 "bench": 3
 },
 "shots": {
@@ -87716,18 +87488,18 @@
 "saves": null
 },
 "passes": {
-"total": 71,
+"total": 94,
 "key": 1,
 "accuracy": 92
 },
 "tackles": {
 "total": 2,
 "blocks": null,
-"interceptions": null
+"interceptions": 1
 },
 "duels": {
-"total": 12,
-"won": 9
+"total": 16,
+"won": 12
 },
 "dribbles": {
 "attempts": 2,
@@ -87735,7 +87507,7 @@
 "past": null
 },
 "fouls": {
-"drawn": 3,
+"drawn": 6,
 "committed": null
 },
 "cards": {
@@ -88017,12 +87789,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 270,
+"appearences": 4,
+"lineups": 4,
+"minutes": 360,
 "number": 14,
 "position": "Defender",
-"rating": 6.9,
+"rating": 6.93,
 "captain": false
 },
 "substitutes": {
@@ -88041,18 +87813,18 @@
 "saves": null
 },
 "passes": {
-"total": 275,
+"total": 316,
 "key": 3,
-"accuracy": 96
+"accuracy": 95
 },
 "tackles": {
-"total": 1,
-"blocks": 3,
-"interceptions": 2
+"total": 2,
+"blocks": 5,
+"interceptions": 3
 },
 "duels": {
-"total": 15,
-"won": 7
+"total": 21,
+"won": 10
 },
 "dribbles": {
 "attempts": null,
@@ -88917,18 +88689,6 @@
 }
 },
 {
-"date": "2026-08-27",
-"type": "Transfer",
-"from": {
-"id": 503,
-"name": "Torino"
-},
-"to": {
-"id": 553,
-"name": "Olympiakos Piraeus"
-}
-},
-{
 "date": "2026-08-28",
 "type": "Transfer",
 "from": {
@@ -89744,50 +89504,50 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 270,
+"appearences": 4,
+"lineups": 4,
+"minutes": 315,
 "number": 7,
 "position": "Attacker",
-"rating": 6.8,
+"rating": 6.93,
 "captain": false
 },
 "substitutes": {
 "in": 0,
-"out": 0,
+"out": 1,
 "bench": 0
 },
 "shots": {
-"total": 1,
-"on": 1
+"total": 2,
+"on": 2
 },
 "goals": {
-"total": 0,
+"total": 1,
 "conceded": 0,
 "assists": 2,
 "saves": null
 },
 "passes": {
-"total": 75,
-"key": 6,
-"accuracy": 72
+"total": 90,
+"key": 7,
+"accuracy": 73
 },
 "tackles": {
-"total": 3,
+"total": 4,
 "blocks": null,
 "interceptions": 4
 },
 "duels": {
-"total": 23,
-"won": 10
+"total": 31,
+"won": 14
 },
 "dribbles": {
-"attempts": 4,
+"attempts": 6,
 "success": null,
 "past": null
 },
 "fouls": {
-"drawn": 4,
+"drawn": 6,
 "committed": 3
 },
 "cards": {
@@ -90175,18 +89935,6 @@
 "id": 1579,
 "name": "Monza"
 }
-},
-{
-"date": "2026-07-23",
-"type": "Loan",
-"from": {
-"id": null,
-"name": "Sporting CP"
-},
-"to": {
-"id": 1579,
-"name": "Monza"
-}
 }
 ]
 },
@@ -90247,9 +89995,9 @@
 "saves": null
 },
 "passes": {
-"total": 160,
+"total": 161,
 "key": 5,
-"accuracy": 84
+"accuracy": 83
 },
 "tackles": {
 "total": 6,
@@ -90257,7 +90005,7 @@
 "interceptions": 1
 },
 "duels": {
-"total": 26,
+"total": 27,
 "won": 19
 },
 "dribbles": {
@@ -90689,11 +90437,11 @@
 "interceptions": 1
 },
 "duels": {
-"total": 51,
+"total": 52,
 "won": 24
 },
 "dribbles": {
-"attempts": 5,
+"attempts": 6,
 "success": 1,
 "past": null
 },
@@ -92009,13 +91757,13 @@
 "accuracy": 79
 },
 "tackles": {
-"total": 5,
+"total": 6,
 "blocks": null,
 "interceptions": 3
 },
 "duels": {
-"total": 25,
-"won": 9
+"total": 26,
+"won": 10
 },
 "dribbles": {
 "attempts": 6,
@@ -92447,12 +92195,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 270,
+"appearences": 4,
+"lineups": 4,
+"minutes": 360,
 "number": 19,
 "position": "Midfielder",
-"rating": 7.57,
+"rating": 7.5,
 "captain": false
 },
 "substitutes": {
@@ -92471,18 +92219,18 @@
 "saves": null
 },
 "passes": {
-"total": 327,
+"total": 392,
 "key": 5,
-"accuracy": 92
+"accuracy": 93
 },
 "tackles": {
-"total": 9,
-"blocks": 2,
-"interceptions": 2
+"total": 11,
+"blocks": 4,
+"interceptions": 3
 },
 "duels": {
-"total": 23,
-"won": 13
+"total": 33,
+"won": 17
 },
 "dribbles": {
 "attempts": 1,
@@ -92490,8 +92238,8 @@
 "past": null
 },
 "fouls": {
-"drawn": 2,
-"committed": 7
+"drawn": 3,
+"committed": 10
 },
 "cards": {
 "yellow": 0,
@@ -92940,7 +92688,7 @@
 "passes": {
 "total": 268,
 "key": null,
-"accuracy": 91
+"accuracy": 92
 },
 "tackles": {
 "total": 12,
@@ -93310,17 +93058,17 @@
 "season": 2026
 },
 "games": {
-"appearences": 2,
-"lineups": 1,
-"minutes": 84,
+"appearences": 3,
+"lineups": 2,
+"minutes": 150,
 "number": 20,
 "position": "Midfielder",
-"rating": 6.75,
+"rating": 7.07,
 "captain": false
 },
 "substitutes": {
 "in": 1,
-"out": 1,
+"out": 2,
 "bench": 1
 },
 "shots": {
@@ -93330,31 +93078,31 @@
 "goals": {
 "total": 0,
 "conceded": 0,
-"assists": 0,
+"assists": 2,
 "saves": null
 },
 "passes": {
-"total": 73,
-"key": 1,
-"accuracy": 94
+"total": 111,
+"key": 3,
+"accuracy": 90
 },
 "tackles": {
-"total": 1,
+"total": 2,
 "blocks": null,
-"interceptions": null
+"interceptions": 2
 },
 "duels": {
-"total": 5,
-"won": 1
+"total": 11,
+"won": 3
 },
 "dribbles": {
-"attempts": 1,
-"success": null,
+"attempts": 3,
+"success": 1,
 "past": null
 },
 "fouls": {
 "drawn": null,
-"committed": 1
+"committed": 2
 },
 "cards": {
 "yellow": 1,
@@ -94907,18 +94655,18 @@
 "season": 2026
 },
 "games": {
-"appearences": 2,
+"appearences": 3,
 "lineups": 1,
-"minutes": 65,
+"minutes": 73,
 "number": 17,
 "position": "Defender",
-"rating": 6.65,
+"rating": 6.63,
 "captain": false
 },
 "substitutes": {
-"in": 1,
+"in": 2,
 "out": 1,
-"bench": 2
+"bench": 3
 },
 "shots": {
 "total": 2,
@@ -94941,8 +94689,8 @@
 "interceptions": 1
 },
 "duels": {
-"total": 7,
-"won": 2
+"total": 8,
+"won": 3
 },
 "dribbles": {
 "attempts": null,
@@ -95374,12 +95122,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 259,
+"appearences": 4,
+"lineups": 4,
+"minutes": 349,
 "number": 68,
 "position": "Midfielder",
-"rating": 6.9,
+"rating": 7.33,
 "captain": false
 },
 "substitutes": {
@@ -95388,28 +95136,28 @@
 "bench": 0
 },
 "shots": {
-"total": 2,
-"on": 1
+"total": 3,
+"on": 2
 },
 "goals": {
-"total": 0,
+"total": 1,
 "conceded": 0,
 "assists": 0,
 "saves": null
 },
 "passes": {
-"total": 150,
-"key": 1,
+"total": 212,
+"key": 3,
 "accuracy": 92
 },
 "tackles": {
-"total": 5,
+"total": 6,
 "blocks": 1,
 "interceptions": 2
 },
 "duels": {
-"total": 20,
-"won": 10
+"total": 29,
+"won": 17
 },
 "dribbles": {
 "attempts": 1,
@@ -95417,8 +95165,8 @@
 "past": null
 },
 "fouls": {
-"drawn": 4,
-"committed": null
+"drawn": 8,
+"committed": 1
 },
 "cards": {
 "yellow": 0,
@@ -95841,12 +95589,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 245,
+"appearences": 4,
+"lineups": 4,
+"minutes": 340,
 "number": 12,
 "position": "Midfielder",
-"rating": 7.03,
+"rating": 6.85,
 "captain": false
 },
 "substitutes": {
@@ -95855,8 +95603,8 @@
 "bench": 0
 },
 "shots": {
-"total": 7,
-"on": 2
+"total": 8,
+"on": 3
 },
 "goals": {
 "total": 0,
@@ -95865,30 +95613,30 @@
 "saves": null
 },
 "passes": {
-"total": 165,
-"key": 5,
-"accuracy": 90
+"total": 219,
+"key": 6,
+"accuracy": 91
 },
 "tackles": {
-"total": 3,
-"blocks": null,
+"total": 4,
+"blocks": 1,
 "interceptions": 1
 },
 "duels": {
-"total": 24,
-"won": 12
+"total": 32,
+"won": 13
 },
 "dribbles": {
-"attempts": 4,
+"attempts": 5,
 "success": 2,
 "past": null
 },
 "fouls": {
 "drawn": 6,
-"committed": 9
+"committed": 13
 },
 "cards": {
-"yellow": 0,
+"yellow": 1,
 "yellowred": 0,
 "red": 0
 },
@@ -96498,9 +96246,9 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 2,
-"minutes": 183,
+"appearences": 4,
+"lineups": 3,
+"minutes": 273,
 "number": 2,
 "position": "Defender",
 "rating": 7.33,
@@ -96522,26 +96270,26 @@
 "saves": null
 },
 "passes": {
-"total": 109,
+"total": 143,
 "key": 1,
-"accuracy": 88
+"accuracy": 86
 },
 "tackles": {
-"total": 9,
-"blocks": 1,
-"interceptions": null
+"total": 14,
+"blocks": 2,
+"interceptions": 2
 },
 "duels": {
-"total": 23,
-"won": 18
+"total": 37,
+"won": 26
 },
 "dribbles": {
-"attempts": 5,
-"success": 4,
+"attempts": 7,
+"success": 5,
 "past": null
 },
 "fouls": {
-"drawn": 4,
+"drawn": 6,
 "committed": null
 },
 "cards": {
@@ -97541,7 +97289,7 @@
 "games": {
 "appearences": 4,
 "lineups": 4,
-"minutes": 366,
+"minutes": 360,
 "number": 3,
 "position": "Defender",
 "rating": 6.9,
@@ -97563,7 +97311,7 @@
 "saves": null
 },
 "passes": {
-"total": 284,
+"total": 285,
 "key": null,
 "accuracy": 97
 },
@@ -98658,18 +98406,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-07-27",
-"type": "Free agent",
-"from": {
-"id": 532,
-"name": "Valencia"
-},
-"to": {
-"id": 503,
-"name": "Torino"
-}
-},
-{
 "date": "2026-07-28",
 "type": "Free agent",
 "from": {
@@ -98716,50 +98452,50 @@
 "season": 2026
 },
 "games": {
-"appearences": 2,
+"appearences": 3,
 "lineups": 0,
-"minutes": 29,
+"minutes": 64,
 "number": 11,
 "position": "Attacker",
-"rating": 6.7,
+"rating": 7.53,
 "captain": false
 },
 "substitutes": {
-"in": 2,
+"in": 3,
 "out": 0,
-"bench": 2
+"bench": 3
 },
 "shots": {
-"total": 1,
-"on": null
+"total": 3,
+"on": 2
 },
 "goals": {
-"total": 0,
+"total": 2,
 "conceded": 0,
 "assists": 0,
 "saves": null
 },
 "passes": {
-"total": 20,
-"key": 2,
-"accuracy": 90
+"total": 36,
+"key": 5,
+"accuracy": 83
 },
 "tackles": {
-"total": 1,
+"total": 3,
 "blocks": null,
 "interceptions": null
 },
 "duels": {
-"total": 5,
-"won": 2
+"total": 13,
+"won": 8
 },
 "dribbles": {
-"attempts": 2,
-"success": null,
+"attempts": 6,
+"success": 3,
 "past": null
 },
 "fouls": {
-"drawn": null,
+"drawn": 1,
 "committed": null
 },
 "cards": {
@@ -99451,7 +99187,7 @@
 "bench": 4
 },
 "shots": {
-"total": 2,
+"total": 1,
 "on": null
 },
 "goals": {
@@ -99471,8 +99207,8 @@
 "interceptions": 1
 },
 "duels": {
-"total": 29,
-"won": 21
+"total": 31,
+"won": 23
 },
 "dribbles": {
 "attempts": 9,
@@ -99751,12 +99487,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 270,
+"appearences": 4,
+"lineups": 4,
+"minutes": 360,
 "number": 30,
 "position": "Goalkeeper",
-"rating": 8.27,
+"rating": 8.18,
 "captain": false
 },
 "substitutes": {
@@ -99770,12 +99506,12 @@
 },
 "goals": {
 "total": 0,
-"conceded": 5,
+"conceded": 7,
 "assists": 0,
-"saves": 18
+"saves": 26
 },
 "passes": {
-"total": 92,
+"total": 133,
 "key": null,
 "accuracy": 48
 },
@@ -99785,8 +99521,8 @@
 "interceptions": null
 },
 "duels": {
-"total": 1,
-"won": null
+"total": 2,
+"won": 1
 },
 "dribbles": {
 "attempts": null,
@@ -99794,7 +99530,7 @@
 "past": null
 },
 "fouls": {
-"drawn": null,
+"drawn": 1,
 "committed": null
 },
 "cards": {
@@ -100331,21 +100067,21 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 0,
-"minutes": 98,
+"appearences": 4,
+"lineups": 1,
+"minutes": 183,
 "number": 14,
 "position": "Midfielder",
-"rating": 6.63,
+"rating": 6.55,
 "captain": false
 },
 "substitutes": {
 "in": 3,
-"out": 0,
+"out": 1,
 "bench": 3
 },
 "shots": {
-"total": 2,
+"total": 3,
 "on": 1
 },
 "goals": {
@@ -100355,18 +100091,18 @@
 "saves": null
 },
 "passes": {
-"total": 55,
+"total": 85,
 "key": 2,
-"accuracy": 89
+"accuracy": 87
 },
 "tackles": {
-"total": 2,
+"total": 3,
 "blocks": null,
-"interceptions": 2
+"interceptions": 3
 },
 "duels": {
-"total": 10,
-"won": 3
+"total": 16,
+"won": 5
 },
 "dribbles": {
 "attempts": 2,
@@ -100374,8 +100110,8 @@
 "past": null
 },
 "fouls": {
-"drawn": 1,
-"committed": 1
+"drawn": 2,
+"committed": 3
 },
 "cards": {
 "yellow": 0,
@@ -100812,12 +100548,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 2,
-"lineups": 1,
-"minutes": 126,
+"appearences": 3,
+"lineups": 2,
+"minutes": 216,
 "number": 90,
 "position": "Midfielder",
-"rating": 6.7,
+"rating": 6.9,
 "captain": false
 },
 "substitutes": {
@@ -100836,26 +100572,26 @@
 "saves": null
 },
 "passes": {
-"total": 73,
-"key": 2,
-"accuracy": 83
+"total": 140,
+"key": 4,
+"accuracy": 81
 },
 "tackles": {
-"total": 1,
-"blocks": null,
-"interceptions": 2
+"total": 4,
+"blocks": 1,
+"interceptions": 3
 },
 "duels": {
-"total": 15,
-"won": 6
+"total": 30,
+"won": 15
 },
 "dribbles": {
-"attempts": null,
-"success": null,
+"attempts": 2,
+"success": 1,
 "past": null
 },
 "fouls": {
-"drawn": 5,
+"drawn": 7,
 "committed": 4
 },
 "cards": {
@@ -101910,18 +101646,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-07-20",
-"type": "Transfer",
-"from": {
-"id": 536,
-"name": "Sevilla"
-},
-"to": {
-"id": 517,
-"name": "Venezia"
-}
-},
-{
 "date": "2026-07-21",
 "type": "Transfer",
 "from": {
@@ -102389,18 +102113,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-08-22",
-"type": "Transfer",
-"from": {
-"id": 59,
-"name": "Preston"
-},
-"to": {
-"id": 495,
-"name": "Genoa"
-}
-},
-{
 "date": "2026-08-23",
 "type": "Transfer",
 "from": {
@@ -102449,7 +102161,7 @@
 "games": {
 "appearences": 4,
 "lineups": 0,
-"minutes": 125,
+"minutes": 119,
 "number": 90,
 "position": "Attacker",
 "rating": 6.6,
@@ -102878,7 +102590,7 @@
 "substitutes": {
 "in": 1,
 "out": 0,
-"bench": 3
+"bench": 4
 },
 "shots": {
 "total": null,
@@ -103269,7 +102981,7 @@
 "minutes": 350,
 "number": 77,
 "position": "Midfielder",
-"rating": 6.6,
+"rating": 6.55,
 "captain": false
 },
 "substitutes": {
@@ -103288,18 +103000,18 @@
 "saves": null
 },
 "passes": {
-"total": 89,
+"total": 88,
 "key": 2,
 "accuracy": 75
 },
 "tackles": {
-"total": 12,
+"total": 11,
 "blocks": 1,
 "interceptions": 2
 },
 "duels": {
 "total": 32,
-"won": 17
+"won": 16
 },
 "dribbles": {
 "attempts": 4,
@@ -103976,7 +103688,7 @@
 "games": {
 "appearences": 3,
 "lineups": 2,
-"minutes": 198,
+"minutes": 192,
 "number": 16,
 "position": "Defender",
 "rating": 6.9,
@@ -105896,42 +105608,42 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
+"appearences": 4,
 "lineups": 3,
-"minutes": 250,
+"minutes": 274,
 "number": 9,
 "position": "Attacker",
-"rating": 6.57,
+"rating": 6.83,
 "captain": false
 },
 "substitutes": {
-"in": 0,
+"in": 1,
 "out": 2,
-"bench": 0
+"bench": 1
 },
 "shots": {
-"total": 5,
-"on": 2
+"total": 6,
+"on": 3
 },
 "goals": {
-"total": 0,
+"total": 1,
 "conceded": 0,
 "assists": 0,
 "saves": null
 },
 "passes": {
-"total": 39,
+"total": 45,
 "key": 5,
-"accuracy": 76
+"accuracy": 77
 },
 "tackles": {
-"total": 1,
+"total": 2,
 "blocks": null,
 "interceptions": 1
 },
 "duels": {
-"total": 17,
-"won": 8
+"total": 20,
+"won": 9
 },
 "dribbles": {
 "attempts": null,
@@ -107322,18 +107034,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-08-26",
-"type": "Transfer",
-"from": {
-"id": 347,
-"name": "Lech Poznan"
-},
-"to": {
-"id": 494,
-"name": "Udinese"
-}
-},
-{
 "date": "2026-08-27",
 "type": "Transfer",
 "from": {
@@ -108231,7 +107931,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 2
+"bench": 3
 },
 "shots": {
 "total": 1,
@@ -109215,12 +108915,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 1,
-"lineups": 0,
-"minutes": 11,
+"appearences": 2,
+"lineups": 1,
+"minutes": 101,
 "number": 6,
 "position": "Midfielder",
-"rating": 6.2,
+"rating": 6.6,
 "captain": false
 },
 "substitutes": {
@@ -109239,9 +108939,9 @@
 "saves": null
 },
 "passes": {
-"total": 14,
+"total": 75,
 "key": null,
-"accuracy": 71
+"accuracy": 88
 },
 "tackles": {
 "total": null,
@@ -109249,16 +108949,16 @@
 "interceptions": null
 },
 "duels": {
-"total": 1,
-"won": null
+"total": 7,
+"won": 4
 },
 "dribbles": {
-"attempts": 1,
-"success": null,
+"attempts": 2,
+"success": 1,
 "past": null
 },
 "fouls": {
-"drawn": null,
+"drawn": 2,
 "committed": null
 },
 "cards": {
@@ -109894,16 +109594,16 @@
 "accuracy": 80
 },
 "tackles": {
-"total": 3,
+"total": 4,
 "blocks": 1,
 "interceptions": 4
 },
 "duels": {
-"total": 37,
-"won": 15
+"total": 38,
+"won": 16
 },
 "dribbles": {
-"attempts": 14,
+"attempts": 13,
 "success": 5,
 "past": null
 },
@@ -110895,12 +110595,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 231,
+"appearences": 4,
+"lineups": 4,
+"minutes": 326,
 "number": 3,
 "position": "Defender",
-"rating": 6.93,
+"rating": 6.78,
 "captain": false
 },
 "substitutes": {
@@ -110909,7 +110609,7 @@
 "bench": 0
 },
 "shots": {
-"total": 1,
+"total": 2,
 "on": 1
 },
 "goals": {
@@ -110919,18 +110619,18 @@
 "saves": null
 },
 "passes": {
-"total": 78,
+"total": 103,
 "key": 4,
 "accuracy": 87
 },
 "tackles": {
-"total": 6,
-"blocks": 1,
-"interceptions": 2
+"total": 7,
+"blocks": 2,
+"interceptions": 5
 },
 "duels": {
-"total": 15,
-"won": 8
+"total": 23,
+"won": 11
 },
 "dribbles": {
 "attempts": 2,
@@ -110938,8 +110638,8 @@
 "past": null
 },
 "fouls": {
-"drawn": null,
-"committed": 3
+"drawn": 2,
+"committed": 4
 },
 "cards": {
 "yellow": 0,
@@ -111532,6 +111232,18 @@
 "to": {
 "id": 503,
 "name": "Torino"
+}
+},
+{
+"date": "2026-09-03",
+"type": "Loan",
+"from": {
+"id": 503,
+"name": "Torino"
+},
+"to": {
+"id": 994,
+"name": "Göztepe"
 }
 }
 ]
@@ -112529,10 +112241,10 @@
 "games": {
 "appearences": 4,
 "lineups": 3,
-"minutes": 271,
+"minutes": 265,
 "number": 17,
 "position": "Attacker",
-"rating": 6.88,
+"rating": 6.93,
 "captain": false
 },
 "substitutes": {
@@ -112561,12 +112273,12 @@
 "interceptions": 1
 },
 "duels": {
-"total": 39,
-"won": 17
+"total": 40,
+"won": 18
 },
 "dribbles": {
-"attempts": 12,
-"success": 4,
+"attempts": 13,
+"success": 5,
 "past": null
 },
 "fouls": {
@@ -113426,22 +113138,22 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 233,
+"appearences": 4,
+"lineups": 4,
+"minutes": 293,
 "number": 7,
 "position": "Midfielder",
-"rating": 7.27,
+"rating": 7.25,
 "captain": false
 },
 "substitutes": {
 "in": 0,
-"out": 3,
+"out": 4,
 "bench": 0
 },
 "shots": {
-"total": 8,
-"on": 3
+"total": 9,
+"on": 4
 },
 "goals": {
 "total": 0,
@@ -113450,18 +113162,18 @@
 "saves": null
 },
 "passes": {
-"total": 99,
-"key": 6,
-"accuracy": 87
+"total": 126,
+"key": 8,
+"accuracy": 84
 },
 "tackles": {
-"total": 1,
+"total": 2,
 "blocks": null,
 "interceptions": 1
 },
 "duels": {
-"total": 30,
-"won": 10
+"total": 32,
+"won": 12
 },
 "dribbles": {
 "attempts": 13,
@@ -113469,7 +113181,7 @@
 "past": null
 },
 "fouls": {
-"drawn": 3,
+"drawn": 4,
 "committed": 10
 },
 "cards": {
@@ -114432,12 +114144,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 270,
+"appearences": 4,
+"lineups": 4,
+"minutes": 360,
 "number": 17,
 "position": "Defender",
-"rating": 6.63,
+"rating": 6.88,
 "captain": false
 },
 "substitutes": {
@@ -114452,34 +114164,34 @@
 "goals": {
 "total": 0,
 "conceded": 0,
-"assists": 0,
+"assists": 1,
 "saves": null
 },
 "passes": {
-"total": 111,
-"key": 1,
-"accuracy": 75
+"total": 133,
+"key": 2,
+"accuracy": 76
 },
 "tackles": {
-"total": 5,
-"blocks": 1,
+"total": 11,
+"blocks": 2,
 "interceptions": 4
 },
 "duels": {
-"total": 26,
-"won": 10
+"total": 43,
+"won": 20
 },
 "dribbles": {
-"attempts": 3,
-"success": null,
+"attempts": 6,
+"success": 1,
 "past": null
 },
 "fouls": {
-"drawn": 3,
-"committed": 3
+"drawn": 6,
+"committed": 4
 },
 "cards": {
-"yellow": 1,
+"yellow": 2,
 "yellowred": 0,
 "red": 0
 },
@@ -116047,7 +115759,7 @@
 "minutes": 360,
 "number": 5,
 "position": "Defender",
-"rating": 6.9,
+"rating": 6.93,
 "captain": false
 },
 "substitutes": {
@@ -116066,7 +115778,7 @@
 "saves": null
 },
 "passes": {
-"total": 224,
+"total": 223,
 "key": null,
 "accuracy": 95
 },
@@ -116486,12 +116198,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 270,
+"appearences": 4,
+"lineups": 4,
+"minutes": 365,
 "number": 15,
 "position": "Defender",
-"rating": 6.93,
+"rating": 6.68,
 "captain": false
 },
 "substitutes": {
@@ -116510,21 +116222,21 @@
 "saves": null
 },
 "passes": {
-"total": 144,
+"total": 192,
 "key": 3,
 "accuracy": 86
 },
 "tackles": {
-"total": 5,
+"total": 6,
 "blocks": 1,
 "interceptions": 4
 },
 "duels": {
-"total": 13,
-"won": 10
+"total": 18,
+"won": 11
 },
 "dribbles": {
-"attempts": null,
+"attempts": 2,
 "success": null,
 "past": null
 },
@@ -117592,18 +117304,6 @@
 ],
 "prev_season": 2025,
 "transfers": [
-{
-"date": "2026-07-30",
-"type": "Transfer",
-"from": {
-"id": 161,
-"name": "VfL Wolfsburg"
-},
-"to": {
-"id": 497,
-"name": "AS Roma"
-}
-},
 {
 "date": "2026-07-31",
 "type": "Transfer",
@@ -118795,18 +118495,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-07-08",
-"type": "Transfer",
-"from": {
-"id": 1072,
-"name": "TSV Hartberg"
-},
-"to": {
-"id": 495,
-"name": "Genoa"
-}
-},
-{
 "date": "2026-07-09",
 "type": "Transfer",
 "from": {
@@ -118877,9 +118565,9 @@
 "saves": null
 },
 "passes": {
-"total": 78,
+"total": 76,
 "key": 1,
-"accuracy": 79
+"accuracy": 80
 },
 "tackles": {
 "total": 10,
@@ -119322,7 +119010,7 @@
 "saves": null
 },
 "passes": {
-"total": 267,
+"total": 265,
 "key": 4,
 "accuracy": 91
 },
@@ -119336,7 +119024,7 @@
 "won": 14
 },
 "dribbles": {
-"attempts": 1,
+"attempts": 2,
 "success": null,
 "past": null
 },
@@ -119660,18 +119348,6 @@
 }
 },
 {
-"date": "2026-07-08",
-"type": "Transfer",
-"from": {
-"id": 487,
-"name": "Lazio"
-},
-"to": {
-"id": 489,
-"name": "AC Milan"
-}
-},
-{
 "date": "2026-07-09",
 "type": "Transfer",
 "from": {
@@ -119723,7 +119399,7 @@
 "minutes": 194,
 "number": 10,
 "position": "Midfielder",
-"rating": 7.08,
+"rating": 7.03,
 "captain": false
 },
 "substitutes": {
@@ -120358,18 +120034,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-08-23",
-"type": "Transfer",
-"from": {
-"id": 82,
-"name": "Montpellier"
-},
-"to": {
-"id": 512,
-"name": "Frosinone"
-}
-},
-{
 "date": "2026-08-24",
 "type": "Transfer",
 "from": {
@@ -120421,7 +120085,7 @@
 "minutes": 213,
 "number": 30,
 "position": "Defender",
-"rating": 6.98,
+"rating": 6.93,
 "captain": false
 },
 "substitutes": {
@@ -120440,7 +120104,7 @@
 "saves": null
 },
 "passes": {
-"total": 53,
+"total": 54,
 "key": 3,
 "accuracy": 75
 },
@@ -120450,8 +120114,8 @@
 "interceptions": 3
 },
 "duels": {
-"total": 28,
-"won": 15
+"total": 31,
+"won": 16
 },
 "dribbles": {
 "attempts": null,
@@ -121623,7 +121287,7 @@
 "games": {
 "appearences": 2,
 "lineups": 0,
-"minutes": 50,
+"minutes": 44,
 "number": 9,
 "position": "Attacker",
 "rating": 6.55,
@@ -122022,7 +121686,7 @@
 "minutes": 293,
 "number": 20,
 "position": "Defender",
-"rating": 6.78,
+"rating": 6.8,
 "captain": false
 },
 "substitutes": {
@@ -122041,21 +121705,21 @@
 "saves": null
 },
 "passes": {
-"total": 89,
+"total": 90,
 "key": 1,
 "accuracy": 75
 },
 "tackles": {
 "total": 10,
 "blocks": null,
-"interceptions": 6
+"interceptions": 7
 },
 "duels": {
 "total": 44,
 "won": 23
 },
 "dribbles": {
-"attempts": 6,
+"attempts": 5,
 "success": 3,
 "past": null
 },
@@ -122413,12 +122077,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 261,
+"appearences": 4,
+"lineups": 4,
+"minutes": 351,
 "number": 44,
 "position": "Defender",
-"rating": 6.23,
+"rating": 6.4,
 "captain": false
 },
 "substitutes": {
@@ -122427,8 +122091,8 @@
 "bench": 0
 },
 "shots": {
-"total": 3,
-"on": 1
+"total": 4,
+"on": 2
 },
 "goals": {
 "total": 0,
@@ -122437,26 +122101,26 @@
 "saves": null
 },
 "passes": {
-"total": 146,
+"total": 226,
 "key": 2,
-"accuracy": 82
+"accuracy": 83
 },
 "tackles": {
-"total": 2,
+"total": 4,
 "blocks": 2,
-"interceptions": 3
+"interceptions": 5
 },
 "duels": {
-"total": 27,
-"won": 12
+"total": 36,
+"won": 19
 },
 "dribbles": {
-"attempts": null,
+"attempts": 1,
 "success": null,
 "past": null
 },
 "fouls": {
-"drawn": null,
+"drawn": 1,
 "committed": 4
 },
 "cards": {
@@ -122844,7 +122508,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 1
+"bench": 2
 },
 "shots": {
 "total": null,
@@ -124166,18 +123830,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-08-12",
-"type": "Transfer",
-"from": {
-"id": 452,
-"name": "Tigre"
-},
-"to": {
-"id": 523,
-"name": "Parma"
-}
-},
-{
 "date": "2026-08-13",
 "type": "Transfer",
 "from": {
@@ -124620,18 +124272,18 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
+"appearences": 4,
 "lineups": 0,
-"minutes": 40,
+"minutes": 55,
 "number": 20,
 "position": "Attacker",
 "rating": 6.5,
 "captain": false
 },
 "substitutes": {
-"in": 3,
+"in": 4,
 "out": 0,
-"bench": 3
+"bench": 4
 },
 "shots": {
 "total": 2,
@@ -124644,18 +124296,18 @@
 "saves": null
 },
 "passes": {
-"total": 10,
-"key": 2,
-"accuracy": 70
+"total": 21,
+"key": 3,
+"accuracy": 85
 },
 "tackles": {
 "total": null,
 "blocks": null,
-"interceptions": 1
+"interceptions": 2
 },
 "duels": {
-"total": 9,
-"won": 3
+"total": 15,
+"won": 5
 },
 "dribbles": {
 "attempts": null,
@@ -124664,7 +124316,7 @@
 },
 "fouls": {
 "drawn": null,
-"committed": 1
+"committed": 3
 },
 "cards": {
 "yellow": 0,
@@ -125230,12 +124882,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 2,
-"minutes": 204,
+"appearences": 4,
+"lineups": 3,
+"minutes": 294,
 "number": 5,
 "position": "Defender",
-"rating": 6.87,
+"rating": 6.73,
 "captain": false
 },
 "substitutes": {
@@ -125254,18 +124906,18 @@
 "saves": null
 },
 "passes": {
-"total": 76,
+"total": 106,
 "key": 2,
-"accuracy": 77
+"accuracy": 75
 },
 "tackles": {
-"total": 4,
+"total": 6,
 "blocks": 1,
-"interceptions": 5
+"interceptions": 7
 },
 "duels": {
-"total": 17,
-"won": 10
+"total": 24,
+"won": 14
 },
 "dribbles": {
 "attempts": 2,
@@ -126970,18 +126622,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-07-11",
-"type": "Free agent",
-"from": {
-"id": 158,
-"name": "Fortuna Düsseldorf"
-},
-"to": {
-"id": 512,
-"name": "Frosinone"
-}
-},
-{
 "date": "2026-07-12",
 "type": "Free agent",
 "from": {
@@ -127028,12 +126668,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 1,
-"lineups": 1,
-"minutes": 90,
+"appearences": 2,
+"lineups": 2,
+"minutes": 180,
 "number": 3,
 "position": "Defender",
-"rating": 6.3,
+"rating": 6.5,
 "captain": false
 },
 "substitutes": {
@@ -127052,18 +126692,18 @@
 "saves": null
 },
 "passes": {
-"total": 64,
+"total": 115,
 "key": null,
-"accuracy": 96
+"accuracy": 95
 },
 "tackles": {
 "total": 1,
 "blocks": 1,
-"interceptions": 2
+"interceptions": 4
 },
 "duels": {
-"total": 5,
-"won": 3
+"total": 7,
+"won": 4
 },
 "dribbles": {
 "attempts": null,
@@ -127071,7 +126711,7 @@
 "past": null
 },
 "fouls": {
-"drawn": null,
+"drawn": 1,
 "committed": 1
 },
 "cards": {
@@ -127645,18 +127285,6 @@
 }
 },
 {
-"date": "2026-09-01",
-"type": "Transfer",
-"from": {
-"id": 512,
-"name": "Frosinone"
-},
-"to": {
-"id": 554,
-"name": "Anderlecht"
-}
-},
-{
 "date": "2026-09-02",
 "type": "Transfer",
 "from": {
@@ -127703,12 +127331,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 261,
+"appearences": 4,
+"lineups": 4,
+"minutes": 351,
 "number": 16,
 "position": "Defender",
-"rating": 6.9,
+"rating": 6.93,
 "captain": false
 },
 "substitutes": {
@@ -127727,18 +127355,18 @@
 "saves": null
 },
 "passes": {
-"total": 147,
+"total": 213,
 "key": 1,
-"accuracy": 93
+"accuracy": 94
 },
 "tackles": {
-"total": 5,
+"total": 8,
 "blocks": 4,
-"interceptions": 3
+"interceptions": 4
 },
 "duels": {
-"total": 26,
-"won": 9
+"total": 36,
+"won": 13
 },
 "dribbles": {
 "attempts": null,
@@ -127747,7 +127375,7 @@
 },
 "fouls": {
 "drawn": 3,
-"committed": 7
+"committed": 9
 },
 "cards": {
 "yellow": 1,
@@ -128270,7 +127898,7 @@
 "minutes": 300,
 "number": 29,
 "position": "Attacker",
-"rating": 6.3,
+"rating": 6.38,
 "captain": false
 },
 "substitutes": {
@@ -128299,12 +127927,12 @@
 "interceptions": 1
 },
 "duels": {
-"total": 42,
-"won": 11
+"total": 44,
+"won": 13
 },
 "dribbles": {
-"attempts": 3,
-"success": 1,
+"attempts": 4,
+"success": 2,
 "past": null
 },
 "fouls": {
@@ -128937,7 +128565,7 @@
 "games": {
 "appearences": 3,
 "lineups": 0,
-"minutes": 96,
+"minutes": 90,
 "number": 39,
 "position": "Attacker",
 "rating": 6.67,
@@ -129438,17 +129066,17 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 1,
-"minutes": 142,
+"appearences": 4,
+"lineups": 2,
+"minutes": 216,
 "number": 9,
 "position": "Attacker",
-"rating": 6.27,
+"rating": 6.25,
 "captain": false
 },
 "substitutes": {
 "in": 2,
-"out": 0,
+"out": 1,
 "bench": 2
 },
 "shots": {
@@ -129462,9 +129090,9 @@
 "saves": null
 },
 "passes": {
-"total": 30,
+"total": 42,
 "key": null,
-"accuracy": 86
+"accuracy": 80
 },
 "tackles": {
 "total": null,
@@ -129472,17 +129100,17 @@
 "interceptions": null
 },
 "duels": {
-"total": 9,
-"won": 2
+"total": 20,
+"won": 5
 },
 "dribbles": {
-"attempts": null,
+"attempts": 1,
 "success": null,
 "past": null
 },
 "fouls": {
-"drawn": 1,
-"committed": 2
+"drawn": 2,
+"committed": 4
 },
 "cards": {
 "yellow": 0,
@@ -130510,18 +130138,6 @@
 }
 },
 {
-"date": "2026-08-08",
-"type": "Transfer",
-"from": {
-"id": 515,
-"name": "Spezia"
-},
-"to": {
-"id": 490,
-"name": "Cagliari"
-}
-},
-{
 "date": "2026-08-09",
 "type": "Transfer",
 "from": {
@@ -131262,10 +130878,10 @@
 "games": {
 "appearences": 2,
 "lineups": 1,
-"minutes": 99,
+"minutes": 93,
 "number": 47,
 "position": "Defender",
-"rating": 6.6,
+"rating": 6.65,
 "captain": false
 },
 "substitutes": {
@@ -131284,8 +130900,8 @@
 "saves": null
 },
 "passes": {
-"total": 55,
-"key": null,
+"total": 57,
+"key": 1,
 "accuracy": 92
 },
 "tackles": {
@@ -131947,18 +131563,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-01-06",
-"type": "Transfer",
-"from": {
-"id": 324,
-"name": "Stromsgodset"
-},
-"to": {
-"id": 517,
-"name": "Venezia"
-}
-},
-{
 "date": "2026-01-07",
 "type": "Transfer",
 "from": {
@@ -131968,18 +131572,6 @@
 "to": {
 "id": 517,
 "name": "Venezia"
-}
-},
-{
-"date": "2026-08-30",
-"type": "Transfer",
-"from": {
-"id": 517,
-"name": "Venezia"
-},
-"to": {
-"id": 210,
-"name": "Heerenveen"
 }
 },
 {
@@ -132040,7 +131632,7 @@
 "substitutes": {
 "in": 2,
 "out": 0,
-"bench": 3
+"bench": 4
 },
 "shots": {
 "total": null,
@@ -132602,7 +132194,7 @@
 "substitutes": {
 "in": 1,
 "out": 0,
-"bench": 2
+"bench": 3
 },
 "shots": {
 "total": 1,
@@ -135804,10 +135396,10 @@
 "games": {
 "appearences": 1,
 "lineups": 1,
-"minutes": 96,
+"minutes": 90,
 "number": 11,
 "position": "Attacker",
-"rating": 7.3,
+"rating": 7.2,
 "captain": false
 },
 "substitutes": {
@@ -135826,9 +135418,9 @@
 "saves": null
 },
 "passes": {
-"total": 33,
+"total": 34,
 "key": 2,
-"accuracy": 90
+"accuracy": 88
 },
 "tackles": {
 "total": 3,
@@ -136903,7 +136495,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 3
+"bench": 4
 },
 "shots": {
 "total": null,
@@ -137626,7 +137218,7 @@
 "saves": null
 },
 "passes": {
-"total": 104,
+"total": 103,
 "key": 1,
 "accuracy": 74
 },
@@ -137636,7 +137228,7 @@
 "interceptions": 7
 },
 "duels": {
-"total": 40,
+"total": 41,
 "won": 22
 },
 "dribbles": {
@@ -138124,18 +137716,6 @@
 }
 },
 {
-"date": "2026-08-30",
-"type": "Transfer",
-"from": {
-"id": 488,
-"name": "Sassuolo"
-},
-"to": {
-"id": 504,
-"name": "Hellas Verona"
-}
-},
-{
 "date": "2026-08-31",
 "type": "Transfer",
 "from": {
@@ -138187,7 +137767,7 @@
 "minutes": 218,
 "number": 9,
 "position": "Attacker",
-"rating": 6.53,
+"rating": 6.43,
 "captain": false
 },
 "substitutes": {
@@ -138208,19 +137788,19 @@
 "passes": {
 "total": 45,
 "key": null,
-"accuracy": 71
+"accuracy": 68
 },
 "tackles": {
 "total": 3,
 "blocks": 1,
-"interceptions": 2
+"interceptions": 1
 },
 "duels": {
-"total": 29,
+"total": 31,
 "won": 10
 },
 "dribbles": {
-"attempts": 10,
+"attempts": 9,
 "success": 2,
 "past": null
 },
@@ -138543,7 +138123,7 @@
 "saves": null
 },
 "passes": {
-"total": 155,
+"total": 153,
 "key": 2,
 "accuracy": 83
 },
@@ -138553,8 +138133,8 @@
 "interceptions": null
 },
 "duels": {
-"total": 21,
-"won": 13
+"total": 20,
+"won": 12
 },
 "dribbles": {
 "attempts": 2,
@@ -138797,18 +138377,18 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
+"appearences": 4,
 "lineups": 1,
-"minutes": 85,
+"minutes": 100,
 "number": 11,
 "position": "Attacker",
-"rating": 6.77,
+"rating": 6.65,
 "captain": false
 },
 "substitutes": {
-"in": 2,
+"in": 3,
 "out": 1,
-"bench": 2
+"bench": 3
 },
 "shots": {
 "total": 1,
@@ -138821,9 +138401,9 @@
 "saves": null
 },
 "passes": {
-"total": 35,
-"key": 3,
-"accuracy": 91
+"total": 38,
+"key": 4,
+"accuracy": 92
 },
 "tackles": {
 "total": null,
@@ -138831,8 +138411,8 @@
 "interceptions": null
 },
 "duels": {
-"total": 3,
-"won": 3
+"total": 7,
+"won": 5
 },
 "dribbles": {
 "attempts": 2,
@@ -138840,7 +138420,7 @@
 "past": null
 },
 "fouls": {
-"drawn": null,
+"drawn": 2,
 "committed": null
 },
 "cards": {
@@ -139471,18 +139051,6 @@
 ],
 "prev_season": 2025,
 "transfers": [
-{
-"date": "2026-08-30",
-"type": "Transfer",
-"from": {
-"id": 495,
-"name": "Genoa"
-},
-"to": {
-"id": 64,
-"name": "Hull City"
-}
-},
 {
 "date": "2026-08-31",
 "type": "Transfer",
@@ -140490,7 +140058,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 3
+"bench": 4
 },
 "shots": {
 "total": null,
@@ -141017,22 +140585,22 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 230,
+"appearences": 4,
+"lineups": 4,
+"minutes": 305,
 "number": 19,
 "position": "Attacker",
-"rating": 6.9,
+"rating": 6.68,
 "captain": false
 },
 "substitutes": {
 "in": 0,
-"out": 3,
+"out": 4,
 "bench": 0
 },
 "shots": {
-"total": 4,
-"on": 3
+"total": 6,
+"on": 4
 },
 "goals": {
 "total": 2,
@@ -141041,9 +140609,9 @@
 "saves": null
 },
 "passes": {
-"total": 26,
+"total": 35,
 "key": 1,
-"accuracy": 61
+"accuracy": 68
 },
 "tackles": {
 "total": null,
@@ -141051,8 +140619,8 @@
 "interceptions": null
 },
 "duels": {
-"total": 24,
-"won": 7
+"total": 31,
+"won": 8
 },
 "dribbles": {
 "attempts": 7,
@@ -141061,7 +140629,7 @@
 },
 "fouls": {
 "drawn": 2,
-"committed": null
+"committed": 2
 },
 "cards": {
 "yellow": 0,
@@ -142711,7 +142279,7 @@
 "games": {
 "appearences": 4,
 "lineups": 4,
-"minutes": 366,
+"minutes": 360,
 "number": 42,
 "position": "Defender",
 "rating": 6.9,
@@ -142733,7 +142301,7 @@
 "saves": null
 },
 "passes": {
-"total": 262,
+"total": 263,
 "key": null,
 "accuracy": 96
 },
@@ -142743,11 +142311,11 @@
 "interceptions": 2
 },
 "duels": {
-"total": 29,
+"total": 30,
 "won": 16
 },
 "dribbles": {
-"attempts": null,
+"attempts": 1,
 "success": null,
 "past": null
 },
@@ -143163,12 +142731,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 2,
-"minutes": 196,
+"appearences": 4,
+"lineups": 3,
+"minutes": 291,
 "number": 16,
 "position": "Defender",
-"rating": 7.13,
+"rating": 6.98,
 "captain": false
 },
 "substitutes": {
@@ -143187,18 +142755,18 @@
 "saves": null
 },
 "passes": {
-"total": 92,
+"total": 135,
 "key": 1,
-"accuracy": 93
+"accuracy": 91
 },
 "tackles": {
-"total": 4,
-"blocks": 3,
-"interceptions": 1
+"total": 6,
+"blocks": 4,
+"interceptions": 4
 },
 "duels": {
-"total": 19,
-"won": 12
+"total": 25,
+"won": 15
 },
 "dribbles": {
 "attempts": null,
@@ -143207,10 +142775,10 @@
 },
 "fouls": {
 "drawn": null,
-"committed": 2
+"committed": 3
 },
 "cards": {
-"yellow": 0,
+"yellow": 1,
 "yellowred": 0,
 "red": 0
 },
@@ -143641,7 +143209,7 @@
 "substitutes": {
 "in": 0,
 "out": 1,
-"bench": 0
+"bench": 1
 },
 "shots": {
 "total": 1,
@@ -144456,18 +144024,6 @@
 "to": {
 "id": 523,
 "name": "Parma"
-}
-},
-{
-"date": "2026-08-11",
-"type": "Transfer",
-"from": {
-"id": 523,
-"name": "Parma"
-},
-"to": {
-"id": 502,
-"name": "Fiorentina"
 }
 },
 {
@@ -145332,7 +144888,7 @@
 "substitutes": {
 "in": 0,
 "out": 1,
-"bench": 1
+"bench": 2
 },
 "shots": {
 "total": 1,
@@ -145599,18 +145155,6 @@
 ],
 "prev_season": 2025,
 "transfers": [
-{
-"date": "2026-07-19",
-"type": "Transfer",
-"from": {
-"id": 718,
-"name": "Oviedo"
-},
-"to": {
-"id": 500,
-"name": "Bologna"
-}
-},
 {
 "date": "2026-07-20",
 "type": "Transfer",
@@ -146230,18 +145774,6 @@
 "to": {
 "id": 487,
 "name": "Lazio"
-}
-},
-{
-"date": "2026-08-31",
-"type": "Loan",
-"from": {
-"id": 487,
-"name": "Lazio"
-},
-"to": {
-"id": null,
-"name": "Levante"
 }
 },
 {
@@ -148571,18 +148103,6 @@
 "date": "2026-06-30",
 "type": "Transfer",
 "from": {
-"id": null,
-"name": "Sporting CP"
-},
-"to": {
-"id": 492,
-"name": "Napoli"
-}
-},
-{
-"date": "2026-06-30",
-"type": "Transfer",
-"from": {
 "id": 228,
 "name": "Sporting CP"
 },
@@ -148997,18 +148517,6 @@
 "to": {
 "id": 523,
 "name": "Parma"
-}
-},
-{
-"date": "2026-07-28",
-"type": "Transfer",
-"from": {
-"id": 500,
-"name": "Bologna"
-},
-"to": {
-"id": 497,
-"name": "AS Roma"
 }
 },
 {
@@ -149701,12 +149209,12 @@
 "interceptions": null
 },
 "duels": {
-"total": 56,
-"won": 25
+"total": 58,
+"won": 26
 },
 "dribbles": {
 "attempts": 26,
-"success": 12,
+"success": 13,
 "past": null
 },
 "fouls": {
@@ -150943,6 +150451,18 @@
 "id": 494,
 "name": "Udinese"
 }
+},
+{
+"date": "2026-09-06",
+"type": "Transfer",
+"from": {
+"id": 494,
+"name": "Udinese"
+},
+"to": {
+"id": 4374,
+"name": "Koper"
+}
 }
 ]
 },
@@ -150984,7 +150504,7 @@
 "minutes": 329,
 "number": 9,
 "position": "Attacker",
-"rating": 7.33,
+"rating": 7.28,
 "captain": false
 },
 "substitutes": {
@@ -151003,9 +150523,9 @@
 "saves": null
 },
 "passes": {
-"total": 30,
+"total": 29,
 "key": 3,
-"accuracy": 63
+"accuracy": 62
 },
 "tackles": {
 "total": 1,
@@ -151013,8 +150533,8 @@
 "interceptions": 1
 },
 "duels": {
-"total": 36,
-"won": 9
+"total": 37,
+"won": 10
 },
 "dribbles": {
 "attempts": 3,
@@ -151866,7 +151386,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 1
+"bench": 2
 },
 "shots": {
 "total": null,
@@ -153019,79 +152539,7 @@
 "number": 14,
 "position": "Defender",
 "active": true,
-"cur": [
-{
-"team": {
-"id": 494,
-"name": "Udinese"
-},
-"league": {
-"id": 135,
-"name": "Serie A",
-"country": "Italy",
-"season": 2026
-},
-"games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 256,
-"number": 14,
-"position": "Defender",
-"rating": 6.73,
-"captain": false
-},
-"substitutes": {
-"in": 0,
-"out": 1,
-"bench": 0
-},
-"shots": {
-"total": null,
-"on": null
-},
-"goals": {
-"total": 0,
-"conceded": 0,
-"assists": 0,
-"saves": null
-},
-"passes": {
-"total": 93,
-"key": 1,
-"accuracy": 87
-},
-"tackles": {
-"total": 5,
-"blocks": 4,
-"interceptions": 1
-},
-"duels": {
-"total": 22,
-"won": 9
-},
-"dribbles": {
-"attempts": null,
-"success": null,
-"past": null
-},
-"fouls": {
-"drawn": 2,
-"committed": 5
-},
-"cards": {
-"yellow": 1,
-"yellowred": 0,
-"red": 0
-},
-"penalty": {
-"won": null,
-"commited": null,
-"scored": 0,
-"missed": 0,
-"saved": null
-}
-}
-],
+"cur": [],
 "cur_season": 2026,
 "prev": [
 {
@@ -153499,79 +152947,7 @@
 "number": 33,
 "position": "Defender",
 "active": true,
-"cur": [
-{
-"team": {
-"id": 490,
-"name": "Cagliari"
-},
-"league": {
-"id": 135,
-"name": "Serie A",
-"country": "Italy",
-"season": 2026
-},
-"games": {
-"appearences": 4,
-"lineups": 4,
-"minutes": 363,
-"number": 33,
-"position": "Defender",
-"rating": 7.1,
-"captain": false
-},
-"substitutes": {
-"in": 0,
-"out": 1,
-"bench": 0
-},
-"shots": {
-"total": 3,
-"on": 2
-},
-"goals": {
-"total": 0,
-"conceded": 0,
-"assists": 0,
-"saves": null
-},
-"passes": {
-"total": 144,
-"key": 4,
-"accuracy": 86
-},
-"tackles": {
-"total": 9,
-"blocks": 2,
-"interceptions": 4
-},
-"duels": {
-"total": 19,
-"won": 12
-},
-"dribbles": {
-"attempts": 3,
-"success": 2,
-"past": null
-},
-"fouls": {
-"drawn": null,
-"committed": 1
-},
-"cards": {
-"yellow": 0,
-"yellowred": 0,
-"red": 0
-},
-"penalty": {
-"won": null,
-"commited": null,
-"scored": 0,
-"missed": 0,
-"saved": null
-}
-}
-],
+"cur": [],
 "cur_season": 2026,
 "prev": [
 {
@@ -153953,150 +153329,7 @@
 "number": 80,
 "position": "Attacker",
 "active": true,
-"cur": [
-{
-"team": {
-"id": 502,
-"name": "Fiorentina"
-},
-"league": {
-"id": 135,
-"name": "Serie A",
-"country": "Italy",
-"season": 2026
-},
-"games": {
-"appearences": 0,
-"lineups": 0,
-"minutes": null,
-"number": 80,
-"position": "Midfielder",
-"rating": null,
-"captain": false
-},
-"substitutes": {
-"in": 0,
-"out": 0,
-"bench": 1
-},
-"shots": {
-"total": null,
-"on": null
-},
-"goals": {
-"total": 0,
-"conceded": 0,
-"assists": 0,
-"saves": null
-},
-"passes": {
-"total": null,
-"key": null,
-"accuracy": null
-},
-"tackles": {
-"total": null,
-"blocks": null,
-"interceptions": null
-},
-"duels": {
-"total": null,
-"won": null
-},
-"dribbles": {
-"attempts": null,
-"success": null,
-"past": null
-},
-"fouls": {
-"drawn": null,
-"committed": null
-},
-"cards": {
-"yellow": 0,
-"yellowred": 0,
-"red": 0
-},
-"penalty": {
-"won": null,
-"commited": null,
-"scored": 0,
-"missed": 0,
-"saved": null
-}
-},
-{
-"team": {
-"id": 523,
-"name": "Parma"
-},
-"league": {
-"id": 135,
-"name": "Serie A",
-"country": "Italy",
-"season": 2026
-},
-"games": {
-"appearences": 1,
-"lineups": 1,
-"minutes": 45,
-"number": 80,
-"position": "Midfielder",
-"rating": 6.5,
-"captain": false
-},
-"substitutes": {
-"in": 0,
-"out": 1,
-"bench": 1
-},
-"shots": {
-"total": null,
-"on": null
-},
-"goals": {
-"total": 0,
-"conceded": 0,
-"assists": 0,
-"saves": null
-},
-"passes": {
-"total": 8,
-"key": null,
-"accuracy": 62
-},
-"tackles": {
-"total": 2,
-"blocks": null,
-"interceptions": 1
-},
-"duels": {
-"total": 7,
-"won": 3
-},
-"dribbles": {
-"attempts": null,
-"success": null,
-"past": null
-},
-"fouls": {
-"drawn": 1,
-"committed": 1
-},
-"cards": {
-"yellow": 0,
-"yellowred": 0,
-"red": 0
-},
-"penalty": {
-"won": null,
-"commited": null,
-"scored": 0,
-"missed": 0,
-"saved": null
-}
-}
-],
+"cur": [],
 "cur_season": 2026,
 "prev": [
 {
@@ -154847,79 +154080,7 @@
 "number": 91,
 "position": "Goalkeeper",
 "active": true,
-"cur": [
-{
-"team": {
-"id": 512,
-"name": "Frosinone"
-},
-"league": {
-"id": 135,
-"name": "Serie A",
-"country": "Italy",
-"season": 2026
-},
-"games": {
-"appearences": 0,
-"lineups": 0,
-"minutes": null,
-"number": 91,
-"position": "Goalkeeper",
-"rating": null,
-"captain": false
-},
-"substitutes": {
-"in": 0,
-"out": 0,
-"bench": 4
-},
-"shots": {
-"total": null,
-"on": null
-},
-"goals": {
-"total": 0,
-"conceded": 0,
-"assists": 0,
-"saves": null
-},
-"passes": {
-"total": null,
-"key": null,
-"accuracy": null
-},
-"tackles": {
-"total": null,
-"blocks": null,
-"interceptions": null
-},
-"duels": {
-"total": null,
-"won": null
-},
-"dribbles": {
-"attempts": null,
-"success": null,
-"past": null
-},
-"fouls": {
-"drawn": null,
-"committed": null
-},
-"cards": {
-"yellow": 0,
-"yellowred": 0,
-"red": 0
-},
-"penalty": {
-"won": null,
-"commited": null,
-"scored": 0,
-"missed": 0,
-"saved": null
-}
-}
-],
+"cur": [],
 "cur_season": 2026,
 "prev": [
 {
@@ -155824,18 +154985,6 @@
 ],
 "prev_season": 2025,
 "transfers": [
-{
-"date": "2026-07-30",
-"type": "Transfer",
-"from": {
-"id": 266,
-"name": "KV Mechelen"
-},
-"to": {
-"id": 517,
-"name": "Venezia"
-}
-},
 {
 "date": "2026-07-31",
 "type": "Transfer",
@@ -157648,18 +156797,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-07-06",
-"type": "Transfer",
-"from": {
-"id": 531,
-"name": "Athletic Club"
-},
-"to": {
-"id": 494,
-"name": "Udinese"
-}
-},
-{
 "date": "2026-07-07",
 "type": "Transfer",
 "from": {
@@ -159202,18 +158339,6 @@
 ],
 "prev_season": 2025,
 "transfers": [
-{
-"date": "2026-08-17",
-"type": "Transfer",
-"from": {
-"id": 95,
-"name": "Strasbourg"
-},
-"to": {
-"id": 489,
-"name": "AC Milan"
-}
-},
 {
 "date": "2026-08-18",
 "type": "Transfer",
@@ -161111,6 +160236,77 @@
 "missed": 0,
 "saved": null
 }
+},
+{
+"team": {
+"id": 488,
+"name": "Sassuolo"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 4,
+"lineups": 3,
+"minutes": 208,
+"number": 17,
+"position": "Midfielder",
+"rating": 7.08,
+"captain": false
+},
+"substitutes": {
+"in": 1,
+"out": 3,
+"bench": 1
+},
+"shots": {
+"total": 4,
+"on": 4
+},
+"goals": {
+"total": 2,
+"conceded": 0,
+"assists": 1,
+"saves": null
+},
+"passes": {
+"total": 66,
+"key": 10,
+"accuracy": 87
+},
+"tackles": {
+"total": 3,
+"blocks": null,
+"interceptions": 1
+},
+"duels": {
+"total": 17,
+"won": 7
+},
+"dribbles": {
+"attempts": 3,
+"success": 2,
+"past": null
+},
+"fouls": {
+"drawn": 1,
+"committed": 3
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
 }
 ],
 "cur_season": 2026,
@@ -161803,6 +160999,77 @@
 "missed": 0,
 "saved": null
 }
+},
+{
+"team": {
+"id": 496,
+"name": "Juventus"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 1,
+"lineups": 1,
+"minutes": 69,
+"number": 10,
+"position": "Midfielder",
+"rating": 7.3,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 1,
+"bench": 0
+},
+"shots": {
+"total": 1,
+"on": 1
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 19,
+"key": 3,
+"accuracy": 89
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": 1
+},
+"duels": {
+"total": 4,
+"won": 4
+},
+"dribbles": {
+"attempts": 2,
+"success": 2,
+"past": null
+},
+"fouls": {
+"drawn": 2,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
 }
 ],
 "cur_season": 2026,
@@ -162399,6 +161666,77 @@
 "missed": 0,
 "saved": null
 }
+},
+{
+"team": {
+"id": 1579,
+"name": "Monza"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 3,
+"lineups": 3,
+"minutes": 248,
+"number": 9,
+"position": "Attacker",
+"rating": 7.03,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 2,
+"bench": 0
+},
+"shots": {
+"total": 7,
+"on": 3
+},
+"goals": {
+"total": 2,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 38,
+"key": 3,
+"accuracy": 76
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": 24,
+"won": 5
+},
+"dribbles": {
+"attempts": 7,
+"success": 1,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": 4
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
 }
 ],
 "cur_season": 2026,
@@ -162620,18 +161958,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-07-25",
-"type": "Transfer",
-"from": {
-"id": 211,
-"name": "Benfica"
-},
-"to": {
-"id": 1579,
-"name": "Monza"
-}
-},
-{
 "date": "2026-07-26",
 "type": "Transfer",
 "from": {
@@ -162713,6 +162039,77 @@
 },
 "duels": {
 "total": 33,
+"won": 13
+},
+"dribbles": {
+"attempts": 8,
+"success": 6,
+"past": null
+},
+"fouls": {
+"drawn": 3,
+"committed": 3
+},
+"cards": {
+"yellow": 1,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+},
+{
+"team": {
+"id": 490,
+"name": "Cagliari"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 4,
+"lineups": 4,
+"minutes": 241,
+"number": 10,
+"position": "Midfielder",
+"rating": 6.43,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 4,
+"bench": 0
+},
+"shots": {
+"total": 3,
+"on": 1
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 1,
+"saves": null
+},
+"passes": {
+"total": 93,
+"key": 4,
+"accuracy": 83
+},
+"tackles": {
+"total": 4,
+"blocks": null,
+"interceptions": 4
+},
+"duels": {
+"total": 34,
 "won": 13
 },
 "dribbles": {
@@ -163469,12 +162866,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 239,
+"appearences": 4,
+"lineups": 4,
+"minutes": 329,
 "number": 3,
 "position": "Defender",
-"rating": 6.27,
+"rating": 6.38,
 "captain": false
 },
 "substitutes": {
@@ -163483,8 +162880,8 @@
 "bench": 0
 },
 "shots": {
-"total": 2,
-"on": 1
+"total": 3,
+"on": 2
 },
 "goals": {
 "total": 0,
@@ -163493,18 +162890,18 @@
 "saves": null
 },
 "passes": {
-"total": 103,
+"total": 168,
 "key": null,
 "accuracy": 94
 },
 "tackles": {
-"total": 3,
+"total": 6,
 "blocks": 5,
-"interceptions": 8
+"interceptions": 11
 },
 "duels": {
-"total": 24,
-"won": 9
+"total": 39,
+"won": 16
 },
 "dribbles": {
 "attempts": null,
@@ -163513,7 +162910,7 @@
 },
 "fouls": {
 "drawn": 2,
-"committed": 6
+"committed": 8
 },
 "cards": {
 "yellow": 2,
@@ -165345,18 +164742,6 @@
 }
 },
 {
-"date": "2025-07-23",
-"type": "Transfer",
-"from": {
-"id": 505,
-"name": "Inter"
-},
-"to": {
-"id": 569,
-"name": "Club Brugge KV"
-}
-},
-{
 "date": "2025-07-24",
 "type": "Transfer",
 "from": {
@@ -165366,18 +164751,6 @@
 "to": {
 "id": 569,
 "name": "Club Brugge KV"
-}
-},
-{
-"date": "2026-06-29",
-"type": "Transfer",
-"from": {
-"id": 569,
-"name": "Club Brugge KV"
-},
-"to": {
-"id": 505,
-"name": "Inter"
 }
 },
 {
@@ -165432,7 +164805,7 @@
 "minutes": 325,
 "number": 15,
 "position": "Defender",
-"rating": 6.68,
+"rating": 6.78,
 "captain": false
 },
 "substitutes": {
@@ -165451,9 +164824,9 @@
 "saves": null
 },
 "passes": {
-"total": 143,
+"total": 142,
 "key": 2,
-"accuracy": 87
+"accuracy": 88
 },
 "tackles": {
 "total": 9,
@@ -165461,7 +164834,7 @@
 "interceptions": 5
 },
 "duels": {
-"total": 27,
+"total": 26,
 "won": 14
 },
 "dribbles": {
@@ -166893,17 +166266,17 @@
 "season": 2026
 },
 "games": {
-"appearences": 2,
-"lineups": 1,
-"minutes": 61,
+"appearences": 3,
+"lineups": 2,
+"minutes": 116,
 "number": 35,
 "position": "Midfielder",
-"rating": 6.2,
+"rating": 6.25,
 "captain": false
 },
 "substitutes": {
 "in": 1,
-"out": 1,
+"out": 2,
 "bench": 2
 },
 "shots": {
@@ -166917,18 +166290,18 @@
 "saves": null
 },
 "passes": {
-"total": 21,
+"total": 38,
 "key": null,
-"accuracy": 85
+"accuracy": 86
 },
 "tackles": {
-"total": 1,
+"total": 2,
 "blocks": null,
 "interceptions": 2
 },
 "duels": {
-"total": 6,
-"won": 1
+"total": 9,
+"won": 2
 },
 "dribbles": {
 "attempts": 1,
@@ -166937,10 +166310,10 @@
 },
 "fouls": {
 "drawn": null,
-"committed": null
+"committed": 2
 },
 "cards": {
-"yellow": 0,
+"yellow": 1,
 "yellowred": 0,
 "red": 0
 },
@@ -167147,21 +166520,21 @@
 "season": 2026
 },
 "games": {
-"appearences": 2,
+"appearences": 3,
 "lineups": 0,
-"minutes": 63,
+"minutes": 79,
 "number": 7,
 "position": "Attacker",
-"rating": 6.75,
+"rating": 6.6,
 "captain": false
 },
 "substitutes": {
-"in": 2,
+"in": 3,
 "out": 0,
-"bench": 2
+"bench": 3
 },
 "shots": {
-"total": null,
+"total": 1,
 "on": null
 },
 "goals": {
@@ -167171,17 +166544,17 @@
 "saves": null
 },
 "passes": {
-"total": 14,
+"total": 19,
 "key": 1,
-"accuracy": 64
+"accuracy": 68
 },
 "tackles": {
 "total": 2,
 "blocks": null,
-"interceptions": null
+"interceptions": 1
 },
 "duels": {
-"total": 14,
+"total": 15,
 "won": 9
 },
 "dribbles": {
@@ -167496,18 +166869,6 @@
 ],
 "prev_season": 2025,
 "transfers": [
-{
-"date": "2026-08-23",
-"type": "Transfer",
-"from": {
-"id": 110,
-"name": "Estac Troyes"
-},
-"to": {
-"id": 867,
-"name": "Lecce"
-}
-},
 {
 "date": "2026-08-24",
 "type": "Transfer",
@@ -168022,18 +167383,18 @@
 "season": 2026
 },
 "games": {
-"appearences": 2,
+"appearences": 3,
 "lineups": 0,
-"minutes": 46,
+"minutes": 71,
 "number": 25,
 "position": "Attacker",
-"rating": 6.25,
+"rating": 6.27,
 "captain": false
 },
 "substitutes": {
-"in": 2,
+"in": 3,
 "out": 0,
-"bench": 3
+"bench": 4
 },
 "shots": {
 "total": 1,
@@ -168046,18 +167407,18 @@
 "saves": null
 },
 "passes": {
-"total": 14,
+"total": 18,
 "key": null,
-"accuracy": 85
+"accuracy": 83
 },
 "tackles": {
-"total": null,
+"total": 1,
 "blocks": null,
 "interceptions": null
 },
 "duels": {
-"total": 15,
-"won": 4
+"total": 18,
+"won": 5
 },
 "dribbles": {
 "attempts": 5,
@@ -168430,21 +167791,21 @@
 "season": 2026
 },
 "games": {
-"appearences": 2,
-"lineups": 1,
-"minutes": 85,
+"appearences": 3,
+"lineups": 2,
+"minutes": 130,
 "number": 26,
 "position": "Midfielder",
-"rating": 7.4,
+"rating": 7,
 "captain": false
 },
 "substitutes": {
 "in": 1,
-"out": 1,
+"out": 2,
 "bench": 2
 },
 "shots": {
-"total": 1,
+"total": 2,
 "on": 1
 },
 "goals": {
@@ -168454,21 +167815,21 @@
 "saves": null
 },
 "passes": {
-"total": 23,
+"total": 30,
 "key": 2,
-"accuracy": 91
+"accuracy": 83
 },
 "tackles": {
-"total": 6,
+"total": 10,
 "blocks": 1,
 "interceptions": 2
 },
 "duels": {
-"total": 18,
-"won": 9
+"total": 29,
+"won": 14
 },
 "dribbles": {
-"attempts": 2,
+"attempts": 3,
 "success": 1,
 "past": null
 },
@@ -169115,18 +168476,6 @@
 "to": {
 "id": 494,
 "name": "Udinese"
-}
-},
-{
-"date": "2026-07-09",
-"type": "Transfer",
-"from": {
-"id": 494,
-"name": "Udinese"
-},
-"to": {
-"id": 502,
-"name": "Fiorentina"
 }
 },
 {
@@ -169785,51 +169134,51 @@
 "season": 2026
 },
 "games": {
-"appearences": 0,
+"appearences": 1,
 "lineups": 0,
-"minutes": null,
+"minutes": 45,
 "number": 2,
 "position": "Defender",
-"rating": null,
+"rating": 7.3,
 "captain": false
 },
 "substitutes": {
-"in": 0,
+"in": 1,
 "out": 0,
-"bench": 3
+"bench": 4
 },
 "shots": {
-"total": null,
-"on": null
+"total": 1,
+"on": 1
 },
 "goals": {
 "total": 0,
 "conceded": 0,
-"assists": 0,
+"assists": 1,
 "saves": null
 },
 "passes": {
-"total": null,
-"key": null,
-"accuracy": null
+"total": 14,
+"key": 2,
+"accuracy": 92
 },
 "tackles": {
-"total": null,
+"total": 3,
 "blocks": null,
 "interceptions": null
 },
 "duels": {
-"total": null,
-"won": null
+"total": 7,
+"won": 5
 },
 "dribbles": {
-"attempts": null,
-"success": null,
+"attempts": 3,
+"success": 2,
 "past": null
 },
 "fouls": {
 "drawn": null,
-"committed": null
+"committed": 1
 },
 "cards": {
 "yellow": 0,
@@ -171530,7 +170879,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 2
+"bench": 3
 },
 "shots": {
 "total": null,
@@ -172377,18 +171726,6 @@
 }
 },
 {
-"date": "2026-08-30",
-"type": "Transfer",
-"from": {
-"id": 499,
-"name": "Atalanta"
-},
-"to": {
-"id": 863,
-"name": "Juve Stabia"
-}
-},
-{
 "date": "2026-08-31",
 "type": "Transfer",
 "from": {
@@ -172459,14 +171796,14 @@
 "saves": null
 },
 "passes": {
-"total": 204,
+"total": 205,
 "key": 1,
 "accuracy": 91
 },
 "tackles": {
 "total": 4,
 "blocks": 3,
-"interceptions": 5
+"interceptions": 4
 },
 "duels": {
 "total": 28,
@@ -172984,7 +172321,7 @@
 "substitutes": {
 "in": 1,
 "out": 0,
-"bench": 1
+"bench": 2
 },
 "shots": {
 "total": null,
@@ -173659,7 +172996,7 @@
 "minutes": 344,
 "number": 3,
 "position": "Defender",
-"rating": 6.78,
+"rating": 6.83,
 "captain": false
 },
 "substitutes": {
@@ -173678,9 +173015,9 @@
 "saves": null
 },
 "passes": {
-"total": 87,
+"total": 85,
 "key": null,
-"accuracy": 72
+"accuracy": 71
 },
 "tackles": {
 "total": 10,
@@ -173692,7 +173029,7 @@
 "won": 25
 },
 "dribbles": {
-"attempts": 2,
+"attempts": 1,
 "success": null,
 "past": null
 },
@@ -174638,7 +173975,7 @@
 "won": 12
 },
 "dribbles": {
-"attempts": 8,
+"attempts": 9,
 "success": 1,
 "past": null
 },
@@ -175770,18 +175107,6 @@
 "to": {
 "id": 9568,
 "name": "Inter Miami"
-}
-},
-{
-"date": "2026-06-29",
-"type": "Transfer",
-"from": {
-"id": 9568,
-"name": "Inter Miami"
-},
-"to": {
-"id": 523,
-"name": "Parma"
 }
 },
 {
@@ -177841,7 +177166,7 @@
 "games": {
 "appearences": 3,
 "lineups": 0,
-"minutes": 74,
+"minutes": 68,
 "number": 22,
 "position": "Defender",
 "rating": 7.23,
@@ -178508,7 +177833,7 @@
 "tackles": {
 "total": 4,
 "blocks": 5,
-"interceptions": 1
+"interceptions": 2
 },
 "duels": {
 "total": 31,
@@ -178743,22 +178068,22 @@
 "season": 2026
 },
 "games": {
-"appearences": 2,
-"lineups": 1,
-"minutes": 92,
+"appearences": 3,
+"lineups": 2,
+"minutes": 156,
 "number": 46,
 "position": "Attacker",
-"rating": 7.25,
+"rating": 7.07,
 "captain": false
 },
 "substitutes": {
 "in": 1,
-"out": 1,
+"out": 2,
 "bench": 2
 },
 "shots": {
-"total": 1,
-"on": 1
+"total": 4,
+"on": 3
 },
 "goals": {
 "total": 1,
@@ -178767,26 +178092,26 @@
 "saves": null
 },
 "passes": {
-"total": 19,
+"total": 34,
 "key": null,
-"accuracy": 78
+"accuracy": 76
 },
 "tackles": {
-"total": 2,
+"total": 3,
 "blocks": null,
 "interceptions": null
 },
 "duels": {
-"total": 14,
-"won": 9
+"total": 28,
+"won": 15
 },
 "dribbles": {
-"attempts": 4,
+"attempts": 5,
 "success": 1,
 "past": null
 },
 "fouls": {
-"drawn": 5,
+"drawn": 9,
 "committed": 1
 },
 "cards": {
@@ -179276,18 +178601,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-08-17",
-"type": "Transfer",
-"from": {
-"id": 611,
-"name": "Fenerbahçe"
-},
-"to": {
-"id": 512,
-"name": "Frosinone"
-}
-},
-{
 "date": "2026-08-18",
 "type": "Transfer",
 "from": {
@@ -179334,12 +178647,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 270,
+"appearences": 4,
+"lineups": 4,
+"minutes": 365,
 "number": 46,
 "position": "Defender",
-"rating": 6.67,
+"rating": 6.58,
 "captain": false
 },
 "substitutes": {
@@ -179358,18 +178671,18 @@
 "saves": null
 },
 "passes": {
-"total": 112,
+"total": 128,
 "key": 1,
 "accuracy": 87
 },
 "tackles": {
-"total": 2,
-"blocks": 2,
-"interceptions": 2
+"total": 4,
+"blocks": 3,
+"interceptions": 3
 },
 "duels": {
-"total": 17,
-"won": 8
+"total": 22,
+"won": 10
 },
 "dribbles": {
 "attempts": 4,
@@ -179378,7 +178691,7 @@
 },
 "fouls": {
 "drawn": 2,
-"committed": 3
+"committed": 4
 },
 "cards": {
 "yellow": 0,
@@ -180309,6 +179622,18 @@
 "id": 494,
 "name": "Udinese"
 }
+},
+{
+"date": "2026-09-07",
+"type": "Loan",
+"from": {
+"id": 494,
+"name": "Udinese"
+},
+"to": {
+"id": 4374,
+"name": "Koper"
+}
 }
 ]
 },
@@ -180345,21 +179670,21 @@
 "season": 2026
 },
 "games": {
-"appearences": 2,
+"appearences": 3,
 "lineups": 1,
-"minutes": 79,
+"minutes": 124,
 "number": 24,
 "position": "Midfielder",
-"rating": 6.4,
+"rating": 6.5,
 "captain": false
 },
 "substitutes": {
-"in": 1,
+"in": 2,
 "out": 1,
-"bench": 2
+"bench": 3
 },
 "shots": {
-"total": null,
+"total": 1,
 "on": null
 },
 "goals": {
@@ -180369,18 +179694,18 @@
 "saves": null
 },
 "passes": {
-"total": 26,
+"total": 45,
 "key": null,
-"accuracy": 73
+"accuracy": 64
 },
 "tackles": {
 "total": 1,
 "blocks": null,
-"interceptions": 4
+"interceptions": 5
 },
 "duels": {
-"total": 8,
-"won": 3
+"total": 11,
+"won": 5
 },
 "dribbles": {
 "attempts": 1,
@@ -183110,7 +182435,7 @@
 "substitutes": {
 "in": 0,
 "out": 2,
-"bench": 1
+"bench": 2
 },
 "shots": {
 "total": 1,
@@ -183376,7 +182701,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 3
+"bench": 4
 },
 "shots": {
 "total": null,
@@ -183574,7 +182899,7 @@
 "games": {
 "appearences": 4,
 "lineups": 4,
-"minutes": 366,
+"minutes": 360,
 "number": 4,
 "position": "Midfielder",
 "rating": 7.08,
@@ -183606,7 +182931,7 @@
 "interceptions": 2
 },
 "duels": {
-"total": 32,
+"total": 31,
 "won": 14
 },
 "dribbles": {
@@ -184074,7 +183399,7 @@
 "substitutes": {
 "in": 1,
 "out": 0,
-"bench": 2
+"bench": 3
 },
 "shots": {
 "total": null,
@@ -184304,22 +183629,22 @@
 "season": 2026
 },
 "games": {
-"appearences": 2,
-"lineups": 1,
-"minutes": 97,
+"appearences": 3,
+"lineups": 2,
+"minutes": 184,
 "number": 17,
 "position": "Attacker",
-"rating": 6.55,
+"rating": 6.6,
 "captain": false
 },
 "substitutes": {
 "in": 1,
-"out": 1,
+"out": 2,
 "bench": 2
 },
 "shots": {
-"total": 2,
-"on": null
+"total": 6,
+"on": 3
 },
 "goals": {
 "total": 0,
@@ -184328,9 +183653,9 @@
 "saves": null
 },
 "passes": {
-"total": 33,
+"total": 67,
 "key": null,
-"accuracy": 87
+"accuracy": 82
 },
 "tackles": {
 "total": null,
@@ -184338,17 +183663,17 @@
 "interceptions": null
 },
 "duels": {
-"total": 9,
-"won": 3
+"total": 15,
+"won": 6
 },
 "dribbles": {
-"attempts": 4,
-"success": 2,
+"attempts": 7,
+"success": 4,
 "past": null
 },
 "fouls": {
-"drawn": 1,
-"committed": 1
+"drawn": 2,
+"committed": 2
 },
 "cards": {
 "yellow": 0,
@@ -184866,18 +184191,6 @@
 ],
 "prev_season": 2025,
 "transfers": [
-{
-"date": "2026-07-31",
-"type": "Transfer",
-"from": {
-"id": 168,
-"name": "Bayer Leverkusen"
-},
-"to": {
-"id": 496,
-"name": "Juventus"
-}
-},
 {
 "date": "2026-08-01",
 "type": "Transfer",
@@ -186947,18 +186260,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-08-17",
-"type": "Transfer",
-"from": {
-"id": 212,
-"name": "FC Porto"
-},
-"to": {
-"id": 497,
-"name": "AS Roma"
-}
-},
-{
 "date": "2026-08-18",
 "type": "Transfer",
 "from": {
@@ -188325,18 +187626,6 @@
 }
 },
 {
-"date": "2026-07-01",
-"type": "Transfer",
-"from": {
-"id": 1028,
-"name": "Ried"
-},
-"to": {
-"id": 490,
-"name": "Cagliari"
-}
-},
-{
 "date": "2026-07-02",
 "type": "Transfer",
 "from": {
@@ -188395,17 +187684,17 @@
 "season": 2026
 },
 "games": {
-"appearences": 2,
-"lineups": 1,
-"minutes": 126,
+"appearences": 3,
+"lineups": 2,
+"minutes": 210,
 "number": 14,
 "position": "Midfielder",
-"rating": 6.8,
+"rating": 6.63,
 "captain": false
 },
 "substitutes": {
 "in": 1,
-"out": 0,
+"out": 1,
 "bench": 1
 },
 "shots": {
@@ -188419,27 +187708,27 @@
 "saves": null
 },
 "passes": {
-"total": 84,
-"key": 1,
-"accuracy": 94
+"total": 143,
+"key": 3,
+"accuracy": 93
 },
 "tackles": {
-"total": 2,
+"total": 3,
 "blocks": null,
-"interceptions": 2
+"interceptions": 3
 },
 "duels": {
-"total": 14,
-"won": 6
+"total": 24,
+"won": 9
 },
 "dribbles": {
-"attempts": null,
-"success": null,
+"attempts": 1,
+"success": 1,
 "past": null
 },
 "fouls": {
-"drawn": 2,
-"committed": 5
+"drawn": 3,
+"committed": 8
 },
 "cards": {
 "yellow": 0,
@@ -189775,10 +189064,10 @@
 "games": {
 "appearences": 4,
 "lineups": 4,
-"minutes": 342,
+"minutes": 336,
 "number": 15,
 "position": "Defender",
-"rating": 7.1,
+"rating": 7.13,
 "captain": false
 },
 "substitutes": {
@@ -189807,7 +189096,7 @@
 "interceptions": 8
 },
 "duels": {
-"total": 28,
+"total": 27,
 "won": 12
 },
 "dribbles": {
@@ -190813,7 +190102,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 1
+"bench": 2
 },
 "shots": {
 "total": 2,
@@ -192595,7 +191884,7 @@
 "substitutes": {
 "in": 0,
 "out": 1,
-"bench": 1
+"bench": 2
 },
 "shots": {
 "total": 1,
@@ -192720,18 +192009,6 @@
 ],
 "prev_season": 2025,
 "transfers": [
-{
-"date": "2026-06-29",
-"type": "Transfer",
-"from": {
-"id": 230,
-"name": "Estoril"
-},
-"to": {
-"id": 1579,
-"name": "Monza"
-}
-},
 {
 "date": "2026-06-30",
 "type": "Transfer",
@@ -192987,18 +192264,6 @@
 ],
 "prev_season": 2025,
 "transfers": [
-{
-"date": "2026-01-26",
-"type": "Transfer",
-"from": {
-"id": 115,
-"name": "Sochaux"
-},
-"to": {
-"id": 1579,
-"name": "Monza"
-}
-},
 {
 "date": "2026-01-27",
 "type": "Transfer",
@@ -194223,18 +193488,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-06-29",
-"type": "Transfer",
-"from": {
-"id": 130,
-"name": "Gremio"
-},
-"to": {
-"id": 502,
-"name": "Fiorentina"
-}
-},
-{
 "date": "2026-06-30",
 "type": "Transfer",
 "from": {
@@ -194631,18 +193884,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-06-29",
-"type": "Transfer",
-"from": {
-"id": 347,
-"name": "Lech Poznan"
-},
-"to": {
-"id": 517,
-"name": "Venezia"
-}
-},
-{
 "date": "2026-06-30",
 "type": "Transfer",
 "from": {
@@ -194689,17 +193930,17 @@
 "season": 2026
 },
 "games": {
-"appearences": 2,
-"lineups": 0,
-"minutes": 29,
+"appearences": 3,
+"lineups": 1,
+"minutes": 95,
 "number": 8,
 "position": "Midfielder",
-"rating": 6.45,
+"rating": 6.3,
 "captain": false
 },
 "substitutes": {
 "in": 2,
-"out": 0,
+"out": 1,
 "bench": 3
 },
 "shots": {
@@ -194713,30 +193954,30 @@
 "saves": null
 },
 "passes": {
-"total": 20,
-"key": null,
-"accuracy": 85
+"total": 37,
+"key": 1,
+"accuracy": 78
 },
 "tackles": {
-"total": 1,
+"total": 3,
 "blocks": null,
 "interceptions": null
 },
 "duels": {
-"total": 3,
-"won": 2
+"total": 15,
+"won": 5
 },
 "dribbles": {
-"attempts": null,
+"attempts": 2,
 "success": null,
 "past": null
 },
 "fouls": {
-"drawn": 1,
-"committed": 1
+"drawn": 2,
+"committed": 4
 },
 "cards": {
-"yellow": 0,
+"yellow": 1,
 "yellowred": 0,
 "red": 0
 },
@@ -194968,34 +194209,10 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-07-27",
-"type": "Transfer",
-"from": {
-"id": 450,
-"name": "Estudiantes L.P."
-},
-"to": {
-"id": 500,
-"name": "Bologna"
-}
-},
-{
 "date": "2026-07-28",
 "type": "Transfer",
 "from": {
 "id": 450,
-"name": "Estudiantes L.P."
-},
-"to": {
-"id": 500,
-"name": "Bologna"
-}
-},
-{
-"date": "2026-07-28",
-"type": "Transfer",
-"from": {
-"id": null,
 "name": "Estudiantes L.P."
 },
 "to": {
@@ -197249,9 +196466,9 @@
 "saves": null
 },
 "passes": {
-"total": 3,
+"total": 2,
 "key": null,
-"accuracy": 66
+"accuracy": 50
 },
 "tackles": {
 "total": null,
@@ -199064,18 +198281,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-08-30",
-"type": "Transfer",
-"from": {
-"id": 499,
-"name": "Atalanta"
-},
-"to": {
-"id": 500,
-"name": "Bologna"
-}
-},
-{
 "date": "2026-08-31",
 "type": "Transfer",
 "from": {
@@ -199134,12 +198339,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 0,
-"lineups": 0,
-"minutes": null,
+"appearences": 1,
+"lineups": 1,
+"minutes": 90,
 "number": 25,
 "position": "Goalkeeper",
-"rating": null,
+"rating": 6.6,
 "captain": false
 },
 "substitutes": {
@@ -199153,14 +198358,14 @@
 },
 "goals": {
 "total": 0,
-"conceded": 0,
+"conceded": 1,
 "assists": 0,
-"saves": null
+"saves": 3
 },
 "passes": {
-"total": null,
+"total": 33,
 "key": null,
-"accuracy": null
+"accuracy": 75
 },
 "tackles": {
 "total": null,
@@ -199168,8 +198373,8 @@
 "interceptions": null
 },
 "duels": {
-"total": null,
-"won": null
+"total": 2,
+"won": 2
 },
 "dribbles": {
 "attempts": null,
@@ -199190,7 +198395,7 @@
 "commited": null,
 "scored": 0,
 "missed": 0,
-"saved": null
+"saved": 0
 }
 }
 ],
@@ -200025,12 +199230,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 261,
+"appearences": 4,
+"lineups": 4,
+"minutes": 351,
 "number": 60,
 "position": "Defender",
-"rating": 6.37,
+"rating": 6.33,
 "captain": false
 },
 "substitutes": {
@@ -200049,18 +199254,18 @@
 "saves": null
 },
 "passes": {
-"total": 110,
+"total": 167,
 "key": 2,
-"accuracy": 86
+"accuracy": 83
 },
 "tackles": {
-"total": 3,
+"total": 10,
 "blocks": 1,
-"interceptions": 11
+"interceptions": 13
 },
 "duels": {
-"total": 9,
-"won": 5
+"total": 23,
+"won": 14
 },
 "dribbles": {
 "attempts": null,
@@ -200069,7 +199274,7 @@
 },
 "fouls": {
 "drawn": null,
-"committed": 2
+"committed": 4
 },
 "cards": {
 "yellow": 1,
@@ -202253,18 +201458,18 @@
 "season": 2026
 },
 "games": {
-"appearences": 2,
+"appearences": 3,
 "lineups": 2,
-"minutes": 180,
+"minutes": 220,
 "number": 50,
 "position": "Midfielder",
-"rating": 7.25,
+"rating": 7.17,
 "captain": false
 },
 "substitutes": {
-"in": 0,
+"in": 1,
 "out": 0,
-"bench": 0
+"bench": 1
 },
 "shots": {
 "total": 1,
@@ -202273,30 +201478,30 @@
 "goals": {
 "total": 0,
 "conceded": 0,
-"assists": 0,
+"assists": 1,
 "saves": null
 },
 "passes": {
-"total": 110,
-"key": 3,
+"total": 130,
+"key": 4,
 "accuracy": 85
 },
 "tackles": {
-"total": 6,
-"blocks": 1,
+"total": 7,
+"blocks": 3,
 "interceptions": 1
 },
 "duels": {
-"total": 25,
-"won": 14
+"total": 30,
+"won": 17
 },
 "dribbles": {
-"attempts": 6,
-"success": 4,
+"attempts": 7,
+"success": 5,
 "past": null
 },
 "fouls": {
-"drawn": 3,
+"drawn": 4,
 "committed": 2
 },
 "cards": {
@@ -202720,12 +201925,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 2,
-"minutes": 151,
+"appearences": 4,
+"lineups": 3,
+"minutes": 241,
 "number": 44,
 "position": "Defender",
-"rating": 7.03,
+"rating": 7.25,
 "captain": false
 },
 "substitutes": {
@@ -202734,28 +201939,28 @@
 "bench": 1
 },
 "shots": {
-"total": 1,
-"on": 1
+"total": 2,
+"on": 2
 },
 "goals": {
-"total": 1,
+"total": 2,
 "conceded": 0,
 "assists": 0,
 "saves": null
 },
 "passes": {
-"total": 97,
+"total": 127,
 "key": null,
-"accuracy": 93
+"accuracy": 92
 },
 "tackles": {
-"total": 4,
+"total": 8,
 "blocks": 1,
-"interceptions": 2
+"interceptions": 3
 },
 "duels": {
-"total": 15,
-"won": 10
+"total": 24,
+"won": 18
 },
 "dribbles": {
 "attempts": null,
@@ -202763,7 +201968,7 @@
 "past": null
 },
 "fouls": {
-"drawn": 1,
+"drawn": 3,
 "committed": 2
 },
 "cards": {
@@ -203395,18 +202600,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-01-31",
-"type": "Transfer",
-"from": {
-"id": 363,
-"name": "Hammarby FF"
-},
-"to": {
-"id": 895,
-"name": "Como"
-}
-},
-{
 "date": "2026-02-01",
 "type": "Transfer",
 "from": {
@@ -203660,18 +202853,6 @@
 ],
 "prev_season": 2025,
 "transfers": [
-{
-"date": "2026-07-26",
-"type": "Transfer",
-"from": {
-"id": 110,
-"name": "Estac Troyes"
-},
-"to": {
-"id": 489,
-"name": "AC Milan"
-}
-},
 {
 "date": "2026-07-27",
 "type": "Transfer",
@@ -204873,18 +204054,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-07-17",
-"type": "Transfer",
-"from": {
-"id": 998,
-"name": "Trabzonspor"
-},
-"to": {
-"id": 502,
-"name": "Fiorentina"
-}
-},
-{
 "date": "2026-07-18",
 "type": "Transfer",
 "from": {
@@ -205138,18 +204307,6 @@
 ],
 "prev_season": 2025,
 "transfers": [
-{
-"date": "2026-06-29",
-"type": "Transfer",
-"from": {
-"id": 1012,
-"name": "FC Thun"
-},
-"to": {
-"id": 495,
-"name": "Genoa"
-}
-},
 {
 "date": "2026-06-30",
 "type": "Transfer",
@@ -209001,6 +208158,18 @@
 "id": 503,
 "name": "Torino"
 }
+},
+{
+"date": "2026-06-30",
+"type": "-",
+"from": {
+"id": 503,
+"name": "Torino"
+},
+"to": {
+"id": 503,
+"name": "Torino"
+}
 }
 ]
 },
@@ -209037,18 +208206,18 @@
 "season": 2026
 },
 "games": {
-"appearences": 0,
+"appearences": 1,
 "lineups": 0,
-"minutes": null,
+"minutes": 16,
 "number": 22,
 "position": "Attacker",
-"rating": null,
+"rating": 6.9,
 "captain": false
 },
 "substitutes": {
-"in": 0,
+"in": 1,
 "out": 0,
-"bench": 3
+"bench": 4
 },
 "shots": {
 "total": null,
@@ -209061,26 +208230,26 @@
 "saves": null
 },
 "passes": {
-"total": null,
+"total": 3,
 "key": null,
-"accuracy": null
+"accuracy": 66
 },
 "tackles": {
-"total": null,
+"total": 2,
 "blocks": null,
 "interceptions": null
 },
 "duels": {
-"total": null,
-"won": null
+"total": 9,
+"won": 6
 },
 "dribbles": {
-"attempts": null,
-"success": null,
+"attempts": 1,
+"success": 1,
 "past": null
 },
 "fouls": {
-"drawn": null,
+"drawn": 2,
 "committed": null
 },
 "cards": {
@@ -210007,18 +209176,18 @@
 "season": 2026
 },
 "games": {
-"appearences": 1,
+"appearences": 2,
 "lineups": 0,
-"minutes": 45,
+"minutes": 77,
 "number": 18,
 "position": "Defender",
-"rating": 6.3,
+"rating": 6.25,
 "captain": false
 },
 "substitutes": {
-"in": 1,
+"in": 2,
 "out": 0,
-"bench": 3
+"bench": 4
 },
 "shots": {
 "total": 1,
@@ -210031,9 +209200,9 @@
 "saves": null
 },
 "passes": {
-"total": 21,
+"total": 29,
 "key": 1,
-"accuracy": 90
+"accuracy": 89
 },
 "tackles": {
 "total": 2,
@@ -210041,7 +209210,7 @@
 "interceptions": null
 },
 "duels": {
-"total": 7,
+"total": 8,
 "won": 3
 },
 "dribbles": {
@@ -210537,18 +209706,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-06-29",
-"type": "Transfer",
-"from": {
-"id": 899,
-"name": "Modena"
-},
-"to": {
-"id": 495,
-"name": "Genoa"
-}
-},
-{
 "date": "2026-06-30",
 "type": "Transfer",
 "from": {
@@ -210826,18 +209983,18 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
+"appearences": 4,
 "lineups": 2,
-"minutes": 133,
+"minutes": 144,
 "number": 80,
 "position": "Midfielder",
-"rating": 6.57,
+"rating": 6.65,
 "captain": false
 },
 "substitutes": {
-"in": 1,
+"in": 2,
 "out": 2,
-"bench": 1
+"bench": 2
 },
 "shots": {
 "total": null,
@@ -210850,18 +210007,18 @@
 "saves": null
 },
 "passes": {
-"total": 67,
+"total": 77,
 "key": 1,
-"accuracy": 71
+"accuracy": 74
 },
 "tackles": {
-"total": 6,
+"total": 7,
 "blocks": 1,
 "interceptions": 3
 },
 "duels": {
-"total": 11,
-"won": 9
+"total": 13,
+"won": 10
 },
 "dribbles": {
 "attempts": 1,
@@ -211358,13 +210515,13 @@
 "accuracy": 79
 },
 "tackles": {
-"total": 4,
+"total": 5,
 "blocks": null,
 "interceptions": null
 },
 "duels": {
-"total": 40,
-"won": 15
+"total": 41,
+"won": 16
 },
 "dribbles": {
 "attempts": 2,
@@ -212376,18 +211533,6 @@
 "date": "2026-06-30",
 "type": "Loan",
 "from": {
-"id": null,
-"name": "Al Ain"
-},
-"to": {
-"id": 867,
-"name": "Lecce"
-}
-},
-{
-"date": "2026-06-30",
-"type": "Loan",
-"from": {
 "id": 2865,
 "name": "Al Ain"
 },
@@ -213353,18 +212498,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-07-09",
-"type": "Transfer",
-"from": {
-"id": 1708,
-"name": "Vis Pesaro"
-},
-"to": {
-"id": 517,
-"name": "Venezia"
-}
-},
-{
 "date": "2026-07-10",
 "type": "Transfer",
 "from": {
@@ -213724,7 +212857,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 1
+"bench": 2
 },
 "shots": {
 "total": null,
@@ -214934,6 +214067,18 @@
 "to": {
 "id": 517,
 "name": "Venezia"
+}
+},
+{
+"date": "2026-09-06",
+"type": "Loan",
+"from": {
+"id": 517,
+"name": "Venezia"
+},
+"to": {
+"id": 561,
+"name": "HNK Rijeka"
 }
 }
 ]
@@ -216770,18 +215915,6 @@
 ],
 "prev_season": 2025,
 "transfers": [
-{
-"date": "2026-07-04",
-"type": "Transfer",
-"from": {
-"id": 38,
-"name": "Watford"
-},
-"to": {
-"id": 494,
-"name": "Udinese"
-}
-},
 {
 "date": "2026-07-05",
 "type": "Transfer",
@@ -222541,18 +221674,6 @@
 }
 },
 {
-"date": "2026-08-30",
-"type": "Transfer",
-"from": {
-"id": 502,
-"name": "Fiorentina"
-},
-"to": {
-"id": 490,
-"name": "Cagliari"
-}
-},
-{
 "date": "2026-08-31",
 "type": "Transfer",
 "from": {
@@ -222591,18 +221712,6 @@
 "prev": [],
 "prev_season": 2025,
 "transfers": [
-{
-"date": "2026-08-16",
-"type": "Transfer",
-"from": {
-"id": 4378,
-"name": "Radomlje"
-},
-"to": {
-"id": 500,
-"name": "Bologna"
-}
-},
 {
 "date": "2026-08-17",
 "type": "Transfer",
@@ -224186,7 +223295,20 @@
 }
 ],
 "prev_season": 2025,
-"transfers": []
+"transfers": [
+{
+"date": "2026-08-31",
+"type": "Loan",
+"from": {
+"id": 496,
+"name": "Juventus"
+},
+"to": {
+"id": 9570,
+"name": "Atlético Madrid II"
+}
+}
+]
 },
 "336580": {
 "id": 336580,
@@ -224583,7 +223705,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 1
+"bench": 2
 },
 "shots": {
 "total": null,
@@ -224829,18 +223951,6 @@
 "prev": [],
 "prev_season": 2025,
 "transfers": [
-{
-"date": "2026-07-15",
-"type": "Transfer",
-"from": {
-"id": 541,
-"name": "Real Madrid"
-},
-"to": {
-"id": 487,
-"name": "Lazio"
-}
-},
 {
 "date": "2026-07-16",
 "type": "Transfer",
@@ -226522,18 +225632,6 @@
 }
 },
 {
-"date": "2026-08-13",
-"type": "Transfer",
-"from": {
-"id": 47,
-"name": "Tottenham"
-},
-"to": {
-"id": 505,
-"name": "Inter"
-}
-},
-{
 "date": "2026-08-14",
 "type": "Transfer",
 "from": {
@@ -226997,7 +226095,79 @@
 "active": true,
 "photo": "https://media.api-sports.io/football/players/613213.png",
 "name": "L. Nyarko",
-"cur": [],
+"cur": [
+{
+"team": {
+"id": 488,
+"name": "Sassuolo"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 0,
+"lineups": 0,
+"minutes": null,
+"number": 22,
+"position": "Goalkeeper",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 1
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+}
+],
 "cur_season": 2026,
 "first": null,
 "last": null,
@@ -229025,18 +228195,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-08-19",
-"type": "Transfer",
-"from": {
-"id": 801,
-"name": "Pisa"
-},
-"to": {
-"id": 1579,
-"name": "Monza"
-}
-},
-{
 "date": "2026-08-20",
 "type": "Transfer",
 "from": {
@@ -230761,7 +229919,79 @@
 "active": true,
 "photo": "https://media.api-sports.io/football/players/197779.png",
 "name": "M. Kaba",
-"cur": [],
+"cur": [
+{
+"team": {
+"id": 867,
+"name": "Lecce"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 1,
+"lineups": 0,
+"minutes": 10,
+"number": 77,
+"position": "Midfielder",
+"rating": 6.5,
+"captain": false
+},
+"substitutes": {
+"in": 1,
+"out": 0,
+"bench": 1
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": 1,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": 1
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+}
+],
 "cur_season": 2026,
 "first": "Mohamed",
 "last": "Kaba",
@@ -231547,18 +230777,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-06-29",
-"type": "Transfer",
-"from": {
-"id": 525,
-"name": "Pescara"
-},
-"to": {
-"id": 517,
-"name": "Venezia"
-}
-},
-{
 "date": "2026-06-30",
 "type": "Transfer",
 "from": {
@@ -232175,18 +231393,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-06-29",
-"type": "Transfer",
-"from": {
-"id": 96,
-"name": "Toulouse"
-},
-"to": {
-"id": 496,
-"name": "Juventus"
-}
-},
-{
 "date": "2026-06-30",
 "type": "Transfer",
 "from": {
@@ -232573,18 +231779,6 @@
 "type": "Transfer",
 "from": {
 "id": 228,
-"name": "Sporting CP"
-},
-"to": {
-"id": 867,
-"name": "Lecce"
-}
-},
-{
-"date": "2026-07-09",
-"type": "Transfer",
-"from": {
-"id": null,
 "name": "Sporting CP"
 },
 "to": {
@@ -233149,7 +232343,20 @@
 }
 ],
 "prev_season": 2025,
-"transfers": []
+"transfers": [
+{
+"date": "2026-08-31",
+"type": "Loan",
+"from": {
+"id": 497,
+"name": "AS Roma"
+},
+"to": {
+"id": 525,
+"name": "Pescara"
+}
+}
+]
 },
 "453906": {
 "id": 453906,
@@ -237270,18 +236477,6 @@
 }
 },
 {
-"date": "2026-06-29",
-"type": "Transfer",
-"from": {
-"id": 2257,
-"name": "Dunajska Streda"
-},
-"to": {
-"id": 895,
-"name": "Como"
-}
-},
-{
 "date": "2026-06-30",
 "type": "Transfer",
 "from": {
@@ -237299,12 +236494,84 @@
 "id": 616142,
 "team": 500,
 "team_name": "Bologna",
-"number": 22,
+"number": 82,
 "position": "Goalkeeper",
 "active": true,
 "photo": "https://media.api-sports.io/football/players/616142.png",
 "name": "Matteo Franceschelli",
-"cur": [],
+"cur": [
+{
+"team": {
+"id": 500,
+"name": "Bologna"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 0,
+"lineups": 0,
+"minutes": null,
+"number": 82,
+"position": "Goalkeeper",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 1
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+}
+],
 "cur_season": 2026,
 "first": null,
 "last": null,
@@ -239812,7 +239079,7 @@
 },
 "passes": {
 "total": 4,
-"key": 2,
+"key": 1,
 "accuracy": 100
 },
 "tackles": {
@@ -239934,18 +239201,6 @@
 ],
 "prev_season": 2025,
 "transfers": [
-{
-"date": "2026-08-26",
-"type": "Transfer",
-"from": {
-"id": 343,
-"name": "Lechia Gdansk"
-},
-"to": {
-"id": 512,
-"name": "Frosinone"
-}
-},
 {
 "date": "2026-08-27",
 "type": "Transfer",
@@ -242893,7 +242148,7 @@
 "interceptions": null
 },
 "duels": {
-"total": 2,
+"total": 3,
 "won": 1
 },
 "dribbles": {
@@ -243823,7 +243078,7 @@
 "minutes": 84,
 "number": 3,
 "position": "Defender",
-"rating": 6.3,
+"rating": 6.5,
 "captain": false
 },
 "substitutes": {
@@ -243852,8 +243107,8 @@
 "interceptions": 1
 },
 "duels": {
-"total": 9,
-"won": 5
+"total": 10,
+"won": 6
 },
 "dribbles": {
 "attempts": 1,
@@ -244231,7 +243486,7 @@
 "substitutes": {
 "in": 1,
 "out": 0,
-"bench": 2
+"bench": 3
 },
 "shots": {
 "total": 1,
@@ -245358,18 +244613,6 @@
 "id": 502,
 "name": "Fiorentina"
 }
-},
-{
-"date": "2026-08-31",
-"type": "Loan",
-"from": {
-"id": null,
-"name": "Sporting CP"
-},
-"to": {
-"id": 502,
-"name": "Fiorentina"
-}
 }
 ],
 "number": 28
@@ -245760,18 +245003,6 @@
 "type": "Loan",
 "from": {
 "id": 228,
-"name": "Sporting CP"
-},
-"to": {
-"id": 503,
-"name": "Torino"
-}
-},
-{
-"date": "2026-08-31",
-"type": "Loan",
-"from": {
-"id": null,
 "name": "Sporting CP"
 },
 "to": {
@@ -248281,78 +247512,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2017-01-31",
-"type": "N/A",
-"from": {
-"id": 630,
-"name": "FC Sion"
-},
-"to": {
-"id": 160,
-"name": "SC Freiburg"
-}
-},
-{
-"date": "2018-07-14",
-"type": "Loan",
-"from": {
-"id": 160,
-"name": "SC Freiburg"
-},
-"to": {
-"id": 1011,
-"name": "FC ST. Gallen"
-}
-},
-{
-"date": "2019-07-01",
-"type": "N/A",
-"from": {
-"id": 160,
-"name": "SC Freiburg"
-},
-"to": {
-"id": 565,
-"name": "BSC Young Boys"
-}
-},
-{
-"date": "2023-01-23",
-"type": "N/A",
-"from": {
-"id": 565,
-"name": "BSC Young Boys"
-},
-"to": {
-"id": 96,
-"name": "Toulouse"
-}
-},
-{
-"date": "2025-08-17",
-"type": "Transfer",
-"from": {
-"id": 96,
-"name": "Toulouse"
-},
-"to": {
-"id": 2940,
-"name": "Al Shabab"
-}
-},
-{
-"date": "2025-08-19",
-"type": "Transfer",
-"from": {
-"id": 96,
-"name": "Toulouse"
-},
-"to": {
-"id": 2940,
-"name": "Al Shabab"
-}
-},
-{
 "date": "2026-08-19",
 "type": "Free agent",
 "from": {
@@ -248360,8 +247519,20 @@
 "name": "Al Shabab"
 },
 "to": {
-"id": null,
-"name": "Sierro Vincent"
+"id": 523,
+"name": "Parma"
+}
+},
+{
+"date": "2026-09-03",
+"type": "Free agent",
+"from": {
+"id": 2940,
+"name": "Al Shabab"
+},
+"to": {
+"id": 523,
+"name": "Parma"
 }
 }
 ]
@@ -248398,21 +247569,21 @@
 "season": 2026
 },
 "games": {
-"appearences": 1,
+"appearences": 2,
 "lineups": 0,
-"minutes": 14,
+"minutes": 49,
 "number": 27,
 "position": "Attacker",
-"rating": 6.7,
+"rating": 6.5,
 "captain": false
 },
 "substitutes": {
-"in": 1,
+"in": 2,
 "out": 0,
-"bench": 1
+"bench": 2
 },
 "shots": {
-"total": 1,
+"total": 3,
 "on": null
 },
 "goals": {
@@ -248422,9 +247593,9 @@
 "saves": null
 },
 "passes": {
-"total": 4,
+"total": 11,
 "key": null,
-"accuracy": 75
+"accuracy": 81
 },
 "tackles": {
 "total": null,
@@ -248432,8 +247603,8 @@
 "interceptions": null
 },
 "duels": {
-"total": 2,
-"won": 2
+"total": 5,
+"won": 3
 },
 "dribbles": {
 "attempts": null,
@@ -248441,8 +247612,8 @@
 "past": null
 },
 "fouls": {
-"drawn": 2,
-"committed": null
+"drawn": 3,
+"committed": 2
 },
 "cards": {
 "yellow": 0,
@@ -249231,7 +248402,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 1
+"bench": 2
 },
 "shots": {
 "total": null,
@@ -250178,22 +249349,22 @@
 "season": 2026
 },
 "games": {
-"appearences": 1,
+"appearences": 2,
 "lineups": 0,
-"minutes": 10,
+"minutes": 18,
 "number": 11,
 "position": "Attacker",
-"rating": 6.3,
+"rating": 6.4,
 "captain": false
 },
 "substitutes": {
-"in": 1,
+"in": 2,
 "out": 0,
-"bench": 1
+"bench": 2
 },
 "shots": {
-"total": null,
-"on": null
+"total": 1,
+"on": 1
 },
 "goals": {
 "total": 0,
@@ -250202,7 +249373,7 @@
 "saves": null
 },
 "passes": {
-"total": 5,
+"total": 12,
 "key": null,
 "accuracy": 100
 },
@@ -250212,7 +249383,7 @@
 "interceptions": null
 },
 "duels": {
-"total": 3,
+"total": 4,
 "won": 1
 },
 "dribbles": {
@@ -250515,21 +249686,21 @@
 "season": 2026
 },
 "games": {
-"appearences": 0,
+"appearences": 1,
 "lineups": 0,
-"minutes": null,
+"minutes": 8,
 "number": 22,
 "position": "Attacker",
-"rating": null,
+"rating": 6.3,
 "captain": false
 },
 "substitutes": {
-"in": 0,
+"in": 1,
 "out": 0,
-"bench": 1
+"bench": 2
 },
 "shots": {
-"total": null,
+"total": 1,
 "on": null
 },
 "goals": {
@@ -250539,9 +249710,9 @@
 "saves": null
 },
 "passes": {
-"total": null,
-"key": null,
-"accuracy": null
+"total": 2,
+"key": 1,
+"accuracy": 100
 },
 "tackles": {
 "total": null,
@@ -250549,8 +249720,8 @@
 "interceptions": null
 },
 "duels": {
-"total": null,
-"won": null
+"total": 2,
+"won": 1
 },
 "dribbles": {
 "attempts": null,
@@ -250947,7 +250118,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 1
+"bench": 2
 },
 "shots": {
 "total": null,
@@ -251116,7 +250287,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 1
+"bench": 2
 },
 "shots": {
 "total": null,
@@ -251805,18 +250976,6 @@
 ],
 "prev_season": 2025,
 "transfers": [
-{
-"date": "2026-08-30",
-"type": "Free agent",
-"from": {
-"id": 80,
-"name": "Lyon"
-},
-"to": {
-"id": 488,
-"name": "Sassuolo"
-}
-},
 {
 "date": "2026-08-31",
 "type": "Free agent",
@@ -252576,18 +251735,6 @@
 }
 },
 {
-"date": "2026-08-30",
-"type": "Transfer",
-"from": {
-"id": 498,
-"name": "Sampdoria"
-},
-"to": {
-"id": 523,
-"name": "Parma"
-}
-},
-{
 "date": "2026-08-31",
 "type": "Transfer",
 "from": {
@@ -252634,17 +251781,17 @@
 "season": 2026
 },
 "games": {
-"appearences": 1,
-"lineups": 1,
-"minutes": 66,
+"appearences": 2,
+"lineups": 2,
+"minutes": 140,
 "number": 99,
 "position": "Midfielder",
-"rating": 6.5,
+"rating": 6.7,
 "captain": false
 },
 "substitutes": {
 "in": 0,
-"out": 1,
+"out": 2,
 "bench": 0
 },
 "shots": {
@@ -252658,22 +251805,22 @@
 "saves": null
 },
 "passes": {
-"total": 15,
+"total": 33,
 "key": 1,
-"accuracy": 66
+"accuracy": 72
 },
 "tackles": {
-"total": 3,
+"total": 6,
 "blocks": null,
-"interceptions": null
+"interceptions": 1
 },
 "duels": {
-"total": 18,
-"won": 9
+"total": 32,
+"won": 17
 },
 "dribbles": {
-"attempts": 7,
-"success": 3,
+"attempts": 9,
+"success": 4,
 "past": null
 },
 "fouls": {
@@ -252983,18 +252130,6 @@
 ],
 "prev_season": 2025,
 "transfers": [
-{
-"date": "2026-08-29",
-"type": "Transfer",
-"from": {
-"id": 565,
-"name": "BSC Young Boys"
-},
-"to": {
-"id": 867,
-"name": "Lecce"
-}
-},
 {
 "date": "2026-08-30",
 "type": "Transfer",
@@ -253753,18 +252888,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-08-30",
-"type": "Transfer",
-"from": {
-"id": 172,
-"name": "VfB Stuttgart"
-},
-"to": {
-"id": 494,
-"name": "Udinese"
-}
-},
-{
 "date": "2026-08-31",
 "type": "Transfer",
 "from": {
@@ -254064,7 +253187,7 @@
 "games": {
 "appearences": 1,
 "lineups": 0,
-"minutes": 28,
+"minutes": 22,
 "number": 28,
 "position": "Defender",
 "rating": 6.9,
@@ -254737,18 +253860,6 @@
 }
 },
 {
-"date": "2026-08-29",
-"type": "Free agent",
-"from": {
-"id": 504,
-"name": "Hellas Verona"
-},
-"to": {
-"id": 490,
-"name": "Cagliari"
-}
-},
-{
 "date": "2026-08-30",
 "type": "Free agent",
 "from": {
@@ -254771,7 +253882,79 @@
 "active": true,
 "photo": "https://media.api-sports.io/football/players/237090.png",
 "name": "E. Zeballos",
-"cur": [],
+"cur": [
+{
+"team": {
+"id": 1579,
+"name": "Monza"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 1,
+"lineups": 0,
+"minutes": 26,
+"number": 22,
+"position": "Attacker",
+"rating": 7.2,
+"captain": false
+},
+"substitutes": {
+"in": 1,
+"out": 0,
+"bench": 1
+},
+"shots": {
+"total": 1,
+"on": 1
+},
+"goals": {
+"total": 1,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 13,
+"key": null,
+"accuracy": 76
+},
+"tackles": {
+"total": 1,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": 11,
+"won": 3
+},
+"dribbles": {
+"attempts": 4,
+"success": 1,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": 3
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+}
+],
 "cur_season": 2026,
 "first": "Oscar Exequiel",
 "last": "Zeballos",
@@ -255144,18 +254327,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-08-30",
-"type": "Transfer",
-"from": {
-"id": 451,
-"name": "Boca Juniors"
-},
-"to": {
-"id": 1579,
-"name": "Monza"
-}
-},
-{
 "date": "2026-08-31",
 "type": "Transfer",
 "from": {
@@ -255448,18 +254619,6 @@
 ],
 "prev_season": 2025,
 "transfers": [
-{
-"date": "2026-07-23",
-"type": "Transfer",
-"from": {
-"id": 403,
-"name": "Esbjerg"
-},
-"to": {
-"id": 867,
-"name": "Lecce"
-}
-},
 {
 "date": "2026-07-24",
 "type": "Transfer",
@@ -255914,18 +255073,6 @@
 "to": {
 "id": null,
 "name": "Juan Jesus"
-}
-},
-{
-"date": "2026-08-29",
-"type": "Free agent",
-"from": {
-"id": 492,
-"name": "Napoli"
-},
-"to": {
-"id": 517,
-"name": "Venezia"
 }
 },
 {
@@ -256529,7 +255676,79 @@
 "active": true,
 "photo": "https://media.api-sports.io/football/players/237129.png",
 "name": "P. Sarr",
-"cur": [],
+"cur": [
+{
+"team": {
+"id": 496,
+"name": "Juventus"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 1,
+"lineups": 0,
+"minutes": 24,
+"number": 29,
+"position": "Midfielder",
+"rating": 6.5,
+"captain": false
+},
+"substitutes": {
+"in": 1,
+"out": 0,
+"bench": 1
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 19,
+"key": null,
+"accuracy": 100
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": 1,
+"won": null
+},
+"dribbles": {
+"attempts": 1,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+}
+],
 "cur_season": 2026,
 "first": "Pape Matar",
 "last": "Sarr",
@@ -257369,18 +256588,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2026-08-30",
-"type": "Transfer",
-"from": {
-"id": 64,
-"name": "Hull City"
-},
-"to": {
-"id": 495,
-"name": "Genoa"
-}
-},
-{
 "date": "2026-08-31",
 "type": "Transfer",
 "from": {
@@ -257907,18 +257114,6 @@
 }
 },
 {
-"date": "2025-07-09",
-"type": "Loan",
-"from": {
-"id": 487,
-"name": "Lazio"
-},
-"to": {
-"id": 1578,
-"name": "Sudtirol"
-}
-},
-{
 "date": "2025-07-10",
 "type": "Loan",
 "from": {
@@ -258184,54 +257379,6 @@
 "prev_season": 2025,
 "transfers": [
 {
-"date": "2021-08-31",
-"type": "Loan",
-"from": {
-"id": 212,
-"name": "FC Porto"
-},
-"to": {
-"id": 217,
-"name": "SC Braga"
-}
-},
-{
-"date": "2022-07-01",
-"type": "N/A",
-"from": {
-"id": 217,
-"name": "SC Braga"
-},
-"to": {
-"id": 212,
-"name": "FC Porto"
-}
-},
-{
-"date": "2022-07-16",
-"type": "Loan",
-"from": {
-"id": 212,
-"name": "FC Porto"
-},
-"to": {
-"id": 182,
-"name": "Union Berlin"
-}
-},
-{
-"date": "2023-07-01",
-"type": "€ 7.5M",
-"from": {
-"id": 212,
-"name": "FC Porto"
-},
-"to": {
-"id": 182,
-"name": "Union Berlin"
-}
-},
-{
 "date": "2026-06-29",
 "type": "Free agent",
 "from": {
@@ -258239,14 +257386,618 @@
 "name": "Union Berlin"
 },
 "to": {
-"id": null,
-"name": "Leite Diogo"
+"id": 487,
+"name": "Lazio"
+}
+},
+{
+"date": "2026-09-07",
+"type": "Free agent",
+"from": {
+"id": 182,
+"name": "Union Berlin"
+},
+"to": {
+"id": 487,
+"name": "Lazio"
 }
 }
 ]
+},
+"42712": {
+"id": 42712,
+"name": "A. Borbei",
+"first": "Alexandru Gabriel",
+"last": "Borbei",
+"birth": {
+"date": "2003-06-27",
+"place": "Petrila",
+"country": "Romania"
+},
+"nationality": "Romania",
+"height": 183,
+"weight": 70,
+"injured": false,
+"photo": "https://media.api-sports.io/football/players/42712.png",
+"active": false,
+"team": 867,
+"team_name": "Lecce",
+"position": "Goalkeeper",
+"cur": [
+{
+"team": {
+"id": 867,
+"name": "Lecce"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 0,
+"lineups": 0,
+"minutes": null,
+"number": 32,
+"position": "Goalkeeper",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 1
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+}
+],
+"cur_season": 2026,
+"prev": [
+{
+"team": {
+"id": 8218,
+"name": "Romania U21"
+},
+"league": {
+"id": 850,
+"name": "UEFA U21 Championship - Qualification",
+"country": "World",
+"season": 2025
+},
+"games": {
+"appearences": 0,
+"lineups": 0,
+"minutes": 0,
+"number": null,
+"position": "Goalkeeper",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 1
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": null,
+"assists": null,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": null,
+"missed": null,
+"saved": null
+}
+}
+],
+"prev_season": 2025,
+"transfers": [
+{
+"date": "2020-10-01",
+"type": "N/A",
+"from": {
+"id": 2606,
+"name": "FC Politehnica Timisoara"
+},
+"to": {
+"id": 867,
+"name": "Lecce"
 }
 },
-"updated": "2026-09-13T23:18:49Z",
+{
+"date": "2025-02-04",
+"type": "Loan",
+"from": {
+"id": 867,
+"name": "Lecce"
+},
+"to": {
+"id": 2246,
+"name": "CFR 1907 Cluj"
+}
+},
+{
+"date": "2025-07-01",
+"type": "Back from Loan",
+"from": {
+"id": 2246,
+"name": "CFR 1907 Cluj"
+},
+"to": {
+"id": 867,
+"name": "Lecce"
+}
+},
+{
+"date": "2025-08-08",
+"type": "Loan",
+"from": {
+"id": 867,
+"name": "Lecce"
+},
+"to": {
+"id": 521,
+"name": "Foggia"
+}
+},
+{
+"date": "2026-06-29",
+"type": "Return from loan",
+"from": {
+"id": 521,
+"name": "Foggia"
+},
+"to": {
+"id": 867,
+"name": "Lecce"
+}
+}
+]
+},
+"337941": {
+"id": 337941,
+"name": "J. Oboavwoduo",
+"first": "Justin",
+"last": "Oboavwoduo",
+"birth": {
+"date": "2006-08-23",
+"place": "Manchester",
+"country": "England"
+},
+"nationality": "England",
+"height": 179,
+"weight": null,
+"injured": false,
+"photo": "https://media.api-sports.io/football/players/337941.png",
+"active": false,
+"team": 496,
+"team_name": "Juventus",
+"position": "Attacker",
+"cur": [
+{
+"team": {
+"id": 496,
+"name": "Juventus"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 1,
+"lineups": 0,
+"minutes": 8,
+"number": 45,
+"position": "Attacker",
+"rating": 6.3,
+"captain": false
+},
+"substitutes": {
+"in": 1,
+"out": 0,
+"bench": 1
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 1,
+"key": null,
+"accuracy": 100
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+}
+],
+"cur_season": 2026,
+"prev": [
+{
+"team": {
+"id": 7197,
+"name": "Manchester City U21"
+},
+"league": {
+"id": 702,
+"name": "Premier League 2 Division One",
+"country": "England",
+"season": 2025
+},
+"games": {
+"appearences": null,
+"lineups": null,
+"minutes": null,
+"number": null,
+"position": "Attacker",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": null,
+"out": null,
+"bench": null
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": null,
+"conceded": null,
+"assists": null,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": null,
+"yellowred": null,
+"red": null
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": null,
+"missed": null,
+"saved": null
+}
+},
+{
+"team": {
+"id": 7914,
+"name": "Manchester City U19"
+},
+"league": {
+"id": 14,
+"name": "UEFA Youth League",
+"country": "World",
+"season": 2025
+},
+"games": {
+"appearences": null,
+"lineups": null,
+"minutes": null,
+"number": null,
+"position": "Attacker",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": null,
+"out": null,
+"bench": null
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": null,
+"conceded": null,
+"assists": null,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": null,
+"yellowred": null,
+"red": null
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": null,
+"missed": null,
+"saved": null
+}
+}
+],
+"prev_season": 2025,
+"transfers": [
+{
+"date": "2026-02-01",
+"type": "-",
+"from": {
+"id": 50,
+"name": "Manchester City"
+},
+"to": {
+"id": 24744,
+"name": "Juventus U20"
+}
+},
+{
+"date": "2026-02-01",
+"type": "-",
+"from": {
+"id": 50,
+"name": "Manchester City"
+},
+"to": {
+"id": 1715,
+"name": "Juventus U23"
+}
+}
+]
+},
+"568114": {
+"id": 568114,
+"name": "C. Pugliese",
+"first": null,
+"last": null,
+"birth": {
+"date": null,
+"place": null,
+"country": null
+},
+"nationality": null,
+"height": null,
+"weight": null,
+"injured": false,
+"photo": "https://media.api-sports.io/football/players/568114.png",
+"active": false,
+"team": 492,
+"team_name": "Napoli",
+"position": "Goalkeeper",
+"cur": [
+{
+"team": {
+"id": 492,
+"name": "Napoli"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 0,
+"lineups": 0,
+"minutes": null,
+"number": 12,
+"position": "Goalkeeper",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 1
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+}
+],
+"cur_season": 2026,
+"prev": [],
+"prev_season": 2025,
+"transfers": []
+}
+},
+"updated": "2026-09-14T13:53:55Z",
 "season": 2026,
 "league": 135
 }
