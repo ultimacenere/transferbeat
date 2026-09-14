@@ -301,10 +301,33 @@ def sposta_avanzi(repo, tranne_slug=None):
     return dest, avanzi
 
 
+def togli_lock_stantii(repo):
+    """I lock di git lasciati da un processo morto. Non e' un'ipotesi: l'8 settembre alle 20:42 il commit del recap si
+    e' interrotto a meta' e ha lasciato .git/HEAD.lock; da quel momento ogni pianificata falliva al passo di commit, e
+    per sei giorni non e' uscito un articolo. Un'operazione git non tiene un lock per 10 minuti: oltre, e' un residuo."""
+    gd = git_dir(repo)
+    tolti = []
+    candidati = [os.path.join(gd, n) for n in os.listdir(gd) if n.endswith(".lock")]
+    for sotto in ("refs/heads", "refs/remotes/origin"):
+        d = os.path.join(gd, *sotto.split("/"))
+        if os.path.isdir(d):
+            candidati += [os.path.join(d, n) for n in os.listdir(d) if n.endswith(".lock")]
+    for p in candidati:
+        if os.path.basename(p) == "redazione.lock":
+            continue
+        try:
+            eta = time.time() - os.path.getmtime(p)
+            if eta > 600:
+                os.remove(p)
+                tolti.append("%s (fermo da %.0f ore)" % (os.path.relpath(p, gd), eta / 3600))
+        except OSError:
+            pass
+    return tolti
+
+
 def riallinea(repo):
-    lock = os.path.join(git_dir(repo), "index.lock")
-    if os.path.exists(lock) and time.time() - os.path.getmtime(lock) > 600:
-        os.remove(lock)                                  # residuo di un processo git morto
+    for t in togli_lock_stantii(repo):
+        print("ATTENZIONE: tolto un lock di git abbandonato da un processo morto: %s" % t)
     ramo = sh(["git", "rev-parse", "--abbrev-ref", "HEAD"], repo).strip()
     if ramo == RAMO:
         sh(["git", "reset", "-q", "--hard", "origin/" + RAMO], repo)

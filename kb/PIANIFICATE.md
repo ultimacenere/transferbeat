@@ -82,6 +82,12 @@ Ora è codice, uguale per tutti.
 - Codici di uscita: 0 fatto · 2 JSON o argomenti non validi (si corregge e si rilancia) · 3 già pubblicato per oggi · 4 turno occupato ·
   5 turno non preso · 6 grafica non uniforme · 7 articoli che non tornano · 8 pubblicato ma versione non online · 9 git, rete o imprevisto.
 
+**Perché le pianificate Cowork si erano fermate dal 9 settembre (trovato il 14).** Nella copia del Desktop c'era
+`.git/HEAD.lock` datato **8 settembre 20:42**, lo stesso minuto dell'ultimo commit del RECAP: quel commit si è interrotto a metà e
+ha lasciato il lock. Da allora ogni pianificata, arrivata al commit, falliva su "cannot lock ref 'HEAD'", e per sei giorni non è
+uscito un articolo senza che nulla lo segnalasse. `redazione.py` ora toglie a ogni riallineamento i lock di git più vecchi di 10
+minuti (in `.git/`, `refs/heads/`, `refs/remotes/origin/`) e lo scrive in una riga ATTENZIONE.
+
 **Come è stato provato.** Una copia isolata con remoto finto il cui main contiene gli script nuovi, e copia di partenza vecchia e
 sporca come quella del Desktop: 20 casi, fra cui bozza abbandonata spostata, turno conteso, `--corpo` scritto male, data senza fuso,
 prova che conserva la bozza, **main che avanza fra passo 0 e pubblicazione** (commit finito sopra il nuovo main), pezzo di ieri uscito
