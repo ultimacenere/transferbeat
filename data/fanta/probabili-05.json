@@ -1,8 +1,8 @@
 {
-"updated": "2026-09-15T12:37:19Z",
+"updated": "2026-09-15T23:35:25Z",
 "season": 2026,
 "matchday": 5,
-"stage": "settimana",
+"stage": "vigilia",
 "fixtures": [
 {
 "id": 1550133,
@@ -1406,7 +1406,7 @@
 "name": "M. Frigan",
 "role": "A",
 "pos": "F",
-"prob": 24
+"prob": 22
 },
 {
 "id": 48193,
@@ -1616,21 +1616,30 @@
 "prob": 16
 },
 {
-"id": 342035,
-"name": "C. Volpato",
-"role": "C",
-"pos": "F",
-"prob": 48
-},
-{
 "id": 347265,
 "name": "B. Domínguez",
 "role": "C",
 "pos": "F",
 "prob": 18
+},
+{
+"id": 30849,
+"name": "N. Pierini",
+"role": "A",
+"pos": "F",
+"prob": 14
 }
 ],
-"out": [],
+"out": [
+{
+"id": 342035,
+"name": "C. Volpato",
+"role": "C",
+"pos": "F",
+"reason": "infortunio: coscia",
+"back_at": null
+}
+],
 "doubt": [],
 "coppa": null
 },
