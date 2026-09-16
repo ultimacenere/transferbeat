@@ -38762,6 +38762,18 @@
 "prev_season": 2025,
 "transfers": [
 {
+"date": "2026-08-10",
+"type": "Transfer",
+"from": {
+"id": 162,
+"name": "Werder Bremen"
+},
+"to": {
+"id": 512,
+"name": "Frosinone"
+}
+},
+{
 "date": "2026-08-11",
 "type": "Transfer",
 "from": {
@@ -67932,7 +67944,7 @@
 "team_name": "Torino",
 "number": 1,
 "position": "Goalkeeper",
-"active": true,
+"active": false,
 "cur": [
 {
 "team": {
@@ -79027,7 +79039,7 @@
 "team_name": "Cagliari",
 "number": 29,
 "position": "Attacker",
-"active": true,
+"active": false,
 "cur": [
 {
 "team": {
@@ -81952,7 +81964,7 @@
 "team": 490,
 "team_name": "Cagliari",
 "number": 17,
-"position": "Attacker",
+"position": "Midfielder",
 "active": true,
 "cur": [
 {
@@ -85176,6 +85188,18 @@
 ],
 "prev_season": 2025,
 "transfers": [
+{
+"date": "2026-07-12",
+"type": "Free agent",
+"from": {
+"id": 182,
+"name": "Union Berlin"
+},
+"to": {
+"id": 487,
+"name": "Lazio"
+}
+},
 {
 "date": "2026-07-13",
 "type": "Free agent",
@@ -108266,7 +108290,7 @@
 "team": 500,
 "team_name": "Bologna",
 "number": 20,
-"position": "Defender",
+"position": "Midfielder",
 "active": true,
 "cur": [
 {
@@ -110977,7 +111001,7 @@
 "team_name": "Torino",
 "number": 14,
 "position": "Midfielder",
-"active": true,
+"active": false,
 "cur": [
 {
 "team": {
@@ -133759,7 +133783,7 @@
 "team": 495,
 "team_name": "Genoa",
 "number": 2,
-"position": "Defender",
+"position": "Midfielder",
 "active": true,
 "cur": [
 {
@@ -177224,7 +177248,7 @@
 "team": 490,
 "team_name": "Cagliari",
 "number": 22,
-"position": "Defender",
+"position": "Midfielder",
 "active": true,
 "cur": [
 {
@@ -179056,7 +179080,7 @@
 "team": 502,
 "team_name": "Fiorentina",
 "number": 25,
-"position": "Midfielder",
+"position": "Attacker",
 "active": true,
 "cur": [
 {
@@ -179731,7 +179755,7 @@
 "team_name": "Monza",
 "number": 24,
 "position": "Defender",
-"active": true,
+"active": false,
 "cur": [
 {
 "team": {
@@ -190984,7 +191008,7 @@
 "photo": "https://media.api-sports.io/football/players/416518.png",
 "team": 500,
 "team_name": "Bologna",
-"number": 72,
+"number": 77,
 "position": "Goalkeeper",
 "active": true,
 "cur": [
@@ -196981,7 +197005,7 @@
 "team": 503,
 "team_name": "Torino",
 "number": 29,
-"position": "Midfielder",
+"position": "Defender",
 "active": true,
 "cur": [
 {
@@ -199686,7 +199710,7 @@
 "team": 502,
 "team_name": "Fiorentina",
 "number": 30,
-"position": "Midfielder",
+"position": "Attacker",
 "active": true,
 "cur": [
 {
@@ -208143,7 +208167,7 @@
 "team": 503,
 "team_name": "Torino",
 "number": 79,
-"position": "Attacker",
+"position": "Midfielder",
 "active": true,
 "cur": [
 {
@@ -212249,7 +212273,7 @@
 "team_name": "Cagliari",
 "number": 3,
 "position": "Defender",
-"active": true,
+"active": false,
 "photo": "https://media.api-sports.io/football/players/383026.png",
 "name": "Riyad Idrissi",
 "cur": [],
@@ -219719,7 +219743,7 @@
 "team_name": "AC Milan",
 "number": 44,
 "position": "Midfielder",
-"active": true,
+"active": false,
 "photo": "https://media.api-sports.io/football/players/448968.png",
 "name": "J. Sardo",
 "cur": [],
@@ -224006,7 +224030,7 @@
 "team": 487,
 "team_name": "Lazio",
 "number": 5,
-"position": "Midfielder",
+"position": "Defender",
 "active": true,
 "photo": "https://media.api-sports.io/football/players/568028.png",
 "name": "B. Galassi",
@@ -231668,7 +231692,7 @@
 "id": 605412,
 "team": 500,
 "team_name": "Bologna",
-"number": 6,
+"number": null,
 "position": "Midfielder",
 "active": true,
 "photo": "https://media.api-sports.io/football/players/605412.png",
@@ -234648,7 +234672,7 @@
 "id": 579077,
 "team": 492,
 "team_name": "Napoli",
-"number": 60,
+"number": 10,
 "position": "Midfielder",
 "active": true,
 "photo": "https://media.api-sports.io/football/players/579077.png",
@@ -237473,7 +237497,7 @@
 "id": 616147,
 "team": 500,
 "team_name": "Bologna",
-"number": 3,
+"number": null,
 "position": "Defender",
 "active": true,
 "photo": "https://media.api-sports.io/football/players/616147.png",
@@ -237828,7 +237852,7 @@
 "id": 468711,
 "team": 490,
 "team_name": "Cagliari",
-"number": 36,
+"number": 20,
 "position": "Midfielder",
 "active": true,
 "photo": "https://media.api-sports.io/football/players/468711.png",
@@ -243278,7 +243302,7 @@
 "active": true,
 "team": 495,
 "team_name": "Genoa",
-"position": "Midfielder",
+"position": "Defender",
 "cur": [
 {
 "team": {
@@ -244082,7 +244106,7 @@
 "team_name": "Bologna",
 "number": 34,
 "position": "Goalkeeper",
-"active": true,
+"active": false,
 "photo": "https://media.api-sports.io/football/players/491232.png",
 "name": "R. Gnudi",
 "cur": [],
@@ -253109,6 +253133,18 @@
 "prev_season": 2025,
 "transfers": [
 {
+"date": "2026-08-30",
+"type": "Transfer",
+"from": {
+"id": 172,
+"name": "VfB Stuttgart"
+},
+"to": {
+"id": 494,
+"name": "Udinese"
+}
+},
+{
 "date": "2026-08-31",
 "type": "Transfer",
 "from": {
@@ -256502,7 +256538,7 @@
 "team": 495,
 "team_name": "Genoa",
 "number": 16,
-"position": "Defender",
+"position": "Midfielder",
 "active": true,
 "photo": "https://media.api-sports.io/football/players/153411.png",
 "name": "C. Drameh",
@@ -257375,7 +257411,7 @@
 "weight": 70,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/376.png",
-"active": false,
+"active": true,
 "team": 487,
 "team_name": "Lazio",
 "position": "Defender",
@@ -257623,7 +257659,8 @@
 "name": "Lazio"
 }
 }
-]
+],
+"number": 2
 },
 "42712": {
 "id": 42712,
@@ -258136,7 +258173,7 @@
 "weight": null,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/568114.png",
-"active": false,
+"active": true,
 "team": 492,
 "team_name": "Napoli",
 "position": "Goalkeeper",
@@ -258216,7 +258253,8 @@
 "cur_season": 2026,
 "prev": [],
 "prev_season": 2025,
-"transfers": []
+"transfers": [],
+"number": 12
 },
 "462229": {
 "id": 462229,
@@ -258570,7 +258608,7 @@
 "weight": 83,
 "injured": false,
 "photo": "https://media.api-sports.io/football/players/1631.png",
-"active": false,
+"active": true,
 "team": 503,
 "team_name": "Torino",
 "position": "Defender",
@@ -258996,7 +259034,8 @@
 "name": "Torino"
 }
 }
-]
+],
+"number": 13
 },
 "635489": {
 "id": 635489,
@@ -259038,7 +259077,7 @@
 ]
 }
 },
-"updated": "2026-09-15T23:36:24Z",
+"updated": "2026-09-16T23:44:41Z",
 "season": 2026,
 "league": 135
 }
