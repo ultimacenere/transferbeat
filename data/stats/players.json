@@ -38,7 +38,7 @@
 "minutes": 323,
 "number": 25,
 "position": "Defender",
-"rating": 7.03,
+"rating": 7.08,
 "captain": false
 },
 "substitutes": {
@@ -67,8 +67,8 @@
 "interceptions": 6
 },
 "duels": {
-"total": 27,
-"won": 20
+"total": 28,
+"won": 21
 },
 "dribbles": {
 "attempts": 1,
@@ -739,7 +739,7 @@
 "games": {
 "appearences": 2,
 "lineups": 1,
-"minutes": 119,
+"minutes": 113,
 "number": 26,
 "position": "Defender",
 "rating": 7.2,
@@ -761,9 +761,9 @@
 "saves": null
 },
 "passes": {
-"total": 56,
+"total": 55,
 "key": null,
-"accuracy": 91
+"accuracy": 90
 },
 "tackles": {
 "total": 2,
@@ -10280,7 +10280,7 @@
 "saves": null
 },
 "passes": {
-"total": 98,
+"total": 99,
 "key": 2,
 "accuracy": 73
 },
@@ -11695,7 +11695,7 @@
 "games": {
 "appearences": 4,
 "lineups": 4,
-"minutes": 366,
+"minutes": 360,
 "number": 99,
 "position": "Goalkeeper",
 "rating": 7.03,
@@ -12089,12 +12089,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 4,
-"lineups": 4,
-"minutes": 360,
+"appearences": 5,
+"lineups": 5,
+"minutes": 456,
 "number": 49,
 "position": "Goalkeeper",
-"rating": 7.5,
+"rating": 7.54,
 "captain": false
 },
 "substitutes": {
@@ -12108,14 +12108,14 @@
 },
 "goals": {
 "total": 0,
-"conceded": 7,
+"conceded": 9,
 "assists": 0,
-"saves": 17
+"saves": 21
 },
 "passes": {
-"total": 114,
+"total": 154,
 "key": null,
-"accuracy": 77
+"accuracy": 81
 },
 "tackles": {
 "total": null,
@@ -13061,10 +13061,10 @@
 "games": {
 "appearences": 3,
 "lineups": 2,
-"minutes": 176,
+"minutes": 172,
 "number": 10,
 "position": "Midfielder",
-"rating": 6.93,
+"rating": 6.8,
 "captain": false
 },
 "substitutes": {
@@ -13930,10 +13930,10 @@
 "games": {
 "appearences": 4,
 "lineups": 0,
-"minutes": 96,
+"minutes": 92,
 "number": 8,
 "position": "Midfielder",
-"rating": 6.57,
+"rating": 6.7,
 "captain": false
 },
 "substitutes": {
@@ -13952,9 +13952,9 @@
 "saves": null
 },
 "passes": {
-"total": 74,
+"total": 75,
 "key": 3,
-"accuracy": 83
+"accuracy": 84
 },
 "tackles": {
 "total": null,
@@ -15198,79 +15198,7 @@
 "number": 4,
 "position": "Midfielder",
 "active": true,
-"cur": [
-{
-"team": {
-"id": 497,
-"name": "AS Roma"
-},
-"league": {
-"id": 135,
-"name": "Serie A",
-"country": "Italy",
-"season": 2026
-},
-"games": {
-"appearences": 4,
-"lineups": 4,
-"minutes": 334,
-"number": 4,
-"position": "Midfielder",
-"rating": 7.33,
-"captain": false
-},
-"substitutes": {
-"in": 0,
-"out": 1,
-"bench": 0
-},
-"shots": {
-"total": 4,
-"on": 1
-},
-"goals": {
-"total": 0,
-"conceded": 0,
-"assists": 0,
-"saves": null
-},
-"passes": {
-"total": 285,
-"key": 1,
-"accuracy": 88
-},
-"tackles": {
-"total": 11,
-"blocks": null,
-"interceptions": 4
-},
-"duels": {
-"total": 46,
-"won": 26
-},
-"dribbles": {
-"attempts": 2,
-"success": 1,
-"past": null
-},
-"fouls": {
-"drawn": 2,
-"committed": 6
-},
-"cards": {
-"yellow": 0,
-"yellowred": 0,
-"red": 0
-},
-"penalty": {
-"won": null,
-"commited": null,
-"scored": 0,
-"missed": 0,
-"saved": null
-}
-}
-],
+"cur": [],
 "cur_season": 2026,
 "prev": [
 {
@@ -23295,6 +23223,77 @@
 "missed": 0,
 "saved": null
 }
+},
+{
+"team": {
+"id": 517,
+"name": "Venezia"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 2,
+"lineups": 2,
+"minutes": 150,
+"number": 26,
+"position": "Midfielder",
+"rating": 6.75,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 2,
+"bench": 0
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 77,
+"key": 3,
+"accuracy": 80
+},
+"tackles": {
+"total": 2,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": 11,
+"won": 5
+},
+"dribbles": {
+"attempts": 1,
+"success": 1,
+"past": null
+},
+"fouls": {
+"drawn": 1,
+"committed": 1
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
 }
 ],
 "cur_season": 2026,
@@ -25841,7 +25840,7 @@
 "saves": null
 },
 "passes": {
-"total": 33,
+"total": 31,
 "key": 2,
 "accuracy": 93
 },
@@ -25851,7 +25850,7 @@
 "interceptions": 1
 },
 "duels": {
-"total": 5,
+"total": 6,
 "won": 3
 },
 "dribbles": {
@@ -28214,21 +28213,21 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 1,
-"minutes": 136,
+"appearences": 4,
+"lineups": 2,
+"minutes": 192,
 "number": 10,
 "position": "Attacker",
-"rating": 6.63,
+"rating": 6.55,
 "captain": false
 },
 "substitutes": {
 "in": 2,
-"out": 0,
+"out": 1,
 "bench": 2
 },
 "shots": {
-"total": 3,
+"total": 4,
 "on": 1
 },
 "goals": {
@@ -28238,9 +28237,9 @@
 "saves": null
 },
 "passes": {
-"total": 30,
-"key": 3,
-"accuracy": 80
+"total": 47,
+"key": 4,
+"accuracy": 70
 },
 "tackles": {
 "total": 3,
@@ -28248,17 +28247,17 @@
 "interceptions": null
 },
 "duels": {
-"total": 14,
-"won": 9
+"total": 21,
+"won": 11
 },
 "dribbles": {
-"attempts": 1,
-"success": 1,
+"attempts": 3,
+"success": 2,
 "past": null
 },
 "fouls": {
 "drawn": 3,
-"committed": 3
+"committed": 4
 },
 "cards": {
 "yellow": 0,
@@ -38878,6 +38877,77 @@
 "missed": 0,
 "saved": null
 }
+},
+{
+"team": {
+"id": 494,
+"name": "Udinese"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 1,
+"lineups": 0,
+"minutes": 10,
+"number": 4,
+"position": "Midfielder",
+"rating": 6.9,
+"captain": false
+},
+"substitutes": {
+"in": 1,
+"out": 0,
+"bench": 4
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 4,
+"key": 2,
+"accuracy": 100
+},
+"tackles": {
+"total": 1,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": 1,
+"won": 1
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": 1
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
 }
 ],
 "cur_season": 2026,
@@ -41700,7 +41770,7 @@
 "saves": null
 },
 "passes": {
-"total": 69,
+"total": 68,
 "key": 3,
 "accuracy": 94
 },
@@ -42166,7 +42236,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 4
+"bench": 5
 },
 "shots": {
 "total": null,
@@ -49515,7 +49585,7 @@
 "passes": {
 "total": 106,
 "key": 2,
-"accuracy": 80
+"accuracy": 79
 },
 "tackles": {
 "total": 12,
@@ -50497,10 +50567,10 @@
 "games": {
 "appearences": 4,
 "lineups": 3,
-"minutes": 268,
+"minutes": 262,
 "number": 17,
 "position": "Midfielder",
-"rating": 7.13,
+"rating": 7.05,
 "captain": false
 },
 "substitutes": {
@@ -50519,17 +50589,17 @@
 "saves": null
 },
 "passes": {
-"total": 184,
+"total": 186,
 "key": 6,
 "accuracy": 91
 },
 "tackles": {
 "total": 6,
 "blocks": null,
-"interceptions": 4
+"interceptions": 3
 },
 "duels": {
-"total": 25,
+"total": 26,
 "won": 12
 },
 "dribbles": {
@@ -52794,79 +52864,7 @@
 "number": 25,
 "position": "Defender",
 "active": true,
-"cur": [
-{
-"team": {
-"id": 512,
-"name": "Frosinone"
-},
-"league": {
-"id": 135,
-"name": "Serie A",
-"country": "Italy",
-"season": 2026
-},
-"games": {
-"appearences": 0,
-"lineups": 0,
-"minutes": null,
-"number": 25,
-"position": "Defender",
-"rating": null,
-"captain": false
-},
-"substitutes": {
-"in": 0,
-"out": 0,
-"bench": 3
-},
-"shots": {
-"total": null,
-"on": null
-},
-"goals": {
-"total": 0,
-"conceded": 0,
-"assists": 0,
-"saves": null
-},
-"passes": {
-"total": null,
-"key": null,
-"accuracy": null
-},
-"tackles": {
-"total": null,
-"blocks": null,
-"interceptions": null
-},
-"duels": {
-"total": null,
-"won": null
-},
-"dribbles": {
-"attempts": null,
-"success": null,
-"past": null
-},
-"fouls": {
-"drawn": null,
-"committed": null
-},
-"cards": {
-"yellow": 0,
-"yellowred": 0,
-"red": 0
-},
-"penalty": {
-"won": null,
-"commited": null,
-"scored": 0,
-"missed": 0,
-"saved": null
-}
-}
-],
+"cur": [],
 "cur_season": 2026,
 "prev": [
 {
@@ -68655,6 +68653,77 @@
 "missed": 0,
 "saved": 0
 }
+},
+{
+"team": {
+"id": 490,
+"name": "Cagliari"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 4,
+"lineups": 4,
+"minutes": 360,
+"number": 1,
+"position": "Goalkeeper",
+"rating": 7.8,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 0
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 2,
+"assists": 0,
+"saves": 13
+},
+"passes": {
+"total": 134,
+"key": null,
+"accuracy": 76
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": 3,
+"won": 3
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": 0
+}
 }
 ],
 "cur_season": 2026,
@@ -69882,7 +69951,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 4
+"bench": 5
 },
 "shots": {
 "total": null,
@@ -71305,7 +71374,7 @@
 "saves": null
 },
 "passes": {
-"total": 349,
+"total": 350,
 "key": 5,
 "accuracy": 90
 },
@@ -71718,7 +71787,7 @@
 "minutes": 262,
 "number": 32,
 "position": "Midfielder",
-"rating": 7.33,
+"rating": 7.35,
 "captain": false
 },
 "substitutes": {
@@ -72987,7 +73056,7 @@
 "games": {
 "appearences": 2,
 "lineups": 0,
-"minutes": 24,
+"minutes": 20,
 "number": 14,
 "position": "Midfielder",
 "rating": 6.45,
@@ -73009,7 +73078,7 @@
 "saves": null
 },
 "passes": {
-"total": 16,
+"total": 17,
 "key": 2,
 "accuracy": 100
 },
@@ -76433,7 +76502,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 0
+"bench": 1
 },
 "shots": {
 "total": null,
@@ -84132,7 +84201,7 @@
 "passes": {
 "total": 184,
 "key": 6,
-"accuracy": 89
+"accuracy": 90
 },
 "tackles": {
 "total": 3,
@@ -84144,7 +84213,7 @@
 "won": 14
 },
 "dribbles": {
-"attempts": 10,
+"attempts": 11,
 "success": 7,
 "past": null
 },
@@ -87488,22 +87557,22 @@
 "season": 2026
 },
 "games": {
-"appearences": 4,
-"lineups": 1,
-"minutes": 157,
+"appearences": 5,
+"lineups": 2,
+"minutes": 221,
 "number": 42,
 "position": "Midfielder",
-"rating": 6.85,
+"rating": 6.78,
 "captain": false
 },
 "substitutes": {
 "in": 3,
-"out": 1,
+"out": 2,
 "bench": 3
 },
 "shots": {
-"total": 3,
-"on": 2
+"total": 4,
+"on": 3
 },
 "goals": {
 "total": 0,
@@ -87512,18 +87581,18 @@
 "saves": null
 },
 "passes": {
-"total": 97,
-"key": 1,
-"accuracy": 92
+"total": 135,
+"key": 2,
+"accuracy": 90
 },
 "tackles": {
 "total": 2,
 "blocks": null,
-"interceptions": 1
+"interceptions": 2
 },
 "duels": {
-"total": 16,
-"won": 12
+"total": 24,
+"won": 16
 },
 "dribbles": {
 "attempts": 2,
@@ -87531,8 +87600,8 @@
 "past": null
 },
 "fouls": {
-"drawn": 6,
-"committed": null
+"drawn": 9,
+"committed": 1
 },
 "cards": {
 "yellow": 0,
@@ -89528,21 +89597,21 @@
 "season": 2026
 },
 "games": {
-"appearences": 4,
-"lineups": 4,
-"minutes": 315,
+"appearences": 5,
+"lineups": 5,
+"minutes": 371,
 "number": 7,
 "position": "Attacker",
-"rating": 6.93,
+"rating": 6.86,
 "captain": false
 },
 "substitutes": {
 "in": 0,
-"out": 1,
+"out": 2,
 "bench": 0
 },
 "shots": {
-"total": 2,
+"total": 3,
 "on": 2
 },
 "goals": {
@@ -89552,9 +89621,9 @@
 "saves": null
 },
 "passes": {
-"total": 89,
-"key": 7,
-"accuracy": 74
+"total": 102,
+"key": 8,
+"accuracy": 75
 },
 "tackles": {
 "total": 4,
@@ -89562,17 +89631,17 @@
 "interceptions": 4
 },
 "duels": {
-"total": 31,
-"won": 14
+"total": 35,
+"won": 15
 },
 "dribbles": {
-"attempts": 6,
+"attempts": 7,
 "success": null,
 "past": null
 },
 "fouls": {
 "drawn": 6,
-"committed": 3
+"committed": 4
 },
 "cards": {
 "yellow": 0,
@@ -94427,10 +94496,10 @@
 "games": {
 "appearences": 4,
 "lineups": 2,
-"minutes": 204,
+"minutes": 200,
 "number": 6,
 "position": "Midfielder",
-"rating": 6.88,
+"rating": 6.93,
 "captain": false
 },
 "substitutes": {
@@ -96991,7 +97060,7 @@
 "minutes": 360,
 "number": 8,
 "position": "Midfielder",
-"rating": 6.85,
+"rating": 6.83,
 "captain": false
 },
 "substitutes": {
@@ -97015,13 +97084,13 @@
 "accuracy": 81
 },
 "tackles": {
-"total": 6,
+"total": 7,
 "blocks": 4,
 "interceptions": 4
 },
 "duels": {
-"total": 18,
-"won": 8
+"total": 19,
+"won": 9
 },
 "dribbles": {
 "attempts": 2,
@@ -97875,10 +97944,10 @@
 "games": {
 "appearences": 4,
 "lineups": 0,
-"minutes": 62,
+"minutes": 58,
 "number": 11,
 "position": "Attacker",
-"rating": 6.6,
+"rating": 6.58,
 "captain": false
 },
 "substitutes": {
@@ -98153,7 +98222,7 @@
 "games": {
 "appearences": 3,
 "lineups": 3,
-"minutes": 253,
+"minutes": 247,
 "number": 5,
 "position": "Defender",
 "rating": 7.03,
@@ -99498,79 +99567,7 @@
 "number": 30,
 "position": "Goalkeeper",
 "active": true,
-"cur": [
-{
-"team": {
-"id": 867,
-"name": "Lecce"
-},
-"league": {
-"id": 135,
-"name": "Serie A",
-"country": "Italy",
-"season": 2026
-},
-"games": {
-"appearences": 4,
-"lineups": 4,
-"minutes": 360,
-"number": 30,
-"position": "Goalkeeper",
-"rating": 8.18,
-"captain": false
-},
-"substitutes": {
-"in": 0,
-"out": 0,
-"bench": 0
-},
-"shots": {
-"total": null,
-"on": null
-},
-"goals": {
-"total": 0,
-"conceded": 7,
-"assists": 0,
-"saves": 26
-},
-"passes": {
-"total": 133,
-"key": null,
-"accuracy": 48
-},
-"tackles": {
-"total": null,
-"blocks": null,
-"interceptions": null
-},
-"duels": {
-"total": 2,
-"won": 1
-},
-"dribbles": {
-"attempts": null,
-"success": null,
-"past": null
-},
-"fouls": {
-"drawn": 1,
-"committed": null
-},
-"cards": {
-"yellow": 1,
-"yellowred": 0,
-"red": 0
-},
-"penalty": {
-"won": null,
-"commited": null,
-"scored": 0,
-"missed": 0,
-"saved": 0
-}
-}
-],
+"cur": [],
 "cur_season": 2026,
 "prev": [
 {
@@ -106299,6 +106296,77 @@
 "missed": 0,
 "saved": null
 }
+},
+{
+"team": {
+"id": 512,
+"name": "Frosinone"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 2,
+"lineups": 0,
+"minutes": 12,
+"number": 11,
+"position": "Attacker",
+"rating": 6.6,
+"captain": false
+},
+"substitutes": {
+"in": 2,
+"out": 0,
+"bench": 3
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 3,
+"key": null,
+"accuracy": 66
+},
+"tackles": {
+"total": 2,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": 5,
+"won": 3
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": 1
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
 }
 ],
 "cur_season": 2026,
@@ -107955,7 +108023,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 3
+"bench": 4
 },
 "shots": {
 "total": 1,
@@ -110619,12 +110687,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 4,
-"lineups": 4,
-"minutes": 321,
+"appearences": 5,
+"lineups": 5,
+"minutes": 417,
 "number": 3,
 "position": "Defender",
-"rating": 6.88,
+"rating": 6.74,
 "captain": false
 },
 "substitutes": {
@@ -110643,27 +110711,27 @@
 "saves": null
 },
 "passes": {
-"total": 106,
-"key": 4,
-"accuracy": 86
+"total": 152,
+"key": 5,
+"accuracy": 88
 },
 "tackles": {
 "total": 7,
 "blocks": 2,
-"interceptions": 5
+"interceptions": 6
 },
 "duels": {
-"total": 23,
-"won": 11
+"total": 28,
+"won": 13
 },
 "dribbles": {
-"attempts": 2,
+"attempts": 3,
 "success": null,
 "past": null
 },
 "fouls": {
-"drawn": 2,
-"committed": 4
+"drawn": 3,
+"committed": 5
 },
 "cards": {
 "yellow": 0,
@@ -113149,79 +113217,7 @@
 "number": 7,
 "position": "Attacker",
 "active": true,
-"cur": [
-{
-"team": {
-"id": 496,
-"name": "Juventus"
-},
-"league": {
-"id": 135,
-"name": "Serie A",
-"country": "Italy",
-"season": 2026
-},
-"games": {
-"appearences": 4,
-"lineups": 4,
-"minutes": 293,
-"number": 7,
-"position": "Midfielder",
-"rating": 7.2,
-"captain": false
-},
-"substitutes": {
-"in": 0,
-"out": 4,
-"bench": 0
-},
-"shots": {
-"total": 9,
-"on": 4
-},
-"goals": {
-"total": 0,
-"conceded": 0,
-"assists": 1,
-"saves": null
-},
-"passes": {
-"total": 134,
-"key": 8,
-"accuracy": 84
-},
-"tackles": {
-"total": 2,
-"blocks": null,
-"interceptions": 1
-},
-"duels": {
-"total": 32,
-"won": 12
-},
-"dribbles": {
-"attempts": 13,
-"success": 6,
-"past": null
-},
-"fouls": {
-"drawn": 4,
-"committed": 10
-},
-"cards": {
-"yellow": 0,
-"yellowred": 0,
-"red": 0
-},
-"penalty": {
-"won": null,
-"commited": null,
-"scored": 0,
-"missed": 0,
-"saved": null
-}
-}
-],
+"cur": [],
 "cur_season": 2026,
 "prev": [
 {
@@ -120428,6 +120424,77 @@
 "missed": 0,
 "saved": 0
 }
+},
+{
+"team": {
+"id": 523,
+"name": "Parma"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 4,
+"lineups": 4,
+"minutes": 360,
+"number": 40,
+"position": "Goalkeeper",
+"rating": 7.65,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 0
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 6,
+"assists": 0,
+"saves": 17
+},
+"passes": {
+"total": 140,
+"key": null,
+"accuracy": 81
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": 1,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": 0
+}
 }
 ],
 "cur_season": 2026,
@@ -122101,12 +122168,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 4,
-"lineups": 4,
-"minutes": 351,
+"appearences": 5,
+"lineups": 5,
+"minutes": 447,
 "number": 44,
 "position": "Defender",
-"rating": 6.43,
+"rating": 6.58,
 "captain": false
 },
 "substitutes": {
@@ -122125,18 +122192,18 @@
 "saves": null
 },
 "passes": {
-"total": 227,
+"total": 269,
 "key": 2,
-"accuracy": 83
+"accuracy": 81
 },
 "tackles": {
-"total": 4,
-"blocks": 2,
+"total": 8,
+"blocks": 3,
 "interceptions": 5
 },
 "duels": {
-"total": 36,
-"won": 20
+"total": 42,
+"won": 25
 },
 "dribbles": {
 "attempts": null,
@@ -122144,8 +122211,8 @@
 "past": null
 },
 "fouls": {
-"drawn": 1,
-"committed": 4
+"drawn": 2,
+"committed": 5
 },
 "cards": {
 "yellow": 0,
@@ -122521,12 +122588,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 0,
-"lineups": 0,
-"minutes": null,
+"appearences": 1,
+"lineups": 1,
+"minutes": 96,
 "number": 1,
 "position": "Goalkeeper",
-"rating": null,
+"rating": 7.6,
 "captain": false
 },
 "substitutes": {
@@ -122540,14 +122607,14 @@
 },
 "goals": {
 "total": 0,
-"conceded": 0,
+"conceded": 1,
 "assists": 0,
-"saves": null
+"saves": 7
 },
 "passes": {
-"total": null,
+"total": 40,
 "key": null,
-"accuracy": null
+"accuracy": 50
 },
 "tackles": {
 "total": null,
@@ -122577,7 +122644,7 @@
 "commited": null,
 "scored": 0,
 "missed": 0,
-"saved": null
+"saved": 0
 }
 }
 ],
@@ -123577,7 +123644,7 @@
 "games": {
 "appearences": 3,
 "lineups": 1,
-"minutes": 113,
+"minutes": 109,
 "number": 9,
 "position": "Attacker",
 "rating": 6.9,
@@ -123599,9 +123666,9 @@
 "saves": null
 },
 "passes": {
-"total": 19,
+"total": 18,
 "key": null,
-"accuracy": 68
+"accuracy": 72
 },
 "tackles": {
 "total": 1,
@@ -123902,10 +123969,10 @@
 "games": {
 "appearences": 4,
 "lineups": 4,
-"minutes": 331,
+"minutes": 327,
 "number": 27,
 "position": "Defender",
-"rating": 6.68,
+"rating": 6.83,
 "captain": false
 },
 "substitutes": {
@@ -136168,6 +136235,148 @@
 "missed": 0,
 "saved": null
 }
+},
+{
+"team": {
+"id": 488,
+"name": "Sassuolo"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 1,
+"lineups": 0,
+"minutes": 2,
+"number": 20,
+"position": "Attacker",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": 1,
+"out": 0,
+"bench": 1
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 4,
+"key": null,
+"accuracy": 100
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+},
+{
+"team": {
+"id": 490,
+"name": "Cagliari"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 1,
+"lineups": 0,
+"minutes": 12,
+"number": 20,
+"position": "Attacker",
+"rating": 6.7,
+"captain": false
+},
+"substitutes": {
+"in": 1,
+"out": 0,
+"bench": 3
+},
+"shots": {
+"total": 1,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": 10,
+"key": null,
+"accuracy": 90
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": 1,
+"won": null
+},
+"dribbles": {
+"attempts": 1,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
 }
 ],
 "cur_season": 2026,
@@ -138412,7 +138621,7 @@
 "substitutes": {
 "in": 3,
 "out": 1,
-"bench": 3
+"bench": 4
 },
 "shots": {
 "total": 1,
@@ -141451,7 +141660,7 @@
 "games": {
 "appearences": 4,
 "lineups": 3,
-"minutes": 253,
+"minutes": 249,
 "number": 5,
 "position": "Midfielder",
 "rating": 7.05,
@@ -141473,7 +141682,7 @@
 "saves": null
 },
 "passes": {
-"total": 240,
+"total": 242,
 "key": 7,
 "accuracy": 94
 },
@@ -142755,12 +142964,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 4,
-"lineups": 3,
-"minutes": 286,
+"appearences": 5,
+"lineups": 4,
+"minutes": 382,
 "number": 16,
 "position": "Defender",
-"rating": 6.98,
+"rating": 6.96,
 "captain": false
 },
 "substitutes": {
@@ -142769,7 +142978,7 @@
 "bench": 1
 },
 "shots": {
-"total": null,
+"total": 2,
 "on": null
 },
 "goals": {
@@ -142779,18 +142988,18 @@
 "saves": null
 },
 "passes": {
-"total": 138,
+"total": 211,
 "key": 1,
-"accuracy": 91
+"accuracy": 90
 },
 "tackles": {
-"total": 6,
-"blocks": 4,
+"total": 9,
+"blocks": 5,
 "interceptions": 4
 },
 "duels": {
-"total": 25,
-"won": 15
+"total": 37,
+"won": 22
 },
 "dribbles": {
 "attempts": null,
@@ -142798,8 +143007,8 @@
 "past": null
 },
 "fouls": {
-"drawn": null,
-"committed": 3
+"drawn": 1,
+"committed": 4
 },
 "cards": {
 "yellow": 1,
@@ -144099,7 +144308,7 @@
 "games": {
 "appearences": 2,
 "lineups": 0,
-"minutes": 84,
+"minutes": 80,
 "number": 20,
 "position": "Attacker",
 "rating": 6.5,
@@ -146174,7 +146383,7 @@
 "games": {
 "appearences": 4,
 "lineups": 4,
-"minutes": 349,
+"minutes": 345,
 "number": 16,
 "position": "Attacker",
 "rating": 6.73,
@@ -147143,10 +147352,10 @@
 "games": {
 "appearences": 2,
 "lineups": 1,
-"minutes": 103,
+"minutes": 99,
 "number": 16,
 "position": "Defender",
-"rating": 7.6,
+"rating": 7.65,
 "captain": false
 },
 "substitutes": {
@@ -147175,7 +147384,7 @@
 "interceptions": null
 },
 "duels": {
-"total": 15,
+"total": 14,
 "won": 12
 },
 "dribbles": {
@@ -148172,7 +148381,7 @@
 "games": {
 "appearences": 4,
 "lineups": 0,
-"minutes": 111,
+"minutes": 105,
 "number": 9,
 "position": "Attacker",
 "rating": 6.28,
@@ -151410,7 +151619,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 2
+"bench": 3
 },
 "shots": {
 "total": null,
@@ -152606,7 +152815,7 @@
 },
 "tackles": {
 "total": 5,
-"blocks": 7,
+"blocks": 6,
 "interceptions": 1
 },
 "duels": {
@@ -153583,7 +153792,7 @@
 "games": {
 "appearences": 2,
 "lineups": 1,
-"minutes": 59,
+"minutes": 55,
 "number": 80,
 "position": "Midfielder",
 "rating": 6.35,
@@ -153605,9 +153814,9 @@
 "saves": null
 },
 "passes": {
-"total": 10,
+"total": 11,
 "key": null,
-"accuracy": 60
+"accuracy": 54
 },
 "tackles": {
 "total": 2,
@@ -160190,7 +160399,7 @@
 "games": {
 "appearences": 2,
 "lineups": 0,
-"minutes": 60,
+"minutes": 54,
 "number": 6,
 "position": "Midfielder",
 "rating": 6.6,
@@ -160212,9 +160421,9 @@
 "saves": null
 },
 "passes": {
-"total": 30,
+"total": 29,
 "key": 1,
-"accuracy": 83
+"accuracy": 86
 },
 "tackles": {
 "total": 1,
@@ -160561,45 +160770,45 @@
 "season": 2026
 },
 "games": {
-"appearences": 4,
+"appearences": 5,
 "lineups": 3,
-"minutes": 203,
+"minutes": 227,
 "number": 17,
 "position": "Midfielder",
-"rating": 7.15,
+"rating": 7.3,
 "captain": false
 },
 "substitutes": {
-"in": 1,
+"in": 2,
 "out": 3,
-"bench": 1
+"bench": 2
 },
 "shots": {
-"total": 4,
-"on": 4
+"total": 6,
+"on": 5
 },
 "goals": {
-"total": 2,
+"total": 3,
 "conceded": 0,
 "assists": 1,
 "saves": null
 },
 "passes": {
-"total": 66,
-"key": 10,
-"accuracy": 87
+"total": 89,
+"key": 12,
+"accuracy": 86
 },
 "tackles": {
-"total": 3,
+"total": 6,
 "blocks": null,
 "interceptions": 1
 },
 "duels": {
-"total": 17,
-"won": 7
+"total": 28,
+"won": 12
 },
 "dribbles": {
-"attempts": 4,
+"attempts": 5,
 "success": 2,
 "past": null
 },
@@ -161849,12 +162058,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 3,
-"minutes": 248,
+"appearences": 4,
+"lineups": 4,
+"minutes": 344,
 "number": 9,
 "position": "Attacker",
-"rating": 7.03,
+"rating": 7.35,
 "captain": false
 },
 "substitutes": {
@@ -161863,19 +162072,19 @@
 "bench": 0
 },
 "shots": {
-"total": 7,
-"on": 3
+"total": 9,
+"on": 5
 },
 "goals": {
-"total": 2,
+"total": 4,
 "conceded": 0,
 "assists": 0,
 "saves": null
 },
 "passes": {
-"total": 37,
-"key": 3,
-"accuracy": 78
+"total": 58,
+"key": 6,
+"accuracy": 79
 },
 "tackles": {
 "total": null,
@@ -161883,27 +162092,27 @@
 "interceptions": null
 },
 "duels": {
-"total": 24,
-"won": 5
+"total": 38,
+"won": 8
 },
 "dribbles": {
-"attempts": 7,
-"success": 1,
+"attempts": 11,
+"success": 3,
 "past": null
 },
 "fouls": {
-"drawn": null,
-"committed": 4
+"drawn": 1,
+"committed": 5
 },
 "cards": {
-"yellow": 0,
+"yellow": 1,
 "yellowred": 0,
 "red": 0
 },
 "penalty": {
 "won": null,
 "commited": null,
-"scored": 0,
+"scored": 1,
 "missed": 0,
 "saved": null
 }
@@ -162965,12 +163174,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 4,
-"lineups": 4,
-"minutes": 329,
+"appearences": 5,
+"lineups": 5,
+"minutes": 425,
 "number": 3,
 "position": "Defender",
-"rating": 6.38,
+"rating": 6.48,
 "captain": false
 },
 "substitutes": {
@@ -162979,8 +163188,8 @@
 "bench": 0
 },
 "shots": {
-"total": 3,
-"on": 2
+"total": 4,
+"on": 3
 },
 "goals": {
 "total": 0,
@@ -162989,27 +163198,27 @@
 "saves": null
 },
 "passes": {
-"total": 168,
-"key": null,
-"accuracy": 94
+"total": 201,
+"key": 1,
+"accuracy": 95
 },
 "tackles": {
-"total": 6,
+"total": 8,
 "blocks": 5,
 "interceptions": 12
 },
 "duels": {
-"total": 39,
-"won": 16
+"total": 48,
+"won": 22
 },
 "dribbles": {
-"attempts": null,
-"success": null,
+"attempts": 1,
+"success": 1,
 "past": null
 },
 "fouls": {
 "drawn": 2,
-"committed": 8
+"committed": 9
 },
 "cards": {
 "yellow": 2,
@@ -164540,7 +164749,7 @@
 "bench": 4
 },
 "shots": {
-"total": null,
+"total": 1,
 "on": null
 },
 "goals": {
@@ -166365,18 +166574,18 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
+"appearences": 4,
 "lineups": 2,
-"minutes": 116,
+"minutes": 148,
 "number": 35,
 "position": "Midfielder",
-"rating": 6.25,
+"rating": 6.4,
 "captain": false
 },
 "substitutes": {
-"in": 1,
+"in": 2,
 "out": 2,
-"bench": 2
+"bench": 3
 },
 "shots": {
 "total": null,
@@ -166389,21 +166598,21 @@
 "saves": null
 },
 "passes": {
-"total": 40,
+"total": 51,
 "key": null,
-"accuracy": 87
+"accuracy": 90
 },
 "tackles": {
-"total": 2,
+"total": 3,
 "blocks": null,
 "interceptions": 2
 },
 "duels": {
-"total": 10,
-"won": 2
+"total": 14,
+"won": 3
 },
 "dribbles": {
-"attempts": 1,
+"attempts": 2,
 "success": null,
 "past": null
 },
@@ -166412,7 +166621,7 @@
 "committed": 2
 },
 "cards": {
-"yellow": 1,
+"yellow": 2,
 "yellowred": 0,
 "red": 0
 },
@@ -167020,7 +167229,7 @@
 "minutes": 290,
 "number": 94,
 "position": "Attacker",
-"rating": 7.15,
+"rating": 7.2,
 "captain": false
 },
 "substitutes": {
@@ -167039,7 +167248,7 @@
 "saves": null
 },
 "passes": {
-"total": 83,
+"total": 82,
 "key": 4,
 "accuracy": 68
 },
@@ -167482,22 +167691,22 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
+"appearences": 4,
 "lineups": 0,
-"minutes": 66,
+"minutes": 90,
 "number": 25,
 "position": "Attacker",
-"rating": 6.27,
+"rating": 6.28,
 "captain": false
 },
 "substitutes": {
-"in": 3,
+"in": 4,
 "out": 0,
-"bench": 4
+"bench": 5
 },
 "shots": {
-"total": 1,
-"on": null
+"total": 2,
+"on": 1
 },
 "goals": {
 "total": 0,
@@ -167506,9 +167715,9 @@
 "saves": null
 },
 "passes": {
-"total": 18,
+"total": 26,
 "key": null,
-"accuracy": 83
+"accuracy": 84
 },
 "tackles": {
 "total": 1,
@@ -167516,8 +167725,8 @@
 "interceptions": null
 },
 "duels": {
-"total": 18,
-"won": 5
+"total": 23,
+"won": 7
 },
 "dribbles": {
 "attempts": 5,
@@ -167525,7 +167734,7 @@
 "past": null
 },
 "fouls": {
-"drawn": 2,
+"drawn": 4,
 "committed": 1
 },
 "cards": {
@@ -172420,7 +172629,7 @@
 "substitutes": {
 "in": 1,
 "out": 0,
-"bench": 2
+"bench": 3
 },
 "shots": {
 "total": null,
@@ -173513,10 +173722,10 @@
 "games": {
 "appearences": 3,
 "lineups": 1,
-"minutes": 130,
+"minutes": 124,
 "number": 61,
 "position": "Midfielder",
-"rating": 7.23,
+"rating": 7.17,
 "captain": false
 },
 "substitutes": {
@@ -175733,79 +175942,7 @@
 "number": 31,
 "position": "Defender",
 "active": true,
-"cur": [
-{
-"team": {
-"id": 495,
-"name": "Genoa"
-},
-"league": {
-"id": 135,
-"name": "Serie A",
-"country": "Italy",
-"season": 2026
-},
-"games": {
-"appearences": 0,
-"lineups": 0,
-"minutes": null,
-"number": 31,
-"position": "Defender",
-"rating": null,
-"captain": false
-},
-"substitutes": {
-"in": 0,
-"out": 0,
-"bench": 4
-},
-"shots": {
-"total": null,
-"on": null
-},
-"goals": {
-"total": 0,
-"conceded": 0,
-"assists": 0,
-"saves": null
-},
-"passes": {
-"total": null,
-"key": null,
-"accuracy": null
-},
-"tackles": {
-"total": null,
-"blocks": null,
-"interceptions": null
-},
-"duels": {
-"total": null,
-"won": null
-},
-"dribbles": {
-"attempts": null,
-"success": null,
-"past": null
-},
-"fouls": {
-"drawn": null,
-"committed": null
-},
-"cards": {
-"yellow": 0,
-"yellowred": 0,
-"red": 0
-},
-"penalty": {
-"won": null,
-"commited": null,
-"scored": 0,
-"missed": 0,
-"saved": null
-}
-}
-],
+"cur": [],
 "cur_season": 2026,
 "prev": [
 {
@@ -197790,7 +197927,7 @@
 "games": {
 "appearences": 2,
 "lineups": 1,
-"minutes": 110,
+"minutes": 106,
 "number": 17,
 "position": "Midfielder",
 "rating": 6.75,
@@ -197826,7 +197963,7 @@
 "won": 4
 },
 "dribbles": {
-"attempts": 6,
+"attempts": 5,
 "success": 2,
 "past": null
 },
@@ -199341,12 +199478,12 @@
 "season": 2026
 },
 "games": {
-"appearences": 4,
-"lineups": 4,
-"minutes": 351,
+"appearences": 5,
+"lineups": 5,
+"minutes": 447,
 "number": 60,
 "position": "Defender",
-"rating": 6.35,
+"rating": 6.54,
 "captain": false
 },
 "substitutes": {
@@ -199355,8 +199492,8 @@
 "bench": 0
 },
 "shots": {
-"total": 1,
-"on": 1
+"total": 2,
+"on": 2
 },
 "goals": {
 "total": 0,
@@ -199365,18 +199502,18 @@
 "saves": null
 },
 "passes": {
-"total": 167,
+"total": 208,
 "key": 2,
-"accuracy": 83
+"accuracy": 84
 },
 "tackles": {
-"total": 10,
-"blocks": 1,
-"interceptions": 13
+"total": 11,
+"blocks": 4,
+"interceptions": 15
 },
 "duels": {
-"total": 24,
-"won": 14
+"total": 29,
+"won": 17
 },
 "dribbles": {
 "attempts": null,
@@ -199385,10 +199522,10 @@
 },
 "fouls": {
 "drawn": null,
-"committed": 4
+"committed": 6
 },
 "cards": {
-"yellow": 1,
+"yellow": 2,
 "yellowred": 0,
 "red": 0
 },
@@ -201569,22 +201706,22 @@
 "season": 2026
 },
 "games": {
-"appearences": 3,
-"lineups": 2,
-"minutes": 215,
+"appearences": 4,
+"lineups": 3,
+"minutes": 297,
 "number": 50,
 "position": "Midfielder",
-"rating": 7.17,
+"rating": 7.2,
 "captain": false
 },
 "substitutes": {
 "in": 1,
-"out": 0,
+"out": 1,
 "bench": 1
 },
 "shots": {
-"total": 1,
-"on": null
+"total": 2,
+"on": 1
 },
 "goals": {
 "total": 0,
@@ -201593,26 +201730,26 @@
 "saves": null
 },
 "passes": {
-"total": 130,
-"key": 4,
-"accuracy": 85
+"total": 186,
+"key": 6,
+"accuracy": 88
 },
 "tackles": {
-"total": 7,
+"total": 14,
 "blocks": 3,
 "interceptions": 1
 },
 "duels": {
-"total": 29,
-"won": 17
+"total": 40,
+"won": 25
 },
 "dribbles": {
-"attempts": 7,
+"attempts": 8,
 "success": 5,
 "past": null
 },
 "fouls": {
-"drawn": 4,
+"drawn": 5,
 "committed": 2
 },
 "cards": {
@@ -202744,79 +202881,7 @@
 "number": 13,
 "position": "Defender",
 "active": true,
-"cur": [
-{
-"team": {
-"id": 489,
-"name": "AC Milan"
-},
-"league": {
-"id": 135,
-"name": "Serie A",
-"country": "Italy",
-"season": 2026
-},
-"games": {
-"appearences": 0,
-"lineups": 0,
-"minutes": null,
-"number": 13,
-"position": "Defender",
-"rating": null,
-"captain": false
-},
-"substitutes": {
-"in": 0,
-"out": 0,
-"bench": 4
-},
-"shots": {
-"total": null,
-"on": null
-},
-"goals": {
-"total": 0,
-"conceded": 0,
-"assists": 0,
-"saves": null
-},
-"passes": {
-"total": null,
-"key": null,
-"accuracy": null
-},
-"tackles": {
-"total": null,
-"blocks": null,
-"interceptions": null
-},
-"duels": {
-"total": null,
-"won": null
-},
-"dribbles": {
-"attempts": null,
-"success": null,
-"past": null
-},
-"fouls": {
-"drawn": null,
-"committed": null
-},
-"cards": {
-"yellow": 0,
-"yellowred": 0,
-"red": 0
-},
-"penalty": {
-"won": null,
-"commited": null,
-"scored": 0,
-"missed": 0,
-"saved": null
-}
-}
-],
+"cur": [],
 "cur_season": 2026,
 "prev": [
 {
@@ -208899,8 +208964,8 @@
 "interceptions": 2
 },
 "duels": {
-"total": 27,
-"won": 17
+"total": 28,
+"won": 18
 },
 "dribbles": {
 "attempts": 6,
@@ -210094,18 +210159,18 @@
 "season": 2026
 },
 "games": {
-"appearences": 4,
+"appearences": 5,
 "lineups": 2,
-"minutes": 144,
+"minutes": 158,
 "number": 80,
 "position": "Midfielder",
-"rating": 6.65,
+"rating": 6.58,
 "captain": false
 },
 "substitutes": {
-"in": 2,
+"in": 3,
 "out": 2,
-"bench": 2
+"bench": 3
 },
 "shots": {
 "total": null,
@@ -210118,7 +210183,7 @@
 "saves": null
 },
 "passes": {
-"total": 77,
+"total": 78,
 "key": 1,
 "accuracy": 74
 },
@@ -210128,7 +210193,7 @@
 "interceptions": 3
 },
 "duels": {
-"total": 13,
+"total": 15,
 "won": 10
 },
 "dribbles": {
@@ -210138,7 +210203,7 @@
 },
 "fouls": {
 "drawn": 2,
-"committed": null
+"committed": 1
 },
 "cards": {
 "yellow": 0,
@@ -212631,7 +212696,79 @@
 "active": true,
 "photo": "https://media.api-sports.io/football/players/85.png",
 "name": "C. Ngonge",
-"cur": [],
+"cur": [
+{
+"team": {
+"id": 1579,
+"name": "Monza"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 0,
+"lineups": 0,
+"minutes": null,
+"number": 16,
+"position": "Attacker",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 1
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
+}
+],
 "cur_season": 2026,
 "first": "Cyril",
 "last": "Ngonge",
@@ -212968,7 +213105,7 @@
 "substitutes": {
 "in": 0,
 "out": 0,
-"bench": 2
+"bench": 3
 },
 "shots": {
 "total": null,
@@ -215194,22 +215331,22 @@
 "season": 2026
 },
 "games": {
-"appearences": 1,
-"lineups": 1,
-"minutes": 70,
+"appearences": 2,
+"lineups": 2,
+"minutes": 142,
 "number": 94,
 "position": "Attacker",
-"rating": 7.9,
+"rating": 6.9,
 "captain": false
 },
 "substitutes": {
 "in": 0,
-"out": 1,
+"out": 2,
 "bench": 1
 },
 "shots": {
-"total": 2,
-"on": 1
+"total": 3,
+"on": 2
 },
 "goals": {
 "total": 1,
@@ -215218,27 +215355,27 @@
 "saves": null
 },
 "passes": {
-"total": 35,
-"key": 3,
-"accuracy": 91
+"total": 73,
+"key": 4,
+"accuracy": 87
 },
 "tackles": {
 "total": null,
 "blocks": null,
-"interceptions": null
+"interceptions": 1
 },
 "duels": {
-"total": 9,
+"total": 14,
 "won": 3
 },
 "dribbles": {
-"attempts": 2,
+"attempts": 3,
 "success": null,
 "past": null
 },
 "fouls": {
 "drawn": 3,
-"committed": 1
+"committed": 3
 },
 "cards": {
 "yellow": 0,
@@ -215247,7 +215384,7 @@
 },
 "penalty": {
 "won": null,
-"commited": null,
+"commited": 1,
 "scored": 0,
 "missed": 0,
 "saved": null
@@ -217637,7 +217774,7 @@
 "minutes": 142,
 "number": 27,
 "position": "Defender",
-"rating": 5.95,
+"rating": 6,
 "captain": false
 },
 "substitutes": {
@@ -217666,7 +217803,7 @@
 "interceptions": 1
 },
 "duels": {
-"total": 8,
+"total": 9,
 "won": 5
 },
 "dribbles": {
@@ -236754,79 +236891,7 @@
 "active": true,
 "photo": "https://media.api-sports.io/football/players/616142.png",
 "name": "Matteo Franceschelli",
-"cur": [
-{
-"team": {
-"id": 500,
-"name": "Bologna"
-},
-"league": {
-"id": 135,
-"name": "Serie A",
-"country": "Italy",
-"season": 2026
-},
-"games": {
-"appearences": 0,
-"lineups": 0,
-"minutes": null,
-"number": 82,
-"position": "Goalkeeper",
-"rating": null,
-"captain": false
-},
-"substitutes": {
-"in": 0,
-"out": 0,
-"bench": 1
-},
-"shots": {
-"total": null,
-"on": null
-},
-"goals": {
-"total": 0,
-"conceded": 0,
-"assists": 0,
-"saves": null
-},
-"passes": {
-"total": null,
-"key": null,
-"accuracy": null
-},
-"tackles": {
-"total": null,
-"blocks": null,
-"interceptions": null
-},
-"duels": {
-"total": null,
-"won": null
-},
-"dribbles": {
-"attempts": null,
-"success": null,
-"past": null
-},
-"fouls": {
-"drawn": null,
-"committed": null
-},
-"cards": {
-"yellow": 0,
-"yellowred": 0,
-"red": 0
-},
-"penalty": {
-"won": null,
-"commited": null,
-"scored": 0,
-"missed": 0,
-"saved": null
-}
-}
-],
+"cur": [],
 "cur_season": 2026,
 "first": null,
 "last": null,
@@ -242792,7 +242857,7 @@
 "games": {
 "appearences": 1,
 "lineups": 1,
-"minutes": 94,
+"minutes": 90,
 "number": 97,
 "position": "Goalkeeper",
 "rating": 6.9,
@@ -244906,10 +244971,10 @@
 "games": {
 "appearences": 2,
 "lineups": 0,
-"minutes": 71,
+"minutes": 65,
 "number": 21,
 "position": "Midfielder",
-"rating": 6.9,
+"rating": 6.95,
 "captain": false
 },
 "substitutes": {
@@ -244928,22 +244993,22 @@
 "saves": null
 },
 "passes": {
-"total": 41,
+"total": 42,
 "key": 1,
-"accuracy": 87
+"accuracy": 88
 },
 "tackles": {
 "total": 3,
 "blocks": null,
-"interceptions": 1
+"interceptions": null
 },
 "duels": {
-"total": 12,
-"won": 8
+"total": 14,
+"won": 10
 },
 "dribbles": {
-"attempts": 2,
-"success": 1,
+"attempts": 4,
+"success": 3,
 "past": null
 },
 "fouls": {
@@ -250590,6 +250655,77 @@
 "missed": 0,
 "saved": null
 }
+},
+{
+"team": {
+"id": 496,
+"name": "Juventus"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 0,
+"lineups": 0,
+"minutes": null,
+"number": 41,
+"position": "Midfielder",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 2
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
 }
 ],
 "cur_season": 2026,
@@ -251013,79 +251149,7 @@
 "team": 488,
 "team_name": "Sassuolo",
 "position": "Defender",
-"cur": [
-{
-"team": {
-"id": 488,
-"name": "Sassuolo"
-},
-"league": {
-"id": 135,
-"name": "Serie A",
-"country": "Italy",
-"season": 2026
-},
-"games": {
-"appearences": 1,
-"lineups": 0,
-"minutes": 9,
-"number": 15,
-"position": "Defender",
-"rating": 6.2,
-"captain": false
-},
-"substitutes": {
-"in": 1,
-"out": 0,
-"bench": 2
-},
-"shots": {
-"total": null,
-"on": null
-},
-"goals": {
-"total": 0,
-"conceded": 0,
-"assists": 0,
-"saves": null
-},
-"passes": {
-"total": 3,
-"key": null,
-"accuracy": 100
-},
-"tackles": {
-"total": null,
-"blocks": null,
-"interceptions": null
-},
-"duels": {
-"total": null,
-"won": null
-},
-"dribbles": {
-"attempts": null,
-"success": null,
-"past": null
-},
-"fouls": {
-"drawn": null,
-"committed": null
-},
-"cards": {
-"yellow": 0,
-"yellowred": 0,
-"red": 0
-},
-"penalty": {
-"won": null,
-"commited": null,
-"scored": 0,
-"missed": 0,
-"saved": null
-}
-}
-],
+"cur": [],
 "cur_season": 2026,
 "prev": [
 {
@@ -251282,10 +251346,10 @@
 "games": {
 "appearences": 2,
 "lineups": 2,
-"minutes": 139,
+"minutes": 135,
 "number": 34,
 "position": "Defender",
-"rating": 6.6,
+"rating": 6.7,
 "captain": false
 },
 "substitutes": {
@@ -251306,7 +251370,7 @@
 "passes": {
 "total": 95,
 "key": null,
-"accuracy": 81
+"accuracy": 82
 },
 "tackles": {
 "total": null,
@@ -253262,6 +253326,77 @@
 "missed": 0,
 "saved": null
 }
+},
+{
+"team": {
+"id": 499,
+"name": "Atalanta"
+},
+"league": {
+"id": 135,
+"name": "Serie A",
+"country": "Italy",
+"season": 2026
+},
+"games": {
+"appearences": 0,
+"lineups": 0,
+"minutes": null,
+"number": 22,
+"position": "Goalkeeper",
+"rating": null,
+"captain": false
+},
+"substitutes": {
+"in": 0,
+"out": 0,
+"bench": 2
+},
+"shots": {
+"total": null,
+"on": null
+},
+"goals": {
+"total": 0,
+"conceded": 0,
+"assists": 0,
+"saves": null
+},
+"passes": {
+"total": null,
+"key": null,
+"accuracy": null
+},
+"tackles": {
+"total": null,
+"blocks": null,
+"interceptions": null
+},
+"duels": {
+"total": null,
+"won": null
+},
+"dribbles": {
+"attempts": null,
+"success": null,
+"past": null
+},
+"fouls": {
+"drawn": null,
+"committed": null
+},
+"cards": {
+"yellow": 0,
+"yellowred": 0,
+"red": 0
+},
+"penalty": {
+"won": null,
+"commited": null,
+"scored": 0,
+"missed": 0,
+"saved": null
+}
 }
 ],
 "cur_season": 2026,
@@ -254175,7 +254310,7 @@
 "substitutes": {
 "in": 1,
 "out": 0,
-"bench": 1
+"bench": 2
 },
 "shots": {
 "total": 1,
@@ -255945,79 +256080,7 @@
 "active": true,
 "photo": "https://media.api-sports.io/football/players/237129.png",
 "name": "P. Sarr",
-"cur": [
-{
-"team": {
-"id": 496,
-"name": "Juventus"
-},
-"league": {
-"id": 135,
-"name": "Serie A",
-"country": "Italy",
-"season": 2026
-},
-"games": {
-"appearences": 1,
-"lineups": 0,
-"minutes": 19,
-"number": 29,
-"position": "Midfielder",
-"rating": 6.2,
-"captain": false
-},
-"substitutes": {
-"in": 1,
-"out": 0,
-"bench": 1
-},
-"shots": {
-"total": null,
-"on": null
-},
-"goals": {
-"total": 0,
-"conceded": 0,
-"assists": 0,
-"saves": null
-},
-"passes": {
-"total": 19,
-"key": null,
-"accuracy": 100
-},
-"tackles": {
-"total": null,
-"blocks": null,
-"interceptions": null
-},
-"duels": {
-"total": 2,
-"won": null
-},
-"dribbles": {
-"attempts": 1,
-"success": null,
-"past": null
-},
-"fouls": {
-"drawn": null,
-"committed": null
-},
-"cards": {
-"yellow": 0,
-"yellowred": 0,
-"red": 0
-},
-"penalty": {
-"won": null,
-"commited": null,
-"scored": 0,
-"missed": 0,
-"saved": null
-}
-}
-],
+"cur": [],
 "cur_season": 2026,
 "first": "Pape Matar",
 "last": "Sarr",
@@ -258639,7 +258702,7 @@
 "games": {
 "appearences": 1,
 "lineups": 0,
-"minutes": 23,
+"minutes": 17,
 "number": 13,
 "position": "Defender",
 "rating": 6.2,
@@ -259089,7 +259152,7 @@
 ]
 }
 },
-"updated": "2026-09-18T17:58:24Z",
+"updated": "2026-09-19T12:25:05Z",
 "season": 2026,
 "league": 135
 }
