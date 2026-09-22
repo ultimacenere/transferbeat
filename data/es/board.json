@@ -1,5 +1,5 @@
 {
-  "aggiornato": "2026-09-22T09:10:57",
+  "aggiornato": "2026-09-22T12:14:08",
   "giorno": "Martes 22 septiembre",
   "squadre": {
     "Inter": {
@@ -9,18 +9,32 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "El Betis, un trampolín internacional",
+            "fonte": "Marca",
+            "link": "https://www.marca.com/futbol/betis/2026/09/22/betis-trampolin-internacional.html",
+            "affidabilita": 3,
+            "quando": "ahora"
+          },
+          {
+            "titolo": "El Málaga es el único de Primera sin internacionales en el parón",
+            "fonte": "Marca",
+            "link": "https://www.marca.com/futbol/malaga/2026/09/22/malaga-unico-primera-internacionales-paron.html",
+            "affidabilita": 3,
+            "quando": "1 h"
+          },
+          {
             "titolo": "El Sevilla ya entrena sin los internacionales",
             "fonte": "Marca",
             "link": "https://www.marca.com/futbol/sevilla/2026/09/21/sevilla-entrena-internacionales.html",
             "affidabilita": 3,
-            "quando": "19 h"
+            "quando": "22 h"
           },
           {
-            "titolo": "Un problema interminable: el mapa de calor de Vinicius y Mbappé en el derbi que preocupa al madridismo",
-            "fonte": "Marca",
-            "link": "https://www.marca.com/futbol/real-madrid/2026/09/21/problema-interminable-mapa-calor-vinicius-mbappe-derbi-preocupa-madridismo.html",
-            "affidabilita": 3,
-            "quando": "23 h"
+            "titolo": "Las fechas de los partidos de los internacionales del Betis",
+            "fonte": "Mundo Deportivo",
+            "link": "https://www.mundodeportivo.com/futbol/betis/20260922/1004229992/fechas-partidos-internacionales-betis.html",
+            "affidabilita": 2,
+            "quando": "3 h"
           },
           {
             "titolo": "Cómo ver Real Madrid vs Inter Milán: Detalles del partido, cadenas de TV, streaming en direct y más",
@@ -35,20 +49,6 @@
             "link": "https://www.si.com",
             "affidabilita": 2,
             "quando": "15 d"
-          },
-          {
-            "titolo": "Muere Sandro Mazzola, leyenda del Inter de Milán, a los 83 años",
-            "fonte": "ABC",
-            "link": "https://www.abc.es",
-            "affidabilita": 1,
-            "quando": "2 d"
-          },
-          {
-            "titolo": "El Bernabéu muestra su apoyo a Ceuta con miles de banderas en el partido ante el Inter de Milán",
-            "fonte": "LaSexta",
-            "link": "https://www.lasexta.com",
-            "affidabilita": 1,
-            "quando": "13 d"
           }
         ],
         "obj": [
@@ -57,7 +57,7 @@
             "fonte": "DAZN",
             "link": "https://www.dazn.com",
             "affidabilita": 1,
-            "quando": "2 d"
+            "quando": "3 d"
           }
         ],
         "conf": [],
@@ -80,6 +80,26 @@
       },
       "feed": [
         {
+          "titolo": "El Betis, un trampolín internacional",
+          "fonte": "Marca",
+          "stato": "rumor",
+          "link": "https://www.marca.com/futbol/betis/2026/09/22/betis-trampolin-internacional.html",
+          "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/09/22/6ab249dff138e.jpeg",
+          "dominio": "marca.com",
+          "affidabilita": 3,
+          "quando": "ahora"
+        },
+        {
+          "titolo": "El Málaga es el único de Primera sin internacionales en el parón",
+          "fonte": "Marca",
+          "stato": "rumor",
+          "link": "https://www.marca.com/futbol/malaga/2026/09/22/malaga-unico-primera-internacionales-paron.html",
+          "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/09/22/6ab2457672e2e.jpeg",
+          "dominio": "marca.com",
+          "affidabilita": 3,
+          "quando": "1 h"
+        },
+        {
           "titolo": "El Sevilla ya entrena sin los internacionales",
           "fonte": "Marca",
           "stato": "rumor",
@@ -87,27 +107,7 @@
           "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/09/21/6ab11ae469f5c.jpeg",
           "dominio": "marca.com",
           "affidabilita": 3,
-          "quando": "19 h"
-        },
-        {
-          "titolo": "Un problema interminable: el mapa de calor de Vinicius y Mbappé en el derbi que preocupa al madridismo",
-          "fonte": "Marca",
-          "stato": "rumor",
-          "link": "https://www.marca.com/futbol/real-madrid/2026/09/21/problema-interminable-mapa-calor-vinicius-mbappe-derbi-preocupa-madridismo.html",
-          "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/09/21/6ab0e18703a02.jpeg",
-          "dominio": "marca.com",
-          "affidabilita": 3,
-          "quando": "23 h"
-        },
-        {
-          "titolo": "Cómo ver Real Madrid vs Inter Milán: Detalles del partido, cadenas de TV, streaming en direct y más",
-          "fonte": "Goal.com",
-          "stato": "rumor",
-          "link": "https://www.goal.com/es/noticias/streaming-en-vivo-real-madrid-v-inter-mila%CC%81n/blt8c47a948c3c500e1",
-          "img": "https://assets.goal.com/images/v3/o9sR1SUFa-hDFLGRK4GGM_DESKTOP/image.jpg",
-          "dominio": "goal.com",
-          "affidabilita": 2,
-          "quando": "14 d"
+          "quando": "22 h"
         }
       ],
       "nomi": {
@@ -132,7 +132,7 @@
           },
           {
             "titolo": "Juventus vuelve al triunfo ante Atalanta y se acerca a la cima de la Serie A",
-            "fonte": "El Economista",
+            "fonte": "eleconomista.com.mx",
             "link": "https://www.eleconomista.com.mx",
             "affidabilita": 1,
             "quando": "1 d"
@@ -172,14 +172,14 @@
             "fonte": "Apuestas deportivas en la red",
             "link": "https://news.bet365.es",
             "affidabilita": 1,
-            "quando": "16 h"
+            "quando": "19 h"
           },
           {
             "titolo": "Cómo ver Juventus vs Atalanta en vivo: canales, streaming y horarios de la Serie A 2026/27 para México, Latinoamérica y USA",
             "fonte": "DAZN",
             "link": "https://www.dazn.com",
             "affidabilita": 1,
-            "quando": "1 d"
+            "quando": "2 d"
           },
           {
             "titolo": "Juventus vs Atalanta: estadísticas previas y datos | Serie A 2026/2027",
@@ -196,7 +196,7 @@
             "fonte": "Eurosport",
             "link": "https://www.eurosport.es",
             "affidabilita": 2,
-            "quando": "11 h"
+            "quando": "14 h"
           },
           {
             "titolo": "EN VIVO: Juventus gana por 2 el juego ante Atalanta",
@@ -220,10 +220,10 @@
           "fonte": "Eurosport",
           "stato": "done",
           "link": "https://www.eurosport.es/futbol/champions-league-femenina/2026-2027/live-juventus-benfica_mtc21882439/live.shtml",
-          "img": "",
+          "img": "https://assets.eurosport.io/web/img/og/eurosport.jpg",
           "dominio": "eurosport.es",
           "affidabilita": 2,
-          "quando": "11 h"
+          "quando": "14 h"
         },
         {
           "titolo": "EN VIVO: Juventus gana por 2 el juego ante Atalanta",
@@ -294,7 +294,7 @@
         "done": [
           {
             "titolo": "Benfica vence al AC Milan en la primera jornada de la Liga Europa",
-            "fonte": "audacy.com",
+            "fonte": "Audacy",
             "link": "https://www.audacy.com",
             "affidabilita": 1,
             "quando": "5 d"
@@ -314,7 +314,7 @@
         },
         {
           "titolo": "Benfica vence al AC Milan en la primera jornada de la Liga Europa",
-          "fonte": "audacy.com",
+          "fonte": "Audacy",
           "stato": "done",
           "link": "https://www.audacy.com/winsnoticias/noticias/liga-europa-benfica-ac-milan-b190f6108789f2680b5ad3d6343e4b52",
           "img": "https://www.audacy.com/media-library/europa-resumen.jpg?id=67783915&width=1200&height=600&coordinates=0%2C416%2C0%2C417",
@@ -432,21 +432,21 @@
             "fonte": "DAZN",
             "link": "https://www.dazn.com",
             "affidabilita": 1,
-            "quando": "2 d"
+            "quando": "3 d"
           }
         ],
         "conf": [],
         "done": [
           {
             "titolo": "Lautaro rescata al Inter ante la Roma con un doblete y mantiene al campeón en la cima de la Serie A",
-            "fonte": "Diario Las Américas",
+            "fonte": "diariolasamericas.com",
             "link": "https://www.diariolasamericas.com",
             "affidabilita": 1,
             "quando": "2 d"
           },
           {
             "titolo": "Inter de Milán empata 2-2 contra la Roma en la quinta fecha de la Serie A - esto",
-            "fonte": "El Sol de México",
+            "fonte": "oem.com.mx",
             "link": "https://oem.com.mx",
             "affidabilita": 1,
             "quando": "2 d"
@@ -463,7 +463,7 @@
       "feed": [
         {
           "titolo": "Lautaro rescata al Inter ante la Roma con un doblete y mantiene al campeón en la cima de la Serie A",
-          "fonte": "Diario Las Américas",
+          "fonte": "diariolasamericas.com",
           "stato": "done",
           "link": "https://www.diariolasamericas.com/deportes/lautaro-rescata-al-inter-la-roma-un-doblete-y-mantiene-al-campeon-la-cima-la-serie-a-n5402456",
           "img": "https://media.diariolasamericas.com/p/04d69fe326b957a04ab59aaad4b28fbb/adjuntos/216/imagenes/100/280/0100280312/afp__20260919__c8ry6wh__v1__midres__fblitaseriearomainter.jpg",
@@ -473,7 +473,7 @@
         },
         {
           "titolo": "Inter de Milán empata 2-2 contra la Roma en la quinta fecha de la Serie A - esto",
-          "fonte": "El Sol de México",
+          "fonte": "oem.com.mx",
           "stato": "done",
           "link": "https://oem.com.mx/esto/futbol-internacional/inter-de-milan-empata-2-2-contra-la-roma-en-la-quinta-fecha-de-la-serie-a-32159331",
           "img": "https://oem.com.mx/esto/img/32159385/1789825373/BASE_LANDSCAPE/1200/image.jpg",
@@ -584,7 +584,7 @@
             "fonte": "DAZN",
             "link": "https://www.dazn.com",
             "affidabilita": 1,
-            "quando": "1 d"
+            "quando": "2 d"
           },
           {
             "titolo": "Atalanta vs. Bolonia: alineaciones, estadísticas, horario y dónde ver - bet365",
@@ -634,7 +634,7 @@
           "img": "",
           "dominio": "dazn.com",
           "affidabilita": 1,
-          "quando": "1 d"
+          "quando": "2 d"
         }
       ],
       "nomi": {
@@ -666,14 +666,14 @@
           },
           {
             "titolo": "Genoa vs Fiorentina",
-            "fonte": "TUDN",
+            "fonte": "tudn.com",
             "link": "https://www.tudn.com",
             "affidabilita": 1,
             "quando": "17 d"
           },
           {
             "titolo": "Sassuolo vs Fiorentina",
-            "fonte": "TUDN",
+            "fonte": "tudn.com",
             "link": "https://www.tudn.com",
             "affidabilita": 1,
             "quando": "17 d"
@@ -690,7 +690,7 @@
             "fonte": "EL PAÍS",
             "link": "https://elpais.com",
             "affidabilita": 1,
-            "quando": "25 d"
+            "quando": "26 d"
           }
         ],
         "obj": [
@@ -735,7 +735,7 @@
         },
         {
           "titolo": "Genoa vs Fiorentina",
-          "fonte": "TUDN",
+          "fonte": "tudn.com",
           "stato": "rumor",
           "link": "https://www.tudn.com/futbol/serie-a/genoa-vs-fiorentina-serie-a-2026-10-10",
           "img": "https://www.tudn.com/api/image/og/us/futbol/serie-a/genoa-vs-fiorentina-serie-a-2026-10-10",
@@ -766,7 +766,7 @@
           },
           {
             "titolo": "En Directo: Juventus FC - Bologna FC 1909. Partido de la Serie A 2012-2013 | Fútbol en El Correo",
-            "fonte": "El Correo",
+            "fonte": "elcorreo.com",
             "link": "https://www.elcorreo.com",
             "affidabilita": 1,
             "quando": "6 d"
@@ -789,7 +789,7 @@
         },
         {
           "titolo": "En Directo: Juventus FC - Bologna FC 1909. Partido de la Serie A 2012-2013 | Fútbol en El Correo",
-          "fonte": "El Correo",
+          "fonte": "elcorreo.com",
           "stato": "rumor",
           "link": "https://www.elcorreo.com/deportes/futbol/directos/calcio/2012-2013/juventus-bologna-2695-2701-0-10-sd.html?sport=futbol",
           "img": "https://static1.vocstatic.com/voc26/latest/assets/images/logos/elcorreo.png",
@@ -813,10 +813,10 @@
         "rumor": [
           {
             "titolo": "En Directo: Torino FC - Palermo FC. Partido de la Serie A 2012-2013 | Fútbol en El Correo",
-            "fonte": "El Correo",
+            "fonte": "elcorreo.com",
             "link": "https://www.elcorreo.com",
             "affidabilita": 1,
-            "quando": "5 d"
+            "quando": "6 d"
           }
         ],
         "obj": [],
@@ -826,13 +826,13 @@
       "feed": [
         {
           "titolo": "En Directo: Torino FC - Palermo FC. Partido de la Serie A 2012-2013 | Fútbol en El Correo",
-          "fonte": "El Correo",
+          "fonte": "elcorreo.com",
           "stato": "rumor",
           "link": "https://www.elcorreo.com/deportes/futbol/directos/calcio/2012-2013/torino-10948-palermo-10948-2700-0-27-sd.html?sport=futbol",
           "img": "https://static1.vocstatic.com/voc26/latest/assets/images/logos/elcorreo.png",
           "dominio": "elcorreo.com",
           "affidabilita": 1,
-          "quando": "5 d"
+          "quando": "6 d"
         }
       ],
       "nomi": {
@@ -854,13 +854,6 @@
             "link": "https://quintafuerza.mx",
             "affidabilita": 1,
             "quando": "6 d"
-          },
-          {
-            "titolo": "¡HÉROE MEXICANO! Johan Vásquez mete al Genoa a octavos",
-            "fonte": "UNANIMO Deportes",
-            "link": "https://unanimodeportes.com",
-            "affidabilita": 1,
-            "quando": "6 d"
           }
         ],
         "obj": [],
@@ -875,16 +868,6 @@
           "link": "https://quintafuerza.mx/deportes/mexicano-johan-vasquez-anota-gol-pase-genoa-octavos-coppa-italia/",
           "img": "https://quintafuerza.mx/api/v1/og/photo/mexicano-johan-vasquez-anota-gol-pase-genoa-octavos-coppa-italia.jpg",
           "dominio": "quintafuerza.mx",
-          "affidabilita": 1,
-          "quando": "6 d"
-        },
-        {
-          "titolo": "¡HÉROE MEXICANO! Johan Vásquez mete al Genoa a octavos",
-          "fonte": "UNANIMO Deportes",
-          "stato": "rumor",
-          "link": "https://unanimodeportes.com/deportes/futbol/serie-a/heroe-mexicano-johan-vasquez-mete-al-genoa-a-octavos/",
-          "img": "https://unanimodeportes.s3.amazonaws.com/wp-content/uploads/2025/01/e6a2fdaaf742d3495c0558caeb7de8f990cd0589.jpg",
-          "dominio": "unanimodeportes.com",
           "affidabilita": 1,
           "quando": "6 d"
         }
@@ -914,7 +897,7 @@
             "fonte": "Infobae",
             "link": "https://www.infobae.com",
             "affidabilita": 1,
-            "quando": "3 d"
+            "quando": "4 d"
           },
           {
             "titolo": "Alineaciones Udinese vs Cagliari | Serie A 2026/2027",
@@ -962,7 +945,7 @@
           "img": "https://www.infobae.com/assets/images/logos/fallback-promo-image-1200x630.png",
           "dominio": "infobae.com",
           "affidabilita": 1,
-          "quando": "3 d"
+          "quando": "4 d"
         },
         {
           "titolo": "Alineaciones Udinese vs Cagliari | Serie A 2026/2027",
@@ -1030,11 +1013,11 @@
             "fonte": "Marca",
             "link": "https://www.marca.com/futbol/elche/2026/09/21/primer-triunfo-visitante-elche-hizo-tanto-rogar.html",
             "affidabilita": 3,
-            "quando": "19 h"
+            "quando": "22 h"
           },
           {
             "titolo": "Exfutbolista de Pumas regresa a Europa con histórico club italiano",
-            "fonte": "TUDN",
+            "fonte": "tudn.com",
             "link": "https://www.tudn.com",
             "affidabilita": 1,
             "quando": "3 d"
@@ -1074,11 +1057,11 @@
           "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/09/18/6aadafb857377.jpeg",
           "dominio": "marca.com",
           "affidabilita": 3,
-          "quando": "19 h"
+          "quando": "22 h"
         },
         {
           "titolo": "Exfutbolista de Pumas regresa a Europa con histórico club italiano",
-          "fonte": "TUDN",
+          "fonte": "tudn.com",
           "stato": "rumor",
           "link": "https://www.tudn.com/futbol-femenino/liga-mx-femenil/silvana-flores-hace-historia-al-fichar-con-como-1907-del-futbol-italiano",
           "img": "https://www.tudn.com/api/image/og/us/futbol-femenino/liga-mx-femenil/silvana-flores-hace-historia-al-fichar-con-como-1907-del-futbol-italiano",
@@ -1111,27 +1094,104 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "Monza, Juric: «El Lecce no ha tirado nunca a puerta»",
-            "fonte": "Yahoo",
-            "link": "https://es-us.noticias.yahoo.com",
+            "titolo": "Inter vs Lecce: cómo ver el partido por TV y streaming, últimas noticias y pronóstico",
+            "fonte": "Sports Illustrated",
+            "link": "https://www.si.com",
+            "affidabilita": 2,
+            "quando": "252 d"
+          },
+          {
+            "titolo": "Alineaciones Lecce vs Juventus | Serie A 2025/2026",
+            "fonte": "EL PAÍS",
+            "link": "https://elpais.com",
             "affidabilita": 1,
-            "quando": "9 d"
+            "quando": "138 d"
+          },
+          {
+            "titolo": "Apuestas y Pronóstico del Lecce vs Roma 06/01/26",
+            "fonte": "Oddschecker",
+            "link": "https://www.oddschecker.com",
+            "affidabilita": 1,
+            "quando": "259 d"
           }
         ],
-        "obj": [],
+        "obj": [
+          {
+            "titolo": "Lecce vs Inter de Milán: previa, predicciones y alineaciones",
+            "fonte": "Sports Illustrated",
+            "link": "https://www.si.com",
+            "affidabilita": 2,
+            "quando": "213 d"
+          },
+          {
+            "titolo": "Lecce vs Juventus en vivo en español: horarios en USA, canales y transmisión de la Serie A 2025/26 en Estados Unidos",
+            "fonte": "DAZN",
+            "link": "https://www.dazn.com",
+            "affidabilita": 1,
+            "quando": "136 d"
+          },
+          {
+            "titolo": "Futbol hoy 20 de abril de 2026: ¿Dónde ver los partidos en vivo?",
+            "fonte": "El Informador",
+            "link": "https://www.informador.mx",
+            "affidabilita": 1,
+            "quando": "155 d"
+          },
+          {
+            "titolo": "Nápoles vs Lecce en vivo en español: horarios, canales y transmisión de la Serie A 2025/26 en Estados Unidos",
+            "fonte": "DAZN",
+            "link": "https://www.dazn.com",
+            "affidabilita": 1,
+            "quando": "196 d"
+          },
+          {
+            "titolo": "Lecce vs Inter Milán en vivo en español: horarios, canales y transmisión de la Serie A 2025/26 en Estados Unidos",
+            "fonte": "DAZN",
+            "link": "https://www.dazn.com",
+            "affidabilita": 1,
+            "quando": "213 d"
+          },
+          {
+            "titolo": "Futbol hoy 21 de febrero de 2026: ¿Dónde ver los partidos en vivo?",
+            "fonte": "El Informador",
+            "link": "https://www.informador.mx",
+            "affidabilita": 1,
+            "quando": "213 d"
+          }
+        ],
         "conf": [],
         "done": []
       },
       "feed": [
         {
-          "titolo": "Monza, Juric: «El Lecce no ha tirado nunca a puerta»",
-          "fonte": "Yahoo",
+          "titolo": "Lecce vs Inter de Milán: previa, predicciones y alineaciones",
+          "fonte": "Sports Illustrated",
+          "stato": "obj",
+          "link": "https://www.si.com/es-us/futbol/lecce-vs-inter-de-milan-previa-predicciones-y-alineaciones-21-02-26",
+          "img": "https://images2.minutemediacdn.com/image/upload/c_crop,x_0,y_102,w_4100,h_2306/c_fill,w_1440,ar_1440:810,f_auto,q_auto,g_auto/images/GettyImages/mmsport/sports_illustrated_ftbol/01khwcs0340634011ggv.jpg",
+          "dominio": "si.com",
+          "affidabilita": 2,
+          "quando": "213 d"
+        },
+        {
+          "titolo": "Inter vs Lecce: cómo ver el partido por TV y streaming, últimas noticias y pronóstico",
+          "fonte": "Sports Illustrated",
           "stato": "rumor",
-          "link": "https://es-us.noticias.yahoo.com/deportes/monza-juric-lecce-tirado-puerta-144900584.html",
-          "img": "https://s.yimg.com/lo/mysterio/api/712208f7d286a66b670076bd421fd1f11115b8d6675457f24247f7cd7192f654/lightyear_networkapi/resizefill_w1200%3Bquality_80%3Bformat_jpg/https%3A%2F%2Fmedia.zenfs.com%2Fes%2Fgoal_739%2F3837dd92ef99d0a214d2f52922c8a956.jpg",
-          "dominio": "es-us.noticias.yahoo.com",
+          "link": "https://www.si.com/es-us/futbol/inter-vs-lecce-como-ver-el-partido-por-tv-y-streaming-ultimas-noticias-y-pronostico-14-01-2026",
+          "img": "https://images2.minutemediacdn.com/image/upload/c_crop,x_0,y_265,w_4968,h_2794/c_fill,w_1440,ar_1440:810,f_auto,q_auto,g_auto/images/GettyImages/mmsport/sports_illustrated_ftbol/01kew1xnyyqz0xrez6d5.jpg",
+          "dominio": "si.com",
+          "affidabilita": 2,
+          "quando": "252 d"
+        },
+        {
+          "titolo": "Lecce vs Juventus en vivo en español: horarios en USA, canales y transmisión de la Serie A 2025/26 en Estados Unidos",
+          "fonte": "DAZN",
+          "stato": "obj",
+          "link": "https://www.dazn.com/es-MX/news/f%C3%BAtbol/lecce-vs-juventus-vivo-espanol-horarios-canales-transmision-serie-a/rgyhct6bl9ne1ls28vkqupj8v",
+          "img": "",
+          "dominio": "dazn.com",
           "affidabilita": 1,
-          "quando": "9 d"
+          "quando": "136 d"
         }
       ],
       "nomi": {
@@ -1159,7 +1219,7 @@
             "fonte": "Infobae",
             "link": "https://www.infobae.com",
             "affidabilita": 1,
-            "quando": "6 h"
+            "quando": "9 h"
           }
         ],
         "obj": [],
@@ -1194,7 +1254,7 @@
           "fonte": "Eurosport",
           "stato": "done",
           "link": "https://www.eurosport.es/futbol/serie-b/2026-2027/live-hellas-verona-lr-vicenza_mtc21920442/live.shtml",
-          "img": "",
+          "img": "https://assets.eurosport.io/web/img/og/eurosport.jpg",
           "dominio": "eurosport.es",
           "affidabilita": 2,
           "quando": "2 d"
@@ -1204,7 +1264,7 @@
           "fonte": "Eurosport",
           "stato": "done",
           "link": "https://www.eurosport.es/futbol/coppa-italia/2026-2027/roma-hellas-verona_mtc21888450/live.shtml",
-          "img": "",
+          "img": "https://assets.eurosport.io/web/img/og/eurosport.jpg",
           "dominio": "eurosport.es",
           "affidabilita": 2,
           "quando": "6 d"
@@ -1214,7 +1274,7 @@
           "fonte": "Eurosport",
           "stato": "done",
           "link": "https://www.eurosport.es/futbol/serie-b/2026-2027/live-hellas-verona-arezzo_mtc21920297/live.shtml",
-          "img": "",
+          "img": "https://assets.eurosport.io/web/img/og/eurosport.jpg",
           "dominio": "eurosport.es",
           "affidabilita": 2,
           "quando": "16 d"
@@ -1245,7 +1305,7 @@
             "fonte": "Sports Illustrated",
             "link": "https://www.si.com",
             "affidabilita": 2,
-            "quando": "318 d"
+            "quando": "319 d"
           },
           {
             "titolo": "A conquistar Europa: la joya marplatense que seguirá su carrera en Italia",
@@ -1256,7 +1316,7 @@
           },
           {
             "titolo": "DAVID ROMERO FUE TRANSFERIDO AL PARMA CALCIO",
-            "fonte": "catigre.com.ar",
+            "fonte": "Club Atlético Tigre",
             "link": "https://catigre.com.ar",
             "affidabilita": 1,
             "quando": "39 d"
@@ -1298,7 +1358,7 @@
             "fonte": "Las Provincias",
             "link": "https://www.lasprovincias.es",
             "affidabilita": 1,
-            "quando": "238 d"
+            "quando": "239 d"
           }
         ]
       },
@@ -1321,7 +1381,7 @@
           "img": "https://images2.minutemediacdn.com/image/upload/c_crop,x_0,y_385,w_8256,h_4644/c_fill,w_1440,ar_1440:810,f_auto,q_auto,g_auto/images/GettyImages/mmsport/sports_illustrated_ftbol/01k98fe1p013dh1shh93.jpg",
           "dominio": "si.com",
           "affidabilita": 2,
-          "quando": "318 d"
+          "quando": "319 d"
         },
         {
           "titolo": "A conquistar Europa: la joya marplatense que seguirá su carrera en Italia",
@@ -1352,7 +1412,7 @@
             "fonte": "EL PAÍS",
             "link": "https://elpais.com",
             "affidabilita": 1,
-            "quando": "3 d"
+            "quando": "4 d"
           },
           {
             "titolo": "Serie A: Sassuolo se enfrentará a Monza por la fecha 5",
@@ -1366,7 +1426,7 @@
             "fonte": "LatinUS",
             "link": "https://latinus.us",
             "affidabilita": 1,
-            "quando": "7 d"
+            "quando": "8 d"
           },
           {
             "titolo": "Ver Sassuolo - Juventus Online en Directo | DAZN ES",
@@ -1377,14 +1437,14 @@
           },
           {
             "titolo": "AS Roma vs Sassuolo",
-            "fonte": "TUDN",
+            "fonte": "tudn.com",
             "link": "https://www.tudn.com",
             "affidabilita": 1,
             "quando": "11 d"
           },
           {
             "titolo": "Sassuolo vs Fiorentina",
-            "fonte": "TUDN",
+            "fonte": "tudn.com",
             "link": "https://www.tudn.com",
             "affidabilita": 1,
             "quando": "17 d"
@@ -1418,7 +1478,7 @@
           "img": "https://imagenes.elpais.com/resizer/ml47sIkEKn0_fWj64xFx9vSB98Q=/arc-anglerfish-eu-central-1-prod-prisa/public/DS6BXTAC4BEUTFQXKEWIOKDSWA.png",
           "dominio": "elpais.com",
           "affidabilita": 1,
-          "quando": "3 d"
+          "quando": "4 d"
         },
         {
           "titolo": "Monza – Sassuolo: horario y dónde ver hoy por TV el partido de fútbol de la Serie A",
@@ -1496,14 +1556,7 @@
             "fonte": "Sports Illustrated",
             "link": "https://www.si.com",
             "affidabilita": 2,
-            "quando": "269 d"
-          },
-          {
-            "titolo": "Pisa vs Inter de Milán: cómo ver el partido por TV y streaming, últimas noticias y pronóstico",
-            "fonte": "Sports Illustrated",
-            "link": "https://www.si.com",
-            "affidabilita": 2,
-            "quando": "296 d"
+            "quando": "270 d"
           },
           {
             "titolo": "Juan Guillermo Cuadrado se despidió del Pisa de Italia y podría regresar al fútbol profesional colombiano: estas serían las opciones",
@@ -1532,6 +1585,13 @@
             "link": "https://www.lavanguardia.com",
             "affidabilita": 1,
             "quando": "165 d"
+          },
+          {
+            "titolo": "Pisa SC – Torino el partido de fútbol de Jornada 31 de la Serie A, en directo",
+            "fonte": "La Vanguardia",
+            "link": "https://www.lavanguardia.com",
+            "affidabilita": 1,
+            "quando": "170 d"
           }
         ],
         "obj": [
@@ -1540,7 +1600,7 @@
             "fonte": "Sports Illustrated",
             "link": "https://www.si.com",
             "affidabilita": 2,
-            "quando": "220 d"
+            "quando": "221 d"
           }
         ],
         "conf": [],
@@ -1555,7 +1615,7 @@
           "img": "https://images2.minutemediacdn.com/image/upload/c_crop,x_0,y_312,w_4380,h_2463/c_fill,w_1440,ar_1440:810,f_auto,q_auto,g_auto/images/GettyImages/mmsport/sports_illustrated_ftbol/01kgtaehbnj54rvkpfjj.jpg",
           "dominio": "si.com",
           "affidabilita": 2,
-          "quando": "220 d"
+          "quando": "221 d"
         },
         {
           "titolo": "Pisa vs Juventus: cómo ver el partido por TV y streaming, últimas noticias y pronóstico",
@@ -1565,17 +1625,17 @@
           "img": "https://images2.minutemediacdn.com/image/upload/c_crop,x_0,y_111,w_4000,h_2250/c_fill,w_1440,ar_1440:810,f_auto,q_auto,g_auto/images/GettyImages/mmsport/sports_illustrated_ftbol/01kd8141ak0a08dv2btj.jpg",
           "dominio": "si.com",
           "affidabilita": 2,
-          "quando": "269 d"
+          "quando": "270 d"
         },
         {
-          "titolo": "Pisa vs Inter de Milán: cómo ver el partido por TV y streaming, últimas noticias y pronóstico",
-          "fonte": "Sports Illustrated",
+          "titolo": "Juan Guillermo Cuadrado se despidió del Pisa de Italia y podría regresar al fútbol profesional colombiano: estas serían las opciones",
+          "fonte": "Infobae",
           "stato": "rumor",
-          "link": "https://www.si.com/es-us/futbol/pisa-vs-inter-de-milan-como-ver-el-partido-por-tv-y-streaming-ultimas-noticias-y-pronostico",
-          "img": "https://images2.minutemediacdn.com/image/upload/c_crop,x_0,y_427,w_4620,h_2598/c_fill,w_1440,ar_1440:810,f_auto,q_auto,g_auto/images/GettyImages/mmsport/sports_illustrated_ftbol/01kb4mqc7nkepbn3gzg5.jpg",
-          "dominio": "si.com",
-          "affidabilita": 2,
-          "quando": "296 d"
+          "link": "https://www.infobae.com/colombia/deportes/2026/07/12/juan-guillermo-cuadrado-se-despidio-del-pisa-de-italia-y-podria-regresar-al-futbol-profesional-colombiano-estas-serian-las-opciones/",
+          "img": "https://www.infobae.com/resizer/v2/ODKK7ZGGVZAMDMFAOBZWUKOH6M.jpeg?auth=d96f7bfb9c916e3457499277413198fa2fd21e924ee0a868a7929a076bd5b7e1&smart=true&width=1200&height=630&quality=85",
+          "dominio": "infobae.com",
+          "affidabilita": 1,
+          "quando": "72 d"
         }
       ],
       "nomi": {
@@ -1685,6 +1745,13 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "Ver Parma - Monza Online en Directo | DAZN ES",
+            "fonte": "DAZN",
+            "link": "https://www.dazn.com",
+            "affidabilita": 1,
+            "quando": "16 d"
+          },
+          {
             "titolo": "El Changuito Zeballos llegó a Italia para sumarse al Monza y reveló los consejos de Paredes",
             "fonte": "MinutoUno",
             "link": "https://www.minutouno.com",
@@ -1711,13 +1778,6 @@
         "conf": [],
         "done": [
           {
-            "titolo": "Galatasaray 0-2 Monza (24 de Jul., 2026) Resultado Final",
-            "fonte": "ESPN Deportes",
-            "link": "https://espndeportes.espn.com",
-            "affidabilita": 1,
-            "quando": "2 d"
-          },
-          {
             "titolo": "Monza 2-1 Sassuolo: resultado y resumen | Serie A 2026/2027",
             "fonte": "EL PAÍS",
             "link": "https://elpais.com",
@@ -1736,21 +1796,11 @@
             "fonte": "EL PAÍS",
             "link": "https://elpais.com",
             "affidabilita": 1,
-            "quando": "25 d"
+            "quando": "26 d"
           }
         ]
       },
       "feed": [
-        {
-          "titolo": "Galatasaray 0-2 Monza (24 de Jul., 2026) Resultado Final",
-          "fonte": "ESPN Deportes",
-          "stato": "done",
-          "link": "https://espndeportes.espn.com/futbol/partido/_/juegoId/401886528/monza-galatasaray",
-          "img": "",
-          "dominio": "espndeportes.espn.com",
-          "affidabilita": 1,
-          "quando": "2 d"
-        },
         {
           "titolo": "Monza 2-1 Sassuolo: resultado y resumen | Serie A 2026/2027",
           "fonte": "EL PAÍS",
@@ -1770,6 +1820,16 @@
           "dominio": "infobae.com",
           "affidabilita": 1,
           "quando": "9 d"
+        },
+        {
+          "titolo": "Ver Parma - Monza Online en Directo | DAZN ES",
+          "fonte": "DAZN",
+          "stato": "rumor",
+          "link": "https://www.dazn.com/es-ES/home/1r2jtgho06jiovbi928wmxgyo0/2kxje2ts85w2xifkzgsspp72o",
+          "img": "",
+          "dominio": "dazn.com",
+          "affidabilita": 1,
+          "quando": "16 d"
         }
       ],
       "nomi": {
@@ -1827,28 +1887,14 @@
             "fonte": "Mundo Deportivo",
             "link": "https://www.mundodeportivo.com/futbol/real-madrid/20260922/1004229987/durisimo-mensaje-javier-tebas-real-madrid-tv-prensa-madridista.html",
             "affidabilita": 2,
-            "quando": "ahora"
+            "quando": "3 h"
           },
           {
             "titolo": "Atentos a un jugador del Real Madrid: \"Puede ser el gran tema futbolístico tras el parón\"",
             "fonte": "Mundo Deportivo",
             "link": "https://www.mundodeportivo.com/futbol/real-madrid/20260922/1004229971/atentos-jugador-real-madrid-gran-tema-futbolistico-paron.html",
             "affidabilita": 2,
-            "quando": "1 h"
-          },
-          {
-            "titolo": "¿'Mou' se comerá los turrones en el Real Madrid?",
-            "fonte": "Mundo Deportivo",
-            "link": "https://www.mundodeportivo.com/futbol/fc-barcelona/20260922/1004229927/mourinho-comera-turrones-real-madrid.html",
-            "affidabilita": 2,
-            "quando": "2 h"
-          },
-          {
-            "titolo": "El Real Madrid abre su camino europeo ante un PSG renovado",
-            "fonte": "Mundo Deportivo",
-            "link": "https://www.mundodeportivo.com/futbol/femenino/champions-league/20260922/1004229735/real-madrid-abre-camino-europeo-psg-renovado.html",
-            "affidabilita": 2,
-            "quando": "2 h"
+            "quando": "4 h"
           },
           {
             "titolo": "Últimas noticias de fichajes del Real Madrid: Michael Olise, Rodrygo, JJ Gabriel, Jarrad Branthwaite y más",
@@ -1858,11 +1904,25 @@
             "quando": "4 d"
           },
           {
-            "titolo": "Octavo aniversario de la quinta Supercopa de baloncesto",
-            "fonte": "Real Madrid CF | Web Oficial",
-            "link": "https://www.realmadrid.com",
+            "titolo": "Tebas responde al Real Madrid: «Es más cómodo señalar una conspiración que explicar lo que ocurre en el césped»",
+            "fonte": "elcorreo.com",
+            "link": "https://www.elcorreo.com",
             "affidabilita": 1,
-            "quando": "1 h"
+            "quando": "ahora"
+          },
+          {
+            "titolo": "Javier Tebas arremete contra los \"portacoces\" y contra la \"televisión del régimen\" tras las últimas quejas arbitrales del Real Madrid: \"¡Qué se quiten la venda!\"",
+            "fonte": "COPE",
+            "link": "https://www.cope.es",
+            "affidabilita": 1,
+            "quando": "2 h"
+          },
+          {
+            "titolo": "Mateu Lahoz explica por qué no se expulsó a Kang-In Lee en el derbi: \"Lo que hizo Valverde provocó que el VAR no entrase\"",
+            "fonte": "La Razón",
+            "link": "https://www.larazon.es",
+            "affidabilita": 1,
+            "quando": "2 h"
           }
         ],
         "obj": [
@@ -1871,28 +1931,46 @@
             "fonte": "El Debate",
             "link": "https://www.eldebate.com",
             "affidabilita": 1,
-            "quando": "4 h"
+            "quando": "7 h"
           },
           {
             "titolo": "¡Ya hay horario para el Clásico! Día y hora del Barcelona - Real Madrid en el Camp Nou",
             "fonte": "antena3.com",
             "link": "https://www.antena3.com",
             "affidabilita": 1,
-            "quando": "15 h"
+            "quando": "18 h"
           }
         ],
-        "conf": [],
+        "conf": [
+          {
+            "titolo": "Javier Tebas y las quejas del Real Madrid tras el derbi: \"Cuando no es Negreira, es el árbitro...\"",
+            "fonte": "Marca",
+            "link": "https://www.marca.com/futbol/real-madrid/2026/09/22/javier-tebas-quejas-real-madrid-derbi-negreira-arbitro.html",
+            "affidabilita": 3,
+            "quando": "2 h"
+          }
+        ],
         "done": [
           {
             "titolo": "El Real Madrid firma su peor inicio en Liga desde 2019",
             "fonte": "Diario de Burgos",
             "link": "https://www.diariodeburgos.es",
             "affidabilita": 1,
-            "quando": "14 h"
+            "quando": "17 h"
           }
         ]
       },
       "feed": [
+        {
+          "titolo": "Javier Tebas y las quejas del Real Madrid tras el derbi: \"Cuando no es Negreira, es el árbitro...\"",
+          "fonte": "Marca",
+          "stato": "conf",
+          "link": "https://www.marca.com/futbol/real-madrid/2026/09/22/javier-tebas-quejas-real-madrid-derbi-negreira-arbitro.html",
+          "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/files/fp/uploads/2026/09/22/6ab22f72ba428.r_d.1190-547-0.jpeg",
+          "dominio": "marca.com",
+          "affidabilita": 3,
+          "quando": "2 h"
+        },
         {
           "titolo": "Durísimo mensaje contra Real Madrid TV y la prensa madridista",
           "fonte": "Mundo Deportivo",
@@ -1901,27 +1979,17 @@
           "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/files/fp/uploads/2026/09/22/6ab22318917c0.r_d.1022-510-6410.jpeg",
           "dominio": "mundodeportivo.com",
           "affidabilita": 2,
-          "quando": "ahora"
+          "quando": "3 h"
         },
         {
           "titolo": "Atentos a un jugador del Real Madrid: \"Puede ser el gran tema futbolístico tras el parón\"",
           "fonte": "Mundo Deportivo",
           "stato": "rumor",
           "link": "https://www.mundodeportivo.com/futbol/real-madrid/20260922/1004229971/atentos-jugador-real-madrid-gran-tema-futbolistico-paron.html",
-          "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/files/fp/uploads/2026/09/22/6ab215813cba1.r_d.1446-655-5072.jpeg",
+          "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/uploads/2026/09/22/6ab22d702368e.jpeg",
           "dominio": "mundodeportivo.com",
           "affidabilita": 2,
-          "quando": "1 h"
-        },
-        {
-          "titolo": "¿'Mou' se comerá los turrones en el Real Madrid?",
-          "fonte": "Mundo Deportivo",
-          "stato": "rumor",
-          "link": "https://www.mundodeportivo.com/futbol/fc-barcelona/20260922/1004229927/mourinho-comera-turrones-real-madrid.html",
-          "img": "https://imagenes2.mundodeportivo.com/files/author_twitter_meta/uploads/1970/01/01/60d5be5b0bf19.png",
-          "dominio": "mundodeportivo.com",
-          "affidabilita": 2,
-          "quando": "2 h"
+          "quando": "4 h"
         }
       ],
       "nomi": {
@@ -1952,22 +2020,22 @@
             "quando": "3 d"
           },
           {
+            "titolo": "Noticias Deportes 12:00 (21/09/26)",
+            "fonte": "Onda Cero Radio",
+            "link": "https://www.ondacero.es",
+            "affidabilita": 1,
+            "quando": "7 h"
+          },
+          {
             "titolo": "Ver Logroño United - FC Barcelona Online en Directo | DAZN ES",
             "fonte": "DAZN",
             "link": "https://www.dazn.com",
             "affidabilita": 1,
-            "quando": "12 h"
-          },
-          {
-            "titolo": "ESPN Deportes presents the 2026-27 UEFA Women’s Champions League season beginning Sept. 22",
-            "fonte": "ESPN Press Room",
-            "link": "https://espnpressroom.com",
-            "affidabilita": 1,
-            "quando": "14 h"
+            "quando": "15 h"
           },
           {
             "titolo": "Sevilla vs FC Barcelona",
-            "fonte": "TUDN",
+            "fonte": "tudn.com",
             "link": "https://www.tudn.com",
             "affidabilita": 1,
             "quando": "2 d"
@@ -1986,7 +2054,7 @@
             "fonte": "FC Barcelona",
             "link": "https://www.fcbarcelona.es",
             "affidabilita": 1,
-            "quando": "6 d"
+            "quando": "7 d"
           }
         ],
         "conf": [
@@ -1998,15 +2066,7 @@
             "quando": "1 d"
           }
         ],
-        "done": [
-          {
-            "titolo": "FC Barcelona vs Real Madrid: día y horario confirmado del clásico español por LaLiga 2026",
-            "fonte": "La República",
-            "link": "https://larepublica.pe",
-            "affidabilita": 1,
-            "quando": "9 h"
-          }
-        ]
+        "done": []
       },
       "feed": [
         {
@@ -2030,14 +2090,14 @@
           "quando": "3 d"
         },
         {
-          "titolo": "FC Barcelona vs Real Madrid: día y horario confirmado del clásico español por LaLiga 2026",
-          "fonte": "La República",
-          "stato": "done",
-          "link": "https://larepublica.pe/deportes/2026/09/21/fc-barcelona-vs-real-madrid-fecha-y-horario-confirmado-del-clasico-espanol-por-laliga-2026-988302",
-          "img": "https://imgmedia.larepublica.pe/1200x735/larepublica/original/2026/09/21/6ab1983816481d28e8080422.jpg",
-          "dominio": "larepublica.pe",
+          "titolo": "Noticias Deportes 12:00 (21/09/26)",
+          "fonte": "Onda Cero Radio",
+          "stato": "rumor",
+          "link": "https://www.ondacero.es/podcast/programas/noticias-deportes/noticias-deportes-1200-210926_202609216ab10333479c1200079baad8.html",
+          "img": "https://image.ondacero.es/clipping/cmsimages02/2023/05/30/C2E7D85C-C44C-41F2-A036-47DD8E602B9A/radioestadio-express_default.jpg",
+          "dominio": "ondacero.es",
           "affidabilita": 1,
-          "quando": "9 h"
+          "quando": "7 h"
         }
       ],
       "nomi": {
@@ -2054,13 +2114,6 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "DAZN televisó el triunfo del Atlético Madrid sobre el Real Madrid (2-1) por LaLiga",
-            "fonte": "Gestión",
-            "link": "https://gestion.pe",
-            "affidabilita": 1,
-            "quando": "1 d"
-          },
-          {
             "titolo": "El Real Madrid se disuelve en el Metropolitano y vuelve a caer ante el Atlético en un derbi marcado por la polémica",
             "fonte": "El Español",
             "link": "https://www.elespanol.com",
@@ -2068,16 +2121,16 @@
             "quando": "1 d"
           },
           {
-            "titolo": "Un pésimo arbitraje decide el derbi",
-            "fonte": "Real Madrid CF | Web Oficial",
-            "link": "https://www.realmadrid.com",
+            "titolo": "La pancarta de la afición del Atlético de Madrid en apoyo a Ceuta durante el derbi contra el Real Madrid: «Ceuta es España, ni se arruga ni se tapa»",
+            "fonte": "ABC",
+            "link": "https://www.abc.es",
             "affidabilita": 1,
             "quando": "1 d"
           },
           {
-            "titolo": "Dónde y cómo ver en vivo y gratis Atlético de Madrid vs. Real Madrid hoy: TV y streaming online del partido de La Liga de España 2026",
-            "fonte": "Yahoo",
-            "link": "https://es-us.noticias.yahoo.com",
+            "titolo": "Un pésimo arbitraje decide el derbi",
+            "fonte": "Real Madrid CF | Web Oficial",
+            "link": "https://www.realmadrid.com",
             "affidabilita": 1,
             "quando": "2 d"
           },
@@ -2090,7 +2143,7 @@
           },
           {
             "titolo": "Respaldo unánime del Consejo de Administración a la estrategia del club",
-            "fonte": "atleticodemadrid.com",
+            "fonte": "Página oficial del Atlético de Madrid",
             "link": "https://www.atleticodemadrid.com",
             "affidabilita": 1,
             "quando": "26 d"
@@ -2116,22 +2169,29 @@
             "fonte": "Real Madrid CF | Web Oficial",
             "link": "https://www.realmadrid.com",
             "affidabilita": 1,
-            "quando": "2 d"
+            "quando": "3 d"
           }
         ],
         "conf": [],
         "done": [
           {
-            "titolo": "Atlético de Madrid 2-1 Real Madrid: resumen, resultado y goles del partido de la jornada 7 de LaLiga EA Sports",
-            "fonte": "Cadena SER",
-            "link": "https://cadenaser.com",
-            "affidabilita": 2,
-            "quando": "1 d"
-          },
-          {
             "titolo": "Atlético Madrid vence a Real Madrid en un derbi capitalino con polémicas arbitrales",
             "fonte": "France 24",
             "link": "https://www.france24.com",
+            "affidabilita": 1,
+            "quando": "1 d"
+          },
+          {
+            "titolo": "ESPN transmitió la derrota del Real Madrid por 2-1 ante Atlético Madrid por LaLiga",
+            "fonte": "Gestión",
+            "link": "https://gestion.pe",
+            "affidabilita": 1,
+            "quando": "1 d"
+          },
+          {
+            "titolo": "Atlético de Madrid 2-1 Real Madrid: resumen, resultado y goles del partido de la jornada 7 de LaLiga EA Sports",
+            "fonte": "cadenaser.com",
+            "link": "https://cadenaser.com",
             "affidabilita": 1,
             "quando": "1 d"
           },
@@ -2146,16 +2206,6 @@
       },
       "feed": [
         {
-          "titolo": "Atlético de Madrid 2-1 Real Madrid: resumen, resultado y goles del partido de la jornada 7 de LaLiga EA Sports",
-          "fonte": "Cadena SER",
-          "stato": "done",
-          "link": "https://cadenaser.com/nacional/2026/09/20/atletico-de-madrid-2-1-real-madrid-resumen-resultado-y-goles-del-partido-de-la-jornada-7-de-laliga-ea-sports-cadena-ser/",
-          "img": "https://cadenaser.com/resizer/v2/EIXSBSAYC5PKVNBX6XHWSPCBII.jpg?auth=686e6ac616a4a07db3b156a24983fbb7900ea0ee9dd75bf7ba5f1f25b3c2423a&quality=70&width=1200&height=675&smart=true",
-          "dominio": "cadenaser.com",
-          "affidabilita": 2,
-          "quando": "1 d"
-        },
-        {
           "titolo": "Atlético Madrid vence a Real Madrid en un derbi capitalino con polémicas arbitrales",
           "fonte": "France 24",
           "stato": "done",
@@ -2166,12 +2216,22 @@
           "quando": "1 d"
         },
         {
-          "titolo": "DAZN televisó el triunfo del Atlético Madrid sobre el Real Madrid (2-1) por LaLiga",
+          "titolo": "ESPN transmitió la derrota del Real Madrid por 2-1 ante Atlético Madrid por LaLiga",
           "fonte": "Gestión",
-          "stato": "rumor",
-          "link": "https://gestion.pe/mix/sports/dazn-en-directo-y-en-vivo-ver-atletico-madrid-real-madrid-gratis-por-futbol-tv-y-online-video-laliga-nnda-nnrt-noticia/",
-          "img": "https://gestion.pe/resizer/v2/KZYB5VHK3FCFPHDWCYAXN2KYAU.png?auth=f20abee7fb17555eb7384004aa593818c8198b230ce2a52d109f6abe8fb3a092&width=980&height=528&quality=75&smart=true",
+          "stato": "done",
+          "link": "https://gestion.pe/mix/sports/espn-hd-en-vivo-gratis-ver-partido-real-madrid-vs-atletico-madrid-en-directo-por-futbol-tv-y-espn-select-online-en-eeuu-laliga-video-nnda-nnrt-noticia/",
+          "img": "https://gestion.pe/resizer/v2/V6DP3C2IPJCMBJW6FZIK74ZOFY.jpg?auth=a392fb195eac5e8313d67f64470800b123698cb889cdd598d0f51f06139e1282&width=980&height=528&quality=75&smart=true",
           "dominio": "gestion.pe",
+          "affidabilita": 1,
+          "quando": "1 d"
+        },
+        {
+          "titolo": "Atlético de Madrid 2-1 Real Madrid: resumen, resultado y goles del partido de la jornada 7 de LaLiga EA Sports",
+          "fonte": "cadenaser.com",
+          "stato": "done",
+          "link": "https://cadenaser.com/nacional/2026/09/20/atletico-de-madrid-2-1-real-madrid-resumen-resultado-y-goles-del-partido-de-la-jornada-7-de-laliga-ea-sports-cadena-ser/",
+          "img": "https://cadenaser.com/resizer/v2/EIXSBSAYC5PKVNBX6XHWSPCBII.jpg?auth=686e6ac616a4a07db3b156a24983fbb7900ea0ee9dd75bf7ba5f1f25b3c2423a&quality=70&width=1200&height=675&smart=true",
+          "dominio": "cadenaser.com",
           "affidabilita": 1,
           "quando": "1 d"
         }
@@ -2189,6 +2249,13 @@
       "league": "La Liga",
       "colonne": {
         "rumor": [
+          {
+            "titolo": "El Athletic es el tercer equipo que más corre de LaLiga y solo suma ocho puntos",
+            "fonte": "BilbaoHiria",
+            "link": "https://bilbaohiria.com",
+            "affidabilita": 1,
+            "quando": "14 h"
+          },
           {
             "titolo": "El Levante - Athletic de Bilbao se jugará el miércoles 21 de octubre",
             "fonte": "Onda Cero Radio",
@@ -2219,33 +2286,19 @@
           },
           {
             "titolo": "Tensión en el vestuario del Athletic: los jugadores se niegan a hablar tras el partido «por un problema interno del club»",
-            "fonte": "El Correo",
+            "fonte": "elcorreo.com",
             "link": "https://www.elcorreo.com",
             "affidabilita": 1,
             "quando": "25 d"
-          },
-          {
-            "titolo": "La estrella del Barcelona, fuera del partido ante el Athletic Bilbao; Rodri, listo para el pitido inicial",
-            "fonte": "Yahoo",
-            "link": "https://es-us.noticias.yahoo.com",
-            "affidabilita": 1,
-            "quando": "27 d"
           }
         ],
         "obj": [
           {
-            "titolo": "SD Eibar vs Athletic Club: previa jornada 4, Liga F",
-            "fonte": "VAVEL.com",
-            "link": "https://www.vavel.com",
-            "affidabilita": 1,
-            "quando": "1 d"
-          },
-          {
-            "titolo": "Dónde ver el partido: Athletic Club-Elche CF (J5 - LaLiga 2026/27)",
+            "titolo": "Dónde ver el partido: RC Celta-Athletic Club (J3 - LaLiga 2026/27)",
             "fonte": "Athletic Club",
             "link": "https://www.athletic-club.eus",
             "affidabilita": 1,
-            "quando": "15 d"
+            "quando": "25 d"
           },
           {
             "titolo": "¿Cuándo y dónde ver el FC Barcelona - Athletic Club?",
@@ -2268,14 +2321,14 @@
       },
       "feed": [
         {
-          "titolo": "SD Eibar vs Athletic Club: previa jornada 4, Liga F",
-          "fonte": "VAVEL.com",
-          "stato": "obj",
-          "link": "https://www.vavel.com/es/futbol/2026/09/20/futbol-femenino/1272248-liga-f-jornada-4-previa-sd-eibar-athletic-club.html",
-          "img": "https://img.vavel.com/c1200_675_captura-de-pantalla-2026-09-20-080944-1789884600128-2hwvdy.png",
-          "dominio": "vavel.com",
+          "titolo": "El Athletic es el tercer equipo que más corre de LaLiga y solo suma ocho puntos",
+          "fonte": "BilbaoHiria",
+          "stato": "rumor",
+          "link": "https://bilbaohiria.com/deportes/athletic-kilometros-recorridos-laliga-2026-27-terzic/",
+          "img": "https://bilbaohiria.com/wp-content/uploads/2026/09/athletic-kilometros-por-partido-laliga-2026-27-2026-09-21-W1GOAx.webp",
+          "dominio": "bilbaohiria.com",
           "affidabilita": 1,
-          "quando": "1 d"
+          "quando": "14 h"
         },
         {
           "titolo": "El Levante - Athletic de Bilbao se jugará el miércoles 21 de octubre",
@@ -2312,13 +2365,6 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "Willy Kambwala se marcha cedido al Como de Cesc Fàbregas",
-            "fonte": "Cadena SER",
-            "link": "https://cadenaser.com",
-            "affidabilita": 2,
-            "quando": "27 d"
-          },
-          {
             "titolo": "Villarreal CF: Un Moleiro de 10",
             "fonte": "Onda Cero Radio",
             "link": "https://www.ondacero.es",
@@ -2334,7 +2380,7 @@
           },
           {
             "titolo": "Villarreal CF-Real Betis: estas son las notas de los heliopolitanos en la quinta jornada de liga",
-            "fonte": "101TV",
+            "fonte": "101tv.es",
             "link": "https://www.101tv.es",
             "affidabilita": 1,
             "quando": "7 d"
@@ -2344,7 +2390,7 @@
             "fonte": "RTVE.es",
             "link": "https://www.rtve.es",
             "affidabilita": 1,
-            "quando": "7 d"
+            "quando": "8 d"
           },
           {
             "titolo": "El Alavés, lanzado, se hace fuerte ante el Villarreal",
@@ -2352,6 +2398,13 @@
             "link": "https://elpais.com",
             "affidabilita": 1,
             "quando": "25 d"
+          },
+          {
+            "titolo": "Willy Kambwala se marcha cedido al Como de Cesc Fàbregas",
+            "fonte": "cadenaser.com",
+            "link": "https://cadenaser.com",
+            "affidabilita": 1,
+            "quando": "27 d"
           }
         ],
         "obj": [
@@ -2367,16 +2420,6 @@
         "done": []
       },
       "feed": [
-        {
-          "titolo": "Willy Kambwala se marcha cedido al Como de Cesc Fàbregas",
-          "fonte": "Cadena SER",
-          "stato": "rumor",
-          "link": "https://cadenaser.com/comunitat-valenciana/2026/08/26/willy-kambwala-se-marcha-cedido-al-como-de-cesc-fabregas-radio-castellon/",
-          "img": "https://cadenaser.com/resizer/v2/CQZIHEFBKZEVBOMFBO4O57LFAY.jpg?auth=06b0f1ff1167a1a578275301a53949f2924e48b6f244be345b730672f7f4de50&quality=70&width=1200&height=675&smart=true",
-          "dominio": "cadenaser.com",
-          "affidabilita": 2,
-          "quando": "27 d"
-        },
         {
           "titolo": "Villarreal CF: Un Moleiro de 10",
           "fonte": "Onda Cero Radio",
@@ -2396,6 +2439,16 @@
           "dominio": "dazn.com",
           "affidabilita": 1,
           "quando": "4 d"
+        },
+        {
+          "titolo": "Villarreal CF-Real Betis: estas son las notas de los heliopolitanos en la quinta jornada de liga",
+          "fonte": "101tv.es",
+          "stato": "rumor",
+          "link": "https://www.101tv.es/realbetis/villarreal-cf-real-betis-estas-son-las-notas-de-los-heliopolitanos-en-la-quinta-jornada-de-liga/",
+          "img": "",
+          "dominio": "101tv.es",
+          "affidabilita": 1,
+          "quando": "7 d"
         }
       ],
       "nomi": {
@@ -2416,7 +2469,7 @@
             "fonte": "Real Betis Balompié",
             "link": "https://www.realbetisbalompie.es",
             "affidabilita": 1,
-            "quando": "19 h"
+            "quando": "22 h"
           },
           {
             "titolo": "Lesión de Marc Bartra: qué tiene, parte médico y posible tiempo de baja con el Betis",
@@ -2437,14 +2490,21 @@
             "fonte": "Real Betis Balompié",
             "link": "https://www.realbetisbalompie.es",
             "affidabilita": 1,
-            "quando": "6 d"
+            "quando": "7 d"
           },
           {
-            "titolo": "Real Betis - Real Madrid, las notas de los jugadores: Pellegrini volvió a dar con la tecla de los cambios",
+            "titolo": "Real Betis - Real Madrid, las estadísticas del partido",
             "fonte": "ABC",
             "link": "https://www.abc.es",
             "affidabilita": 1,
-            "quando": "14 d"
+            "quando": "18 d"
+          },
+          {
+            "titolo": "Definidos los ocho rivales del Real Betis en la fase de liga de la UEFA Champions League",
+            "fonte": "Real Betis Balompié",
+            "link": "https://www.realbetisbalompie.es",
+            "affidabilita": 1,
+            "quando": "26 d"
           }
         ],
         "obj": [
@@ -2483,7 +2543,7 @@
           "img": "https://thumb2.besoccerapps.com/rbetis/img_news/56/56178.jpg",
           "dominio": "realbetisbalompie.es",
           "affidabilita": 1,
-          "quando": "19 h"
+          "quando": "22 h"
         },
         {
           "titolo": "Lesión de Marc Bartra: qué tiene, parte médico y posible tiempo de baja con el Betis",
@@ -2520,11 +2580,18 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "El Burgos CF–Real Sociedad B se disputará en Villarcayo",
+            "fonte": "Burgos CF",
+            "link": "https://www.burgoscf.es",
+            "affidabilita": 1,
+            "quando": "1 h"
+          },
+          {
             "titolo": "Ver Real Sociedad - Real Madrid CF Online en Directo | DAZN ES",
             "fonte": "DAZN",
             "link": "https://www.dazn.com",
             "affidabilita": 1,
-            "quando": "12 h"
+            "quando": "15 h"
           },
           {
             "titolo": "Carta abierta a la Real Sociedad",
@@ -2546,13 +2613,6 @@
             "link": "https://www.prensa-latina.cu",
             "affidabilita": 1,
             "quando": "1 d"
-          },
-          {
-            "titolo": "El Burgos CF–Real Sociedad B se disputará en Villarcayo",
-            "fonte": "Burgos CF",
-            "link": "https://www.burgoscf.es",
-            "affidabilita": 1,
-            "quando": "3 d"
           },
           {
             "titolo": "La Real Sociedad pierde en su estreno europeo ante el Bournemouth",
@@ -2591,6 +2651,16 @@
       },
       "feed": [
         {
+          "titolo": "El Burgos CF–Real Sociedad B se disputará en Villarcayo",
+          "fonte": "Burgos CF",
+          "stato": "rumor",
+          "link": "https://www.burgoscf.es/noticias/el-burgos-cf-real-sociedad-b-se-disputara-en-villarcayo",
+          "img": "https://statics-maker.llt-services.com/bur/images/2026/07/15/large/0ef92556-d600-47fc-8ef1-f1b651e18e56-129.jpg",
+          "dominio": "burgoscf.es",
+          "affidabilita": 1,
+          "quando": "1 h"
+        },
+        {
           "titolo": "Ver Real Sociedad - Real Madrid CF Online en Directo | DAZN ES",
           "fonte": "DAZN",
           "stato": "rumor",
@@ -2598,7 +2668,7 @@
           "img": "",
           "dominio": "dazn.com",
           "affidabilita": 1,
-          "quando": "12 h"
+          "quando": "15 h"
         },
         {
           "titolo": "Carta abierta a la Real Sociedad",
@@ -2607,16 +2677,6 @@
           "link": "https://www.noticiasdegipuzkoa.eus/reala/2026/09/21/carta-abierta-real-sociedad-11566160.html",
           "img": "",
           "dominio": "noticiasdegipuzkoa.eus",
-          "affidabilita": 1,
-          "quando": "1 d"
-        },
-        {
-          "titolo": "La Real Sociedad se aprovecha de un Valencia demasiado torpe",
-          "fonte": "EL PAÍS",
-          "stato": "rumor",
-          "link": "https://elpais.com/deportes/futbol/2026-09-20/la-real-sociedad-se-aprovecha-de-un-valencia-demasiado-torpe.html",
-          "img": "",
-          "dominio": "elpais.com",
           "affidabilita": 1,
           "quando": "1 d"
         }
@@ -2635,32 +2695,32 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "Tres semanas para que el Sevilla vacíe la enfermería",
+            "fonte": "Marca",
+            "link": "https://www.marca.com/futbol/sevilla/2026/09/22/tres-semanas-sevilla-vacie-enfermeria.html",
+            "affidabilita": 3,
+            "quando": "ahora"
+          },
+          {
             "titolo": "A juicio mañana el aficionado del Sevilla acusado de llamar mono a Vinicius",
             "fonte": "Marca",
             "link": "https://www.marca.com/futbol/sevilla/2026/09/21/juicio-manana-aficionado-sevilla-acusado-llamar-mono-vinicius.html",
             "affidabilita": 3,
-            "quando": "14 h"
+            "quando": "17 h"
           },
           {
             "titolo": "El Sevilla ya entrena sin los internacionales",
             "fonte": "Marca",
             "link": "https://www.marca.com/futbol/sevilla/2026/09/21/sevilla-entrena-internacionales.html",
             "affidabilita": 3,
-            "quando": "19 h"
+            "quando": "22 h"
           },
           {
             "titolo": "Este Sevilla recuerda a otros tiempos",
             "fonte": "Marca",
             "link": "https://www.marca.com/futbol/sevilla/2026/09/21/sevilla-recuerda-otros-tiempos.html",
             "affidabilita": 3,
-            "quando": "20 h"
-          },
-          {
-            "titolo": "1-3: TRIUNFO DE MÉRITO Y DEMOSTRACIÓN DE EQUIPO SÓLIDO",
-            "fonte": "sevillafc.es",
-            "link": "https://sevillafc.es",
-            "affidabilita": 1,
-            "quando": "1 d"
+            "quando": "23 h"
           },
           {
             "titolo": "Sevilla FC - FC Barcelona, las estadísticas del partido",
@@ -2670,9 +2730,9 @@
             "quando": "2 d"
           },
           {
-            "titolo": "Sevilla FC - FC Barcelona: resumen del partido de la 7ª jornada de Liga | Primera",
-            "fonte": "RTVE.es",
-            "link": "https://www.rtve.es",
+            "titolo": "El Barça de Raphinha revienta a un enérgico Sevilla",
+            "fonte": "EL PAÍS",
+            "link": "https://elpais.com",
             "affidabilita": 1,
             "quando": "2 d"
           }
@@ -2709,11 +2769,18 @@
         ],
         "conf": [
           {
+            "titolo": "Aplazado hasta mayo el juicio contra un aficionado del Sevilla que llamó \"mono\" a Vinicius",
+            "fonte": "Mundo Deportivo",
+            "link": "https://www.mundodeportivo.com/futbol/real-madrid/20260922/1004230034/aplazado-mayo-juicio-aficionado-sevilla-llamo-mono-vinicius.html",
+            "affidabilita": 2,
+            "quando": "1 h"
+          },
+          {
             "titolo": "RENOVADO EL ACUERDO DE PATROCINIO CON COCA-COLA EUROPACIFIC PARTNERS",
             "fonte": "sevillafc.es",
             "link": "https://sevillafc.es",
             "affidabilita": 1,
-            "quando": "20 h"
+            "quando": "23 h"
           }
         ],
         "done": [
@@ -2728,6 +2795,16 @@
       },
       "feed": [
         {
+          "titolo": "Tres semanas para que el Sevilla vacíe la enfermería",
+          "fonte": "Marca",
+          "stato": "rumor",
+          "link": "https://www.marca.com/futbol/sevilla/2026/09/22/tres-semanas-sevilla-vacie-enfermeria.html",
+          "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/09/18/6aad6de9f3cd6.jpeg",
+          "dominio": "marca.com",
+          "affidabilita": 3,
+          "quando": "ahora"
+        },
+        {
           "titolo": "A juicio mañana el aficionado del Sevilla acusado de llamar mono a Vinicius",
           "fonte": "Marca",
           "stato": "rumor",
@@ -2735,7 +2812,7 @@
           "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/09/21/6ab15ad3c1130.jpeg",
           "dominio": "marca.com",
           "affidabilita": 3,
-          "quando": "14 h"
+          "quando": "17 h"
         },
         {
           "titolo": "El Sevilla ya entrena sin los internacionales",
@@ -2745,17 +2822,7 @@
           "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/09/21/6ab11ae469f5c.jpeg",
           "dominio": "marca.com",
           "affidabilita": 3,
-          "quando": "19 h"
-        },
-        {
-          "titolo": "Este Sevilla recuerda a otros tiempos",
-          "fonte": "Marca",
-          "stato": "rumor",
-          "link": "https://www.marca.com/futbol/sevilla/2026/09/21/sevilla-recuerda-otros-tiempos.html",
-          "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/09/21/6ab10b703066d.jpeg",
-          "dominio": "marca.com",
-          "affidabilita": 3,
-          "quando": "20 h"
+          "quando": "22 h"
         }
       ],
       "nomi": {
@@ -2772,18 +2839,25 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "Problema central en el Valencia: el 'informe Chris Smalling', en Paterna",
+            "fonte": "Marca",
+            "link": "https://www.marca.com/futbol/valencia/2026/09/22/problema-central-valencia-informe-chris-smalling-paterna.html",
+            "affidabilita": 3,
+            "quando": "2 h"
+          },
+          {
             "titolo": "Valencia Club de Fútbol",
             "fonte": "ABC",
             "link": "https://www.abc.es",
             "affidabilita": 1,
-            "quando": "9 h"
+            "quando": "12 h"
           },
           {
             "titolo": "Ver Valencia CF - Costa Adeje Tenerife Online en Directo | DAZN ES",
             "fonte": "DAZN",
             "link": "https://www.dazn.com",
             "affidabilita": 1,
-            "quando": "12 h"
+            "quando": "15 h"
           },
           {
             "titolo": "Los fantasmas del Valencia CF",
@@ -2794,7 +2868,7 @@
           },
           {
             "titolo": "Valencia CF vs Real Sociedad",
-            "fonte": "TUDN",
+            "fonte": "tudn.com",
             "link": "https://www.tudn.com",
             "affidabilita": 1,
             "quando": "1 d"
@@ -2803,13 +2877,6 @@
             "titolo": "Racing y Valencia CF acuerdan la cesión de André Almeida hasta el 30 de junio de 2027",
             "fonte": "Real Racing Club",
             "link": "https://www.realracingclub.es",
-            "affidabilita": 1,
-            "quando": "2 d"
-          },
-          {
-            "titolo": "FFRM vs Valencia CF",
-            "fonte": "la7tv.es",
-            "link": "https://www.la7tv.es",
             "affidabilita": 1,
             "quando": "2 d"
           }
@@ -2843,6 +2910,16 @@
       },
       "feed": [
         {
+          "titolo": "Problema central en el Valencia: el 'informe Chris Smalling', en Paterna",
+          "fonte": "Marca",
+          "stato": "rumor",
+          "link": "https://www.marca.com/futbol/valencia/2026/09/22/problema-central-valencia-informe-chris-smalling-paterna.html",
+          "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/09/22/6ab22be6ccf5d.jpeg",
+          "dominio": "marca.com",
+          "affidabilita": 3,
+          "quando": "2 h"
+        },
+        {
           "titolo": "Valencia Club de Fútbol",
           "fonte": "ABC",
           "stato": "rumor",
@@ -2850,7 +2927,7 @@
           "img": "https://s1.abcstatics.com/assets/2.5.105/img/rrss/abc/facebook/avatar-facebook.jpg",
           "dominio": "abc.es",
           "affidabilita": 1,
-          "quando": "9 h"
+          "quando": "12 h"
         },
         {
           "titolo": "Ver Valencia CF - Costa Adeje Tenerife Online en Directo | DAZN ES",
@@ -2860,17 +2937,7 @@
           "img": "",
           "dominio": "dazn.com",
           "affidabilita": 1,
-          "quando": "12 h"
-        },
-        {
-          "titolo": "Los fantasmas del Valencia CF",
-          "fonte": "EL PAÍS",
-          "stato": "rumor",
-          "link": "https://elpais.com/deportes/futbol/2026-09-21/los-fantasmas-del-valencia-cf.html",
-          "img": "",
-          "dominio": "elpais.com",
-          "affidabilita": 1,
-          "quando": "1 d"
+          "quando": "15 h"
         }
       ],
       "nomi": {
@@ -2898,7 +2965,7 @@
             "fonte": "DAZN",
             "link": "https://www.dazn.com",
             "affidabilita": 1,
-            "quando": "5 d"
+            "quando": "6 d"
           },
           {
             "titolo": "El Celta sigue de pretemporada",
@@ -2916,7 +2983,7 @@
           },
           {
             "titolo": "La fortuna castiga a la Real Sociedad y el Celta en la Europa League",
-            "fonte": "El Correo",
+            "fonte": "elcorreo.com",
             "link": "https://www.elcorreo.com",
             "affidabilita": 1,
             "quando": "25 d"
@@ -2978,7 +3045,7 @@
           "img": "",
           "dominio": "dazn.com",
           "affidabilita": 1,
-          "quando": "5 d"
+          "quando": "6 d"
         }
       ],
       "nomi": {
@@ -3010,7 +3077,7 @@
           },
           {
             "titolo": "El Rayo Vallecano valora el partido contra el Osasuna como un reto táctico y físico",
-            "fonte": "El Correo",
+            "fonte": "elcorreo.com",
             "link": "https://www.elcorreo.com",
             "affidabilita": 1,
             "quando": "4 d"
@@ -3024,10 +3091,10 @@
           },
           {
             "titolo": "El Rayo Vallecano - Espanyol se jugará en Butarque",
-            "fonte": "Diari ARA",
+            "fonte": "es.ara.cat",
             "link": "https://es.ara.cat",
             "affidabilita": 1,
-            "quando": "7 d"
+            "quando": "8 d"
           },
           {
             "titolo": "El Real Madrid golea a un errático Rayo Vallecano",
@@ -3043,7 +3110,7 @@
             "fonte": "Noticias de Navarra",
             "link": "https://www.noticiasdenavarra.com",
             "affidabilita": 1,
-            "quando": "2 d"
+            "quando": "3 d"
           },
           {
             "titolo": "A qué hora es el Real Madrid - Rayo Vallecano hoy y dónde ver en televisión y online el partido de LaLiga",
@@ -3118,24 +3185,17 @@
         "rumor": [
           {
             "titolo": "CA Osasuna - Rayo Vallecano | 1ª parte",
-            "fonte": "Cadena SER",
+            "fonte": "cadenaser.com",
             "link": "https://cadenaser.com",
-            "affidabilita": 2,
+            "affidabilita": 1,
             "quando": "2 d"
           },
           {
             "titolo": "CA Osasuna - Rayo Vallecano | 2ª parte",
-            "fonte": "Cadena SER",
+            "fonte": "cadenaser.com",
             "link": "https://cadenaser.com",
-            "affidabilita": 2,
-            "quando": "2 d"
-          },
-          {
-            "titolo": "Guía Fantasy de Osasuna en el parón de liga: a quién fichar y a quién vender con Ramis en el banquillo",
-            "fonte": "COPE",
-            "link": "https://www.cope.es",
             "affidabilita": 1,
-            "quando": "19 h"
+            "quando": "2 d"
           },
           {
             "titolo": "Ver CA Osasuna - Rayo Vallecano Online en Directo | DAZN ES",
@@ -3157,6 +3217,13 @@
             "link": "https://www.larazon.es",
             "affidabilita": 1,
             "quando": "9 d"
+          },
+          {
+            "titolo": "Ficha del CA Osasuna - bet365",
+            "fonte": "Apuestas deportivas en la red",
+            "link": "https://news.bet365.es",
+            "affidabilita": 1,
+            "quando": "20 d"
           }
         ],
         "obj": [],
@@ -3174,33 +3241,33 @@
       "feed": [
         {
           "titolo": "CA Osasuna - Rayo Vallecano | 1ª parte",
-          "fonte": "Cadena SER",
+          "fonte": "cadenaser.com",
           "stato": "rumor",
           "link": "https://cadenaser.com/audio/1789844373624/",
           "img": "https://cadenaser.com/resizer/v2/https%3A%2F%2Fsdmedia.playser.cadenaser.com%2Fplayser%2Fimage%2F20213%2F17%2F1616001071_asset_still.png?auth=7d4bb6b895d60b245eea33ac913f36a5c5fd2c2100ea94a2de41ea87e75ab9ae&quality=70&width=1200&height=675&smart=true",
           "dominio": "cadenaser.com",
-          "affidabilita": 2,
+          "affidabilita": 1,
           "quando": "2 d"
         },
         {
           "titolo": "CA Osasuna - Rayo Vallecano | 2ª parte",
-          "fonte": "Cadena SER",
+          "fonte": "cadenaser.com",
           "stato": "rumor",
           "link": "https://cadenaser.com/audio/1789844438472/",
           "img": "",
           "dominio": "cadenaser.com",
-          "affidabilita": 2,
+          "affidabilita": 1,
           "quando": "2 d"
         },
         {
-          "titolo": "Guía Fantasy de Osasuna en el parón de liga: a quién fichar y a quién vender con Ramis en el banquillo",
-          "fonte": "COPE",
+          "titolo": "Ver CA Osasuna - Rayo Vallecano Online en Directo | DAZN ES",
+          "fonte": "DAZN",
           "stato": "rumor",
-          "link": "https://www.cope.es/emisoras/navarra/navarra-provincia/pamplona/deportes-cope-navarra/noticias/guia-fantasy-osasuna-paron-liga-fichar-vender-ramis-banquillo-20260921_3440447.html",
-          "img": "https://www.cope.es/files/og_thumbnail/uploads/2026/09/21/6ab1154252965.jpeg",
-          "dominio": "cope.es",
+          "link": "https://www.dazn.com/es-ES/home/1dnetule0x63idq16e5koaalv0/cc9fugg0855l4n04iwnzwvhlr",
+          "img": "",
+          "dominio": "dazn.com",
           "affidabilita": 1,
-          "quando": "19 h"
+          "quando": "2 d"
         }
       ],
       "nomi": {
@@ -3221,21 +3288,21 @@
             "fonte": "Marca",
             "link": "https://www.marca.com/futbol/malaga/2026/09/21/maldicion-inedita-malaga-getafe.html",
             "affidabilita": 3,
-            "quando": "18 h"
+            "quando": "21 h"
           },
           {
             "titolo": "Davinchi, jugador del Getafe, estalla contra Óscar Puente por la muerte de su padre: \"Dimita ya, asesino\"",
             "fonte": "Onda Cero Radio",
             "link": "https://www.ondacero.es",
             "affidabilita": 1,
-            "quando": "13 h"
+            "quando": "16 h"
           },
           {
             "titolo": "El jugador del Getafe Davinchi carga duramente contra Óscar Puente por el accidente de Adamuz: \"Dimita ya, asesino\"",
-            "fonte": "El Mundo",
+            "fonte": "elmundo.es",
             "link": "https://www.elmundo.es",
             "affidabilita": 1,
-            "quando": "22 h"
+            "quando": "1 d"
           },
           {
             "titolo": "Davinchi, el futbolista del Getafe que perdió a su padre en Adamuz, estalla: \"Dimita ya, asesino Óscar Puente\"",
@@ -3296,7 +3363,7 @@
           "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/09/21/6ab124bc1608c.jpeg",
           "dominio": "marca.com",
           "affidabilita": 3,
-          "quando": "18 h"
+          "quando": "21 h"
         },
         {
           "titolo": "Davinchi, jugador del Getafe, estalla contra Óscar Puente por la muerte de su padre: \"Dimita ya, asesino\"",
@@ -3306,17 +3373,17 @@
           "img": "https://image.ondacero.es/clipping/cmsimages01/2026/09/21/70009F7C-8340-4382-9723-3E8CB607CB05/davinchi-madre-tributo-honor-padre-fallecido-accidente-adamuz_69.jpg?crop=7257,4082,x0,y0&width=1280&height=720&optimize=low&format=webply",
           "dominio": "ondacero.es",
           "affidabilita": 1,
-          "quando": "13 h"
+          "quando": "16 h"
         },
         {
           "titolo": "El jugador del Getafe Davinchi carga duramente contra Óscar Puente por el accidente de Adamuz: \"Dimita ya, asesino\"",
-          "fonte": "El Mundo",
+          "fonte": "elmundo.es",
           "stato": "rumor",
           "link": "https://www.elmundo.es/deportes/futbol/2026/09/21/6ab0f021e9cf4a254f8b4571.html",
           "img": "https://e01-phantom-elmundo.uecdn.es/08a70feb45db247a39a4d647092d3bcc/resize/1200/f/webp/assets/multimedia/imagenes/2026/09/21/17899802067911.png",
           "dominio": "elmundo.es",
           "affidabilita": 1,
-          "quando": "22 h"
+          "quando": "1 d"
         }
       ],
       "nomi": {
@@ -3333,18 +3400,11 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "Barça y Espanyol logran pleno de puntos",
-            "fonte": "Mundo Deportivo",
-            "link": "https://www.mundodeportivo.com/futbol/futbol-catala/20260922/1004229907/barca-espanyol-logran-pleno-puntos.html",
-            "affidabilita": 2,
-            "quando": "2 h"
-          },
-          {
             "titolo": "Ver Deportivo Abanca - RCD Espanyol Online en Directo | DAZN ES",
             "fonte": "DAZN",
             "link": "https://www.dazn.com",
             "affidabilita": 1,
-            "quando": "12 h"
+            "quando": "16 h"
           },
           {
             "titolo": "Toni Soldevilla, excapitán del Espanyol: \"Tenía un problema de adicción y lo voy a tener el resto de mi vida\"",
@@ -3378,37 +3438,9 @@
           }
         ],
         "conf": [],
-        "done": [
-          {
-            "titolo": "El Reus ya gana y Espanyol B y Olot no suman",
-            "fonte": "Mundo Deportivo",
-            "link": "https://www.mundodeportivo.com/futbol/futbol-catala/20260922/1004229905/reus-gana-espanyol-olot-quedan-sumar.html",
-            "affidabilita": 2,
-            "quando": "2 h"
-          }
-        ]
+        "done": []
       },
       "feed": [
-        {
-          "titolo": "Barça y Espanyol logran pleno de puntos",
-          "fonte": "Mundo Deportivo",
-          "stato": "rumor",
-          "link": "https://www.mundodeportivo.com/futbol/futbol-catala/20260922/1004229907/barca-espanyol-logran-pleno-puntos.html",
-          "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/files/fp/uploads/2026/09/21/6ab17a2252de7.r_d.476-818-12500.jpeg",
-          "dominio": "mundodeportivo.com",
-          "affidabilita": 2,
-          "quando": "2 h"
-        },
-        {
-          "titolo": "El Reus ya gana y Espanyol B y Olot no suman",
-          "fonte": "Mundo Deportivo",
-          "stato": "done",
-          "link": "https://www.mundodeportivo.com/futbol/futbol-catala/20260922/1004229905/reus-gana-espanyol-olot-quedan-sumar.html",
-          "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/files/fp/uploads/2026/09/21/6ab177de8da6b.r_d.1025-577-5859.jpeg",
-          "dominio": "mundodeportivo.com",
-          "affidabilita": 2,
-          "quando": "2 h"
-        },
         {
           "titolo": "Ver Deportivo Abanca - RCD Espanyol Online en Directo | DAZN ES",
           "fonte": "DAZN",
@@ -3417,7 +3449,27 @@
           "img": "",
           "dominio": "dazn.com",
           "affidabilita": 1,
-          "quando": "12 h"
+          "quando": "16 h"
+        },
+        {
+          "titolo": "RCD Espanyol-Sevilla FC: horario y dónde ver por televisión la visita sevillista a Cornellà",
+          "fonte": "El Correo de Andalucía",
+          "stato": "obj",
+          "link": "https://www.elcorreoweb.es/sevilla-fc/2026/09/03/donde-ver-tv-espanyol-sevilla-liga-133923284.html",
+          "img": "",
+          "dominio": "elcorreoweb.es",
+          "affidabilita": 1,
+          "quando": "19 d"
+        },
+        {
+          "titolo": "Toni Soldevilla, excapitán del Espanyol: \"Tenía un problema de adicción y lo voy a tener el resto de mi vida\"",
+          "fonte": "El Periódico",
+          "stato": "rumor",
+          "link": "https://www.elperiodico.com/es/deportes/20260830/toni-soldevilla-excapitan-espanyol-tenia-133761033",
+          "img": "",
+          "dominio": "elperiodico.com",
+          "affidabilita": 1,
+          "quando": "22 d"
         }
       ],
       "nomi": {
@@ -3489,17 +3541,17 @@
         "done": [
           {
             "titolo": "El Mallorca confirma la rescisión de contrato de los dos futbolistas detenidos",
-            "fonte": "diariodemallorca.es",
+            "fonte": "Diario de Mallorca",
             "link": "https://www.diariodemallorca.es",
             "affidabilita": 1,
             "quando": "24 d"
           },
           {
             "titolo": "Comunicado Oficial | Situación del Estadio Nuevo Los Cármenes para el partido frente al RCD Mallorca",
-            "fonte": "Granada CF",
+            "fonte": "granadacf.es",
             "link": "https://www.granadacf.es",
             "affidabilita": 1,
-            "quando": "29 d"
+            "quando": "30 d"
           }
         ]
       },
@@ -3553,7 +3605,14 @@
             "fonte": "DAZN",
             "link": "https://www.dazn.com",
             "affidabilita": 1,
-            "quando": "12 h"
+            "quando": "16 h"
+          },
+          {
+            "titolo": "Ver Athletic Club - Deportivo Alavés Online en Directo | DAZN ES",
+            "fonte": "DAZN",
+            "link": "https://www.dazn.com",
+            "affidabilita": 1,
+            "quando": "2 d"
           },
           {
             "titolo": "Deportivo Alavés | Partido | Liga | 19/09/2026",
@@ -3574,7 +3633,7 @@
             "fonte": "Real Racing Club",
             "link": "https://www.realracingclub.es",
             "affidabilita": 1,
-            "quando": "5 d"
+            "quando": "6 d"
           },
           {
             "titolo": "Real Racing C. Santander - RC Deportivo Alavés: resumen del partido de la 5ª jornada de Liga | Primera",
@@ -3582,23 +3641,9 @@
             "link": "https://www.rtve.es",
             "affidabilita": 1,
             "quando": "10 d"
-          },
-          {
-            "titolo": "Ver Atlético de Madrid - Deportivo Alavés Online en Directo | DAZN ES",
-            "fonte": "DAZN",
-            "link": "https://www.dazn.com",
-            "affidabilita": 1,
-            "quando": "16 d"
           }
         ],
         "obj": [
-          {
-            "titolo": "El Deportivo Alavés rechaza dos ofertas por Antonio Blanco desde Italia",
-            "fonte": "Cadena SER",
-            "link": "https://cadenaser.com",
-            "affidabilita": 2,
-            "quando": "23 d"
-          },
           {
             "titolo": "Deportivo Alavés W – Barcelona W: horario y dónde ver hoy por TV el partido de fútbol de la Liga F",
             "fonte": "La Vanguardia",
@@ -3619,16 +3664,6 @@
       },
       "feed": [
         {
-          "titolo": "El Deportivo Alavés rechaza dos ofertas por Antonio Blanco desde Italia",
-          "fonte": "Cadena SER",
-          "stato": "obj",
-          "link": "https://cadenaser.com/euskadi/2026/08/30/el-deportivo-alaves-rechaza-dos-ofertas-por-antonio-blanco-desde-italia-ser-vitoria/",
-          "img": "https://cadenaser.com/resizer/v2/EWBZAMUNWFGKNB466GVZQ2RMIE.jpeg?auth=7030866a3311bffb6b54b92c367f671d0b9097982dd1032791fb19dd9f95507e&quality=70&width=1200&height=675&focal=420,420",
-          "dominio": "cadenaser.com",
-          "affidabilita": 2,
-          "quando": "23 d"
-        },
-        {
           "titolo": "Ver Madrid CFF - Deportivo Alavés Online en Directo | DAZN ES",
           "fonte": "DAZN",
           "stato": "rumor",
@@ -3636,7 +3671,17 @@
           "img": "",
           "dominio": "dazn.com",
           "affidabilita": 1,
-          "quando": "12 h"
+          "quando": "16 h"
+        },
+        {
+          "titolo": "Ver Athletic Club - Deportivo Alavés Online en Directo | DAZN ES",
+          "fonte": "DAZN",
+          "stato": "rumor",
+          "link": "https://www.dazn.com/es-ES/home/1ade9wz4p8mzi1v89oa2l6wu30/swjn7g2he68dtyw8dkn2729m",
+          "img": "",
+          "dominio": "dazn.com",
+          "affidabilita": 1,
+          "quando": "2 d"
         },
         {
           "titolo": "Deportivo Alavés | Partido | Liga | 19/09/2026",
@@ -3678,14 +3723,14 @@
           },
           {
             "titolo": "Plan semanal para recibir al Girona FC",
-            "fonte": "cadizcf.com",
+            "fonte": "Cádiz Club de Fútbol",
             "link": "https://www.cadizcf.com",
             "affidabilita": 1,
-            "quando": "7 d"
+            "quando": "8 d"
           },
           {
             "titolo": "Una roja absurda y dos goles en cinco minutos entierran las ilusiones del Girona",
-            "fonte": "Diari ARA",
+            "fonte": "es.ara.cat",
             "link": "https://es.ara.cat",
             "affidabilita": 1,
             "quando": "10 d"
@@ -3699,7 +3744,7 @@
           },
           {
             "titolo": "5-2 | La UD Las Palmas pierde en su visita al Girona FC",
-            "fonte": "Radio Televisión Canaria",
+            "fonte": "rtvc.es",
             "link": "https://rtvc.es",
             "affidabilita": 1,
             "quando": "24 d"
@@ -3708,10 +3753,10 @@
         "obj": [
           {
             "titolo": "Seis futbolistas del Girona, convocados con sus selecciones",
-            "fonte": "gironafc.cat",
+            "fonte": "Girona FC",
             "link": "https://www.gironafc.cat",
             "affidabilita": 1,
-            "quando": "21 h"
+            "quando": "1 d"
           },
           {
             "titolo": "Cádiz – Girona FC: horario y dónde ver hoy por TV el partido de fútbol de LaLiga Hypermotion",
@@ -3734,13 +3779,13 @@
       "feed": [
         {
           "titolo": "Seis futbolistas del Girona, convocados con sus selecciones",
-          "fonte": "gironafc.cat",
+          "fonte": "Girona FC",
           "stato": "obj",
           "link": "https://www.gironafc.cat/es/noticias/seis-futbolistas-del-girona-convocados-con-sus-selecciones",
           "img": "https://statics-maker.llt-services.com/gir/images/2026/09/21/large/7957604e-61b1-4de6-ab58-96732d2b5c94-761.jpeg",
           "dominio": "gironafc.cat",
           "affidabilita": 1,
-          "quando": "21 h"
+          "quando": "1 d"
         },
         {
           "titolo": "Ver Cádiz CF - Girona FC Online en Directo | DAZN ES",
@@ -3781,7 +3826,7 @@
             "fonte": "Levante UD",
             "link": "https://www.levanteud.com",
             "affidabilita": 1,
-            "quando": "3 d"
+            "quando": "4 d"
           },
           {
             "titolo": "Suspendido el Levante UD-Athletic Club de la jornada 6 de LaLiga",
@@ -3853,7 +3898,7 @@
           "fonte": "Levante UD",
           "stato": "done",
           "link": "https://www.levanteud.com/noticias/resultados-de-los-encuentros-disputados-por-los-equipos-de-la-cantera-granota-el-19-y-20-de-septiembre",
-          "img": "https://statics-maker.llt-services.com/lev/images/2026/07/28/large/2161daca-75e0-47ba-8991-3304bcd137f0-310.jpg",
+          "img": "",
           "dominio": "levanteud.com",
           "affidabilita": 1,
           "quando": "1 d"
@@ -3897,24 +3942,10 @@
             "fonte": "Marca",
             "link": "https://www.marca.com/futbol/elche/2026/09/21/primer-triunfo-visitante-elche-hizo-tanto-rogar.html",
             "affidabilita": 3,
-            "quando": "19 h"
-          },
-          {
-            "titolo": "El Elche CF renueva su contrato de patrocinio con Furgonetas Demetrio",
-            "fonte": "elchecf.es",
-            "link": "https://www.elchecf.es",
-            "affidabilita": 1,
             "quando": "22 h"
           },
           {
-            "titolo": "El cuerpo técnico del Elche CF para la temporada 2026/27",
-            "fonte": "elchecf.es",
-            "link": "https://www.elchecf.es",
-            "affidabilita": 1,
-            "quando": "1 d"
-          },
-          {
-            "titolo": "Fer Niño, gol y trabajo para el ataque del Elche CF",
+            "titolo": "El Elche CF renueva su contrato de patrocinio con Furgonetas Demetrio",
             "fonte": "elchecf.es",
             "link": "https://www.elchecf.es",
             "affidabilita": 1,
@@ -3928,24 +3959,38 @@
             "quando": "2 d"
           },
           {
-            "titolo": "Roy Revivo, potencia y recorrido para reforzar el lateral izquierdo del Elche CF",
+            "titolo": "Javi Morcillo, talento y proyección para el centro del campo del Elche CF",
+            "fonte": "elchecf.es",
+            "link": "https://www.elchecf.es",
+            "affidabilita": 1,
+            "quando": "3 d"
+          },
+          {
+            "titolo": "RCD Espanyol - Elche CF",
+            "fonte": "Información",
+            "link": "https://www.informacion.es",
+            "affidabilita": 1,
+            "quando": "3 d"
+          },
+          {
+            "titolo": "El Elche CF conocerá este martes su calendario de LaLiga EA Sports 2026/27",
+            "fonte": "elchecf.es",
+            "link": "https://www.elchecf.es",
+            "affidabilita": 1,
+            "quando": "4 d"
+          }
+        ],
+        "obj": [],
+        "conf": [],
+        "done": [
+          {
+            "titolo": "El Elche CF ejecuta la opción de compra de Buba Sangare y firma hasta 2031",
             "fonte": "elchecf.es",
             "link": "https://www.elchecf.es",
             "affidabilita": 1,
             "quando": "2 d"
           }
-        ],
-        "obj": [
-          {
-            "titolo": "Dónde ver el partido: Athletic Club-Elche CF (J5 - LaLiga 2026/27)",
-            "fonte": "Athletic Club",
-            "link": "https://www.athletic-club.eus",
-            "affidabilita": 1,
-            "quando": "15 d"
-          }
-        ],
-        "conf": [],
-        "done": []
+        ]
       },
       "feed": [
         {
@@ -3956,7 +4001,7 @@
           "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/09/18/6aadafb857377.jpeg",
           "dominio": "marca.com",
           "affidabilita": 3,
-          "quando": "19 h"
+          "quando": "22 h"
         },
         {
           "titolo": "El Elche CF renueva su contrato de patrocinio con Furgonetas Demetrio",
@@ -3966,17 +4011,17 @@
           "img": "https://statics-maker.llt-services.com/elc/images/2026/09/21/large/e5fb553a-3cea-4536-9bfb-bfc6abcbf931-750.jpg",
           "dominio": "elchecf.es",
           "affidabilita": 1,
-          "quando": "22 h"
+          "quando": "1 d"
         },
         {
-          "titolo": "El cuerpo técnico del Elche CF para la temporada 2026/27",
+          "titolo": "Facundo Buonanotte, talento y desequilibrio para el ataque del Elche CF",
           "fonte": "elchecf.es",
           "stato": "rumor",
-          "link": "https://www.elchecf.es/noticias/el-cuerpo-tecnico-del-elche-cf-para-la-temporada-202627",
-          "img": "https://statics-maker.llt-services.com/elc/images/2026/07/03/large/fc238792-c213-4e6f-83c6-c49fe30b573e-792.jpeg",
+          "link": "https://www.elchecf.es/noticias/facundo-buonanotte-talento-y-desequilibrio-para-el-ataque-del-elche-cf",
+          "img": "https://statics-maker.llt-services.com/elc/images/2026/08/07/large/fdab2acb-c54b-4fcd-90c0-79737554f6bc-255.jpeg",
           "dominio": "elchecf.es",
           "affidabilita": 1,
-          "quando": "1 d"
+          "quando": "2 d"
         }
       ],
       "nomi": {
@@ -3997,7 +4042,21 @@
             "fonte": "rtpa.es",
             "link": "https://www.rtpa.es",
             "affidabilita": 1,
-            "quando": "17 h"
+            "quando": "20 h"
+          },
+          {
+            "titolo": "Ver CE Sabadell - Real Oviedo Online en Directo | DAZN ES",
+            "fonte": "DAZN",
+            "link": "https://www.dazn.com",
+            "affidabilita": 1,
+            "quando": "1 d"
+          },
+          {
+            "titolo": "El Real Oviedo cae ante el Sabadell en la Nova Creu Alta",
+            "fonte": "Real Oviedo | Web Oficial",
+            "link": "https://www.realoviedo.es",
+            "affidabilita": 1,
+            "quando": "1 d"
           },
           {
             "titolo": "Real Oviedo-Elche CF: Información de entradas visitantes para el partido en el Carlos Tartiere",
@@ -4007,15 +4066,8 @@
             "quando": "2 d"
           },
           {
-            "titolo": "¡Raphinha se queda! Barcelona encarrila su renovación hasta 2030",
-            "fonte": "UNANIMO Deportes",
-            "link": "https://unanimodeportes.com",
-            "affidabilita": 1,
-            "quando": "2 d"
-          },
-          {
             "titolo": "Pablo Sáenz, nuevo futbolista del Real Oviedo",
-            "fonte": "realoviedo.es",
+            "fonte": "Real Oviedo | Web Oficial",
             "link": "https://www.realoviedo.es",
             "affidabilita": 1,
             "quando": "4 d"
@@ -4026,13 +4078,6 @@
             "link": "https://www.rtpa.es",
             "affidabilita": 1,
             "quando": "6 d"
-          },
-          {
-            "titolo": "El Real Oviedo ficha a un futbolista del Real Madrid",
-            "fonte": "La Razón",
-            "link": "https://www.larazon.es",
-            "affidabilita": 1,
-            "quando": "22 d"
           }
         ],
         "obj": [
@@ -4048,14 +4093,14 @@
         "done": [
           {
             "titolo": "Juan Cruz, nuevo jugador del Real Oviedo",
-            "fonte": "realoviedo.es",
+            "fonte": "Real Oviedo | Web Oficial",
             "link": "https://www.realoviedo.es",
             "affidabilita": 1,
-            "quando": "21 h"
+            "quando": "1 d"
           },
           {
             "titolo": "David Jiménez, nuevo jugador del Real Oviedo",
-            "fonte": "realoviedo.es",
+            "fonte": "Real Oviedo | Web Oficial",
             "link": "https://www.realoviedo.es",
             "affidabilita": 1,
             "quando": "4 d"
@@ -4071,27 +4116,27 @@
           "img": "",
           "dominio": "rtpa.es",
           "affidabilita": 1,
-          "quando": "17 h"
+          "quando": "20 h"
         },
         {
           "titolo": "Juan Cruz, nuevo jugador del Real Oviedo",
-          "fonte": "realoviedo.es",
+          "fonte": "Real Oviedo | Web Oficial",
           "stato": "done",
           "link": "https://www.realoviedo.es/noticias/juan-cruz-nuevo-jugador-del-real-oviedo",
           "img": "https://statics-maker.llt-services.com/ovi/images/2026/07/24/large/7d8d8a41-33eb-4313-9735-3ed3ed787c32-591.jpg",
           "dominio": "realoviedo.es",
           "affidabilita": 1,
-          "quando": "21 h"
+          "quando": "1 d"
         },
         {
-          "titolo": "Real Oviedo-Elche CF: Información de entradas visitantes para el partido en el Carlos Tartiere",
-          "fonte": "elchecf.es",
+          "titolo": "Ver CE Sabadell - Real Oviedo Online en Directo | DAZN ES",
+          "fonte": "DAZN",
           "stato": "rumor",
-          "link": "https://www.elchecf.es/noticias/real-oviedo-elche-cf-informacion-de-entradas-visitantes-para-el-partido-en-el-carlos-tartiere",
-          "img": "https://statics-maker.llt-services.com/elc/images/2026/04/18/large/6eb75211-6546-4b88-9750-f9caaa10e99b-576.jpeg",
-          "dominio": "elchecf.es",
+          "link": "https://www.dazn.com/es-ES/home/1wvtypazy8z4j166h3iymcbq1v/242gl71nx4ghb2lqeni3lyt0a",
+          "img": "",
+          "dominio": "dazn.com",
           "affidabilita": 1,
-          "quando": "2 d"
+          "quando": "1 d"
         }
       ],
       "nomi": {
@@ -4113,6 +4158,13 @@
             "link": "https://www.sport.es",
             "affidabilita": 2,
             "quando": "21 d"
+          },
+          {
+            "titolo": "Marta Gutiérrez, la gran joya del 'parkour' en España: \"El sitio del GRAVITEO A Coruña Xacobeo me parece precioso, genera más ‘show’ y espectáculo\"",
+            "fonte": "La Opinión A Coruña",
+            "link": "https://www.laopinioncoruna.es",
+            "affidabilita": 1,
+            "quando": "2 d"
           },
           {
             "titolo": "GRAVITEO se salta las leyes de la física en una multitudinaria jornada en A Coruña",
@@ -4141,13 +4193,6 @@
             "link": "https://www.lavanguardia.com",
             "affidabilita": 1,
             "quando": "21 d"
-          },
-          {
-            "titolo": "Fichaje Marc Casadó por el Deportivo de La Coruña: cuánto dinero cuesta, salario, precio, edad, años de contrato, cómo y dónde juega y por qué se va del FC Barcelona",
-            "fonte": "DAZN",
-            "link": "https://www.dazn.com",
-            "affidabilita": 1,
-            "quando": "21 d"
           }
         ],
         "obj": [],
@@ -4166,6 +4211,16 @@
           "quando": "21 d"
         },
         {
+          "titolo": "Marta Gutiérrez, la gran joya del 'parkour' en España: \"El sitio del GRAVITEO A Coruña Xacobeo me parece precioso, genera más ‘show’ y espectáculo\"",
+          "fonte": "La Opinión A Coruña",
+          "stato": "rumor",
+          "link": "https://www.laopinioncoruna.es/deportes/deporte-corunes/2026/09/19/marta-gutierrez-gran-joya-parkour-134475269.html",
+          "img": "",
+          "dominio": "laopinioncoruna.es",
+          "affidabilita": 1,
+          "quando": "2 d"
+        },
+        {
           "titolo": "GRAVITEO se salta las leyes de la física en una multitudinaria jornada en A Coruña",
           "fonte": "La Opinión A Coruña",
           "stato": "rumor",
@@ -4174,16 +4229,6 @@
           "dominio": "laopinioncoruna.es",
           "affidabilita": 1,
           "quando": "2 d"
-        },
-        {
-          "titolo": "Es una de las nuevas estrellas de LaLiga, pero acaba de dejar la selección: \"Me humillaron\"",
-          "fonte": "La Razón",
-          "stato": "rumor",
-          "link": "https://www.larazon.es/deportes/futbol/nuevas-estrellas-laliga-pero-acaba-dejar-seleccion-humillaron-p7m_202609036a9920ff2d7d3022177caf41.html",
-          "img": "https://fotografias-2.larazon.es/clipping/cmsimages01/2026/08/17/C5DC0E0B-098E-4399-B98C-2F71DE154966/98.jpg?crop=3015,1696,x0,y157&width=1900&height=1069&optimize=low&format=webply",
-          "dominio": "larazon.es",
-          "affidabilita": 1,
-          "quando": "19 d"
         }
       ],
       "nomi": {
@@ -4248,7 +4293,7 @@
             "fonte": "FC Barcelona",
             "link": "https://www.fcbarcelona.es",
             "affidabilita": 1,
-            "quando": "6 d"
+            "quando": "7 d"
           },
           {
             "titolo": "Racing de Santander - Elche: horario y dónde ver gratis en televisión y online el partido de hoy de LaLiga",
@@ -4289,7 +4334,7 @@
           "fonte": "Eurosport",
           "stato": "done",
           "link": "https://www.eurosport.es/futbol/la-liga/2026-2027/celta-racing-de-santander_mtc21891379/live.shtml",
-          "img": "",
+          "img": "https://assets.eurosport.io/web/img/og/eurosport.jpg",
           "dominio": "eurosport.es",
           "affidabilita": 2,
           "quando": "3 d"
@@ -4329,18 +4374,25 @@
       "colonne": {
         "rumor": [
           {
+            "titolo": "El Málaga es el único de Primera sin internacionales en el parón",
+            "fonte": "Marca",
+            "link": "https://www.marca.com/futbol/malaga/2026/09/22/malaga-unico-primera-internacionales-paron.html",
+            "affidabilita": 3,
+            "quando": "1 h"
+          },
+          {
             "titolo": "El Málaga lanza un mensaje a su afición: \"Unidos\"",
             "fonte": "Marca",
             "link": "https://www.marca.com/futbol/malaga/2026/09/21/malaga-lanza-mensaje-aficion-unidos.html",
             "affidabilita": 3,
-            "quando": "14 h"
+            "quando": "17 h"
           },
           {
             "titolo": "La maldición inédita del Málaga en Getafe",
             "fonte": "Marca",
             "link": "https://www.marca.com/futbol/malaga/2026/09/21/maldicion-inedita-malaga-getafe.html",
             "affidabilita": 3,
-            "quando": "18 h"
+            "quando": "21 h"
           },
           {
             "titolo": "El Málaga CF negocia por Jens Cajuste",
@@ -4354,19 +4406,12 @@
             "fonte": "Andalucía Información",
             "link": "https://www.andaluciainformacion.es",
             "affidabilita": 1,
-            "quando": "15 h"
+            "quando": "19 h"
           },
           {
             "titolo": "Conoce las fechas de la pretemporada del Málaga CF",
-            "fonte": "malagacf.com",
+            "fonte": "Málaga CF",
             "link": "https://www.malagacf.com",
-            "affidabilita": 1,
-            "quando": "1 d"
-          },
-          {
-            "titolo": "Ver Getafe CF - Málaga CF Online en Directo | DAZN ES",
-            "fonte": "DAZN",
-            "link": "https://www.dazn.com",
             "affidabilita": 1,
             "quando": "1 d"
           }
@@ -4392,6 +4437,16 @@
       },
       "feed": [
         {
+          "titolo": "El Málaga es el único de Primera sin internacionales en el parón",
+          "fonte": "Marca",
+          "stato": "rumor",
+          "link": "https://www.marca.com/futbol/malaga/2026/09/22/malaga-unico-primera-internacionales-paron.html",
+          "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/09/22/6ab2457672e2e.jpeg",
+          "dominio": "marca.com",
+          "affidabilita": 3,
+          "quando": "1 h"
+        },
+        {
           "titolo": "El Málaga lanza un mensaje a su afición: \"Unidos\"",
           "fonte": "Marca",
           "stato": "rumor",
@@ -4399,7 +4454,7 @@
           "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/09/21/6ab15d8b2fdca.jpeg",
           "dominio": "marca.com",
           "affidabilita": 3,
-          "quando": "14 h"
+          "quando": "17 h"
         },
         {
           "titolo": "La maldición inédita del Málaga en Getafe",
@@ -4409,17 +4464,7 @@
           "img": "https://objetos-xlk.estaticos-marca.com/files/article_main_microformat/uploads/2026/09/21/6ab124bc1608c.jpeg",
           "dominio": "marca.com",
           "affidabilita": 3,
-          "quando": "18 h"
-        },
-        {
-          "titolo": "El Málaga CF negocia por Jens Cajuste",
-          "fonte": "Radio Marca Málaga",
-          "stato": "rumor",
-          "link": "https://www.merchanendirecto.es/el-malaga-cf-negocia-por-jens-cajuste/",
-          "img": "https://www.merchanendirecto.es/wp-content/uploads/2026/08/jens-cajuste--e1787866762798.webp",
-          "dominio": "merchanendirecto.es",
-          "affidabilita": 3,
-          "quando": "26 d"
+          "quando": "21 h"
         }
       ],
       "nomi": {
@@ -4550,13 +4595,6 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "Estreno plácido para el Arsenal de Mariona",
-            "fonte": "Mundo Deportivo",
-            "link": "https://www.mundodeportivo.com/futbol/femenino/20260922/1004229915/estreno-placido-arsenal-mariona.html",
-            "affidabilita": 2,
-            "quando": "2 h"
-          },
-          {
             "titolo": "Noticias Deportes 16:00 (09/09/26)",
             "fonte": "Onda Cero Radio",
             "link": "https://www.ondacero.es",
@@ -4598,16 +4636,6 @@
       },
       "feed": [
         {
-          "titolo": "Estreno plácido para el Arsenal de Mariona",
-          "fonte": "Mundo Deportivo",
-          "stato": "rumor",
-          "link": "https://www.mundodeportivo.com/futbol/femenino/20260922/1004229915/estreno-placido-arsenal-mariona.html",
-          "img": "https://imagenes2.mundodeportivo.com/files/og_thumbnail/files/fp/uploads/2026/09/20/6aaf8dc6b6595.r_d.792-842-7581.jpeg",
-          "dominio": "mundodeportivo.com",
-          "affidabilita": 2,
-          "quando": "2 h"
-        },
-        {
           "titolo": "Noticias Deportes 16:00 (09/09/26)",
           "fonte": "Onda Cero Radio",
           "stato": "rumor",
@@ -4626,6 +4654,16 @@
           "dominio": "elpais.com",
           "affidabilita": 1,
           "quando": "23 d"
+        },
+        {
+          "titolo": "Rivales del FC Bayern en la fase de liga de la Champions League 26/27",
+          "fonte": "FC Bayern",
+          "stato": "rumor",
+          "link": "https://fcbayern.com/es/noticias/2026/08/rivales-del-fc-bayern-en-la-fase-de-liga-de-la-champions-league-26-27",
+          "img": "",
+          "dominio": "fcbayern.com",
+          "affidabilita": 1,
+          "quando": "26 d"
         }
       ],
       "nomi": {
@@ -4649,13 +4687,6 @@
             "quando": "1 d"
           },
           {
-            "titolo": "Manchester City ganó ’guerra de goles’ a Sunderland y es el único líder de la Premier League",
-            "fonte": "biobiochile.cl",
-            "link": "https://www.biobiochile.cl",
-            "affidabilita": 1,
-            "quando": "1 d"
-          },
-          {
             "titolo": "Arsenal sufrió su primer golpe en la Premier League y Manchester City lo celebra: así quedó la tabla",
             "fonte": "Revista Semana",
             "link": "https://www.semana.com",
@@ -4671,7 +4702,7 @@
           },
           {
             "titolo": "JJ Gabriel, la gran promesa de Manchester United, pide irse del club",
-            "fonte": "Los Angeles Times",
+            "fonte": "latimes.com",
             "link": "https://www.latimes.com",
             "affidabilita": 1,
             "quando": "6 d"
@@ -4682,6 +4713,13 @@
             "link": "https://elpais.com",
             "affidabilita": 1,
             "quando": "21 d"
+          },
+          {
+            "titolo": "El Real Madrid conocerá hoy a sus rivales en la primera fase de la Champions League 26/27",
+            "fonte": "Real Madrid CF | Web Oficial",
+            "link": "https://www.realmadrid.com",
+            "affidabilita": 1,
+            "quando": "26 d"
           }
         ],
         "obj": [
@@ -4690,7 +4728,7 @@
             "fonte": "UNANIMO Deportes",
             "link": "https://unanimodeportes.com",
             "affidabilita": 1,
-            "quando": "1 d"
+            "quando": "2 d"
           }
         ],
         "conf": [],
@@ -4716,16 +4754,6 @@
           "quando": "1 d"
         },
         {
-          "titolo": "Manchester City ganó ’guerra de goles’ a Sunderland y es el único líder de la Premier League",
-          "fonte": "biobiochile.cl",
-          "stato": "rumor",
-          "link": "https://www.biobiochile.cl/noticias/deportes/futbol-internacional/notas-futbol-internacional/2026/09/20/premier-league-city-gano-guerra-de-goles-a-sunderland-y-es-unico-lider.shtml",
-          "img": "https://media.biobiochile.cl/wp-content/uploads/2026/09/social-6959203-premier-league-city-gano-guerra-de-goles-a-sunderland-y-es-unico-lider.jpg",
-          "dominio": "biobiochile.cl",
-          "affidabilita": 1,
-          "quando": "1 d"
-        },
-        {
           "titolo": "Man City gana un loco duelo de goles al Sunderland y se lleva liderato",
           "fonte": "UNANIMO Deportes",
           "stato": "done",
@@ -4734,6 +4762,16 @@
           "dominio": "unanimodeportes.com",
           "affidabilita": 1,
           "quando": "1 d"
+        },
+        {
+          "titolo": "Manchester City vs. Sunderland EN VIVO: Dónde ver y horarios",
+          "fonte": "UNANIMO Deportes",
+          "stato": "obj",
+          "link": "https://unanimodeportes.com/deportes/manchester-city-vs-sunderland-en-vivo-2627/",
+          "img": "https://unanimodeportes.s3.amazonaws.com/wp-content/uploads/2026/09/VS-_14_.webp",
+          "dominio": "unanimodeportes.com",
+          "affidabilita": 1,
+          "quando": "2 d"
         }
       ],
       "nomi": {
@@ -4750,18 +4788,11 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "Kendry Páez jugó 27 minutos en la victoria del Chelsea FC Sub 21 ante Fulham, en la Premier League 2",
-            "fonte": "Primicias",
-            "link": "https://www.primicias.ec",
-            "affidabilita": 1,
-            "quando": "2 d"
-          },
-          {
             "titolo": "El Chelsea de Xabi Alonso cambia de dueño",
             "fonte": "La Razón",
             "link": "https://www.larazon.es",
             "affidabilita": 1,
-            "quando": "4 d"
+            "quando": "5 d"
           },
           {
             "titolo": "Muere Cassius Newton, exjugador del Chelsea, a los 34 años mientras hacía senderismo",
@@ -4784,16 +4815,6 @@
       },
       "feed": [
         {
-          "titolo": "Kendry Páez jugó 27 minutos en la victoria del Chelsea FC Sub 21 ante Fulham, en la Premier League 2",
-          "fonte": "Primicias",
-          "stato": "rumor",
-          "link": "https://www.primicias.ec/deportes/futbol/kendry-paez-chelsea-sub-21-fulham-juveniles-132993/",
-          "img": "https://imagenes.primicias.ec/files/og_thumbnail/files/fp/uploads/2025/07/31/688bb792029e4.r_d.452-300-0.jpeg",
-          "dominio": "primicias.ec",
-          "affidabilita": 1,
-          "quando": "2 d"
-        },
-        {
           "titolo": "El Chelsea de Xabi Alonso cambia de dueño",
           "fonte": "La Razón",
           "stato": "rumor",
@@ -4801,7 +4822,7 @@
           "img": "https://fotografias-2.larazon.es/clipping/cmsimages01/2026/09/17/1D1BF541-7A0A-416B-9120-4F52FBEBAA61/98.jpg?crop=1920,1080,x0,y100&width=1900&height=1069&optimize=low&format=webply",
           "dominio": "larazon.es",
           "affidabilita": 1,
-          "quando": "4 d"
+          "quando": "5 d"
         },
         {
           "titolo": "Muere Cassius Newton, exjugador del Chelsea, a los 34 años mientras hacía senderismo",
@@ -4812,6 +4833,16 @@
           "dominio": "antena3.com",
           "affidabilita": 1,
           "quando": "24 d"
+        },
+        {
+          "titolo": "Chelsea FC sella alianza de patrocinio con Circle, emisor de USDC",
+          "fonte": "BeInCrypto",
+          "stato": "rumor",
+          "link": "https://es.beincrypto.com/chelsea-patrocinador-cripto-circle-usdc/",
+          "img": "https://assets.beincrypto.com/img/xzz9hCsY5oERqp3UobN3FV3AjUk=/1200x630/smart/filters:format(jpeg):quality(82)/d760358fb22747459f3b26e92dd76292",
+          "dominio": "es.beincrypto.com",
+          "affidabilita": 1,
+          "quando": "25 d"
         }
       ],
       "nomi": {
@@ -4828,11 +4859,11 @@
       "colonne": {
         "rumor": [
           {
-            "titolo": "El Manchester United prepara 80 millones para fichar en España y el Real Madrid le abre la puerta a dos de sus jugadores",
-            "fonte": "Cadena SER",
-            "link": "https://cadenaser.com",
+            "titolo": "El Manchester United aún tiene caja para fichar a Balde",
+            "fonte": "SPORT",
+            "link": "https://www.sport.es",
             "affidabilita": 2,
-            "quando": "25 d"
+            "quando": "27 d"
           },
           {
             "titolo": "Matheus Cunha rescata un punto para el Manchester United",
@@ -4850,7 +4881,7 @@
           },
           {
             "titolo": "Los abucheos empiezan en el Man United tras otro turbulento inicio de temporada",
-            "fonte": "Los Angeles Times",
+            "fonte": "latimes.com",
             "link": "https://www.latimes.com",
             "affidabilita": 1,
             "quando": "4 d"
@@ -4861,22 +4892,22 @@
             "link": "https://es-us.noticias.yahoo.com",
             "affidabilita": 1,
             "quando": "6 d"
+          },
+          {
+            "titolo": "El Manchester United prepara 80 millones para fichar en España y el Real Madrid le abre la puerta a dos de sus jugadores",
+            "fonte": "cadenaser.com",
+            "link": "https://cadenaser.com",
+            "affidabilita": 1,
+            "quando": "25 d"
           }
         ],
         "obj": [
           {
             "titolo": "JJ Gabriel, la joya de 15 años que se quiere ir del United",
-            "fonte": "Relevo Deportes",
+            "fonte": "relevo.com",
             "link": "https://www.relevo.com",
             "affidabilita": 3,
             "quando": "1 d"
-          },
-          {
-            "titolo": "Fulham vs. Manchester United EN VIVO: Dónde ver y horarios",
-            "fonte": "UNANIMO Deportes",
-            "link": "https://unanimodeportes.com",
-            "affidabilita": 1,
-            "quando": "2 d"
           },
           {
             "titolo": "Manchester United vs Sabah FK en vivo en español: horarios en USA, canales y transmisión de la Champions League 2025/26 en Estados Unidos",
@@ -4914,7 +4945,7 @@
       "feed": [
         {
           "titolo": "JJ Gabriel, la joya de 15 años que se quiere ir del United",
-          "fonte": "Relevo Deportes",
+          "fonte": "relevo.com",
           "stato": "obj",
           "link": "https://www.relevo.com/futbol/premier-league/jj-gabriel-manchester-united-salida.html",
           "img": "https://www.relevo.com/wp-content/uploads/2026/09/jj-gabriel-nino-prodigio-manchester-united-pide-salir-1200x675.jpg",
@@ -4923,14 +4954,14 @@
           "quando": "1 d"
         },
         {
-          "titolo": "El Manchester United prepara 80 millones para fichar en España y el Real Madrid le abre la puerta a dos de sus jugadores",
-          "fonte": "Cadena SER",
+          "titolo": "El Manchester United aún tiene caja para fichar a Balde",
+          "fonte": "SPORT",
           "stato": "rumor",
-          "link": "https://cadenaser.com/nacional/2026/08/28/el-manchester-united-prepara-80-millones-para-fichar-en-espana-y-el-real-madrid-le-abre-la-puerta-a-dos-de-sus-jugadores-cadena-ser/",
-          "img": "https://cadenaser.com/resizer/v2/EEHH43UVIBC7LKHHD272BE4ZR4.jpg?auth=443ceacbcd4a7d3cf4e794f01d5789a0affbbcb047b3cbc405175cdb5e53a146&quality=70&width=1200&height=675&smart=true",
-          "dominio": "cadenaser.com",
+          "link": "https://www.sport.es/es/noticias/barca/manchester-united-caja-fichar-balde-133660560",
+          "img": "",
+          "dominio": "sport.es",
           "affidabilita": 2,
-          "quando": "25 d"
+          "quando": "27 d"
         },
         {
           "titolo": "Resultados de fútbol de hoy, 21 de septiembre: el Manchester United evita la derrota, el Real Madrid sufre una dolorosa derrota.",
@@ -5052,7 +5083,7 @@
             "fonte": "Diario Ahora",
             "link": "https://ahora.com.pe",
             "affidabilita": 1,
-            "quando": "19 h"
+            "quando": "22 h"
           },
           {
             "titolo": "Garnacho vuelve a ser noticia y el Aston Villa se impacienta",
@@ -5070,7 +5101,7 @@
           },
           {
             "titolo": "Tottenham deambula en Premier League: perdió con Aston Villa y está en zona de descenso",
-            "fonte": "biobiochile.cl",
+            "fonte": "BioBioChile",
             "link": "https://www.biobiochile.cl",
             "affidabilita": 1,
             "quando": "2 d"
@@ -5080,7 +5111,7 @@
             "fonte": "EL PAÍS",
             "link": "https://elpais.com",
             "affidabilita": 1,
-            "quando": "11 d"
+            "quando": "12 d"
           },
           {
             "titolo": "Alineaciones Brujas vs Aston Villa | Champions League 2026/2027",
@@ -5111,7 +5142,7 @@
           "img": "https://ahora.com.pe/api/uploads/images/2026/09/67a9f54f9336.webp",
           "dominio": "ahora.com.pe",
           "affidabilita": 1,
-          "quando": "19 h"
+          "quando": "22 h"
         },
         {
           "titolo": "Garnacho vuelve a ser noticia y el Aston Villa se impacienta",
@@ -5160,13 +5191,6 @@
             "link": "https://www.dazn.com",
             "affidabilita": 1,
             "quando": "2 d"
-          },
-          {
-            "titolo": "Sábado: fútbol sub-21 en directo: vea el Liverpool contra el Brighton & Hove Albion",
-            "fonte": "Liverpool FC",
-            "link": "https://www.liverpoolfc.com",
-            "affidabilita": 1,
-            "quando": "3 d"
           }
         ],
         "obj": [],
@@ -5223,7 +5247,7 @@
           "fonte": "Eurosport",
           "stato": "done",
           "link": "https://www.eurosport.es/futbol/premier-league/2026-2027/live-brighton-hove-albion-arsenal_mtc21883071/live.shtml",
-          "img": "",
+          "img": "https://assets.eurosport.io/web/img/og/eurosport.jpg",
           "dominio": "eurosport.es",
           "affidabilita": 2,
           "quando": "3 d"
@@ -5233,7 +5257,7 @@
           "fonte": "Eurosport",
           "stato": "done",
           "link": "https://www.eurosport.es/futbol/barclays-wsl/2026-2027/brighton-hove-albion-aston-villa_mtc21927056/live.shtml",
-          "img": "",
+          "img": "https://assets.eurosport.io/web/img/og/eurosport.jpg",
           "dominio": "eurosport.es",
           "affidabilita": 2,
           "quando": "3 d"
@@ -5243,7 +5267,7 @@
           "fonte": "Eurosport",
           "stato": "done",
           "link": "https://www.eurosport.es/futbol/league-cup/2026-2027/manchester-city-brighton-hove-albion_mtc21876946/live.shtml",
-          "img": "",
+          "img": "https://assets.eurosport.io/web/img/og/eurosport.jpg",
           "dominio": "eurosport.es",
           "affidabilita": 2,
           "quando": "4 d"
@@ -5278,7 +5302,7 @@
           },
           {
             "titolo": "Tensión en Londres por el derbi más violento y peligroso de Inglaterra: Millwall vs. West Ham",
-            "fonte": "eltiempo.com",
+            "fonte": "El Tiempo",
             "link": "https://www.eltiempo.com",
             "affidabilita": 1,
             "quando": "3 d"
@@ -5289,13 +5313,6 @@
             "link": "https://www.espn.com.mx",
             "affidabilita": 1,
             "quando": "3 d"
-          },
-          {
-            "titolo": "Millwall vs. West Ham: fecha, hora y cómo ver EN VIVO en Colombia la edición 100 del Dockers Derby",
-            "fonte": "Caracol Radio",
-            "link": "https://caracol.com.co",
-            "affidabilita": 1,
-            "quando": "6 d"
           }
         ],
         "obj": [],
@@ -5336,7 +5353,7 @@
           "fonte": "Eurosport",
           "stato": "done",
           "link": "https://www.eurosport.es/futbol/barclays-wsl/2026-2027/west-ham-united-everton_mtc21927044/live.shtml",
-          "img": "",
+          "img": "https://assets.eurosport.io/web/img/og/eurosport.jpg",
           "dominio": "eurosport.es",
           "affidabilita": 2,
           "quando": "3 d"
@@ -5360,7 +5377,7 @@
             "fonte": "EL PAÍS",
             "link": "https://elpais.com",
             "affidabilita": 1,
-            "quando": "3 d"
+            "quando": "4 d"
           },
           {
             "titolo": "Pérdida devastadora para el fútbol: el ex portero del Crystal Palace y del Watford Kevin Miller muere de forma inesperada a los 57 años",
@@ -5375,6 +5392,13 @@
             "link": "https://elpais.com",
             "affidabilita": 1,
             "quando": "5 d"
+          },
+          {
+            "titolo": "Mercado de fichajes | Daniel Muñoz seguirá jugando en la Premier",
+            "fonte": "Flashscore.es",
+            "link": "https://www.flashscore.es",
+            "affidabilita": 1,
+            "quando": "22 d"
           }
         ],
         "obj": [],
@@ -5402,7 +5426,7 @@
           "fonte": "Eurosport",
           "stato": "done",
           "link": "https://www.eurosport.es/futbol/premier-league/2026-2027/crystal-palace-nottingham_mtc21883182/live.shtml",
-          "img": "",
+          "img": "https://assets.eurosport.io/web/img/og/eurosport.jpg",
           "dominio": "eurosport.es",
           "affidabilita": 2,
           "quando": "3 d"
@@ -5412,7 +5436,7 @@
           "fonte": "Eurosport",
           "stato": "done",
           "link": "https://www.eurosport.es/futbol/premier-league/2026-2027/crystal-palace-leeds_mtc21883206/live.shtml",
-          "img": "",
+          "img": "https://assets.eurosport.io/web/img/og/eurosport.jpg",
           "dominio": "eurosport.es",
           "affidabilita": 2,
           "quando": "3 d"
@@ -5425,7 +5449,7 @@
           "img": "https://imagenes.elpais.com/resizer/ml47sIkEKn0_fWj64xFx9vSB98Q=/arc-anglerfish-eu-central-1-prod-prisa/public/DS6BXTAC4BEUTFQXKEWIOKDSWA.png",
           "dominio": "elpais.com",
           "affidabilita": 1,
-          "quando": "3 d"
+          "quando": "4 d"
         }
       ],
       "nomi": {
@@ -5488,7 +5512,7 @@
           "fonte": "EL PAÍS",
           "stato": "rumor",
           "link": "https://elpais.com/deportes/futbol/2026-09-17/la-real-sociedad-pierde-en-su-estreno-europeo-ante-el-bournemouth.html",
-          "img": "https://imagenes.elpais.com/resizer/v2/L6QCSNV6XRIQRE5KV6ZCNRHFAE.jpg?auth=be19ffe4c8456ba579e1a00997cf082b47c7861c582efb02c2cb89b8eae74c76&width=1200",
+          "img": "",
           "dominio": "elpais.com",
           "affidabilita": 1,
           "quando": "4 d"
@@ -5618,7 +5642,7 @@
           },
           {
             "titolo": "Wolverhampton vs Stoke City EN VIVO: A qué hora juega y dónde VER partido de Raúl Jiménez en la Championship 2",
-            "fonte": "MILENIO",
+            "fonte": "milenio.com",
             "link": "https://www.milenio.com",
             "affidabilita": 1,
             "quando": "25 d"
@@ -5650,7 +5674,7 @@
         },
         {
           "titolo": "Wolverhampton vs Stoke City EN VIVO: A qué hora juega y dónde VER partido de Raúl Jiménez en la Championship 2",
-          "fonte": "MILENIO",
+          "fonte": "milenio.com",
           "stato": "obj",
           "link": "https://www.milenio.com/deportes/futbol-internacional/wolverhampton-vs-stoke-city-en-vivo-partido-raul-jimenez-championship",
           "img": "https://cdn.milenio.com/uploads/media/2026/08/28/wolverhampton-vs-stoke-city-raul.jpeg",
@@ -5735,7 +5759,7 @@
             "fonte": "EL PAÍS",
             "link": "https://elpais.com",
             "affidabilita": 1,
-            "quando": "11 d"
+            "quando": "12 d"
           },
           {
             "titolo": "Alineaciones Liverpool vs Nottingham Forest | Premier League 2026/2027",
@@ -5908,7 +5932,7 @@
             "fonte": "Sports Illustrated",
             "link": "https://www.si.com",
             "affidabilita": 2,
-            "quando": "305 d"
+            "quando": "306 d"
           },
           {
             "titolo": "Oliver Sonne está de vuelta con el Burnley: se unió a la pretemporada y participó en el primer amistoso preparatorio contra FC Cincinnati",
@@ -5984,7 +6008,7 @@
           "img": "https://images2.minutemediacdn.com/image/upload/c_crop,x_71,y_336,w_6261,h_3521/c_fill,w_1440,ar_1440:810,f_auto,q_auto,g_auto/images/GettyImages/mmsport/sports_illustrated_ftbol/01ka9ne58kkkz512js0w.jpg",
           "dominio": "si.com",
           "affidabilita": 2,
-          "quando": "305 d"
+          "quando": "306 d"
         },
         {
           "titolo": "Oliver Sonne está de vuelta con el Burnley: se unió a la pretemporada y participó en el primer amistoso preparatorio contra FC Cincinnati",
@@ -6087,7 +6111,7 @@
             "fonte": "EL PAÍS",
             "link": "https://elpais.com",
             "affidabilita": 1,
-            "quando": "24 d"
+            "quando": "25 d"
           }
         ],
         "obj": [
@@ -6130,7 +6154,7 @@
           "fonte": "Diario AS",
           "stato": "rumor",
           "link": "https://as.com/futbol/el-hull-city-tras-los-pasos-de-angel-perez-f202608-n/",
-          "img": "https://img.asmedia.epimg.net/resizer/v2/PXUXWZCOGRBXFKDZU5I3V2F5JQ.jpg?auth=ce0f597c692d60eecfbd5b562e2b4d01b2e0a6d08780608f760e13c103895ed3&width=1472&height=828&focal=447%2C339",
+          "img": "",
           "dominio": "as.com",
           "affidabilita": 3,
           "quando": "29 d"
@@ -6188,7 +6212,7 @@
             "fonte": "EL PAÍS",
             "link": "https://elpais.com",
             "affidabilita": 1,
-            "quando": "11 d"
+            "quando": "12 d"
           },
           {
             "titolo": "Alineaciones M. United vs Ipswich Town | Premier League 2026/2027",
@@ -6252,11 +6276,11 @@
             "quando": "8 d"
           },
           {
-            "titolo": "Arsenal, sin Piero Hincapié, vence al Ipswich Town y avanza a octavos de final de la Copa de la Liga",
-            "fonte": "Vistazo",
-            "link": "https://www.vistazo.com",
-            "affidabilita": 1,
-            "quando": "6 d"
+            "titolo": "Ipswich Town - Liverpool en directo - Premier League: Resultados y resúmenes de Fútbol - 04/09/2026",
+            "fonte": "Eurosport",
+            "link": "https://www.eurosport.es",
+            "affidabilita": 2,
+            "quando": "18 d"
           }
         ]
       },
@@ -6266,7 +6290,7 @@
           "fonte": "Eurosport",
           "stato": "done",
           "link": "https://www.eurosport.es/futbol/premier-league/2026-2027/ipswich-town-everton_mtc21883292/live.shtml",
-          "img": "",
+          "img": "https://assets.eurosport.io/web/img/og/eurosport.jpg",
           "dominio": "eurosport.es",
           "affidabilita": 2,
           "quando": "3 d"
@@ -6276,7 +6300,7 @@
           "fonte": "Eurosport",
           "stato": "done",
           "link": "https://www.eurosport.es/futbol/premier-league/2026-2027/ipswich-town-fulham_mtc21883056/live.shtml",
-          "img": "",
+          "img": "https://assets.eurosport.io/web/img/og/eurosport.jpg",
           "dominio": "eurosport.es",
           "affidabilita": 2,
           "quando": "3 d"
@@ -6286,7 +6310,7 @@
           "fonte": "Eurosport",
           "stato": "done",
           "link": "https://www.eurosport.es/futbol/premier-league/2026-2027/everton-ipswich-town_mtc21883287/live.shtml",
-          "img": "",
+          "img": "https://assets.eurosport.io/web/img/og/eurosport.jpg",
           "dominio": "eurosport.es",
           "affidabilita": 2,
           "quando": "8 d"
